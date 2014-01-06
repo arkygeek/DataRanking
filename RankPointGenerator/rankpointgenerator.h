@@ -63,6 +63,7 @@ double SVMethod1(int theObservations, double theWeight, double theReplicates);
 double SVMethod2(int theObservations, double theWeight, double theLayers, double theReplicates, double theMinFactor);
 double SVMethod3(int theObservations, double theWeight, double theLayers, double theMinFactor);
 double SVMethod4(int theObservations, double theWeight);
+double SVMethod5(int theObservations, double theWeight);
 
 };
 

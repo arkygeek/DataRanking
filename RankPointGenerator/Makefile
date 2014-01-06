@@ -564,11 +564,25 @@ compiler_clean:
 rankpointgenerator.o: rankpointgenerator.cpp rankpointgenerator.h \
 		rankpointgenerator_global.h \
 		management.h \
+		dsc.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QMap \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rankpointgenerator.o rankpointgenerator.cpp
 
-management.o: management.cpp management.h
+management.o: management.cpp management.h \
+		dsc.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QMap \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o management.o management.cpp
 
 ####### Install

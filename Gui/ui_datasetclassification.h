@@ -45,12 +45,7 @@ class Ui_DatasetClassification
 {
 public:
     QWidget *centralWidget;
-    QGridLayout *gridLayout_6;
-    QPushButton *pushButton;
-    QComboBox *cbUser;
-    QLabel *lblUser;
-    QPushButton *pbAuthenticate;
-    QSpacerItem *verticalSpacer_6;
+    QGridLayout *gridLayout_2;
     QTabWidget *tabWidgetDataClassification;
     QWidget *tabManagement;
     QGridLayout *gridLayout_13;
@@ -224,6 +219,7 @@ public:
     QLabel *lblInitialValuesObservations;
     QDoubleSpinBox *dsbNMinDepthInitialValues;
     QDoubleSpinBox *dsbSoilMoistureDepthInitialValues;
+    QLabel *label_4;
     QTextBrowser *txbrInitialValues;
     QGridLayout *gridLayoutInitialValuesRankLevels;
     QLabel *lblInitialValuesPlatinumMin;
@@ -782,6 +778,10 @@ public:
     QHBoxLayout *horizontalLayoutSeasonsMultiplier;
     QLabel *lblSeasonsMultiplier;
     QLabel *lblSeasonsMultiplierTotal;
+    QLabel *lblUser;
+    QPushButton *pushButton;
+    QComboBox *cbUser;
+    QPushButton *pbAuthenticate;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -793,35 +793,10 @@ public:
         DatasetClassification->resize(776, 805);
         centralWidget = new QWidget(DatasetClassification);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        gridLayout_6 = new QGridLayout(centralWidget);
-        gridLayout_6->setSpacing(6);
-        gridLayout_6->setContentsMargins(11, 11, 11, 11);
-        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout_6->addWidget(pushButton, 2, 1, 1, 1);
-
-        cbUser = new QComboBox(centralWidget);
-        cbUser->setObjectName(QStringLiteral("cbUser"));
-
-        gridLayout_6->addWidget(cbUser, 3, 0, 1, 1);
-
-        lblUser = new QLabel(centralWidget);
-        lblUser->setObjectName(QStringLiteral("lblUser"));
-
-        gridLayout_6->addWidget(lblUser, 2, 0, 1, 1);
-
-        pbAuthenticate = new QPushButton(centralWidget);
-        pbAuthenticate->setObjectName(QStringLiteral("pbAuthenticate"));
-        pbAuthenticate->setMaximumSize(QSize(110, 16777215));
-
-        gridLayout_6->addWidget(pbAuthenticate, 3, 1, 1, 1);
-
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_6->addItem(verticalSpacer_6, 1, 1, 1, 1);
-
+        gridLayout_2 = new QGridLayout(centralWidget);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         tabWidgetDataClassification = new QTabWidget(centralWidget);
         tabWidgetDataClassification->setObjectName(QStringLiteral("tabWidgetDataClassification"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -973,6 +948,7 @@ public:
         sizePolicy2.setHeightForWidth(sbSeedDensityObsMgmt->sizePolicy().hasHeightForWidth());
         sbSeedDensityObsMgmt->setSizePolicy(sizePolicy2);
         sbSeedDensityObsMgmt->setFont(font2);
+        sbSeedDensityObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbSeedDensityObsMgmt, 6, 1, 1, 1);
 
@@ -2094,7 +2070,7 @@ public:
 
         sbNMinObsInitialValues = new QSpinBox(gbxInitialValues);
         sbNMinObsInitialValues->setObjectName(QStringLiteral("sbNMinObsInitialValues"));
-        sbNMinObsInitialValues->setValue(8);
+        sbNMinObsInitialValues->setValue(3);
 
         gridLayoutSite->addWidget(sbNMinObsInitialValues, 3, 2, 1, 1);
 
@@ -2106,7 +2082,7 @@ public:
 
         sbSoilMoistureObsInitialValues = new QSpinBox(gbxInitialValues);
         sbSoilMoistureObsInitialValues->setObjectName(QStringLiteral("sbSoilMoistureObsInitialValues"));
-        sbSoilMoistureObsInitialValues->setValue(1);
+        sbSoilMoistureObsInitialValues->setValue(3);
 
         gridLayoutSite->addWidget(sbSoilMoistureObsInitialValues, 2, 2, 1, 1);
 
@@ -2159,16 +2135,22 @@ public:
         dsbNMinDepthInitialValues = new QDoubleSpinBox(gbxInitialValues);
         dsbNMinDepthInitialValues->setObjectName(QStringLiteral("dsbNMinDepthInitialValues"));
         dsbNMinDepthInitialValues->setSingleStep(0.1);
-        dsbNMinDepthInitialValues->setValue(2);
+        dsbNMinDepthInitialValues->setValue(0.9);
 
         gridLayoutSite->addWidget(dsbNMinDepthInitialValues, 3, 1, 1, 1);
 
         dsbSoilMoistureDepthInitialValues = new QDoubleSpinBox(gbxInitialValues);
         dsbSoilMoistureDepthInitialValues->setObjectName(QStringLiteral("dsbSoilMoistureDepthInitialValues"));
         dsbSoilMoistureDepthInitialValues->setSingleStep(0.1);
-        dsbSoilMoistureDepthInitialValues->setValue(0.6);
+        dsbSoilMoistureDepthInitialValues->setValue(0.9);
 
         gridLayoutSite->addWidget(dsbSoilMoistureDepthInitialValues, 2, 1, 1, 1);
+
+        label_4 = new QLabel(gbxInitialValues);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setFont(font1);
+
+        gridLayoutSite->addWidget(label_4, 0, 1, 1, 1);
 
 
         gridLayout_26->addWidget(gbxInitialValues, 0, 0, 1, 2, Qt::AlignTop);
@@ -2481,7 +2463,7 @@ public:
 
         sbTextureLayersSoil = new QSpinBox(gbxSoil);
         sbTextureLayersSoil->setObjectName(QStringLiteral("sbTextureLayersSoil"));
-        sbTextureLayersSoil->setValue(3);
+        sbTextureLayersSoil->setValue(6);
 
         gridLayoutWeather->addWidget(sbTextureLayersSoil, 4, 2, 1, 1);
 
@@ -2504,7 +2486,7 @@ public:
 
         sbCOrgLayersSoil = new QSpinBox(gbxSoil);
         sbCOrgLayersSoil->setObjectName(QStringLiteral("sbCOrgLayersSoil"));
-        sbCOrgLayersSoil->setValue(2);
+        sbCOrgLayersSoil->setValue(3);
 
         gridLayoutWeather->addWidget(sbCOrgLayersSoil, 2, 2, 1, 1);
 
@@ -2534,7 +2516,7 @@ public:
 
         sbPhLayersSoil = new QSpinBox(gbxSoil);
         sbPhLayersSoil->setObjectName(QStringLiteral("sbPhLayersSoil"));
-        sbPhLayersSoil->setValue(1);
+        sbPhLayersSoil->setValue(3);
 
         gridLayoutWeather->addWidget(sbPhLayersSoil, 10, 2, 1, 1);
 
@@ -2573,7 +2555,7 @@ public:
 
         sbNOrgLayersSoil = new QSpinBox(gbxSoil);
         sbNOrgLayersSoil->setObjectName(QStringLiteral("sbNOrgLayersSoil"));
-        sbNOrgLayersSoil->setValue(2);
+        sbNOrgLayersSoil->setValue(3);
 
         gridLayoutWeather->addWidget(sbNOrgLayersSoil, 3, 2, 1, 1);
 
@@ -2606,14 +2588,14 @@ public:
         dsbCOrgDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbCOrgDepthSoil->setObjectName(QStringLiteral("dsbCOrgDepthSoil"));
         dsbCOrgDepthSoil->setSingleStep(0.1);
-        dsbCOrgDepthSoil->setValue(0.6);
+        dsbCOrgDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbCOrgDepthSoil, 2, 1, 1, 1);
 
         dsbNOrgDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbNOrgDepthSoil->setObjectName(QStringLiteral("dsbNOrgDepthSoil"));
         dsbNOrgDepthSoil->setSingleStep(0.1);
-        dsbNOrgDepthSoil->setValue(0.6);
+        dsbNOrgDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbNOrgDepthSoil, 3, 1, 1, 1);
 
@@ -2627,42 +2609,42 @@ public:
         dsbBulkDensityDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbBulkDensityDepthSoil->setObjectName(QStringLiteral("dsbBulkDensityDepthSoil"));
         dsbBulkDensityDepthSoil->setSingleStep(0.1);
-        dsbBulkDensityDepthSoil->setValue(2);
+        dsbBulkDensityDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbBulkDensityDepthSoil, 5, 1, 1, 1);
 
         dsbFieldCapacityDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbFieldCapacityDepthSoil->setObjectName(QStringLiteral("dsbFieldCapacityDepthSoil"));
         dsbFieldCapacityDepthSoil->setSingleStep(0.1);
-        dsbFieldCapacityDepthSoil->setValue(2);
+        dsbFieldCapacityDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbFieldCapacityDepthSoil, 6, 1, 1, 1);
 
         dsbWiltingPointDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbWiltingPointDepthSoil->setObjectName(QStringLiteral("dsbWiltingPointDepthSoil"));
         dsbWiltingPointDepthSoil->setSingleStep(0.1);
-        dsbWiltingPointDepthSoil->setValue(2);
+        dsbWiltingPointDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbWiltingPointDepthSoil, 7, 1, 1, 1);
 
         dsbPfCurveDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbPfCurveDepthSoil->setObjectName(QStringLiteral("dsbPfCurveDepthSoil"));
         dsbPfCurveDepthSoil->setSingleStep(0.01);
-        dsbPfCurveDepthSoil->setValue(1);
+        dsbPfCurveDepthSoil->setValue(0);
 
         gridLayoutWeather->addWidget(dsbPfCurveDepthSoil, 8, 1, 1, 1);
 
         dsbHydrCondCurveDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbHydrCondCurveDepthSoil->setObjectName(QStringLiteral("dsbHydrCondCurveDepthSoil"));
         dsbHydrCondCurveDepthSoil->setSingleStep(0.1);
-        dsbHydrCondCurveDepthSoil->setValue(1);
+        dsbHydrCondCurveDepthSoil->setValue(0);
 
         gridLayoutWeather->addWidget(dsbHydrCondCurveDepthSoil, 9, 1, 1, 1);
 
         dsbPhDepthSoil = new QDoubleSpinBox(gbxSoil);
         dsbPhDepthSoil->setObjectName(QStringLiteral("dsbPhDepthSoil"));
         dsbPhDepthSoil->setSingleStep(0.1);
-        dsbPhDepthSoil->setValue(0.3);
+        dsbPhDepthSoil->setValue(0.9);
 
         gridLayoutWeather->addWidget(dsbPhDepthSoil, 10, 1, 1, 1);
 
@@ -2959,6 +2941,7 @@ public:
 
         sbSlopeWeightSite = new QSpinBox(gbxSite);
         sbSlopeWeightSite->setObjectName(QStringLiteral("sbSlopeWeightSite"));
+        sbSlopeWeightSite->setValue(1);
 
         gridLayoutStateVars->addWidget(sbSlopeWeightSite, 5, 1, 1, 1);
 
@@ -3210,7 +3193,7 @@ public:
         sbPrecipitationAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbPrecipitationAltDifWeather->setMinimum(-1000);
         sbPrecipitationAltDifWeather->setMaximum(1000);
-        sbPrecipitationAltDifWeather->setValue(20);
+        sbPrecipitationAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbPrecipitationAltDifWeather, 1, 3, 1, 1);
 
@@ -3272,7 +3255,7 @@ public:
         sizePolicy8.setHeightForWidth(sbTAveAltDifWeather->sizePolicy().hasHeightForWidth());
         sbTAveAltDifWeather->setSizePolicy(sizePolicy8);
         sbTAveAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbTAveAltDifWeather->setValue(20);
+        sbTAveAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbTAveAltDifWeather, 2, 3, 1, 1);
 
@@ -3335,7 +3318,7 @@ public:
         sizePolicy8.setHeightForWidth(sbTMinAltDifWeather->sizePolicy().hasHeightForWidth());
         sbTMinAltDifWeather->setSizePolicy(sizePolicy8);
         sbTMinAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbTMinAltDifWeather->setValue(20);
+        sbTMinAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbTMinAltDifWeather, 3, 3, 1, 1);
 
@@ -3398,7 +3381,7 @@ public:
         sizePolicy8.setHeightForWidth(sbTMaxAltDifWeather->sizePolicy().hasHeightForWidth());
         sbTMaxAltDifWeather->setSizePolicy(sizePolicy8);
         sbTMaxAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbTMaxAltDifWeather->setValue(20);
+        sbTMaxAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbTMaxAltDifWeather, 4, 3, 1, 1);
 
@@ -3461,7 +3444,7 @@ public:
         sizePolicy8.setHeightForWidth(sbRelHumidityAltDifWeather->sizePolicy().hasHeightForWidth());
         sbRelHumidityAltDifWeather->setSizePolicy(sizePolicy8);
         sbRelHumidityAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbRelHumidityAltDifWeather->setValue(20);
+        sbRelHumidityAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbRelHumidityAltDifWeather, 5, 3, 1, 1);
 
@@ -3525,7 +3508,7 @@ public:
         sizePolicy8.setHeightForWidth(sbWindSpeedAltDifWeather->sizePolicy().hasHeightForWidth());
         sbWindSpeedAltDifWeather->setSizePolicy(sizePolicy8);
         sbWindSpeedAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbWindSpeedAltDifWeather->setValue(20);
+        sbWindSpeedAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbWindSpeedAltDifWeather, 6, 3, 1, 1);
 
@@ -3589,7 +3572,7 @@ public:
         sizePolicy8.setHeightForWidth(sbGlobalRadiationAltDifWeather->sizePolicy().hasHeightForWidth());
         sbGlobalRadiationAltDifWeather->setSizePolicy(sizePolicy8);
         sbGlobalRadiationAltDifWeather->setMaximumSize(QSize(50, 16777215));
-        sbGlobalRadiationAltDifWeather->setValue(20);
+        sbGlobalRadiationAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbGlobalRadiationAltDifWeather, 7, 3, 1, 1);
 
@@ -3684,7 +3667,7 @@ public:
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
         rbLeafWetnessWeatherMeasured = new QRadioButton(gbxWeather);
         rbLeafWetnessWeatherMeasured->setObjectName(QStringLiteral("rbLeafWetnessWeatherMeasured"));
-        rbLeafWetnessWeatherMeasured->setChecked(true);
+        rbLeafWetnessWeatherMeasured->setChecked(false);
         rbLeafWetnessWeatherMeasured->setAutoExclusive(false);
 
         horizontalLayout_9->addWidget(rbLeafWetnessWeatherMeasured);
@@ -3714,6 +3697,7 @@ public:
         sizePolicy8.setHeightForWidth(sbLeafWetnessAltDifWeather->sizePolicy().hasHeightForWidth());
         sbLeafWetnessAltDifWeather->setSizePolicy(sizePolicy8);
         sbLeafWetnessAltDifWeather->setMaximumSize(QSize(50, 16777215));
+        sbLeafWetnessAltDifWeather->setValue(0);
 
         gridLayout_20->addWidget(sbLeafWetnessAltDifWeather, 9, 3, 1, 1);
 
@@ -3982,7 +3966,7 @@ public:
         toolBoxStateVars->setEnabled(true);
         pageCrop = new QWidget();
         pageCrop->setObjectName(QStringLiteral("pageCrop"));
-        pageCrop->setGeometry(QRect(0, 0, 586, 526));
+        pageCrop->setGeometry(QRect(0, 0, 654, 526));
         gridLayout_14 = new QGridLayout(pageCrop);
         gridLayout_14->setSpacing(6);
         gridLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -4218,7 +4202,7 @@ public:
 
         sbSVCropLAIObservations = new QSpinBox(gbxSVCrop);
         sbSVCropLAIObservations->setObjectName(QStringLiteral("sbSVCropLAIObservations"));
-        sbSVCropLAIObservations->setValue(5);
+        sbSVCropLAIObservations->setValue(0);
 
         gridLayoutSVCropInputs->addWidget(sbSVCropLAIObservations, 8, 2, 1, 1);
 
@@ -4231,7 +4215,7 @@ public:
         dsbSVCropNInOrgansLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropNInOrgansLayers->setObjectName(QStringLiteral("dsbSVCropNInOrgansLayers"));
         dsbSVCropNInOrgansLayers->setEnabled(true);
-        dsbSVCropNInOrgansLayers->setValue(1);
+        dsbSVCropNInOrgansLayers->setValue(2);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropNInOrgansLayers, 7, 1, 1, 1);
 
@@ -4249,7 +4233,8 @@ public:
 
         dsbSVCropLAILayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropLAILayers->setObjectName(QStringLiteral("dsbSVCropLAILayers"));
-        dsbSVCropLAILayers->setEnabled(false);
+        dsbSVCropLAILayers->setEnabled(true);
+        dsbSVCropLAILayers->setValue(0);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropLAILayers, 8, 1, 1, 1);
 
@@ -4279,27 +4264,27 @@ public:
 
         dsbSVCropAGrBiomassLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropAGrBiomassLayers->setObjectName(QStringLiteral("dsbSVCropAGrBiomassLayers"));
-        dsbSVCropAGrBiomassLayers->setEnabled(false);
-        dsbSVCropAGrBiomassLayers->setValue(2);
+        dsbSVCropAGrBiomassLayers->setEnabled(true);
+        dsbSVCropAGrBiomassLayers->setValue(1);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropAGrBiomassLayers, 3, 1, 1, 1);
 
         dsbSVCropNInAGrBiomassLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropNInAGrBiomassLayers->setObjectName(QStringLiteral("dsbSVCropNInAGrBiomassLayers"));
-        dsbSVCropNInAGrBiomassLayers->setEnabled(false);
+        dsbSVCropNInAGrBiomassLayers->setEnabled(true);
         dsbSVCropNInAGrBiomassLayers->setValue(1);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropNInAGrBiomassLayers, 6, 1, 1, 1);
 
         sbSVCropNInAGrBiomassObservations = new QSpinBox(gbxSVCrop);
         sbSVCropNInAGrBiomassObservations->setObjectName(QStringLiteral("sbSVCropNInAGrBiomassObservations"));
-        sbSVCropNInAGrBiomassObservations->setValue(4);
+        sbSVCropNInAGrBiomassObservations->setValue(5);
 
         gridLayoutSVCropInputs->addWidget(sbSVCropNInAGrBiomassObservations, 6, 2, 1, 1);
 
         sbSVCropRootBiomassObservations = new QSpinBox(gbxSVCrop);
         sbSVCropRootBiomassObservations->setObjectName(QStringLiteral("sbSVCropRootBiomassObservations"));
-        sbSVCropRootBiomassObservations->setValue(3);
+        sbSVCropRootBiomassObservations->setValue(4);
 
         gridLayoutSVCropInputs->addWidget(sbSVCropRootBiomassObservations, 5, 2, 1, 1);
 
@@ -4350,7 +4335,7 @@ public:
 
         sbSVCropNInOrgansObservations = new QSpinBox(gbxSVCrop);
         sbSVCropNInOrgansObservations->setObjectName(QStringLiteral("sbSVCropNInOrgansObservations"));
-        sbSVCropNInOrgansObservations->setValue(1);
+        sbSVCropNInOrgansObservations->setValue(5);
 
         gridLayoutSVCropInputs->addWidget(sbSVCropNInOrgansObservations, 7, 2, 1, 1);
 
@@ -4361,7 +4346,7 @@ public:
 
         dsbSVCropWeightOrgansLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropWeightOrgansLayers->setObjectName(QStringLiteral("dsbSVCropWeightOrgansLayers"));
-        dsbSVCropWeightOrgansLayers->setValue(3);
+        dsbSVCropWeightOrgansLayers->setValue(2);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropWeightOrgansLayers, 4, 1, 1, 1);
 
@@ -4468,7 +4453,7 @@ public:
         toolBoxStateVars->addItem(pageCrop, QStringLiteral("Crop"));
         pageSoil = new QWidget();
         pageSoil->setObjectName(QStringLiteral("pageSoil"));
-        pageSoil->setGeometry(QRect(0, 0, 586, 526));
+        pageSoil->setGeometry(QRect(0, 0, 654, 526));
         gridLayout_12 = new QGridLayout(pageSoil);
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -4492,6 +4477,8 @@ public:
 
         sbSVSoilSoilWaterSensorCalObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilSoilWaterSensorCalObservations->setObjectName(QStringLiteral("sbSVSoilSoilWaterSensorCalObservations"));
+        sbSVSoilSoilWaterSensorCalObservations->setMaximum(999999);
+        sbSVSoilSoilWaterSensorCalObservations->setValue(300);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilSoilWaterSensorCalObservations, 4, 2, 1, 1);
 
@@ -4503,6 +4490,8 @@ public:
 
         sbSVSoilWaterFluxBottomRootObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilWaterFluxBottomRootObservations->setObjectName(QStringLiteral("sbSVSoilWaterFluxBottomRootObservations"));
+        sbSVSoilWaterFluxBottomRootObservations->setMaximum(999999);
+        sbSVSoilWaterFluxBottomRootObservations->setValue(1);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilWaterFluxBottomRootObservations, 5, 2, 1, 1);
 
@@ -4513,13 +4502,14 @@ public:
 
         dsbSVSoilPressureHeadsReplicates = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilPressureHeadsReplicates->setObjectName(QStringLiteral("dsbSVSoilPressureHeadsReplicates"));
+        dsbSVSoilPressureHeadsReplicates->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilPressureHeadsReplicates, 2, 4, 1, 1);
 
         lblSVSoilPressureHeadsPoints = new QLabel(gbxSVSoil);
         lblSVSoilPressureHeadsPoints->setObjectName(QStringLiteral("lblSVSoilPressureHeadsPoints"));
         lblSVSoilPressureHeadsPoints->setFont(font8);
-        lblSVSoilPressureHeadsPoints->setText(QStringLiteral("0"));
+        lblSVSoilPressureHeadsPoints->setText(QStringLiteral("3"));
         lblSVSoilPressureHeadsPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilPressureHeadsPoints, 2, 5, 1, 1);
@@ -4532,18 +4522,21 @@ public:
 
         sbSVSoilNMinObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilNMinObservations->setObjectName(QStringLiteral("sbSVSoilNMinObservations"));
+        sbSVSoilNMinObservations->setMaximum(999999);
+        sbSVSoilNMinObservations->setValue(6);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilNMinObservations, 3, 2, 1, 1);
 
         dsbSVSoilNMinReplicates = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilNMinReplicates->setObjectName(QStringLiteral("dsbSVSoilNMinReplicates"));
+        dsbSVSoilNMinReplicates->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilNMinReplicates, 3, 4, 1, 1);
 
         lblSVSoilNMinPoints = new QLabel(gbxSVSoil);
         lblSVSoilNMinPoints->setObjectName(QStringLiteral("lblSVSoilNMinPoints"));
         lblSVSoilNMinPoints->setFont(font8);
-        lblSVSoilNMinPoints->setText(QStringLiteral("0"));
+        lblSVSoilNMinPoints->setText(QStringLiteral("3.6"));
         lblSVSoilNMinPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilNMinPoints, 3, 5, 1, 1);
@@ -4556,13 +4549,14 @@ public:
 
         dsbSVSoilSoilWaterSensorCalReplicates = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterSensorCalReplicates->setObjectName(QStringLiteral("dsbSVSoilSoilWaterSensorCalReplicates"));
+        dsbSVSoilSoilWaterSensorCalReplicates->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterSensorCalReplicates, 4, 4, 1, 1);
 
         lblSVSoilSoilWaterSensorCalPoints = new QLabel(gbxSVSoil);
         lblSVSoilSoilWaterSensorCalPoints->setObjectName(QStringLiteral("lblSVSoilSoilWaterSensorCalPoints"));
         lblSVSoilSoilWaterSensorCalPoints->setFont(font8);
-        lblSVSoilSoilWaterSensorCalPoints->setText(QStringLiteral("0"));
+        lblSVSoilSoilWaterSensorCalPoints->setText(QStringLiteral("3.6"));
         lblSVSoilSoilWaterSensorCalPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilSoilWaterSensorCalPoints, 4, 5, 1, 1);
@@ -4590,6 +4584,8 @@ public:
 
         sbSVSoilPressureHeadsObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilPressureHeadsObservations->setObjectName(QStringLiteral("sbSVSoilPressureHeadsObservations"));
+        sbSVSoilPressureHeadsObservations->setMaximum(999999);
+        sbSVSoilPressureHeadsObservations->setValue(100);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilPressureHeadsObservations, 2, 2, 1, 1);
 
@@ -4602,18 +4598,21 @@ public:
 
         sbSVSoilSoilWaterGravObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilSoilWaterGravObservations->setObjectName(QStringLiteral("sbSVSoilSoilWaterGravObservations"));
+        sbSVSoilSoilWaterGravObservations->setMaximum(999999);
+        sbSVSoilSoilWaterGravObservations->setValue(6);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilSoilWaterGravObservations, 1, 2, 1, 1);
 
         dsbSVSoilSoilWaterGravReplicates = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterGravReplicates->setObjectName(QStringLiteral("dsbSVSoilSoilWaterGravReplicates"));
+        dsbSVSoilSoilWaterGravReplicates->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterGravReplicates, 1, 4, 1, 1);
 
         lblSVSoilSoilWaterGravPoints = new QLabel(gbxSVSoil);
         lblSVSoilSoilWaterGravPoints->setObjectName(QStringLiteral("lblSVSoilSoilWaterGravPoints"));
         lblSVSoilSoilWaterGravPoints->setFont(font8);
-        lblSVSoilSoilWaterGravPoints->setText(QStringLiteral("0"));
+        lblSVSoilSoilWaterGravPoints->setText(QStringLiteral("3.6"));
         lblSVSoilSoilWaterGravPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilSoilWaterGravPoints, 1, 5, 1, 1);
@@ -4654,6 +4653,8 @@ public:
 
         sbSVSoilNFluxBottomRootObservations = new QSpinBox(gbxSVSoil);
         sbSVSoilNFluxBottomRootObservations->setObjectName(QStringLiteral("sbSVSoilNFluxBottomRootObservations"));
+        sbSVSoilNFluxBottomRootObservations->setMaximum(999999);
+        sbSVSoilNFluxBottomRootObservations->setValue(1);
 
         gridLayoutSVSoilInputs->addWidget(sbSVSoilNFluxBottomRootObservations, 6, 2, 1, 1);
 
@@ -4685,22 +4686,26 @@ public:
 
         dsbSVSoilSoilWaterGravLayers = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterGravLayers->setObjectName(QStringLiteral("dsbSVSoilSoilWaterGravLayers"));
+        dsbSVSoilSoilWaterGravLayers->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterGravLayers, 1, 1, 1, 1);
 
         dsbSVSoilPressureHeadsLayers = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilPressureHeadsLayers->setObjectName(QStringLiteral("dsbSVSoilPressureHeadsLayers"));
+        dsbSVSoilPressureHeadsLayers->setValue(5);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilPressureHeadsLayers, 2, 1, 1, 1);
 
         dsbSVSoilNMinLayers = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilNMinLayers->setObjectName(QStringLiteral("dsbSVSoilNMinLayers"));
+        dsbSVSoilNMinLayers->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilNMinLayers, 3, 1, 1, 1);
 
         dsbSVSoilSoilWaterSensorCalLayers = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterSensorCalLayers->setObjectName(QStringLiteral("dsbSVSoilSoilWaterSensorCalLayers"));
         dsbSVSoilSoilWaterSensorCalLayers->setEnabled(false);
+        dsbSVSoilSoilWaterSensorCalLayers->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterSensorCalLayers, 4, 1, 1, 1);
 
@@ -4718,31 +4723,37 @@ public:
 
         dsbSVSoilNFluxBottomRootWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilNFluxBottomRootWeightPts->setObjectName(QStringLiteral("dsbSVSoilNFluxBottomRootWeightPts"));
+        dsbSVSoilNFluxBottomRootWeightPts->setValue(2);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilNFluxBottomRootWeightPts, 6, 3, 1, 1);
 
         dsbSVSoilWaterFluxBottomRootWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilWaterFluxBottomRootWeightPts->setObjectName(QStringLiteral("dsbSVSoilWaterFluxBottomRootWeightPts"));
+        dsbSVSoilWaterFluxBottomRootWeightPts->setValue(2);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilWaterFluxBottomRootWeightPts, 5, 3, 1, 1);
 
         dsbSVSoilSoilWaterSensorCalWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterSensorCalWeightPts->setObjectName(QStringLiteral("dsbSVSoilSoilWaterSensorCalWeightPts"));
+        dsbSVSoilSoilWaterSensorCalWeightPts->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterSensorCalWeightPts, 4, 3, 1, 1);
 
         dsbSVSoilNMinWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilNMinWeightPts->setObjectName(QStringLiteral("dsbSVSoilNMinWeightPts"));
+        dsbSVSoilNMinWeightPts->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilNMinWeightPts, 3, 3, 1, 1);
 
         dsbSVSoilPressureHeadsWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilPressureHeadsWeightPts->setObjectName(QStringLiteral("dsbSVSoilPressureHeadsWeightPts"));
+        dsbSVSoilPressureHeadsWeightPts->setValue(2);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilPressureHeadsWeightPts, 2, 3, 1, 1);
 
         dsbSVSoilSoilWaterGravWeightPts = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterGravWeightPts->setObjectName(QStringLiteral("dsbSVSoilSoilWaterGravWeightPts"));
+        dsbSVSoilSoilWaterGravWeightPts->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterGravWeightPts, 1, 3, 1, 1);
 
@@ -4880,7 +4891,7 @@ public:
         toolBoxStateVars->addItem(pageSoil, QStringLiteral("Soil"));
         surfaceFluxesPage = new QWidget();
         surfaceFluxesPage->setObjectName(QStringLiteral("surfaceFluxesPage"));
-        surfaceFluxesPage->setGeometry(QRect(0, 0, 586, 526));
+        surfaceFluxesPage->setGeometry(QRect(0, 0, 654, 526));
         gridLayout_15 = new QGridLayout(surfaceFluxesPage);
         gridLayout_15->setSpacing(6);
         gridLayout_15->setContentsMargins(11, 11, 11, 11);
@@ -4898,11 +4909,13 @@ public:
         gridLayoutSVSurfaceFluxesInputs->setObjectName(QStringLiteral("gridLayoutSVSurfaceFluxesInputs"));
         dsbSVSurfaceFluxesCh4LossReplicates = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesCh4LossReplicates->setObjectName(QStringLiteral("dsbSVSurfaceFluxesCh4LossReplicates"));
+        dsbSVSurfaceFluxesCh4LossReplicates->setEnabled(false);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesCh4LossReplicates, 5, 4, 1, 1);
 
         dsbSVSurfaceFluxesN2LossReplicates = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesN2LossReplicates->setObjectName(QStringLiteral("dsbSVSurfaceFluxesN2LossReplicates"));
+        dsbSVSurfaceFluxesN2LossReplicates->setEnabled(false);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesN2LossReplicates, 4, 4, 1, 1);
 
@@ -4927,11 +4940,13 @@ public:
 
         sbSVSurfaceFluxesEtObservations = new QSpinBox(gbxSVSurfaceFluxes);
         sbSVSurfaceFluxesEtObservations->setObjectName(QStringLiteral("sbSVSurfaceFluxesEtObservations"));
+        sbSVSurfaceFluxesEtObservations->setValue(1);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(sbSVSurfaceFluxesEtObservations, 1, 2, 1, 1);
 
         dsbSVSurfaceFluxesNh3LossReplicates = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesNh3LossReplicates->setObjectName(QStringLiteral("dsbSVSurfaceFluxesNh3LossReplicates"));
+        dsbSVSurfaceFluxesNh3LossReplicates->setEnabled(false);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesNh3LossReplicates, 2, 4, 1, 1);
 
@@ -4964,6 +4979,7 @@ public:
 
         dsbSVSurfaceFluxesEtReplicates = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesEtReplicates->setObjectName(QStringLiteral("dsbSVSurfaceFluxesEtReplicates"));
+        dsbSVSurfaceFluxesEtReplicates->setEnabled(false);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesEtReplicates, 1, 4, 1, 1);
 
@@ -4976,6 +4992,7 @@ public:
 
         dsbSVSurfaceFluxesN2OLossReplicates = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesN2OLossReplicates->setObjectName(QStringLiteral("dsbSVSurfaceFluxesN2OLossReplicates"));
+        dsbSVSurfaceFluxesN2OLossReplicates->setEnabled(false);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesN2OLossReplicates, 3, 4, 1, 1);
 
@@ -5008,11 +5025,13 @@ public:
 
         sbSVSurfaceFluxesN2LossObservations = new QSpinBox(gbxSVSurfaceFluxes);
         sbSVSurfaceFluxesN2LossObservations->setObjectName(QStringLiteral("sbSVSurfaceFluxesN2LossObservations"));
+        sbSVSurfaceFluxesN2LossObservations->setValue(1);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(sbSVSurfaceFluxesN2LossObservations, 4, 2, 1, 1);
 
         sbSVSurfaceFluxesN2OLossObservations = new QSpinBox(gbxSVSurfaceFluxes);
         sbSVSurfaceFluxesN2OLossObservations->setObjectName(QStringLiteral("sbSVSurfaceFluxesN2OLossObservations"));
+        sbSVSurfaceFluxesN2OLossObservations->setValue(1);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(sbSVSurfaceFluxesN2OLossObservations, 3, 2, 1, 1);
 
@@ -5025,6 +5044,7 @@ public:
 
         sbSVSurfaceFluxesCh4LossObservations = new QSpinBox(gbxSVSurfaceFluxes);
         sbSVSurfaceFluxesCh4LossObservations->setObjectName(QStringLiteral("sbSVSurfaceFluxesCh4LossObservations"));
+        sbSVSurfaceFluxesCh4LossObservations->setValue(1);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(sbSVSurfaceFluxesCh4LossObservations, 5, 2, 1, 1);
 
@@ -5037,6 +5057,7 @@ public:
 
         sbSVSurfaceFluxesNh3LossObservations = new QSpinBox(gbxSVSurfaceFluxes);
         sbSVSurfaceFluxesNh3LossObservations->setObjectName(QStringLiteral("sbSVSurfaceFluxesNh3LossObservations"));
+        sbSVSurfaceFluxesNh3LossObservations->setValue(1);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(sbSVSurfaceFluxesNh3LossObservations, 2, 2, 1, 1);
 
@@ -5099,26 +5120,31 @@ public:
 
         dsbSVSurfaceFluxesEtWeightPts = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesEtWeightPts->setObjectName(QStringLiteral("dsbSVSurfaceFluxesEtWeightPts"));
+        dsbSVSurfaceFluxesEtWeightPts->setValue(3);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesEtWeightPts, 1, 3, 1, 1);
 
         dsbSVSurfaceFluxesNh3LossWeightPts = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesNh3LossWeightPts->setObjectName(QStringLiteral("dsbSVSurfaceFluxesNh3LossWeightPts"));
+        dsbSVSurfaceFluxesNh3LossWeightPts->setValue(2);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesNh3LossWeightPts, 2, 3, 1, 1);
 
         dsbSVSurfaceFluxesN2OLossWeightPts = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesN2OLossWeightPts->setObjectName(QStringLiteral("dsbSVSurfaceFluxesN2OLossWeightPts"));
+        dsbSVSurfaceFluxesN2OLossWeightPts->setValue(2);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesN2OLossWeightPts, 3, 3, 1, 1);
 
         dsbSVSurfaceFluxesN2LossWeightPts = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesN2LossWeightPts->setObjectName(QStringLiteral("dsbSVSurfaceFluxesN2LossWeightPts"));
+        dsbSVSurfaceFluxesN2LossWeightPts->setValue(2);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesN2LossWeightPts, 4, 3, 1, 1);
 
         dsbSVSurfaceFluxesCh4LossWeightPts = new QDoubleSpinBox(gbxSVSurfaceFluxes);
         dsbSVSurfaceFluxesCh4LossWeightPts->setObjectName(QStringLiteral("dsbSVSurfaceFluxesCh4LossWeightPts"));
+        dsbSVSurfaceFluxesCh4LossWeightPts->setValue(2);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(dsbSVSurfaceFluxesCh4LossWeightPts, 5, 3, 1, 1);
 
@@ -5257,7 +5283,7 @@ public:
         toolBoxStateVars->addItem(surfaceFluxesPage, QStringLiteral("Surface Fluxes"));
         pageObservations = new QWidget();
         pageObservations->setObjectName(QStringLiteral("pageObservations"));
-        pageObservations->setGeometry(QRect(0, 0, 586, 526));
+        pageObservations->setGeometry(QRect(0, 0, 654, 526));
         gridLayout_16 = new QGridLayout(pageObservations);
         gridLayout_16->setSpacing(6);
         gridLayout_16->setContentsMargins(11, 11, 11, 11);
@@ -5314,6 +5340,7 @@ public:
 
         sbSVObservationsPestsOrDiseasesObservations = new QSpinBox(gbxSVObservations);
         sbSVObservationsPestsOrDiseasesObservations->setObjectName(QStringLiteral("sbSVObservationsPestsOrDiseasesObservations"));
+        sbSVObservationsPestsOrDiseasesObservations->setValue(1);
 
         gridLayoutSVObservationsInputs->addWidget(sbSVObservationsPestsOrDiseasesObservations, 2, 2, 1, 1);
 
@@ -5325,6 +5352,7 @@ public:
 
         sbSVObservationsDamagesObservations = new QSpinBox(gbxSVObservations);
         sbSVObservationsDamagesObservations->setObjectName(QStringLiteral("sbSVObservationsDamagesObservations"));
+        sbSVObservationsDamagesObservations->setValue(1);
 
         gridLayoutSVObservationsInputs->addWidget(sbSVObservationsDamagesObservations, 3, 2, 1, 1);
 
@@ -5358,6 +5386,7 @@ public:
 
         sbSVObservationsLodgingObservations = new QSpinBox(gbxSVObservations);
         sbSVObservationsLodgingObservations->setObjectName(QStringLiteral("sbSVObservationsLodgingObservations"));
+        sbSVObservationsLodgingObservations->setValue(1);
 
         gridLayoutSVObservationsInputs->addWidget(sbSVObservationsLodgingObservations, 1, 2, 1, 1);
 
@@ -5421,16 +5450,19 @@ public:
 
         dsbSVObservationsLodgingWeightPts = new QDoubleSpinBox(gbxSVObservations);
         dsbSVObservationsLodgingWeightPts->setObjectName(QStringLiteral("dsbSVObservationsLodgingWeightPts"));
+        dsbSVObservationsLodgingWeightPts->setValue(3);
 
         gridLayoutSVObservationsInputs->addWidget(dsbSVObservationsLodgingWeightPts, 1, 3, 1, 1);
 
         dsbSVObservationsPestsOrDiseasesWeightPts = new QDoubleSpinBox(gbxSVObservations);
         dsbSVObservationsPestsOrDiseasesWeightPts->setObjectName(QStringLiteral("dsbSVObservationsPestsOrDiseasesWeightPts"));
+        dsbSVObservationsPestsOrDiseasesWeightPts->setValue(3);
 
         gridLayoutSVObservationsInputs->addWidget(dsbSVObservationsPestsOrDiseasesWeightPts, 2, 3, 1, 1);
 
         dsbSVObservationsDamagesWeightPts = new QDoubleSpinBox(gbxSVObservations);
         dsbSVObservationsDamagesWeightPts->setObjectName(QStringLiteral("dsbSVObservationsDamagesWeightPts"));
+        dsbSVObservationsDamagesWeightPts->setValue(3);
 
         gridLayoutSVObservationsInputs->addWidget(dsbSVObservationsDamagesWeightPts, 3, 3, 1, 1);
 
@@ -6092,7 +6124,28 @@ public:
 
         tabWidgetDataClassification->addTab(tabSeasons, QString());
 
-        gridLayout_6->addWidget(tabWidgetDataClassification, 1, 0, 1, 1);
+        gridLayout_2->addWidget(tabWidgetDataClassification, 0, 0, 1, 2);
+
+        lblUser = new QLabel(centralWidget);
+        lblUser->setObjectName(QStringLiteral("lblUser"));
+
+        gridLayout_2->addWidget(lblUser, 1, 0, 1, 1);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 1, 1, 1, 1);
+
+        cbUser = new QComboBox(centralWidget);
+        cbUser->setObjectName(QStringLiteral("cbUser"));
+
+        gridLayout_2->addWidget(cbUser, 2, 0, 1, 1);
+
+        pbAuthenticate = new QPushButton(centralWidget);
+        pbAuthenticate->setObjectName(QStringLiteral("pbAuthenticate"));
+        pbAuthenticate->setMaximumSize(QSize(110, 16777215));
+
+        gridLayout_2->addWidget(pbAuthenticate, 2, 1, 1, 1);
 
         DatasetClassification->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(DatasetClassification);
@@ -6108,8 +6161,8 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(0);
-        toolBoxStateVars->setCurrentIndex(3);
+        tabWidgetDataClassification->setCurrentIndex(7);
+        toolBoxStateVars->setCurrentIndex(2);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
         cbSeasonsTreatment5->setCurrentIndex(4);
@@ -6124,14 +6177,6 @@ public:
     void retranslateUi(QMainWindow *DatasetClassification)
     {
         DatasetClassification->setWindowTitle(QApplication::translate("DatasetClassification", "DatasetClassification", 0));
-        pushButton->setText(QApplication::translate("DatasetClassification", "Update", 0));
-        cbUser->clear();
-        cbUser->insertItems(0, QStringList()
-         << QApplication::translate("DatasetClassification", "If not listed, select Register", 0)
-         << QApplication::translate("DatasetClassification", "Register", 0)
-        );
-        lblUser->setText(QApplication::translate("DatasetClassification", "User", 0));
-        pbAuthenticate->setText(QApplication::translate("DatasetClassification", "Authenticate", 0));
         gbxManagement->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblMgmtPoints->setText(QApplication::translate("DatasetClassification", "Points", 0));
 #ifndef QT_NO_TOOLTIP
@@ -6153,18 +6198,18 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbIrrigationObsMgmt->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblIrrigationRating->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblIrrigationRating->setText(QApplication::translate("DatasetClassification", "5", 0));
 #ifndef QT_NO_TOOLTIP
         sbSeedDensityObsMgmt->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblFertilisationRating->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblHarvestRating->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblCombinedTotal->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblFertilisationRating->setText(QApplication::translate("DatasetClassification", "5", 0));
+        lblHarvestRating->setText(QApplication::translate("DatasetClassification", "5", 0));
+        lblCombinedTotal->setText(QApplication::translate("DatasetClassification", "28", 0));
 #ifndef QT_NO_TOOLTIP
         chbxTillage->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         chbxTillage->setText(QApplication::translate("DatasetClassification", "Tillage ", 0));
-        lblTillageRating->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblTillageRating->setText(QApplication::translate("DatasetClassification", "2", 0));
         lblCombined->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
 #ifndef QT_NO_TOOLTIP
         sbTillageObsMgmt->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
@@ -6177,12 +6222,12 @@ public:
         chbxSeedDensity->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         chbxSeedDensity->setText(QApplication::translate("DatasetClassification", "Seed Density ", 0));
-        lblSeedDensityRating->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSeedDensityRating->setText(QApplication::translate("DatasetClassification", "3", 0));
 #ifndef QT_NO_TOOLTIP
         chbxHarvest->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         chbxHarvest->setText(QApplication::translate("DatasetClassification", "Harvest ", 0));
-        lblSowingRating->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSowingRating->setText(QApplication::translate("DatasetClassification", "5", 0));
 #ifndef QT_NO_TOOLTIP
         sbHarvestObsMgmt->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6193,7 +6238,7 @@ public:
         chbxVariety->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         chbxVariety->setText(QApplication::translate("DatasetClassification", "Variety ", 0));
-        lblVarietyRating->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblVarietyRating->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblMedalManagement->setText(QString());
         lblRankingManagement->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         lblManagementBronzeMinVal->setText(QApplication::translate("DatasetClassification", "15", 0));
@@ -6225,7 +6270,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbEmergenceObsPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblEmergenceRatingPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblEmergenceRatingPhenology->setText(QApplication::translate("DatasetClassification", "3", 0));
 #ifndef QT_NO_TOOLTIP
         chbxStemElongationPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6233,7 +6278,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbStemElongationObsPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblStemElongationRatingPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblStemElongationRatingPhenology->setText(QApplication::translate("DatasetClassification", "2", 0));
 #ifndef QT_NO_TOOLTIP
         chbxEarEmergencePhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6241,7 +6286,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbEarEmergenceObsPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblEarEmergenceRatingPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblEarEmergenceRatingPhenology->setText(QApplication::translate("DatasetClassification", "2", 0));
 #ifndef QT_NO_TOOLTIP
         chbxFloweringPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6249,7 +6294,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbFloweringObsPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblFloweringRatingPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblFloweringRatingPhenology->setText(QApplication::translate("DatasetClassification", "5", 0));
 #ifndef QT_NO_TOOLTIP
         chbxYellowRipenessPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6257,9 +6302,9 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbYellowRipenessObsPhenology->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblYellowRipenessRatingPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblYellowRipenessRatingPhenology->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblCombinedPhenology->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
-        lblCombinedTotalPhenology->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblCombinedTotalPhenology->setText(QApplication::translate("DatasetClassification", "15", 0));
         txbrPhenology->setHtml(QApplication::translate("DatasetClassification", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -6277,7 +6322,7 @@ public:
         lblRankingPhenology->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabPhenology), QApplication::translate("DatasetClassification", "Phenology", 0));
         gbxPrevCrop->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
-        lblResidueMgmtRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblResidueMgmtRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "4", 0));
 #ifndef QT_NO_TOOLTIP
         chbxYieldPrevCrop->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6327,17 +6372,17 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbIrrigationObsPrevCrop->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblHarvestDateRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblFertilisationRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblCropRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblYieldRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblSowingDateRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblIrrigationRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblHarvestDateRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "3", 0));
+        lblFertilisationRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "3", 0));
+        lblCropRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "3", 0));
+        lblYieldRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "2", 0));
+        lblSowingDateRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "2", 0));
+        lblIrrigationRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "2", 0));
         lblMgmtMinData_3->setText(QApplication::translate("DatasetClassification", "Check for min. data", 0));
         lblMgmtObservations_3->setText(QApplication::translate("DatasetClassification", "Observations", 0));
         lblMgmtPoints_3->setText(QApplication::translate("DatasetClassification", "Points", 0));
         lblCombinedPrevCrop->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
-        lblOverallRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "19", 0));
         txbrPrevCrop->setHtml(QApplication::translate("DatasetClassification", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -6355,14 +6400,14 @@ public:
         lblRankingPrevCrop->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabPrevCrop), QApplication::translate("DatasetClassification", "Prev. Crop", 0));
         gbxInitialValues->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
-        lblOverallRatingInitialValues->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingInitialValues->setText(QApplication::translate("DatasetClassification", "8.64", 0));
         lblCombinedInitialValues->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
         lblInitialValuesMinData->setText(QApplication::translate("DatasetClassification", "Check for min. data", 0));
-        lblSoilMoistureRatingInitialValues->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSoilMoistureRatingInitialValues->setText(QApplication::translate("DatasetClassification", "4.32", 0));
 #ifndef QT_NO_TOOLTIP
         sbNMinObsInitialValues->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblNMinRatingInitialValues->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblNMinRatingInitialValues->setText(QApplication::translate("DatasetClassification", "4.32", 0));
 #ifndef QT_NO_TOOLTIP
         sbSoilMoistureObsInitialValues->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6379,6 +6424,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         dsbNMinDepthInitialValues->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
+        label_4->setText(QApplication::translate("DatasetClassification", "Depth(m)", 0));
         lblInitialValuesPlatinumMin->setText(QApplication::translate("DatasetClassification", "Platinum Minimum: ", 0));
         lblInitialValuesPlatinumMinVal->setText(QApplication::translate("DatasetClassification", "10", 0));
         lblInitialValuesGoldMin->setText(QApplication::translate("DatasetClassification", "Gold Minimum: ", 0));
@@ -6415,15 +6461,15 @@ public:
 #endif // QT_NO_TOOLTIP
         chbxBulkDensitySoil->setText(QApplication::translate("DatasetClassification", "Bulk Density", 0));
         lblNOrgRatingSoil->setText(QApplication::translate("DatasetClassification", "4.5", 0));
-        lblBulkDensityRatingSoil->setText(QApplication::translate("DatasetClassification", "3.75", 0));
-        lblWiltingPointRatingSoil->setText(QApplication::translate("DatasetClassification", "3.75", 0));
-        lblTextureRatingSoil->setText(QApplication::translate("DatasetClassification", "6.25", 0));
-        lblFieldCapacityRatingSoil->setText(QApplication::translate("DatasetClassification", "3.75", 0));
-        lblPhRatingSoil->setText(QApplication::translate("DatasetClassification", "2", 0));
+        lblBulkDensityRatingSoil->setText(QApplication::translate("DatasetClassification", "1.8", 0));
+        lblWiltingPointRatingSoil->setText(QApplication::translate("DatasetClassification", "1.8", 0));
+        lblTextureRatingSoil->setText(QApplication::translate("DatasetClassification", "7.5", 0));
+        lblFieldCapacityRatingSoil->setText(QApplication::translate("DatasetClassification", "1.8", 0));
+        lblPhRatingSoil->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblCombinedSoil->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
         lblPfCurveRatingSoil->setText(QApplication::translate("DatasetClassification", "0", 0));
         chbxPhSoil->setText(QApplication::translate("DatasetClassification", "pH", 0));
-        lblOverallRatingSoil->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingSoil->setText(QApplication::translate("DatasetClassification", "24.9", 0));
 #ifndef QT_NO_TOOLTIP
         chbxFieldCapacitySoil->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -6521,10 +6567,10 @@ public:
         sbLongitudeObservationsSite->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
         lblCombinedSite->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
-        lblOverallRatingSite->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblLongitudeRatingSite->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblAltitudeRatingSite->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblLatitudeRatingSite->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingSite->setText(QApplication::translate("DatasetClassification", "12", 0));
+        lblLongitudeRatingSite->setText(QApplication::translate("DatasetClassification", "3", 0));
+        lblAltitudeRatingSite->setText(QApplication::translate("DatasetClassification", "3", 0));
+        lblLatitudeRatingSite->setText(QApplication::translate("DatasetClassification", "5", 0));
         lblMgmtMinData_6->setText(QApplication::translate("DatasetClassification", "Check for min. data", 0));
         lblMgmtObservations_6->setText(QApplication::translate("DatasetClassification", "Observations", 0));
         lblMgmtObservations_8->setText(QApplication::translate("DatasetClassification", "Weight", 0));
@@ -6535,7 +6581,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbSlopeObservationsSite->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblSlopeRatingSite->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSlopeRatingSite->setText(QApplication::translate("DatasetClassification", "1", 0));
         lblSitePlatinumMin->setText(QApplication::translate("DatasetClassification", "Platinum Minimum: ", 0));
         lblSitePlatinumMinVal->setText(QApplication::translate("DatasetClassification", "12", 0));
         lblSiteGoldMin->setText(QApplication::translate("DatasetClassification", "Gold Minimum: ", 0));
@@ -6569,7 +6615,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblPrecipitationRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblPrecipitationRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblPrecipitationRatingWeather->setText(QApplication::translate("DatasetClassification", "5", 0));
         rbTAveWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxTAveWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6584,7 +6630,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblTAveRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblTAveRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblTAveRatingWeather->setText(QApplication::translate("DatasetClassification", "3", 0));
         rbTMinWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxTMinWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6599,7 +6645,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblTMinRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblTMinRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblTMinRatingWeather->setText(QApplication::translate("DatasetClassification", "5", 0));
         rbTMaxWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxTMaxWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6614,7 +6660,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblTMaxRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblTMaxRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblTMaxRatingWeather->setText(QApplication::translate("DatasetClassification", "5", 0));
         rbRelHumidityWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxRelHumidityWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6629,7 +6675,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblRelHumidityRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblRelHumidityRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblRelHumidityRatingWeather->setText(QApplication::translate("DatasetClassification", "4", 0));
         rbWindSpeedWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxWindSpeedWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6650,7 +6696,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         lblWindSpeedRatingWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblWindSpeedRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblWindSpeedRatingWeather->setText(QApplication::translate("DatasetClassification", "3", 0));
         rbGlobalRadiationWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxGlobalRadiationWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6662,7 +6708,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbGlobalRadiationAltDifWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblGlobalRadiationRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblGlobalRadiationRatingWeather->setText(QApplication::translate("DatasetClassification", "5", 0));
         rbSunshineHoursWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxSunshineHoursWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6674,7 +6720,7 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbSunshineHoursAltDifWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblSunshineHoursRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSunshineHoursRatingWeather->setText(QApplication::translate("DatasetClassification", "3", 0));
         rbLeafWetnessWeatherMeasured->setText(QString());
 #ifndef QT_NO_TOOLTIP
         chbxLeafWetnessWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6698,9 +6744,9 @@ public:
 #ifndef QT_NO_TOOLTIP
         sbSoilTempAltDifWeather->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblSoilTempRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSoilTempRatingWeather->setText(QApplication::translate("DatasetClassification", "2", 0));
         lblCombinedWeather->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
-        lblOverallRatingWeather->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingWeather->setText(QApplication::translate("DatasetClassification", "35", 0));
         txbrWeather->setHtml(QApplication::translate("DatasetClassification", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -6719,7 +6765,7 @@ public:
         lblRankingWeather->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabWeather), QApplication::translate("DatasetClassification", "Weather", 0));
         lblSVTotalPointsHeader->setText(QApplication::translate("DatasetClassification", "SV Total Pts", 0));
-        lblSVTotalPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVTotalPoints->setText(QApplication::translate("DatasetClassification", "55.6", 0));
         lblSVMedalCombined->setText(QString());
         lblSVRankOverall->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         gbxSVCrop->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
@@ -6740,16 +6786,16 @@ public:
         lblSVCropReplicatesHeader->setText(QApplication::translate("DatasetClassification", "Replicates", 0));
         lblSVCropNInAGrBiomassPoints->setText(QApplication::translate("DatasetClassification", "3.6", 0));
         chbxSVCropLAI->setText(QApplication::translate("DatasetClassification", "LAI", 0));
-        lblSVCropLAIPoints->setText(QApplication::translate("DatasetClassification", "4", 0));
-        lblSVCropRootBiomassPoints->setText(QApplication::translate("DatasetClassification", "1", 0));
+        lblSVCropLAIPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVCropRootBiomassPoints->setText(QApplication::translate("DatasetClassification", "1.2", 0));
         chbxSVCropNInOrgans->setText(QApplication::translate("DatasetClassification", "N in organs", 0));
-        lblSVCropNInOrgansPoints->setText(QApplication::translate("DatasetClassification", "1.5", 0));
+        lblSVCropNInOrgansPoints->setText(QApplication::translate("DatasetClassification", "3.6", 0));
         chbxSVCropNInAGrBiomass->setText(QApplication::translate("DatasetClassification", "N in a.gr.biomass", 0));
-        lblOverallRatingSVCrop->setText(QApplication::translate("DatasetClassification", "24.7", 0));
+        lblOverallRatingSVCrop->setText(QApplication::translate("DatasetClassification", "21.8", 0));
         lblSVCropMinDataHeader->setText(QApplication::translate("DatasetClassification", "Min.Data", 0));
         chbxSVCropRootBiomass->setText(QApplication::translate("DatasetClassification", "root biomass", 0));
         lblSVCropAGrBiomassPoints->setText(QApplication::translate("DatasetClassification", "5", 0));
-        lblSVCropWeightOrgansPoints->setText(QApplication::translate("DatasetClassification", "3.6", 0));
+        lblSVCropWeightOrgansPoints->setText(QApplication::translate("DatasetClassification", "2.4", 0));
         chbxSVCropWeightOrgans->setText(QApplication::translate("DatasetClassification", "weight organs", 0));
 #ifndef QT_NO_TOOLTIP
         chbxYield->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Check if Minimum Data</p></body></html>", 0));
@@ -6776,7 +6822,7 @@ public:
         chbxSVSoilSoilWaterGrav->setText(QApplication::translate("DatasetClassification", "soil water grav.", 0));
         chbxSVSoilNFluxBottomRoot->setText(QApplication::translate("DatasetClassification", "N flux bottom root", 0));
         lblCombinedSVSoil->setText(QApplication::translate("DatasetClassification", "Combined", 0));
-        lblOverallRatingSVSoil->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingSVSoil->setText(QApplication::translate("DatasetClassification", "13.8", 0));
         lblMedalSVSoil->setText(QString());
         lblRankingSVSoil->setText(QString());
         lblWeatherPlatinumMinSVSoil->setText(QApplication::translate("DatasetClassification", "Platinum: ", 0));
@@ -6790,23 +6836,23 @@ public:
         toolBoxStateVars->setItemText(toolBoxStateVars->indexOf(pageSoil), QApplication::translate("DatasetClassification", "Soil", 0));
         gbxSVSurfaceFluxes->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         chbxSVSurfaceFluxesN2OLoss->setText(QApplication::translate("DatasetClassification", "N2O Loss", 0));
-        lblSVSurfaceFluxesNh3LossPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVSurfaceFluxesNh3LossPoints->setText(QApplication::translate("DatasetClassification", "2", 0));
         chbxSVSurfaceFluxesCh4Loss->setText(QApplication::translate("DatasetClassification", "CH4 Loss", 0));
         chbxSVSurfaceFluxesEt->setText(QApplication::translate("DatasetClassification", "ET", 0));
-        lblSVSurfaceFluxesN2LossPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVSurfaceFluxesN2LossPoints->setText(QApplication::translate("DatasetClassification", "2", 0));
         lblSVSurfaceFluxesPointsHeader->setText(QApplication::translate("DatasetClassification", "Points", 0));
         lblSVSurfaceFluxesLayersHeader->setText(QApplication::translate("DatasetClassification", "Layers", 0));
         lblSVSurfaceFluxesWeightPtsHeader->setText(QApplication::translate("DatasetClassification", "Weight Pts", 0));
         lblSVSurfaceFluxesObservationsHeader->setText(QApplication::translate("DatasetClassification", "Observations", 0));
         chbxSVSurfaceFluxesNh3Loss->setText(QApplication::translate("DatasetClassification", "NH3 Loss", 0));
         lblSVSurfaceFluxesReplicatesHeader->setText(QApplication::translate("DatasetClassification", "Replicates", 0));
-        lblSVSurfaceFluxesEtPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVSurfaceFluxesEtPoints->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblSVSurfaceFluxesMinDataHeader->setText(QApplication::translate("DatasetClassification", "Min.Data", 0));
-        lblSVSurfaceFluxesN2OLossPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVSurfaceFluxesN2OLossPoints->setText(QApplication::translate("DatasetClassification", "2", 0));
         chbxSVSurfaceFluxesN2Loss->setText(QApplication::translate("DatasetClassification", "N2 Loss", 0));
-        lblSVSurfaceFluxesCh4LossPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVSurfaceFluxesCh4LossPoints->setText(QApplication::translate("DatasetClassification", "2", 0));
         lblCombinedSVSurfaceFluxes->setText(QApplication::translate("DatasetClassification", "Combined", 0));
-        lblOverallRatingSVSurfaceFluxes->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingSVSurfaceFluxes->setText(QApplication::translate("DatasetClassification", "11", 0));
         lblMedalSVSurfaceFluxes->setText(QString());
         lblRankingSVSurfaceFluxes->setText(QString());
         lblWeatherPlatinumMinSVSurfaceFluxes->setText(QApplication::translate("DatasetClassification", "Platinum: ", 0));
@@ -6819,20 +6865,20 @@ public:
         lblWeatherBronzeMinValSVSurfaceFluxes->setText(QApplication::translate("DatasetClassification", "6", 0));
         toolBoxStateVars->setItemText(toolBoxStateVars->indexOf(surfaceFluxesPage), QApplication::translate("DatasetClassification", "Surface Fluxes", 0));
         gbxSVObservations->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
-        lblSVObservationsPestsOrDiseasesPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVObservationsPestsOrDiseasesPoints->setText(QApplication::translate("DatasetClassification", "3", 0));
         chbxSVObservationsDamages->setText(QApplication::translate("DatasetClassification", "Damages", 0));
-        lblSVObservationsLodgingPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVObservationsLodgingPoints->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblSVObservationsObservationsHeader->setText(QApplication::translate("DatasetClassification", "Observations", 0));
         chbxSVObservationsPestsOrDiseases->setText(QApplication::translate("DatasetClassification", "Pests/Diseases", 0));
         chbxSVObservationsLodging->setText(QApplication::translate("DatasetClassification", "Lodging", 0));
-        lblSVObservationsDamagesPoints->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSVObservationsDamagesPoints->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblSVObservationsMinDataHeader->setText(QApplication::translate("DatasetClassification", "Min.Data", 0));
         lblSVObservationsWeightPtsHeader->setText(QApplication::translate("DatasetClassification", "Weight Pts", 0));
         lblSVObservationsLayersHeader->setText(QApplication::translate("DatasetClassification", "Layers", 0));
         lblSVObservationsPointsHeader->setText(QApplication::translate("DatasetClassification", "Points", 0));
         lblSVObservationsReplicatesHeader->setText(QApplication::translate("DatasetClassification", "Replicates", 0));
         lblCombinedSVObservations->setText(QApplication::translate("DatasetClassification", "Combined", 0));
-        lblOverallRatingSVObservations->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblOverallRatingSVObservations->setText(QApplication::translate("DatasetClassification", "9", 0));
         lblMedalSVObservations->setText(QString());
         lblRankingSVObservations->setText(QString());
         lblWeatherPlatinumMinSVObservations->setText(QApplication::translate("DatasetClassification", "Platinum: ", 0));
@@ -7023,6 +7069,14 @@ public:
         lblSeasonsMultiplier->setText(QApplication::translate("DatasetClassification", "Multiplier:", 0));
         lblSeasonsMultiplierTotal->setText(QApplication::translate("DatasetClassification", "0", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabSeasons), QApplication::translate("DatasetClassification", "Seasons", 0));
+        lblUser->setText(QApplication::translate("DatasetClassification", "User", 0));
+        pushButton->setText(QApplication::translate("DatasetClassification", "Update", 0));
+        cbUser->clear();
+        cbUser->insertItems(0, QStringList()
+         << QApplication::translate("DatasetClassification", "If not listed, select Register", 0)
+         << QApplication::translate("DatasetClassification", "Register", 0)
+        );
+        pbAuthenticate->setText(QApplication::translate("DatasetClassification", "Authenticate", 0));
     } // retranslateUi
 
 };

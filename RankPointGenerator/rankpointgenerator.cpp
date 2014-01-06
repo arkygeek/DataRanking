@@ -181,3 +181,10 @@ double RankPointGenerator::SVMethod4(int theObservations, double theWeight)
   myTotal = theObservations * theWeight;
   return myTotal;
 }
+double RankPointGenerator::SVMethod5(int theObservations, double theWeight)
+{
+  // min (observations,1) x weight
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}

@@ -18,7 +18,7 @@ CXXFLAGS      = -pipe -g -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/De
 INCPATH       = -I/Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-clang -I. -I../RankPointGenerator -I/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Users/arkygeek/dev/qt5/qtbase/lib
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6
-LIBS          = $(SUBLIBS) -F/Users/arkygeek/dev/qt5/qtbase/lib -L/Users/arkygeek/QtProjects/DataRanking/Gui/../RankPointGenerator/ -lRankPointGenerator -framework QtWidgets -framework QtGui -framework QtCore -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/arkygeek/dev/qt5/qtbase/lib -L/Users/arkygeek/QtProjects/DataRanking/gui/../RankPointGenerator/ -lRankPointGenerator -framework QtWidgets -framework QtGui -framework QtCore -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 QMAKE         = /Users/arkygeek/dev/qt5/qtbase/bin/qmake
@@ -552,11 +552,11 @@ compiler_rcc_make_all: qrc_Resources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Resources.cpp
 qrc_Resources.cpp: Resources.qrc \
-		Resources/gold.png \
 		Resources/register.png \
-		Resources/silver.png \
 		Resources/platinum.png \
-		Resources/bronze.png
+		Resources/silver.png \
+		Resources/bronze.png \
+		Resources/gold.png
 	/Users/arkygeek/dev/qt5/qtbase/bin/rcc -name Resources Resources.qrc -o qrc_Resources.cpp
 
 compiler_moc_header_make_all: moc_datasetclassification.cpp

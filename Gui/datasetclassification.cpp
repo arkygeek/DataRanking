@@ -2697,14 +2697,15 @@ void DatasetClassification::on_dsbSVSoilNFluxBottomRootReplicates_valueChanged(d
 void DatasetClassification::on_sbSVSurfaceFluxesEtObservations_valueChanged(int theObservations)
 {
   double myWeight;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesEtWeightPts->value();
-  myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
-  myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(theObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
@@ -2713,14 +2714,15 @@ void DatasetClassification::on_sbSVSurfaceFluxesEtObservations_valueChanged(int 
 void DatasetClassification::on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesEtObservations->value();
-  myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
-  myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
+  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, theWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
@@ -2736,7 +2738,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesEtReplicates_valueChanged(doubl
 
   myObservations = ui->sbSVSurfaceFluxesEtObservations->value();
   myWeight = ui->dsbSVSurfaceFluxesEtWeightPts->value();
-  myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
@@ -2746,14 +2749,15 @@ void DatasetClassification::on_dsbSVSurfaceFluxesEtReplicates_valueChanged(doubl
 void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged(int theObservations)
 {
   double myWeight;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesNh3LossWeightPts->value();
-  myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
-  myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(theObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
@@ -2762,14 +2766,15 @@ void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged
 void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesNh3LossObservations->value();
-  myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
-  myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
+  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, theWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
@@ -2785,7 +2790,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(
 
   myObservations = ui->sbSVSurfaceFluxesNh3LossObservations->value();
   myWeight = ui->dsbSVSurfaceFluxesNh3LossWeightPts->value();
-  myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
@@ -2795,14 +2801,15 @@ void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(
 void DatasetClassification::on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations)
 {
   double myWeight;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesN2OLossWeightPts->value();
-  myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
-  myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(theObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
@@ -2811,14 +2818,15 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2OLossObservations_valueChanged
 void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesN2OLossObservations->value();
-  myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
-  myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
+  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, theWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
@@ -2834,7 +2842,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(
 
   myObservations = ui->sbSVSurfaceFluxesN2OLossObservations->value();
   myWeight = ui->dsbSVSurfaceFluxesN2OLossWeightPts->value();
-  myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
@@ -2850,8 +2859,9 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesN2LossWeightPts->value();
-  myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
-  myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVMethod5(theObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
@@ -2860,14 +2870,14 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(
 void DatasetClassification::on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesN2LossObservations->value();
-  myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
-  myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
+  myValue = myPointGen.SVMethod5(myObservations, theWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
@@ -2883,7 +2893,7 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(d
 
   myObservations = ui->sbSVSurfaceFluxesN2LossObservations->value();
   myWeight = ui->dsbSVSurfaceFluxesN2LossWeightPts->value();
-  myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
@@ -2893,14 +2903,14 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(d
 void DatasetClassification::on_sbSVSurfaceFluxesCh4LossObservations_valueChanged(int theObservations)
 {
   double myWeight;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesCh4LossWeightPts->value();
-  myReplicates = ui->dsbSVSurfaceFluxesCh4LossReplicates->value();
-  myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesCh4LossReplicates->value();
+  myValue = myPointGen.SVMethod5(theObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
@@ -2909,14 +2919,14 @@ void DatasetClassification::on_sbSVSurfaceFluxesCh4LossObservations_valueChanged
 void DatasetClassification::on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
-  double myReplicates;
+  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesCh4LossObservations->value();
-  myReplicates = ui->dsbSVSurfaceFluxesCh4LossReplicates->value();
-  myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  //myReplicates = ui->dsbSVSurfaceFluxesCh4LossReplicates->value();
+  myValue = myPointGen.SVMethod5(myObservations, theWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
@@ -2932,12 +2942,14 @@ void DatasetClassification::on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(
 
   myObservations = ui->sbSVSurfaceFluxesCh4LossObservations->value();
   myWeight = ui->dsbSVSurfaceFluxesCh4LossWeightPts->value();
-  myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
+  myValue = myPointGen.SVMethod5(myObservations, myWeight);
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
   updateSVSoilLabels();
 }
+
+
 
 void DatasetClassification::on_sbSVObservationsLodgingObservations_valueChanged(int theObservations)
 {

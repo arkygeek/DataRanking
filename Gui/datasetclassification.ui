@@ -14,62 +14,8 @@
    <string>DatasetClassification</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_6">
-    <item row="2" column="1">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Update</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QComboBox" name="cbUser">
-      <item>
-       <property name="text">
-        <string>If not listed, select Register</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="lblUser">
-      <property name="text">
-       <string>User</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pbAuthenticate">
-      <property name="maximumSize">
-       <size>
-        <width>110</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Authenticate</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <spacer name="verticalSpacer_6">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="1" column="0">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" colspan="2">
      <widget class="QTabWidget" name="tabWidgetDataClassification">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -89,7 +35,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -349,7 +295,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -378,6 +324,9 @@
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item row="4" column="3">
@@ -402,7 +351,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -437,7 +386,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -466,7 +415,7 @@
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>28</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -546,7 +495,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -742,7 +691,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -798,7 +747,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -923,7 +872,7 @@
               <number>1</number>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1395,7 +1344,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1457,7 +1406,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1519,7 +1468,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1584,7 +1533,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1646,7 +1595,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1686,7 +1635,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>15</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2028,7 +1977,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>4</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2324,7 +2273,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2347,7 +2296,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2370,7 +2319,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2393,7 +2342,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2416,7 +2365,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2439,7 +2388,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2522,7 +2471,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>19</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2868,7 +2817,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>8.64</string>
              </property>
             </widget>
            </item>
@@ -2910,7 +2859,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>4.32</string>
              </property>
             </widget>
            </item>
@@ -2920,7 +2869,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>8</number>
+              <number>3</number>
              </property>
             </widget>
            </item>
@@ -2932,7 +2881,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>4.32</string>
              </property>
             </widget>
            </item>
@@ -2942,7 +2891,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>1</number>
+              <number>3</number>
              </property>
             </widget>
            </item>
@@ -3049,7 +2998,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>2.000000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -3059,7 +3008,19 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>0.600000000000000</double>
+              <double>0.900000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Depth(m)</string>
              </property>
             </widget>
            </item>
@@ -3537,7 +3498,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>3.75</string>
+              <string>1.8</string>
              </property>
             </widget>
            </item>
@@ -3549,7 +3510,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>3.75</string>
+              <string>1.8</string>
              </property>
             </widget>
            </item>
@@ -3561,7 +3522,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>6.25</string>
+              <string>7.5</string>
              </property>
             </widget>
            </item>
@@ -3573,7 +3534,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>3.75</string>
+              <string>1.8</string>
              </property>
             </widget>
            </item>
@@ -3585,7 +3546,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>2</string>
+              <string>3</string>
              </property>
             </widget>
            </item>
@@ -3638,7 +3599,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>24.9</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3706,7 +3667,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>3</number>
+              <number>6</number>
              </property>
             </widget>
            </item>
@@ -3751,7 +3712,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>2</number>
+              <number>3</number>
              </property>
             </widget>
            </item>
@@ -3800,7 +3761,7 @@ p, li { white-space: pre-wrap; }
            <item row="10" column="2">
             <widget class="QSpinBox" name="sbPhLayersSoil">
              <property name="value">
-              <number>1</number>
+              <number>3</number>
              </property>
             </widget>
            </item>
@@ -3881,7 +3842,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>2</number>
+              <number>3</number>
              </property>
             </widget>
            </item>
@@ -3941,7 +3902,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>0.600000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -3954,7 +3915,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>0.600000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -3980,7 +3941,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>2.000000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -3993,7 +3954,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>2.000000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -4006,7 +3967,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>2.000000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -4019,7 +3980,7 @@ p, li { white-space: pre-wrap; }
               <double>0.010000000000000</double>
              </property>
              <property name="value">
-              <double>1.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -4032,7 +3993,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>1.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -4042,7 +4003,7 @@ p, li { white-space: pre-wrap; }
               <double>0.100000000000000</double>
              </property>
              <property name="value">
-              <double>0.300000000000000</double>
+              <double>0.900000000000000</double>
              </property>
             </widget>
            </item>
@@ -4522,7 +4483,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>12</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4537,7 +4498,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4555,7 +4516,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4573,7 +4534,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4668,7 +4629,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>1</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4679,7 +4640,11 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="1">
-            <widget class="QSpinBox" name="sbSlopeWeightSite"/>
+            <widget class="QSpinBox" name="sbSlopeWeightSite">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -5203,7 +5168,7 @@ p, li { white-space: pre-wrap; }
               <number>1000</number>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5247,7 +5212,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
             </widget>
            </item>
@@ -5330,7 +5295,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5374,7 +5339,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
             </widget>
            </item>
@@ -5460,7 +5425,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5504,7 +5469,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
             </widget>
            </item>
@@ -5590,7 +5555,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5634,7 +5599,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
             </widget>
            </item>
@@ -5720,7 +5685,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5764,7 +5729,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>4</string>
              </property>
             </widget>
            </item>
@@ -5859,7 +5824,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -5903,7 +5868,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
             </widget>
            </item>
@@ -5992,7 +5957,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="value">
-              <number>20</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -6033,7 +5998,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>5</string>
              </property>
             </widget>
            </item>
@@ -6163,7 +6128,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>3</string>
              </property>
             </widget>
            </item>
@@ -6175,7 +6140,7 @@ p, li { white-space: pre-wrap; }
                 <string/>
                </property>
                <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
                <property name="autoExclusive">
                 <bool>false</bool>
@@ -6241,6 +6206,9 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>0</number>
              </property>
             </widget>
            </item>
@@ -6399,7 +6367,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
             </widget>
            </item>
@@ -6427,7 +6395,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>35</string>
              </property>
             </widget>
            </item>
@@ -6776,7 +6744,7 @@ p, li { white-space: pre-wrap; }
            </font>
           </property>
           <property name="text">
-           <string>0</string>
+           <string>55.6</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -6829,7 +6797,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>2</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -6839,7 +6807,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>586</width>
+             <width>654</width>
              <height>526</height>
             </rect>
            </property>
@@ -7227,7 +7195,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>4</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7242,7 +7210,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>1</string>
+                    <string>1.2</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7264,7 +7232,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>1.5</string>
+                    <string>3.6</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7286,7 +7254,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>24.7</string>
+                    <string>21.8</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7321,7 +7289,7 @@ p, li { white-space: pre-wrap; }
                  <item row="8" column="2">
                   <widget class="QSpinBox" name="sbSVCropLAIObservations">
                    <property name="value">
-                    <number>5</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -7338,7 +7306,7 @@ p, li { white-space: pre-wrap; }
                     <bool>true</bool>
                    </property>
                    <property name="value">
-                    <double>1.000000000000000</double>
+                    <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -7359,7 +7327,10 @@ p, li { white-space: pre-wrap; }
                  <item row="8" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropLAILayers">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
+                   </property>
+                   <property name="value">
+                    <double>0.000000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -7394,17 +7365,17 @@ p, li { white-space: pre-wrap; }
                  <item row="3" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassLayers">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="value">
-                    <double>2.000000000000000</double>
+                    <double>1.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="6" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassLayers">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="value">
                     <double>1.000000000000000</double>
@@ -7414,14 +7385,14 @@ p, li { white-space: pre-wrap; }
                  <item row="6" column="2">
                   <widget class="QSpinBox" name="sbSVCropNInAGrBiomassObservations">
                    <property name="value">
-                    <number>4</number>
+                    <number>5</number>
                    </property>
                   </widget>
                  </item>
                  <item row="5" column="2">
                   <widget class="QSpinBox" name="sbSVCropRootBiomassObservations">
                    <property name="value">
-                    <number>3</number>
+                    <number>4</number>
                    </property>
                   </widget>
                  </item>
@@ -7489,7 +7460,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>3.6</string>
+                    <string>2.4</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7499,7 +7470,7 @@ p, li { white-space: pre-wrap; }
                  <item row="7" column="2">
                   <widget class="QSpinBox" name="sbSVCropNInOrgansObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>5</number>
                    </property>
                   </widget>
                  </item>
@@ -7513,7 +7484,7 @@ p, li { white-space: pre-wrap; }
                  <item row="4" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansLayers">
                    <property name="value">
-                    <double>3.000000000000000</double>
+                    <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -7735,7 +7706,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>586</width>
+             <width>654</width>
              <height>526</height>
             </rect>
            </property>
@@ -7768,7 +7739,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="4" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilSoilWaterSensorCalObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilSoilWaterSensorCalObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>300</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="5" column="0">
                   <widget class="QCheckBox" name="chbxSVSoilWaterFluxBottomRoot">
@@ -7781,13 +7759,24 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilWaterFluxBottomRootObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilWaterFluxBottomRootObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="5" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootReplicates"/>
                  </item>
                  <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsReplicates">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="5">
                   <widget class="QLabel" name="lblSVSoilPressureHeadsPoints">
@@ -7797,7 +7786,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string notr="true">0</string>
+                    <string notr="true">3</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7815,10 +7804,21 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilNMinObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilNMinObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>6</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinReplicates">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="5">
                   <widget class="QLabel" name="lblSVSoilNMinPoints">
@@ -7828,7 +7828,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string notr="true">0</string>
+                    <string notr="true">3.6</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7846,7 +7846,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="4" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalReplicates">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="5">
                   <widget class="QLabel" name="lblSVSoilSoilWaterSensorCalPoints">
@@ -7856,7 +7860,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string notr="true">0</string>
+                    <string notr="true">3.6</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -7909,7 +7913,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilPressureHeadsObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilPressureHeadsObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>100</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="5">
                   <widget class="QLabel" name="lblSVSoilPointsHeader">
@@ -7927,10 +7938,21 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilSoilWaterGravObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilSoilWaterGravObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>6</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravReplicates">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="5">
                   <widget class="QLabel" name="lblSVSoilSoilWaterGravPoints">
@@ -7940,7 +7962,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string notr="true">0</string>
+                    <string notr="true">3.6</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8013,7 +8035,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="6" column="2">
-                  <widget class="QSpinBox" name="sbSVSoilNFluxBottomRootObservations"/>
+                  <widget class="QSpinBox" name="sbSVSoilNFluxBottomRootObservations">
+                   <property name="maximum">
+                    <number>999999</number>
+                   </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="6" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootReplicates"/>
@@ -8053,7 +8082,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>13.8</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8061,18 +8090,33 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravLayers"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravLayers">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsLayers"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsLayers">
+                   <property name="value">
+                    <double>5.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinLayers"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinLayers">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalLayers">
                    <property name="enabled">
                     <bool>false</bool>
+                   </property>
+                   <property name="value">
+                    <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
@@ -8091,22 +8135,46 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="6" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -8418,7 +8486,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>586</width>
+             <width>654</width>
              <height>526</height>
             </rect>
            </property>
@@ -8441,10 +8509,18 @@ p, li { white-space: pre-wrap; }
                <item row="0" column="0" colspan="2">
                 <layout class="QGridLayout" name="gridLayoutSVSurfaceFluxesInputs">
                  <item row="5" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="0">
                   <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
@@ -8464,7 +8540,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>2</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8482,10 +8558,18 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations"/>
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QCheckBox" name="chbxSVSurfaceFluxesEt">
@@ -8505,7 +8589,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>2</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8543,7 +8627,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="3">
                   <widget class="QLabel" name="lblSVSurfaceFluxesWeightPtsHeader">
@@ -8561,7 +8649,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="3" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossReplicates"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="2">
                   <widget class="QLabel" name="lblSVSurfaceFluxesObservationsHeader">
@@ -8611,7 +8703,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>3</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8619,10 +8711,18 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="4" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations"/>
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations"/>
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="0" column="0">
                   <widget class="QLabel" name="lblSVSurfaceFluxesMinDataHeader">
@@ -8640,7 +8740,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations"/>
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="5">
                   <widget class="QLabel" name="lblSVSurfaceFluxesN2OLossPoints">
@@ -8650,7 +8754,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>2</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8658,7 +8762,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations"/>
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="0">
                   <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2Loss">
@@ -8678,7 +8786,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>2</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8708,7 +8816,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>11</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -8751,19 +8859,39 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -9078,7 +9206,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>586</width>
+             <width>654</width>
              <height>526</height>
             </rect>
            </property>
@@ -9108,7 +9236,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>3</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -9140,7 +9268,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>3</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -9173,7 +9301,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVObservationsPestsOrDiseasesObservations"/>
+                  <widget class="QSpinBox" name="sbSVObservationsPestsOrDiseasesObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QCheckBox" name="chbxSVObservationsLodging">
@@ -9186,7 +9318,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVObservationsDamagesObservations"/>
+                  <widget class="QSpinBox" name="sbSVObservationsDamagesObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="5">
                   <widget class="QLabel" name="lblSVObservationsDamagesPoints">
@@ -9196,7 +9332,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>3</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -9249,7 +9385,11 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="2">
-                  <widget class="QSpinBox" name="sbSVObservationsLodgingObservations"/>
+                  <widget class="QSpinBox" name="sbSVObservationsLodgingObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesReplicates">
@@ -9318,7 +9458,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>9</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -9347,13 +9487,25 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -10980,6 +11132,47 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="lblUser">
+      <property name="text">
+       <string>User</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QComboBox" name="cbUser">
+      <item>
+       <property name="text">
+        <string>If not listed, select Register</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pbAuthenticate">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Authenticate</string>
+      </property>
      </widget>
     </item>
    </layout>
