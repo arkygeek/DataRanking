@@ -65,6 +65,19 @@ double SVMethod3(int theObservations, double theWeight, double theLayers, double
 double SVMethod4(int theObservations, double theWeight);
 double SVMethod5(int theObservations, double theWeight);
 
+//seasons
+double SeasonsMethod1(int theNumber, int theWeight);
+double SeasonsMethod2(int theNumber, int theWeight);
+
+  //-----------------------------//
+ //     Overall calculations    //
+//-----------------------------//
+
+double multiplier(int theSeasonsTotal);
+
+QString getRankManagement(int theTotal);
+
+
 };
 
 #endif // RANKPOINTGENERATOR_H

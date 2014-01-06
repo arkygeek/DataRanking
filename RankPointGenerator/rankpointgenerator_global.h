@@ -23,6 +23,7 @@
 #define RANKPOINTGENERATOR_GLOBAL_H
 
 #include <QtCore/qglobal.h>
+#include <QtCore/qstring.h>
 
 #if defined(RANKPOINTGENERATOR_LIBRARY)
 #  define RANKPOINTGENERATORSHARED_EXPORT Q_DECL_EXPORT

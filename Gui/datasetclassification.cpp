@@ -37,6 +37,7 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   updateInitialValuesLabels();
   updateSiteLabels();
   updateSoilLabels();
+  updateWeatherLabels();
   updateSVCropLabels();
   updateSVObservationsLabels();
   updateSVSoilLabels();
@@ -1455,25 +1456,6 @@ void DatasetClassification::on_sbGlobalRadiationAltDifWeather_valueChanged(int t
 
   updateWeatherLabels();
 }
-//void DatasetClassification::on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif)
-//{
-//  //this is unused as it is not enabled for sunshine hours
-//  QString myTotal;
-//  double myWeight = ui->dsbSunshineHoursWeightWeather->value();
-//  double myDistance = ui->dsbSunshineHoursKmWeather->value();
-//  //double myFactor = 1.0; //  this variable is hard coded (for now)
-//  RankPointGenerator myPointGen;
-//  double myValue;
-
-//  // go get the total
-//  myValue = myPointGen.weatherMethodSunshineHours(myDistance, myWeight);
-
-//  //change myTotal to QString text
-//  myTotal = makeString(myValue);
-//  ui->lblSunshineHoursRatingWeather->setText(myTotal);
-
-//  updateWeatherLabels();
-//}
 void DatasetClassification::on_sbLeafWetnessAltDifWeather_valueChanged(int theAltDif)
 {
   QString myTotal;
@@ -3087,52 +3069,27 @@ void DatasetClassification::updateManagementLabels()
 
   ui->lblCombinedTotal->setText(makeString(myTotal));
 
-  int myRank = 0;
+  // go find out what the rank is
 
-  if (myTotal >= 24) myRank=24;
-  else if (myTotal >= 20) myRank=20;
-  else if (myTotal >= 17) myRank=17;
-  else if (myTotal >= 15) myRank=15;
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankManagement(myTotal);
 
-  switch (myRank)
+  ui->lblMedalManagement->setVisible(true);
+  ui->lblMedalManagement->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingManagement->setVisible(true);
+  ui->lblRankingManagement->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
   {
-   case 24: ui->lblMedalManagement->setVisible(true);
-            ui->lblMedalManagement->setScaledContents(true);
-            ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-            ui->lblRankingManagement->setVisible(true);
-            ui->lblRankingManagement->setText("Platinum");
-            ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/platinum.png")));
-            break;
-   case 20: ui->lblMedalManagement->setVisible(true);
-            ui->lblMedalManagement->setScaledContents(true);
-            ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/gold.png" ));
-            ui->lblRankingManagement->setVisible(true);
-            ui->lblRankingManagement->setText("Gold");
-            ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/gold.png")));
-            break;
-
-   case 17: ui->lblMedalManagement->setVisible(true);
-            ui->lblMedalManagement->setScaledContents(true);
-            ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/silver.png" ));
-            ui->lblRankingManagement->setVisible(true);
-            ui->lblRankingManagement->setText("Silver");
-            ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/silver.png")));
-            break;
-
-   case 15: ui->lblMedalManagement->setVisible(true);
-            ui->lblMedalManagement->setScaledContents(true);
-            ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-            ui->lblRankingManagement->setVisible(true);
-            ui->lblRankingManagement->setText("Bronze");
-            ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/bronze.png")));
-            break;
-
-   default: // hide
-            ui->lblRankingManagement->setVisible(false);
-            ui->lblMedalManagement->setVisible(false);
-            ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
-            break;
+    ui->lblRankingManagement->setVisible(false);
+    ui->lblMedalManagement->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
   }
+
 }
 void DatasetClassification::updatePhenologyLabels()
 {

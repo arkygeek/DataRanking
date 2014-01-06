@@ -188,3 +188,65 @@ double RankPointGenerator::SVMethod5(int theObservations, double theWeight)
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
+
+// Seasons
+double RankPointGenerator::SeasonsMethod1(int theNumber, int theWeight)
+{
+  // MIN(theNumber*TheWeight,5)
+  double myTotal;
+  double mySubTotal;
+  mySubTotal = theNumber*theWeight;
+  myTotal = mySubTotal<5 ? mySubTotal : 5.0;
+  return myTotal;
+}
+double RankPointGenerator::SeasonsMethod2(int theNumber, int theWeight)
+{
+  double myTotal;
+  myTotal = theNumber*theWeight;
+  return myTotal;
+}
+
+
+    //-----------------------------//
+   //     Overall calculations    //
+  //-----------------------------//
+
+
+double RankPointGenerator::multiplier(int theSeasonsTotal)
+{
+  double myTotal;
+  // 1 + [(theSeasonsTotal / 7) - 1] * 0.1
+  myTotal = 1 + (((theSeasonsTotal/7) - 1) * 0.1);
+  return myTotal;
+}
+
+QString RankPointGenerator::getRankManagement(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+   if (theTotal >= 24) myRankNumber=24;
+   else if (theTotal >= 20) myRankNumber=20;
+   else if (theTotal >= 17) myRankNumber=17;
+   else if (theTotal >= 15) myRankNumber=15;
+
+   switch (myRankNumber)
+   {
+     case 24: myRank = "Platinum";
+              break;
+
+     case 20: myRank = "Gold";
+              break;
+
+     case 17: myRank = "Silver";
+              break;
+
+     case 15: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
