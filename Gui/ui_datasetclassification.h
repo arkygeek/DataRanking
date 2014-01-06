@@ -326,9 +326,9 @@ public:
     QLabel *lblMgmtObservations_6;
     QLabel *lblMgmtObservations_8;
     QCheckBox *chbxSlopeSite;
-    QDoubleSpinBox *dsbSlopeWeightSite;
     QSpinBox *sbSlopeObservationsSite;
     QLabel *lblSlopeRatingSite;
+    QSpinBox *sbSlopeWeightSite;
     QTextBrowser *txbrSite;
     QFormLayout *formLayout_2;
     QLabel *lblSitePlatinumMin;
@@ -2265,6 +2265,9 @@ public:
 
         dsbPhWeightSoil = new QDoubleSpinBox(gbxSoil);
         dsbPhWeightSoil->setObjectName(QStringLiteral("dsbPhWeightSoil"));
+        dsbPhWeightSoil->setDecimals(1);
+        dsbPhWeightSoil->setMaximum(5);
+        dsbPhWeightSoil->setSingleStep(0.5);
         dsbPhWeightSoil->setValue(2);
 
         gridLayoutWeather->addWidget(dsbPhWeightSoil, 10, 3, 1, 1);
@@ -2842,15 +2845,6 @@ public:
 
         gridLayoutStateVars->addWidget(chbxSlopeSite, 5, 0, 1, 1);
 
-        dsbSlopeWeightSite = new QDoubleSpinBox(gbxSite);
-        dsbSlopeWeightSite->setObjectName(QStringLiteral("dsbSlopeWeightSite"));
-        dsbSlopeWeightSite->setDecimals(1);
-        dsbSlopeWeightSite->setMaximum(5);
-        dsbSlopeWeightSite->setSingleStep(0.5);
-        dsbSlopeWeightSite->setValue(1);
-
-        gridLayoutStateVars->addWidget(dsbSlopeWeightSite, 5, 1, 1, 1);
-
         sbSlopeObservationsSite = new QSpinBox(gbxSite);
         sbSlopeObservationsSite->setObjectName(QStringLiteral("sbSlopeObservationsSite"));
         sbSlopeObservationsSite->setValue(1);
@@ -2864,6 +2858,11 @@ public:
         lblSlopeRatingSite->setIndent(0);
 
         gridLayoutStateVars->addWidget(lblSlopeRatingSite, 5, 3, 1, 1);
+
+        sbSlopeWeightSite = new QSpinBox(gbxSite);
+        sbSlopeWeightSite->setObjectName(QStringLiteral("sbSlopeWeightSite"));
+
+        gridLayoutStateVars->addWidget(sbSlopeWeightSite, 5, 1, 1, 1);
 
 
         gridLayout_7->addWidget(gbxSite, 0, 0, 1, 2, Qt::AlignTop);
@@ -5514,7 +5513,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(7);
+        tabWidgetDataClassification->setCurrentIndex(5);
         toolBoxStateVars->setCurrentIndex(0);
         toolBoxStateVars->layout()->setSpacing(0);
 
