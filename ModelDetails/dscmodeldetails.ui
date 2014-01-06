@@ -1,0 +1,2363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DscModelDetails</class>
+ <widget class="QMainWindow" name="DscModelDetails">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>825</width>
+    <height>1071</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DscModelDetails</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_10">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabBasicInfo">
+       <attribute name="title">
+        <string>Basic Info</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="grpbxBasicInfoModel">
+          <property name="title">
+           <string>Model</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoModelName">
+               <property name="text">
+                <string>Model Name</string>
+               </property>
+               <property name="buddy">
+                <cstring>leBasicInfoModelName</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leBasicInfoModelName"/>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoAcronym">
+               <property name="text">
+                <string>Acronym</string>
+               </property>
+               <property name="buddy">
+                <cstring>leBasicInfoAcronym</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leBasicInfoAcronym"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblBasicInfoModelType">
+               <property name="text">
+                <string>Model Type</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbBasicInfoModelType">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maxVisibleItems">
+                <number>15</number>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Agent based</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Agricultural Economics and Trade</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Bio-economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Combined Grass and Livestock</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Decision Support System</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ecological Systems</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Game Simulation</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Grass</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Household</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Hydrological/Irrigation</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Integrated Assessment</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Integrated Crop and Climate</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock Pest/Disease/Epidemiological</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Plant Pest/Disease/Epidemiological</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Plant Process</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Software/Modelling Platforms</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soil</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Supporting tools</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoWebsite">
+               <property name="text">
+                <string>Website</string>
+               </property>
+               <property name="buddy">
+                <cstring>leBasicInfoWebsite</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QLineEdit" name="leBasicInfoWebsite"/>
+               </item>
+               <item>
+                <widget class="QToolButton" name="tlbtnBasicInfoGoToWebsite">
+                 <property name="toolTip">
+                  <string>View Website</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QLabel" name="lblShortDescriptionOfModel">
+                 <property name="text">
+                  <string>Short Description of the model</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>txtbrwsShortDescriptionOfModel</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="QLabel" name="lblObjectivesOfModel">
+                 <property name="text">
+                  <string>Objectives of the model</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>txtbrwsObjectivesOfModel</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Development</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoPrincipleDeveloper">
+               <property name="text">
+                <string>Principle Developer</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leBasicInfoPrincipleDeveloper"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoSupportedBy">
+               <property name="text">
+                <string>Supported by</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leBasicInfoSupportedBy"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoMaintainers">
+               <property name="text">
+                <string>Maintainer(s)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leBasicInfoMaintainers"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="grpbxBasicInfoMajorFocus">
+          <property name="title">
+           <string>Major Focus</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="chkbxBasicInfoExAnteEvaluation">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>ex-ante evaluation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="leBasicInfoExAnteEvalNotes">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="placeholderText">
+              <string>notes</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="chkbxExPostEvaluation">
+             <property name="text">
+              <string>ex-post evaluation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="leBasicInfoExPostEvalNotes">
+             <property name="placeholderText">
+              <string>notes</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="chkbxBasicInfoMethodologicalDevel">
+             <property name="text">
+              <string>Methodological Development</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="leBasicInfoMethDevelNotes">
+             <property name="placeholderText">
+              <string>notes</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="chkbxBasicInfoSpecificProblemsOfClients">
+             <property name="text">
+              <string>Specific problems of clients</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="leBasicInfoSpecificProbsNotes">
+             <property name="placeholderText">
+              <string>notes</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QGroupBox" name="grpbxBasicInfoInfoProvidedBy">
+          <property name="title">
+           <string>Info Provided by</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <item>
+                <widget class="QLabel" name="lblBasicInfoName">
+                 <property name="text">
+                  <string>Name</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>leBasicInfoName</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="leBasicInfoName"/>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="lblBasicInfoPartnerNumber">
+                 <property name="text">
+                  <string>Partner Number</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>leBasicInfoPartnerNumber</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="leBasicInfoPartnerNumber"/>
+               </item>
+               <item>
+                <widget class="QLabel" name="lblBasicInfoDateOfReport">
+                 <property name="text">
+                  <string>Date of Report</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>dateEditBasicInfoDateOfReport</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QDateEdit" name="dateEditBasicInfoDateOfReport">
+                 <property name="toolTip">
+                  <string>day/month/year</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QLabel" name="lblBasicInfoSubmitter">
+                 <property name="text">
+                  <string>Submitter</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>leBasicInfoSubmitter</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="leBasicInfoSubmitter"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="0" column="1" rowspan="2">
+            <widget class="QTextEdit" name="txtedBasicInfoAdditionalNotes">
+             <property name="placeholderText">
+              <string>Additional notes</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>33</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabTechnical">
+       <attribute name="title">
+        <string>Technical</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string/>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <property name="horizontalSpacing">
+            <number>-1</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QLabel" name="lblTechnicalTypeOfModel">
+               <property name="text">
+                <string>Type of Model</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalTypeOfModel"/>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_15">
+             <item>
+              <widget class="QLabel" name="lblTechnicalProgrammingLanguage">
+               <property name="text">
+                <string>Programming Language</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalProgrammingLanguage"/>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <item>
+              <widget class="QLabel" name="lblTechnicalAggergationOfRegions">
+               <property name="text">
+                <string>Aggregation of Regions</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalAggergationOfRegions"/>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_17">
+             <item>
+              <widget class="QLabel" name="lblTechnicalDimensions">
+               <property name="text">
+                <string>Dimensions</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalDimensions"/>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_18">
+             <item>
+              <widget class="QLabel" name="lblTechnicalRegionsCovered">
+               <property name="text">
+                <string>Regions Covered</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalRegionsCovered"/>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
+             <item>
+              <widget class="QLabel" name="lblTechnicalSmallestRegionalUnit">
+               <property name="text">
+                <string>Smallest Regional Unit</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalSmallestRegionalUnit">
+               <item>
+                <property name="text">
+                 <string>Global</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Continental</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Country</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>NUTS 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>NUTS 3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Other</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>other</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>Add</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>General Details</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_5">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_25">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_23">
+               <item>
+                <widget class="QLabel" name="lblTechnicalTimeHorizon">
+                 <property name="text">
+                  <string>Time Horizon</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBox"/>
+               </item>
+               <item>
+                <widget class="QComboBox" name="comboBox">
+                 <item>
+                  <property name="text">
+                   <string>Years</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Months</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Days</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Hours</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Minutes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Seconds</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="line">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLabel" name="lblTechnicalTemporalScale">
+                 <property name="text">
+                  <string>Temporal Scale: (shortest to longest)</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_24">
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_2"/>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_2">
+                   <item>
+                    <property name="text">
+                     <string>Seconds</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Minutes</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Hours</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Days</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Months</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Years</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>to</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_3"/>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_3">
+                   <item>
+                    <property name="text">
+                     <string>Years</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Months</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Days</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Hours</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Minutes</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Seconds</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="lblTechnicalRepresentationOfTrade">
+             <property name="text">
+              <string>Representation of Trade</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="lblTechnicalDescriptionOfParameters">
+             <property name="text">
+              <string>Description of parameters</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="lblTechnicalExogenousProjVarsAndSources">
+             <property name="text">
+              <string>Exogenous projection variables and sources</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="lblTechnicalSectorsCovered">
+             <property name="text">
+              <string>Sectors Covered</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="lblTechnicalModelClosureRules">
+             <property name="text">
+              <string>Model Closure Rules</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="grpbxTechnicalInputData">
+          <property name="title">
+           <string>Input Data</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_12">
+               <item>
+                <widget class="QLabel" name="lblTechnicalInputDataGeneralNotes">
+                 <property name="text">
+                  <string>General Notes</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QToolButton" name="toolButtonTechnicalGeneralNotes">
+                 <property name="toolTip">
+                  <string>Click to view in pop-out window</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTextEdit" name="textEdit">
+               <property name="html">
+                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Primary (collected by field survey to experts and farmers) and secondary data referring to a specific year (baseline).&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The Primary data refer to the cropping technics, practices and prices.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The secondary data come from the FADN,Agricultural Census and Water User Association database served to define the structural characteristic of the farming typologies and the water use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_19">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataCropProdn">
+               <property name="text">
+                <string>Crop Production</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalInputDataCrop">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Climate projection data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop field experimental data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop pathogens and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Generic data - all types/repository</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestoc genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock pest and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soils</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather generator data</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataCropProdn">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataLivestockProdn_2">
+               <property name="text">
+                <string>Livestock Production</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalInputDataLivestock">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Climate projection data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop field experimental data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop pathogens and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Generic data - all types/repository</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestoc genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock pest and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soils</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather generator data</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_20">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataLivestockProdn">
+               <property name="text">
+                <string>Variants (mgmt/intensity)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalInputDataVariants">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Climate projection data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop field experimental data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop pathogens and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Generic data - all types/repository</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestoc genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock pest and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soils</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather generator data</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataOther">
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalInputDataOther">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Climate projection data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop field experimental data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop pathogens and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Generic data - all types/repository</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestoc genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock pest and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soils</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather generator data</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_2">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QGroupBox" name="grpbxlTechnicalMoreDetailsOnRepOfAgric">
+          <property name="title">
+           <string>More details on representation of agriculture</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_30">
+             <item>
+              <widget class="QLabel" name="lblTechnicalGeneralNotes">
+               <property name="text">
+                <string>General Notes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataMoreGenNotes">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_31">
+             <item>
+              <widget class="QLabel" name="lblTechnicalFarmTypes">
+               <property name="text">
+                <string>Farm Types</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataMoreFarmTypes">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_32">
+             <item>
+              <widget class="QLabel" name="lblTechnicalFarmStructure">
+               <property name="text">
+                <string>Farm Structure</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataMoreFarmStructure">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_33">
+             <item>
+              <widget class="QLabel" name="lblTechnicalVariantsOfMgmtIntensity">
+               <property name="text">
+                <string>Variants of management/intensity</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataMoreVariants">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Diagrams</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_18">
+        <item row="3" column="0">
+         <widget class="QTextEdit" name="textEdit_23">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="placeholderText">
+           <string>description</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QComboBox" name="cbDiagramsSelectDiagram">
+          <item>
+           <property name="text">
+            <string>Select Diagram</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Example</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblDiagramsTheDiagram">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>4</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabUseApplication">
+       <attribute name="title">
+        <string>Use/Application</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_12">
+        <item row="3" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Policies - Other Aspects</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_4"/>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Other Analysis</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_5"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Policies analysed in most cases</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_2"/>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Policies analysed most recently</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_3"/>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Target User Group</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_11">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_27">
+             <item>
+              <widget class="QCheckBox" name="checkBox_2">
+               <property name="text">
+                <string>Farmers/Advisory Services</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_4">
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupFarmers">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_28">
+             <item>
+              <widget class="QCheckBox" name="checkBox_3">
+               <property name="text">
+                <string>Scientists</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_5">
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupScientists">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_29">
+             <item>
+              <widget class="QCheckBox" name="checkBox_4">
+               <property name="text">
+                <string>Others</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_6">
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupOthers">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_26">
+             <item>
+              <widget class="QCheckBox" name="checkBox">
+               <property name="text">
+                <string>Policy Makers</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_3">
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupPolicyMakers">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabEconResultIndicators">
+       <attribute name="title">
+        <string>Econ. Result Indicators</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>669</width>
+          <height>159</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Income / Wealth / Utility / Related</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_6"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>190</y>
+          <width>669</width>
+          <height>159</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Production Costs Related</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_7"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>360</y>
+          <width>669</width>
+          <height>159</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_13">
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Other</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="textEdit_8"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabMore">
+       <attribute name="title">
+        <string>More</string>
+       </attribute>
+       <widget class="QToolBox" name="toolBox">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>671</width>
+          <height>891</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="pageBioPhysicalLinks">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>424</width>
+           <height>704</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Bio-Physical Links and Indicators</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_13">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Land Types</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_9"/>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Land Uses</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_10"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_16">
+            <item>
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>Manure Management</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_11"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>Water - Indicators</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_12"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_18">
+            <item>
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>Air - Indicators</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_13"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_19">
+            <item>
+             <widget class="QLabel" name="label_19">
+              <property name="text">
+               <string>Soil - Indicators</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_14"/>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_20">
+            <item>
+             <widget class="QLabel" name="label_20">
+              <property name="text">
+               <string>Biodiversity - Flora</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_15"/>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_21">
+            <item>
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>Biodiversity - Fauna</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_16"/>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_22">
+            <item>
+             <widget class="QLabel" name="label_22">
+              <property name="text">
+               <string>Landscape</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_17"/>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_23">
+            <item>
+             <widget class="QLabel" name="label_23">
+              <property name="text">
+               <string>Other Environmental Aspects/Indicators</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_18"/>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <layout class="QVBoxLayout" name="verticalLayout_24">
+            <item>
+             <widget class="QLabel" name="label_24">
+              <property name="text">
+               <string>Other</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_19"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageIntegration">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>671</width>
+           <height>721</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Integration: models, tools, data</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_14">
+          <item row="0" column="0" colspan="2">
+           <layout class="QVBoxLayout" name="verticalLayout_27">
+            <item>
+             <widget class="QLabel" name="label_27">
+              <property name="text">
+               <string>Names and Acronyms of other models and technical aspects of model-link</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_22"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_31">
+            <item>
+             <widget class="QLabel" name="label_31">
+              <property name="text">
+               <string>Databases (specify)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_26"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_30">
+            <item>
+             <widget class="QLabel" name="label_30">
+              <property name="text">
+               <string>GIS (specify)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_25"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_25">
+            <item>
+             <widget class="QLabel" name="label_25">
+              <property name="text">
+               <string>Link to Climate Change</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_20"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_32">
+            <item>
+             <widget class="QLabel" name="label_32">
+              <property name="text">
+               <string>Link to Food Security</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_27"/>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <layout class="QVBoxLayout" name="verticalLayout_29">
+            <item>
+             <widget class="QLabel" name="label_29">
+              <property name="text">
+               <string>Other</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_24"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageStateOfDevelopment">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>218</width>
+           <height>589</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>State of Development</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_35">
+            <item>
+             <widget class="QLabel" name="label_35">
+              <property name="text">
+               <string>Regional Coverage</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_30"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_39">
+            <item>
+             <widget class="QLabel" name="label_39">
+              <property name="text">
+               <string>Sector Coverage</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_34"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_33">
+            <item>
+             <widget class="QLabel" name="label_33">
+              <property name="text">
+               <string>Methodological Enhancements</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_28"/>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_37">
+            <item>
+             <widget class="QLabel" name="label_37">
+              <property name="text">
+               <string>New Modules</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_32"/>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_36">
+            <item>
+             <widget class="QLabel" name="label_36">
+              <property name="text">
+               <string>Other</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_31"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pagePropertyRights">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>490</width>
+           <height>359</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Property Rights</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_43">
+            <item>
+             <widget class="QLabel" name="label_43">
+              <property name="text">
+               <string>access to core-code of the model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_38"/>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_42">
+            <item>
+             <widget class="QLabel" name="label_42">
+              <property name="text">
+               <string>access to scenarios (data/parameters)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_37"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_47">
+            <item>
+             <widget class="QLabel" name="label_47">
+              <property name="text">
+               <string>access to input data</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_42"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_46">
+            <item>
+             <widget class="QLabel" name="label_46">
+              <property name="text">
+               <string>access to result data output</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_41"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_41">
+            <item>
+             <widget class="QLabel" name="label_41">
+              <property name="text">
+               <string>access to parameters</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_36"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_48">
+            <item>
+             <widget class="QLabel" name="label_48">
+              <property name="text">
+               <string>Other</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_43"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pagePublications">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>401</width>
+           <height>359</height>
+          </rect>
+         </property>
+         <attribute name="label">
+          <string>Publications</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_17">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_51">
+            <item>
+             <widget class="QLabel" name="label_51">
+              <property name="text">
+               <string>Journal Papers</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_46"/>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_50">
+            <item>
+             <widget class="QLabel" name="label_50">
+              <property name="text">
+               <string>Conference Presentations</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_45"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_55">
+            <item>
+             <widget class="QLabel" name="label_55">
+              <property name="text">
+               <string>Technical Papers (on the model)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_50"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_54">
+            <item>
+             <widget class="QLabel" name="label_54">
+              <property name="text">
+               <string>Policy Papers</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_49"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_49">
+            <item>
+             <widget class="QLabel" name="label_49">
+              <property name="text">
+               <string>Websites</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_44"/>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_56">
+            <item>
+             <widget class="QLabel" name="label_56">
+              <property name="text">
+               <string>Other</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="textEdit_51"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>825</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

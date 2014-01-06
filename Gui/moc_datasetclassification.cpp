@@ -1,0 +1,1052 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'datasetclassification.h'
+**
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.2.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include "datasetclassification.h"
+#include <QtCore/qbytearray.h>
+#include <QtCore/qmetatype.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'datasetclassification.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 67
+#error "This file was generated using the moc from 5.2.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+struct qt_meta_stringdata_DatasetClassification_t {
+    QByteArrayData data[200];
+    char stringdata[8197];
+};
+#define QT_MOC_LITERAL(idx, ofs, len) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    offsetof(qt_meta_stringdata_DatasetClassification_t, stringdata) + ofs \
+        - idx * sizeof(QByteArrayData) \
+    )
+static const qt_meta_stringdata_DatasetClassification_t qt_meta_stringdata_DatasetClassification = {
+    {
+QT_MOC_LITERAL(0, 0, 21),
+QT_MOC_LITERAL(1, 22, 29),
+QT_MOC_LITERAL(2, 52, 0),
+QT_MOC_LITERAL(3, 53, 12),
+QT_MOC_LITERAL(4, 66, 32),
+QT_MOC_LITERAL(5, 99, 15),
+QT_MOC_LITERAL(6, 115, 31),
+QT_MOC_LITERAL(7, 147, 32),
+QT_MOC_LITERAL(8, 180, 38),
+QT_MOC_LITERAL(9, 219, 35),
+QT_MOC_LITERAL(10, 255, 36),
+QT_MOC_LITERAL(11, 292, 32),
+QT_MOC_LITERAL(12, 325, 36),
+QT_MOC_LITERAL(13, 362, 9),
+QT_MOC_LITERAL(14, 372, 35),
+QT_MOC_LITERAL(15, 408, 36),
+QT_MOC_LITERAL(16, 445, 42),
+QT_MOC_LITERAL(17, 488, 39),
+QT_MOC_LITERAL(18, 528, 9),
+QT_MOC_LITERAL(19, 538, 40),
+QT_MOC_LITERAL(20, 579, 36),
+QT_MOC_LITERAL(21, 616, 39),
+QT_MOC_LITERAL(22, 656, 44),
+QT_MOC_LITERAL(23, 701, 42),
+QT_MOC_LITERAL(24, 744, 39),
+QT_MOC_LITERAL(25, 784, 44),
+QT_MOC_LITERAL(26, 829, 43),
+QT_MOC_LITERAL(27, 873, 48),
+QT_MOC_LITERAL(28, 922, 46),
+QT_MOC_LITERAL(29, 969, 43),
+QT_MOC_LITERAL(30, 1013, 48),
+QT_MOC_LITERAL(31, 1062, 33),
+QT_MOC_LITERAL(32, 1096, 39),
+QT_MOC_LITERAL(33, 1136, 40),
+QT_MOC_LITERAL(34, 1177, 34),
+QT_MOC_LITERAL(35, 1212, 40),
+QT_MOC_LITERAL(36, 1253, 42),
+QT_MOC_LITERAL(37, 1296, 39),
+QT_MOC_LITERAL(38, 1336, 37),
+QT_MOC_LITERAL(39, 1374, 43),
+QT_MOC_LITERAL(40, 1418, 44),
+QT_MOC_LITERAL(41, 1463, 38),
+QT_MOC_LITERAL(42, 1502, 44),
+QT_MOC_LITERAL(43, 1547, 46),
+QT_MOC_LITERAL(44, 1594, 43),
+QT_MOC_LITERAL(45, 1638, 46),
+QT_MOC_LITERAL(46, 1685, 38),
+QT_MOC_LITERAL(47, 1724, 50),
+QT_MOC_LITERAL(48, 1775, 42),
+QT_MOC_LITERAL(49, 1818, 32),
+QT_MOC_LITERAL(50, 1851, 9),
+QT_MOC_LITERAL(51, 1861, 32),
+QT_MOC_LITERAL(52, 1894, 35),
+QT_MOC_LITERAL(53, 1930, 39),
+QT_MOC_LITERAL(54, 1970, 41),
+QT_MOC_LITERAL(55, 2012, 40),
+QT_MOC_LITERAL(56, 2053, 35),
+QT_MOC_LITERAL(57, 2089, 41),
+QT_MOC_LITERAL(58, 2131, 30),
+QT_MOC_LITERAL(59, 2162, 32),
+QT_MOC_LITERAL(60, 2195, 8),
+QT_MOC_LITERAL(61, 2204, 32),
+QT_MOC_LITERAL(62, 2237, 35),
+QT_MOC_LITERAL(63, 2273, 39),
+QT_MOC_LITERAL(64, 2313, 41),
+QT_MOC_LITERAL(65, 2355, 40),
+QT_MOC_LITERAL(66, 2396, 35),
+QT_MOC_LITERAL(67, 2432, 41),
+QT_MOC_LITERAL(68, 2474, 30),
+QT_MOC_LITERAL(69, 2505, 33),
+QT_MOC_LITERAL(70, 2539, 33),
+QT_MOC_LITERAL(71, 2573, 36),
+QT_MOC_LITERAL(72, 2610, 40),
+QT_MOC_LITERAL(73, 2651, 42),
+QT_MOC_LITERAL(74, 2694, 41),
+QT_MOC_LITERAL(75, 2736, 36),
+QT_MOC_LITERAL(76, 2773, 42),
+QT_MOC_LITERAL(77, 2816, 31),
+QT_MOC_LITERAL(78, 2848, 42),
+QT_MOC_LITERAL(79, 2891, 43),
+QT_MOC_LITERAL(80, 2935, 42),
+QT_MOC_LITERAL(81, 2978, 37),
+QT_MOC_LITERAL(82, 3016, 38),
+QT_MOC_LITERAL(83, 3055, 37),
+QT_MOC_LITERAL(84, 3093, 44),
+QT_MOC_LITERAL(85, 3138, 9),
+QT_MOC_LITERAL(86, 3148, 35),
+QT_MOC_LITERAL(87, 3184, 35),
+QT_MOC_LITERAL(88, 3220, 35),
+QT_MOC_LITERAL(89, 3256, 42),
+QT_MOC_LITERAL(90, 3299, 40),
+QT_MOC_LITERAL(91, 3340, 46),
+QT_MOC_LITERAL(92, 3387, 44),
+QT_MOC_LITERAL(93, 3432, 42),
+QT_MOC_LITERAL(94, 3475, 39),
+QT_MOC_LITERAL(95, 3515, 45),
+QT_MOC_LITERAL(96, 3561, 36),
+QT_MOC_LITERAL(97, 3598, 36),
+QT_MOC_LITERAL(98, 3635, 36),
+QT_MOC_LITERAL(99, 3672, 43),
+QT_MOC_LITERAL(100, 3716, 41),
+QT_MOC_LITERAL(101, 3758, 47),
+QT_MOC_LITERAL(102, 3806, 45),
+QT_MOC_LITERAL(103, 3852, 43),
+QT_MOC_LITERAL(104, 3896, 40),
+QT_MOC_LITERAL(105, 3937, 41),
+QT_MOC_LITERAL(106, 3979, 11),
+QT_MOC_LITERAL(107, 3991, 39),
+QT_MOC_LITERAL(108, 4031, 32),
+QT_MOC_LITERAL(109, 4064, 32),
+QT_MOC_LITERAL(110, 4097, 32),
+QT_MOC_LITERAL(111, 4130, 37),
+QT_MOC_LITERAL(112, 4168, 43),
+QT_MOC_LITERAL(113, 4212, 41),
+QT_MOC_LITERAL(114, 4254, 39),
+QT_MOC_LITERAL(115, 4294, 36),
+QT_MOC_LITERAL(116, 4331, 53),
+QT_MOC_LITERAL(117, 4385, 18),
+QT_MOC_LITERAL(118, 4404, 44),
+QT_MOC_LITERAL(119, 4449, 44),
+QT_MOC_LITERAL(120, 4494, 44),
+QT_MOC_LITERAL(121, 4539, 51),
+QT_MOC_LITERAL(122, 4591, 49),
+QT_MOC_LITERAL(123, 4641, 55),
+QT_MOC_LITERAL(124, 4697, 53),
+QT_MOC_LITERAL(125, 4751, 41),
+QT_MOC_LITERAL(126, 4793, 7),
+QT_MOC_LITERAL(127, 4801, 32),
+QT_MOC_LITERAL(128, 4834, 32),
+QT_MOC_LITERAL(129, 4867, 32),
+QT_MOC_LITERAL(130, 4900, 39),
+QT_MOC_LITERAL(131, 4940, 37),
+QT_MOC_LITERAL(132, 4978, 43),
+QT_MOC_LITERAL(133, 5022, 41),
+QT_MOC_LITERAL(134, 5064, 39),
+QT_MOC_LITERAL(135, 5104, 36),
+QT_MOC_LITERAL(136, 5141, 39),
+QT_MOC_LITERAL(137, 5181, 41),
+QT_MOC_LITERAL(138, 5223, 40),
+QT_MOC_LITERAL(139, 5264, 13),
+QT_MOC_LITERAL(140, 5278, 46),
+QT_MOC_LITERAL(141, 5325, 44),
+QT_MOC_LITERAL(142, 5370, 45),
+QT_MOC_LITERAL(143, 5416, 43),
+QT_MOC_LITERAL(144, 5460, 48),
+QT_MOC_LITERAL(145, 5509, 46),
+QT_MOC_LITERAL(146, 5556, 42),
+QT_MOC_LITERAL(147, 5599, 47),
+QT_MOC_LITERAL(148, 5647, 45),
+QT_MOC_LITERAL(149, 5693, 49),
+QT_MOC_LITERAL(150, 5743, 47),
+QT_MOC_LITERAL(151, 5791, 48),
+QT_MOC_LITERAL(152, 5840, 45),
+QT_MOC_LITERAL(153, 5886, 43),
+QT_MOC_LITERAL(154, 5930, 44),
+QT_MOC_LITERAL(155, 5975, 39),
+QT_MOC_LITERAL(156, 6015, 37),
+QT_MOC_LITERAL(157, 6053, 38),
+QT_MOC_LITERAL(158, 6092, 44),
+QT_MOC_LITERAL(159, 6137, 49),
+QT_MOC_LITERAL(160, 6187, 47),
+QT_MOC_LITERAL(161, 6235, 48),
+QT_MOC_LITERAL(162, 6284, 44),
+QT_MOC_LITERAL(163, 6329, 49),
+QT_MOC_LITERAL(164, 6379, 47),
+QT_MOC_LITERAL(165, 6427, 48),
+QT_MOC_LITERAL(166, 6476, 35),
+QT_MOC_LITERAL(167, 6512, 40),
+QT_MOC_LITERAL(168, 6553, 38),
+QT_MOC_LITERAL(169, 6592, 39),
+QT_MOC_LITERAL(170, 6632, 54),
+QT_MOC_LITERAL(171, 6687, 52),
+QT_MOC_LITERAL(172, 6740, 53),
+QT_MOC_LITERAL(173, 6794, 55),
+QT_MOC_LITERAL(174, 6850, 53),
+QT_MOC_LITERAL(175, 6904, 54),
+QT_MOC_LITERAL(176, 6959, 51),
+QT_MOC_LITERAL(177, 7011, 49),
+QT_MOC_LITERAL(178, 7061, 50),
+QT_MOC_LITERAL(179, 7112, 47),
+QT_MOC_LITERAL(180, 7160, 45),
+QT_MOC_LITERAL(181, 7206, 46),
+QT_MOC_LITERAL(182, 7253, 52),
+QT_MOC_LITERAL(183, 7306, 50),
+QT_MOC_LITERAL(184, 7357, 51),
+QT_MOC_LITERAL(185, 7409, 52),
+QT_MOC_LITERAL(186, 7462, 50),
+QT_MOC_LITERAL(187, 7513, 51),
+QT_MOC_LITERAL(188, 7565, 51),
+QT_MOC_LITERAL(189, 7617, 49),
+QT_MOC_LITERAL(190, 7667, 50),
+QT_MOC_LITERAL(191, 7718, 52),
+QT_MOC_LITERAL(192, 7771, 50),
+QT_MOC_LITERAL(193, 7822, 51),
+QT_MOC_LITERAL(194, 7874, 51),
+QT_MOC_LITERAL(195, 7926, 49),
+QT_MOC_LITERAL(196, 7976, 59),
+QT_MOC_LITERAL(197, 8036, 57),
+QT_MOC_LITERAL(198, 8094, 51),
+QT_MOC_LITERAL(199, 8146, 49)
+    },
+    "DatasetClassification\0"
+    "on_cbUser_currentIndexChanged\0\0"
+    "theSelection\0on_sbVarietyObsMgmt_valueChanged\0"
+    "theObservations\0on_sbSowingObsMgmt_valueChanged\0"
+    "on_sbHarvestObsMgmt_valueChanged\0"
+    "on_sbFertilisationObsMgmt_valueChanged\0"
+    "on_sbIrrigationObsMgmt_valueChanged\0"
+    "on_sbSeedDensityObsMgmt_valueChanged\0"
+    "on_sbTillageObsMgmt_valueChanged\0"
+    "on_dsbVarietyWeightMgmt_valueChanged\0"
+    "theWeight\0on_dsbSowingWeightMgmt_valueChanged\0"
+    "on_dsbHarvestWeightMgmt_valueChanged\0"
+    "on_dsbFertilisationWeightMgmt_valueChanged\0"
+    "on_dsbIrrigationWeightMgmt_valueChanged\0"
+    "theDouble\0on_dsbSeedDensityWeightMgmt_valueChanged\0"
+    "on_dsbTillageWeightMgmt_valueChanged\0"
+    "on_sbEmergenceObsPhenology_valueChanged\0"
+    "on_sbStemElongationObsPhenology_valueChanged\0"
+    "on_sbEarEmergenceObsPhenology_valueChanged\0"
+    "on_sbFloweringObsPhenology_valueChanged\0"
+    "on_sbYellowRipenessObsPhenology_valueChanged\0"
+    "on_dsbEmergenceWeightPhenology_valueChanged\0"
+    "on_dsbStemElongationWeightPhenology_valueChanged\0"
+    "on_dsbEarEmergenceWeightPhenology_valueChanged\0"
+    "on_dsbFloweringWeightPhenology_valueChanged\0"
+    "on_dsbYellowRipenessWeightPhenology_valueChanged\0"
+    "on_sbCropObsPrevCrop_valueChanged\0"
+    "on_sbSowingDateObsPrevCrop_valueChanged\0"
+    "on_sbHarvestDateObsPrevCrop_valueChanged\0"
+    "on_sbYieldObsPrevCrop_valueChanged\0"
+    "on_sbResidueMgmtObsPrevCrop_valueChanged\0"
+    "on_sbFertilisationObsPrevCrop_valueChanged\0"
+    "on_sbIrrigationObsPrevCrop_valueChanged\0"
+    "on_dsbCropWeightPrevCrop_valueChanged\0"
+    "on_dsbSowingDateWeightPrevCrop_valueChanged\0"
+    "on_dsbHarvestDateWeightPrevCrop_valueChanged\0"
+    "on_dsbYieldWeightPrevCrop_valueChanged\0"
+    "on_dsbResidueMgmtWeightPrevCrop_valueChanged\0"
+    "on_dsbFertilisationWeightPrevCrop_valueChanged\0"
+    "on_dsbIrrigationWeightPrevCrop_valueChanged\0"
+    "on_sbSoilMoistureObsInitialValues_valueChanged\0"
+    "on_sbNMinObsInitialValues_valueChanged\0"
+    "on_dsbSoilMoistureWeightInitialValues_valueChanged\0"
+    "on_dsbNMinWeightInitialValues_valueChanged\0"
+    "on_sbCOrgLayersSoil_valueChanged\0"
+    "theLayers\0on_sbNOrgLayersSoil_valueChanged\0"
+    "on_sbTextureLayersSoil_valueChanged\0"
+    "on_sbBulkDensityLayersSoil_valueChanged\0"
+    "on_sbFieldCapacityLayersSoil_valueChanged\0"
+    "on_sbWiltingPointLayersSoil_valueChanged\0"
+    "on_sbPfCurveLayersSoil_valueChanged\0"
+    "on_sbHydrCondCurveLayersSoil_valueChanged\0"
+    "on_sbPhLayersSoil_valueChanged\0"
+    "on_dsbCOrgDepthSoil_valueChanged\0"
+    "theDepth\0on_dsbNOrgDepthSoil_valueChanged\0"
+    "on_dsbTextureDepthSoil_valueChanged\0"
+    "on_dsbBulkDensityDepthSoil_valueChanged\0"
+    "on_dsbFieldCapacityDepthSoil_valueChanged\0"
+    "on_dsbWiltingPointDepthSoil_valueChanged\0"
+    "on_dsbPfCurveDepthSoil_valueChanged\0"
+    "on_dsbHydrCondCurveDepthSoil_valueChanged\0"
+    "on_dsbPhDepthSoil_valueChanged\0"
+    "on_dsbCOrgWeightSoil_valueChanged\0"
+    "on_dsbNOrgWeightSoil_valueChanged\0"
+    "on_dsbTextureWeightSoil_valueChanged\0"
+    "on_dsbBulkDensityWeightSoil_valueChanged\0"
+    "on_dsbFieldCapacityWeightSoil_valueChanged\0"
+    "on_dsbWiltingPointWeightSoil_valueChanged\0"
+    "on_dsbPfCurveWeightSoil_valueChanged\0"
+    "on_dsbHydrCondCurveWeightSoil_valueChanged\0"
+    "on_dsbPhWeightSoil_valueChanged\0"
+    "on_sbLatitudeObservationsSite_valueChanged\0"
+    "on_sbLongitudeObservationsSite_valueChanged\0"
+    "on_sbAltitudeObservationsSite_valueChanged\0"
+    "on_dsbLatitudeWeightSite_valueChanged\0"
+    "on_dsbLongitudeWeightSite_valueChanged\0"
+    "on_dsbAltitudeWeightSite_valueChanged\0"
+    "on_sbPrecipitationAltDifWeather_valueChanged\0"
+    "theAltDif\0on_sbTAveAltDifWeather_valueChanged\0"
+    "on_sbTMinAltDifWeather_valueChanged\0"
+    "on_sbTMaxAltDifWeather_valueChanged\0"
+    "on_sbRelHumidityAltDifWeather_valueChanged\0"
+    "on_sbWindSpeedAltDifWeather_valueChanged\0"
+    "on_sbGlobalRadiationAltDifWeather_valueChanged\0"
+    "on_sbSunshineHoursAltDifWeather_valueChanged\0"
+    "on_sbLeafWetnessAltDifWeather_valueChanged\0"
+    "on_sbSoilTempAltDifWeather_valueChanged\0"
+    "on_dsbPrecipitationWeightWeather_valueChanged\0"
+    "on_dsbTAveWeightWeather_valueChanged\0"
+    "on_dsbTMinWeightWeather_valueChanged\0"
+    "on_dsbTMaxWeightWeather_valueChanged\0"
+    "on_dsbRelHumidityWeightWeather_valueChanged\0"
+    "on_dsbWindSpeedWeightWeather_valueChanged\0"
+    "on_dsbGlobalRadiationWeightWeather_valueChanged\0"
+    "on_dsbSunshineHoursWeightWeather_valueChanged\0"
+    "on_dsbLeafWetnessWeightWeather_valueChanged\0"
+    "on_dsbSoilTempWeightWeather_valueChanged\0"
+    "on_dsbPrecipitationKmWeather_valueChanged\0"
+    "theDistance\0on_dsbRelHumidityKmWeather_valueChanged\0"
+    "on_dsbTAveKmWeather_valueChanged\0"
+    "on_dsbTMinKmWeather_valueChanged\0"
+    "on_dsbTMaxKmWeather_valueChanged\0"
+    "on_dsbWindSpeedKmWeather_valueChanged\0"
+    "on_dsbGlobalRadiationKmWeather_valueChanged\0"
+    "on_dsbSunshineHoursKmWeather_valueChanged\0"
+    "on_dsbLeafWetnessKmWeather_valueChanged\0"
+    "on_dsbSoilTempKmWeather_valueChanged\0"
+    "on_sbPrecipitationOptimalDistanceWeather_valueChanged\0"
+    "theOptimalDistance\0"
+    "on_sbTAveOptimalDistanceWeather_valueChanged\0"
+    "on_sbTMinOptimalDistanceWeather_valueChanged\0"
+    "on_sbTMaxOptimalDistanceWeather_valueChanged\0"
+    "on_sbRelHumidityOptimalDistanceWeather_valueChanged\0"
+    "on_sbWindSpeedOptimalDistanceWeather_valueChanged\0"
+    "on_sbGlobalRadiationOptimalDistanceWeather_valueChanged\0"
+    "on_sbSunshineHoursOptimalDistanceWeather_valueChanged\0"
+    "on_rbPrecipitationWeatherMeasured_toggled\0"
+    "checked\0on_rbTAveWeatherMeasured_toggled\0"
+    "on_rbTMinWeatherMeasured_toggled\0"
+    "on_rbTMaxWeatherMeasured_toggled\0"
+    "on_rbRelHumidityWeatherMeasured_toggled\0"
+    "on_rbWindSpeedWeatherMeasured_toggled\0"
+    "on_rbGlobalRadiationWeatherMeasured_toggled\0"
+    "on_rbSunshineHoursWeatherMeasured_toggled\0"
+    "on_rbLeafWetnessWeatherMeasured_toggled\0"
+    "on_rbSoilTempWeatherMeasured_toggled\0"
+    "on_dsbSVCropYieldWeightPts_valueChanged\0"
+    "on_sbSVCropYieldObservations_valueChanged\0"
+    "on_dsbSVCropYieldReplicates_valueChanged\0"
+    "theReplicates\0"
+    "on_sbSVCropAGrBiomassObservations_valueChanged\0"
+    "on_dsbSVCropAGrBiomassWeightPts_valueChanged\0"
+    "on_dsbSVCropAGrBiomassReplicates_valueChanged\0"
+    "on_dsbSVCropWeightOrgansLayers_valueChanged\0"
+    "on_sbSVCropWeightOrgansObservations_valueChanged\0"
+    "on_dsbSVCropWeightOrgansWeightPts_valueChanged\0"
+    "on_dsbSVCropRootBiomassLayers_valueChanged\0"
+    "on_sbSVCropRootBiomassObservations_valueChanged\0"
+    "on_dsbSVCropRootBiomassWeightPts_valueChanged\0"
+    "on_sbSVCropNInAGrBiomassObservations_valueChanged\0"
+    "on_dsbSVCropNInAGrBiomassWeightPts_valueChanged\0"
+    "on_dsbSVCropNInAGrBiomassReplicates_valueChanged\0"
+    "on_sbSVCropNInOrgansObservations_valueChanged\0"
+    "on_dsbSVCropNInOrgansWeightPts_valueChanged\0"
+    "on_dsbSVCropNInOrgansReplicates_valueChanged\0"
+    "on_sbSVCropLAIObservations_valueChanged\0"
+    "on_dsbSVCropLAIWeightPts_valueChanged\0"
+    "on_dsbSVCropLAIReplicates_valueChanged\0"
+    "on_dsbSVSoilSoilWaterGravLayers_valueChanged\0"
+    "on_sbSVSoilSoilWaterGravObservations_valueChanged\0"
+    "on_dsbSVSoilSoilWaterGravWeightPts_valueChanged\0"
+    "on_dsbSVSoilSoilWaterGravReplicates_valueChanged\0"
+    "on_dsbSVSoilPressureHeadsLayers_valueChanged\0"
+    "on_sbSVSoilPressureHeadsObservations_valueChanged\0"
+    "on_dsbSVSoilPressureHeadsWeightPts_valueChanged\0"
+    "on_dsbSVSoilPressureHeadsReplicates_valueChanged\0"
+    "on_dsbSVSoilNMinLayers_valueChanged\0"
+    "on_sbSVSoilNMinObservations_valueChanged\0"
+    "on_dsbSVSoilNMinWeightPts_valueChanged\0"
+    "on_dsbSVSoilNMinReplicates_valueChanged\0"
+    "on_sbSVSoilSoilWaterSensorCalObservations_valueChanged\0"
+    "on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged\0"
+    "on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged\0"
+    "on_sbSVSoilWaterFluxBottomRootObservations_valueChanged\0"
+    "on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged\0"
+    "on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged\0"
+    "on_sbSVSoilNFluxBottomRootObservations_valueChanged\0"
+    "on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged\0"
+    "on_dsbSVSoilNFluxBottomRootReplicates_valueChanged\0"
+    "on_sbSVSurfaceFluxesEtObservations_valueChanged\0"
+    "on_dsbSVSurfaceFluxesEtWeightPts_valueChanged\0"
+    "on_dsbSVSurfaceFluxesEtReplicates_valueChanged\0"
+    "on_sbSVSurfaceFluxesNh3LossObservations_valueChanged\0"
+    "on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged\0"
+    "on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged\0"
+    "on_sbSVSurfaceFluxesN2OLossObservations_valueChanged\0"
+    "on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged\0"
+    "on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged\0"
+    "on_sbSVSurfaceFluxesN2LossObservations_valueChanged\0"
+    "on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged\0"
+    "on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged\0"
+    "on_sbSVSurfaceFluxesCh4LossObservations_valueChanged\0"
+    "on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged\0"
+    "on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged\0"
+    "on_sbSVObservationsLodgingObservations_valueChanged\0"
+    "on_dsbSVObservationsLodgingWeightPts_valueChanged\0"
+    "on_sbSVObservationsPestsOrDiseasesObservations_valueChanged\0"
+    "on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged\0"
+    "on_sbSVObservationsDamagesObservations_valueChanged\0"
+    "on_dsbSVObservationsDamagesWeightPts_valueChanged\0"
+};
+#undef QT_MOC_LITERAL
+
+static const uint qt_meta_data_DatasetClassification[] = {
+
+ // content:
+       7,       // revision
+       0,       // classname
+       0,    0, // classinfo
+     187,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       0,       // signalCount
+
+ // slots: name, argc, parameters, tag, flags
+       1,    1,  949,    2, 0x08,
+       4,    1,  952,    2, 0x08,
+       6,    1,  955,    2, 0x08,
+       7,    1,  958,    2, 0x08,
+       8,    1,  961,    2, 0x08,
+       9,    1,  964,    2, 0x08,
+      10,    1,  967,    2, 0x08,
+      11,    1,  970,    2, 0x08,
+      12,    1,  973,    2, 0x08,
+      14,    1,  976,    2, 0x08,
+      15,    1,  979,    2, 0x08,
+      16,    1,  982,    2, 0x08,
+      17,    1,  985,    2, 0x08,
+      19,    1,  988,    2, 0x08,
+      20,    1,  991,    2, 0x08,
+      21,    1,  994,    2, 0x08,
+      22,    1,  997,    2, 0x08,
+      23,    1, 1000,    2, 0x08,
+      24,    1, 1003,    2, 0x08,
+      25,    1, 1006,    2, 0x08,
+      26,    1, 1009,    2, 0x08,
+      27,    1, 1012,    2, 0x08,
+      28,    1, 1015,    2, 0x08,
+      29,    1, 1018,    2, 0x08,
+      30,    1, 1021,    2, 0x08,
+      31,    1, 1024,    2, 0x08,
+      32,    1, 1027,    2, 0x08,
+      33,    1, 1030,    2, 0x08,
+      34,    1, 1033,    2, 0x08,
+      35,    1, 1036,    2, 0x08,
+      36,    1, 1039,    2, 0x08,
+      37,    1, 1042,    2, 0x08,
+      38,    1, 1045,    2, 0x08,
+      39,    1, 1048,    2, 0x08,
+      40,    1, 1051,    2, 0x08,
+      41,    1, 1054,    2, 0x08,
+      42,    1, 1057,    2, 0x08,
+      43,    1, 1060,    2, 0x08,
+      44,    1, 1063,    2, 0x08,
+      45,    1, 1066,    2, 0x08,
+      46,    1, 1069,    2, 0x08,
+      47,    1, 1072,    2, 0x08,
+      48,    1, 1075,    2, 0x08,
+      49,    1, 1078,    2, 0x08,
+      51,    1, 1081,    2, 0x08,
+      52,    1, 1084,    2, 0x08,
+      53,    1, 1087,    2, 0x08,
+      54,    1, 1090,    2, 0x08,
+      55,    1, 1093,    2, 0x08,
+      56,    1, 1096,    2, 0x08,
+      57,    1, 1099,    2, 0x08,
+      58,    1, 1102,    2, 0x08,
+      59,    1, 1105,    2, 0x08,
+      61,    1, 1108,    2, 0x08,
+      62,    1, 1111,    2, 0x08,
+      63,    1, 1114,    2, 0x08,
+      64,    1, 1117,    2, 0x08,
+      65,    1, 1120,    2, 0x08,
+      66,    1, 1123,    2, 0x08,
+      67,    1, 1126,    2, 0x08,
+      68,    1, 1129,    2, 0x08,
+      69,    1, 1132,    2, 0x08,
+      70,    1, 1135,    2, 0x08,
+      71,    1, 1138,    2, 0x08,
+      72,    1, 1141,    2, 0x08,
+      73,    1, 1144,    2, 0x08,
+      74,    1, 1147,    2, 0x08,
+      75,    1, 1150,    2, 0x08,
+      76,    1, 1153,    2, 0x08,
+      77,    1, 1156,    2, 0x08,
+      78,    1, 1159,    2, 0x08,
+      79,    1, 1162,    2, 0x08,
+      80,    1, 1165,    2, 0x08,
+      81,    1, 1168,    2, 0x08,
+      82,    1, 1171,    2, 0x08,
+      83,    1, 1174,    2, 0x08,
+      84,    1, 1177,    2, 0x08,
+      86,    1, 1180,    2, 0x08,
+      87,    1, 1183,    2, 0x08,
+      88,    1, 1186,    2, 0x08,
+      89,    1, 1189,    2, 0x08,
+      90,    1, 1192,    2, 0x08,
+      91,    1, 1195,    2, 0x08,
+      92,    1, 1198,    2, 0x08,
+      93,    1, 1201,    2, 0x08,
+      94,    1, 1204,    2, 0x08,
+      95,    1, 1207,    2, 0x08,
+      96,    1, 1210,    2, 0x08,
+      97,    1, 1213,    2, 0x08,
+      98,    1, 1216,    2, 0x08,
+      99,    1, 1219,    2, 0x08,
+     100,    1, 1222,    2, 0x08,
+     101,    1, 1225,    2, 0x08,
+     102,    1, 1228,    2, 0x08,
+     103,    1, 1231,    2, 0x08,
+     104,    1, 1234,    2, 0x08,
+     105,    1, 1237,    2, 0x08,
+     107,    1, 1240,    2, 0x08,
+     108,    1, 1243,    2, 0x08,
+     109,    1, 1246,    2, 0x08,
+     110,    1, 1249,    2, 0x08,
+     111,    1, 1252,    2, 0x08,
+     112,    1, 1255,    2, 0x08,
+     113,    1, 1258,    2, 0x08,
+     114,    1, 1261,    2, 0x08,
+     115,    1, 1264,    2, 0x08,
+     116,    1, 1267,    2, 0x08,
+     118,    1, 1270,    2, 0x08,
+     119,    1, 1273,    2, 0x08,
+     120,    1, 1276,    2, 0x08,
+     121,    1, 1279,    2, 0x08,
+     122,    1, 1282,    2, 0x08,
+     123,    1, 1285,    2, 0x08,
+     124,    1, 1288,    2, 0x08,
+     125,    1, 1291,    2, 0x08,
+     127,    1, 1294,    2, 0x08,
+     128,    1, 1297,    2, 0x08,
+     129,    1, 1300,    2, 0x08,
+     130,    1, 1303,    2, 0x08,
+     131,    1, 1306,    2, 0x08,
+     132,    1, 1309,    2, 0x08,
+     133,    1, 1312,    2, 0x08,
+     134,    1, 1315,    2, 0x08,
+     135,    1, 1318,    2, 0x08,
+     136,    1, 1321,    2, 0x08,
+     137,    1, 1324,    2, 0x08,
+     138,    1, 1327,    2, 0x08,
+     140,    1, 1330,    2, 0x08,
+     141,    1, 1333,    2, 0x08,
+     142,    1, 1336,    2, 0x08,
+     143,    1, 1339,    2, 0x08,
+     144,    1, 1342,    2, 0x08,
+     145,    1, 1345,    2, 0x08,
+     146,    1, 1348,    2, 0x08,
+     147,    1, 1351,    2, 0x08,
+     148,    1, 1354,    2, 0x08,
+     149,    1, 1357,    2, 0x08,
+     150,    1, 1360,    2, 0x08,
+     151,    1, 1363,    2, 0x08,
+     152,    1, 1366,    2, 0x08,
+     153,    1, 1369,    2, 0x08,
+     154,    1, 1372,    2, 0x08,
+     155,    1, 1375,    2, 0x08,
+     156,    1, 1378,    2, 0x08,
+     157,    1, 1381,    2, 0x08,
+     158,    1, 1384,    2, 0x08,
+     159,    1, 1387,    2, 0x08,
+     160,    1, 1390,    2, 0x08,
+     161,    1, 1393,    2, 0x08,
+     162,    1, 1396,    2, 0x08,
+     163,    1, 1399,    2, 0x08,
+     164,    1, 1402,    2, 0x08,
+     165,    1, 1405,    2, 0x08,
+     166,    1, 1408,    2, 0x08,
+     167,    1, 1411,    2, 0x08,
+     168,    1, 1414,    2, 0x08,
+     169,    1, 1417,    2, 0x08,
+     170,    1, 1420,    2, 0x08,
+     171,    1, 1423,    2, 0x08,
+     172,    1, 1426,    2, 0x08,
+     173,    1, 1429,    2, 0x08,
+     174,    1, 1432,    2, 0x08,
+     175,    1, 1435,    2, 0x08,
+     176,    1, 1438,    2, 0x08,
+     177,    1, 1441,    2, 0x08,
+     178,    1, 1444,    2, 0x08,
+     179,    1, 1447,    2, 0x08,
+     180,    1, 1450,    2, 0x08,
+     181,    1, 1453,    2, 0x08,
+     182,    1, 1456,    2, 0x08,
+     183,    1, 1459,    2, 0x08,
+     184,    1, 1462,    2, 0x08,
+     185,    1, 1465,    2, 0x08,
+     186,    1, 1468,    2, 0x08,
+     187,    1, 1471,    2, 0x08,
+     188,    1, 1474,    2, 0x08,
+     189,    1, 1477,    2, 0x08,
+     190,    1, 1480,    2, 0x08,
+     191,    1, 1483,    2, 0x08,
+     192,    1, 1486,    2, 0x08,
+     193,    1, 1489,    2, 0x08,
+     194,    1, 1492,    2, 0x08,
+     195,    1, 1495,    2, 0x08,
+     196,    1, 1498,    2, 0x08,
+     197,    1, 1501,    2, 0x08,
+     198,    1, 1504,    2, 0x08,
+     199,    1, 1507,    2, 0x08,
+
+ // slots: parameters
+    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   18,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   18,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Int,   50,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   60,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Int,   85,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Double,  106,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Int,  117,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Bool,  126,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Double,   50,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Double,  139,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Double,   13,
+
+       0        // eod
+};
+
+void DatasetClassification::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        DatasetClassification *_t = static_cast<DatasetClassification *>(_o);
+        switch (_id) {
+        case 0: _t->on_cbUser_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: _t->on_sbVarietyObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->on_sbSowingObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->on_sbHarvestObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: _t->on_sbFertilisationObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 5: _t->on_sbIrrigationObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 6: _t->on_sbSeedDensityObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->on_sbTillageObsMgmt_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->on_dsbVarietyWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 9: _t->on_dsbSowingWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 10: _t->on_dsbHarvestWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 11: _t->on_dsbFertilisationWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 12: _t->on_dsbIrrigationWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 13: _t->on_dsbSeedDensityWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 14: _t->on_dsbTillageWeightMgmt_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 15: _t->on_sbEmergenceObsPhenology_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->on_sbStemElongationObsPhenology_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->on_sbEarEmergenceObsPhenology_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 18: _t->on_sbFloweringObsPhenology_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 19: _t->on_sbYellowRipenessObsPhenology_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 20: _t->on_dsbEmergenceWeightPhenology_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 21: _t->on_dsbStemElongationWeightPhenology_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 22: _t->on_dsbEarEmergenceWeightPhenology_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 23: _t->on_dsbFloweringWeightPhenology_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 24: _t->on_dsbYellowRipenessWeightPhenology_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 25: _t->on_sbCropObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 26: _t->on_sbSowingDateObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 27: _t->on_sbHarvestDateObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 28: _t->on_sbYieldObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->on_sbResidueMgmtObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 30: _t->on_sbFertilisationObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 31: _t->on_sbIrrigationObsPrevCrop_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 32: _t->on_dsbCropWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 33: _t->on_dsbSowingDateWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 34: _t->on_dsbHarvestDateWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 35: _t->on_dsbYieldWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 36: _t->on_dsbResidueMgmtWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 37: _t->on_dsbFertilisationWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 38: _t->on_dsbIrrigationWeightPrevCrop_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 39: _t->on_sbSoilMoistureObsInitialValues_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 40: _t->on_sbNMinObsInitialValues_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 41: _t->on_dsbSoilMoistureWeightInitialValues_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 42: _t->on_dsbNMinWeightInitialValues_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 43: _t->on_sbCOrgLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 44: _t->on_sbNOrgLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 45: _t->on_sbTextureLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 46: _t->on_sbBulkDensityLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 47: _t->on_sbFieldCapacityLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 48: _t->on_sbWiltingPointLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 49: _t->on_sbPfCurveLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 50: _t->on_sbHydrCondCurveLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 51: _t->on_sbPhLayersSoil_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 52: _t->on_dsbCOrgDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 53: _t->on_dsbNOrgDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 54: _t->on_dsbTextureDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 55: _t->on_dsbBulkDensityDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 56: _t->on_dsbFieldCapacityDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 57: _t->on_dsbWiltingPointDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 58: _t->on_dsbPfCurveDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 59: _t->on_dsbHydrCondCurveDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 60: _t->on_dsbPhDepthSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 61: _t->on_dsbCOrgWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 62: _t->on_dsbNOrgWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 63: _t->on_dsbTextureWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 64: _t->on_dsbBulkDensityWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 65: _t->on_dsbFieldCapacityWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 66: _t->on_dsbWiltingPointWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 67: _t->on_dsbPfCurveWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 68: _t->on_dsbHydrCondCurveWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 69: _t->on_dsbPhWeightSoil_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 70: _t->on_sbLatitudeObservationsSite_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 71: _t->on_sbLongitudeObservationsSite_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 72: _t->on_sbAltitudeObservationsSite_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 73: _t->on_dsbLatitudeWeightSite_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 74: _t->on_dsbLongitudeWeightSite_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 75: _t->on_dsbAltitudeWeightSite_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 76: _t->on_sbPrecipitationAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 77: _t->on_sbTAveAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 78: _t->on_sbTMinAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 79: _t->on_sbTMaxAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 80: _t->on_sbRelHumidityAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 81: _t->on_sbWindSpeedAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 82: _t->on_sbGlobalRadiationAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 83: _t->on_sbSunshineHoursAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 84: _t->on_sbLeafWetnessAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 85: _t->on_sbSoilTempAltDifWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 86: _t->on_dsbPrecipitationWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 87: _t->on_dsbTAveWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 88: _t->on_dsbTMinWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 89: _t->on_dsbTMaxWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 90: _t->on_dsbRelHumidityWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 91: _t->on_dsbWindSpeedWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 92: _t->on_dsbGlobalRadiationWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 93: _t->on_dsbSunshineHoursWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 94: _t->on_dsbLeafWetnessWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 95: _t->on_dsbSoilTempWeightWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 96: _t->on_dsbPrecipitationKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 97: _t->on_dsbRelHumidityKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 98: _t->on_dsbTAveKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 99: _t->on_dsbTMinKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 100: _t->on_dsbTMaxKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 101: _t->on_dsbWindSpeedKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 102: _t->on_dsbGlobalRadiationKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 103: _t->on_dsbSunshineHoursKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 104: _t->on_dsbLeafWetnessKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 105: _t->on_dsbSoilTempKmWeather_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 106: _t->on_sbPrecipitationOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 107: _t->on_sbTAveOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 108: _t->on_sbTMinOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 109: _t->on_sbTMaxOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 110: _t->on_sbRelHumidityOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 111: _t->on_sbWindSpeedOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 112: _t->on_sbGlobalRadiationOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 113: _t->on_sbSunshineHoursOptimalDistanceWeather_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 114: _t->on_rbPrecipitationWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 115: _t->on_rbTAveWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 116: _t->on_rbTMinWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 117: _t->on_rbTMaxWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 118: _t->on_rbRelHumidityWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 119: _t->on_rbWindSpeedWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 120: _t->on_rbGlobalRadiationWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 121: _t->on_rbSunshineHoursWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 122: _t->on_rbLeafWetnessWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 123: _t->on_rbSoilTempWeatherMeasured_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 124: _t->on_dsbSVCropYieldWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 125: _t->on_sbSVCropYieldObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 126: _t->on_dsbSVCropYieldReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 127: _t->on_sbSVCropAGrBiomassObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 128: _t->on_dsbSVCropAGrBiomassWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 129: _t->on_dsbSVCropAGrBiomassReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 130: _t->on_dsbSVCropWeightOrgansLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 131: _t->on_sbSVCropWeightOrgansObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 132: _t->on_dsbSVCropWeightOrgansWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 133: _t->on_dsbSVCropRootBiomassLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 134: _t->on_sbSVCropRootBiomassObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 135: _t->on_dsbSVCropRootBiomassWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 136: _t->on_sbSVCropNInAGrBiomassObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 137: _t->on_dsbSVCropNInAGrBiomassWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 138: _t->on_dsbSVCropNInAGrBiomassReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 139: _t->on_sbSVCropNInOrgansObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 140: _t->on_dsbSVCropNInOrgansWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 141: _t->on_dsbSVCropNInOrgansReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 142: _t->on_sbSVCropLAIObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 143: _t->on_dsbSVCropLAIWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 144: _t->on_dsbSVCropLAIReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 145: _t->on_dsbSVSoilSoilWaterGravLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 146: _t->on_sbSVSoilSoilWaterGravObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 147: _t->on_dsbSVSoilSoilWaterGravWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 148: _t->on_dsbSVSoilSoilWaterGravReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 149: _t->on_dsbSVSoilPressureHeadsLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 150: _t->on_sbSVSoilPressureHeadsObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 151: _t->on_dsbSVSoilPressureHeadsWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 152: _t->on_dsbSVSoilPressureHeadsReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 153: _t->on_dsbSVSoilNMinLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 154: _t->on_sbSVSoilNMinObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 155: _t->on_dsbSVSoilNMinWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 156: _t->on_dsbSVSoilNMinReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 157: _t->on_sbSVSoilSoilWaterSensorCalObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 158: _t->on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 159: _t->on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 160: _t->on_sbSVSoilWaterFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 161: _t->on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 162: _t->on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 163: _t->on_sbSVSoilNFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 164: _t->on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 165: _t->on_dsbSVSoilNFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 166: _t->on_sbSVSurfaceFluxesEtObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 167: _t->on_dsbSVSurfaceFluxesEtWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 168: _t->on_dsbSVSurfaceFluxesEtReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 169: _t->on_sbSVSurfaceFluxesNh3LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 170: _t->on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 171: _t->on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 172: _t->on_sbSVSurfaceFluxesN2OLossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 173: _t->on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 174: _t->on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 175: _t->on_sbSVSurfaceFluxesN2LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 176: _t->on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 177: _t->on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 178: _t->on_sbSVSurfaceFluxesCh4LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 179: _t->on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 180: _t->on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 181: _t->on_sbSVObservationsLodgingObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 182: _t->on_dsbSVObservationsLodgingWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 183: _t->on_sbSVObservationsPestsOrDiseasesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 184: _t->on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 185: _t->on_sbSVObservationsDamagesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 186: _t->on_dsbSVObservationsDamagesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObject DatasetClassification::staticMetaObject = {
+    { &QMainWindow::staticMetaObject, qt_meta_stringdata_DatasetClassification.data,
+      qt_meta_data_DatasetClassification,  qt_static_metacall, 0, 0}
+};
+
+
+const QMetaObject *DatasetClassification::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *DatasetClassification::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_DatasetClassification.stringdata))
+        return static_cast<void*>(const_cast< DatasetClassification*>(this));
+    return QMainWindow::qt_metacast(_clname);
+}
+
+int DatasetClassification::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 187)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 187;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 187)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 187;
+    }
+    return _id;
+}
+QT_END_MOC_NAMESPACE
