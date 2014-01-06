@@ -35,7 +35,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -3420,6 +3420,15 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="10" column="3">
             <widget class="QDoubleSpinBox" name="dsbPhWeightSoil">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
              <property name="value">
               <double>2.000000000000000</double>
              </property>
@@ -4587,22 +4596,6 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
-            <widget class="QDoubleSpinBox" name="dsbSlopeWeightSite">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>1.000000000000000</double>
-             </property>
-            </widget>
-           </item>
            <item row="5" column="2">
             <widget class="QSpinBox" name="sbSlopeObservationsSite">
              <property name="toolTip">
@@ -4630,6 +4623,9 @@ p, li { white-space: pre-wrap; }
               <number>0</number>
              </property>
             </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QSpinBox" name="sbSlopeWeightSite"/>
            </item>
           </layout>
          </widget>

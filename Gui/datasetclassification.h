@@ -286,6 +286,10 @@ void on_sbSVObservationsDamagesObservations_valueChanged(int theObservations);
 void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
 
 
+void on_sbSlopeObservationsSite_valueChanged(int theObservations);
+
+void on_sbSlopeWeightSite_valueChanged(int theWeight);
+
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble);

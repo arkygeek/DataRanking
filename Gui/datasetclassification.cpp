@@ -1236,6 +1236,22 @@ void DatasetClassification::on_sbAltitudeObservationsSite_valueChanged(int theOb
   updateSiteLabels();
 }
 
+void DatasetClassification::on_sbSlopeObservationsSite_valueChanged(int theObservations)
+{
+  //update item total
+  QString myTotal;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->sbSlopeWeightSite->value();
+  myValue = myPointGen.siteMethod(theObservations, myWeight);
+  myTotal = makeString(myValue);
+  ui->lblSlopeRatingSite->setText(myTotal);
+
+  updateSiteLabels();
+}
+
 void DatasetClassification::on_dsbLatitudeWeightSite_valueChanged(double theWeight)
 {
   //update item total
@@ -1281,7 +1297,21 @@ void DatasetClassification::on_dsbAltitudeWeightSite_valueChanged(double theWeig
 
   updateSiteLabels();
 }
+void DatasetClassification::on_sbSlopeWeightSite_valueChanged(int theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myObservations;
+  RankPointGenerator myPointGen;
+  double myValue;
 
+  myObservations = ui->sbSlopeObservationsSite->value();
+  myValue = myPointGen.siteMethod(myObservations, theWeight);
+  myTotal = makeString(myValue);
+  ui->lblSlopeRatingSite->setText(myTotal);
+
+  updateSiteLabels();
+}
 // Weather
 // @TODO set the correct factor for weather methods
 
