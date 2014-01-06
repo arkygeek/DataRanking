@@ -134,10 +134,12 @@ void on_dsbPhWeightSoil_valueChanged(double theWeight);
 void on_sbLatitudeObservationsSite_valueChanged(int theObservations);
 void on_sbLongitudeObservationsSite_valueChanged(int theObservations);
 void on_sbAltitudeObservationsSite_valueChanged(int theObservations);
+void on_sbSlopeObservationsSite_valueChanged(int theObservations);
 
 void on_dsbLatitudeWeightSite_valueChanged(double theWeight);
 void on_dsbLongitudeWeightSite_valueChanged(double theWeight);
 void on_dsbAltitudeWeightSite_valueChanged(double theWeight);
+void on_sbSlopeWeightSite_valueChanged(int theWeight);
 
 // weather
 void on_sbPrecipitationAltDifWeather_valueChanged(int theAltDif);
@@ -286,9 +288,7 @@ void on_sbSVObservationsDamagesObservations_valueChanged(int theObservations);
 void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
 
 
-void on_sbSlopeObservationsSite_valueChanged(int theObservations);
 
-void on_sbSlopeWeightSite_valueChanged(int theWeight);
 
 private:
   Ui::DatasetClassification *ui;

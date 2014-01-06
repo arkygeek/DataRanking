@@ -89,7 +89,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -994,7 +994,7 @@
          </widget>
         </item>
         <item row="2" column="4">
-         <spacer name="horizontalSpacer_2">
+         <spacer name="horizontalSpacerManagementRightRankLabel">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1007,7 +1007,7 @@
          </spacer>
         </item>
         <item row="2" column="2">
-         <spacer name="horizontalSpacer">
+         <spacer name="horizontalSpacerManagementLeftRankLabel">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1033,7 +1033,7 @@
          </spacer>
         </item>
         <item row="1" column="1" rowspan="4">
-         <layout class="QGridLayout" name="gridLayout_10">
+         <layout class="QGridLayout" name="gridLayoutManagementRankLevels">
           <item row="3" column="1">
            <widget class="QLabel" name="lblManagementBronzeMinVal">
             <property name="minimumSize">
@@ -1708,7 +1708,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="1" rowspan="2">
-         <layout class="QGridLayout" name="gridLayout_19">
+         <layout class="QGridLayout" name="gridLayoutPhenologyRankLevels">
           <item row="0" column="0">
            <widget class="QLabel" name="lblPhenologyPlatinumMin">
             <property name="font">
@@ -1904,7 +1904,7 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
         <item row="1" column="2">
-         <spacer name="horizontalSpacer_3">
+         <spacer name="horizontalSpacerPhenologyLeftRankLabel">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1951,7 +1951,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="4">
-         <spacer name="horizontalSpacer_4">
+         <spacer name="horizontalSpacerPhenologyRightRankLabel">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -1964,7 +1964,7 @@ p, li { white-space: pre-wrap; }
          </spacer>
         </item>
         <item row="3" column="0" colspan="5">
-         <spacer name="verticalSpacer_5">
+         <spacer name="verticalSpacerPhenology">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -2544,7 +2544,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_28">
+         <layout class="QGridLayout" name="gridLayoutPrevCropRankLevels">
           <item row="0" column="2">
            <widget class="QLabel" name="lblPrevCropPlatinumMinVal">
             <property name="minimumSize">
@@ -2740,9 +2740,9 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
         <item row="1" column="2">
-         <layout class="QGridLayout" name="gridLayout_5">
+         <layout class="QGridLayout" name="gridLayoutPrevCropRankingResult">
           <item row="0" column="0">
-           <spacer name="horizontalSpacer_8">
+           <spacer name="horizontalSpacerPrevCropLeftRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -2789,7 +2789,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="2">
-           <spacer name="horizontalSpacer_9">
+           <spacer name="horizontalSpacerPrevCropRightRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -2888,7 +2888,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="lblMgmtMinData_4">
+            <widget class="QLabel" name="lblInitialValuesMinData">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -2995,7 +2995,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="3">
-            <widget class="QLabel" name="lblMgmtPoints_4">
+            <widget class="QLabel" name="lblInitialValuesPoints">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -3023,7 +3023,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtObservations_4">
+            <widget class="QLabel" name="lblInitialValuesObservations">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -3077,7 +3077,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="0">
-         <layout class="QGridLayout" name="gridLayout_4">
+         <layout class="QGridLayout" name="gridLayoutInitialValuesRankLevels">
           <item row="0" column="0">
            <widget class="QLabel" name="lblInitialValuesPlatinumMin">
             <property name="font">
@@ -3273,9 +3273,9 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
         <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_18">
+         <layout class="QGridLayout" name="gridLayoutInitialValuesRankingResults">
           <item row="0" column="0">
-           <spacer name="horizontalSpacer_6">
+           <spacer name="horizontalSpacerInitialValuesLeftRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -3322,7 +3322,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="2">
-           <spacer name="horizontalSpacer_7">
+           <spacer name="horizontalSpacerInitialValuesRightRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -4053,7 +4053,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QTextBrowser" name="txbrSoil"/>
         </item>
         <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_3">
+         <layout class="QGridLayout" name="gridLayoutSoilRankLevels">
           <property name="spacing">
            <number>0</number>
           </property>
@@ -4254,7 +4254,7 @@ p, li { white-space: pre-wrap; }
         <item row="1" column="2">
          <layout class="QGridLayout" name="gridLayout_23">
           <item row="0" column="2">
-           <spacer name="horizontalSpacer_5">
+           <spacer name="horizontalSpacerSoilRightRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -4267,7 +4267,7 @@ p, li { white-space: pre-wrap; }
            </spacer>
           </item>
           <item row="0" column="0">
-           <spacer name="horizontalSpacerSoilRank">
+           <spacer name="horizontalSpacerSoilLeftRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -4695,7 +4695,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="0">
-         <layout class="QFormLayout" name="formLayout_2">
+         <layout class="QFormLayout" name="formLayoutSiteRankLevels">
           <property name="horizontalSpacing">
            <number>2</number>
           </property>
@@ -4897,7 +4897,7 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
         <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_2">
+         <layout class="QGridLayout" name="gridLayoutSiteRankingResult">
           <item row="0" column="1">
            <widget class="QLabel" name="lblMedalSite">
             <property name="minimumSize">
@@ -4933,7 +4933,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="0">
-           <spacer name="horizontalSpacer_10">
+           <spacer name="horizontalSpacerSiteLeftRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -4946,7 +4946,7 @@ p, li { white-space: pre-wrap; }
            </spacer>
           </item>
           <item row="0" column="2">
-           <spacer name="horizontalSpacer_11">
+           <spacer name="horizontalSpacerSiteRightRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -6447,7 +6447,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayout_30">
+         <layout class="QGridLayout" name="gridLayoutWeatherRankLevels">
           <item row="0" column="0">
            <widget class="QLabel" name="lblWeatherPlatinumMin">
             <property name="font">
@@ -6643,9 +6643,9 @@ p, li { white-space: pre-wrap; }
          </layout>
         </item>
         <item row="1" column="2">
-         <layout class="QGridLayout" name="gridLayout_8">
+         <layout class="QGridLayout" name="gridLayoutWeatherRankingResult">
           <item row="0" column="0">
-           <spacer name="horizontalSpacer_12">
+           <spacer name="horizontalSpacerWeatherLeftRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -6692,7 +6692,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="0" column="2">
-           <spacer name="horizontalSpacer_13">
+           <spacer name="horizontalSpacerWeatherRightRankLabel">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -6829,7 +6829,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>3</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -7637,9 +7637,9 @@ p, li { white-space: pre-wrap; }
                 </layout>
                </item>
                <item row="2" column="1">
-                <layout class="QGridLayout" name="gridLayout_17">
+                <layout class="QGridLayout" name="gridLayoutSVCropRankingResult">
                  <item row="0" column="0">
-                  <spacer name="horizontalSpacer_14">
+                  <spacer name="horizontalSpacerSVCropLeftRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -7686,7 +7686,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <spacer name="horizontalSpacer_15">
+                  <spacer name="horizontalSpacerSVCropRightRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -7735,8 +7735,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>463</height>
+             <width>586</width>
+             <height>526</height>
             </rect>
            </property>
            <attribute name="label">
@@ -8121,9 +8121,9 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="1" column="1">
-                <layout class="QGridLayout" name="gridLayout_21">
+                <layout class="QGridLayout" name="gridLayoutSVSoilRankingResult">
                  <item row="0" column="0">
-                  <spacer name="horizontalSpacer_16">
+                  <spacer name="horizontalSpacerSVSoilLeftRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -8170,7 +8170,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <spacer name="horizontalSpacer_17">
+                  <spacer name="horizontalSpacerSVSoilRightRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -8418,8 +8418,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>463</height>
+             <width>586</width>
+             <height>526</height>
             </rect>
            </property>
            <attribute name="label">
@@ -8778,9 +8778,9 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="1" column="1">
-                <layout class="QGridLayout" name="gridLayout_25">
+                <layout class="QGridLayout" name="gridLayoutSVSurfaceFluxesRankingResult">
                  <item row="0" column="0">
-                  <spacer name="horizontalSpacer_18">
+                  <spacer name="horizontalSpacerSVSurfaceFluxesLeftRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -8827,7 +8827,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <spacer name="horizontalSpacer_19">
+                  <spacer name="horizontalSpacerSVSurfaceFluxesRightRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -9078,8 +9078,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>463</height>
+             <width>586</width>
+             <height>526</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9368,9 +9368,9 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item row="1" column="1">
-                <layout class="QGridLayout" name="gridLayout_27">
+                <layout class="QGridLayout" name="gridLayoutSVObservationsRankingResult">
                  <item row="0" column="0">
-                  <spacer name="horizontalSpacer_20">
+                  <spacer name="horizontalSpacerSVObservationsLeftRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -9417,7 +9417,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="2">
-                  <spacer name="horizontalSpacer_21">
+                  <spacer name="horizontalSpacerSVObservationsRightRankLabel">
                    <property name="orientation">
                     <enum>Qt::Horizontal</enum>
                    </property>
@@ -9669,419 +9669,8 @@ p, li { white-space: pre-wrap; }
         <string>Seasons</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_38">
-        <item row="3" column="0">
-         <spacer name="verticalSpacer_7">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>83</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_12">
-          <item>
-           <widget class="QGroupBox" name="groupBox">
-            <property name="title">
-             <string>Sites</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_37">
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_4">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Measured?</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="lblMgmtMinData_8">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Min data?</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QLabel" name="lblMgmtObservations_9">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Number</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QLabel" name="lblMgmtPoints_10">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Weight</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="2">
-              <widget class="QLabel" name="label_7">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Seasons per crop</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="2">
-              <widget class="QSpinBox" name="sbPrecipitationAltDifWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="minimum">
-                <number>-1000</number>
-               </property>
-               <property name="maximum">
-                <number>1000</number>
-               </property>
-               <property name="value">
-                <number>6</number>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="3">
-              <widget class="QDoubleSpinBox" name="dsbPrecipitationWeightWeather_2">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>5.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-               <property name="value">
-                <double>1.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="4">
-              <widget class="QLabel" name="lblPrecipitationRatingWeather_2">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0" colspan="2">
-              <widget class="QLabel" name="label_5">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>Site Variants</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="2">
-              <widget class="QSpinBox" name="sbTAveAltDifWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="value">
-                <number>1</number>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="3">
-              <widget class="QDoubleSpinBox" name="dsbTAveWeightWeather_2">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>5.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-               <property name="value">
-                <double>1.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="4">
-              <widget class="QLabel" name="lblTAveRatingWeather_2">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0" colspan="2">
-              <widget class="QLabel" name="label_6">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>Management Potential</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="2">
-              <widget class="QSpinBox" name="sbTMinAltDifWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="value">
-                <number>4</number>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="3">
-              <widget class="QDoubleSpinBox" name="dsbTMinWeightWeather_2">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>5.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-               <property name="value">
-                <double>1.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="4">
-              <widget class="QLabel" name="lblTMinRatingWeather_2">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0" colspan="2">
-              <widget class="QLabel" name="label_8">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>zero N treatment?</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="2">
-              <widget class="QComboBox" name="comboBox">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <item>
-                <property name="text">
-                 <string>No</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Yes</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="4" column="3">
-              <widget class="QDoubleSpinBox" name="dsbTMaxWeightWeather_2">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="decimals">
-                <number>1</number>
-               </property>
-               <property name="maximum">
-                <double>5.000000000000000</double>
-               </property>
-               <property name="singleStep">
-                <double>0.500000000000000</double>
-               </property>
-               <property name="value">
-                <double>3.000000000000000</double>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="4">
-              <widget class="QLabel" name="lblTMaxRatingWeather_2">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QTextEdit" name="textEdit"/>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_11">
-              <item>
-               <widget class="QLabel" name="label_9">
-                <property name="text">
-                 <string>Multiplier:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_11">
-                <property name="text">
-                 <string>0</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
         <item row="2" column="0">
-         <widget class="QGroupBox" name="gbxWeather_2">
+         <widget class="QGroupBox" name="gbxSeasonsTreatments">
           <property name="font">
            <font>
             <pointsize>9</pointsize>
@@ -10097,8 +9686,71 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_36">
+           <item row="6" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment5">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment6">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 6</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 3</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
            <item row="6" column="6">
-            <widget class="QDoubleSpinBox" name="dsbLeafWetnessWeightWeather_2">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment5Weight">
              <property name="maximumSize">
               <size>
                <width>60</width>
@@ -10120,7 +9772,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="6">
-            <widget class="QDoubleSpinBox" name="dsbSunshineHoursWeightWeather_2">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment4Weight">
              <property name="maximumSize">
               <size>
                <width>60</width>
@@ -10142,7 +9794,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="5">
-            <widget class="QSpinBox" name="sbRelHumidityAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment1Number">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -10164,7 +9816,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="5">
-            <widget class="QSpinBox" name="sbWindSpeedAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment2Number">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -10185,8 +9837,39 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
+           <item row="3" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string/>
+             </property>
+             <property name="whatsThis">
+              <string/>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 2</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
            <item row="4" column="5">
-            <widget class="QSpinBox" name="sbGlobalRadiationAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment3Number">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -10208,7 +9891,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="ledSeasonsTreatment1">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10218,9 +9901,9 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="5">
-            <widget class="QSpinBox" name="sbSunshineHoursAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment4Number">
              <property name="enabled">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -10239,30 +9922,8 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="2" column="6">
-            <widget class="QDoubleSpinBox" name="dsbRelHumidityWeightWeather_2">
-             <property name="maximumSize">
-              <size>
-               <width>60</width>
-               <height>16777215</height>
-              </size>
-             </property>
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>1.000000000000000</double>
-             </property>
-            </widget>
-           </item>
            <item row="4" column="2">
-            <widget class="QComboBox" name="comboBox_5">
+            <widget class="QComboBox" name="cbSeasonsTreatment3">
              <property name="currentIndex">
               <number>2</number>
              </property>
@@ -10309,7 +9970,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="6">
-            <widget class="QDoubleSpinBox" name="dsbGlobalRadiationWeightWeather_2">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment3Weight">
              <property name="maximumSize">
               <size>
                <width>60</width>
@@ -10331,7 +9992,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="6">
-            <widget class="QDoubleSpinBox" name="dsbSoilTempWeightWeather_2">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment6Weight">
              <property name="maximumSize">
               <size>
                <width>60</width>
@@ -10353,7 +10014,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="6">
-            <widget class="QDoubleSpinBox" name="dsbWindSpeedWeightWeather_2">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment2Weight">
              <property name="maximumSize">
               <size>
                <width>60</width>
@@ -10375,7 +10036,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_3">
+            <widget class="QLineEdit" name="ledSeasonsTreatment3">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10385,7 +10046,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_4">
+            <widget class="QLineEdit" name="ledSeasonsTreatment4">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10395,7 +10056,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="7">
-            <widget class="QLabel" name="lblWindSpeedRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment2RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10406,11 +10067,14 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="text">
               <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
            <item row="4" column="7">
-            <widget class="QLabel" name="lblGlobalRadiationRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment3RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10419,10 +10083,38 @@ p, li { white-space: pre-wrap; }
              <property name="text">
               <string>0</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 4</string>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
            <item row="2" column="7">
-            <widget class="QLabel" name="lblRelHumidityRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment1RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10434,36 +10126,13 @@ p, li { white-space: pre-wrap; }
              <property name="text">
               <string>0</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
             </widget>
            </item>
-           <item row="2" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_15">
-             <item>
-              <widget class="QCheckBox" name="chbxRelHumidityWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 1</string>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="3" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_2">
+            <widget class="QLineEdit" name="ledSeasonsTreatment2">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10472,60 +10141,8 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="5" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <item>
-              <widget class="QCheckBox" name="chbxSunshineHoursWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 4</string>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-               <property name="tristate">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="7" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_20">
-             <item>
-              <widget class="QCheckBox" name="chbxSoilTempWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 6</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="7" column="7">
-            <widget class="QLabel" name="lblSoilTempRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment6RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10533,11 +10150,14 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="text">
               <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
            <item row="6" column="7">
-            <widget class="QLabel" name="lblLeafWetnessRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment5RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10545,34 +10165,14 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="text">
               <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="6" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_19">
-             <item>
-              <widget class="QCheckBox" name="chbxLeafWetnessWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 5</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="5" column="7">
-            <widget class="QLabel" name="lblSunshineHoursRatingWeather_2">
+            <widget class="QLabel" name="lblTreatment4RatingSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -10580,11 +10180,14 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="text">
               <string>0</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
            <item row="7" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_6">
+            <widget class="QLineEdit" name="ledSeasonsTreatment6">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10594,7 +10197,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="5">
-            <widget class="QSpinBox" name="sbLeafWetnessAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment5Number">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -10613,7 +10216,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="2">
-            <widget class="QComboBox" name="comboBox_6">
+            <widget class="QComboBox" name="cbSeasonsTreatment5">
              <property name="currentIndex">
               <number>4</number>
              </property>
@@ -10660,7 +10263,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="2">
-            <widget class="QComboBox" name="comboBox_4">
+            <widget class="QComboBox" name="cbSeasonsTreatment4">
              <property name="currentIndex">
               <number>3</number>
              </property>
@@ -10707,7 +10310,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="2">
-            <widget class="QComboBox" name="comboBox_7">
+            <widget class="QComboBox" name="cbSeasonsTreatment6">
              <property name="currentIndex">
               <number>5</number>
              </property>
@@ -10754,7 +10357,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="3" colspan="2">
-            <widget class="QLabel" name="label_10">
+            <widget class="QLabel" name="lblSeasonsTreatmentsNotes">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -10768,43 +10371,8 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="3" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_16">
-             <item>
-              <widget class="QCheckBox" name="chbxWindSpeedWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="statusTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string/>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 2</string>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-               <property name="tristate">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="6" column="3" colspan="2">
-            <widget class="QLineEdit" name="lineEdit_5">
+            <widget class="QLineEdit" name="ledSeasonsTreatment5">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -10813,37 +10381,8 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="4" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_17">
-             <item>
-              <widget class="QCheckBox" name="chbxGlobalRadiationWeather_2">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>Treatment 3</string>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-               <property name="tristate">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="7" column="5">
-            <widget class="QSpinBox" name="sbSoilTempAltDifWeather_2">
+            <widget class="QSpinBox" name="sbSeasonsTreatment6Number">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -10862,7 +10401,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="2">
-            <widget class="QComboBox" name="comboBox_2">
+            <widget class="QComboBox" name="cbSeasonsTreatment1">
              <item>
               <property name="text">
                <string>Irrigation</string>
@@ -10906,7 +10445,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="2">
-            <widget class="QComboBox" name="comboBox_3">
+            <widget class="QComboBox" name="cbSeasonsTreatment2">
              <property name="currentIndex">
               <number>1</number>
              </property>
@@ -10952,8 +10491,492 @@ p, li { white-space: pre-wrap; }
              </item>
             </widget>
            </item>
+           <item row="2" column="6">
+            <widget class="QDoubleSpinBox" name="dsbSeasonsTreatment1Weight">
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QCheckBox" name="chbxSeasonsTreatment1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Treatment 1</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="5">
+            <widget class="QLabel" name="lblSeasonsTreatmentsNumber">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Number</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="6">
+            <widget class="QLabel" name="lblSeasonsTreatmentsWeight">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Weight</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="7">
+            <widget class="QLabel" name="lblSeasonsTreatmentsTotal">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
+        </item>
+        <item row="4" column="0">
+         <spacer name="verticalSpacerSeasons">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>85</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayoutSeasonsTop">
+          <item>
+           <widget class="QGroupBox" name="gbxSeasonsSites">
+            <property name="title">
+             <string>Sites</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_37">
+             <item row="0" column="2">
+              <widget class="QLabel" name="lblSeasonsSitesNumber">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Number</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="lblSeasonsSitesWeight">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Weight</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0" colspan="2">
+              <widget class="QLabel" name="lblSeasonsSitesSeasonsPerCrop">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Seasons per crop</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QSpinBox" name="sbSeasonsSitesSeasonsPerCropNumber">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="minimum">
+                <number>-1000</number>
+               </property>
+               <property name="maximum">
+                <number>1000</number>
+               </property>
+               <property name="value">
+                <number>6</number>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesSeasonsPerCropWeight">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>5.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.500000000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLabel" name="lblSeasonsPerCropRatingSeasons">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QLabel" name="lblSeasonsSitesSiteVariants">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>Site Variants</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QSpinBox" name="sbSeasonsSitesSiteVariantsNumber">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesSiteVariantsWeight">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>5.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.500000000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLabel" name="lblSiteVariantsRatingSeasons">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
+              <widget class="QLabel" name="lblSeasonsSitesMgmtPotential">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>Management Potential</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="QSpinBox" name="sbSeasonsSitesMgmtPotentialNumber">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="value">
+                <number>4</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesMgmtPotentialWeight">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>5.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.500000000000000</double>
+               </property>
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="4">
+              <widget class="QLabel" name="lblMgmtPotentialRatingSeasons">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="QLabel" name="lblSeasonsSitesZeroNTreatment">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>zero N treatment?</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QComboBox" name="cbSeasonsSitesZeroNTreatment">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>55</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <item>
+                <property name="text">
+                 <string>No</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Yes</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="4" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesZeroNTreatment">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="decimals">
+                <number>1</number>
+               </property>
+               <property name="maximum">
+                <double>5.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>0.500000000000000</double>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="4">
+              <widget class="QLabel" name="lblZeroNTreatmentRatingSeasons">
+               <property name="font">
+                <font>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>0</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLabel" name="lblSeasonsSitesTotal">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Points</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="tedSeasons"/>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayoutSeasonsMultiplier">
+          <item>
+           <widget class="QLabel" name="lblSeasonsMultiplier">
+            <property name="text">
+             <string>Multiplier:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblSeasonsMultiplierTotal">
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
