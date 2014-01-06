@@ -149,7 +149,7 @@ void on_sbTMaxAltDifWeather_valueChanged(int theAltDif);
 void on_sbRelHumidityAltDifWeather_valueChanged(int theAltDif);
 void on_sbWindSpeedAltDifWeather_valueChanged(int theAltDif);
 void on_sbGlobalRadiationAltDifWeather_valueChanged(int theAltDif);
-void on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif);
+//void on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif);
 void on_sbLeafWetnessAltDifWeather_valueChanged(int theAltDif);
 void on_sbSoilTempAltDifWeather_valueChanged(int theAltDif);
 
@@ -258,23 +258,23 @@ void on_dsbSVSoilNFluxBottomRootReplicates_valueChanged(double theReplicates);
 // SV surface fluxes
 void on_sbSVSurfaceFluxesEtObservations_valueChanged(int theObservations);
 void on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double theWeight);
-void on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates);
+//void on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates);
 
 void on_sbSVSurfaceFluxesNh3LossObservations_valueChanged(int theObservations);
 void on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(double theWeight);
-void on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(double theReplicates);
+//void on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(double theReplicates);
 
 void on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations);
 void on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight);
-void on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates);
+//void on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates);
 
 void on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations);
 void on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight);
-void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
+//void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
 
 void on_sbSVSurfaceFluxesCh4LossObservations_valueChanged(int theObservations);
 void on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(double theWeight);
-void on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(double theReplicates);
+//void on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(double theReplicates);
 
 // SV observations
 
