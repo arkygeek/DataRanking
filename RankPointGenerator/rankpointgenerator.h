@@ -76,6 +76,11 @@ double SeasonsMethod2(int theNumber, int theWeight);
 double multiplier(int theSeasonsTotal);
 
 QString getRankManagement(int theTotal);
+QString getRankPhenology(int theTotal);
+QString getRankPrevCrop(int theTotal);
+QString getRankInitialValues(int theTotal);
+
+
 
 
 };

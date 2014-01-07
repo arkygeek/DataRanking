@@ -99,6 +99,10 @@ void on_sbNMinObsInitialValues_valueChanged(int theObservations);
 void on_dsbSoilMoistureWeightInitialValues_valueChanged(double theWeight);
 void on_dsbNMinWeightInitialValues_valueChanged(double theWeight);
 
+void on_dsbSoilMoistureDepthInitialValues_valueChanged(double theDepth);
+void on_dsbNMinDepthInitialValues_valueChanged(double theDepth);
+
+
 // soil
 void on_sbCOrgLayersSoil_valueChanged(int theLayers);
 void on_sbNOrgLayersSoil_valueChanged(int theLayers);

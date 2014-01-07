@@ -723,6 +723,40 @@ void DatasetClassification::on_dsbNMinWeightInitialValues_valueChanged(double th
   updateInitialValuesLabels();
 }
 
+void DatasetClassification::on_dsbSoilMoistureDepthInitialValues_valueChanged(double theDepth)
+{
+  //update item total
+  QString myTotal;
+  double myObservations;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->dsbSoilMoistureWeightInitialValues->value();
+  myObservations = ui->sbSoilMoistureObsInitialValues->value();
+  myValue = myPointGen.initialValuesMethod(myObservations, myWeight, theDepth);
+  myTotal = makeString(myValue);
+  ui->lblSoilMoistureRatingInitialValues->setText(myTotal);
+
+  updateInitialValuesLabels();
+}
+void DatasetClassification::on_dsbNMinDepthInitialValues_valueChanged(double theDepth)
+{
+  //update item total
+  QString myTotal;
+  double myObservations;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->dsbNMinWeightInitialValues->value();
+  myObservations = ui->sbNMinObsInitialValues->value();
+  myValue = myPointGen.initialValuesMethod(myObservations, myWeight, theDepth);
+  myTotal = makeString(myValue);
+  ui->lblNMinRatingInitialValues->setText(myTotal);
+
+  updateInitialValuesLabels();
+}
 // Soil
 
 void DatasetClassification::on_sbCOrgLayersSoil_valueChanged(int theLayers)
@@ -3102,51 +3136,26 @@ void DatasetClassification::updatePhenologyLabels()
   myTotal += ui->lblFloweringRatingPhenology->text().toFloat();
   myTotal += ui->lblYellowRipenessRatingPhenology->text().toFloat();
   ui->lblCombinedTotalPhenology->setText(makeString(myTotal));
-  int myRank = 0;
-  if (myTotal >= 13) myRank=13;
-  else if (myTotal >= 11) myRank=11;
-  else if (myTotal >= 8) myRank=8;
-  else if (myTotal >= 5) myRank=5;
+  // go find out what the rank is
 
-  switch (myRank)
+  RankPointGenerator myRankGen;
+  qDebug() << "myTotal - Phenology - is: " << myTotal;
+  QString myRank = myRankGen.getRankPhenology(myTotal);
+
+  ui->lblMedalPhenology->setVisible(true);
+  ui->lblMedalPhenology->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingPhenology->setVisible(true);
+  ui->lblRankingPhenology->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
   {
-    case 13: ui->lblMedalPhenology->setVisible(true);
-             ui->lblMedalPhenology->setScaledContents(true);
-             ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-             ui->lblRankingPhenology->setVisible(true);
-             ui->lblRankingPhenology->setText("Platinum");
-             ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/platinum.png")));
-             break;
-
-    case 11: ui->lblMedalPhenology->setVisible(true);
-             ui->lblMedalPhenology->setScaledContents(true);
-             ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/gold.png" ));
-             ui->lblRankingPhenology->setVisible(true);
-             ui->lblRankingPhenology->setText("Gold");
-             ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/gold.png")));
-             break;
-
-    case 8: ui->lblMedalPhenology->setVisible(true);
-             ui->lblMedalPhenology->setScaledContents(true);
-             ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/silver.png" ));
-             ui->lblRankingPhenology->setVisible(true);
-             ui->lblRankingPhenology->setText("Silver");
-             ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/silver.png")));
-             break;
-
-    case  5: ui->lblMedalPhenology->setVisible(true);
-             ui->lblMedalPhenology->setScaledContents(true);
-             ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-             ui->lblRankingPhenology->setVisible(true);
-             ui->lblRankingPhenology->setText("Bronze");
-             ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/bronze.png")));
-             break;
-
-    default: // hide
-             ui->lblRankingPhenology->setVisible(false);
-             ui->lblMedalPhenology->setVisible(false);
-             ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
-             break;
+    ui->lblRankingPhenology->setVisible(false);
+    ui->lblMedalPhenology->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
   }
 }
 void DatasetClassification::updatePrevCropLabels()
@@ -3164,51 +3173,25 @@ void DatasetClassification::updatePrevCropLabels()
 
   ui->lblOverallRatingPrevCrop->setText(makeString(myTotal));
 
-  int myRank = 0;
-  if (myTotal >= 17) myRank=17;
-  else if (myTotal >= 15) myRank=15;
-  else if (myTotal >= 12) myRank=12;
-  else if (myTotal >= 9) myRank=9;
+  // go find out what the rank is
 
-  switch (myRank)
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankPrevCrop(myTotal);
+
+  ui->lblMedalPrevCrop->setVisible(true);
+  ui->lblMedalPrevCrop->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingPrevCrop->setVisible(true);
+  ui->lblRankingPrevCrop->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
   {
-    case 17: ui->lblMedalPrevCrop->setVisible(true);
-             ui->lblMedalPrevCrop->setScaledContents(true);
-             ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-             ui->lblRankingPrevCrop->setVisible(true);
-             ui->lblRankingPrevCrop->setText("Platinum");
-             ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/platinum.png")));
-             break;
-
-    case 15: ui->lblMedalPrevCrop->setVisible(true);
-             ui->lblMedalPrevCrop->setScaledContents(true);
-             ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/gold.png" ));
-             ui->lblRankingPrevCrop->setVisible(true);
-             ui->lblRankingPrevCrop->setText("Gold");
-             ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/gold.png")));
-             break;
-
-    case 12: ui->lblMedalPrevCrop->setVisible(true);
-             ui->lblMedalPrevCrop->setScaledContents(true);
-             ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/silver.png" ));
-             ui->lblRankingPrevCrop->setVisible(true);
-             ui->lblRankingPrevCrop->setText("Silver");
-             ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/silver.png")));
-             break;
-
-    case  9: ui->lblMedalPrevCrop->setVisible(true);
-             ui->lblMedalPrevCrop->setScaledContents(true);
-             ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-             ui->lblRankingPrevCrop->setVisible(true);
-             ui->lblRankingPrevCrop->setText("Bronze");
-             ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/bronze.png")));
-             break;
-
-    default: // hide
-             ui->lblRankingPrevCrop->setVisible(false);
-             ui->lblMedalPrevCrop->setVisible(false);
-             ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
-             break;
+    ui->lblRankingPrevCrop->setVisible(false);
+    ui->lblMedalPrevCrop->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
   }
 }
 void DatasetClassification::updateInitialValuesLabels()
@@ -3219,51 +3202,26 @@ void DatasetClassification::updateInitialValuesLabels()
   myTotal += ui->lblSoilMoistureRatingInitialValues->text().toFloat();
   myTotal += ui->lblNMinRatingInitialValues->text().toFloat();
   ui->lblOverallRatingInitialValues->setText(makeString(myTotal));
-  int myRank = 0;
-  if (myTotal >= 10) myRank=10;
-  else if (myTotal >= 7) myRank=7;
-  else if (myTotal >= 4) myRank=4;
-  else if (myTotal >= 1) myRank=1;
 
-  switch (myRank)
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankInitialValues(myTotal);
+
+  ui->lblMedalInitialValues->setVisible(true);
+  ui->lblMedalInitialValues->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingInitialValues->setVisible(true);
+  ui->lblRankingInitialValues->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
   {
-    case  10: ui->lblMedalInitialValues->setVisible(true);
-             ui->lblMedalInitialValues->setScaledContents(true);
-             ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-             ui->lblRankingInitialValues->setVisible(true);
-             ui->lblRankingInitialValues->setText("Platinum");
-             ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/platinum.png")));
-             break;
-
-    case  7: ui->lblMedalInitialValues->setVisible(true);
-             ui->lblMedalInitialValues->setScaledContents(true);
-             ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/gold.png" ));
-             ui->lblRankingInitialValues->setVisible(true);
-             ui->lblRankingInitialValues->setText("Gold");
-             ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/gold.png")));
-             break;
-
-    case  4: ui->lblMedalInitialValues->setVisible(true);
-             ui->lblMedalInitialValues->setScaledContents(true);
-             ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/silver.png" ));
-             ui->lblRankingInitialValues->setVisible(true);
-             ui->lblRankingInitialValues->setText("Silver");
-             ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/silver.png")));
-             break;
-
-    case  1: ui->lblMedalInitialValues->setVisible(true);
-             ui->lblMedalInitialValues->setScaledContents(true);
-             ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-             ui->lblRankingInitialValues->setVisible(true);
-             ui->lblRankingInitialValues->setText("Bronze");
-             ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/bronze.png")));
-             break;
-
-    default: // hide
-             ui->lblRankingInitialValues->setVisible(false);
-             ui->lblMedalInitialValues->setVisible(false);
-             ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
-             break;
+    ui->lblRankingInitialValues->setVisible(false);
+    ui->lblMedalInitialValues->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
   }
 }
 void DatasetClassification::updateSoilLabels()

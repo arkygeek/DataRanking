@@ -250,3 +250,96 @@ QString RankPointGenerator::getRankManagement(int theTotal)
 
    return myRank;
 }
+
+QString RankPointGenerator::getRankPhenology(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 13) myRankNumber=13;
+  else if (theTotal >= 11) myRankNumber=11;
+  else if (theTotal >= 8) myRankNumber=8;
+  else if (theTotal >= 5) myRankNumber=5;
+
+   switch (myRankNumber)
+   {
+     case 13: myRank = "Platinum";
+              break;
+
+     case 11: myRank = "Gold";
+              break;
+
+     case 8: myRank = "Silver";
+              break;
+
+     case 5: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+   qDebug() << "myRank - Phenology - is: " << myRank;
+   return myRank;
+}
+
+QString RankPointGenerator::getRankPrevCrop(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 17) myRankNumber=17;
+  else if (theTotal >= 19) myRankNumber=19;
+  else if (theTotal >= 12) myRankNumber=12;
+  else if (theTotal >= 9) myRankNumber=9;
+
+   switch (myRankNumber)
+   {
+     case 17: myRank = "Platinum";
+              break;
+
+     case 19: myRank = "Gold";
+              break;
+
+     case 12: myRank = "Silver";
+              break;
+
+     case 9: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
+
+QString RankPointGenerator::getRankInitialValues(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 10) myRankNumber=10;
+  else if (theTotal >= 7) myRankNumber=7;
+  else if (theTotal >= 4) myRankNumber=4;
+  else if (theTotal >= 1) myRankNumber=1;
+
+   switch (myRankNumber)
+   {
+     case 10: myRank = "Platinum";
+              break;
+
+     case 7: myRank = "Gold";
+              break;
+
+     case 4: myRank = "Silver";
+              break;
+
+     case 1: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
