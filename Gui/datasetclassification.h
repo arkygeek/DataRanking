@@ -297,7 +297,7 @@ void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble);
-  QString makeString(int theDouble);
+  QString makeString(int theInt);
   QString makeString(float theFloat);
 
 

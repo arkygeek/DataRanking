@@ -109,7 +109,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -6811,7 +6811,7 @@ p, li { white-space: pre-wrap; }
          </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QLabel" name="lblSVTotalPoints">
+         <widget class="QLabel" name="lblOverallRatingSV">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -6826,7 +6826,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QLabel" name="lblSVMedalCombined">
+         <widget class="QLabel" name="lblMedalSV">
           <property name="minimumSize">
            <size>
             <width>40</width>
@@ -6859,7 +6859,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QLabel" name="lblSVRankOverall">
+         <widget class="QLabel" name="lblRankingSV">
           <property name="text">
            <string>Platinum</string>
           </property>
@@ -6874,7 +6874,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -6884,8 +6884,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>526</height>
+             <width>715</width>
+             <height>506</height>
             </rect>
            </property>
            <attribute name="label">
@@ -7783,8 +7783,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>526</height>
+             <width>715</width>
+             <height>506</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9283,8 +9283,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>654</width>
-             <height>526</height>
+             <width>715</width>
+             <height>506</height>
             </rect>
            </property>
            <attribute name="label">

@@ -107,6 +107,8 @@ double RankPointGenerator::weatherMethodSunshineHours(double theDistance, double
   }
   return myTotal;
 }
+
+
 double RankPointGenerator::weatherMethod1(double theDistance, double theWeight,
                                              int theAltDif, double theFactor,
                                              int theOptimalDistance)
@@ -145,6 +147,197 @@ double RankPointGenerator::weatherMethod1(double theDistance, double theWeight,
 }
 
 // State Variables
+
+double RankPointGenerator::SVCropYield(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =F49*E49+(G49-1)*0.5
+}
+
+double RankPointGenerator::SVCropAGrBiomass(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E50/3,1.25)*F50*MIN(G50/3,1.2)
+}
+
+double RankPointGenerator::SVCropWeightOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D51/3,1.25)*MIN(E51/3,1.2)*F51*MIN(G51/3,1.1)
+}
+
+double RankPointGenerator::SVCropRootBiomass(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D52/3,1.25)*MIN(E52/3,1.2)*F52*MIN(G52/3,1.1)
+}
+
+double RankPointGenerator::SVCropNInAGrBiomass(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E53/3,1.2)*F53*MIN(G53/3,1.1)
+}
+
+double RankPointGenerator::SVCropNInOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D54/2,1.25)*MIN(E54,1.2)*F54*MIN(G54/3,1.1)
+}
+
+double RankPointGenerator::SVCropLAI(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E55/5,1)*F55*MIN(G55/3,1)
+}
+
+double RankPointGenerator::SVSoilSoilWaterGrav(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D56/3,1.25)*MIN(E56/5,1.2)*F56*MIN(G56/3,1.1)
+}
+
+double RankPointGenerator::SVSoilPressureHeads(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D57/3,1.25)*MIN(E57/20,1.2)*F57*MIN(G57/3,1.1)
+}
+
+double RankPointGenerator::SVSoilNMin(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D58/3,1.25)*MIN(E58/3,1.2)*F58*MIN(G58/3,1.1)
+}
+
+double RankPointGenerator::SVSoilSoilWaterSensorCal(int theLayers, int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(D59/3,1.25)*MIN(E59/50,1.2)*F59*MIN(G59/3,1.1)
+  //  ^myMinValue1    ^myMinValue2        ^myMinValue3
+
+  // min(layers/3,1.25) * min(observations/50,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinValue3;
+
+  myMinLayers = theLayers/3 < 1.25 ? theLayers/3 : 1.25;
+  myMinObservations = theObservations/50 < 1.2 ? theObservations/50 : 1.2;
+  myMinValue3 = theReplicates/3 < 1.1 ? theReplicates/3 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinValue3);
+  return myTotal;
+}
+
+double RankPointGenerator::SVSoilWaterFluxBottomRoot(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E60/10,1.25)*F60*G60/3
+
+  double myTotal;
+  myTotal = ((theObservations/10>1.25?1.25:theObservations/10) * theWeight * theReplicates) / 3.0;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSoilNFluxBottomRoot(int theObservations, double theWeight, double theReplicates)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =E61*F61*G61/3
+  // (observations x weight x replicates) / 3
+
+  double myTotal;
+  myTotal = (theObservations * theWeight * theReplicates) / 3.0;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSurfaceFluxesET(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E62,1)*F62
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSurfaceFluxesNH3Loss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E63,1)*F63
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSurfaceFluxesN2OLoss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E64,1)*F64
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSurfaceFluxesN2Loss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E65,1)*F65
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVSurfaceFluxesCH4Loss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E66,1)*F66
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVObservationsLodging(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =E67*F67
+  // observations x weight
+
+  double myTotal;
+  myTotal = theObservations * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVObservationsPests(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =E68*F68
+  // observations x weight
+
+  double myTotal;
+  myTotal = theObservations * theWeight;
+  return myTotal;
+}
+
+double RankPointGenerator::SVObservationsDamages(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =E69*F69
+  // observations x weight
+
+  double myTotal;
+  myTotal = theObservations * theWeight;
+  return myTotal;
+}
+
+
 double RankPointGenerator::SVMethod1(int theObservations, double theWeight, double theReplicates)
 {
   // (observations x weight x replicates) / 3
@@ -335,6 +528,130 @@ QString RankPointGenerator::getRankInitialValues(int theTotal)
               break;
 
      case 1: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
+
+QString RankPointGenerator::getRankSoil(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 28) myRankNumber=28;
+  else if (theTotal >= 20) myRankNumber=20;
+  else if (theTotal >= 12) myRankNumber=12;
+  else if (theTotal >= 5) myRankNumber=5;
+
+   switch (myRankNumber)
+   {
+     case 28: myRank = "Platinum";
+              break;
+
+     case 20: myRank = "Gold";
+              break;
+
+     case 12: myRank = "Silver";
+              break;
+
+     case 5: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
+
+QString RankPointGenerator::getRankSite(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 12) myRankNumber=12;
+  else if (theTotal >= 11) myRankNumber=11;
+  else if (theTotal >= 8) myRankNumber=8;
+  else if (theTotal >= 5) myRankNumber=5;
+
+   switch (myRankNumber)
+   {
+     case 12: myRank = "Platinum";
+              break;
+
+     case 11: myRank = "Gold";
+              break;
+
+     case 8: myRank = "Silver";
+              break;
+
+     case 5: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
+
+QString RankPointGenerator::getRankWeather(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 33) myRankNumber=33;
+  else if (theTotal >= 30) myRankNumber=30;
+  else if (theTotal >= 22) myRankNumber=22;
+  else if (theTotal >= 14) myRankNumber=14;
+
+   switch (myRankNumber)
+   {
+     case 33: myRank = "Platinum";
+              break;
+
+     case 30: myRank = "Gold";
+              break;
+
+     case 22: myRank = "Silver";
+              break;
+
+     case 14: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}
+
+QString RankPointGenerator::getRankSV(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 40) myRankNumber=40;
+  else if (theTotal >= 25) myRankNumber=25;
+  else if (theTotal >= 10) myRankNumber=10;
+  else if (theTotal >= 6) myRankNumber=6;
+
+   switch (myRankNumber)
+   {
+     case 40: myRank = "Platinum";
+              break;
+
+     case 25: myRank = "Gold";
+              break;
+
+     case 10: myRank = "Silver";
+              break;
+
+     case 6: myRank = "Bronze";
               break;
 
      default: myRank = "na";

@@ -467,9 +467,9 @@ public:
     QGridLayout *gridLayout_11;
     QLabel *lblSVTotalPointsHeader;
     QSpacerItem *verticalSpacer;
-    QLabel *lblSVTotalPoints;
-    QLabel *lblSVMedalCombined;
-    QLabel *lblSVRankOverall;
+    QLabel *lblOverallRatingSV;
+    QLabel *lblMedalSV;
+    QLabel *lblRankingSV;
     QToolBox *toolBoxStateVars;
     QWidget *pageCrop;
     QGridLayout *gridLayout_14;
@@ -3978,36 +3978,36 @@ public:
 
         gridLayout_11->addItem(verticalSpacer, 4, 1, 1, 1);
 
-        lblSVTotalPoints = new QLabel(tabStateVars);
-        lblSVTotalPoints->setObjectName(QStringLiteral("lblSVTotalPoints"));
-        lblSVTotalPoints->setFont(font9);
-        lblSVTotalPoints->setAlignment(Qt::AlignCenter);
+        lblOverallRatingSV = new QLabel(tabStateVars);
+        lblOverallRatingSV->setObjectName(QStringLiteral("lblOverallRatingSV"));
+        lblOverallRatingSV->setFont(font9);
+        lblOverallRatingSV->setAlignment(Qt::AlignCenter);
 
-        gridLayout_11->addWidget(lblSVTotalPoints, 1, 1, 1, 1);
+        gridLayout_11->addWidget(lblOverallRatingSV, 1, 1, 1, 1);
 
-        lblSVMedalCombined = new QLabel(tabStateVars);
-        lblSVMedalCombined->setObjectName(QStringLiteral("lblSVMedalCombined"));
-        lblSVMedalCombined->setMinimumSize(QSize(40, 40));
-        lblSVMedalCombined->setMaximumSize(QSize(40, 40));
-        lblSVMedalCombined->setFont(font9);
-        lblSVMedalCombined->setPixmap(QPixmap(QString::fromUtf8(":/Resources/platinum.png")));
-        lblSVMedalCombined->setScaledContents(true);
-        lblSVMedalCombined->setAlignment(Qt::AlignCenter);
+        lblMedalSV = new QLabel(tabStateVars);
+        lblMedalSV->setObjectName(QStringLiteral("lblMedalSV"));
+        lblMedalSV->setMinimumSize(QSize(40, 40));
+        lblMedalSV->setMaximumSize(QSize(40, 40));
+        lblMedalSV->setFont(font9);
+        lblMedalSV->setPixmap(QPixmap(QString::fromUtf8(":/Resources/platinum.png")));
+        lblMedalSV->setScaledContents(true);
+        lblMedalSV->setAlignment(Qt::AlignCenter);
 
-        gridLayout_11->addWidget(lblSVMedalCombined, 2, 1, 1, 1);
+        gridLayout_11->addWidget(lblMedalSV, 2, 1, 1, 1);
 
-        lblSVRankOverall = new QLabel(tabStateVars);
-        lblSVRankOverall->setObjectName(QStringLiteral("lblSVRankOverall"));
-        lblSVRankOverall->setAlignment(Qt::AlignCenter);
+        lblRankingSV = new QLabel(tabStateVars);
+        lblRankingSV->setObjectName(QStringLiteral("lblRankingSV"));
+        lblRankingSV->setAlignment(Qt::AlignCenter);
 
-        gridLayout_11->addWidget(lblSVRankOverall, 3, 1, 1, 1);
+        gridLayout_11->addWidget(lblRankingSV, 3, 1, 1, 1);
 
         toolBoxStateVars = new QToolBox(tabStateVars);
         toolBoxStateVars->setObjectName(QStringLiteral("toolBoxStateVars"));
         toolBoxStateVars->setEnabled(true);
         pageCrop = new QWidget();
         pageCrop->setObjectName(QStringLiteral("pageCrop"));
-        pageCrop->setGeometry(QRect(0, 0, 654, 526));
+        pageCrop->setGeometry(QRect(0, 0, 715, 506));
         gridLayout_14 = new QGridLayout(pageCrop);
         gridLayout_14->setSpacing(6);
         gridLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -4494,7 +4494,7 @@ public:
         toolBoxStateVars->addItem(pageCrop, QStringLiteral("Crop"));
         pageSoil = new QWidget();
         pageSoil->setObjectName(QStringLiteral("pageSoil"));
-        pageSoil->setGeometry(QRect(0, 0, 654, 526));
+        pageSoil->setGeometry(QRect(0, 0, 715, 506));
         gridLayout_12 = new QGridLayout(pageSoil);
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -5324,7 +5324,7 @@ public:
         toolBoxStateVars->addItem(surfaceFluxesPage, QStringLiteral("Surface Fluxes"));
         pageObservations = new QWidget();
         pageObservations->setObjectName(QStringLiteral("pageObservations"));
-        pageObservations->setGeometry(QRect(0, 0, 654, 526));
+        pageObservations->setGeometry(QRect(0, 0, 715, 506));
         gridLayout_16 = new QGridLayout(pageObservations);
         gridLayout_16->setSpacing(6);
         gridLayout_16->setContentsMargins(11, 11, 11, 11);
@@ -6212,8 +6212,8 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(3);
-        toolBoxStateVars->setCurrentIndex(2);
+        tabWidgetDataClassification->setCurrentIndex(7);
+        toolBoxStateVars->setCurrentIndex(0);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
         cbSeasonsTreatment5->setCurrentIndex(4);
@@ -6829,9 +6829,9 @@ public:
         lblRankingWeather->setText(QApplication::translate("DatasetClassification", "n/a", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabWeather), QApplication::translate("DatasetClassification", "Weather", 0));
         lblSVTotalPointsHeader->setText(QApplication::translate("DatasetClassification", "SV Total Pts", 0));
-        lblSVTotalPoints->setText(QApplication::translate("DatasetClassification", "55.6", 0));
-        lblSVMedalCombined->setText(QString());
-        lblSVRankOverall->setText(QApplication::translate("DatasetClassification", "Platinum", 0));
+        lblOverallRatingSV->setText(QApplication::translate("DatasetClassification", "55.6", 0));
+        lblMedalSV->setText(QString());
+        lblRankingSV->setText(QApplication::translate("DatasetClassification", "Platinum", 0));
         gbxSVCrop->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblWeatherGoldMinValSVCrop->setText(QApplication::translate("DatasetClassification", "25", 0));
         lblWeatherPlatinumMinValSVCrop->setText(QApplication::translate("DatasetClassification", "40", 0));
