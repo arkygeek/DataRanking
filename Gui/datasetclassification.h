@@ -247,6 +247,7 @@ void on_sbSVSoilNMinObservations_valueChanged(int theObservations);
 void on_dsbSVSoilNMinWeightPts_valueChanged(double theWeight);
 void on_dsbSVSoilNMinReplicates_valueChanged(double theReplicates);
 
+void on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(double theLayers);
 void on_sbSVSoilSoilWaterSensorCalObservations_valueChanged(int theObservations);
 void on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged(double theWeight);
 void on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged(double theReplicates);

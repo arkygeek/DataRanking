@@ -6874,7 +6874,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -7404,7 +7404,7 @@ p, li { white-space: pre-wrap; }
                  <item row="8" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropLAILayers">
                    <property name="enabled">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                    <property name="value">
                     <double>0.000000000000000</double>
@@ -7442,7 +7442,7 @@ p, li { white-space: pre-wrap; }
                  <item row="3" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassLayers">
                    <property name="enabled">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                    <property name="value">
                     <double>1.000000000000000</double>
@@ -7452,7 +7452,7 @@ p, li { white-space: pre-wrap; }
                  <item row="6" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassLayers">
                    <property name="enabled">
-                    <bool>true</bool>
+                    <bool>false</bool>
                    </property>
                    <property name="value">
                     <double>1.000000000000000</double>
@@ -8190,7 +8190,7 @@ p, li { white-space: pre-wrap; }
                  <item row="4" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalLayers">
                    <property name="enabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                    <property name="value">
                     <double>3.000000000000000</double>

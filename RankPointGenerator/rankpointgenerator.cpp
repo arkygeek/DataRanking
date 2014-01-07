@@ -152,89 +152,214 @@ double RankPointGenerator::SVCropYield(int theObservations, double theWeight, do
 {
   // D==layers E==observations F==weight  G==replicates
   // =F49*E49+(G49-1)*0.5
+
+  double myTotal;
+  // check to see if this can go negative with the minus 1 below
+  myTotal = (theWeight * theObservations) + ((theReplicates-1.0)*0.5);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropAGrBiomass(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(E50/3,1.25)*F50*MIN(G50/3,1.2)
+  //  ^myMinObservations  ^myMinReplicates
+
+  // min(observations/3,1.25) * weight * min(replicates/3,1.2)
+
+  double myTotal;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinObservations = theObservations/3.0 < 1.25 ? theObservations/3.0 : 1.25;
+  myMinReplicates = theReplicates/3.0 < 1.2 ? theReplicates/3.0 : 1.2;
+  myTotal = (myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropWeightOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D51/3,1.25)*MIN(E51/3,1.2)*F51*MIN(G51/3,1.1)
+  //  ^myMinLayers    ^myMinObservations ^myMinReplicates
+
+  // min(layers/3,1.25) * min(observations/3,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/3.0 < 1.2 ? theObservations/3.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropRootBiomass(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D52/3,1.25)*MIN(E52/3,1.2)*F52*MIN(G52/3,1.1)
+  //  ^myMinLayers    ^myMinObservations ^myMinReplicates
+
+  // min(layers/3,1.25) * min(observations/3,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/3.0 < 1.2 ? theObservations/3.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropNInAGrBiomass(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
-  // =MIN(E53/3,1.2)*F53*MIN(G53/3,1.1)
+  // =MIN(E53/3,1.2) * F53 * MIN(G53/3,1.1)
+  //  ^myMinObservations     ^myMinReplicates
+
+  // min(observations/3,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinObservations = theObservations/3.0 < 1.2 ? theObservations/3.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropNInOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
-  // =MIN(D54/2,1.25)*MIN(E54,1.2)*F54*MIN(G54/3,1.1)
+  // =MIN(D54/2,1.25) * MIN(E54,1.2) * F54 * MIN(G54/3,1.1)
+  //  ^myMinLayers    ^myMinObservations     ^myMinReplicates
+
+  // min(layers/2,1.25) * min(observations,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/2.0 < 1.25 ? theLayers/2.0 : 1.25;
+  myMinObservations = theObservations < 1.2 ? theObservations : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVCropLAI(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
-  // =MIN(E55/5,1)*F55*MIN(G55/3,1)
+  // =MIN(E55/5,1) * F55 * MIN(G55/3,1)
+  //  ^myMinObservations   ^myMinReplicates
+
+  // min(observations/5,1) * weight * min(replicates/3,1)
+
+  double myTotal;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinObservations = theObservations/5.0 < 1 ? theObservations/5.0 : 1;
+  myMinReplicates = theReplicates/3.0 < 1 ? theReplicates/3.0 : 1;
+  myTotal = (myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVSoilSoilWaterGrav(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D56/3,1.25)*MIN(E56/5,1.2)*F56*MIN(G56/3,1.1)
+  //  ^myMinLayers    ^myMinObservations ^myMinReplicates
+
+  // min(layers/3,1.25) * min(observations/5,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/5.0 < 1.2 ? theObservations/5.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVSoilPressureHeads(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D57/3,1.25)*MIN(E57/20,1.2)*F57*MIN(G57/3,1.1)
+  //  ^myMinLayers    ^myMinObservations  ^myMinReplicates
+
+  // min(layers/3,1.25) * min(observations/20,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/20.0 < 1.2 ? theObservations/20.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVSoilNMin(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D58/3,1.25)*MIN(E58/3,1.2)*F58*MIN(G58/3,1.1)
+  //  ^myMinLayers    ^myMinObservations  ^myMinReplicates
+
+  // min(layers/3,1.25) * min(observations/3,1.2) * weight * min(replicates/3,1.1)
+
+  double myTotal;
+  double myMinLayers;
+  double myMinObservations;
+  double myMinReplicates;
+
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/3.0 < 1.2 ? theObservations/3.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
+  return myTotal;
 }
 
 double RankPointGenerator::SVSoilSoilWaterSensorCal(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
   // =MIN(D59/3,1.25)*MIN(E59/50,1.2)*F59*MIN(G59/3,1.1)
-  //  ^myMinValue1    ^myMinValue2        ^myMinValue3
+  //  ^myMinLayers    ^myMinObservations  ^myMinReplicates
 
   // min(layers/3,1.25) * min(observations/50,1.2) * weight * min(replicates/3,1.1)
 
   double myTotal;
   double myMinLayers;
   double myMinObservations;
-  double myMinValue3;
+  double myMinReplicates;
 
-  myMinLayers = theLayers/3 < 1.25 ? theLayers/3 : 1.25;
-  myMinObservations = theObservations/50 < 1.2 ? theObservations/50 : 1.2;
-  myMinValue3 = theReplicates/3 < 1.1 ? theReplicates/3 : 1.1;
-  myTotal = (myMinLayers * myMinObservations * theWeight * myMinValue3);
+  myMinLayers = theLayers/3.0 < 1.25 ? theLayers/3.0 : 1.25;
+  myMinObservations = theObservations/50.0 < 1.2 ? theObservations/50.0 : 1.2;
+  myMinReplicates = theReplicates/3.0 < 1.1 ? theReplicates/3.0 : 1.1;
+  myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
 
 double RankPointGenerator::SVSoilWaterFluxBottomRoot(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
-  // =MIN(E60/10,1.25)*F60*G60/3
+  // =MIN(E60/10.0,1.25)*F60*G60/3
 
   double myTotal;
-  myTotal = ((theObservations/10>1.25?1.25:theObservations/10) * theWeight * theReplicates) / 3.0;
+  myTotal = ((theObservations/10.0>1.25?1.25:theObservations/10.0) * theWeight * theReplicates) / 3.0;
   return myTotal;
 }
 

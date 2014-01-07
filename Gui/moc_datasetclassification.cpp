@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_DatasetClassification_t {
-    QByteArrayData data[198];
-    char stringdata[8064];
+    QByteArrayData data[199];
+    char stringdata[8114];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -202,31 +202,32 @@ QT_MOC_LITERAL(169, 6597, 35),
 QT_MOC_LITERAL(170, 6633, 40),
 QT_MOC_LITERAL(171, 6674, 38),
 QT_MOC_LITERAL(172, 6713, 39),
-QT_MOC_LITERAL(173, 6753, 54),
-QT_MOC_LITERAL(174, 6808, 52),
-QT_MOC_LITERAL(175, 6861, 53),
-QT_MOC_LITERAL(176, 6915, 55),
-QT_MOC_LITERAL(177, 6971, 53),
-QT_MOC_LITERAL(178, 7025, 54),
-QT_MOC_LITERAL(179, 7080, 51),
-QT_MOC_LITERAL(180, 7132, 49),
-QT_MOC_LITERAL(181, 7182, 50),
-QT_MOC_LITERAL(182, 7233, 47),
-QT_MOC_LITERAL(183, 7281, 45),
-QT_MOC_LITERAL(184, 7327, 52),
-QT_MOC_LITERAL(185, 7380, 50),
-QT_MOC_LITERAL(186, 7431, 52),
-QT_MOC_LITERAL(187, 7484, 50),
-QT_MOC_LITERAL(188, 7535, 51),
-QT_MOC_LITERAL(189, 7587, 49),
-QT_MOC_LITERAL(190, 7637, 52),
-QT_MOC_LITERAL(191, 7690, 50),
-QT_MOC_LITERAL(192, 7741, 51),
-QT_MOC_LITERAL(193, 7793, 49),
-QT_MOC_LITERAL(194, 7843, 59),
-QT_MOC_LITERAL(195, 7903, 57),
-QT_MOC_LITERAL(196, 7961, 51),
-QT_MOC_LITERAL(197, 8013, 49)
+QT_MOC_LITERAL(173, 6753, 49),
+QT_MOC_LITERAL(174, 6803, 54),
+QT_MOC_LITERAL(175, 6858, 52),
+QT_MOC_LITERAL(176, 6911, 53),
+QT_MOC_LITERAL(177, 6965, 55),
+QT_MOC_LITERAL(178, 7021, 53),
+QT_MOC_LITERAL(179, 7075, 54),
+QT_MOC_LITERAL(180, 7130, 51),
+QT_MOC_LITERAL(181, 7182, 49),
+QT_MOC_LITERAL(182, 7232, 50),
+QT_MOC_LITERAL(183, 7283, 47),
+QT_MOC_LITERAL(184, 7331, 45),
+QT_MOC_LITERAL(185, 7377, 52),
+QT_MOC_LITERAL(186, 7430, 50),
+QT_MOC_LITERAL(187, 7481, 52),
+QT_MOC_LITERAL(188, 7534, 50),
+QT_MOC_LITERAL(189, 7585, 51),
+QT_MOC_LITERAL(190, 7637, 49),
+QT_MOC_LITERAL(191, 7687, 52),
+QT_MOC_LITERAL(192, 7740, 50),
+QT_MOC_LITERAL(193, 7791, 51),
+QT_MOC_LITERAL(194, 7843, 49),
+QT_MOC_LITERAL(195, 7893, 59),
+QT_MOC_LITERAL(196, 7953, 57),
+QT_MOC_LITERAL(197, 8011, 51),
+QT_MOC_LITERAL(198, 8063, 49)
     },
     "DatasetClassification\0"
     "on_cbUser_currentIndexChanged\0\0"
@@ -391,6 +392,7 @@ QT_MOC_LITERAL(197, 8013, 49)
     "on_sbSVSoilNMinObservations_valueChanged\0"
     "on_dsbSVSoilNMinWeightPts_valueChanged\0"
     "on_dsbSVSoilNMinReplicates_valueChanged\0"
+    "on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged\0"
     "on_sbSVSoilSoilWaterSensorCalObservations_valueChanged\0"
     "on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged\0"
     "on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged\0"
@@ -425,7 +427,7 @@ static const uint qt_meta_data_DatasetClassification[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-     185,   14, // methods
+     186,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -433,191 +435,192 @@ static const uint qt_meta_data_DatasetClassification[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,  939,    2, 0x08,
-       4,    1,  942,    2, 0x08,
-       6,    1,  945,    2, 0x08,
-       7,    1,  948,    2, 0x08,
-       8,    1,  951,    2, 0x08,
-       9,    1,  954,    2, 0x08,
-      10,    1,  957,    2, 0x08,
-      11,    1,  960,    2, 0x08,
-      12,    1,  963,    2, 0x08,
-      14,    1,  966,    2, 0x08,
-      15,    1,  969,    2, 0x08,
-      16,    1,  972,    2, 0x08,
-      17,    1,  975,    2, 0x08,
-      19,    1,  978,    2, 0x08,
-      20,    1,  981,    2, 0x08,
-      21,    1,  984,    2, 0x08,
-      22,    1,  987,    2, 0x08,
-      23,    1,  990,    2, 0x08,
-      24,    1,  993,    2, 0x08,
-      25,    1,  996,    2, 0x08,
-      26,    1,  999,    2, 0x08,
-      27,    1, 1002,    2, 0x08,
-      28,    1, 1005,    2, 0x08,
-      29,    1, 1008,    2, 0x08,
-      30,    1, 1011,    2, 0x08,
-      31,    1, 1014,    2, 0x08,
-      32,    1, 1017,    2, 0x08,
-      33,    1, 1020,    2, 0x08,
-      34,    1, 1023,    2, 0x08,
-      35,    1, 1026,    2, 0x08,
-      36,    1, 1029,    2, 0x08,
-      37,    1, 1032,    2, 0x08,
-      38,    1, 1035,    2, 0x08,
-      39,    1, 1038,    2, 0x08,
-      40,    1, 1041,    2, 0x08,
-      41,    1, 1044,    2, 0x08,
-      42,    1, 1047,    2, 0x08,
-      43,    1, 1050,    2, 0x08,
-      44,    1, 1053,    2, 0x08,
-      45,    1, 1056,    2, 0x08,
-      46,    1, 1059,    2, 0x08,
-      47,    1, 1062,    2, 0x08,
-      48,    1, 1065,    2, 0x08,
-      49,    1, 1068,    2, 0x08,
-      51,    1, 1071,    2, 0x08,
-      52,    1, 1074,    2, 0x08,
-      54,    1, 1077,    2, 0x08,
-      55,    1, 1080,    2, 0x08,
-      56,    1, 1083,    2, 0x08,
-      57,    1, 1086,    2, 0x08,
-      58,    1, 1089,    2, 0x08,
-      59,    1, 1092,    2, 0x08,
-      60,    1, 1095,    2, 0x08,
-      61,    1, 1098,    2, 0x08,
-      62,    1, 1101,    2, 0x08,
-      63,    1, 1104,    2, 0x08,
-      64,    1, 1107,    2, 0x08,
-      65,    1, 1110,    2, 0x08,
-      66,    1, 1113,    2, 0x08,
-      67,    1, 1116,    2, 0x08,
-      68,    1, 1119,    2, 0x08,
-      69,    1, 1122,    2, 0x08,
-      70,    1, 1125,    2, 0x08,
-      71,    1, 1128,    2, 0x08,
-      72,    1, 1131,    2, 0x08,
-      73,    1, 1134,    2, 0x08,
-      74,    1, 1137,    2, 0x08,
-      75,    1, 1140,    2, 0x08,
-      76,    1, 1143,    2, 0x08,
-      77,    1, 1146,    2, 0x08,
-      78,    1, 1149,    2, 0x08,
-      79,    1, 1152,    2, 0x08,
-      80,    1, 1155,    2, 0x08,
-      81,    1, 1158,    2, 0x08,
-      82,    1, 1161,    2, 0x08,
-      83,    1, 1164,    2, 0x08,
-      84,    1, 1167,    2, 0x08,
-      85,    1, 1170,    2, 0x08,
-      86,    1, 1173,    2, 0x08,
-      87,    1, 1176,    2, 0x08,
-      88,    1, 1179,    2, 0x08,
-      90,    1, 1182,    2, 0x08,
-      91,    1, 1185,    2, 0x08,
-      92,    1, 1188,    2, 0x08,
-      93,    1, 1191,    2, 0x08,
-      94,    1, 1194,    2, 0x08,
-      95,    1, 1197,    2, 0x08,
-      96,    1, 1200,    2, 0x08,
-      97,    1, 1203,    2, 0x08,
-      98,    1, 1206,    2, 0x08,
-      99,    1, 1209,    2, 0x08,
-     100,    1, 1212,    2, 0x08,
-     101,    1, 1215,    2, 0x08,
-     102,    1, 1218,    2, 0x08,
-     103,    1, 1221,    2, 0x08,
-     104,    1, 1224,    2, 0x08,
-     105,    1, 1227,    2, 0x08,
-     106,    1, 1230,    2, 0x08,
-     107,    1, 1233,    2, 0x08,
-     108,    1, 1236,    2, 0x08,
-     110,    1, 1239,    2, 0x08,
-     111,    1, 1242,    2, 0x08,
-     112,    1, 1245,    2, 0x08,
-     113,    1, 1248,    2, 0x08,
-     114,    1, 1251,    2, 0x08,
-     115,    1, 1254,    2, 0x08,
-     116,    1, 1257,    2, 0x08,
-     117,    1, 1260,    2, 0x08,
-     118,    1, 1263,    2, 0x08,
-     119,    1, 1266,    2, 0x08,
-     121,    1, 1269,    2, 0x08,
-     122,    1, 1272,    2, 0x08,
-     123,    1, 1275,    2, 0x08,
-     124,    1, 1278,    2, 0x08,
-     125,    1, 1281,    2, 0x08,
-     126,    1, 1284,    2, 0x08,
-     127,    1, 1287,    2, 0x08,
-     128,    1, 1290,    2, 0x08,
-     130,    1, 1293,    2, 0x08,
-     131,    1, 1296,    2, 0x08,
-     132,    1, 1299,    2, 0x08,
-     133,    1, 1302,    2, 0x08,
-     134,    1, 1305,    2, 0x08,
-     135,    1, 1308,    2, 0x08,
-     136,    1, 1311,    2, 0x08,
-     137,    1, 1314,    2, 0x08,
-     138,    1, 1317,    2, 0x08,
-     139,    1, 1320,    2, 0x08,
-     140,    1, 1323,    2, 0x08,
-     141,    1, 1326,    2, 0x08,
-     143,    1, 1329,    2, 0x08,
-     144,    1, 1332,    2, 0x08,
-     145,    1, 1335,    2, 0x08,
-     146,    1, 1338,    2, 0x08,
-     147,    1, 1341,    2, 0x08,
-     148,    1, 1344,    2, 0x08,
-     149,    1, 1347,    2, 0x08,
-     150,    1, 1350,    2, 0x08,
-     151,    1, 1353,    2, 0x08,
-     152,    1, 1356,    2, 0x08,
-     153,    1, 1359,    2, 0x08,
-     154,    1, 1362,    2, 0x08,
-     155,    1, 1365,    2, 0x08,
-     156,    1, 1368,    2, 0x08,
-     157,    1, 1371,    2, 0x08,
-     158,    1, 1374,    2, 0x08,
-     159,    1, 1377,    2, 0x08,
-     160,    1, 1380,    2, 0x08,
-     161,    1, 1383,    2, 0x08,
-     162,    1, 1386,    2, 0x08,
-     163,    1, 1389,    2, 0x08,
-     164,    1, 1392,    2, 0x08,
-     165,    1, 1395,    2, 0x08,
-     166,    1, 1398,    2, 0x08,
-     167,    1, 1401,    2, 0x08,
-     168,    1, 1404,    2, 0x08,
-     169,    1, 1407,    2, 0x08,
-     170,    1, 1410,    2, 0x08,
-     171,    1, 1413,    2, 0x08,
-     172,    1, 1416,    2, 0x08,
-     173,    1, 1419,    2, 0x08,
-     174,    1, 1422,    2, 0x08,
-     175,    1, 1425,    2, 0x08,
-     176,    1, 1428,    2, 0x08,
-     177,    1, 1431,    2, 0x08,
-     178,    1, 1434,    2, 0x08,
-     179,    1, 1437,    2, 0x08,
-     180,    1, 1440,    2, 0x08,
-     181,    1, 1443,    2, 0x08,
-     182,    1, 1446,    2, 0x08,
-     183,    1, 1449,    2, 0x08,
-     184,    1, 1452,    2, 0x08,
-     185,    1, 1455,    2, 0x08,
-     186,    1, 1458,    2, 0x08,
-     187,    1, 1461,    2, 0x08,
-     188,    1, 1464,    2, 0x08,
-     189,    1, 1467,    2, 0x08,
-     190,    1, 1470,    2, 0x08,
-     191,    1, 1473,    2, 0x08,
-     192,    1, 1476,    2, 0x08,
-     193,    1, 1479,    2, 0x08,
-     194,    1, 1482,    2, 0x08,
-     195,    1, 1485,    2, 0x08,
-     196,    1, 1488,    2, 0x08,
-     197,    1, 1491,    2, 0x08,
+       1,    1,  944,    2, 0x08,
+       4,    1,  947,    2, 0x08,
+       6,    1,  950,    2, 0x08,
+       7,    1,  953,    2, 0x08,
+       8,    1,  956,    2, 0x08,
+       9,    1,  959,    2, 0x08,
+      10,    1,  962,    2, 0x08,
+      11,    1,  965,    2, 0x08,
+      12,    1,  968,    2, 0x08,
+      14,    1,  971,    2, 0x08,
+      15,    1,  974,    2, 0x08,
+      16,    1,  977,    2, 0x08,
+      17,    1,  980,    2, 0x08,
+      19,    1,  983,    2, 0x08,
+      20,    1,  986,    2, 0x08,
+      21,    1,  989,    2, 0x08,
+      22,    1,  992,    2, 0x08,
+      23,    1,  995,    2, 0x08,
+      24,    1,  998,    2, 0x08,
+      25,    1, 1001,    2, 0x08,
+      26,    1, 1004,    2, 0x08,
+      27,    1, 1007,    2, 0x08,
+      28,    1, 1010,    2, 0x08,
+      29,    1, 1013,    2, 0x08,
+      30,    1, 1016,    2, 0x08,
+      31,    1, 1019,    2, 0x08,
+      32,    1, 1022,    2, 0x08,
+      33,    1, 1025,    2, 0x08,
+      34,    1, 1028,    2, 0x08,
+      35,    1, 1031,    2, 0x08,
+      36,    1, 1034,    2, 0x08,
+      37,    1, 1037,    2, 0x08,
+      38,    1, 1040,    2, 0x08,
+      39,    1, 1043,    2, 0x08,
+      40,    1, 1046,    2, 0x08,
+      41,    1, 1049,    2, 0x08,
+      42,    1, 1052,    2, 0x08,
+      43,    1, 1055,    2, 0x08,
+      44,    1, 1058,    2, 0x08,
+      45,    1, 1061,    2, 0x08,
+      46,    1, 1064,    2, 0x08,
+      47,    1, 1067,    2, 0x08,
+      48,    1, 1070,    2, 0x08,
+      49,    1, 1073,    2, 0x08,
+      51,    1, 1076,    2, 0x08,
+      52,    1, 1079,    2, 0x08,
+      54,    1, 1082,    2, 0x08,
+      55,    1, 1085,    2, 0x08,
+      56,    1, 1088,    2, 0x08,
+      57,    1, 1091,    2, 0x08,
+      58,    1, 1094,    2, 0x08,
+      59,    1, 1097,    2, 0x08,
+      60,    1, 1100,    2, 0x08,
+      61,    1, 1103,    2, 0x08,
+      62,    1, 1106,    2, 0x08,
+      63,    1, 1109,    2, 0x08,
+      64,    1, 1112,    2, 0x08,
+      65,    1, 1115,    2, 0x08,
+      66,    1, 1118,    2, 0x08,
+      67,    1, 1121,    2, 0x08,
+      68,    1, 1124,    2, 0x08,
+      69,    1, 1127,    2, 0x08,
+      70,    1, 1130,    2, 0x08,
+      71,    1, 1133,    2, 0x08,
+      72,    1, 1136,    2, 0x08,
+      73,    1, 1139,    2, 0x08,
+      74,    1, 1142,    2, 0x08,
+      75,    1, 1145,    2, 0x08,
+      76,    1, 1148,    2, 0x08,
+      77,    1, 1151,    2, 0x08,
+      78,    1, 1154,    2, 0x08,
+      79,    1, 1157,    2, 0x08,
+      80,    1, 1160,    2, 0x08,
+      81,    1, 1163,    2, 0x08,
+      82,    1, 1166,    2, 0x08,
+      83,    1, 1169,    2, 0x08,
+      84,    1, 1172,    2, 0x08,
+      85,    1, 1175,    2, 0x08,
+      86,    1, 1178,    2, 0x08,
+      87,    1, 1181,    2, 0x08,
+      88,    1, 1184,    2, 0x08,
+      90,    1, 1187,    2, 0x08,
+      91,    1, 1190,    2, 0x08,
+      92,    1, 1193,    2, 0x08,
+      93,    1, 1196,    2, 0x08,
+      94,    1, 1199,    2, 0x08,
+      95,    1, 1202,    2, 0x08,
+      96,    1, 1205,    2, 0x08,
+      97,    1, 1208,    2, 0x08,
+      98,    1, 1211,    2, 0x08,
+      99,    1, 1214,    2, 0x08,
+     100,    1, 1217,    2, 0x08,
+     101,    1, 1220,    2, 0x08,
+     102,    1, 1223,    2, 0x08,
+     103,    1, 1226,    2, 0x08,
+     104,    1, 1229,    2, 0x08,
+     105,    1, 1232,    2, 0x08,
+     106,    1, 1235,    2, 0x08,
+     107,    1, 1238,    2, 0x08,
+     108,    1, 1241,    2, 0x08,
+     110,    1, 1244,    2, 0x08,
+     111,    1, 1247,    2, 0x08,
+     112,    1, 1250,    2, 0x08,
+     113,    1, 1253,    2, 0x08,
+     114,    1, 1256,    2, 0x08,
+     115,    1, 1259,    2, 0x08,
+     116,    1, 1262,    2, 0x08,
+     117,    1, 1265,    2, 0x08,
+     118,    1, 1268,    2, 0x08,
+     119,    1, 1271,    2, 0x08,
+     121,    1, 1274,    2, 0x08,
+     122,    1, 1277,    2, 0x08,
+     123,    1, 1280,    2, 0x08,
+     124,    1, 1283,    2, 0x08,
+     125,    1, 1286,    2, 0x08,
+     126,    1, 1289,    2, 0x08,
+     127,    1, 1292,    2, 0x08,
+     128,    1, 1295,    2, 0x08,
+     130,    1, 1298,    2, 0x08,
+     131,    1, 1301,    2, 0x08,
+     132,    1, 1304,    2, 0x08,
+     133,    1, 1307,    2, 0x08,
+     134,    1, 1310,    2, 0x08,
+     135,    1, 1313,    2, 0x08,
+     136,    1, 1316,    2, 0x08,
+     137,    1, 1319,    2, 0x08,
+     138,    1, 1322,    2, 0x08,
+     139,    1, 1325,    2, 0x08,
+     140,    1, 1328,    2, 0x08,
+     141,    1, 1331,    2, 0x08,
+     143,    1, 1334,    2, 0x08,
+     144,    1, 1337,    2, 0x08,
+     145,    1, 1340,    2, 0x08,
+     146,    1, 1343,    2, 0x08,
+     147,    1, 1346,    2, 0x08,
+     148,    1, 1349,    2, 0x08,
+     149,    1, 1352,    2, 0x08,
+     150,    1, 1355,    2, 0x08,
+     151,    1, 1358,    2, 0x08,
+     152,    1, 1361,    2, 0x08,
+     153,    1, 1364,    2, 0x08,
+     154,    1, 1367,    2, 0x08,
+     155,    1, 1370,    2, 0x08,
+     156,    1, 1373,    2, 0x08,
+     157,    1, 1376,    2, 0x08,
+     158,    1, 1379,    2, 0x08,
+     159,    1, 1382,    2, 0x08,
+     160,    1, 1385,    2, 0x08,
+     161,    1, 1388,    2, 0x08,
+     162,    1, 1391,    2, 0x08,
+     163,    1, 1394,    2, 0x08,
+     164,    1, 1397,    2, 0x08,
+     165,    1, 1400,    2, 0x08,
+     166,    1, 1403,    2, 0x08,
+     167,    1, 1406,    2, 0x08,
+     168,    1, 1409,    2, 0x08,
+     169,    1, 1412,    2, 0x08,
+     170,    1, 1415,    2, 0x08,
+     171,    1, 1418,    2, 0x08,
+     172,    1, 1421,    2, 0x08,
+     173,    1, 1424,    2, 0x08,
+     174,    1, 1427,    2, 0x08,
+     175,    1, 1430,    2, 0x08,
+     176,    1, 1433,    2, 0x08,
+     177,    1, 1436,    2, 0x08,
+     178,    1, 1439,    2, 0x08,
+     179,    1, 1442,    2, 0x08,
+     180,    1, 1445,    2, 0x08,
+     181,    1, 1448,    2, 0x08,
+     182,    1, 1451,    2, 0x08,
+     183,    1, 1454,    2, 0x08,
+     184,    1, 1457,    2, 0x08,
+     185,    1, 1460,    2, 0x08,
+     186,    1, 1463,    2, 0x08,
+     187,    1, 1466,    2, 0x08,
+     188,    1, 1469,    2, 0x08,
+     189,    1, 1472,    2, 0x08,
+     190,    1, 1475,    2, 0x08,
+     191,    1, 1478,    2, 0x08,
+     192,    1, 1481,    2, 0x08,
+     193,    1, 1484,    2, 0x08,
+     194,    1, 1487,    2, 0x08,
+     195,    1, 1490,    2, 0x08,
+     196,    1, 1493,    2, 0x08,
+     197,    1, 1496,    2, 0x08,
+     198,    1, 1499,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -780,6 +783,7 @@ static const uint qt_meta_data_DatasetClassification[] = {
     QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void, QMetaType::Double,   13,
     QMetaType::Void, QMetaType::Double,  142,
+    QMetaType::Void, QMetaType::Double,   53,
     QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void, QMetaType::Double,   13,
     QMetaType::Void, QMetaType::Double,  142,
@@ -974,31 +978,32 @@ void DatasetClassification::qt_static_metacall(QObject *_o, QMetaObject::Call _c
         case 157: _t->on_sbSVSoilNMinObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 158: _t->on_dsbSVSoilNMinWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
         case 159: _t->on_dsbSVSoilNMinReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 160: _t->on_sbSVSoilSoilWaterSensorCalObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 161: _t->on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 162: _t->on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 163: _t->on_sbSVSoilWaterFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 164: _t->on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 165: _t->on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 166: _t->on_sbSVSoilNFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 167: _t->on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 168: _t->on_dsbSVSoilNFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 169: _t->on_sbSVSurfaceFluxesEtObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 170: _t->on_dsbSVSurfaceFluxesEtWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 171: _t->on_sbSVSurfaceFluxesNh3LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 172: _t->on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 173: _t->on_sbSVSurfaceFluxesN2OLossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 174: _t->on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 175: _t->on_sbSVSurfaceFluxesN2LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 176: _t->on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 177: _t->on_sbSVSurfaceFluxesCh4LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 178: _t->on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 179: _t->on_sbSVObservationsLodgingObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 180: _t->on_dsbSVObservationsLodgingWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 181: _t->on_sbSVObservationsPestsOrDiseasesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 182: _t->on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
-        case 183: _t->on_sbSVObservationsDamagesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 184: _t->on_dsbSVObservationsDamagesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 160: _t->on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 161: _t->on_sbSVSoilSoilWaterSensorCalObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 162: _t->on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 163: _t->on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 164: _t->on_sbSVSoilWaterFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 165: _t->on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 166: _t->on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 167: _t->on_sbSVSoilNFluxBottomRootObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 168: _t->on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 169: _t->on_dsbSVSoilNFluxBottomRootReplicates_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 170: _t->on_sbSVSurfaceFluxesEtObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 171: _t->on_dsbSVSurfaceFluxesEtWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 172: _t->on_sbSVSurfaceFluxesNh3LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 173: _t->on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 174: _t->on_sbSVSurfaceFluxesN2OLossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 175: _t->on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 176: _t->on_sbSVSurfaceFluxesN2LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 177: _t->on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 178: _t->on_sbSVSurfaceFluxesCh4LossObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 179: _t->on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 180: _t->on_sbSVObservationsLodgingObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 181: _t->on_dsbSVObservationsLodgingWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 182: _t->on_sbSVObservationsPestsOrDiseasesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 183: _t->on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
+        case 184: _t->on_sbSVObservationsDamagesObservations_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 185: _t->on_dsbSVObservationsDamagesWeightPts_valueChanged((*reinterpret_cast< double(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -1029,13 +1034,13 @@ int DatasetClassification::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 185)
+        if (_id < 186)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 185;
+        _id -= 186;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 185)
+        if (_id < 186)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 185;
+        _id -= 186;
     }
     return _id;
 }

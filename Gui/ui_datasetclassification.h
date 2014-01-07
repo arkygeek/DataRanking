@@ -4274,7 +4274,7 @@ public:
 
         dsbSVCropLAILayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropLAILayers->setObjectName(QStringLiteral("dsbSVCropLAILayers"));
-        dsbSVCropLAILayers->setEnabled(true);
+        dsbSVCropLAILayers->setEnabled(false);
         dsbSVCropLAILayers->setValue(0);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropLAILayers, 8, 1, 1, 1);
@@ -4305,14 +4305,14 @@ public:
 
         dsbSVCropAGrBiomassLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropAGrBiomassLayers->setObjectName(QStringLiteral("dsbSVCropAGrBiomassLayers"));
-        dsbSVCropAGrBiomassLayers->setEnabled(true);
+        dsbSVCropAGrBiomassLayers->setEnabled(false);
         dsbSVCropAGrBiomassLayers->setValue(1);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropAGrBiomassLayers, 3, 1, 1, 1);
 
         dsbSVCropNInAGrBiomassLayers = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropNInAGrBiomassLayers->setObjectName(QStringLiteral("dsbSVCropNInAGrBiomassLayers"));
-        dsbSVCropNInAGrBiomassLayers->setEnabled(true);
+        dsbSVCropNInAGrBiomassLayers->setEnabled(false);
         dsbSVCropNInAGrBiomassLayers->setValue(1);
 
         gridLayoutSVCropInputs->addWidget(dsbSVCropNInAGrBiomassLayers, 6, 1, 1, 1);
@@ -4745,7 +4745,7 @@ public:
 
         dsbSVSoilSoilWaterSensorCalLayers = new QDoubleSpinBox(gbxSVSoil);
         dsbSVSoilSoilWaterSensorCalLayers->setObjectName(QStringLiteral("dsbSVSoilSoilWaterSensorCalLayers"));
-        dsbSVSoilSoilWaterSensorCalLayers->setEnabled(false);
+        dsbSVSoilSoilWaterSensorCalLayers->setEnabled(true);
         dsbSVSoilSoilWaterSensorCalLayers->setValue(3);
 
         gridLayoutSVSoilInputs->addWidget(dsbSVSoilSoilWaterSensorCalLayers, 4, 1, 1, 1);
@@ -6213,7 +6213,7 @@ public:
         retranslateUi(DatasetClassification);
 
         tabWidgetDataClassification->setCurrentIndex(7);
-        toolBoxStateVars->setCurrentIndex(0);
+        toolBoxStateVars->setCurrentIndex(1);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
         cbSeasonsTreatment5->setCurrentIndex(4);
