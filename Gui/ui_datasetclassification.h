@@ -105,6 +105,7 @@ public:
     QTextBrowser *txbrMgmt;
     QWidget *tabPhenology;
     QGridLayout *gridLayout_22;
+    QTextBrowser *txbrPhenology;
     QGroupBox *gbxPhenology;
     QGridLayout *gridLayout_9;
     QLabel *lblMgmtMinData_2;
@@ -132,7 +133,6 @@ public:
     QLabel *lblYellowRipenessRatingPhenology;
     QLabel *lblCombinedPhenology;
     QLabel *lblCombinedTotalPhenology;
-    QTextBrowser *txbrPhenology;
     QGridLayout *gridLayoutPhenologyRankLevels;
     QLabel *lblPhenologyPlatinumMin;
     QLabel *lblPhenologyPlatinumMinVal;
@@ -144,9 +144,10 @@ public:
     QLabel *lblPhenologyBronzeMinVal;
     QSpacerItem *horizontalSpacerPhenologyLeftRankLabel;
     QLabel *lblMedalPhenology;
-    QSpacerItem *horizontalSpacerPhenologyRightRankLabel;
     QSpacerItem *verticalSpacerPhenology;
     QLabel *lblRankingPhenology;
+    QSpacerItem *horizontalSpacerPhenologyRightRankLabel;
+    QTextBrowser *textBrowserJSON;
     QWidget *tabPrevCrop;
     QGridLayout *gridLayout_29;
     QGroupBox *gbxPrevCrop;
@@ -1328,6 +1329,11 @@ public:
         gridLayout_22->setSpacing(6);
         gridLayout_22->setContentsMargins(11, 11, 11, 11);
         gridLayout_22->setObjectName(QStringLiteral("gridLayout_22"));
+        txbrPhenology = new QTextBrowser(tabPhenology);
+        txbrPhenology->setObjectName(QStringLiteral("txbrPhenology"));
+
+        gridLayout_22->addWidget(txbrPhenology, 0, 1, 1, 4);
+
         gbxPhenology = new QGroupBox(tabPhenology);
         gbxPhenology->setObjectName(QStringLiteral("gbxPhenology"));
         QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -1527,11 +1533,6 @@ public:
 
         gridLayout_22->addWidget(gbxPhenology, 0, 0, 3, 1);
 
-        txbrPhenology = new QTextBrowser(tabPhenology);
-        txbrPhenology->setObjectName(QStringLiteral("txbrPhenology"));
-
-        gridLayout_22->addWidget(txbrPhenology, 0, 1, 1, 4);
-
         gridLayoutPhenologyRankLevels = new QGridLayout();
         gridLayoutPhenologyRankLevels->setSpacing(6);
         gridLayoutPhenologyRankLevels->setObjectName(QStringLiteral("gridLayoutPhenologyRankLevels"));
@@ -1629,13 +1630,9 @@ public:
 
         gridLayout_22->addWidget(lblMedalPhenology, 1, 3, 1, 1);
 
-        horizontalSpacerPhenologyRightRankLabel = new QSpacerItem(61, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout_22->addItem(horizontalSpacerPhenologyRightRankLabel, 1, 4, 1, 1);
-
         verticalSpacerPhenology = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_22->addItem(verticalSpacerPhenology, 3, 0, 1, 5);
+        gridLayout_22->addItem(verticalSpacerPhenology, 4, 0, 1, 5);
 
         lblRankingPhenology = new QLabel(tabPhenology);
         lblRankingPhenology->setObjectName(QStringLiteral("lblRankingPhenology"));
@@ -1643,6 +1640,20 @@ public:
         lblRankingPhenology->setAlignment(Qt::AlignCenter);
 
         gridLayout_22->addWidget(lblRankingPhenology, 2, 2, 1, 3);
+
+        horizontalSpacerPhenologyRightRankLabel = new QSpacerItem(61, 17, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_22->addItem(horizontalSpacerPhenologyRightRankLabel, 1, 4, 1, 1);
+
+        textBrowserJSON = new QTextBrowser(tabPhenology);
+        textBrowserJSON->setObjectName(QStringLiteral("textBrowserJSON"));
+        QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(1);
+        sizePolicy5.setHeightForWidth(textBrowserJSON->sizePolicy().hasHeightForWidth());
+        textBrowserJSON->setSizePolicy(sizePolicy5);
+
+        gridLayout_22->addWidget(textBrowserJSON, 3, 0, 1, 5);
 
         tabWidgetDataClassification->addTab(tabPhenology, QString());
         tabPrevCrop = new QWidget();
@@ -2162,11 +2173,11 @@ public:
 
         txbrInitialValues = new QTextBrowser(tabInitialValues);
         txbrInitialValues->setObjectName(QStringLiteral("txbrInitialValues"));
-        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy5.setHorizontalStretch(1);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(txbrInitialValues->sizePolicy().hasHeightForWidth());
-        txbrInitialValues->setSizePolicy(sizePolicy5);
+        QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy6.setHorizontalStretch(1);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(txbrInitialValues->sizePolicy().hasHeightForWidth());
+        txbrInitialValues->setSizePolicy(sizePolicy6);
 
         gridLayout_26->addWidget(txbrInitialValues, 0, 2, 2, 1);
 
@@ -2955,11 +2966,11 @@ public:
 
         txbrSite = new QTextBrowser(tabSite);
         txbrSite->setObjectName(QStringLiteral("txbrSite"));
-        QSizePolicy sizePolicy6(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy6.setHorizontalStretch(1);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(txbrSite->sizePolicy().hasHeightForWidth());
-        txbrSite->setSizePolicy(sizePolicy6);
+        QSizePolicy sizePolicy7(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy7.setHorizontalStretch(1);
+        sizePolicy7.setVerticalStretch(0);
+        sizePolicy7.setHeightForWidth(txbrSite->sizePolicy().hasHeightForWidth());
+        txbrSite->setSizePolicy(sizePolicy7);
 
         gridLayout_7->addWidget(txbrSite, 0, 2, 2, 1);
 
@@ -3164,11 +3175,11 @@ public:
 
         chbxPrecipitationWeather = new QCheckBox(gbxWeather);
         chbxPrecipitationWeather->setObjectName(QStringLiteral("chbxPrecipitationWeather"));
-        QSizePolicy sizePolicy7(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy7.setHorizontalStretch(1);
-        sizePolicy7.setVerticalStretch(0);
-        sizePolicy7.setHeightForWidth(chbxPrecipitationWeather->sizePolicy().hasHeightForWidth());
-        chbxPrecipitationWeather->setSizePolicy(sizePolicy7);
+        QSizePolicy sizePolicy8(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy8.setHorizontalStretch(1);
+        sizePolicy8.setVerticalStretch(0);
+        sizePolicy8.setHeightForWidth(chbxPrecipitationWeather->sizePolicy().hasHeightForWidth());
+        chbxPrecipitationWeather->setSizePolicy(sizePolicy8);
         chbxPrecipitationWeather->setLayoutDirection(Qt::RightToLeft);
         chbxPrecipitationWeather->setChecked(true);
         chbxPrecipitationWeather->setTristate(false);
@@ -3190,11 +3201,11 @@ public:
 
         sbPrecipitationAltDifWeather = new QSpinBox(gbxWeather);
         sbPrecipitationAltDifWeather->setObjectName(QStringLiteral("sbPrecipitationAltDifWeather"));
-        QSizePolicy sizePolicy8(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy8.setHorizontalStretch(0);
-        sizePolicy8.setVerticalStretch(0);
-        sizePolicy8.setHeightForWidth(sbPrecipitationAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbPrecipitationAltDifWeather->setSizePolicy(sizePolicy8);
+        QSizePolicy sizePolicy9(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy9.setHorizontalStretch(0);
+        sizePolicy9.setVerticalStretch(0);
+        sizePolicy9.setHeightForWidth(sbPrecipitationAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbPrecipitationAltDifWeather->setSizePolicy(sizePolicy9);
         sbPrecipitationAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbPrecipitationAltDifWeather->setMinimum(-1000);
         sbPrecipitationAltDifWeather->setMaximum(1000);
@@ -3236,8 +3247,8 @@ public:
 
         chbxTAveWeather = new QCheckBox(gbxWeather);
         chbxTAveWeather->setObjectName(QStringLiteral("chbxTAveWeather"));
-        sizePolicy7.setHeightForWidth(chbxTAveWeather->sizePolicy().hasHeightForWidth());
-        chbxTAveWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxTAveWeather->sizePolicy().hasHeightForWidth());
+        chbxTAveWeather->setSizePolicy(sizePolicy8);
         chbxTAveWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_2->addWidget(chbxTAveWeather);
@@ -3257,8 +3268,8 @@ public:
 
         sbTAveAltDifWeather = new QSpinBox(gbxWeather);
         sbTAveAltDifWeather->setObjectName(QStringLiteral("sbTAveAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbTAveAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTAveAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbTAveAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTAveAltDifWeather->setSizePolicy(sizePolicy9);
         sbTAveAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTAveAltDifWeather->setValue(0);
 
@@ -3298,8 +3309,8 @@ public:
 
         chbxTMinWeather = new QCheckBox(gbxWeather);
         chbxTMinWeather->setObjectName(QStringLiteral("chbxTMinWeather"));
-        sizePolicy7.setHeightForWidth(chbxTMinWeather->sizePolicy().hasHeightForWidth());
-        chbxTMinWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxTMinWeather->sizePolicy().hasHeightForWidth());
+        chbxTMinWeather->setSizePolicy(sizePolicy8);
         chbxTMinWeather->setLayoutDirection(Qt::RightToLeft);
         chbxTMinWeather->setChecked(true);
 
@@ -3320,8 +3331,8 @@ public:
 
         sbTMinAltDifWeather = new QSpinBox(gbxWeather);
         sbTMinAltDifWeather->setObjectName(QStringLiteral("sbTMinAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbTMinAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTMinAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbTMinAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTMinAltDifWeather->setSizePolicy(sizePolicy9);
         sbTMinAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTMinAltDifWeather->setValue(0);
 
@@ -3361,8 +3372,8 @@ public:
 
         chbxTMaxWeather = new QCheckBox(gbxWeather);
         chbxTMaxWeather->setObjectName(QStringLiteral("chbxTMaxWeather"));
-        sizePolicy7.setHeightForWidth(chbxTMaxWeather->sizePolicy().hasHeightForWidth());
-        chbxTMaxWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxTMaxWeather->sizePolicy().hasHeightForWidth());
+        chbxTMaxWeather->setSizePolicy(sizePolicy8);
         chbxTMaxWeather->setLayoutDirection(Qt::RightToLeft);
         chbxTMaxWeather->setChecked(true);
 
@@ -3383,8 +3394,8 @@ public:
 
         sbTMaxAltDifWeather = new QSpinBox(gbxWeather);
         sbTMaxAltDifWeather->setObjectName(QStringLiteral("sbTMaxAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbTMaxAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTMaxAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbTMaxAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTMaxAltDifWeather->setSizePolicy(sizePolicy9);
         sbTMaxAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTMaxAltDifWeather->setValue(0);
 
@@ -3424,8 +3435,8 @@ public:
 
         chbxRelHumidityWeather = new QCheckBox(gbxWeather);
         chbxRelHumidityWeather->setObjectName(QStringLiteral("chbxRelHumidityWeather"));
-        sizePolicy7.setHeightForWidth(chbxRelHumidityWeather->sizePolicy().hasHeightForWidth());
-        chbxRelHumidityWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxRelHumidityWeather->sizePolicy().hasHeightForWidth());
+        chbxRelHumidityWeather->setSizePolicy(sizePolicy8);
         chbxRelHumidityWeather->setLayoutDirection(Qt::RightToLeft);
         chbxRelHumidityWeather->setChecked(true);
 
@@ -3446,8 +3457,8 @@ public:
 
         sbRelHumidityAltDifWeather = new QSpinBox(gbxWeather);
         sbRelHumidityAltDifWeather->setObjectName(QStringLiteral("sbRelHumidityAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbRelHumidityAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbRelHumidityAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbRelHumidityAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbRelHumidityAltDifWeather->setSizePolicy(sizePolicy9);
         sbRelHumidityAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbRelHumidityAltDifWeather->setValue(0);
 
@@ -3487,8 +3498,8 @@ public:
 
         chbxWindSpeedWeather = new QCheckBox(gbxWeather);
         chbxWindSpeedWeather->setObjectName(QStringLiteral("chbxWindSpeedWeather"));
-        sizePolicy7.setHeightForWidth(chbxWindSpeedWeather->sizePolicy().hasHeightForWidth());
-        chbxWindSpeedWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxWindSpeedWeather->sizePolicy().hasHeightForWidth());
+        chbxWindSpeedWeather->setSizePolicy(sizePolicy8);
         chbxWindSpeedWeather->setLayoutDirection(Qt::RightToLeft);
         chbxWindSpeedWeather->setChecked(true);
         chbxWindSpeedWeather->setTristate(true);
@@ -3510,8 +3521,8 @@ public:
 
         sbWindSpeedAltDifWeather = new QSpinBox(gbxWeather);
         sbWindSpeedAltDifWeather->setObjectName(QStringLiteral("sbWindSpeedAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbWindSpeedAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbWindSpeedAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbWindSpeedAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbWindSpeedAltDifWeather->setSizePolicy(sizePolicy9);
         sbWindSpeedAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbWindSpeedAltDifWeather->setValue(0);
 
@@ -3551,8 +3562,8 @@ public:
 
         chbxGlobalRadiationWeather = new QCheckBox(gbxWeather);
         chbxGlobalRadiationWeather->setObjectName(QStringLiteral("chbxGlobalRadiationWeather"));
-        sizePolicy7.setHeightForWidth(chbxGlobalRadiationWeather->sizePolicy().hasHeightForWidth());
-        chbxGlobalRadiationWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxGlobalRadiationWeather->sizePolicy().hasHeightForWidth());
+        chbxGlobalRadiationWeather->setSizePolicy(sizePolicy8);
         chbxGlobalRadiationWeather->setLayoutDirection(Qt::RightToLeft);
         chbxGlobalRadiationWeather->setChecked(true);
         chbxGlobalRadiationWeather->setTristate(true);
@@ -3574,8 +3585,8 @@ public:
 
         sbGlobalRadiationAltDifWeather = new QSpinBox(gbxWeather);
         sbGlobalRadiationAltDifWeather->setObjectName(QStringLiteral("sbGlobalRadiationAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbGlobalRadiationAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbGlobalRadiationAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbGlobalRadiationAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbGlobalRadiationAltDifWeather->setSizePolicy(sizePolicy9);
         sbGlobalRadiationAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbGlobalRadiationAltDifWeather->setValue(0);
 
@@ -3615,8 +3626,8 @@ public:
 
         chbxSunshineHoursWeather = new QCheckBox(gbxWeather);
         chbxSunshineHoursWeather->setObjectName(QStringLiteral("chbxSunshineHoursWeather"));
-        sizePolicy7.setHeightForWidth(chbxSunshineHoursWeather->sizePolicy().hasHeightForWidth());
-        chbxSunshineHoursWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSunshineHoursWeather->sizePolicy().hasHeightForWidth());
+        chbxSunshineHoursWeather->setSizePolicy(sizePolicy8);
         chbxSunshineHoursWeather->setLayoutDirection(Qt::RightToLeft);
         chbxSunshineHoursWeather->setChecked(true);
         chbxSunshineHoursWeather->setTristate(true);
@@ -3639,8 +3650,8 @@ public:
         sbSunshineHoursAltDifWeather = new QSpinBox(gbxWeather);
         sbSunshineHoursAltDifWeather->setObjectName(QStringLiteral("sbSunshineHoursAltDifWeather"));
         sbSunshineHoursAltDifWeather->setEnabled(false);
-        sizePolicy8.setHeightForWidth(sbSunshineHoursAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbSunshineHoursAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSunshineHoursAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbSunshineHoursAltDifWeather->setSizePolicy(sizePolicy9);
         sbSunshineHoursAltDifWeather->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_20->addWidget(sbSunshineHoursAltDifWeather, 8, 3, 1, 1);
@@ -3679,8 +3690,8 @@ public:
 
         chbxLeafWetnessWeather = new QCheckBox(gbxWeather);
         chbxLeafWetnessWeather->setObjectName(QStringLiteral("chbxLeafWetnessWeather"));
-        sizePolicy7.setHeightForWidth(chbxLeafWetnessWeather->sizePolicy().hasHeightForWidth());
-        chbxLeafWetnessWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxLeafWetnessWeather->sizePolicy().hasHeightForWidth());
+        chbxLeafWetnessWeather->setSizePolicy(sizePolicy8);
         chbxLeafWetnessWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_9->addWidget(chbxLeafWetnessWeather);
@@ -3699,8 +3710,8 @@ public:
 
         sbLeafWetnessAltDifWeather = new QSpinBox(gbxWeather);
         sbLeafWetnessAltDifWeather->setObjectName(QStringLiteral("sbLeafWetnessAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbLeafWetnessAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbLeafWetnessAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbLeafWetnessAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbLeafWetnessAltDifWeather->setSizePolicy(sizePolicy9);
         sbLeafWetnessAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbLeafWetnessAltDifWeather->setValue(0);
 
@@ -3740,8 +3751,8 @@ public:
 
         chbxSoilTempWeather = new QCheckBox(gbxWeather);
         chbxSoilTempWeather->setObjectName(QStringLiteral("chbxSoilTempWeather"));
-        sizePolicy7.setHeightForWidth(chbxSoilTempWeather->sizePolicy().hasHeightForWidth());
-        chbxSoilTempWeather->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSoilTempWeather->sizePolicy().hasHeightForWidth());
+        chbxSoilTempWeather->setSizePolicy(sizePolicy8);
         chbxSoilTempWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_10->addWidget(chbxSoilTempWeather);
@@ -3760,8 +3771,8 @@ public:
 
         sbSoilTempAltDifWeather = new QSpinBox(gbxWeather);
         sbSoilTempAltDifWeather->setObjectName(QStringLiteral("sbSoilTempAltDifWeather"));
-        sizePolicy8.setHeightForWidth(sbSoilTempAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbSoilTempAltDifWeather->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSoilTempAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbSoilTempAltDifWeather->setSizePolicy(sizePolicy9);
         sbSoilTempAltDifWeather->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_20->addWidget(sbSoilTempAltDifWeather, 10, 3, 1, 1);
@@ -4448,8 +4459,8 @@ public:
 
         txbrSVCrop = new QTextBrowser(gbxSVCrop);
         txbrSVCrop->setObjectName(QStringLiteral("txbrSVCrop"));
-        sizePolicy6.setHeightForWidth(txbrSVCrop->sizePolicy().hasHeightForWidth());
-        txbrSVCrop->setSizePolicy(sizePolicy6);
+        sizePolicy7.setHeightForWidth(txbrSVCrop->sizePolicy().hasHeightForWidth());
+        txbrSVCrop->setSizePolicy(sizePolicy7);
 
         gridLayout_32->addWidget(txbrSVCrop, 2, 0, 2, 1);
 
@@ -4768,8 +4779,8 @@ public:
 
         txbrSVSoil = new QTextBrowser(gbxSVSoil);
         txbrSVSoil->setObjectName(QStringLiteral("txbrSVSoil"));
-        sizePolicy6.setHeightForWidth(txbrSVSoil->sizePolicy().hasHeightForWidth());
-        txbrSVSoil->setSizePolicy(sizePolicy6);
+        sizePolicy7.setHeightForWidth(txbrSVSoil->sizePolicy().hasHeightForWidth());
+        txbrSVSoil->setSizePolicy(sizePolicy7);
 
         gridLayout_33->addWidget(txbrSVSoil, 1, 0, 2, 1);
 
@@ -5159,8 +5170,8 @@ public:
 
         textBrowser_9 = new QTextBrowser(gbxSVSurfaceFluxes);
         textBrowser_9->setObjectName(QStringLiteral("textBrowser_9"));
-        sizePolicy6.setHeightForWidth(textBrowser_9->sizePolicy().hasHeightForWidth());
-        textBrowser_9->setSizePolicy(sizePolicy6);
+        sizePolicy7.setHeightForWidth(textBrowser_9->sizePolicy().hasHeightForWidth());
+        textBrowser_9->setSizePolicy(sizePolicy7);
 
         gridLayout_34->addWidget(textBrowser_9, 1, 0, 2, 1);
 
@@ -5477,8 +5488,8 @@ public:
 
         txbrSVObservations = new QTextBrowser(gbxSVObservations);
         txbrSVObservations->setObjectName(QStringLiteral("txbrSVObservations"));
-        sizePolicy6.setHeightForWidth(txbrSVObservations->sizePolicy().hasHeightForWidth());
-        txbrSVObservations->setSizePolicy(sizePolicy6);
+        sizePolicy7.setHeightForWidth(txbrSVObservations->sizePolicy().hasHeightForWidth());
+        txbrSVObservations->setSizePolicy(sizePolicy7);
 
         gridLayout_35->addWidget(txbrSVObservations, 1, 0, 2, 1);
 
@@ -5625,8 +5636,8 @@ public:
         gridLayout_36->setObjectName(QStringLiteral("gridLayout_36"));
         chbxSeasonsTreatment5 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment5->setObjectName(QStringLiteral("chbxSeasonsTreatment5"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment5->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment5->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment5->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment5->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment5->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment5->setTristate(false);
 
@@ -5634,8 +5645,8 @@ public:
 
         chbxSeasonsTreatment6 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment6->setObjectName(QStringLiteral("chbxSeasonsTreatment6"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment6->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment6->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment6->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment6->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment6->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment6->setTristate(false);
 
@@ -5643,8 +5654,8 @@ public:
 
         chbxSeasonsTreatment3 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment3->setObjectName(QStringLiteral("chbxSeasonsTreatment3"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment3->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment3->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment3->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment3->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment3->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment3->setChecked(false);
         chbxSeasonsTreatment3->setTristate(false);
@@ -5673,8 +5684,8 @@ public:
 
         sbSeasonsTreatment1Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment1Number->setObjectName(QStringLiteral("sbSeasonsTreatment1Number"));
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment1Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment1Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment1Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment1Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment1Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment1Number->setValue(2);
 
@@ -5682,8 +5693,8 @@ public:
 
         sbSeasonsTreatment2Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment2Number->setObjectName(QStringLiteral("sbSeasonsTreatment2Number"));
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment2Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment2Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment2Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment2Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment2Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment2Number->setValue(0);
 
@@ -5691,8 +5702,8 @@ public:
 
         chbxSeasonsTreatment2 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment2->setObjectName(QStringLiteral("chbxSeasonsTreatment2"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment2->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment2->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment2->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment2->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment2->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment2->setChecked(false);
         chbxSeasonsTreatment2->setTristate(false);
@@ -5701,8 +5712,8 @@ public:
 
         sbSeasonsTreatment3Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment3Number->setObjectName(QStringLiteral("sbSeasonsTreatment3Number"));
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment3Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment3Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment3Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment3Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment3Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment3Number->setValue(0);
 
@@ -5710,19 +5721,19 @@ public:
 
         ledSeasonsTreatment1 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment1->setObjectName(QStringLiteral("ledSeasonsTreatment1"));
-        QSizePolicy sizePolicy9(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy9.setHorizontalStretch(2);
-        sizePolicy9.setVerticalStretch(0);
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment1->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment1->setSizePolicy(sizePolicy9);
+        QSizePolicy sizePolicy10(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy10.setHorizontalStretch(2);
+        sizePolicy10.setVerticalStretch(0);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment1->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment1->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment1, 2, 3, 1, 2);
 
         sbSeasonsTreatment4Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment4Number->setObjectName(QStringLiteral("sbSeasonsTreatment4Number"));
         sbSeasonsTreatment4Number->setEnabled(true);
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment4Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment4Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment4Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment4Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment4Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment4Number, 5, 5, 1, 1);
@@ -5764,15 +5775,15 @@ public:
 
         ledSeasonsTreatment3 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment3->setObjectName(QStringLiteral("ledSeasonsTreatment3"));
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment3->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment3->setSizePolicy(sizePolicy9);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment3->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment3->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment3, 4, 3, 1, 2);
 
         ledSeasonsTreatment4 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment4->setObjectName(QStringLiteral("ledSeasonsTreatment4"));
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment4->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment4->setSizePolicy(sizePolicy9);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment4->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment4->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment4, 5, 3, 1, 2);
 
@@ -5792,8 +5803,8 @@ public:
 
         chbxSeasonsTreatment4 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment4->setObjectName(QStringLiteral("chbxSeasonsTreatment4"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment4->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment4->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment4->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment4->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment4->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment4->setChecked(false);
         chbxSeasonsTreatment4->setTristate(false);
@@ -5809,8 +5820,8 @@ public:
 
         ledSeasonsTreatment2 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment2->setObjectName(QStringLiteral("ledSeasonsTreatment2"));
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment2->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment2->setSizePolicy(sizePolicy9);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment2->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment2->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment2, 3, 3, 1, 2);
 
@@ -5837,15 +5848,15 @@ public:
 
         ledSeasonsTreatment6 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment6->setObjectName(QStringLiteral("ledSeasonsTreatment6"));
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment6->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment6->setSizePolicy(sizePolicy9);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment6->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment6->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment6, 7, 3, 1, 2);
 
         sbSeasonsTreatment5Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment5Number->setObjectName(QStringLiteral("sbSeasonsTreatment5Number"));
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment5Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment5Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment5Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment5Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment5Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment5Number, 6, 5, 1, 1);
@@ -5874,15 +5885,15 @@ public:
 
         ledSeasonsTreatment5 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment5->setObjectName(QStringLiteral("ledSeasonsTreatment5"));
-        sizePolicy9.setHeightForWidth(ledSeasonsTreatment5->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment5->setSizePolicy(sizePolicy9);
+        sizePolicy10.setHeightForWidth(ledSeasonsTreatment5->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment5->setSizePolicy(sizePolicy10);
 
         gridLayout_36->addWidget(ledSeasonsTreatment5, 6, 3, 1, 2);
 
         sbSeasonsTreatment6Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment6Number->setObjectName(QStringLiteral("sbSeasonsTreatment6Number"));
-        sizePolicy8.setHeightForWidth(sbSeasonsTreatment6Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment6Number->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsTreatment6Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment6Number->setSizePolicy(sizePolicy9);
         sbSeasonsTreatment6Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment6Number, 7, 5, 1, 1);
@@ -5909,8 +5920,8 @@ public:
 
         chbxSeasonsTreatment1 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment1->setObjectName(QStringLiteral("chbxSeasonsTreatment1"));
-        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment1->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment1->setSizePolicy(sizePolicy7);
+        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment1->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment1->setSizePolicy(sizePolicy8);
         chbxSeasonsTreatment1->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment1->setChecked(true);
         chbxSeasonsTreatment1->setTristate(false);
@@ -5973,8 +5984,8 @@ public:
 
         sbSeasonsSitesSeasonsPerCropNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesSeasonsPerCropNumber->setObjectName(QStringLiteral("sbSeasonsSitesSeasonsPerCropNumber"));
-        sizePolicy8.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy9);
         sbSeasonsSitesSeasonsPerCropNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesSeasonsPerCropNumber->setMinimum(-1000);
         sbSeasonsSitesSeasonsPerCropNumber->setMaximum(1000);
@@ -6007,8 +6018,8 @@ public:
 
         sbSeasonsSitesSiteVariantsNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesSiteVariantsNumber->setObjectName(QStringLiteral("sbSeasonsSitesSiteVariantsNumber"));
-        sizePolicy8.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy9);
         sbSeasonsSitesSiteVariantsNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesSiteVariantsNumber->setValue(1);
 
@@ -6039,8 +6050,8 @@ public:
 
         sbSeasonsSitesMgmtPotentialNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesMgmtPotentialNumber->setObjectName(QStringLiteral("sbSeasonsSitesMgmtPotentialNumber"));
-        sizePolicy8.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy8);
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy9);
         sbSeasonsSitesMgmtPotentialNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesMgmtPotentialNumber->setValue(4);
 
@@ -6071,11 +6082,11 @@ public:
 
         cbSeasonsSitesZeroNTreatment = new QComboBox(gbxSeasonsSites);
         cbSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("cbSeasonsSitesZeroNTreatment"));
-        QSizePolicy sizePolicy10(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy10.setHorizontalStretch(0);
-        sizePolicy10.setVerticalStretch(0);
-        sizePolicy10.setHeightForWidth(cbSeasonsSitesZeroNTreatment->sizePolicy().hasHeightForWidth());
-        cbSeasonsSitesZeroNTreatment->setSizePolicy(sizePolicy10);
+        QSizePolicy sizePolicy11(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy11.setHorizontalStretch(0);
+        sizePolicy11.setVerticalStretch(0);
+        sizePolicy11.setHeightForWidth(cbSeasonsSitesZeroNTreatment->sizePolicy().hasHeightForWidth());
+        cbSeasonsSitesZeroNTreatment->setSizePolicy(sizePolicy11);
         cbSeasonsSitesZeroNTreatment->setMaximumSize(QSize(55, 16777215));
 
         gridLayout_37->addWidget(cbSeasonsSitesZeroNTreatment, 4, 2, 1, 1);
@@ -6175,11 +6186,11 @@ public:
 
         cbUser = new QComboBox(centralWidget);
         cbUser->setObjectName(QStringLiteral("cbUser"));
-        QSizePolicy sizePolicy11(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy11.setHorizontalStretch(1);
-        sizePolicy11.setVerticalStretch(0);
-        sizePolicy11.setHeightForWidth(cbUser->sizePolicy().hasHeightForWidth());
-        cbUser->setSizePolicy(sizePolicy11);
+        QSizePolicy sizePolicy12(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy12.setHorizontalStretch(1);
+        sizePolicy12.setVerticalStretch(0);
+        sizePolicy12.setHeightForWidth(cbUser->sizePolicy().hasHeightForWidth());
+        cbUser->setSizePolicy(sizePolicy12);
 
         gridLayout_2->addWidget(cbUser, 2, 0, 1, 1);
 
@@ -6212,7 +6223,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(0);
+        tabWidgetDataClassification->setCurrentIndex(1);
         toolBoxStateVars->setCurrentIndex(1);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
@@ -6311,6 +6322,11 @@ public:
 "</style></head><body style=\" font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Description/instructions</p></body></html>", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabManagement), QApplication::translate("DatasetClassification", "Management", 0));
+        txbrPhenology->setHtml(QApplication::translate("DatasetClassification", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Description/instructions go here</p></body></html>", 0));
         gbxPhenology->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblMgmtMinData_2->setText(QApplication::translate("DatasetClassification", "Check for min. data", 0));
         lblMgmtObservations_2->setText(QApplication::translate("DatasetClassification", "Observations", 0));
@@ -6357,11 +6373,6 @@ public:
         lblYellowRipenessRatingPhenology->setText(QApplication::translate("DatasetClassification", "3", 0));
         lblCombinedPhenology->setText(QApplication::translate("DatasetClassification", "Combined:", 0));
         lblCombinedTotalPhenology->setText(QApplication::translate("DatasetClassification", "15", 0));
-        txbrPhenology->setHtml(QApplication::translate("DatasetClassification", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Description/instructions go here</p></body></html>", 0));
         lblPhenologyPlatinumMin->setText(QApplication::translate("DatasetClassification", "Platinum Minimum: ", 0));
         lblPhenologyPlatinumMinVal->setText(QApplication::translate("DatasetClassification", "13", 0));
         lblPhenologyGoldMin->setText(QApplication::translate("DatasetClassification", "Gold Minimum: ", 0));
@@ -6372,6 +6383,9 @@ public:
         lblPhenologyBronzeMinVal->setText(QApplication::translate("DatasetClassification", "5", 0));
         lblMedalPhenology->setText(QString());
         lblRankingPhenology->setText(QApplication::translate("DatasetClassification", "n/a", 0));
+#ifndef QT_NO_TOOLTIP
+        textBrowserJSON->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>this is temporary - used only to test the JSON write function. click View JSON to populate/update.</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabPhenology), QApplication::translate("DatasetClassification", "Phenology", 0));
         gbxPrevCrop->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblResidueMgmtRatingPrevCrop->setText(QApplication::translate("DatasetClassification", "4", 0));

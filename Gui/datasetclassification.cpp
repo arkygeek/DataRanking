@@ -3735,7 +3735,6 @@ void DatasetClassification::saveToFileJson()
   QJsonObject myFormObject;
   QJsonObject myFormDetailsHeader;
   QJsonObject myFormCategories;
-  QJsonObject myManagementObject;
   QString myMinDataSetting;
 
   // create a header
@@ -3747,7 +3746,12 @@ void DatasetClassification::saveToFileJson()
   // insert the header
   myFormObject.insert("Details", myFormDetailsHeader);
 
-  // Management
+    //
+   // Management
+  //
+
+  QJsonObject myManagementObject;
+
   //   variety
   myMinDataSetting = ui->chbxVariety->checkState()==Qt::Unchecked?"no":"yes";
   QJsonObject myManagementInputVariety;
@@ -3811,8 +3815,65 @@ void DatasetClassification::saveToFileJson()
   myManagementObject.insert("Rank", ui->lblRankingManagement->text());
   myManagementObject.insert("Notes", ui->txbrMgmt->toPlainText());
 
-  // insert management object into the form object
+    //
+   // Phenology
+  //
+
+  QJsonObject myPhenologyObject;
+
+  //   Emergence
+  myMinDataSetting = ui->chbxEmergencePhenology->checkState()==false?"no":"yes";
+  QJsonObject myPhenologyInputEmergence;
+  myPhenologyInputEmergence.insert("Minimum data requirement", myMinDataSetting);
+  myPhenologyInputEmergence.insert("Observations", ui->sbEmergenceObsPhenology->value());
+  myPhenologyInputEmergence.insert("Weight", ui->dsbEmergenceWeightPhenology->value());
+  myPhenologyInputEmergence.insert("Points", ui->lblEmergenceRatingPhenology->text());
+  //   Tillage
+  myMinDataSetting = ui->chbxStemElongationPhenology->checkState()==false?"no":"yes";
+  QJsonObject myPhenologyInputStemElongation;
+  myPhenologyInputStemElongation.insert("Minimum data requirement", myMinDataSetting);
+  myPhenologyInputStemElongation.insert("Observations", ui->sbStemElongationObsPhenology->value());
+  myPhenologyInputStemElongation.insert("Weight", ui->dsbStemElongationWeightPhenology->value());
+  myPhenologyInputStemElongation.insert("Points", ui->lblStemElongationRatingPhenology->text());
+  //   EarEmergence
+  myMinDataSetting = ui->chbxEarEmergencePhenology->checkState()==false?"no":"yes";
+  QJsonObject myPhenologyInputEarEmergence;
+  myPhenologyInputEarEmergence.insert("Minimum data requirement", myMinDataSetting);
+  myPhenologyInputEarEmergence.insert("Observations", ui->sbEarEmergenceObsPhenology->value());
+  myPhenologyInputEarEmergence.insert("Weight", ui->dsbEarEmergenceWeightPhenology->value());
+  myPhenologyInputEarEmergence.insert("Points", ui->lblEarEmergenceRatingPhenology->text());
+  //   Flowering
+  myMinDataSetting = ui->chbxFloweringPhenology->checkState()==false?"no":"yes";
+  QJsonObject myPhenologyInputFlowering;
+  myPhenologyInputFlowering.insert("Minimum data requirement", myMinDataSetting);
+  myPhenologyInputFlowering.insert("Observations", ui->sbFloweringObsPhenology->value());
+  myPhenologyInputFlowering.insert("Weight", ui->dsbFloweringWeightPhenology->value());
+  myPhenologyInputFlowering.insert("Points", ui->lblFloweringRatingPhenology->text());
+  //   YellowRipeness
+  myMinDataSetting = ui->chbxYellowRipenessPhenology->checkState()==false?"no":"yes";
+  QJsonObject myPhenologyInputYellowRipeness;
+  myPhenologyInputYellowRipeness.insert("Minimum data requirement", myMinDataSetting);
+  myPhenologyInputYellowRipeness.insert("Observations", ui->sbYellowRipenessObsPhenology->value());
+  myPhenologyInputYellowRipeness.insert("Weight", ui->dsbYellowRipenessWeightPhenology->value());
+  myPhenologyInputYellowRipeness.insert("Points", ui->lblYellowRipenessRatingPhenology->text());
+
+  // add to the Phenology object
+  myPhenologyObject.insert("Emergence", myPhenologyInputEmergence);
+  myPhenologyObject.insert("StemElongation", myPhenologyInputStemElongation);
+  myPhenologyObject.insert("EarEmergence", myPhenologyInputEarEmergence);
+  myPhenologyObject.insert("Flowering", myPhenologyInputFlowering);
+  myPhenologyObject.insert("YellowRipeness", myPhenologyInputYellowRipeness);
+
+  // add rank info
+  myPhenologyObject.insert("Points", ui->lblCombinedTotalPhenology->text());
+  myPhenologyObject.insert("Rank", ui->lblRankingPhenology->text());
+  myPhenologyObject.insert("Notes", ui->txbrPhenology->toPlainText());
+
+
+
+  // insert the sub-objects into the form object
   myFormObject.insert("Management", myManagementObject);
+  myFormObject.insert("Phenology", myPhenologyObject);
 
 
 
@@ -3823,10 +3884,9 @@ void DatasetClassification::saveToFileJson()
   // in order to dump the text, it has to be put into a QJsonDocument
   myQJsonDocument.setObject(myFormObject);
   QString myJsonText = myQJsonDocument.toJson();
-  // display the JSON in a QMessageBox (temporary feature)
-  QMessageBox::information(0, QString("MAD"),
-                           QString("The JSON looks like this:\n" + myJsonText),
-                           QMessageBox::Ok);
+  // display the JSON in the temporary text browser
+  ui->textBrowserJSON->clear();
+  ui->textBrowserJSON->setText(myJsonText);
 }
 
 
