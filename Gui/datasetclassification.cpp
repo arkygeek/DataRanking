@@ -1,6 +1,6 @@
 /***************************************************************************
- *   File:  datasetclassification.cpp created: 16/12/2013                                    *
- *   Class info: DatasetClassification                                               *
+ *   File:  datasetclassification.cpp created: 16/12/2013                  *
+ *   Class info: DatasetClassification                                     *
  *   Copyright (C) 2013 by: Jason S. Jorgenson                             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -22,12 +22,15 @@
 #include "datasetclassification.h"
 
 #include "rankpointgenerator.h"
+#include <QUuid>
 
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QDateTime>
 #include <QMessageBox>
+#include <QFile>
+#include <QFileDialog>
 
 #include "ui_datasetclassification.h"
 
@@ -3943,12 +3946,13 @@ void DatasetClassification::saveToFileJson()
 
 
 
+    //
+   // insert the sub-objects into the form object
+  //
 
-  // insert the sub-objects into the form object
   myFormObject.insert("Management", myManagementObject);
   myFormObject.insert("Phenology", myPhenologyObject);
   myFormObject.insert("PrevCrop", myPrevCropObject);
-
 
 
   // dumpt the JSON to the terminal for testing
@@ -3960,6 +3964,32 @@ void DatasetClassification::saveToFileJson()
   // display the JSON in the temporary text browser
   ui->textBrowserJSON->clear();
   ui->textBrowserJSON->setText(myJsonText);
+
+    //
+   // write this out to a file
+  //
+
+  // generate a guid for a filename
+  //QString myGuid = QUuid::createUuid().toString().replace("{","").replace("}","");
+  //qDebug() << "\nmyGuid = " << myGuid << "\n";
+
+  // write the file out
+
+  QFile myFile;
+  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
+
+  //    QFileDialog::DialogLabel::FileType;
+
+  myFile.setFileName(myFilename);
+  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+  {
+    myFile.write(myQJsonDocument.toJson());
+    myFile.close();
+  }
+
+  QMessageBox::information(0, QString("JsonOut"), QString("You Were Successful!")
+                         , QMessageBox::Ok);
+
 }
 
 

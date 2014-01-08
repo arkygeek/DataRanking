@@ -46,10 +46,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		datasetclassification.cpp qrc_Resources.cpp \
+		datasetclassification.cpp \
+		madguid.cpp \
+		madserialise.cpp qrc_Resources.cpp \
 		moc_datasetclassification.cpp
 OBJECTS       = main.o \
 		datasetclassification.o \
+		madguid.o \
+		madserialise.o \
 		qrc_Resources.o \
 		moc_datasetclassification.o
 DIST          = /Users/arkygeek/dev/qt5/qtbase/mkspecs/features/spec_pre.prf \
@@ -525,7 +529,7 @@ gui.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@EXECUTABLE@,gui,g" -e "s,@TYPEINFO@,????,g" /Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-clang/Info.plist.app >gui.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/gui1.0.0 || mkdir -p .tmp/gui1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/gui1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.h .tmp/gui1.0.0/ && $(COPY_FILE) --parents main.cpp datasetclassification.cpp .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.ui .tmp/gui1.0.0/ && (cd `dirname .tmp/gui1.0.0` && $(TAR) gui1.0.0.tar gui1.0.0 && $(COMPRESS) gui1.0.0.tar) && $(MOVE) `dirname .tmp/gui1.0.0`/gui1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/gui1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/gui1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.h madguid.h madserialise.h .tmp/gui1.0.0/ && $(COPY_FILE) --parents main.cpp datasetclassification.cpp madguid.cpp madserialise.cpp .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.ui .tmp/gui1.0.0/ && (cd `dirname .tmp/gui1.0.0` && $(TAR) gui1.0.0.tar gui1.0.0 && $(COMPRESS) gui1.0.0.tar) && $(MOVE) `dirname .tmp/gui1.0.0`/gui1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/gui1.0.0
 
 
 clean:compiler_clean 
@@ -554,9 +558,9 @@ compiler_rcc_clean:
 qrc_Resources.cpp: Resources.qrc \
 		Resources/register.png \
 		Resources/platinum.png \
+		Resources/gold.png \
 		Resources/silver.png \
-		Resources/bronze.png \
-		Resources/gold.png
+		Resources/bronze.png
 	/Users/arkygeek/dev/qt5/qtbase/bin/rcc -name Resources Resources.qrc -o qrc_Resources.cpp
 
 compiler_moc_header_make_all: moc_datasetclassification.cpp
@@ -629,8 +633,34 @@ datasetclassification.o: datasetclassification.cpp datasetclassification.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QJsonDocument \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qjsondocument.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QJsonObject \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qjsonobject.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h \
 		ui_datasetclassification.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datasetclassification.o datasetclassification.cpp
+
+madguid.o: madguid.cpp madguid.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QUuid \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/quuid.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o madguid.o madguid.cpp
+
+madserialise.o: madserialise.cpp madserialise.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QFile \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qfile.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QTextStream \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qtextstream.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o madserialise.o madserialise.cpp
 
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp

@@ -13,9 +13,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        datasetclassification.cpp
+        datasetclassification.cpp \
+    madguid.cpp \
+    madserialise.cpp
 
-HEADERS  += datasetclassification.h
+HEADERS  += datasetclassification.h \
+    madguid.h \
+    madserialise.h
 
 FORMS    += datasetclassification.ui
 
