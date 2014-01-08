@@ -3740,6 +3740,8 @@ void DatasetClassification::saveToFileJson()
   // create a header
   myFormDetailsHeader.insert("User", ui->cbUser->currentText());
   myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
+  myFormDetailsHeader.insert("OverallRank", ui->lblOverallRank->text());
+
   QDateTime myDateTime = QDateTime::currentDateTime();
   QString myDateTimeString = myDateTime.toString();
   myFormDetailsHeader.insert("Date", myDateTimeString);
@@ -3869,12 +3871,83 @@ void DatasetClassification::saveToFileJson()
   myPhenologyObject.insert("Rank", ui->lblRankingPhenology->text());
   myPhenologyObject.insert("Notes", ui->txbrPhenology->toPlainText());
 
+    //
+   // Previous Crop
+  //
+
+  QJsonObject myPrevCropObject;
+
+  //   Crop
+  myMinDataSetting = ui->chbxCropPrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputCrop;
+  myPrevCropInputCrop.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputCrop.insert("Observations", ui->sbCropObsPrevCrop->value());
+  myPrevCropInputCrop.insert("Weight", ui->dsbCropWeightPrevCrop->value());
+  myPrevCropInputCrop.insert("Points", ui->lblCropRatingPrevCrop->text());
+  //   SowingDate
+  myMinDataSetting = ui->chbxSowingDatePrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputSowingDate;
+  myPrevCropInputSowingDate.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputSowingDate.insert("Observations", ui->sbSowingDateObsPrevCrop->value());
+  myPrevCropInputSowingDate.insert("Weight", ui->dsbSowingDateWeightPrevCrop->value());
+  myPrevCropInputSowingDate.insert("Points", ui->lblSowingDateRatingPrevCrop->text());
+  //   HarvestDate
+  myMinDataSetting = ui->chbxHarvestDatePrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputHarvestDate;
+  myPrevCropInputHarvestDate.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputHarvestDate.insert("Observations", ui->sbHarvestDateObsPrevCrop->value());
+  myPrevCropInputHarvestDate.insert("Weight", ui->dsbHarvestDateWeightPrevCrop->value());
+  myPrevCropInputHarvestDate.insert("Points", ui->lblHarvestDateRatingPrevCrop->text());
+  //   Yield
+  myMinDataSetting = ui->chbxYieldPrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputYield;
+  myPrevCropInputYield.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputYield.insert("Observations", ui->sbYieldObsPrevCrop->value());
+  myPrevCropInputYield.insert("Weight", ui->dsbYieldWeightPrevCrop->value());
+  myPrevCropInputYield.insert("Points", ui->lblYieldRatingPrevCrop->text());
+  //   ResidueMgmt
+  myMinDataSetting = ui->chbxResidueMgmtPrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputResidueMgmt;
+  myPrevCropInputResidueMgmt.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputResidueMgmt.insert("Observations", ui->sbResidueMgmtObsPrevCrop->value());
+  myPrevCropInputResidueMgmt.insert("Weight", ui->dsbResidueMgmtWeightPrevCrop->value());
+  myPrevCropInputResidueMgmt.insert("Points", ui->lblResidueMgmtRatingPrevCrop->text());
+  //   Fertilisation
+  myMinDataSetting = ui->chbxFertilisationPrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputFertilisation;
+  myPrevCropInputFertilisation.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputFertilisation.insert("Observations", ui->sbFertilisationObsPrevCrop->value());
+  myPrevCropInputFertilisation.insert("Weight", ui->dsbFertilisationWeightPrevCrop->value());
+  myPrevCropInputFertilisation.insert("Points", ui->lblFertilisationRatingPrevCrop->text());
+  //   Irrigation
+  myMinDataSetting = ui->chbxIrrigationPrevCrop->checkState()==false?"no":"yes";
+  QJsonObject myPrevCropInputIrrigation;
+  myPrevCropInputIrrigation.insert("Minimum data requirement", myMinDataSetting);
+  myPrevCropInputIrrigation.insert("Observations", ui->sbIrrigationObsPrevCrop->value());
+  myPrevCropInputIrrigation.insert("Weight", ui->dsbIrrigationWeightPrevCrop->value());
+  myPrevCropInputIrrigation.insert("Points", ui->lblIrrigationRatingPrevCrop->text());
+
+  // add to the PrevCrop object
+  myPrevCropObject.insert("Crop", myPrevCropInputCrop);
+  myPrevCropObject.insert("SowingDate", myPrevCropInputSowingDate);
+  myPrevCropObject.insert("HarvestDate", myPrevCropInputHarvestDate);
+  myPrevCropObject.insert("Yield", myPrevCropInputYield);
+  myPrevCropObject.insert("ResidueMgmt", myPrevCropInputResidueMgmt);
+  myPrevCropObject.insert("Fertilisation", myPrevCropInputFertilisation);
+  myPrevCropObject.insert("Irrigation", myPrevCropInputIrrigation);
+
+  // add rank info
+  myPrevCropObject.insert("Points", ui->lblOverallRatingPrevCrop->text());
+  myPrevCropObject.insert("Rank", ui->lblRankingPrevCrop->text());
+  myPrevCropObject.insert("Notes", ui->txbrPrevCrop->toPlainText());
+
+
 
 
   // insert the sub-objects into the form object
   myFormObject.insert("Management", myManagementObject);
   myFormObject.insert("Phenology", myPhenologyObject);
-
+  myFormObject.insert("PrevCrop", myPrevCropObject);
 
 
 

@@ -6223,7 +6223,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(1);
+        tabWidgetDataClassification->setCurrentIndex(2);
         toolBoxStateVars->setCurrentIndex(1);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
