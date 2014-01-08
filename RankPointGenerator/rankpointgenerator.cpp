@@ -785,3 +785,34 @@ QString RankPointGenerator::getRankSV(int theTotal)
 
    return myRank;
 }
+
+QString RankPointGenerator::getRank(int theTotal)
+{
+  int myRankNumber = 0;
+  QString myRank;
+
+  if (theTotal >= 180) myRankNumber=180;
+  else if (theTotal >= 145) myRankNumber=145;
+  else if (theTotal >= 90) myRankNumber=90;
+  else if (theTotal >= 60) myRankNumber=60;
+
+   switch (myRankNumber)
+   {
+     case 180: myRank = "Platinum";
+              break;
+
+     case 145: myRank = "Gold";
+              break;
+
+     case 90: myRank = "Silver";
+              break;
+
+     case 60: myRank = "Bronze";
+              break;
+
+     default: myRank = "na";
+              break;
+   }
+
+   return myRank;
+}

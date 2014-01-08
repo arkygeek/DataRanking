@@ -109,6 +109,7 @@ QString getRankSoil(int theTotal);
 QString getRankSite(int theTotal);
 QString getRankWeather(int theTotal);
 QString getRankSV(int theTotal);
+QString getRank(int theTotal);
 };
 
 #endif // RANKPOINTGENERATOR_H

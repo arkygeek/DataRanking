@@ -46,11 +46,6 @@ class Ui_DatasetClassification
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
-    QLabel *lblOverallRank;
-    QToolButton *toolButtonDatasetDetails;
-    QLabel *lblRankImage;
-    QComboBox *cbUser;
-    QPushButton *pushButton;
     QTabWidget *tabWidgetDataClassification;
     QWidget *tabManagement;
     QGridLayout *gridLayout_13;
@@ -783,10 +778,15 @@ public:
     QHBoxLayout *horizontalLayoutSeasonsMultiplier;
     QLabel *lblSeasonsMultiplier;
     QLabel *lblSeasonsMultiplierTotal;
+    QLabel *lblUser;
+    QPushButton *pbAuthenticate;
     QLabel *lblEstimatedRanking;
     QComboBox *cbDatasets;
-    QPushButton *pbAuthenticate;
-    QLabel *lblUser;
+    QPushButton *pushButton;
+    QToolButton *toolButtonDatasetDetails;
+    QComboBox *cbUser;
+    QLabel *lblRankImage;
+    QLabel *lblOverallRank;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -795,61 +795,24 @@ public:
     {
         if (DatasetClassification->objectName().isEmpty())
             DatasetClassification->setObjectName(QStringLiteral("DatasetClassification"));
-        DatasetClassification->resize(837, 805);
+        DatasetClassification->resize(848, 805);
         centralWidget = new QWidget(DatasetClassification);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        lblOverallRank = new QLabel(centralWidget);
-        lblOverallRank->setObjectName(QStringLiteral("lblOverallRank"));
-        QFont font;
-        font.setPointSize(20);
-        lblOverallRank->setFont(font);
-
-        gridLayout_2->addWidget(lblOverallRank, 1, 6, 1, 1);
-
-        toolButtonDatasetDetails = new QToolButton(centralWidget);
-        toolButtonDatasetDetails->setObjectName(QStringLiteral("toolButtonDatasetDetails"));
-
-        gridLayout_2->addWidget(toolButtonDatasetDetails, 1, 3, 1, 1);
-
-        lblRankImage = new QLabel(centralWidget);
-        lblRankImage->setObjectName(QStringLiteral("lblRankImage"));
-        lblRankImage->setMinimumSize(QSize(40, 40));
-        lblRankImage->setMaximumSize(QSize(40, 40));
-        lblRankImage->setPixmap(QPixmap(QString::fromUtf8(":/Resources/platinum.png")));
-        lblRankImage->setScaledContents(true);
-
-        gridLayout_2->addWidget(lblRankImage, 1, 5, 1, 1);
-
-        cbUser = new QComboBox(centralWidget);
-        cbUser->setObjectName(QStringLiteral("cbUser"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(1);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(cbUser->sizePolicy().hasHeightForWidth());
-        cbUser->setSizePolicy(sizePolicy);
-
-        gridLayout_2->addWidget(cbUser, 2, 0, 1, 1);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout_2->addWidget(pushButton, 1, 8, 1, 1);
-
         tabWidgetDataClassification = new QTabWidget(centralWidget);
         tabWidgetDataClassification->setObjectName(QStringLiteral("tabWidgetDataClassification"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(tabWidgetDataClassification->sizePolicy().hasHeightForWidth());
-        tabWidgetDataClassification->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(tabWidgetDataClassification->sizePolicy().hasHeightForWidth());
+        tabWidgetDataClassification->setSizePolicy(sizePolicy);
         tabWidgetDataClassification->setMinimumSize(QSize(684, 0));
-        QFont font1;
-        font1.setPointSize(11);
-        tabWidgetDataClassification->setFont(font1);
+        QFont font;
+        font.setPointSize(11);
+        tabWidgetDataClassification->setFont(font);
         tabManagement = new QWidget();
         tabManagement->setObjectName(QStringLiteral("tabManagement"));
         gridLayout_13 = new QGridLayout(tabManagement);
@@ -858,11 +821,11 @@ public:
         gridLayout_13->setObjectName(QStringLiteral("gridLayout_13"));
         gbxManagement = new QGroupBox(tabManagement);
         gbxManagement->setObjectName(QStringLiteral("gbxManagement"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(gbxManagement->sizePolicy().hasHeightForWidth());
-        gbxManagement->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(gbxManagement->sizePolicy().hasHeightForWidth());
+        gbxManagement->setSizePolicy(sizePolicy1);
         gbxManagement->setMinimumSize(QSize(0, 0));
         gbxManagement->setFlat(false);
         gbxManagement->setCheckable(true);
@@ -873,47 +836,47 @@ public:
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         lblMgmtPoints = new QLabel(gbxManagement);
         lblMgmtPoints->setObjectName(QStringLiteral("lblMgmtPoints"));
-        QFont font2;
-        font2.setPointSize(9);
-        lblMgmtPoints->setFont(font2);
+        QFont font1;
+        font1.setPointSize(9);
+        lblMgmtPoints->setFont(font1);
 
         gridLayout->addWidget(lblMgmtPoints, 0, 2, 1, 1);
 
         sbVarietyObsMgmt = new QSpinBox(gbxManagement);
         sbVarietyObsMgmt->setObjectName(QStringLiteral("sbVarietyObsMgmt"));
-        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(sbVarietyObsMgmt->sizePolicy().hasHeightForWidth());
-        sbVarietyObsMgmt->setSizePolicy(sizePolicy3);
-        QFont font3;
-        font3.setPointSize(12);
-        sbVarietyObsMgmt->setFont(font3);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(sbVarietyObsMgmt->sizePolicy().hasHeightForWidth());
+        sbVarietyObsMgmt->setSizePolicy(sizePolicy2);
+        QFont font2;
+        font2.setPointSize(12);
+        sbVarietyObsMgmt->setFont(font2);
         sbVarietyObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbVarietyObsMgmt, 1, 1, 1, 1);
 
         lblMgmtObservations = new QLabel(gbxManagement);
         lblMgmtObservations->setObjectName(QStringLiteral("lblMgmtObservations"));
-        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(lblMgmtObservations->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations->setSizePolicy(sizePolicy4);
-        lblMgmtObservations->setFont(font2);
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations->setSizePolicy(sizePolicy3);
+        lblMgmtObservations->setFont(font1);
 
         gridLayout->addWidget(lblMgmtObservations, 0, 1, 1, 1);
 
         lblMgmtMinData = new QLabel(gbxManagement);
         lblMgmtMinData->setObjectName(QStringLiteral("lblMgmtMinData"));
-        lblMgmtMinData->setFont(font2);
+        lblMgmtMinData->setFont(font1);
         lblMgmtMinData->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout->addWidget(lblMgmtMinData, 0, 0, 1, 1);
 
         chbxSowing = new QCheckBox(gbxManagement);
         chbxSowing->setObjectName(QStringLiteral("chbxSowing"));
-        chbxSowing->setFont(font3);
+        chbxSowing->setFont(font2);
         chbxSowing->setLayoutDirection(Qt::RightToLeft);
         chbxSowing->setChecked(true);
 
@@ -921,9 +884,9 @@ public:
 
         dsbVarietyWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbVarietyWeightMgmt->setObjectName(QStringLiteral("dsbVarietyWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbVarietyWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbVarietyWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbVarietyWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbVarietyWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbVarietyWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbVarietyWeightMgmt->setFont(font2);
         dsbVarietyWeightMgmt->setDecimals(1);
         dsbVarietyWeightMgmt->setMaximum(5);
         dsbVarietyWeightMgmt->setSingleStep(0.5);
@@ -933,18 +896,18 @@ public:
 
         sbFertilisationObsMgmt = new QSpinBox(gbxManagement);
         sbFertilisationObsMgmt->setObjectName(QStringLiteral("sbFertilisationObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbFertilisationObsMgmt->sizePolicy().hasHeightForWidth());
-        sbFertilisationObsMgmt->setSizePolicy(sizePolicy3);
-        sbFertilisationObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbFertilisationObsMgmt->sizePolicy().hasHeightForWidth());
+        sbFertilisationObsMgmt->setSizePolicy(sizePolicy2);
+        sbFertilisationObsMgmt->setFont(font2);
         sbFertilisationObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbFertilisationObsMgmt, 4, 1, 1, 1);
 
         dsbSeedDensityWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbSeedDensityWeightMgmt->setObjectName(QStringLiteral("dsbSeedDensityWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbSeedDensityWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbSeedDensityWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbSeedDensityWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbSeedDensityWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbSeedDensityWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbSeedDensityWeightMgmt->setFont(font2);
         dsbSeedDensityWeightMgmt->setDecimals(1);
         dsbSeedDensityWeightMgmt->setMaximum(5);
         dsbSeedDensityWeightMgmt->setSingleStep(0.5);
@@ -954,7 +917,7 @@ public:
 
         chbxIrrigation = new QCheckBox(gbxManagement);
         chbxIrrigation->setObjectName(QStringLiteral("chbxIrrigation"));
-        chbxIrrigation->setFont(font3);
+        chbxIrrigation->setFont(font2);
         chbxIrrigation->setLayoutDirection(Qt::RightToLeft);
         chbxIrrigation->setChecked(true);
 
@@ -962,9 +925,9 @@ public:
 
         sbIrrigationObsMgmt = new QSpinBox(gbxManagement);
         sbIrrigationObsMgmt->setObjectName(QStringLiteral("sbIrrigationObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbIrrigationObsMgmt->sizePolicy().hasHeightForWidth());
-        sbIrrigationObsMgmt->setSizePolicy(sizePolicy3);
-        sbIrrigationObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbIrrigationObsMgmt->sizePolicy().hasHeightForWidth());
+        sbIrrigationObsMgmt->setSizePolicy(sizePolicy2);
+        sbIrrigationObsMgmt->setFont(font2);
         sbIrrigationObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbIrrigationObsMgmt, 5, 1, 1, 1);
@@ -972,11 +935,11 @@ public:
         lblIrrigationRating = new QLabel(gbxManagement);
         lblIrrigationRating->setObjectName(QStringLiteral("lblIrrigationRating"));
         lblIrrigationRating->setMinimumSize(QSize(25, 0));
-        QFont font4;
-        font4.setPointSize(12);
-        font4.setBold(true);
-        font4.setWeight(75);
-        lblIrrigationRating->setFont(font4);
+        QFont font3;
+        font3.setPointSize(12);
+        font3.setBold(true);
+        font3.setWeight(75);
+        lblIrrigationRating->setFont(font3);
         lblIrrigationRating->setLineWidth(1);
         lblIrrigationRating->setMidLineWidth(1);
         lblIrrigationRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -987,9 +950,9 @@ public:
 
         sbSeedDensityObsMgmt = new QSpinBox(gbxManagement);
         sbSeedDensityObsMgmt->setObjectName(QStringLiteral("sbSeedDensityObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbSeedDensityObsMgmt->sizePolicy().hasHeightForWidth());
-        sbSeedDensityObsMgmt->setSizePolicy(sizePolicy3);
-        sbSeedDensityObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbSeedDensityObsMgmt->sizePolicy().hasHeightForWidth());
+        sbSeedDensityObsMgmt->setSizePolicy(sizePolicy2);
+        sbSeedDensityObsMgmt->setFont(font2);
         sbSeedDensityObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbSeedDensityObsMgmt, 6, 1, 1, 1);
@@ -997,7 +960,7 @@ public:
         lblFertilisationRating = new QLabel(gbxManagement);
         lblFertilisationRating->setObjectName(QStringLiteral("lblFertilisationRating"));
         lblFertilisationRating->setMinimumSize(QSize(25, 0));
-        lblFertilisationRating->setFont(font4);
+        lblFertilisationRating->setFont(font3);
         lblFertilisationRating->setLineWidth(1);
         lblFertilisationRating->setMidLineWidth(1);
         lblFertilisationRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1009,7 +972,7 @@ public:
         lblHarvestRating = new QLabel(gbxManagement);
         lblHarvestRating->setObjectName(QStringLiteral("lblHarvestRating"));
         lblHarvestRating->setMinimumSize(QSize(25, 0));
-        lblHarvestRating->setFont(font4);
+        lblHarvestRating->setFont(font3);
         lblHarvestRating->setLineWidth(1);
         lblHarvestRating->setMidLineWidth(1);
         lblHarvestRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1021,11 +984,11 @@ public:
         lblCombinedTotal = new QLabel(gbxManagement);
         lblCombinedTotal->setObjectName(QStringLiteral("lblCombinedTotal"));
         lblCombinedTotal->setMinimumSize(QSize(25, 0));
-        QFont font5;
-        font5.setPointSize(14);
-        font5.setBold(true);
-        font5.setWeight(75);
-        lblCombinedTotal->setFont(font5);
+        QFont font4;
+        font4.setPointSize(14);
+        font4.setBold(true);
+        font4.setWeight(75);
+        lblCombinedTotal->setFont(font4);
         lblCombinedTotal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblCombinedTotal->setMargin(-1);
         lblCombinedTotal->setIndent(1);
@@ -1034,9 +997,9 @@ public:
 
         dsbTillageWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbTillageWeightMgmt->setObjectName(QStringLiteral("dsbTillageWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbTillageWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbTillageWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbTillageWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbTillageWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbTillageWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbTillageWeightMgmt->setFont(font2);
         dsbTillageWeightMgmt->setDecimals(1);
         dsbTillageWeightMgmt->setMaximum(5);
         dsbTillageWeightMgmt->setSingleStep(0.5);
@@ -1046,7 +1009,7 @@ public:
 
         chbxTillage = new QCheckBox(gbxManagement);
         chbxTillage->setObjectName(QStringLiteral("chbxTillage"));
-        chbxTillage->setFont(font3);
+        chbxTillage->setFont(font2);
         chbxTillage->setLayoutDirection(Qt::RightToLeft);
 
         gridLayout->addWidget(chbxTillage, 7, 0, 1, 1);
@@ -1054,7 +1017,7 @@ public:
         lblTillageRating = new QLabel(gbxManagement);
         lblTillageRating->setObjectName(QStringLiteral("lblTillageRating"));
         lblTillageRating->setMinimumSize(QSize(25, 0));
-        lblTillageRating->setFont(font4);
+        lblTillageRating->setFont(font3);
         lblTillageRating->setLineWidth(1);
         lblTillageRating->setMidLineWidth(1);
         lblTillageRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1065,7 +1028,7 @@ public:
 
         lblCombined = new QLabel(gbxManagement);
         lblCombined->setObjectName(QStringLiteral("lblCombined"));
-        lblCombined->setFont(font5);
+        lblCombined->setFont(font4);
         lblCombined->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblCombined->setMargin(0);
 
@@ -1073,18 +1036,18 @@ public:
 
         sbTillageObsMgmt = new QSpinBox(gbxManagement);
         sbTillageObsMgmt->setObjectName(QStringLiteral("sbTillageObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbTillageObsMgmt->sizePolicy().hasHeightForWidth());
-        sbTillageObsMgmt->setSizePolicy(sizePolicy3);
-        sbTillageObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbTillageObsMgmt->sizePolicy().hasHeightForWidth());
+        sbTillageObsMgmt->setSizePolicy(sizePolicy2);
+        sbTillageObsMgmt->setFont(font2);
         sbTillageObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbTillageObsMgmt, 7, 1, 1, 1);
 
         dsbHarvestWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbHarvestWeightMgmt->setObjectName(QStringLiteral("dsbHarvestWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbHarvestWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbHarvestWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbHarvestWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbHarvestWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbHarvestWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbHarvestWeightMgmt->setFont(font2);
         dsbHarvestWeightMgmt->setDecimals(1);
         dsbHarvestWeightMgmt->setMaximum(5);
         dsbHarvestWeightMgmt->setSingleStep(0.5);
@@ -1094,7 +1057,7 @@ public:
 
         chbxFertilisation = new QCheckBox(gbxManagement);
         chbxFertilisation->setObjectName(QStringLiteral("chbxFertilisation"));
-        chbxFertilisation->setFont(font3);
+        chbxFertilisation->setFont(font2);
         chbxFertilisation->setLayoutDirection(Qt::RightToLeft);
         chbxFertilisation->setChecked(true);
 
@@ -1102,9 +1065,9 @@ public:
 
         dsbFertilisationWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbFertilisationWeightMgmt->setObjectName(QStringLiteral("dsbFertilisationWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbFertilisationWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbFertilisationWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbFertilisationWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbFertilisationWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbFertilisationWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbFertilisationWeightMgmt->setFont(font2);
         dsbFertilisationWeightMgmt->setDecimals(1);
         dsbFertilisationWeightMgmt->setMaximum(5);
         dsbFertilisationWeightMgmt->setSingleStep(0.5);
@@ -1114,16 +1077,16 @@ public:
 
         chbxSeedDensity = new QCheckBox(gbxManagement);
         chbxSeedDensity->setObjectName(QStringLiteral("chbxSeedDensity"));
-        chbxSeedDensity->setFont(font3);
+        chbxSeedDensity->setFont(font2);
         chbxSeedDensity->setLayoutDirection(Qt::RightToLeft);
 
         gridLayout->addWidget(chbxSeedDensity, 6, 0, 1, 1);
 
         dsbIrrigationWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbIrrigationWeightMgmt->setObjectName(QStringLiteral("dsbIrrigationWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbIrrigationWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbIrrigationWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbIrrigationWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbIrrigationWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbIrrigationWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbIrrigationWeightMgmt->setFont(font2);
         dsbIrrigationWeightMgmt->setDecimals(1);
         dsbIrrigationWeightMgmt->setMaximum(5);
         dsbIrrigationWeightMgmt->setSingleStep(0.5);
@@ -1134,7 +1097,7 @@ public:
         lblSeedDensityRating = new QLabel(gbxManagement);
         lblSeedDensityRating->setObjectName(QStringLiteral("lblSeedDensityRating"));
         lblSeedDensityRating->setMinimumSize(QSize(25, 0));
-        lblSeedDensityRating->setFont(font4);
+        lblSeedDensityRating->setFont(font3);
         lblSeedDensityRating->setLineWidth(1);
         lblSeedDensityRating->setMidLineWidth(1);
         lblSeedDensityRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1145,7 +1108,7 @@ public:
 
         chbxHarvest = new QCheckBox(gbxManagement);
         chbxHarvest->setObjectName(QStringLiteral("chbxHarvest"));
-        chbxHarvest->setFont(font3);
+        chbxHarvest->setFont(font2);
         chbxHarvest->setLayoutDirection(Qt::RightToLeft);
         chbxHarvest->setChecked(true);
 
@@ -1154,7 +1117,7 @@ public:
         lblSowingRating = new QLabel(gbxManagement);
         lblSowingRating->setObjectName(QStringLiteral("lblSowingRating"));
         lblSowingRating->setMinimumSize(QSize(25, 0));
-        lblSowingRating->setFont(font4);
+        lblSowingRating->setFont(font3);
         lblSowingRating->setLineWidth(1);
         lblSowingRating->setMidLineWidth(1);
         lblSowingRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1165,18 +1128,18 @@ public:
 
         sbHarvestObsMgmt = new QSpinBox(gbxManagement);
         sbHarvestObsMgmt->setObjectName(QStringLiteral("sbHarvestObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbHarvestObsMgmt->sizePolicy().hasHeightForWidth());
-        sbHarvestObsMgmt->setSizePolicy(sizePolicy3);
-        sbHarvestObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbHarvestObsMgmt->sizePolicy().hasHeightForWidth());
+        sbHarvestObsMgmt->setSizePolicy(sizePolicy2);
+        sbHarvestObsMgmt->setFont(font2);
         sbHarvestObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbHarvestObsMgmt, 3, 1, 1, 1);
 
         dsbSowingWeightMgmt = new QDoubleSpinBox(gbxManagement);
         dsbSowingWeightMgmt->setObjectName(QStringLiteral("dsbSowingWeightMgmt"));
-        sizePolicy3.setHeightForWidth(dsbSowingWeightMgmt->sizePolicy().hasHeightForWidth());
-        dsbSowingWeightMgmt->setSizePolicy(sizePolicy3);
-        dsbSowingWeightMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbSowingWeightMgmt->sizePolicy().hasHeightForWidth());
+        dsbSowingWeightMgmt->setSizePolicy(sizePolicy2);
+        dsbSowingWeightMgmt->setFont(font2);
         dsbSowingWeightMgmt->setDecimals(1);
         dsbSowingWeightMgmt->setMaximum(5);
         dsbSowingWeightMgmt->setSingleStep(0.5);
@@ -1186,16 +1149,16 @@ public:
 
         sbSowingObsMgmt = new QSpinBox(gbxManagement);
         sbSowingObsMgmt->setObjectName(QStringLiteral("sbSowingObsMgmt"));
-        sizePolicy3.setHeightForWidth(sbSowingObsMgmt->sizePolicy().hasHeightForWidth());
-        sbSowingObsMgmt->setSizePolicy(sizePolicy3);
-        sbSowingObsMgmt->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbSowingObsMgmt->sizePolicy().hasHeightForWidth());
+        sbSowingObsMgmt->setSizePolicy(sizePolicy2);
+        sbSowingObsMgmt->setFont(font2);
         sbSowingObsMgmt->setValue(1);
 
         gridLayout->addWidget(sbSowingObsMgmt, 2, 1, 1, 1);
 
         chbxVariety = new QCheckBox(gbxManagement);
         chbxVariety->setObjectName(QStringLiteral("chbxVariety"));
-        chbxVariety->setFont(font3);
+        chbxVariety->setFont(font2);
         chbxVariety->setLayoutDirection(Qt::RightToLeft);
         chbxVariety->setTristate(false);
 
@@ -1204,7 +1167,7 @@ public:
         lblVarietyRating = new QLabel(gbxManagement);
         lblVarietyRating->setObjectName(QStringLiteral("lblVarietyRating"));
         lblVarietyRating->setMinimumSize(QSize(25, 0));
-        lblVarietyRating->setFont(font4);
+        lblVarietyRating->setFont(font3);
         lblVarietyRating->setLineWidth(1);
         lblVarietyRating->setMidLineWidth(1);
         lblVarietyRating->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -1230,11 +1193,11 @@ public:
 
         lblRankingManagement = new QLabel(tabManagement);
         lblRankingManagement->setObjectName(QStringLiteral("lblRankingManagement"));
-        QFont font6;
-        font6.setPointSize(20);
-        font6.setBold(true);
-        font6.setWeight(75);
-        lblRankingManagement->setFont(font6);
+        QFont font5;
+        font5.setPointSize(20);
+        font5.setBold(true);
+        font5.setWeight(75);
+        lblRankingManagement->setFont(font5);
         lblRankingManagement->setAlignment(Qt::AlignCenter);
 
         gridLayout_13->addWidget(lblRankingManagement, 3, 2, 1, 3);
@@ -1257,7 +1220,7 @@ public:
         lblManagementBronzeMinVal = new QLabel(tabManagement);
         lblManagementBronzeMinVal->setObjectName(QStringLiteral("lblManagementBronzeMinVal"));
         lblManagementBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblManagementBronzeMinVal->setFont(font3);
+        lblManagementBronzeMinVal->setFont(font2);
         lblManagementBronzeMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblManagementBronzeMinVal->setMargin(-1);
         lblManagementBronzeMinVal->setIndent(1);
@@ -1266,7 +1229,7 @@ public:
 
         lblManagementBronzeMin = new QLabel(tabManagement);
         lblManagementBronzeMin->setObjectName(QStringLiteral("lblManagementBronzeMin"));
-        lblManagementBronzeMin->setFont(font3);
+        lblManagementBronzeMin->setFont(font2);
         lblManagementBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblManagementBronzeMin->setMargin(-2);
         lblManagementBronzeMin->setIndent(0);
@@ -1276,7 +1239,7 @@ public:
         lblManagementSilverMinVal = new QLabel(tabManagement);
         lblManagementSilverMinVal->setObjectName(QStringLiteral("lblManagementSilverMinVal"));
         lblManagementSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblManagementSilverMinVal->setFont(font3);
+        lblManagementSilverMinVal->setFont(font2);
         lblManagementSilverMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblManagementSilverMinVal->setMargin(-1);
         lblManagementSilverMinVal->setIndent(1);
@@ -1285,7 +1248,7 @@ public:
 
         lblManagementSilverMin = new QLabel(tabManagement);
         lblManagementSilverMin->setObjectName(QStringLiteral("lblManagementSilverMin"));
-        lblManagementSilverMin->setFont(font3);
+        lblManagementSilverMin->setFont(font2);
         lblManagementSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblManagementSilverMin->setMargin(-2);
         lblManagementSilverMin->setIndent(0);
@@ -1295,7 +1258,7 @@ public:
         lblManagementGoldMinVal = new QLabel(tabManagement);
         lblManagementGoldMinVal->setObjectName(QStringLiteral("lblManagementGoldMinVal"));
         lblManagementGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblManagementGoldMinVal->setFont(font3);
+        lblManagementGoldMinVal->setFont(font2);
         lblManagementGoldMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblManagementGoldMinVal->setMargin(-1);
         lblManagementGoldMinVal->setIndent(1);
@@ -1304,7 +1267,7 @@ public:
 
         lblManagementGoldMin = new QLabel(tabManagement);
         lblManagementGoldMin->setObjectName(QStringLiteral("lblManagementGoldMin"));
-        lblManagementGoldMin->setFont(font3);
+        lblManagementGoldMin->setFont(font2);
         lblManagementGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblManagementGoldMin->setMargin(-2);
         lblManagementGoldMin->setIndent(0);
@@ -1314,7 +1277,7 @@ public:
         lblManagementPlatinumMinVal = new QLabel(tabManagement);
         lblManagementPlatinumMinVal->setObjectName(QStringLiteral("lblManagementPlatinumMinVal"));
         lblManagementPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblManagementPlatinumMinVal->setFont(font3);
+        lblManagementPlatinumMinVal->setFont(font2);
         lblManagementPlatinumMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblManagementPlatinumMinVal->setMargin(-1);
         lblManagementPlatinumMinVal->setIndent(1);
@@ -1323,7 +1286,7 @@ public:
 
         lblManagementPlatinumMin = new QLabel(tabManagement);
         lblManagementPlatinumMin->setObjectName(QStringLiteral("lblManagementPlatinumMin"));
-        lblManagementPlatinumMin->setFont(font3);
+        lblManagementPlatinumMin->setFont(font2);
         lblManagementPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblManagementPlatinumMin->setMargin(-1);
         lblManagementPlatinumMin->setIndent(0);
@@ -1367,11 +1330,11 @@ public:
         gridLayout_22->setObjectName(QStringLiteral("gridLayout_22"));
         gbxPhenology = new QGroupBox(tabPhenology);
         gbxPhenology->setObjectName(QStringLiteral("gbxPhenology"));
-        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(gbxPhenology->sizePolicy().hasHeightForWidth());
-        gbxPhenology->setSizePolicy(sizePolicy5);
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(gbxPhenology->sizePolicy().hasHeightForWidth());
+        gbxPhenology->setSizePolicy(sizePolicy4);
         gbxPhenology->setCheckable(true);
         gbxPhenology->setChecked(true);
         gridLayout_9 = new QGridLayout(gbxPhenology);
@@ -1380,22 +1343,22 @@ public:
         gridLayout_9->setObjectName(QStringLiteral("gridLayout_9"));
         lblMgmtMinData_2 = new QLabel(gbxPhenology);
         lblMgmtMinData_2->setObjectName(QStringLiteral("lblMgmtMinData_2"));
-        lblMgmtMinData_2->setFont(font2);
+        lblMgmtMinData_2->setFont(font1);
         lblMgmtMinData_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblMgmtMinData_2, 0, 0, 1, 1);
 
         lblMgmtObservations_2 = new QLabel(gbxPhenology);
         lblMgmtObservations_2->setObjectName(QStringLiteral("lblMgmtObservations_2"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_2->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_2->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_2->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_2->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_2->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_2->setFont(font1);
 
         gridLayout_9->addWidget(lblMgmtObservations_2, 0, 1, 1, 1);
 
         lblMgmtPoints_2 = new QLabel(gbxPhenology);
         lblMgmtPoints_2->setObjectName(QStringLiteral("lblMgmtPoints_2"));
-        lblMgmtPoints_2->setFont(font2);
+        lblMgmtPoints_2->setFont(font1);
 
         gridLayout_9->addWidget(lblMgmtPoints_2, 0, 2, 1, 1);
 
@@ -1424,7 +1387,7 @@ public:
         lblEmergenceRatingPhenology = new QLabel(gbxPhenology);
         lblEmergenceRatingPhenology->setObjectName(QStringLiteral("lblEmergenceRatingPhenology"));
         lblEmergenceRatingPhenology->setMinimumSize(QSize(25, 0));
-        lblEmergenceRatingPhenology->setFont(font5);
+        lblEmergenceRatingPhenology->setFont(font4);
         lblEmergenceRatingPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblEmergenceRatingPhenology, 1, 3, 1, 1);
@@ -1453,7 +1416,7 @@ public:
         lblStemElongationRatingPhenology = new QLabel(gbxPhenology);
         lblStemElongationRatingPhenology->setObjectName(QStringLiteral("lblStemElongationRatingPhenology"));
         lblStemElongationRatingPhenology->setMinimumSize(QSize(25, 0));
-        lblStemElongationRatingPhenology->setFont(font5);
+        lblStemElongationRatingPhenology->setFont(font4);
         lblStemElongationRatingPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblStemElongationRatingPhenology, 2, 3, 1, 1);
@@ -1482,7 +1445,7 @@ public:
         lblEarEmergenceRatingPhenology = new QLabel(gbxPhenology);
         lblEarEmergenceRatingPhenology->setObjectName(QStringLiteral("lblEarEmergenceRatingPhenology"));
         lblEarEmergenceRatingPhenology->setMinimumSize(QSize(25, 0));
-        lblEarEmergenceRatingPhenology->setFont(font5);
+        lblEarEmergenceRatingPhenology->setFont(font4);
         lblEarEmergenceRatingPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblEarEmergenceRatingPhenology, 3, 3, 1, 1);
@@ -1512,7 +1475,7 @@ public:
         lblFloweringRatingPhenology = new QLabel(gbxPhenology);
         lblFloweringRatingPhenology->setObjectName(QStringLiteral("lblFloweringRatingPhenology"));
         lblFloweringRatingPhenology->setMinimumSize(QSize(25, 0));
-        lblFloweringRatingPhenology->setFont(font5);
+        lblFloweringRatingPhenology->setFont(font4);
         lblFloweringRatingPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblFloweringRatingPhenology, 4, 3, 1, 1);
@@ -1541,14 +1504,14 @@ public:
         lblYellowRipenessRatingPhenology = new QLabel(gbxPhenology);
         lblYellowRipenessRatingPhenology->setObjectName(QStringLiteral("lblYellowRipenessRatingPhenology"));
         lblYellowRipenessRatingPhenology->setMinimumSize(QSize(25, 0));
-        lblYellowRipenessRatingPhenology->setFont(font5);
+        lblYellowRipenessRatingPhenology->setFont(font4);
         lblYellowRipenessRatingPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblYellowRipenessRatingPhenology, 5, 3, 1, 1);
 
         lblCombinedPhenology = new QLabel(gbxPhenology);
         lblCombinedPhenology->setObjectName(QStringLiteral("lblCombinedPhenology"));
-        lblCombinedPhenology->setFont(font5);
+        lblCombinedPhenology->setFont(font4);
         lblCombinedPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblCombinedPhenology, 6, 2, 1, 1);
@@ -1556,7 +1519,7 @@ public:
         lblCombinedTotalPhenology = new QLabel(gbxPhenology);
         lblCombinedTotalPhenology->setObjectName(QStringLiteral("lblCombinedTotalPhenology"));
         lblCombinedTotalPhenology->setMinimumSize(QSize(25, 0));
-        lblCombinedTotalPhenology->setFont(font5);
+        lblCombinedTotalPhenology->setFont(font4);
         lblCombinedTotalPhenology->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_9->addWidget(lblCombinedTotalPhenology, 6, 3, 1, 1);
@@ -1574,7 +1537,7 @@ public:
         gridLayoutPhenologyRankLevels->setObjectName(QStringLiteral("gridLayoutPhenologyRankLevels"));
         lblPhenologyPlatinumMin = new QLabel(tabPhenology);
         lblPhenologyPlatinumMin->setObjectName(QStringLiteral("lblPhenologyPlatinumMin"));
-        lblPhenologyPlatinumMin->setFont(font3);
+        lblPhenologyPlatinumMin->setFont(font2);
         lblPhenologyPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPhenologyPlatinumMin->setMargin(0);
         lblPhenologyPlatinumMin->setIndent(0);
@@ -1584,7 +1547,7 @@ public:
         lblPhenologyPlatinumMinVal = new QLabel(tabPhenology);
         lblPhenologyPlatinumMinVal->setObjectName(QStringLiteral("lblPhenologyPlatinumMinVal"));
         lblPhenologyPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblPhenologyPlatinumMinVal->setFont(font3);
+        lblPhenologyPlatinumMinVal->setFont(font2);
         lblPhenologyPlatinumMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblPhenologyPlatinumMinVal->setMargin(-1);
         lblPhenologyPlatinumMinVal->setIndent(1);
@@ -1593,7 +1556,7 @@ public:
 
         lblPhenologyGoldMin = new QLabel(tabPhenology);
         lblPhenologyGoldMin->setObjectName(QStringLiteral("lblPhenologyGoldMin"));
-        lblPhenologyGoldMin->setFont(font3);
+        lblPhenologyGoldMin->setFont(font2);
         lblPhenologyGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPhenologyGoldMin->setMargin(0);
         lblPhenologyGoldMin->setIndent(0);
@@ -1603,7 +1566,7 @@ public:
         lblPhenologyGoldMinVal = new QLabel(tabPhenology);
         lblPhenologyGoldMinVal->setObjectName(QStringLiteral("lblPhenologyGoldMinVal"));
         lblPhenologyGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblPhenologyGoldMinVal->setFont(font3);
+        lblPhenologyGoldMinVal->setFont(font2);
         lblPhenologyGoldMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblPhenologyGoldMinVal->setMargin(-1);
         lblPhenologyGoldMinVal->setIndent(1);
@@ -1612,7 +1575,7 @@ public:
 
         lblPhenologySilverMin = new QLabel(tabPhenology);
         lblPhenologySilverMin->setObjectName(QStringLiteral("lblPhenologySilverMin"));
-        lblPhenologySilverMin->setFont(font3);
+        lblPhenologySilverMin->setFont(font2);
         lblPhenologySilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPhenologySilverMin->setMargin(0);
         lblPhenologySilverMin->setIndent(0);
@@ -1622,7 +1585,7 @@ public:
         lblPhenologySilverMinVal = new QLabel(tabPhenology);
         lblPhenologySilverMinVal->setObjectName(QStringLiteral("lblPhenologySilverMinVal"));
         lblPhenologySilverMinVal->setMinimumSize(QSize(25, 0));
-        lblPhenologySilverMinVal->setFont(font3);
+        lblPhenologySilverMinVal->setFont(font2);
         lblPhenologySilverMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblPhenologySilverMinVal->setMargin(-1);
         lblPhenologySilverMinVal->setIndent(1);
@@ -1631,7 +1594,7 @@ public:
 
         lblPhenologyBronzeMin = new QLabel(tabPhenology);
         lblPhenologyBronzeMin->setObjectName(QStringLiteral("lblPhenologyBronzeMin"));
-        lblPhenologyBronzeMin->setFont(font3);
+        lblPhenologyBronzeMin->setFont(font2);
         lblPhenologyBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPhenologyBronzeMin->setMargin(0);
         lblPhenologyBronzeMin->setIndent(0);
@@ -1641,7 +1604,7 @@ public:
         lblPhenologyBronzeMinVal = new QLabel(tabPhenology);
         lblPhenologyBronzeMinVal->setObjectName(QStringLiteral("lblPhenologyBronzeMinVal"));
         lblPhenologyBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblPhenologyBronzeMinVal->setFont(font3);
+        lblPhenologyBronzeMinVal->setFont(font2);
         lblPhenologyBronzeMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblPhenologyBronzeMinVal->setMargin(-1);
         lblPhenologyBronzeMinVal->setIndent(1);
@@ -1676,7 +1639,7 @@ public:
 
         lblRankingPhenology = new QLabel(tabPhenology);
         lblRankingPhenology->setObjectName(QStringLiteral("lblRankingPhenology"));
-        lblRankingPhenology->setFont(font6);
+        lblRankingPhenology->setFont(font5);
         lblRankingPhenology->setAlignment(Qt::AlignCenter);
 
         gridLayout_22->addWidget(lblRankingPhenology, 2, 2, 1, 3);
@@ -1699,7 +1662,7 @@ public:
         lblResidueMgmtRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblResidueMgmtRatingPrevCrop->setObjectName(QStringLiteral("lblResidueMgmtRatingPrevCrop"));
         lblResidueMgmtRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblResidueMgmtRatingPrevCrop->setFont(font5);
+        lblResidueMgmtRatingPrevCrop->setFont(font4);
         lblResidueMgmtRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblResidueMgmtRatingPrevCrop, 6, 3, 1, 1);
@@ -1854,7 +1817,7 @@ public:
         lblHarvestDateRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblHarvestDateRatingPrevCrop->setObjectName(QStringLiteral("lblHarvestDateRatingPrevCrop"));
         lblHarvestDateRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblHarvestDateRatingPrevCrop->setFont(font5);
+        lblHarvestDateRatingPrevCrop->setFont(font4);
         lblHarvestDateRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblHarvestDateRatingPrevCrop, 4, 3, 1, 1);
@@ -1862,7 +1825,7 @@ public:
         lblFertilisationRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblFertilisationRatingPrevCrop->setObjectName(QStringLiteral("lblFertilisationRatingPrevCrop"));
         lblFertilisationRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblFertilisationRatingPrevCrop->setFont(font5);
+        lblFertilisationRatingPrevCrop->setFont(font4);
         lblFertilisationRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblFertilisationRatingPrevCrop, 7, 3, 1, 1);
@@ -1870,7 +1833,7 @@ public:
         lblCropRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblCropRatingPrevCrop->setObjectName(QStringLiteral("lblCropRatingPrevCrop"));
         lblCropRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblCropRatingPrevCrop->setFont(font5);
+        lblCropRatingPrevCrop->setFont(font4);
         lblCropRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblCropRatingPrevCrop, 2, 3, 1, 1);
@@ -1878,7 +1841,7 @@ public:
         lblYieldRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblYieldRatingPrevCrop->setObjectName(QStringLiteral("lblYieldRatingPrevCrop"));
         lblYieldRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblYieldRatingPrevCrop->setFont(font5);
+        lblYieldRatingPrevCrop->setFont(font4);
         lblYieldRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblYieldRatingPrevCrop, 5, 3, 1, 1);
@@ -1886,7 +1849,7 @@ public:
         lblSowingDateRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblSowingDateRatingPrevCrop->setObjectName(QStringLiteral("lblSowingDateRatingPrevCrop"));
         lblSowingDateRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblSowingDateRatingPrevCrop->setFont(font5);
+        lblSowingDateRatingPrevCrop->setFont(font4);
         lblSowingDateRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblSowingDateRatingPrevCrop, 3, 3, 1, 1);
@@ -1894,47 +1857,47 @@ public:
         lblIrrigationRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblIrrigationRatingPrevCrop->setObjectName(QStringLiteral("lblIrrigationRatingPrevCrop"));
         lblIrrigationRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblIrrigationRatingPrevCrop->setFont(font5);
+        lblIrrigationRatingPrevCrop->setFont(font4);
         lblIrrigationRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblIrrigationRatingPrevCrop, 8, 3, 1, 1);
 
         lblMgmtMinData_3 = new QLabel(gbxPrevCrop);
         lblMgmtMinData_3->setObjectName(QStringLiteral("lblMgmtMinData_3"));
-        lblMgmtMinData_3->setFont(font2);
+        lblMgmtMinData_3->setFont(font1);
         lblMgmtMinData_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblMgmtMinData_3, 0, 0, 1, 1);
 
         lblMgmtObservations_3 = new QLabel(gbxPrevCrop);
         lblMgmtObservations_3->setObjectName(QStringLiteral("lblMgmtObservations_3"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_3->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_3->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_3->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_3->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_3->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_3->setFont(font1);
 
         gridLayoutSoil->addWidget(lblMgmtObservations_3, 0, 1, 1, 1);
 
         lblMgmtPoints_3 = new QLabel(gbxPrevCrop);
         lblMgmtPoints_3->setObjectName(QStringLiteral("lblMgmtPoints_3"));
-        lblMgmtPoints_3->setFont(font2);
+        lblMgmtPoints_3->setFont(font1);
 
         gridLayoutSoil->addWidget(lblMgmtPoints_3, 0, 2, 1, 1);
 
         lblCombinedPrevCrop = new QLabel(gbxPrevCrop);
         lblCombinedPrevCrop->setObjectName(QStringLiteral("lblCombinedPrevCrop"));
-        QFont font7;
-        font7.setPointSize(14);
-        font7.setBold(true);
-        font7.setItalic(false);
-        font7.setWeight(75);
-        lblCombinedPrevCrop->setFont(font7);
+        QFont font6;
+        font6.setPointSize(14);
+        font6.setBold(true);
+        font6.setItalic(false);
+        font6.setWeight(75);
+        lblCombinedPrevCrop->setFont(font6);
 
         gridLayoutSoil->addWidget(lblCombinedPrevCrop, 9, 2, 1, 1);
 
         lblOverallRatingPrevCrop = new QLabel(gbxPrevCrop);
         lblOverallRatingPrevCrop->setObjectName(QStringLiteral("lblOverallRatingPrevCrop"));
         lblOverallRatingPrevCrop->setMinimumSize(QSize(25, 0));
-        lblOverallRatingPrevCrop->setFont(font5);
+        lblOverallRatingPrevCrop->setFont(font4);
         lblOverallRatingPrevCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSoil->addWidget(lblOverallRatingPrevCrop, 9, 3, 1, 1);
@@ -1953,7 +1916,7 @@ public:
         lblPrevCropPlatinumMinVal = new QLabel(tabPrevCrop);
         lblPrevCropPlatinumMinVal->setObjectName(QStringLiteral("lblPrevCropPlatinumMinVal"));
         lblPrevCropPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblPrevCropPlatinumMinVal->setFont(font2);
+        lblPrevCropPlatinumMinVal->setFont(font1);
         lblPrevCropPlatinumMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropPlatinumMinVal->setMargin(0);
         lblPrevCropPlatinumMinVal->setIndent(1);
@@ -1963,7 +1926,7 @@ public:
         lblPrevCropGoldMinVal = new QLabel(tabPrevCrop);
         lblPrevCropGoldMinVal->setObjectName(QStringLiteral("lblPrevCropGoldMinVal"));
         lblPrevCropGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblPrevCropGoldMinVal->setFont(font2);
+        lblPrevCropGoldMinVal->setFont(font1);
         lblPrevCropGoldMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropGoldMinVal->setMargin(0);
         lblPrevCropGoldMinVal->setIndent(1);
@@ -1972,7 +1935,7 @@ public:
 
         lblPrevCropSilverMin = new QLabel(tabPrevCrop);
         lblPrevCropSilverMin->setObjectName(QStringLiteral("lblPrevCropSilverMin"));
-        lblPrevCropSilverMin->setFont(font2);
+        lblPrevCropSilverMin->setFont(font1);
         lblPrevCropSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropSilverMin->setMargin(0);
         lblPrevCropSilverMin->setIndent(0);
@@ -1982,7 +1945,7 @@ public:
         lblPrevCropSilverMinVal = new QLabel(tabPrevCrop);
         lblPrevCropSilverMinVal->setObjectName(QStringLiteral("lblPrevCropSilverMinVal"));
         lblPrevCropSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblPrevCropSilverMinVal->setFont(font2);
+        lblPrevCropSilverMinVal->setFont(font1);
         lblPrevCropSilverMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropSilverMinVal->setMargin(0);
         lblPrevCropSilverMinVal->setIndent(1);
@@ -1991,7 +1954,7 @@ public:
 
         lblPrevCropBronzeMin = new QLabel(tabPrevCrop);
         lblPrevCropBronzeMin->setObjectName(QStringLiteral("lblPrevCropBronzeMin"));
-        lblPrevCropBronzeMin->setFont(font2);
+        lblPrevCropBronzeMin->setFont(font1);
         lblPrevCropBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropBronzeMin->setMargin(0);
         lblPrevCropBronzeMin->setIndent(0);
@@ -2001,7 +1964,7 @@ public:
         lblPrevCropBronzeMinVal = new QLabel(tabPrevCrop);
         lblPrevCropBronzeMinVal->setObjectName(QStringLiteral("lblPrevCropBronzeMinVal"));
         lblPrevCropBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblPrevCropBronzeMinVal->setFont(font2);
+        lblPrevCropBronzeMinVal->setFont(font1);
         lblPrevCropBronzeMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropBronzeMinVal->setMargin(0);
         lblPrevCropBronzeMinVal->setIndent(1);
@@ -2010,7 +1973,7 @@ public:
 
         lblPrevCropPlatinumMin = new QLabel(tabPrevCrop);
         lblPrevCropPlatinumMin->setObjectName(QStringLiteral("lblPrevCropPlatinumMin"));
-        lblPrevCropPlatinumMin->setFont(font2);
+        lblPrevCropPlatinumMin->setFont(font1);
         lblPrevCropPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropPlatinumMin->setMargin(0);
         lblPrevCropPlatinumMin->setIndent(0);
@@ -2019,7 +1982,7 @@ public:
 
         lblPrevCropGoldMin = new QLabel(tabPrevCrop);
         lblPrevCropGoldMin->setObjectName(QStringLiteral("lblPrevCropGoldMin"));
-        lblPrevCropGoldMin->setFont(font2);
+        lblPrevCropGoldMin->setFont(font1);
         lblPrevCropGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblPrevCropGoldMin->setMargin(0);
         lblPrevCropGoldMin->setIndent(0);
@@ -2053,7 +2016,7 @@ public:
 
         lblRankingPrevCrop = new QLabel(tabPrevCrop);
         lblRankingPrevCrop->setObjectName(QStringLiteral("lblRankingPrevCrop"));
-        lblRankingPrevCrop->setFont(font6);
+        lblRankingPrevCrop->setFont(font5);
         lblRankingPrevCrop->setAlignment(Qt::AlignCenter);
 
         gridLayoutPrevCropRankingResult->addWidget(lblRankingPrevCrop, 1, 0, 1, 3);
@@ -2074,8 +2037,8 @@ public:
         gridLayout_26->setObjectName(QStringLiteral("gridLayout_26"));
         gbxInitialValues = new QGroupBox(tabInitialValues);
         gbxInitialValues->setObjectName(QStringLiteral("gbxInitialValues"));
-        sizePolicy5.setHeightForWidth(gbxInitialValues->sizePolicy().hasHeightForWidth());
-        gbxInitialValues->setSizePolicy(sizePolicy5);
+        sizePolicy4.setHeightForWidth(gbxInitialValues->sizePolicy().hasHeightForWidth());
+        gbxInitialValues->setSizePolicy(sizePolicy4);
         gbxInitialValues->setCheckable(true);
         gbxInitialValues->setChecked(true);
         gridLayoutSite = new QGridLayout(gbxInitialValues);
@@ -2084,29 +2047,29 @@ public:
         gridLayoutSite->setObjectName(QStringLiteral("gridLayoutSite"));
         lblOverallRatingInitialValues = new QLabel(gbxInitialValues);
         lblOverallRatingInitialValues->setObjectName(QStringLiteral("lblOverallRatingInitialValues"));
-        lblOverallRatingInitialValues->setFont(font5);
+        lblOverallRatingInitialValues->setFont(font4);
 
         gridLayoutSite->addWidget(lblOverallRatingInitialValues, 5, 4, 1, 1);
 
         lblCombinedInitialValues = new QLabel(gbxInitialValues);
         lblCombinedInitialValues->setObjectName(QStringLiteral("lblCombinedInitialValues"));
-        QFont font8;
-        font8.setPointSize(14);
-        lblCombinedInitialValues->setFont(font8);
+        QFont font7;
+        font7.setPointSize(14);
+        lblCombinedInitialValues->setFont(font7);
         lblCombinedInitialValues->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSite->addWidget(lblCombinedInitialValues, 5, 3, 1, 1);
 
         lblInitialValuesMinData = new QLabel(gbxInitialValues);
         lblInitialValuesMinData->setObjectName(QStringLiteral("lblInitialValuesMinData"));
-        lblInitialValuesMinData->setFont(font2);
+        lblInitialValuesMinData->setFont(font1);
         lblInitialValuesMinData->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSite->addWidget(lblInitialValuesMinData, 0, 0, 1, 1);
 
         lblSoilMoistureRatingInitialValues = new QLabel(gbxInitialValues);
         lblSoilMoistureRatingInitialValues->setObjectName(QStringLiteral("lblSoilMoistureRatingInitialValues"));
-        lblSoilMoistureRatingInitialValues->setFont(font8);
+        lblSoilMoistureRatingInitialValues->setFont(font7);
 
         gridLayoutSite->addWidget(lblSoilMoistureRatingInitialValues, 2, 4, 1, 1);
 
@@ -2118,7 +2081,7 @@ public:
 
         lblNMinRatingInitialValues = new QLabel(gbxInitialValues);
         lblNMinRatingInitialValues->setObjectName(QStringLiteral("lblNMinRatingInitialValues"));
-        lblNMinRatingInitialValues->setFont(font8);
+        lblNMinRatingInitialValues->setFont(font7);
 
         gridLayoutSite->addWidget(lblNMinRatingInitialValues, 3, 4, 1, 1);
 
@@ -2153,7 +2116,7 @@ public:
 
         lblInitialValuesPoints = new QLabel(gbxInitialValues);
         lblInitialValuesPoints->setObjectName(QStringLiteral("lblInitialValuesPoints"));
-        lblInitialValuesPoints->setFont(font2);
+        lblInitialValuesPoints->setFont(font1);
 
         gridLayoutSite->addWidget(lblInitialValuesPoints, 0, 3, 1, 1);
 
@@ -2168,9 +2131,9 @@ public:
 
         lblInitialValuesObservations = new QLabel(gbxInitialValues);
         lblInitialValuesObservations->setObjectName(QStringLiteral("lblInitialValuesObservations"));
-        sizePolicy4.setHeightForWidth(lblInitialValuesObservations->sizePolicy().hasHeightForWidth());
-        lblInitialValuesObservations->setSizePolicy(sizePolicy4);
-        lblInitialValuesObservations->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblInitialValuesObservations->sizePolicy().hasHeightForWidth());
+        lblInitialValuesObservations->setSizePolicy(sizePolicy3);
+        lblInitialValuesObservations->setFont(font1);
 
         gridLayoutSite->addWidget(lblInitialValuesObservations, 0, 2, 1, 1);
 
@@ -2190,7 +2153,7 @@ public:
 
         label_4 = new QLabel(gbxInitialValues);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setFont(font2);
+        label_4->setFont(font1);
 
         gridLayoutSite->addWidget(label_4, 0, 1, 1, 1);
 
@@ -2199,11 +2162,11 @@ public:
 
         txbrInitialValues = new QTextBrowser(tabInitialValues);
         txbrInitialValues->setObjectName(QStringLiteral("txbrInitialValues"));
-        QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy6.setHorizontalStretch(1);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(txbrInitialValues->sizePolicy().hasHeightForWidth());
-        txbrInitialValues->setSizePolicy(sizePolicy6);
+        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy5.setHorizontalStretch(1);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(txbrInitialValues->sizePolicy().hasHeightForWidth());
+        txbrInitialValues->setSizePolicy(sizePolicy5);
 
         gridLayout_26->addWidget(txbrInitialValues, 0, 2, 2, 1);
 
@@ -2212,7 +2175,7 @@ public:
         gridLayoutInitialValuesRankLevels->setObjectName(QStringLiteral("gridLayoutInitialValuesRankLevels"));
         lblInitialValuesPlatinumMin = new QLabel(tabInitialValues);
         lblInitialValuesPlatinumMin->setObjectName(QStringLiteral("lblInitialValuesPlatinumMin"));
-        lblInitialValuesPlatinumMin->setFont(font2);
+        lblInitialValuesPlatinumMin->setFont(font1);
         lblInitialValuesPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblInitialValuesPlatinumMin->setMargin(0);
         lblInitialValuesPlatinumMin->setIndent(0);
@@ -2222,7 +2185,7 @@ public:
         lblInitialValuesPlatinumMinVal = new QLabel(tabInitialValues);
         lblInitialValuesPlatinumMinVal->setObjectName(QStringLiteral("lblInitialValuesPlatinumMinVal"));
         lblInitialValuesPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblInitialValuesPlatinumMinVal->setFont(font2);
+        lblInitialValuesPlatinumMinVal->setFont(font1);
         lblInitialValuesPlatinumMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblInitialValuesPlatinumMinVal->setMargin(0);
         lblInitialValuesPlatinumMinVal->setIndent(1);
@@ -2231,7 +2194,7 @@ public:
 
         lblInitialValuesGoldMin = new QLabel(tabInitialValues);
         lblInitialValuesGoldMin->setObjectName(QStringLiteral("lblInitialValuesGoldMin"));
-        lblInitialValuesGoldMin->setFont(font2);
+        lblInitialValuesGoldMin->setFont(font1);
         lblInitialValuesGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblInitialValuesGoldMin->setMargin(0);
         lblInitialValuesGoldMin->setIndent(0);
@@ -2241,7 +2204,7 @@ public:
         lblInitialValuesGoldMinVal = new QLabel(tabInitialValues);
         lblInitialValuesGoldMinVal->setObjectName(QStringLiteral("lblInitialValuesGoldMinVal"));
         lblInitialValuesGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblInitialValuesGoldMinVal->setFont(font2);
+        lblInitialValuesGoldMinVal->setFont(font1);
         lblInitialValuesGoldMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblInitialValuesGoldMinVal->setMargin(0);
         lblInitialValuesGoldMinVal->setIndent(1);
@@ -2250,7 +2213,7 @@ public:
 
         lblInitialValuesSilverMin = new QLabel(tabInitialValues);
         lblInitialValuesSilverMin->setObjectName(QStringLiteral("lblInitialValuesSilverMin"));
-        lblInitialValuesSilverMin->setFont(font2);
+        lblInitialValuesSilverMin->setFont(font1);
         lblInitialValuesSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblInitialValuesSilverMin->setMargin(0);
         lblInitialValuesSilverMin->setIndent(0);
@@ -2260,7 +2223,7 @@ public:
         lblInitialValuesSilverMinVal = new QLabel(tabInitialValues);
         lblInitialValuesSilverMinVal->setObjectName(QStringLiteral("lblInitialValuesSilverMinVal"));
         lblInitialValuesSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblInitialValuesSilverMinVal->setFont(font2);
+        lblInitialValuesSilverMinVal->setFont(font1);
         lblInitialValuesSilverMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblInitialValuesSilverMinVal->setMargin(0);
         lblInitialValuesSilverMinVal->setIndent(1);
@@ -2269,7 +2232,7 @@ public:
 
         lblInitialValuesBronzeMin = new QLabel(tabInitialValues);
         lblInitialValuesBronzeMin->setObjectName(QStringLiteral("lblInitialValuesBronzeMin"));
-        lblInitialValuesBronzeMin->setFont(font2);
+        lblInitialValuesBronzeMin->setFont(font1);
         lblInitialValuesBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblInitialValuesBronzeMin->setMargin(0);
         lblInitialValuesBronzeMin->setIndent(0);
@@ -2279,7 +2242,7 @@ public:
         lblInitialValuesBronzeMinVal = new QLabel(tabInitialValues);
         lblInitialValuesBronzeMinVal->setObjectName(QStringLiteral("lblInitialValuesBronzeMinVal"));
         lblInitialValuesBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblInitialValuesBronzeMinVal->setFont(font2);
+        lblInitialValuesBronzeMinVal->setFont(font1);
         lblInitialValuesBronzeMinVal->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         lblInitialValuesBronzeMinVal->setMargin(0);
         lblInitialValuesBronzeMinVal->setIndent(1);
@@ -2313,7 +2276,7 @@ public:
 
         lblRankingInitialValues = new QLabel(tabInitialValues);
         lblRankingInitialValues->setObjectName(QStringLiteral("lblRankingInitialValues"));
-        lblRankingInitialValues->setFont(font6);
+        lblRankingInitialValues->setFont(font5);
         lblRankingInitialValues->setAlignment(Qt::AlignCenter);
 
         gridLayoutInitialValuesRankingResults->addWidget(lblRankingInitialValues, 1, 0, 1, 3);
@@ -2342,7 +2305,7 @@ public:
         gridLayoutWeather->setObjectName(QStringLiteral("gridLayoutWeather"));
         lblMgmtPoints_8 = new QLabel(gbxSoil);
         lblMgmtPoints_8->setObjectName(QStringLiteral("lblMgmtPoints_8"));
-        lblMgmtPoints_8->setFont(font2);
+        lblMgmtPoints_8->setFont(font1);
 
         gridLayoutWeather->addWidget(lblMgmtPoints_8, 0, 3, 1, 1);
 
@@ -2411,52 +2374,52 @@ public:
 
         lblNOrgRatingSoil = new QLabel(gbxSoil);
         lblNOrgRatingSoil->setObjectName(QStringLiteral("lblNOrgRatingSoil"));
-        QFont font9;
-        font9.setPointSize(10);
-        lblNOrgRatingSoil->setFont(font9);
+        QFont font8;
+        font8.setPointSize(10);
+        lblNOrgRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblNOrgRatingSoil, 3, 4, 1, 1);
 
         lblBulkDensityRatingSoil = new QLabel(gbxSoil);
         lblBulkDensityRatingSoil->setObjectName(QStringLiteral("lblBulkDensityRatingSoil"));
-        lblBulkDensityRatingSoil->setFont(font9);
+        lblBulkDensityRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblBulkDensityRatingSoil, 5, 4, 1, 1);
 
         lblWiltingPointRatingSoil = new QLabel(gbxSoil);
         lblWiltingPointRatingSoil->setObjectName(QStringLiteral("lblWiltingPointRatingSoil"));
-        lblWiltingPointRatingSoil->setFont(font9);
+        lblWiltingPointRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblWiltingPointRatingSoil, 7, 4, 1, 1);
 
         lblTextureRatingSoil = new QLabel(gbxSoil);
         lblTextureRatingSoil->setObjectName(QStringLiteral("lblTextureRatingSoil"));
-        lblTextureRatingSoil->setFont(font9);
+        lblTextureRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblTextureRatingSoil, 4, 4, 1, 1);
 
         lblFieldCapacityRatingSoil = new QLabel(gbxSoil);
         lblFieldCapacityRatingSoil->setObjectName(QStringLiteral("lblFieldCapacityRatingSoil"));
-        lblFieldCapacityRatingSoil->setFont(font9);
+        lblFieldCapacityRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblFieldCapacityRatingSoil, 6, 4, 1, 1);
 
         lblPhRatingSoil = new QLabel(gbxSoil);
         lblPhRatingSoil->setObjectName(QStringLiteral("lblPhRatingSoil"));
-        lblPhRatingSoil->setFont(font9);
+        lblPhRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblPhRatingSoil, 10, 4, 1, 1);
 
         lblCombinedSoil = new QLabel(gbxSoil);
         lblCombinedSoil->setObjectName(QStringLiteral("lblCombinedSoil"));
-        lblCombinedSoil->setFont(font5);
+        lblCombinedSoil->setFont(font4);
         lblCombinedSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutWeather->addWidget(lblCombinedSoil, 11, 3, 1, 1);
 
         lblPfCurveRatingSoil = new QLabel(gbxSoil);
         lblPfCurveRatingSoil->setObjectName(QStringLiteral("lblPfCurveRatingSoil"));
-        lblPfCurveRatingSoil->setFont(font9);
+        lblPfCurveRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblPfCurveRatingSoil, 8, 4, 1, 1);
 
@@ -2468,7 +2431,7 @@ public:
 
         lblOverallRatingSoil = new QLabel(gbxSoil);
         lblOverallRatingSoil->setObjectName(QStringLiteral("lblOverallRatingSoil"));
-        lblOverallRatingSoil->setFont(font5);
+        lblOverallRatingSoil->setFont(font4);
         lblOverallRatingSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutWeather->addWidget(lblOverallRatingSoil, 11, 4, 1, 1);
@@ -2570,21 +2533,21 @@ public:
 
         lblMgmtPoints_7 = new QLabel(gbxSoil);
         lblMgmtPoints_7->setObjectName(QStringLiteral("lblMgmtPoints_7"));
-        lblMgmtPoints_7->setFont(font2);
+        lblMgmtPoints_7->setFont(font1);
 
         gridLayoutWeather->addWidget(lblMgmtPoints_7, 0, 1, 1, 1);
 
         lblMgmtObservations_7 = new QLabel(gbxSoil);
         lblMgmtObservations_7->setObjectName(QStringLiteral("lblMgmtObservations_7"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_7->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_7->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_7->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_7->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_7->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_7->setFont(font1);
 
         gridLayoutWeather->addWidget(lblMgmtObservations_7, 0, 2, 1, 1);
 
         lblMgmtMinData_7 = new QLabel(gbxSoil);
         lblMgmtMinData_7->setObjectName(QStringLiteral("lblMgmtMinData_7"));
-        lblMgmtMinData_7->setFont(font2);
+        lblMgmtMinData_7->setFont(font1);
         lblMgmtMinData_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutWeather->addWidget(lblMgmtMinData_7, 0, 0, 1, 1);
@@ -2608,13 +2571,13 @@ public:
 
         lblCOrgRatingSoil = new QLabel(gbxSoil);
         lblCOrgRatingSoil->setObjectName(QStringLiteral("lblCOrgRatingSoil"));
-        lblCOrgRatingSoil->setFont(font9);
+        lblCOrgRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblCOrgRatingSoil, 2, 4, 1, 1);
 
         lblHydrCondCurveRatingSoil = new QLabel(gbxSoil);
         lblHydrCondCurveRatingSoil->setObjectName(QStringLiteral("lblHydrCondCurveRatingSoil"));
-        lblHydrCondCurveRatingSoil->setFont(font9);
+        lblHydrCondCurveRatingSoil->setFont(font8);
 
         gridLayoutWeather->addWidget(lblHydrCondCurveRatingSoil, 9, 4, 1, 1);
 
@@ -2703,7 +2666,7 @@ public:
         gridLayoutSoilRankLevels->setObjectName(QStringLiteral("gridLayoutSoilRankLevels"));
         lblSoilPlatinumMin = new QLabel(tabSoil);
         lblSoilPlatinumMin->setObjectName(QStringLiteral("lblSoilPlatinumMin"));
-        lblSoilPlatinumMin->setFont(font3);
+        lblSoilPlatinumMin->setFont(font2);
         lblSoilPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilPlatinumMin->setMargin(-1);
         lblSoilPlatinumMin->setIndent(0);
@@ -2713,7 +2676,7 @@ public:
         lblSoilBronzeMinVal = new QLabel(tabSoil);
         lblSoilBronzeMinVal->setObjectName(QStringLiteral("lblSoilBronzeMinVal"));
         lblSoilBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblSoilBronzeMinVal->setFont(font3);
+        lblSoilBronzeMinVal->setFont(font2);
         lblSoilBronzeMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilBronzeMinVal->setMargin(-1);
         lblSoilBronzeMinVal->setIndent(1);
@@ -2722,7 +2685,7 @@ public:
 
         lblSoilBronzeMin = new QLabel(tabSoil);
         lblSoilBronzeMin->setObjectName(QStringLiteral("lblSoilBronzeMin"));
-        lblSoilBronzeMin->setFont(font3);
+        lblSoilBronzeMin->setFont(font2);
         lblSoilBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilBronzeMin->setMargin(-2);
         lblSoilBronzeMin->setIndent(0);
@@ -2732,7 +2695,7 @@ public:
         lblSoilGoldMinVal = new QLabel(tabSoil);
         lblSoilGoldMinVal->setObjectName(QStringLiteral("lblSoilGoldMinVal"));
         lblSoilGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblSoilGoldMinVal->setFont(font3);
+        lblSoilGoldMinVal->setFont(font2);
         lblSoilGoldMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilGoldMinVal->setMargin(-1);
         lblSoilGoldMinVal->setIndent(1);
@@ -2741,7 +2704,7 @@ public:
 
         lblSoilSilverMin = new QLabel(tabSoil);
         lblSoilSilverMin->setObjectName(QStringLiteral("lblSoilSilverMin"));
-        lblSoilSilverMin->setFont(font3);
+        lblSoilSilverMin->setFont(font2);
         lblSoilSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilSilverMin->setMargin(-2);
         lblSoilSilverMin->setIndent(0);
@@ -2751,7 +2714,7 @@ public:
         lblSoilPlatinumMinVal = new QLabel(tabSoil);
         lblSoilPlatinumMinVal->setObjectName(QStringLiteral("lblSoilPlatinumMinVal"));
         lblSoilPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblSoilPlatinumMinVal->setFont(font3);
+        lblSoilPlatinumMinVal->setFont(font2);
         lblSoilPlatinumMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilPlatinumMinVal->setMargin(-1);
         lblSoilPlatinumMinVal->setIndent(1);
@@ -2760,7 +2723,7 @@ public:
 
         lblSoilGoldMin = new QLabel(tabSoil);
         lblSoilGoldMin->setObjectName(QStringLiteral("lblSoilGoldMin"));
-        lblSoilGoldMin->setFont(font3);
+        lblSoilGoldMin->setFont(font2);
         lblSoilGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilGoldMin->setMargin(-2);
         lblSoilGoldMin->setIndent(0);
@@ -2770,7 +2733,7 @@ public:
         lblSoilSilverMinVal = new QLabel(tabSoil);
         lblSoilSilverMinVal->setObjectName(QStringLiteral("lblSoilSilverMinVal"));
         lblSoilSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblSoilSilverMinVal->setFont(font3);
+        lblSoilSilverMinVal->setFont(font2);
         lblSoilSilverMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSoilSilverMinVal->setMargin(-1);
         lblSoilSilverMinVal->setIndent(1);
@@ -2804,7 +2767,7 @@ public:
 
         lblRankingSoil = new QLabel(tabSoil);
         lblRankingSoil->setObjectName(QStringLiteral("lblRankingSoil"));
-        lblRankingSoil->setFont(font6);
+        lblRankingSoil->setFont(font5);
         lblRankingSoil->setAlignment(Qt::AlignCenter);
 
         gridLayout_23->addWidget(lblRankingSoil, 1, 0, 1, 3);
@@ -2899,7 +2862,7 @@ public:
 
         lblCombinedSite = new QLabel(gbxSite);
         lblCombinedSite->setObjectName(QStringLiteral("lblCombinedSite"));
-        lblCombinedSite->setFont(font8);
+        lblCombinedSite->setFont(font7);
         lblCombinedSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblCombinedSite->setIndent(0);
 
@@ -2908,14 +2871,14 @@ public:
         lblOverallRatingSite = new QLabel(gbxSite);
         lblOverallRatingSite->setObjectName(QStringLiteral("lblOverallRatingSite"));
         lblOverallRatingSite->setMinimumSize(QSize(25, 0));
-        lblOverallRatingSite->setFont(font9);
+        lblOverallRatingSite->setFont(font8);
         lblOverallRatingSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutStateVars->addWidget(lblOverallRatingSite, 9, 3, 1, 1);
 
         lblLongitudeRatingSite = new QLabel(gbxSite);
         lblLongitudeRatingSite->setObjectName(QStringLiteral("lblLongitudeRatingSite"));
-        lblLongitudeRatingSite->setFont(font9);
+        lblLongitudeRatingSite->setFont(font8);
         lblLongitudeRatingSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblLongitudeRatingSite->setIndent(0);
 
@@ -2923,7 +2886,7 @@ public:
 
         lblAltitudeRatingSite = new QLabel(gbxSite);
         lblAltitudeRatingSite->setObjectName(QStringLiteral("lblAltitudeRatingSite"));
-        lblAltitudeRatingSite->setFont(font9);
+        lblAltitudeRatingSite->setFont(font8);
         lblAltitudeRatingSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblAltitudeRatingSite->setIndent(0);
 
@@ -2931,7 +2894,7 @@ public:
 
         lblLatitudeRatingSite = new QLabel(gbxSite);
         lblLatitudeRatingSite->setObjectName(QStringLiteral("lblLatitudeRatingSite"));
-        lblLatitudeRatingSite->setFont(font9);
+        lblLatitudeRatingSite->setFont(font8);
         lblLatitudeRatingSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblLatitudeRatingSite->setIndent(0);
 
@@ -2939,24 +2902,24 @@ public:
 
         lblMgmtMinData_6 = new QLabel(gbxSite);
         lblMgmtMinData_6->setObjectName(QStringLiteral("lblMgmtMinData_6"));
-        lblMgmtMinData_6->setFont(font2);
+        lblMgmtMinData_6->setFont(font1);
         lblMgmtMinData_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutStateVars->addWidget(lblMgmtMinData_6, 0, 0, 1, 1);
 
         lblMgmtObservations_6 = new QLabel(gbxSite);
         lblMgmtObservations_6->setObjectName(QStringLiteral("lblMgmtObservations_6"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_6->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_6->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_6->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_6->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_6->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_6->setFont(font1);
 
         gridLayoutStateVars->addWidget(lblMgmtObservations_6, 0, 1, 1, 1);
 
         lblMgmtObservations_8 = new QLabel(gbxSite);
         lblMgmtObservations_8->setObjectName(QStringLiteral("lblMgmtObservations_8"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_8->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_8->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_8->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_8->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_8->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_8->setFont(font1);
 
         gridLayoutStateVars->addWidget(lblMgmtObservations_8, 0, 2, 1, 1);
 
@@ -2975,7 +2938,7 @@ public:
 
         lblSlopeRatingSite = new QLabel(gbxSite);
         lblSlopeRatingSite->setObjectName(QStringLiteral("lblSlopeRatingSite"));
-        lblSlopeRatingSite->setFont(font9);
+        lblSlopeRatingSite->setFont(font8);
         lblSlopeRatingSite->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSlopeRatingSite->setIndent(0);
 
@@ -2992,11 +2955,11 @@ public:
 
         txbrSite = new QTextBrowser(tabSite);
         txbrSite->setObjectName(QStringLiteral("txbrSite"));
-        QSizePolicy sizePolicy7(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy7.setHorizontalStretch(1);
-        sizePolicy7.setVerticalStretch(0);
-        sizePolicy7.setHeightForWidth(txbrSite->sizePolicy().hasHeightForWidth());
-        txbrSite->setSizePolicy(sizePolicy7);
+        QSizePolicy sizePolicy6(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy6.setHorizontalStretch(1);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(txbrSite->sizePolicy().hasHeightForWidth());
+        txbrSite->setSizePolicy(sizePolicy6);
 
         gridLayout_7->addWidget(txbrSite, 0, 2, 2, 1);
 
@@ -3007,7 +2970,7 @@ public:
         formLayoutSiteRankLevels->setVerticalSpacing(2);
         lblSitePlatinumMin = new QLabel(tabSite);
         lblSitePlatinumMin->setObjectName(QStringLiteral("lblSitePlatinumMin"));
-        lblSitePlatinumMin->setFont(font3);
+        lblSitePlatinumMin->setFont(font2);
         lblSitePlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSitePlatinumMin->setMargin(0);
         lblSitePlatinumMin->setIndent(0);
@@ -3017,7 +2980,7 @@ public:
         lblSitePlatinumMinVal = new QLabel(tabSite);
         lblSitePlatinumMinVal->setObjectName(QStringLiteral("lblSitePlatinumMinVal"));
         lblSitePlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblSitePlatinumMinVal->setFont(font3);
+        lblSitePlatinumMinVal->setFont(font2);
         lblSitePlatinumMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSitePlatinumMinVal->setMargin(0);
         lblSitePlatinumMinVal->setIndent(1);
@@ -3026,7 +2989,7 @@ public:
 
         lblSiteGoldMin = new QLabel(tabSite);
         lblSiteGoldMin->setObjectName(QStringLiteral("lblSiteGoldMin"));
-        lblSiteGoldMin->setFont(font3);
+        lblSiteGoldMin->setFont(font2);
         lblSiteGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteGoldMin->setMargin(0);
         lblSiteGoldMin->setIndent(0);
@@ -3036,7 +2999,7 @@ public:
         lblSiteGoldMinVal = new QLabel(tabSite);
         lblSiteGoldMinVal->setObjectName(QStringLiteral("lblSiteGoldMinVal"));
         lblSiteGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblSiteGoldMinVal->setFont(font3);
+        lblSiteGoldMinVal->setFont(font2);
         lblSiteGoldMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteGoldMinVal->setMargin(0);
         lblSiteGoldMinVal->setIndent(1);
@@ -3045,7 +3008,7 @@ public:
 
         lblSiteSilverMin = new QLabel(tabSite);
         lblSiteSilverMin->setObjectName(QStringLiteral("lblSiteSilverMin"));
-        lblSiteSilverMin->setFont(font3);
+        lblSiteSilverMin->setFont(font2);
         lblSiteSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteSilverMin->setMargin(0);
         lblSiteSilverMin->setIndent(0);
@@ -3055,7 +3018,7 @@ public:
         lblSiteSilverMinVal = new QLabel(tabSite);
         lblSiteSilverMinVal->setObjectName(QStringLiteral("lblSiteSilverMinVal"));
         lblSiteSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblSiteSilverMinVal->setFont(font3);
+        lblSiteSilverMinVal->setFont(font2);
         lblSiteSilverMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteSilverMinVal->setMargin(0);
         lblSiteSilverMinVal->setIndent(1);
@@ -3064,7 +3027,7 @@ public:
 
         lblSiteBronzeMin = new QLabel(tabSite);
         lblSiteBronzeMin->setObjectName(QStringLiteral("lblSiteBronzeMin"));
-        lblSiteBronzeMin->setFont(font3);
+        lblSiteBronzeMin->setFont(font2);
         lblSiteBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteBronzeMin->setMargin(0);
         lblSiteBronzeMin->setIndent(0);
@@ -3074,7 +3037,7 @@ public:
         lblSiteBronzeMinVal = new QLabel(tabSite);
         lblSiteBronzeMinVal->setObjectName(QStringLiteral("lblSiteBronzeMinVal"));
         lblSiteBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblSiteBronzeMinVal->setFont(font3);
+        lblSiteBronzeMinVal->setFont(font2);
         lblSiteBronzeMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblSiteBronzeMinVal->setMargin(0);
         lblSiteBronzeMinVal->setIndent(1);
@@ -3108,7 +3071,9 @@ public:
 
         lblRankingSite = new QLabel(tabSite);
         lblRankingSite->setObjectName(QStringLiteral("lblRankingSite"));
-        lblRankingSite->setFont(font);
+        QFont font9;
+        font9.setPointSize(20);
+        lblRankingSite->setFont(font9);
         lblRankingSite->setAlignment(Qt::AlignCenter);
 
         gridLayoutSiteRankingResult->addWidget(lblRankingSite, 1, 0, 1, 3);
@@ -3129,7 +3094,7 @@ public:
         gridLayout_31->setObjectName(QStringLiteral("gridLayout_31"));
         gbxWeather = new QGroupBox(tabWeather);
         gbxWeather->setObjectName(QStringLiteral("gbxWeather"));
-        gbxWeather->setFont(font2);
+        gbxWeather->setFont(font1);
         gbxWeather->setCheckable(true);
         gbxWeather->setChecked(true);
         gridLayout_20 = new QGridLayout(gbxWeather);
@@ -3138,34 +3103,34 @@ public:
         gridLayout_20->setObjectName(QStringLiteral("gridLayout_20"));
         label_3 = new QLabel(gbxWeather);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setFont(font2);
+        label_3->setFont(font1);
 
         gridLayout_20->addWidget(label_3, 0, 0, 1, 1);
 
         lblMgmtMinData_5 = new QLabel(gbxWeather);
         lblMgmtMinData_5->setObjectName(QStringLiteral("lblMgmtMinData_5"));
-        lblMgmtMinData_5->setFont(font2);
+        lblMgmtMinData_5->setFont(font1);
         lblMgmtMinData_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_20->addWidget(lblMgmtMinData_5, 0, 1, 1, 1);
 
         lblMgmtPoints_6 = new QLabel(gbxWeather);
         lblMgmtPoints_6->setObjectName(QStringLiteral("lblMgmtPoints_6"));
-        lblMgmtPoints_6->setFont(font2);
+        lblMgmtPoints_6->setFont(font1);
 
         gridLayout_20->addWidget(lblMgmtPoints_6, 0, 2, 1, 1);
 
         lblMgmtObservations_5 = new QLabel(gbxWeather);
         lblMgmtObservations_5->setObjectName(QStringLiteral("lblMgmtObservations_5"));
-        sizePolicy4.setHeightForWidth(lblMgmtObservations_5->sizePolicy().hasHeightForWidth());
-        lblMgmtObservations_5->setSizePolicy(sizePolicy4);
-        lblMgmtObservations_5->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblMgmtObservations_5->sizePolicy().hasHeightForWidth());
+        lblMgmtObservations_5->setSizePolicy(sizePolicy3);
+        lblMgmtObservations_5->setFont(font1);
 
         gridLayout_20->addWidget(lblMgmtObservations_5, 0, 3, 1, 1);
 
         lblMgmtPoints_5 = new QLabel(gbxWeather);
         lblMgmtPoints_5->setObjectName(QStringLiteral("lblMgmtPoints_5"));
-        lblMgmtPoints_5->setFont(font2);
+        lblMgmtPoints_5->setFont(font1);
 
         gridLayout_20->addWidget(lblMgmtPoints_5, 0, 4, 1, 1);
 
@@ -3174,13 +3139,13 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label = new QLabel(gbxWeather);
         label->setObjectName(QStringLiteral("label"));
-        label->setFont(font2);
+        label->setFont(font1);
 
         verticalLayout->addWidget(label);
 
         label_2 = new QLabel(gbxWeather);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setFont(font2);
+        label_2->setFont(font1);
 
         verticalLayout->addWidget(label_2);
 
@@ -3199,11 +3164,11 @@ public:
 
         chbxPrecipitationWeather = new QCheckBox(gbxWeather);
         chbxPrecipitationWeather->setObjectName(QStringLiteral("chbxPrecipitationWeather"));
-        QSizePolicy sizePolicy8(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy8.setHorizontalStretch(1);
-        sizePolicy8.setVerticalStretch(0);
-        sizePolicy8.setHeightForWidth(chbxPrecipitationWeather->sizePolicy().hasHeightForWidth());
-        chbxPrecipitationWeather->setSizePolicy(sizePolicy8);
+        QSizePolicy sizePolicy7(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy7.setHorizontalStretch(1);
+        sizePolicy7.setVerticalStretch(0);
+        sizePolicy7.setHeightForWidth(chbxPrecipitationWeather->sizePolicy().hasHeightForWidth());
+        chbxPrecipitationWeather->setSizePolicy(sizePolicy7);
         chbxPrecipitationWeather->setLayoutDirection(Qt::RightToLeft);
         chbxPrecipitationWeather->setChecked(true);
         chbxPrecipitationWeather->setTristate(false);
@@ -3225,11 +3190,11 @@ public:
 
         sbPrecipitationAltDifWeather = new QSpinBox(gbxWeather);
         sbPrecipitationAltDifWeather->setObjectName(QStringLiteral("sbPrecipitationAltDifWeather"));
-        QSizePolicy sizePolicy9(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy9.setHorizontalStretch(0);
-        sizePolicy9.setVerticalStretch(0);
-        sizePolicy9.setHeightForWidth(sbPrecipitationAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbPrecipitationAltDifWeather->setSizePolicy(sizePolicy9);
+        QSizePolicy sizePolicy8(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy8.setHorizontalStretch(0);
+        sizePolicy8.setVerticalStretch(0);
+        sizePolicy8.setHeightForWidth(sbPrecipitationAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbPrecipitationAltDifWeather->setSizePolicy(sizePolicy8);
         sbPrecipitationAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbPrecipitationAltDifWeather->setMinimum(-1000);
         sbPrecipitationAltDifWeather->setMaximum(1000);
@@ -3255,7 +3220,7 @@ public:
 
         lblPrecipitationRatingWeather = new QLabel(gbxWeather);
         lblPrecipitationRatingWeather->setObjectName(QStringLiteral("lblPrecipitationRatingWeather"));
-        lblPrecipitationRatingWeather->setFont(font9);
+        lblPrecipitationRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblPrecipitationRatingWeather, 1, 6, 1, 1);
 
@@ -3271,8 +3236,8 @@ public:
 
         chbxTAveWeather = new QCheckBox(gbxWeather);
         chbxTAveWeather->setObjectName(QStringLiteral("chbxTAveWeather"));
-        sizePolicy8.setHeightForWidth(chbxTAveWeather->sizePolicy().hasHeightForWidth());
-        chbxTAveWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxTAveWeather->sizePolicy().hasHeightForWidth());
+        chbxTAveWeather->setSizePolicy(sizePolicy7);
         chbxTAveWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_2->addWidget(chbxTAveWeather);
@@ -3292,8 +3257,8 @@ public:
 
         sbTAveAltDifWeather = new QSpinBox(gbxWeather);
         sbTAveAltDifWeather->setObjectName(QStringLiteral("sbTAveAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbTAveAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTAveAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbTAveAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTAveAltDifWeather->setSizePolicy(sizePolicy8);
         sbTAveAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTAveAltDifWeather->setValue(0);
 
@@ -3317,7 +3282,7 @@ public:
 
         lblTAveRatingWeather = new QLabel(gbxWeather);
         lblTAveRatingWeather->setObjectName(QStringLiteral("lblTAveRatingWeather"));
-        lblTAveRatingWeather->setFont(font9);
+        lblTAveRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblTAveRatingWeather, 2, 6, 1, 1);
 
@@ -3333,8 +3298,8 @@ public:
 
         chbxTMinWeather = new QCheckBox(gbxWeather);
         chbxTMinWeather->setObjectName(QStringLiteral("chbxTMinWeather"));
-        sizePolicy8.setHeightForWidth(chbxTMinWeather->sizePolicy().hasHeightForWidth());
-        chbxTMinWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxTMinWeather->sizePolicy().hasHeightForWidth());
+        chbxTMinWeather->setSizePolicy(sizePolicy7);
         chbxTMinWeather->setLayoutDirection(Qt::RightToLeft);
         chbxTMinWeather->setChecked(true);
 
@@ -3355,8 +3320,8 @@ public:
 
         sbTMinAltDifWeather = new QSpinBox(gbxWeather);
         sbTMinAltDifWeather->setObjectName(QStringLiteral("sbTMinAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbTMinAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTMinAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbTMinAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTMinAltDifWeather->setSizePolicy(sizePolicy8);
         sbTMinAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTMinAltDifWeather->setValue(0);
 
@@ -3380,7 +3345,7 @@ public:
 
         lblTMinRatingWeather = new QLabel(gbxWeather);
         lblTMinRatingWeather->setObjectName(QStringLiteral("lblTMinRatingWeather"));
-        lblTMinRatingWeather->setFont(font9);
+        lblTMinRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblTMinRatingWeather, 3, 6, 1, 1);
 
@@ -3396,8 +3361,8 @@ public:
 
         chbxTMaxWeather = new QCheckBox(gbxWeather);
         chbxTMaxWeather->setObjectName(QStringLiteral("chbxTMaxWeather"));
-        sizePolicy8.setHeightForWidth(chbxTMaxWeather->sizePolicy().hasHeightForWidth());
-        chbxTMaxWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxTMaxWeather->sizePolicy().hasHeightForWidth());
+        chbxTMaxWeather->setSizePolicy(sizePolicy7);
         chbxTMaxWeather->setLayoutDirection(Qt::RightToLeft);
         chbxTMaxWeather->setChecked(true);
 
@@ -3418,8 +3383,8 @@ public:
 
         sbTMaxAltDifWeather = new QSpinBox(gbxWeather);
         sbTMaxAltDifWeather->setObjectName(QStringLiteral("sbTMaxAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbTMaxAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbTMaxAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbTMaxAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbTMaxAltDifWeather->setSizePolicy(sizePolicy8);
         sbTMaxAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbTMaxAltDifWeather->setValue(0);
 
@@ -3443,7 +3408,7 @@ public:
 
         lblTMaxRatingWeather = new QLabel(gbxWeather);
         lblTMaxRatingWeather->setObjectName(QStringLiteral("lblTMaxRatingWeather"));
-        lblTMaxRatingWeather->setFont(font9);
+        lblTMaxRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblTMaxRatingWeather, 4, 6, 1, 1);
 
@@ -3459,8 +3424,8 @@ public:
 
         chbxRelHumidityWeather = new QCheckBox(gbxWeather);
         chbxRelHumidityWeather->setObjectName(QStringLiteral("chbxRelHumidityWeather"));
-        sizePolicy8.setHeightForWidth(chbxRelHumidityWeather->sizePolicy().hasHeightForWidth());
-        chbxRelHumidityWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxRelHumidityWeather->sizePolicy().hasHeightForWidth());
+        chbxRelHumidityWeather->setSizePolicy(sizePolicy7);
         chbxRelHumidityWeather->setLayoutDirection(Qt::RightToLeft);
         chbxRelHumidityWeather->setChecked(true);
 
@@ -3481,8 +3446,8 @@ public:
 
         sbRelHumidityAltDifWeather = new QSpinBox(gbxWeather);
         sbRelHumidityAltDifWeather->setObjectName(QStringLiteral("sbRelHumidityAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbRelHumidityAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbRelHumidityAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbRelHumidityAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbRelHumidityAltDifWeather->setSizePolicy(sizePolicy8);
         sbRelHumidityAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbRelHumidityAltDifWeather->setValue(0);
 
@@ -3506,7 +3471,7 @@ public:
 
         lblRelHumidityRatingWeather = new QLabel(gbxWeather);
         lblRelHumidityRatingWeather->setObjectName(QStringLiteral("lblRelHumidityRatingWeather"));
-        lblRelHumidityRatingWeather->setFont(font9);
+        lblRelHumidityRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblRelHumidityRatingWeather, 5, 6, 1, 1);
 
@@ -3522,8 +3487,8 @@ public:
 
         chbxWindSpeedWeather = new QCheckBox(gbxWeather);
         chbxWindSpeedWeather->setObjectName(QStringLiteral("chbxWindSpeedWeather"));
-        sizePolicy8.setHeightForWidth(chbxWindSpeedWeather->sizePolicy().hasHeightForWidth());
-        chbxWindSpeedWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxWindSpeedWeather->sizePolicy().hasHeightForWidth());
+        chbxWindSpeedWeather->setSizePolicy(sizePolicy7);
         chbxWindSpeedWeather->setLayoutDirection(Qt::RightToLeft);
         chbxWindSpeedWeather->setChecked(true);
         chbxWindSpeedWeather->setTristate(true);
@@ -3545,8 +3510,8 @@ public:
 
         sbWindSpeedAltDifWeather = new QSpinBox(gbxWeather);
         sbWindSpeedAltDifWeather->setObjectName(QStringLiteral("sbWindSpeedAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbWindSpeedAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbWindSpeedAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbWindSpeedAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbWindSpeedAltDifWeather->setSizePolicy(sizePolicy8);
         sbWindSpeedAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbWindSpeedAltDifWeather->setValue(0);
 
@@ -3570,7 +3535,7 @@ public:
 
         lblWindSpeedRatingWeather = new QLabel(gbxWeather);
         lblWindSpeedRatingWeather->setObjectName(QStringLiteral("lblWindSpeedRatingWeather"));
-        lblWindSpeedRatingWeather->setFont(font9);
+        lblWindSpeedRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblWindSpeedRatingWeather, 6, 6, 1, 1);
 
@@ -3586,8 +3551,8 @@ public:
 
         chbxGlobalRadiationWeather = new QCheckBox(gbxWeather);
         chbxGlobalRadiationWeather->setObjectName(QStringLiteral("chbxGlobalRadiationWeather"));
-        sizePolicy8.setHeightForWidth(chbxGlobalRadiationWeather->sizePolicy().hasHeightForWidth());
-        chbxGlobalRadiationWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxGlobalRadiationWeather->sizePolicy().hasHeightForWidth());
+        chbxGlobalRadiationWeather->setSizePolicy(sizePolicy7);
         chbxGlobalRadiationWeather->setLayoutDirection(Qt::RightToLeft);
         chbxGlobalRadiationWeather->setChecked(true);
         chbxGlobalRadiationWeather->setTristate(true);
@@ -3609,8 +3574,8 @@ public:
 
         sbGlobalRadiationAltDifWeather = new QSpinBox(gbxWeather);
         sbGlobalRadiationAltDifWeather->setObjectName(QStringLiteral("sbGlobalRadiationAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbGlobalRadiationAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbGlobalRadiationAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbGlobalRadiationAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbGlobalRadiationAltDifWeather->setSizePolicy(sizePolicy8);
         sbGlobalRadiationAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbGlobalRadiationAltDifWeather->setValue(0);
 
@@ -3634,7 +3599,7 @@ public:
 
         lblGlobalRadiationRatingWeather = new QLabel(gbxWeather);
         lblGlobalRadiationRatingWeather->setObjectName(QStringLiteral("lblGlobalRadiationRatingWeather"));
-        lblGlobalRadiationRatingWeather->setFont(font9);
+        lblGlobalRadiationRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblGlobalRadiationRatingWeather, 7, 6, 1, 1);
 
@@ -3650,8 +3615,8 @@ public:
 
         chbxSunshineHoursWeather = new QCheckBox(gbxWeather);
         chbxSunshineHoursWeather->setObjectName(QStringLiteral("chbxSunshineHoursWeather"));
-        sizePolicy8.setHeightForWidth(chbxSunshineHoursWeather->sizePolicy().hasHeightForWidth());
-        chbxSunshineHoursWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSunshineHoursWeather->sizePolicy().hasHeightForWidth());
+        chbxSunshineHoursWeather->setSizePolicy(sizePolicy7);
         chbxSunshineHoursWeather->setLayoutDirection(Qt::RightToLeft);
         chbxSunshineHoursWeather->setChecked(true);
         chbxSunshineHoursWeather->setTristate(true);
@@ -3674,8 +3639,8 @@ public:
         sbSunshineHoursAltDifWeather = new QSpinBox(gbxWeather);
         sbSunshineHoursAltDifWeather->setObjectName(QStringLiteral("sbSunshineHoursAltDifWeather"));
         sbSunshineHoursAltDifWeather->setEnabled(false);
-        sizePolicy9.setHeightForWidth(sbSunshineHoursAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbSunshineHoursAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSunshineHoursAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbSunshineHoursAltDifWeather->setSizePolicy(sizePolicy8);
         sbSunshineHoursAltDifWeather->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_20->addWidget(sbSunshineHoursAltDifWeather, 8, 3, 1, 1);
@@ -3698,7 +3663,7 @@ public:
 
         lblSunshineHoursRatingWeather = new QLabel(gbxWeather);
         lblSunshineHoursRatingWeather->setObjectName(QStringLiteral("lblSunshineHoursRatingWeather"));
-        lblSunshineHoursRatingWeather->setFont(font9);
+        lblSunshineHoursRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblSunshineHoursRatingWeather, 8, 6, 1, 1);
 
@@ -3714,8 +3679,8 @@ public:
 
         chbxLeafWetnessWeather = new QCheckBox(gbxWeather);
         chbxLeafWetnessWeather->setObjectName(QStringLiteral("chbxLeafWetnessWeather"));
-        sizePolicy8.setHeightForWidth(chbxLeafWetnessWeather->sizePolicy().hasHeightForWidth());
-        chbxLeafWetnessWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxLeafWetnessWeather->sizePolicy().hasHeightForWidth());
+        chbxLeafWetnessWeather->setSizePolicy(sizePolicy7);
         chbxLeafWetnessWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_9->addWidget(chbxLeafWetnessWeather);
@@ -3734,8 +3699,8 @@ public:
 
         sbLeafWetnessAltDifWeather = new QSpinBox(gbxWeather);
         sbLeafWetnessAltDifWeather->setObjectName(QStringLiteral("sbLeafWetnessAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbLeafWetnessAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbLeafWetnessAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbLeafWetnessAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbLeafWetnessAltDifWeather->setSizePolicy(sizePolicy8);
         sbLeafWetnessAltDifWeather->setMaximumSize(QSize(50, 16777215));
         sbLeafWetnessAltDifWeather->setValue(0);
 
@@ -3759,7 +3724,7 @@ public:
 
         lblLeafWetnessRatingWeather = new QLabel(gbxWeather);
         lblLeafWetnessRatingWeather->setObjectName(QStringLiteral("lblLeafWetnessRatingWeather"));
-        lblLeafWetnessRatingWeather->setFont(font9);
+        lblLeafWetnessRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblLeafWetnessRatingWeather, 9, 6, 1, 1);
 
@@ -3775,8 +3740,8 @@ public:
 
         chbxSoilTempWeather = new QCheckBox(gbxWeather);
         chbxSoilTempWeather->setObjectName(QStringLiteral("chbxSoilTempWeather"));
-        sizePolicy8.setHeightForWidth(chbxSoilTempWeather->sizePolicy().hasHeightForWidth());
-        chbxSoilTempWeather->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSoilTempWeather->sizePolicy().hasHeightForWidth());
+        chbxSoilTempWeather->setSizePolicy(sizePolicy7);
         chbxSoilTempWeather->setLayoutDirection(Qt::RightToLeft);
 
         horizontalLayout_10->addWidget(chbxSoilTempWeather);
@@ -3795,8 +3760,8 @@ public:
 
         sbSoilTempAltDifWeather = new QSpinBox(gbxWeather);
         sbSoilTempAltDifWeather->setObjectName(QStringLiteral("sbSoilTempAltDifWeather"));
-        sizePolicy9.setHeightForWidth(sbSoilTempAltDifWeather->sizePolicy().hasHeightForWidth());
-        sbSoilTempAltDifWeather->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSoilTempAltDifWeather->sizePolicy().hasHeightForWidth());
+        sbSoilTempAltDifWeather->setSizePolicy(sizePolicy8);
         sbSoilTempAltDifWeather->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_20->addWidget(sbSoilTempAltDifWeather, 10, 3, 1, 1);
@@ -3819,19 +3784,19 @@ public:
 
         lblSoilTempRatingWeather = new QLabel(gbxWeather);
         lblSoilTempRatingWeather->setObjectName(QStringLiteral("lblSoilTempRatingWeather"));
-        lblSoilTempRatingWeather->setFont(font9);
+        lblSoilTempRatingWeather->setFont(font8);
 
         gridLayout_20->addWidget(lblSoilTempRatingWeather, 10, 6, 1, 1);
 
         lblCombinedWeather = new QLabel(gbxWeather);
         lblCombinedWeather->setObjectName(QStringLiteral("lblCombinedWeather"));
-        lblCombinedWeather->setFont(font5);
+        lblCombinedWeather->setFont(font4);
 
         gridLayout_20->addWidget(lblCombinedWeather, 11, 4, 1, 2);
 
         lblOverallRatingWeather = new QLabel(gbxWeather);
         lblOverallRatingWeather->setObjectName(QStringLiteral("lblOverallRatingWeather"));
-        lblOverallRatingWeather->setFont(font5);
+        lblOverallRatingWeather->setFont(font4);
 
         gridLayout_20->addWidget(lblOverallRatingWeather, 11, 6, 1, 1);
 
@@ -3848,7 +3813,7 @@ public:
         gridLayoutWeatherRankLevels->setObjectName(QStringLiteral("gridLayoutWeatherRankLevels"));
         lblWeatherPlatinumMin = new QLabel(tabWeather);
         lblWeatherPlatinumMin->setObjectName(QStringLiteral("lblWeatherPlatinumMin"));
-        lblWeatherPlatinumMin->setFont(font3);
+        lblWeatherPlatinumMin->setFont(font2);
         lblWeatherPlatinumMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherPlatinumMin->setMargin(-1);
         lblWeatherPlatinumMin->setIndent(0);
@@ -3858,7 +3823,7 @@ public:
         lblWeatherPlatinumMinVal = new QLabel(tabWeather);
         lblWeatherPlatinumMinVal->setObjectName(QStringLiteral("lblWeatherPlatinumMinVal"));
         lblWeatherPlatinumMinVal->setMinimumSize(QSize(25, 0));
-        lblWeatherPlatinumMinVal->setFont(font3);
+        lblWeatherPlatinumMinVal->setFont(font2);
         lblWeatherPlatinumMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherPlatinumMinVal->setMargin(-1);
         lblWeatherPlatinumMinVal->setIndent(1);
@@ -3867,7 +3832,7 @@ public:
 
         lblWeatherGoldMin = new QLabel(tabWeather);
         lblWeatherGoldMin->setObjectName(QStringLiteral("lblWeatherGoldMin"));
-        lblWeatherGoldMin->setFont(font3);
+        lblWeatherGoldMin->setFont(font2);
         lblWeatherGoldMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherGoldMin->setMargin(-2);
         lblWeatherGoldMin->setIndent(0);
@@ -3877,7 +3842,7 @@ public:
         lblWeatherGoldMinVal = new QLabel(tabWeather);
         lblWeatherGoldMinVal->setObjectName(QStringLiteral("lblWeatherGoldMinVal"));
         lblWeatherGoldMinVal->setMinimumSize(QSize(25, 0));
-        lblWeatherGoldMinVal->setFont(font3);
+        lblWeatherGoldMinVal->setFont(font2);
         lblWeatherGoldMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherGoldMinVal->setMargin(-1);
         lblWeatherGoldMinVal->setIndent(1);
@@ -3886,7 +3851,7 @@ public:
 
         lblWeatherSilverMin = new QLabel(tabWeather);
         lblWeatherSilverMin->setObjectName(QStringLiteral("lblWeatherSilverMin"));
-        lblWeatherSilverMin->setFont(font3);
+        lblWeatherSilverMin->setFont(font2);
         lblWeatherSilverMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherSilverMin->setMargin(-2);
         lblWeatherSilverMin->setIndent(0);
@@ -3896,7 +3861,7 @@ public:
         lblWeatherSilverMinVal = new QLabel(tabWeather);
         lblWeatherSilverMinVal->setObjectName(QStringLiteral("lblWeatherSilverMinVal"));
         lblWeatherSilverMinVal->setMinimumSize(QSize(25, 0));
-        lblWeatherSilverMinVal->setFont(font3);
+        lblWeatherSilverMinVal->setFont(font2);
         lblWeatherSilverMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherSilverMinVal->setMargin(-1);
         lblWeatherSilverMinVal->setIndent(1);
@@ -3905,7 +3870,7 @@ public:
 
         lblWeatherBronzeMin = new QLabel(tabWeather);
         lblWeatherBronzeMin->setObjectName(QStringLiteral("lblWeatherBronzeMin"));
-        lblWeatherBronzeMin->setFont(font3);
+        lblWeatherBronzeMin->setFont(font2);
         lblWeatherBronzeMin->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherBronzeMin->setMargin(-2);
         lblWeatherBronzeMin->setIndent(0);
@@ -3915,7 +3880,7 @@ public:
         lblWeatherBronzeMinVal = new QLabel(tabWeather);
         lblWeatherBronzeMinVal->setObjectName(QStringLiteral("lblWeatherBronzeMinVal"));
         lblWeatherBronzeMinVal->setMinimumSize(QSize(25, 0));
-        lblWeatherBronzeMinVal->setFont(font3);
+        lblWeatherBronzeMinVal->setFont(font2);
         lblWeatherBronzeMinVal->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherBronzeMinVal->setMargin(-1);
         lblWeatherBronzeMinVal->setIndent(1);
@@ -3949,7 +3914,7 @@ public:
 
         lblRankingWeather = new QLabel(tabWeather);
         lblRankingWeather->setObjectName(QStringLiteral("lblRankingWeather"));
-        lblRankingWeather->setFont(font6);
+        lblRankingWeather->setFont(font5);
         lblRankingWeather->setAlignment(Qt::AlignCenter);
 
         gridLayoutWeatherRankingResult->addWidget(lblRankingWeather, 1, 0, 1, 3);
@@ -3970,7 +3935,7 @@ public:
         gridLayout_11->setObjectName(QStringLiteral("gridLayout_11"));
         lblSVTotalPointsHeader = new QLabel(tabStateVars);
         lblSVTotalPointsHeader->setObjectName(QStringLiteral("lblSVTotalPointsHeader"));
-        lblSVTotalPointsHeader->setFont(font9);
+        lblSVTotalPointsHeader->setFont(font8);
 
         gridLayout_11->addWidget(lblSVTotalPointsHeader, 0, 1, 1, 1);
 
@@ -3980,7 +3945,7 @@ public:
 
         lblOverallRatingSV = new QLabel(tabStateVars);
         lblOverallRatingSV->setObjectName(QStringLiteral("lblOverallRatingSV"));
-        lblOverallRatingSV->setFont(font9);
+        lblOverallRatingSV->setFont(font8);
         lblOverallRatingSV->setAlignment(Qt::AlignCenter);
 
         gridLayout_11->addWidget(lblOverallRatingSV, 1, 1, 1, 1);
@@ -3989,7 +3954,7 @@ public:
         lblMedalSV->setObjectName(QStringLiteral("lblMedalSV"));
         lblMedalSV->setMinimumSize(QSize(40, 40));
         lblMedalSV->setMaximumSize(QSize(40, 40));
-        lblMedalSV->setFont(font9);
+        lblMedalSV->setFont(font8);
         lblMedalSV->setPixmap(QPixmap(QString::fromUtf8(":/Resources/platinum.png")));
         lblMedalSV->setScaledContents(true);
         lblMedalSV->setAlignment(Qt::AlignCenter);
@@ -4007,7 +3972,7 @@ public:
         toolBoxStateVars->setEnabled(true);
         pageCrop = new QWidget();
         pageCrop->setObjectName(QStringLiteral("pageCrop"));
-        pageCrop->setGeometry(QRect(0, 0, 715, 506));
+        pageCrop->setGeometry(QRect(0, 0, 484, 455));
         gridLayout_14 = new QGridLayout(pageCrop);
         gridLayout_14->setSpacing(6);
         gridLayout_14->setContentsMargins(11, 11, 11, 11);
@@ -4030,7 +3995,7 @@ public:
         lblWeatherGoldMinValSVCrop = new QLabel(gbxSVCrop);
         lblWeatherGoldMinValSVCrop->setObjectName(QStringLiteral("lblWeatherGoldMinValSVCrop"));
         lblWeatherGoldMinValSVCrop->setMinimumSize(QSize(25, 0));
-        lblWeatherGoldMinValSVCrop->setFont(font2);
+        lblWeatherGoldMinValSVCrop->setFont(font1);
         lblWeatherGoldMinValSVCrop->setAlignment(Qt::AlignCenter);
         lblWeatherGoldMinValSVCrop->setMargin(-1);
         lblWeatherGoldMinValSVCrop->setIndent(1);
@@ -4040,7 +4005,7 @@ public:
         lblWeatherPlatinumMinValSVCrop = new QLabel(gbxSVCrop);
         lblWeatherPlatinumMinValSVCrop->setObjectName(QStringLiteral("lblWeatherPlatinumMinValSVCrop"));
         lblWeatherPlatinumMinValSVCrop->setMinimumSize(QSize(25, 0));
-        lblWeatherPlatinumMinValSVCrop->setFont(font2);
+        lblWeatherPlatinumMinValSVCrop->setFont(font1);
         lblWeatherPlatinumMinValSVCrop->setAlignment(Qt::AlignCenter);
         lblWeatherPlatinumMinValSVCrop->setMargin(-1);
         lblWeatherPlatinumMinValSVCrop->setIndent(1);
@@ -4050,7 +4015,7 @@ public:
         lblWeatherSilverMinValSVCrop = new QLabel(gbxSVCrop);
         lblWeatherSilverMinValSVCrop->setObjectName(QStringLiteral("lblWeatherSilverMinValSVCrop"));
         lblWeatherSilverMinValSVCrop->setMinimumSize(QSize(25, 0));
-        lblWeatherSilverMinValSVCrop->setFont(font2);
+        lblWeatherSilverMinValSVCrop->setFont(font1);
         lblWeatherSilverMinValSVCrop->setAlignment(Qt::AlignCenter);
         lblWeatherSilverMinValSVCrop->setMargin(-1);
         lblWeatherSilverMinValSVCrop->setIndent(1);
@@ -4060,7 +4025,7 @@ public:
         lblWeatherBronzeMinValSVCrop = new QLabel(gbxSVCrop);
         lblWeatherBronzeMinValSVCrop->setObjectName(QStringLiteral("lblWeatherBronzeMinValSVCrop"));
         lblWeatherBronzeMinValSVCrop->setMinimumSize(QSize(25, 0));
-        lblWeatherBronzeMinValSVCrop->setFont(font2);
+        lblWeatherBronzeMinValSVCrop->setFont(font1);
         lblWeatherBronzeMinValSVCrop->setAlignment(Qt::AlignCenter);
         lblWeatherBronzeMinValSVCrop->setMargin(-1);
         lblWeatherBronzeMinValSVCrop->setIndent(1);
@@ -4069,7 +4034,7 @@ public:
 
         lblWeatherBronzeMinSVCrop = new QLabel(gbxSVCrop);
         lblWeatherBronzeMinSVCrop->setObjectName(QStringLiteral("lblWeatherBronzeMinSVCrop"));
-        lblWeatherBronzeMinSVCrop->setFont(font2);
+        lblWeatherBronzeMinSVCrop->setFont(font1);
         lblWeatherBronzeMinSVCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherBronzeMinSVCrop->setMargin(0);
         lblWeatherBronzeMinSVCrop->setIndent(0);
@@ -4078,7 +4043,7 @@ public:
 
         lblWeatherSilverMinSVCrop = new QLabel(gbxSVCrop);
         lblWeatherSilverMinSVCrop->setObjectName(QStringLiteral("lblWeatherSilverMinSVCrop"));
-        lblWeatherSilverMinSVCrop->setFont(font2);
+        lblWeatherSilverMinSVCrop->setFont(font1);
         lblWeatherSilverMinSVCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherSilverMinSVCrop->setMargin(0);
         lblWeatherSilverMinSVCrop->setIndent(0);
@@ -4087,7 +4052,7 @@ public:
 
         lblWeatherGoldMinSVCrop = new QLabel(gbxSVCrop);
         lblWeatherGoldMinSVCrop->setObjectName(QStringLiteral("lblWeatherGoldMinSVCrop"));
-        lblWeatherGoldMinSVCrop->setFont(font2);
+        lblWeatherGoldMinSVCrop->setFont(font1);
         lblWeatherGoldMinSVCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherGoldMinSVCrop->setMargin(0);
         lblWeatherGoldMinSVCrop->setIndent(0);
@@ -4096,7 +4061,7 @@ public:
 
         lblWeatherPlatinumMinSVCrop = new QLabel(gbxSVCrop);
         lblWeatherPlatinumMinSVCrop->setObjectName(QStringLiteral("lblWeatherPlatinumMinSVCrop"));
-        lblWeatherPlatinumMinSVCrop->setFont(font2);
+        lblWeatherPlatinumMinSVCrop->setFont(font1);
         lblWeatherPlatinumMinSVCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherPlatinumMinSVCrop->setMargin(0);
         lblWeatherPlatinumMinSVCrop->setIndent(0);
@@ -4111,21 +4076,21 @@ public:
         gridLayoutSVCropInputs->setObjectName(QStringLiteral("gridLayoutSVCropInputs"));
         lblCombinedSVCrop = new QLabel(gbxSVCrop);
         lblCombinedSVCrop->setObjectName(QStringLiteral("lblCombinedSVCrop"));
-        lblCombinedSVCrop->setFont(font9);
+        lblCombinedSVCrop->setFont(font8);
         lblCombinedSVCrop->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVCropInputs->addWidget(lblCombinedSVCrop, 10, 4, 1, 1);
 
         lblSVCropLayersHeader = new QLabel(gbxSVCrop);
         lblSVCropLayersHeader->setObjectName(QStringLiteral("lblSVCropLayersHeader"));
-        lblSVCropLayersHeader->setFont(font1);
+        lblSVCropLayersHeader->setFont(font);
         lblSVCropLayersHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropLayersHeader, 0, 1, 1, 1);
 
         lblSVCropPointsHeader = new QLabel(gbxSVCrop);
         lblSVCropPointsHeader->setObjectName(QStringLiteral("lblSVCropPointsHeader"));
-        lblSVCropPointsHeader->setFont(font1);
+        lblSVCropPointsHeader->setFont(font);
         lblSVCropPointsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropPointsHeader, 0, 5, 1, 1);
@@ -4137,14 +4102,14 @@ public:
 
         lblSVCropWeightHeader = new QLabel(gbxSVCrop);
         lblSVCropWeightHeader->setObjectName(QStringLiteral("lblSVCropWeightHeader"));
-        lblSVCropWeightHeader->setFont(font1);
+        lblSVCropWeightHeader->setFont(font);
         lblSVCropWeightHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropWeightHeader, 0, 3, 1, 1);
 
         lblSVCropObservationsHeader = new QLabel(gbxSVCrop);
         lblSVCropObservationsHeader->setObjectName(QStringLiteral("lblSVCropObservationsHeader"));
-        lblSVCropObservationsHeader->setFont(font1);
+        lblSVCropObservationsHeader->setFont(font);
         lblSVCropObservationsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropObservationsHeader, 0, 2, 1, 1);
@@ -4158,7 +4123,7 @@ public:
 
         lblSVCropReplicatesHeader = new QLabel(gbxSVCrop);
         lblSVCropReplicatesHeader->setObjectName(QStringLiteral("lblSVCropReplicatesHeader"));
-        lblSVCropReplicatesHeader->setFont(font1);
+        lblSVCropReplicatesHeader->setFont(font);
         lblSVCropReplicatesHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropReplicatesHeader, 0, 4, 1, 1);
@@ -4172,7 +4137,7 @@ public:
 
         lblSVCropNInAGrBiomassPoints = new QLabel(gbxSVCrop);
         lblSVCropNInAGrBiomassPoints->setObjectName(QStringLiteral("lblSVCropNInAGrBiomassPoints"));
-        lblSVCropNInAGrBiomassPoints->setFont(font9);
+        lblSVCropNInAGrBiomassPoints->setFont(font8);
         lblSVCropNInAGrBiomassPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropNInAGrBiomassPoints, 6, 5, 1, 1);
@@ -4191,14 +4156,14 @@ public:
 
         lblSVCropLAIPoints = new QLabel(gbxSVCrop);
         lblSVCropLAIPoints->setObjectName(QStringLiteral("lblSVCropLAIPoints"));
-        lblSVCropLAIPoints->setFont(font9);
+        lblSVCropLAIPoints->setFont(font8);
         lblSVCropLAIPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropLAIPoints, 8, 5, 1, 1);
 
         lblSVCropRootBiomassPoints = new QLabel(gbxSVCrop);
         lblSVCropRootBiomassPoints->setObjectName(QStringLiteral("lblSVCropRootBiomassPoints"));
-        lblSVCropRootBiomassPoints->setFont(font9);
+        lblSVCropRootBiomassPoints->setFont(font8);
         lblSVCropRootBiomassPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropRootBiomassPoints, 5, 5, 1, 1);
@@ -4210,7 +4175,7 @@ public:
 
         lblSVCropNInOrgansPoints = new QLabel(gbxSVCrop);
         lblSVCropNInOrgansPoints->setObjectName(QStringLiteral("lblSVCropNInOrgansPoints"));
-        lblSVCropNInOrgansPoints->setFont(font9);
+        lblSVCropNInOrgansPoints->setFont(font8);
         lblSVCropNInOrgansPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropNInOrgansPoints, 7, 5, 1, 1);
@@ -4222,7 +4187,7 @@ public:
 
         lblOverallRatingSVCrop = new QLabel(gbxSVCrop);
         lblOverallRatingSVCrop->setObjectName(QStringLiteral("lblOverallRatingSVCrop"));
-        lblOverallRatingSVCrop->setFont(font9);
+        lblOverallRatingSVCrop->setFont(font8);
         lblOverallRatingSVCrop->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblOverallRatingSVCrop, 10, 5, 1, 1);
@@ -4236,7 +4201,7 @@ public:
 
         lblSVCropMinDataHeader = new QLabel(gbxSVCrop);
         lblSVCropMinDataHeader->setObjectName(QStringLiteral("lblSVCropMinDataHeader"));
-        lblSVCropMinDataHeader->setFont(font1);
+        lblSVCropMinDataHeader->setFont(font);
         lblSVCropMinDataHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropMinDataHeader, 0, 0, 1, 1);
@@ -4343,7 +4308,7 @@ public:
 
         lblSVCropAGrBiomassPoints = new QLabel(gbxSVCrop);
         lblSVCropAGrBiomassPoints->setObjectName(QStringLiteral("lblSVCropAGrBiomassPoints"));
-        lblSVCropAGrBiomassPoints->setFont(font9);
+        lblSVCropAGrBiomassPoints->setFont(font8);
         lblSVCropAGrBiomassPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropAGrBiomassPoints, 3, 5, 1, 1);
@@ -4369,7 +4334,7 @@ public:
 
         lblSVCropWeightOrgansPoints = new QLabel(gbxSVCrop);
         lblSVCropWeightOrgansPoints->setObjectName(QStringLiteral("lblSVCropWeightOrgansPoints"));
-        lblSVCropWeightOrgansPoints->setFont(font9);
+        lblSVCropWeightOrgansPoints->setFont(font8);
         lblSVCropWeightOrgansPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVCropInputs->addWidget(lblSVCropWeightOrgansPoints, 4, 5, 1, 1);
@@ -4393,7 +4358,7 @@ public:
 
         chbxYield = new QCheckBox(gbxSVCrop);
         chbxYield->setObjectName(QStringLiteral("chbxYield"));
-        chbxYield->setFont(font1);
+        chbxYield->setFont(font);
         chbxYield->setLayoutDirection(Qt::LeftToRight);
         chbxYield->setChecked(true);
 
@@ -4401,18 +4366,18 @@ public:
 
         sbSVCropYieldObservations = new QSpinBox(gbxSVCrop);
         sbSVCropYieldObservations->setObjectName(QStringLiteral("sbSVCropYieldObservations"));
-        sizePolicy3.setHeightForWidth(sbSVCropYieldObservations->sizePolicy().hasHeightForWidth());
-        sbSVCropYieldObservations->setSizePolicy(sizePolicy3);
-        sbSVCropYieldObservations->setFont(font3);
+        sizePolicy2.setHeightForWidth(sbSVCropYieldObservations->sizePolicy().hasHeightForWidth());
+        sbSVCropYieldObservations->setSizePolicy(sizePolicy2);
+        sbSVCropYieldObservations->setFont(font2);
         sbSVCropYieldObservations->setValue(1);
 
         gridLayoutSVCropInputs->addWidget(sbSVCropYieldObservations, 2, 2, 1, 1);
 
         dsbSVCropYieldWeightPts = new QDoubleSpinBox(gbxSVCrop);
         dsbSVCropYieldWeightPts->setObjectName(QStringLiteral("dsbSVCropYieldWeightPts"));
-        sizePolicy3.setHeightForWidth(dsbSVCropYieldWeightPts->sizePolicy().hasHeightForWidth());
-        dsbSVCropYieldWeightPts->setSizePolicy(sizePolicy3);
-        dsbSVCropYieldWeightPts->setFont(font3);
+        sizePolicy2.setHeightForWidth(dsbSVCropYieldWeightPts->sizePolicy().hasHeightForWidth());
+        dsbSVCropYieldWeightPts->setSizePolicy(sizePolicy2);
+        dsbSVCropYieldWeightPts->setFont(font2);
         dsbSVCropYieldWeightPts->setDecimals(1);
         dsbSVCropYieldWeightPts->setMaximum(5);
         dsbSVCropYieldWeightPts->setSingleStep(0.5);
@@ -4483,8 +4448,8 @@ public:
 
         txbrSVCrop = new QTextBrowser(gbxSVCrop);
         txbrSVCrop->setObjectName(QStringLiteral("txbrSVCrop"));
-        sizePolicy7.setHeightForWidth(txbrSVCrop->sizePolicy().hasHeightForWidth());
-        txbrSVCrop->setSizePolicy(sizePolicy7);
+        sizePolicy6.setHeightForWidth(txbrSVCrop->sizePolicy().hasHeightForWidth());
+        txbrSVCrop->setSizePolicy(sizePolicy6);
 
         gridLayout_32->addWidget(txbrSVCrop, 2, 0, 2, 1);
 
@@ -4494,7 +4459,7 @@ public:
         toolBoxStateVars->addItem(pageCrop, QStringLiteral("Crop"));
         pageSoil = new QWidget();
         pageSoil->setObjectName(QStringLiteral("pageSoil"));
-        pageSoil->setGeometry(QRect(0, 0, 715, 506));
+        pageSoil->setGeometry(QRect(0, 0, 726, 506));
         gridLayout_12 = new QGridLayout(pageSoil);
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -4549,7 +4514,7 @@ public:
 
         lblSVSoilPressureHeadsPoints = new QLabel(gbxSVSoil);
         lblSVSoilPressureHeadsPoints->setObjectName(QStringLiteral("lblSVSoilPressureHeadsPoints"));
-        lblSVSoilPressureHeadsPoints->setFont(font9);
+        lblSVSoilPressureHeadsPoints->setFont(font8);
         lblSVSoilPressureHeadsPoints->setText(QStringLiteral("3"));
         lblSVSoilPressureHeadsPoints->setAlignment(Qt::AlignCenter);
 
@@ -4576,7 +4541,7 @@ public:
 
         lblSVSoilNMinPoints = new QLabel(gbxSVSoil);
         lblSVSoilNMinPoints->setObjectName(QStringLiteral("lblSVSoilNMinPoints"));
-        lblSVSoilNMinPoints->setFont(font9);
+        lblSVSoilNMinPoints->setFont(font8);
         lblSVSoilNMinPoints->setText(QStringLiteral("3.6"));
         lblSVSoilNMinPoints->setAlignment(Qt::AlignCenter);
 
@@ -4596,7 +4561,7 @@ public:
 
         lblSVSoilSoilWaterSensorCalPoints = new QLabel(gbxSVSoil);
         lblSVSoilSoilWaterSensorCalPoints->setObjectName(QStringLiteral("lblSVSoilSoilWaterSensorCalPoints"));
-        lblSVSoilSoilWaterSensorCalPoints->setFont(font9);
+        lblSVSoilSoilWaterSensorCalPoints->setFont(font8);
         lblSVSoilSoilWaterSensorCalPoints->setText(QStringLiteral("3.6"));
         lblSVSoilSoilWaterSensorCalPoints->setAlignment(Qt::AlignCenter);
 
@@ -4604,21 +4569,21 @@ public:
 
         lblSVSoilLayersHeader = new QLabel(gbxSVSoil);
         lblSVSoilLayersHeader->setObjectName(QStringLiteral("lblSVSoilLayersHeader"));
-        lblSVSoilLayersHeader->setFont(font1);
+        lblSVSoilLayersHeader->setFont(font);
         lblSVSoilLayersHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilLayersHeader, 0, 1, 1, 1);
 
         lblSVSoilObservationsHeader = new QLabel(gbxSVSoil);
         lblSVSoilObservationsHeader->setObjectName(QStringLiteral("lblSVSoilObservationsHeader"));
-        lblSVSoilObservationsHeader->setFont(font1);
+        lblSVSoilObservationsHeader->setFont(font);
         lblSVSoilObservationsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilObservationsHeader, 0, 2, 1, 1);
 
         lblSVSoilMinDataHeader = new QLabel(gbxSVSoil);
         lblSVSoilMinDataHeader->setObjectName(QStringLiteral("lblSVSoilMinDataHeader"));
-        lblSVSoilMinDataHeader->setFont(font1);
+        lblSVSoilMinDataHeader->setFont(font);
         lblSVSoilMinDataHeader->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilMinDataHeader, 0, 0, 1, 1);
@@ -4632,7 +4597,7 @@ public:
 
         lblSVSoilPointsHeader = new QLabel(gbxSVSoil);
         lblSVSoilPointsHeader->setObjectName(QStringLiteral("lblSVSoilPointsHeader"));
-        lblSVSoilPointsHeader->setFont(font1);
+        lblSVSoilPointsHeader->setFont(font);
         lblSVSoilPointsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilPointsHeader, 0, 5, 1, 1);
@@ -4652,7 +4617,7 @@ public:
 
         lblSVSoilSoilWaterGravPoints = new QLabel(gbxSVSoil);
         lblSVSoilSoilWaterGravPoints->setObjectName(QStringLiteral("lblSVSoilSoilWaterGravPoints"));
-        lblSVSoilSoilWaterGravPoints->setFont(font9);
+        lblSVSoilSoilWaterGravPoints->setFont(font8);
         lblSVSoilSoilWaterGravPoints->setText(QStringLiteral("3.6"));
         lblSVSoilSoilWaterGravPoints->setAlignment(Qt::AlignCenter);
 
@@ -4660,14 +4625,14 @@ public:
 
         lblSVSoilWeightPtsHeader = new QLabel(gbxSVSoil);
         lblSVSoilWeightPtsHeader->setObjectName(QStringLiteral("lblSVSoilWeightPtsHeader"));
-        lblSVSoilWeightPtsHeader->setFont(font1);
+        lblSVSoilWeightPtsHeader->setFont(font);
         lblSVSoilWeightPtsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilWeightPtsHeader, 0, 3, 1, 1);
 
         lblSVSoilReplicatesHeader = new QLabel(gbxSVSoil);
         lblSVSoilReplicatesHeader->setObjectName(QStringLiteral("lblSVSoilReplicatesHeader"));
-        lblSVSoilReplicatesHeader->setFont(font1);
+        lblSVSoilReplicatesHeader->setFont(font);
         lblSVSoilReplicatesHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblSVSoilReplicatesHeader, 0, 4, 1, 1);
@@ -4680,7 +4645,7 @@ public:
 
         lblSVSoilWaterFluxBottomRootPoints = new QLabel(gbxSVSoil);
         lblSVSoilWaterFluxBottomRootPoints->setObjectName(QStringLiteral("lblSVSoilWaterFluxBottomRootPoints"));
-        lblSVSoilWaterFluxBottomRootPoints->setFont(font9);
+        lblSVSoilWaterFluxBottomRootPoints->setFont(font8);
         lblSVSoilWaterFluxBottomRootPoints->setText(QStringLiteral("0"));
         lblSVSoilWaterFluxBottomRootPoints->setAlignment(Qt::AlignCenter);
 
@@ -4706,7 +4671,7 @@ public:
 
         lblSVSoilNFluxBottomRootPoints = new QLabel(gbxSVSoil);
         lblSVSoilNFluxBottomRootPoints->setObjectName(QStringLiteral("lblSVSoilNFluxBottomRootPoints"));
-        lblSVSoilNFluxBottomRootPoints->setFont(font9);
+        lblSVSoilNFluxBottomRootPoints->setFont(font8);
         lblSVSoilNFluxBottomRootPoints->setText(QStringLiteral("0"));
         lblSVSoilNFluxBottomRootPoints->setAlignment(Qt::AlignCenter);
 
@@ -4714,13 +4679,13 @@ public:
 
         lblCombinedSVSoil = new QLabel(gbxSVSoil);
         lblCombinedSVSoil->setObjectName(QStringLiteral("lblCombinedSVSoil"));
-        lblCombinedSVSoil->setFont(font9);
+        lblCombinedSVSoil->setFont(font8);
 
         gridLayoutSVSoilInputs->addWidget(lblCombinedSVSoil, 7, 4, 1, 1);
 
         lblOverallRatingSVSoil = new QLabel(gbxSVSoil);
         lblOverallRatingSVSoil->setObjectName(QStringLiteral("lblOverallRatingSVSoil"));
-        lblOverallRatingSVSoil->setFont(font9);
+        lblOverallRatingSVSoil->setFont(font8);
         lblOverallRatingSVSoil->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSoilInputs->addWidget(lblOverallRatingSVSoil, 7, 5, 1, 1);
@@ -4803,8 +4768,8 @@ public:
 
         txbrSVSoil = new QTextBrowser(gbxSVSoil);
         txbrSVSoil->setObjectName(QStringLiteral("txbrSVSoil"));
-        sizePolicy7.setHeightForWidth(txbrSVSoil->sizePolicy().hasHeightForWidth());
-        txbrSVSoil->setSizePolicy(sizePolicy7);
+        sizePolicy6.setHeightForWidth(txbrSVSoil->sizePolicy().hasHeightForWidth());
+        txbrSVSoil->setSizePolicy(sizePolicy6);
 
         gridLayout_33->addWidget(txbrSVSoil, 1, 0, 2, 1);
 
@@ -4845,7 +4810,7 @@ public:
         gridLayoutSVSoilRankLvls->setObjectName(QStringLiteral("gridLayoutSVSoilRankLvls"));
         lblWeatherPlatinumMinSVSoil = new QLabel(gbxSVSoil);
         lblWeatherPlatinumMinSVSoil->setObjectName(QStringLiteral("lblWeatherPlatinumMinSVSoil"));
-        lblWeatherPlatinumMinSVSoil->setFont(font2);
+        lblWeatherPlatinumMinSVSoil->setFont(font1);
         lblWeatherPlatinumMinSVSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherPlatinumMinSVSoil->setMargin(0);
         lblWeatherPlatinumMinSVSoil->setIndent(0);
@@ -4855,7 +4820,7 @@ public:
         lblWeatherPlatinumMinValSVSoil = new QLabel(gbxSVSoil);
         lblWeatherPlatinumMinValSVSoil->setObjectName(QStringLiteral("lblWeatherPlatinumMinValSVSoil"));
         lblWeatherPlatinumMinValSVSoil->setMinimumSize(QSize(25, 0));
-        lblWeatherPlatinumMinValSVSoil->setFont(font2);
+        lblWeatherPlatinumMinValSVSoil->setFont(font1);
         lblWeatherPlatinumMinValSVSoil->setAlignment(Qt::AlignCenter);
         lblWeatherPlatinumMinValSVSoil->setMargin(-1);
         lblWeatherPlatinumMinValSVSoil->setIndent(1);
@@ -4865,7 +4830,7 @@ public:
         lblWeatherGoldMinValSVSoil = new QLabel(gbxSVSoil);
         lblWeatherGoldMinValSVSoil->setObjectName(QStringLiteral("lblWeatherGoldMinValSVSoil"));
         lblWeatherGoldMinValSVSoil->setMinimumSize(QSize(25, 0));
-        lblWeatherGoldMinValSVSoil->setFont(font2);
+        lblWeatherGoldMinValSVSoil->setFont(font1);
         lblWeatherGoldMinValSVSoil->setAlignment(Qt::AlignCenter);
         lblWeatherGoldMinValSVSoil->setMargin(-1);
         lblWeatherGoldMinValSVSoil->setIndent(1);
@@ -4874,7 +4839,7 @@ public:
 
         lblWeatherGoldMinSVSoil = new QLabel(gbxSVSoil);
         lblWeatherGoldMinSVSoil->setObjectName(QStringLiteral("lblWeatherGoldMinSVSoil"));
-        lblWeatherGoldMinSVSoil->setFont(font2);
+        lblWeatherGoldMinSVSoil->setFont(font1);
         lblWeatherGoldMinSVSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherGoldMinSVSoil->setMargin(0);
         lblWeatherGoldMinSVSoil->setIndent(0);
@@ -4883,7 +4848,7 @@ public:
 
         lblWeatherSilverMinSVSoil = new QLabel(gbxSVSoil);
         lblWeatherSilverMinSVSoil->setObjectName(QStringLiteral("lblWeatherSilverMinSVSoil"));
-        lblWeatherSilverMinSVSoil->setFont(font2);
+        lblWeatherSilverMinSVSoil->setFont(font1);
         lblWeatherSilverMinSVSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherSilverMinSVSoil->setMargin(0);
         lblWeatherSilverMinSVSoil->setIndent(0);
@@ -4892,7 +4857,7 @@ public:
 
         lblWeatherBronzeMinSVSoil = new QLabel(gbxSVSoil);
         lblWeatherBronzeMinSVSoil->setObjectName(QStringLiteral("lblWeatherBronzeMinSVSoil"));
-        lblWeatherBronzeMinSVSoil->setFont(font2);
+        lblWeatherBronzeMinSVSoil->setFont(font1);
         lblWeatherBronzeMinSVSoil->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherBronzeMinSVSoil->setMargin(0);
         lblWeatherBronzeMinSVSoil->setIndent(0);
@@ -4902,7 +4867,7 @@ public:
         lblWeatherSilverMinValSVSoil = new QLabel(gbxSVSoil);
         lblWeatherSilverMinValSVSoil->setObjectName(QStringLiteral("lblWeatherSilverMinValSVSoil"));
         lblWeatherSilverMinValSVSoil->setMinimumSize(QSize(25, 0));
-        lblWeatherSilverMinValSVSoil->setFont(font2);
+        lblWeatherSilverMinValSVSoil->setFont(font1);
         lblWeatherSilverMinValSVSoil->setAlignment(Qt::AlignCenter);
         lblWeatherSilverMinValSVSoil->setMargin(-1);
         lblWeatherSilverMinValSVSoil->setIndent(1);
@@ -4912,7 +4877,7 @@ public:
         lblWeatherBronzeMinValSVSoil = new QLabel(gbxSVSoil);
         lblWeatherBronzeMinValSVSoil->setObjectName(QStringLiteral("lblWeatherBronzeMinValSVSoil"));
         lblWeatherBronzeMinValSVSoil->setMinimumSize(QSize(25, 0));
-        lblWeatherBronzeMinValSVSoil->setFont(font2);
+        lblWeatherBronzeMinValSVSoil->setFont(font1);
         lblWeatherBronzeMinValSVSoil->setAlignment(Qt::AlignCenter);
         lblWeatherBronzeMinValSVSoil->setMargin(-1);
         lblWeatherBronzeMinValSVSoil->setIndent(1);
@@ -4932,7 +4897,7 @@ public:
         toolBoxStateVars->addItem(pageSoil, QStringLiteral("Soil"));
         surfaceFluxesPage = new QWidget();
         surfaceFluxesPage->setObjectName(QStringLiteral("surfaceFluxesPage"));
-        surfaceFluxesPage->setGeometry(QRect(0, 0, 715, 506));
+        surfaceFluxesPage->setGeometry(QRect(0, 0, 522, 379));
         gridLayout_15 = new QGridLayout(surfaceFluxesPage);
         gridLayout_15->setSpacing(6);
         gridLayout_15->setContentsMargins(11, 11, 11, 11);
@@ -4968,7 +4933,7 @@ public:
 
         lblSVSurfaceFluxesNh3LossPoints = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesNh3LossPoints->setObjectName(QStringLiteral("lblSVSurfaceFluxesNh3LossPoints"));
-        lblSVSurfaceFluxesNh3LossPoints->setFont(font9);
+        lblSVSurfaceFluxesNh3LossPoints->setFont(font8);
         lblSVSurfaceFluxesNh3LossPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesNh3LossPoints, 2, 5, 1, 1);
@@ -4999,21 +4964,21 @@ public:
 
         lblSVSurfaceFluxesN2LossPoints = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesN2LossPoints->setObjectName(QStringLiteral("lblSVSurfaceFluxesN2LossPoints"));
-        lblSVSurfaceFluxesN2LossPoints->setFont(font9);
+        lblSVSurfaceFluxesN2LossPoints->setFont(font8);
         lblSVSurfaceFluxesN2LossPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesN2LossPoints, 4, 5, 1, 1);
 
         lblSVSurfaceFluxesPointsHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesPointsHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesPointsHeader"));
-        lblSVSurfaceFluxesPointsHeader->setFont(font1);
+        lblSVSurfaceFluxesPointsHeader->setFont(font);
         lblSVSurfaceFluxesPointsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesPointsHeader, 0, 5, 1, 1);
 
         lblSVSurfaceFluxesLayersHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesLayersHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesLayersHeader"));
-        lblSVSurfaceFluxesLayersHeader->setFont(font1);
+        lblSVSurfaceFluxesLayersHeader->setFont(font);
         lblSVSurfaceFluxesLayersHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesLayersHeader, 0, 1, 1, 1);
@@ -5026,7 +4991,7 @@ public:
 
         lblSVSurfaceFluxesWeightPtsHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesWeightPtsHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesWeightPtsHeader"));
-        lblSVSurfaceFluxesWeightPtsHeader->setFont(font1);
+        lblSVSurfaceFluxesWeightPtsHeader->setFont(font);
         lblSVSurfaceFluxesWeightPtsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesWeightPtsHeader, 0, 3, 1, 1);
@@ -5039,7 +5004,7 @@ public:
 
         lblSVSurfaceFluxesObservationsHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesObservationsHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesObservationsHeader"));
-        lblSVSurfaceFluxesObservationsHeader->setFont(font1);
+        lblSVSurfaceFluxesObservationsHeader->setFont(font);
         lblSVSurfaceFluxesObservationsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesObservationsHeader, 0, 2, 1, 1);
@@ -5052,14 +5017,14 @@ public:
 
         lblSVSurfaceFluxesReplicatesHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesReplicatesHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesReplicatesHeader"));
-        lblSVSurfaceFluxesReplicatesHeader->setFont(font1);
+        lblSVSurfaceFluxesReplicatesHeader->setFont(font);
         lblSVSurfaceFluxesReplicatesHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesReplicatesHeader, 0, 4, 1, 1);
 
         lblSVSurfaceFluxesEtPoints = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesEtPoints->setObjectName(QStringLiteral("lblSVSurfaceFluxesEtPoints"));
-        lblSVSurfaceFluxesEtPoints->setFont(font9);
+        lblSVSurfaceFluxesEtPoints->setFont(font8);
         lblSVSurfaceFluxesEtPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesEtPoints, 1, 5, 1, 1);
@@ -5078,7 +5043,7 @@ public:
 
         lblSVSurfaceFluxesMinDataHeader = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesMinDataHeader->setObjectName(QStringLiteral("lblSVSurfaceFluxesMinDataHeader"));
-        lblSVSurfaceFluxesMinDataHeader->setFont(font1);
+        lblSVSurfaceFluxesMinDataHeader->setFont(font);
         lblSVSurfaceFluxesMinDataHeader->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesMinDataHeader, 0, 0, 1, 1);
@@ -5091,7 +5056,7 @@ public:
 
         lblSVSurfaceFluxesN2OLossPoints = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesN2OLossPoints->setObjectName(QStringLiteral("lblSVSurfaceFluxesN2OLossPoints"));
-        lblSVSurfaceFluxesN2OLossPoints->setFont(font9);
+        lblSVSurfaceFluxesN2OLossPoints->setFont(font8);
         lblSVSurfaceFluxesN2OLossPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesN2OLossPoints, 3, 5, 1, 1);
@@ -5110,21 +5075,21 @@ public:
 
         lblSVSurfaceFluxesCh4LossPoints = new QLabel(gbxSVSurfaceFluxes);
         lblSVSurfaceFluxesCh4LossPoints->setObjectName(QStringLiteral("lblSVSurfaceFluxesCh4LossPoints"));
-        lblSVSurfaceFluxesCh4LossPoints->setFont(font9);
+        lblSVSurfaceFluxesCh4LossPoints->setFont(font8);
         lblSVSurfaceFluxesCh4LossPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblSVSurfaceFluxesCh4LossPoints, 5, 5, 1, 1);
 
         lblCombinedSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblCombinedSVSurfaceFluxes->setObjectName(QStringLiteral("lblCombinedSVSurfaceFluxes"));
-        lblCombinedSVSurfaceFluxes->setFont(font9);
+        lblCombinedSVSurfaceFluxes->setFont(font8);
         lblCombinedSVSurfaceFluxes->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblCombinedSVSurfaceFluxes, 6, 4, 1, 1);
 
         lblOverallRatingSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblOverallRatingSVSurfaceFluxes->setObjectName(QStringLiteral("lblOverallRatingSVSurfaceFluxes"));
-        lblOverallRatingSVSurfaceFluxes->setFont(font9);
+        lblOverallRatingSVSurfaceFluxes->setFont(font8);
         lblOverallRatingSVSurfaceFluxes->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVSurfaceFluxesInputs->addWidget(lblOverallRatingSVSurfaceFluxes, 6, 5, 1, 1);
@@ -5194,8 +5159,8 @@ public:
 
         textBrowser_9 = new QTextBrowser(gbxSVSurfaceFluxes);
         textBrowser_9->setObjectName(QStringLiteral("textBrowser_9"));
-        sizePolicy7.setHeightForWidth(textBrowser_9->sizePolicy().hasHeightForWidth());
-        textBrowser_9->setSizePolicy(sizePolicy7);
+        sizePolicy6.setHeightForWidth(textBrowser_9->sizePolicy().hasHeightForWidth());
+        textBrowser_9->setSizePolicy(sizePolicy6);
 
         gridLayout_34->addWidget(textBrowser_9, 1, 0, 2, 1);
 
@@ -5237,7 +5202,7 @@ public:
         gridLayoutSVSurfaceFluxesRankLvls->setVerticalSpacing(0);
         lblWeatherPlatinumMinSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherPlatinumMinSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherPlatinumMinSVSurfaceFluxes"));
-        lblWeatherPlatinumMinSVSurfaceFluxes->setFont(font2);
+        lblWeatherPlatinumMinSVSurfaceFluxes->setFont(font1);
         lblWeatherPlatinumMinSVSurfaceFluxes->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         lblWeatherPlatinumMinSVSurfaceFluxes->setMargin(0);
         lblWeatherPlatinumMinSVSurfaceFluxes->setIndent(0);
@@ -5247,7 +5212,7 @@ public:
         lblWeatherPlatinumMinValSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherPlatinumMinValSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherPlatinumMinValSVSurfaceFluxes"));
         lblWeatherPlatinumMinValSVSurfaceFluxes->setMinimumSize(QSize(25, 0));
-        lblWeatherPlatinumMinValSVSurfaceFluxes->setFont(font2);
+        lblWeatherPlatinumMinValSVSurfaceFluxes->setFont(font1);
         lblWeatherPlatinumMinValSVSurfaceFluxes->setAlignment(Qt::AlignCenter);
         lblWeatherPlatinumMinValSVSurfaceFluxes->setMargin(-1);
         lblWeatherPlatinumMinValSVSurfaceFluxes->setIndent(1);
@@ -5257,7 +5222,7 @@ public:
         lblWeatherGoldMinValSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherGoldMinValSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherGoldMinValSVSurfaceFluxes"));
         lblWeatherGoldMinValSVSurfaceFluxes->setMinimumSize(QSize(25, 0));
-        lblWeatherGoldMinValSVSurfaceFluxes->setFont(font2);
+        lblWeatherGoldMinValSVSurfaceFluxes->setFont(font1);
         lblWeatherGoldMinValSVSurfaceFluxes->setAlignment(Qt::AlignCenter);
         lblWeatherGoldMinValSVSurfaceFluxes->setMargin(-1);
         lblWeatherGoldMinValSVSurfaceFluxes->setIndent(1);
@@ -5266,7 +5231,7 @@ public:
 
         lblWeatherGoldMinSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherGoldMinSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherGoldMinSVSurfaceFluxes"));
-        lblWeatherGoldMinSVSurfaceFluxes->setFont(font2);
+        lblWeatherGoldMinSVSurfaceFluxes->setFont(font1);
         lblWeatherGoldMinSVSurfaceFluxes->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         lblWeatherGoldMinSVSurfaceFluxes->setMargin(0);
         lblWeatherGoldMinSVSurfaceFluxes->setIndent(0);
@@ -5275,7 +5240,7 @@ public:
 
         lblWeatherSilverMinSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherSilverMinSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherSilverMinSVSurfaceFluxes"));
-        lblWeatherSilverMinSVSurfaceFluxes->setFont(font2);
+        lblWeatherSilverMinSVSurfaceFluxes->setFont(font1);
         lblWeatherSilverMinSVSurfaceFluxes->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         lblWeatherSilverMinSVSurfaceFluxes->setMargin(0);
         lblWeatherSilverMinSVSurfaceFluxes->setIndent(0);
@@ -5284,7 +5249,7 @@ public:
 
         lblWeatherBronzeMinSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherBronzeMinSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherBronzeMinSVSurfaceFluxes"));
-        lblWeatherBronzeMinSVSurfaceFluxes->setFont(font2);
+        lblWeatherBronzeMinSVSurfaceFluxes->setFont(font1);
         lblWeatherBronzeMinSVSurfaceFluxes->setAlignment(Qt::AlignBottom|Qt::AlignHCenter);
         lblWeatherBronzeMinSVSurfaceFluxes->setMargin(0);
         lblWeatherBronzeMinSVSurfaceFluxes->setIndent(0);
@@ -5294,7 +5259,7 @@ public:
         lblWeatherSilverMinValSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherSilverMinValSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherSilverMinValSVSurfaceFluxes"));
         lblWeatherSilverMinValSVSurfaceFluxes->setMinimumSize(QSize(25, 0));
-        lblWeatherSilverMinValSVSurfaceFluxes->setFont(font2);
+        lblWeatherSilverMinValSVSurfaceFluxes->setFont(font1);
         lblWeatherSilverMinValSVSurfaceFluxes->setAlignment(Qt::AlignCenter);
         lblWeatherSilverMinValSVSurfaceFluxes->setMargin(-1);
         lblWeatherSilverMinValSVSurfaceFluxes->setIndent(1);
@@ -5304,7 +5269,7 @@ public:
         lblWeatherBronzeMinValSVSurfaceFluxes = new QLabel(gbxSVSurfaceFluxes);
         lblWeatherBronzeMinValSVSurfaceFluxes->setObjectName(QStringLiteral("lblWeatherBronzeMinValSVSurfaceFluxes"));
         lblWeatherBronzeMinValSVSurfaceFluxes->setMinimumSize(QSize(25, 0));
-        lblWeatherBronzeMinValSVSurfaceFluxes->setFont(font2);
+        lblWeatherBronzeMinValSVSurfaceFluxes->setFont(font1);
         lblWeatherBronzeMinValSVSurfaceFluxes->setAlignment(Qt::AlignCenter);
         lblWeatherBronzeMinValSVSurfaceFluxes->setMargin(-1);
         lblWeatherBronzeMinValSVSurfaceFluxes->setIndent(1);
@@ -5324,7 +5289,7 @@ public:
         toolBoxStateVars->addItem(surfaceFluxesPage, QStringLiteral("Surface Fluxes"));
         pageObservations = new QWidget();
         pageObservations->setObjectName(QStringLiteral("pageObservations"));
-        pageObservations->setGeometry(QRect(0, 0, 715, 506));
+        pageObservations->setGeometry(QRect(0, 0, 500, 317));
         gridLayout_16 = new QGridLayout(pageObservations);
         gridLayout_16->setSpacing(6);
         gridLayout_16->setContentsMargins(11, 11, 11, 11);
@@ -5342,7 +5307,7 @@ public:
         gridLayoutSVObservationsInputs->setObjectName(QStringLiteral("gridLayoutSVObservationsInputs"));
         lblSVObservationsPestsOrDiseasesPoints = new QLabel(gbxSVObservations);
         lblSVObservationsPestsOrDiseasesPoints->setObjectName(QStringLiteral("lblSVObservationsPestsOrDiseasesPoints"));
-        lblSVObservationsPestsOrDiseasesPoints->setFont(font9);
+        lblSVObservationsPestsOrDiseasesPoints->setFont(font8);
         lblSVObservationsPestsOrDiseasesPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsPestsOrDiseasesPoints, 2, 5, 1, 1);
@@ -5361,14 +5326,14 @@ public:
 
         lblSVObservationsLodgingPoints = new QLabel(gbxSVObservations);
         lblSVObservationsLodgingPoints->setObjectName(QStringLiteral("lblSVObservationsLodgingPoints"));
-        lblSVObservationsLodgingPoints->setFont(font9);
+        lblSVObservationsLodgingPoints->setFont(font8);
         lblSVObservationsLodgingPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsLodgingPoints, 1, 5, 1, 1);
 
         lblSVObservationsObservationsHeader = new QLabel(gbxSVObservations);
         lblSVObservationsObservationsHeader->setObjectName(QStringLiteral("lblSVObservationsObservationsHeader"));
-        lblSVObservationsObservationsHeader->setFont(font1);
+        lblSVObservationsObservationsHeader->setFont(font);
         lblSVObservationsObservationsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsObservationsHeader, 0, 2, 1, 1);
@@ -5399,28 +5364,28 @@ public:
 
         lblSVObservationsDamagesPoints = new QLabel(gbxSVObservations);
         lblSVObservationsDamagesPoints->setObjectName(QStringLiteral("lblSVObservationsDamagesPoints"));
-        lblSVObservationsDamagesPoints->setFont(font9);
+        lblSVObservationsDamagesPoints->setFont(font8);
         lblSVObservationsDamagesPoints->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsDamagesPoints, 3, 5, 1, 1);
 
         lblSVObservationsMinDataHeader = new QLabel(gbxSVObservations);
         lblSVObservationsMinDataHeader->setObjectName(QStringLiteral("lblSVObservationsMinDataHeader"));
-        lblSVObservationsMinDataHeader->setFont(font1);
+        lblSVObservationsMinDataHeader->setFont(font);
         lblSVObservationsMinDataHeader->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsMinDataHeader, 0, 0, 1, 1);
 
         lblSVObservationsWeightPtsHeader = new QLabel(gbxSVObservations);
         lblSVObservationsWeightPtsHeader->setObjectName(QStringLiteral("lblSVObservationsWeightPtsHeader"));
-        lblSVObservationsWeightPtsHeader->setFont(font1);
+        lblSVObservationsWeightPtsHeader->setFont(font);
         lblSVObservationsWeightPtsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsWeightPtsHeader, 0, 3, 1, 1);
 
         lblSVObservationsLayersHeader = new QLabel(gbxSVObservations);
         lblSVObservationsLayersHeader->setObjectName(QStringLiteral("lblSVObservationsLayersHeader"));
-        lblSVObservationsLayersHeader->setFont(font1);
+        lblSVObservationsLayersHeader->setFont(font);
         lblSVObservationsLayersHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsLayersHeader, 0, 1, 1, 1);
@@ -5439,7 +5404,7 @@ public:
 
         lblSVObservationsPointsHeader = new QLabel(gbxSVObservations);
         lblSVObservationsPointsHeader->setObjectName(QStringLiteral("lblSVObservationsPointsHeader"));
-        lblSVObservationsPointsHeader->setFont(font1);
+        lblSVObservationsPointsHeader->setFont(font);
         lblSVObservationsPointsHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsPointsHeader, 0, 5, 1, 1);
@@ -5452,21 +5417,21 @@ public:
 
         lblSVObservationsReplicatesHeader = new QLabel(gbxSVObservations);
         lblSVObservationsReplicatesHeader->setObjectName(QStringLiteral("lblSVObservationsReplicatesHeader"));
-        lblSVObservationsReplicatesHeader->setFont(font1);
+        lblSVObservationsReplicatesHeader->setFont(font);
         lblSVObservationsReplicatesHeader->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblSVObservationsReplicatesHeader, 0, 4, 1, 1);
 
         lblCombinedSVObservations = new QLabel(gbxSVObservations);
         lblCombinedSVObservations->setObjectName(QStringLiteral("lblCombinedSVObservations"));
-        lblCombinedSVObservations->setFont(font9);
+        lblCombinedSVObservations->setFont(font8);
         lblCombinedSVObservations->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblCombinedSVObservations, 4, 4, 1, 1);
 
         lblOverallRatingSVObservations = new QLabel(gbxSVObservations);
         lblOverallRatingSVObservations->setObjectName(QStringLiteral("lblOverallRatingSVObservations"));
-        lblOverallRatingSVObservations->setFont(font9);
+        lblOverallRatingSVObservations->setFont(font8);
         lblOverallRatingSVObservations->setAlignment(Qt::AlignCenter);
 
         gridLayoutSVObservationsInputs->addWidget(lblOverallRatingSVObservations, 4, 5, 1, 1);
@@ -5512,8 +5477,8 @@ public:
 
         txbrSVObservations = new QTextBrowser(gbxSVObservations);
         txbrSVObservations->setObjectName(QStringLiteral("txbrSVObservations"));
-        sizePolicy7.setHeightForWidth(txbrSVObservations->sizePolicy().hasHeightForWidth());
-        txbrSVObservations->setSizePolicy(sizePolicy7);
+        sizePolicy6.setHeightForWidth(txbrSVObservations->sizePolicy().hasHeightForWidth());
+        txbrSVObservations->setSizePolicy(sizePolicy6);
 
         gridLayout_35->addWidget(txbrSVObservations, 1, 0, 2, 1);
 
@@ -5554,7 +5519,7 @@ public:
         gridLayoutSVObservationsRankLvls->setObjectName(QStringLiteral("gridLayoutSVObservationsRankLvls"));
         lblWeatherPlatinumMinSVObservations = new QLabel(gbxSVObservations);
         lblWeatherPlatinumMinSVObservations->setObjectName(QStringLiteral("lblWeatherPlatinumMinSVObservations"));
-        lblWeatherPlatinumMinSVObservations->setFont(font2);
+        lblWeatherPlatinumMinSVObservations->setFont(font1);
         lblWeatherPlatinumMinSVObservations->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherPlatinumMinSVObservations->setMargin(-1);
         lblWeatherPlatinumMinSVObservations->setIndent(0);
@@ -5564,7 +5529,7 @@ public:
         lblWeatherPlatinumMinValSVObservations = new QLabel(gbxSVObservations);
         lblWeatherPlatinumMinValSVObservations->setObjectName(QStringLiteral("lblWeatherPlatinumMinValSVObservations"));
         lblWeatherPlatinumMinValSVObservations->setMinimumSize(QSize(25, 0));
-        lblWeatherPlatinumMinValSVObservations->setFont(font2);
+        lblWeatherPlatinumMinValSVObservations->setFont(font1);
         lblWeatherPlatinumMinValSVObservations->setAlignment(Qt::AlignCenter);
         lblWeatherPlatinumMinValSVObservations->setMargin(-1);
         lblWeatherPlatinumMinValSVObservations->setIndent(1);
@@ -5574,7 +5539,7 @@ public:
         lblWeatherGoldMinValSVObservations = new QLabel(gbxSVObservations);
         lblWeatherGoldMinValSVObservations->setObjectName(QStringLiteral("lblWeatherGoldMinValSVObservations"));
         lblWeatherGoldMinValSVObservations->setMinimumSize(QSize(25, 0));
-        lblWeatherGoldMinValSVObservations->setFont(font2);
+        lblWeatherGoldMinValSVObservations->setFont(font1);
         lblWeatherGoldMinValSVObservations->setAlignment(Qt::AlignCenter);
         lblWeatherGoldMinValSVObservations->setMargin(-1);
         lblWeatherGoldMinValSVObservations->setIndent(1);
@@ -5583,7 +5548,7 @@ public:
 
         lblWeatherGoldMinSVObservations = new QLabel(gbxSVObservations);
         lblWeatherGoldMinSVObservations->setObjectName(QStringLiteral("lblWeatherGoldMinSVObservations"));
-        lblWeatherGoldMinSVObservations->setFont(font2);
+        lblWeatherGoldMinSVObservations->setFont(font1);
         lblWeatherGoldMinSVObservations->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherGoldMinSVObservations->setMargin(-2);
         lblWeatherGoldMinSVObservations->setIndent(0);
@@ -5592,7 +5557,7 @@ public:
 
         lblWeatherSilverMinSVObservations = new QLabel(gbxSVObservations);
         lblWeatherSilverMinSVObservations->setObjectName(QStringLiteral("lblWeatherSilverMinSVObservations"));
-        lblWeatherSilverMinSVObservations->setFont(font2);
+        lblWeatherSilverMinSVObservations->setFont(font1);
         lblWeatherSilverMinSVObservations->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherSilverMinSVObservations->setMargin(-2);
         lblWeatherSilverMinSVObservations->setIndent(0);
@@ -5601,7 +5566,7 @@ public:
 
         lblWeatherBronzeMinSVObservations = new QLabel(gbxSVObservations);
         lblWeatherBronzeMinSVObservations->setObjectName(QStringLiteral("lblWeatherBronzeMinSVObservations"));
-        lblWeatherBronzeMinSVObservations->setFont(font2);
+        lblWeatherBronzeMinSVObservations->setFont(font1);
         lblWeatherBronzeMinSVObservations->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         lblWeatherBronzeMinSVObservations->setMargin(-2);
         lblWeatherBronzeMinSVObservations->setIndent(0);
@@ -5611,7 +5576,7 @@ public:
         lblWeatherSilverMinValSVObservations = new QLabel(gbxSVObservations);
         lblWeatherSilverMinValSVObservations->setObjectName(QStringLiteral("lblWeatherSilverMinValSVObservations"));
         lblWeatherSilverMinValSVObservations->setMinimumSize(QSize(25, 0));
-        lblWeatherSilverMinValSVObservations->setFont(font2);
+        lblWeatherSilverMinValSVObservations->setFont(font1);
         lblWeatherSilverMinValSVObservations->setAlignment(Qt::AlignCenter);
         lblWeatherSilverMinValSVObservations->setMargin(-1);
         lblWeatherSilverMinValSVObservations->setIndent(1);
@@ -5621,7 +5586,7 @@ public:
         lblWeatherBronzeMinValSVObservations = new QLabel(gbxSVObservations);
         lblWeatherBronzeMinValSVObservations->setObjectName(QStringLiteral("lblWeatherBronzeMinValSVObservations"));
         lblWeatherBronzeMinValSVObservations->setMinimumSize(QSize(25, 0));
-        lblWeatherBronzeMinValSVObservations->setFont(font2);
+        lblWeatherBronzeMinValSVObservations->setFont(font1);
         lblWeatherBronzeMinValSVObservations->setAlignment(Qt::AlignCenter);
         lblWeatherBronzeMinValSVObservations->setMargin(-1);
         lblWeatherBronzeMinValSVObservations->setIndent(1);
@@ -5651,7 +5616,7 @@ public:
         gridLayout_38->setObjectName(QStringLiteral("gridLayout_38"));
         gbxSeasonsTreatments = new QGroupBox(tabSeasons);
         gbxSeasonsTreatments->setObjectName(QStringLiteral("gbxSeasonsTreatments"));
-        gbxSeasonsTreatments->setFont(font2);
+        gbxSeasonsTreatments->setFont(font1);
         gbxSeasonsTreatments->setCheckable(false);
         gbxSeasonsTreatments->setChecked(false);
         gridLayout_36 = new QGridLayout(gbxSeasonsTreatments);
@@ -5660,8 +5625,8 @@ public:
         gridLayout_36->setObjectName(QStringLiteral("gridLayout_36"));
         chbxSeasonsTreatment5 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment5->setObjectName(QStringLiteral("chbxSeasonsTreatment5"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment5->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment5->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment5->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment5->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment5->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment5->setTristate(false);
 
@@ -5669,8 +5634,8 @@ public:
 
         chbxSeasonsTreatment6 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment6->setObjectName(QStringLiteral("chbxSeasonsTreatment6"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment6->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment6->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment6->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment6->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment6->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment6->setTristate(false);
 
@@ -5678,8 +5643,8 @@ public:
 
         chbxSeasonsTreatment3 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment3->setObjectName(QStringLiteral("chbxSeasonsTreatment3"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment3->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment3->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment3->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment3->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment3->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment3->setChecked(false);
         chbxSeasonsTreatment3->setTristate(false);
@@ -5708,8 +5673,8 @@ public:
 
         sbSeasonsTreatment1Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment1Number->setObjectName(QStringLiteral("sbSeasonsTreatment1Number"));
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment1Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment1Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment1Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment1Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment1Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment1Number->setValue(2);
 
@@ -5717,8 +5682,8 @@ public:
 
         sbSeasonsTreatment2Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment2Number->setObjectName(QStringLiteral("sbSeasonsTreatment2Number"));
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment2Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment2Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment2Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment2Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment2Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment2Number->setValue(0);
 
@@ -5726,8 +5691,8 @@ public:
 
         chbxSeasonsTreatment2 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment2->setObjectName(QStringLiteral("chbxSeasonsTreatment2"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment2->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment2->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment2->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment2->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment2->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment2->setChecked(false);
         chbxSeasonsTreatment2->setTristate(false);
@@ -5736,8 +5701,8 @@ public:
 
         sbSeasonsTreatment3Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment3Number->setObjectName(QStringLiteral("sbSeasonsTreatment3Number"));
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment3Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment3Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment3Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment3Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment3Number->setMaximumSize(QSize(50, 16777215));
         sbSeasonsTreatment3Number->setValue(0);
 
@@ -5745,19 +5710,19 @@ public:
 
         ledSeasonsTreatment1 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment1->setObjectName(QStringLiteral("ledSeasonsTreatment1"));
-        QSizePolicy sizePolicy10(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy10.setHorizontalStretch(2);
-        sizePolicy10.setVerticalStretch(0);
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment1->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment1->setSizePolicy(sizePolicy10);
+        QSizePolicy sizePolicy9(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy9.setHorizontalStretch(2);
+        sizePolicy9.setVerticalStretch(0);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment1->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment1->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment1, 2, 3, 1, 2);
 
         sbSeasonsTreatment4Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment4Number->setObjectName(QStringLiteral("sbSeasonsTreatment4Number"));
         sbSeasonsTreatment4Number->setEnabled(true);
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment4Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment4Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment4Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment4Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment4Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment4Number, 5, 5, 1, 1);
@@ -5799,36 +5764,36 @@ public:
 
         ledSeasonsTreatment3 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment3->setObjectName(QStringLiteral("ledSeasonsTreatment3"));
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment3->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment3->setSizePolicy(sizePolicy10);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment3->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment3->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment3, 4, 3, 1, 2);
 
         ledSeasonsTreatment4 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment4->setObjectName(QStringLiteral("ledSeasonsTreatment4"));
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment4->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment4->setSizePolicy(sizePolicy10);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment4->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment4->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment4, 5, 3, 1, 2);
 
         lblTreatment2RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment2RatingSeasons->setObjectName(QStringLiteral("lblTreatment2RatingSeasons"));
-        lblTreatment2RatingSeasons->setFont(font9);
+        lblTreatment2RatingSeasons->setFont(font8);
         lblTreatment2RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment2RatingSeasons, 3, 7, 1, 1);
 
         lblTreatment3RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment3RatingSeasons->setObjectName(QStringLiteral("lblTreatment3RatingSeasons"));
-        lblTreatment3RatingSeasons->setFont(font9);
+        lblTreatment3RatingSeasons->setFont(font8);
         lblTreatment3RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment3RatingSeasons, 4, 7, 1, 1);
 
         chbxSeasonsTreatment4 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment4->setObjectName(QStringLiteral("chbxSeasonsTreatment4"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment4->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment4->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment4->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment4->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment4->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment4->setChecked(false);
         chbxSeasonsTreatment4->setTristate(false);
@@ -5837,50 +5802,50 @@ public:
 
         lblTreatment1RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment1RatingSeasons->setObjectName(QStringLiteral("lblTreatment1RatingSeasons"));
-        lblTreatment1RatingSeasons->setFont(font9);
+        lblTreatment1RatingSeasons->setFont(font8);
         lblTreatment1RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment1RatingSeasons, 2, 7, 1, 1);
 
         ledSeasonsTreatment2 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment2->setObjectName(QStringLiteral("ledSeasonsTreatment2"));
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment2->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment2->setSizePolicy(sizePolicy10);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment2->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment2->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment2, 3, 3, 1, 2);
 
         lblTreatment6RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment6RatingSeasons->setObjectName(QStringLiteral("lblTreatment6RatingSeasons"));
-        lblTreatment6RatingSeasons->setFont(font9);
+        lblTreatment6RatingSeasons->setFont(font8);
         lblTreatment6RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment6RatingSeasons, 7, 7, 1, 1);
 
         lblTreatment5RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment5RatingSeasons->setObjectName(QStringLiteral("lblTreatment5RatingSeasons"));
-        lblTreatment5RatingSeasons->setFont(font9);
+        lblTreatment5RatingSeasons->setFont(font8);
         lblTreatment5RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment5RatingSeasons, 6, 7, 1, 1);
 
         lblTreatment4RatingSeasons = new QLabel(gbxSeasonsTreatments);
         lblTreatment4RatingSeasons->setObjectName(QStringLiteral("lblTreatment4RatingSeasons"));
-        lblTreatment4RatingSeasons->setFont(font9);
+        lblTreatment4RatingSeasons->setFont(font8);
         lblTreatment4RatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_36->addWidget(lblTreatment4RatingSeasons, 5, 7, 1, 1);
 
         ledSeasonsTreatment6 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment6->setObjectName(QStringLiteral("ledSeasonsTreatment6"));
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment6->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment6->setSizePolicy(sizePolicy10);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment6->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment6->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment6, 7, 3, 1, 2);
 
         sbSeasonsTreatment5Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment5Number->setObjectName(QStringLiteral("sbSeasonsTreatment5Number"));
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment5Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment5Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment5Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment5Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment5Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment5Number, 6, 5, 1, 1);
@@ -5902,22 +5867,22 @@ public:
 
         lblSeasonsTreatmentsNotes = new QLabel(gbxSeasonsTreatments);
         lblSeasonsTreatmentsNotes->setObjectName(QStringLiteral("lblSeasonsTreatmentsNotes"));
-        lblSeasonsTreatmentsNotes->setFont(font2);
+        lblSeasonsTreatmentsNotes->setFont(font1);
         lblSeasonsTreatmentsNotes->setAlignment(Qt::AlignCenter);
 
         gridLayout_36->addWidget(lblSeasonsTreatmentsNotes, 0, 3, 1, 2);
 
         ledSeasonsTreatment5 = new QLineEdit(gbxSeasonsTreatments);
         ledSeasonsTreatment5->setObjectName(QStringLiteral("ledSeasonsTreatment5"));
-        sizePolicy10.setHeightForWidth(ledSeasonsTreatment5->sizePolicy().hasHeightForWidth());
-        ledSeasonsTreatment5->setSizePolicy(sizePolicy10);
+        sizePolicy9.setHeightForWidth(ledSeasonsTreatment5->sizePolicy().hasHeightForWidth());
+        ledSeasonsTreatment5->setSizePolicy(sizePolicy9);
 
         gridLayout_36->addWidget(ledSeasonsTreatment5, 6, 3, 1, 2);
 
         sbSeasonsTreatment6Number = new QSpinBox(gbxSeasonsTreatments);
         sbSeasonsTreatment6Number->setObjectName(QStringLiteral("sbSeasonsTreatment6Number"));
-        sizePolicy9.setHeightForWidth(sbSeasonsTreatment6Number->sizePolicy().hasHeightForWidth());
-        sbSeasonsTreatment6Number->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsTreatment6Number->sizePolicy().hasHeightForWidth());
+        sbSeasonsTreatment6Number->setSizePolicy(sizePolicy8);
         sbSeasonsTreatment6Number->setMaximumSize(QSize(50, 16777215));
 
         gridLayout_36->addWidget(sbSeasonsTreatment6Number, 7, 5, 1, 1);
@@ -5944,8 +5909,8 @@ public:
 
         chbxSeasonsTreatment1 = new QCheckBox(gbxSeasonsTreatments);
         chbxSeasonsTreatment1->setObjectName(QStringLiteral("chbxSeasonsTreatment1"));
-        sizePolicy8.setHeightForWidth(chbxSeasonsTreatment1->sizePolicy().hasHeightForWidth());
-        chbxSeasonsTreatment1->setSizePolicy(sizePolicy8);
+        sizePolicy7.setHeightForWidth(chbxSeasonsTreatment1->sizePolicy().hasHeightForWidth());
+        chbxSeasonsTreatment1->setSizePolicy(sizePolicy7);
         chbxSeasonsTreatment1->setLayoutDirection(Qt::RightToLeft);
         chbxSeasonsTreatment1->setChecked(true);
         chbxSeasonsTreatment1->setTristate(false);
@@ -5954,19 +5919,19 @@ public:
 
         lblSeasonsTreatmentsNumber = new QLabel(gbxSeasonsTreatments);
         lblSeasonsTreatmentsNumber->setObjectName(QStringLiteral("lblSeasonsTreatmentsNumber"));
-        lblSeasonsTreatmentsNumber->setFont(font2);
+        lblSeasonsTreatmentsNumber->setFont(font1);
 
         gridLayout_36->addWidget(lblSeasonsTreatmentsNumber, 0, 5, 1, 1);
 
         lblSeasonsTreatmentsWeight = new QLabel(gbxSeasonsTreatments);
         lblSeasonsTreatmentsWeight->setObjectName(QStringLiteral("lblSeasonsTreatmentsWeight"));
-        lblSeasonsTreatmentsWeight->setFont(font2);
+        lblSeasonsTreatmentsWeight->setFont(font1);
 
         gridLayout_36->addWidget(lblSeasonsTreatmentsWeight, 0, 6, 1, 1);
 
         lblSeasonsTreatmentsTotal = new QLabel(gbxSeasonsTreatments);
         lblSeasonsTreatmentsTotal->setObjectName(QStringLiteral("lblSeasonsTreatmentsTotal"));
-        lblSeasonsTreatmentsTotal->setFont(font2);
+        lblSeasonsTreatmentsTotal->setFont(font1);
 
         gridLayout_36->addWidget(lblSeasonsTreatmentsTotal, 0, 7, 1, 1);
 
@@ -5988,28 +5953,28 @@ public:
         gridLayout_37->setObjectName(QStringLiteral("gridLayout_37"));
         lblSeasonsSitesNumber = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesNumber->setObjectName(QStringLiteral("lblSeasonsSitesNumber"));
-        sizePolicy4.setHeightForWidth(lblSeasonsSitesNumber->sizePolicy().hasHeightForWidth());
-        lblSeasonsSitesNumber->setSizePolicy(sizePolicy4);
-        lblSeasonsSitesNumber->setFont(font2);
+        sizePolicy3.setHeightForWidth(lblSeasonsSitesNumber->sizePolicy().hasHeightForWidth());
+        lblSeasonsSitesNumber->setSizePolicy(sizePolicy3);
+        lblSeasonsSitesNumber->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesNumber, 0, 2, 1, 1);
 
         lblSeasonsSitesWeight = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesWeight->setObjectName(QStringLiteral("lblSeasonsSitesWeight"));
-        lblSeasonsSitesWeight->setFont(font2);
+        lblSeasonsSitesWeight->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesWeight, 0, 3, 1, 1);
 
         lblSeasonsSitesSeasonsPerCrop = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesSeasonsPerCrop->setObjectName(QStringLiteral("lblSeasonsSitesSeasonsPerCrop"));
-        lblSeasonsSitesSeasonsPerCrop->setFont(font2);
+        lblSeasonsSitesSeasonsPerCrop->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesSeasonsPerCrop, 1, 0, 1, 2);
 
         sbSeasonsSitesSeasonsPerCropNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesSeasonsPerCropNumber->setObjectName(QStringLiteral("sbSeasonsSitesSeasonsPerCropNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy8);
         sbSeasonsSitesSeasonsPerCropNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesSeasonsPerCropNumber->setMinimum(-1000);
         sbSeasonsSitesSeasonsPerCropNumber->setMaximum(1000);
@@ -6029,21 +5994,21 @@ public:
 
         lblSeasonsPerCropRatingSeasons = new QLabel(gbxSeasonsSites);
         lblSeasonsPerCropRatingSeasons->setObjectName(QStringLiteral("lblSeasonsPerCropRatingSeasons"));
-        lblSeasonsPerCropRatingSeasons->setFont(font9);
+        lblSeasonsPerCropRatingSeasons->setFont(font8);
         lblSeasonsPerCropRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_37->addWidget(lblSeasonsPerCropRatingSeasons, 1, 4, 1, 1);
 
         lblSeasonsSitesSiteVariants = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesSiteVariants->setObjectName(QStringLiteral("lblSeasonsSitesSiteVariants"));
-        lblSeasonsSitesSiteVariants->setFont(font2);
+        lblSeasonsSitesSiteVariants->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesSiteVariants, 2, 0, 1, 2);
 
         sbSeasonsSitesSiteVariantsNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesSiteVariantsNumber->setObjectName(QStringLiteral("sbSeasonsSitesSiteVariantsNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy8);
         sbSeasonsSitesSiteVariantsNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesSiteVariantsNumber->setValue(1);
 
@@ -6061,21 +6026,21 @@ public:
 
         lblSiteVariantsRatingSeasons = new QLabel(gbxSeasonsSites);
         lblSiteVariantsRatingSeasons->setObjectName(QStringLiteral("lblSiteVariantsRatingSeasons"));
-        lblSiteVariantsRatingSeasons->setFont(font9);
+        lblSiteVariantsRatingSeasons->setFont(font8);
         lblSiteVariantsRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_37->addWidget(lblSiteVariantsRatingSeasons, 2, 4, 1, 1);
 
         lblSeasonsSitesMgmtPotential = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesMgmtPotential->setObjectName(QStringLiteral("lblSeasonsSitesMgmtPotential"));
-        lblSeasonsSitesMgmtPotential->setFont(font2);
+        lblSeasonsSitesMgmtPotential->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesMgmtPotential, 3, 0, 1, 2);
 
         sbSeasonsSitesMgmtPotentialNumber = new QSpinBox(gbxSeasonsSites);
         sbSeasonsSitesMgmtPotentialNumber->setObjectName(QStringLiteral("sbSeasonsSitesMgmtPotentialNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy9);
+        sizePolicy8.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy8);
         sbSeasonsSitesMgmtPotentialNumber->setMaximumSize(QSize(50, 16777215));
         sbSeasonsSitesMgmtPotentialNumber->setValue(4);
 
@@ -6093,24 +6058,24 @@ public:
 
         lblMgmtPotentialRatingSeasons = new QLabel(gbxSeasonsSites);
         lblMgmtPotentialRatingSeasons->setObjectName(QStringLiteral("lblMgmtPotentialRatingSeasons"));
-        lblMgmtPotentialRatingSeasons->setFont(font9);
+        lblMgmtPotentialRatingSeasons->setFont(font8);
         lblMgmtPotentialRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_37->addWidget(lblMgmtPotentialRatingSeasons, 3, 4, 1, 1);
 
         lblSeasonsSitesZeroNTreatment = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("lblSeasonsSitesZeroNTreatment"));
-        lblSeasonsSitesZeroNTreatment->setFont(font2);
+        lblSeasonsSitesZeroNTreatment->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesZeroNTreatment, 4, 0, 1, 2);
 
         cbSeasonsSitesZeroNTreatment = new QComboBox(gbxSeasonsSites);
         cbSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("cbSeasonsSitesZeroNTreatment"));
-        QSizePolicy sizePolicy11(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy11.setHorizontalStretch(0);
-        sizePolicy11.setVerticalStretch(0);
-        sizePolicy11.setHeightForWidth(cbSeasonsSitesZeroNTreatment->sizePolicy().hasHeightForWidth());
-        cbSeasonsSitesZeroNTreatment->setSizePolicy(sizePolicy11);
+        QSizePolicy sizePolicy10(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy10.setHorizontalStretch(0);
+        sizePolicy10.setVerticalStretch(0);
+        sizePolicy10.setHeightForWidth(cbSeasonsSitesZeroNTreatment->sizePolicy().hasHeightForWidth());
+        cbSeasonsSitesZeroNTreatment->setSizePolicy(sizePolicy10);
         cbSeasonsSitesZeroNTreatment->setMaximumSize(QSize(55, 16777215));
 
         gridLayout_37->addWidget(cbSeasonsSitesZeroNTreatment, 4, 2, 1, 1);
@@ -6127,14 +6092,14 @@ public:
 
         lblZeroNTreatmentRatingSeasons = new QLabel(gbxSeasonsSites);
         lblZeroNTreatmentRatingSeasons->setObjectName(QStringLiteral("lblZeroNTreatmentRatingSeasons"));
-        lblZeroNTreatmentRatingSeasons->setFont(font9);
+        lblZeroNTreatmentRatingSeasons->setFont(font8);
         lblZeroNTreatmentRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         gridLayout_37->addWidget(lblZeroNTreatmentRatingSeasons, 4, 4, 1, 1);
 
         lblSeasonsSitesTotal = new QLabel(gbxSeasonsSites);
         lblSeasonsSitesTotal->setObjectName(QStringLiteral("lblSeasonsSitesTotal"));
-        lblSeasonsSitesTotal->setFont(font2);
+        lblSeasonsSitesTotal->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesTotal, 0, 4, 1, 1);
 
@@ -6168,25 +6133,7 @@ public:
 
         tabWidgetDataClassification->addTab(tabSeasons, QString());
 
-        gridLayout_2->addWidget(tabWidgetDataClassification, 0, 0, 1, 9);
-
-        lblEstimatedRanking = new QLabel(centralWidget);
-        lblEstimatedRanking->setObjectName(QStringLiteral("lblEstimatedRanking"));
-        lblEstimatedRanking->setFont(font9);
-        lblEstimatedRanking->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(lblEstimatedRanking, 1, 4, 1, 1);
-
-        cbDatasets = new QComboBox(centralWidget);
-        cbDatasets->setObjectName(QStringLiteral("cbDatasets"));
-
-        gridLayout_2->addWidget(cbDatasets, 1, 0, 1, 3);
-
-        pbAuthenticate = new QPushButton(centralWidget);
-        pbAuthenticate->setObjectName(QStringLiteral("pbAuthenticate"));
-        pbAuthenticate->setMaximumSize(QSize(110, 16777215));
-
-        gridLayout_2->addWidget(pbAuthenticate, 2, 1, 1, 1);
+        gridLayout_2->addWidget(tabWidgetDataClassification, 0, 0, 1, 8);
 
         lblUser = new QLabel(centralWidget);
         lblUser->setObjectName(QStringLiteral("lblUser"));
@@ -6198,10 +6145,63 @@ public:
 
         gridLayout_2->addWidget(lblUser, 2, 4, 1, 1);
 
+        pbAuthenticate = new QPushButton(centralWidget);
+        pbAuthenticate->setObjectName(QStringLiteral("pbAuthenticate"));
+        pbAuthenticate->setMaximumSize(QSize(110, 16777215));
+
+        gridLayout_2->addWidget(pbAuthenticate, 2, 1, 1, 1);
+
+        lblEstimatedRanking = new QLabel(centralWidget);
+        lblEstimatedRanking->setObjectName(QStringLiteral("lblEstimatedRanking"));
+        lblEstimatedRanking->setFont(font8);
+        lblEstimatedRanking->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_2->addWidget(lblEstimatedRanking, 1, 4, 1, 1);
+
+        cbDatasets = new QComboBox(centralWidget);
+        cbDatasets->setObjectName(QStringLiteral("cbDatasets"));
+
+        gridLayout_2->addWidget(cbDatasets, 1, 0, 1, 3);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 1, 7, 1, 1);
+
+        toolButtonDatasetDetails = new QToolButton(centralWidget);
+        toolButtonDatasetDetails->setObjectName(QStringLiteral("toolButtonDatasetDetails"));
+
+        gridLayout_2->addWidget(toolButtonDatasetDetails, 1, 3, 1, 1);
+
+        cbUser = new QComboBox(centralWidget);
+        cbUser->setObjectName(QStringLiteral("cbUser"));
+        QSizePolicy sizePolicy11(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy11.setHorizontalStretch(1);
+        sizePolicy11.setVerticalStretch(0);
+        sizePolicy11.setHeightForWidth(cbUser->sizePolicy().hasHeightForWidth());
+        cbUser->setSizePolicy(sizePolicy11);
+
+        gridLayout_2->addWidget(cbUser, 2, 0, 1, 1);
+
+        lblRankImage = new QLabel(centralWidget);
+        lblRankImage->setObjectName(QStringLiteral("lblRankImage"));
+        lblRankImage->setMinimumSize(QSize(40, 40));
+        lblRankImage->setMaximumSize(QSize(40, 40));
+        lblRankImage->setPixmap(QPixmap(QString::fromUtf8(":/Resources/platinum.png")));
+        lblRankImage->setScaledContents(true);
+
+        gridLayout_2->addWidget(lblRankImage, 1, 5, 1, 1);
+
+        lblOverallRank = new QLabel(centralWidget);
+        lblOverallRank->setObjectName(QStringLiteral("lblOverallRank"));
+        lblOverallRank->setFont(font9);
+
+        gridLayout_2->addWidget(lblOverallRank, 1, 6, 1, 1);
+
         DatasetClassification->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(DatasetClassification);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 837, 22));
+        menuBar->setGeometry(QRect(0, 0, 848, 22));
         DatasetClassification->setMenuBar(menuBar);
         mainToolBar = new QToolBar(DatasetClassification);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -6212,7 +6212,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(7);
+        tabWidgetDataClassification->setCurrentIndex(0);
         toolBoxStateVars->setCurrentIndex(1);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
@@ -6229,18 +6229,6 @@ public:
     void retranslateUi(QMainWindow *DatasetClassification)
     {
         DatasetClassification->setWindowTitle(QApplication::translate("DatasetClassification", "DatasetClassification", 0));
-        lblOverallRank->setText(QApplication::translate("DatasetClassification", "Platinum", 0));
-#ifndef QT_NO_TOOLTIP
-        toolButtonDatasetDetails->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Push to see full details for dataset</p></body></html>", 0));
-#endif // QT_NO_TOOLTIP
-        toolButtonDatasetDetails->setText(QApplication::translate("DatasetClassification", "...", 0));
-        lblRankImage->setText(QString());
-        cbUser->clear();
-        cbUser->insertItems(0, QStringList()
-         << QApplication::translate("DatasetClassification", "If not listed, select Register", 0)
-         << QApplication::translate("DatasetClassification", "Register", 0)
-        );
-        pushButton->setText(QApplication::translate("DatasetClassification", "Manage Datasets", 0));
         gbxManagement->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblMgmtPoints->setText(QApplication::translate("DatasetClassification", "Points", 0));
 #ifndef QT_NO_TOOLTIP
@@ -7133,14 +7121,26 @@ public:
         lblSeasonsMultiplier->setText(QApplication::translate("DatasetClassification", "Multiplier:", 0));
         lblSeasonsMultiplierTotal->setText(QApplication::translate("DatasetClassification", "0", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabSeasons), QApplication::translate("DatasetClassification", "Seasons", 0));
+        lblUser->setText(QApplication::translate("DatasetClassification", "please login or register", 0));
+        pbAuthenticate->setText(QApplication::translate("DatasetClassification", "Authenticate", 0));
         lblEstimatedRanking->setText(QApplication::translate("DatasetClassification", "Estimated Ranking:", 0));
         cbDatasets->clear();
         cbDatasets->insertItems(0, QStringList()
          << QApplication::translate("DatasetClassification", "Select Dataset", 0)
          << QApplication::translate("DatasetClassification", "Example", 0)
         );
-        pbAuthenticate->setText(QApplication::translate("DatasetClassification", "Authenticate", 0));
-        lblUser->setText(QApplication::translate("DatasetClassification", "please login or register", 0));
+        pushButton->setText(QApplication::translate("DatasetClassification", "Manage Datasets", 0));
+#ifndef QT_NO_TOOLTIP
+        toolButtonDatasetDetails->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Push to see full details for dataset</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
+        toolButtonDatasetDetails->setText(QApplication::translate("DatasetClassification", "...", 0));
+        cbUser->clear();
+        cbUser->insertItems(0, QStringList()
+         << QApplication::translate("DatasetClassification", "If not listed, select Register", 0)
+         << QApplication::translate("DatasetClassification", "Register", 0)
+        );
+        lblRankImage->setText(QString());
+        lblOverallRank->setText(QApplication::translate("DatasetClassification", "Platinum", 0));
     } // retranslateUi
 
 };

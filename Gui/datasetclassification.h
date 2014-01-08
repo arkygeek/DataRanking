@@ -295,6 +295,8 @@ void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
 
 
 
+void on_pushButton_clicked();
+
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble);
@@ -313,12 +315,13 @@ void updateInitialValuesLabels();
 void updateSoilLabels();
 void updateSiteLabels();
 void updateWeatherLabels();
+void updateSVLabels();
 
-// state vars
-void updateSVCropLabels();
-void updateSVSoilLabels();
-void updateSVSurfaceFluxesLabels();
-void updateSVObservationsLabels();
+  //---------------------------------------------//
+ //  file i/o functions (including json stuff)  //
+//---------------------------------------------//
+
+void saveToFileJson();
 
 };
 

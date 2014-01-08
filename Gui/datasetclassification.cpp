@@ -24,6 +24,10 @@
 #include "rankpointgenerator.h"
 
 #include <QDebug>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QDateTime>
+
 #include "ui_datasetclassification.h"
 
 DatasetClassification::DatasetClassification(QWidget *parent) :
@@ -38,10 +42,11 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   updateSiteLabels();
   updateSoilLabels();
   updateWeatherLabels();
-  updateSVCropLabels();
-  updateSVObservationsLabels();
-  updateSVSoilLabels();
-  updateSVSurfaceFluxesLabels();
+  updateSVLabels();
+  updateSVLabels();
+  updateSVLabels();
+  updateSVLabels();
+  saveToFileJson();
 }
 
 DatasetClassification::~DatasetClassification()
@@ -2019,7 +2024,7 @@ void DatasetClassification::on_sbSVCropYieldObservations_valueChanged(int theObs
   myTotal = makeString(myValue);
   ui->lblSVCropYieldPoints->setText(myTotal);
 
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropYieldWeightPts_valueChanged(double theWeight)
 {
@@ -2035,7 +2040,7 @@ void DatasetClassification::on_dsbSVCropYieldWeightPts_valueChanged(double theWe
   myTotal = makeString(myValue);
   ui->lblSVCropYieldPoints->setText(myTotal);
 
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropYieldReplicates_valueChanged(double theReplicates)
 {
@@ -2050,7 +2055,7 @@ void DatasetClassification::on_dsbSVCropYieldReplicates_valueChanged(double theR
 
   ui->lblSVCropYieldPoints->setText(myTotal);
 
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVCropAGrBiomassObservations_valueChanged(int theObservations)
@@ -2065,7 +2070,7 @@ void DatasetClassification::on_sbSVCropAGrBiomassObservations_valueChanged(int t
   QString myTotal = makeString(myValue);
   ui->lblSVCropAGrBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropAGrBiomassWeightPts_valueChanged(double theWeight)
 {
@@ -2079,7 +2084,7 @@ void DatasetClassification::on_dsbSVCropAGrBiomassWeightPts_valueChanged(double 
   QString myTotal = makeString(myValue);
   ui->lblSVCropAGrBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropAGrBiomassReplicates_valueChanged(double theReplicates)
 {
@@ -2094,7 +2099,7 @@ void DatasetClassification::on_dsbSVCropAGrBiomassReplicates_valueChanged(double
 
   ui->lblSVCropAGrBiomassPoints->setText(myTotal);
 
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVCropWeightOrgansLayers_valueChanged(double theLayers)
@@ -2110,7 +2115,7 @@ void DatasetClassification::on_dsbSVCropWeightOrgansLayers_valueChanged(double t
   QString myTotal = makeString(myValue);
   ui->lblSVCropWeightOrgansPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVCropWeightOrgansObservations_valueChanged(int theObservations)
 {
@@ -2125,7 +2130,7 @@ void DatasetClassification::on_sbSVCropWeightOrgansObservations_valueChanged(int
   QString myTotal = makeString(myValue);
   ui->lblSVCropWeightOrgansPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropWeightOrgansWeightPts_valueChanged(double theWeight)
 {
@@ -2140,7 +2145,7 @@ void DatasetClassification::on_dsbSVCropWeightOrgansWeightPts_valueChanged(doubl
   QString myTotal = makeString(myValue);
   ui->lblSVCropWeightOrgansPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVCropRootBiomassLayers_valueChanged(double theLayers)
@@ -2156,7 +2161,7 @@ void DatasetClassification::on_dsbSVCropRootBiomassLayers_valueChanged(double th
   QString myTotal = makeString(myValue);
   ui->lblSVCropRootBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVCropRootBiomassObservations_valueChanged(int theObservations)
 {
@@ -2171,7 +2176,7 @@ void DatasetClassification::on_sbSVCropRootBiomassObservations_valueChanged(int 
   QString myTotal = makeString(myValue);
   ui->lblSVCropRootBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropRootBiomassWeightPts_valueChanged(double theWeight)
 {
@@ -2186,7 +2191,7 @@ void DatasetClassification::on_dsbSVCropRootBiomassWeightPts_valueChanged(double
   QString myTotal = makeString(myValue);
   ui->lblSVCropRootBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVCropNInAGrBiomassObservations_valueChanged(int theObservations)
@@ -2201,7 +2206,7 @@ void DatasetClassification::on_sbSVCropNInAGrBiomassObservations_valueChanged(in
   QString myTotal = makeString(myValue);
   ui->lblSVCropNInAGrBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropNInAGrBiomassWeightPts_valueChanged(double theWeight)
 {
@@ -2215,7 +2220,7 @@ void DatasetClassification::on_dsbSVCropNInAGrBiomassWeightPts_valueChanged(doub
   QString myTotal = makeString(myValue);
   ui->lblSVCropNInAGrBiomassPoints->setText(myTotal);
   // update the labels and ranking
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropNInAGrBiomassReplicates_valueChanged(double theReplicates)
 {
@@ -2230,7 +2235,7 @@ void DatasetClassification::on_dsbSVCropNInAGrBiomassReplicates_valueChanged(dou
 
   ui->lblSVCropNInAGrBiomassPoints->setText(myTotal);
 
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVCropNInOrgansObservations_valueChanged(int theObservations)
@@ -2249,7 +2254,7 @@ void DatasetClassification::on_sbSVCropNInOrgansObservations_valueChanged(int th
   myTotal = makeString(myValue);
 
   ui->lblSVCropNInOrgansPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropNInOrgansWeightPts_valueChanged(double theWeight)
 {
@@ -2267,7 +2272,7 @@ void DatasetClassification::on_dsbSVCropNInOrgansWeightPts_valueChanged(double t
   myTotal = makeString(myValue);
 
   ui->lblSVCropNInOrgansPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropNInOrgansReplicates_valueChanged(double theReplicates)
 {
@@ -2285,7 +2290,7 @@ void DatasetClassification::on_dsbSVCropNInOrgansReplicates_valueChanged(double 
   myTotal = makeString(myValue);
 
   ui->lblSVCropNInOrgansPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVCropLAIObservations_valueChanged(int theObservations)
@@ -2302,7 +2307,7 @@ void DatasetClassification::on_sbSVCropLAIObservations_valueChanged(int theObser
   myTotal = makeString(myValue);
 
   ui->lblSVCropLAIPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropLAIWeightPts_valueChanged(double theWeight)
 {
@@ -2318,7 +2323,7 @@ void DatasetClassification::on_dsbSVCropLAIWeightPts_valueChanged(double theWeig
   myTotal = makeString(myValue);
 
   ui->lblSVCropLAIPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVCropLAIReplicates_valueChanged(double theReplicates)
 {
@@ -2334,7 +2339,7 @@ void DatasetClassification::on_dsbSVCropLAIReplicates_valueChanged(double theRep
   myTotal = makeString(myValue);
 
   ui->lblSVCropLAIPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVSoilSoilWaterGravLayers_valueChanged(double theLayers)
@@ -2353,7 +2358,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterGravLayers_valueChanged(double 
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterGravPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVSoilSoilWaterGravObservations_valueChanged(int theObservations)
 {
@@ -2371,7 +2376,7 @@ void DatasetClassification::on_sbSVSoilSoilWaterGravObservations_valueChanged(in
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterGravPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterGravWeightPts_valueChanged(double theWeight)
 {
@@ -2389,7 +2394,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterGravWeightPts_valueChanged(doub
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterGravPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterGravReplicates_valueChanged(double theReplicates)
 {
@@ -2407,7 +2412,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterGravReplicates_valueChanged(dou
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterGravPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVSoilPressureHeadsLayers_valueChanged(double theLayers)
@@ -2426,7 +2431,7 @@ void DatasetClassification::on_dsbSVSoilPressureHeadsLayers_valueChanged(double 
   myTotal = makeString(myValue);
 
   ui->lblSVSoilPressureHeadsPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVSoilPressureHeadsObservations_valueChanged(int theObservations)
 {
@@ -2444,7 +2449,7 @@ void DatasetClassification::on_sbSVSoilPressureHeadsObservations_valueChanged(in
   myTotal = makeString(myValue);
 
   ui->lblSVSoilPressureHeadsPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilPressureHeadsWeightPts_valueChanged(double theWeight)
 {
@@ -2462,7 +2467,7 @@ void DatasetClassification::on_dsbSVSoilPressureHeadsWeightPts_valueChanged(doub
   myTotal = makeString(myValue);
 
   ui->lblSVSoilPressureHeadsPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilPressureHeadsReplicates_valueChanged(double theReplicates)
 {
@@ -2480,7 +2485,7 @@ void DatasetClassification::on_dsbSVSoilPressureHeadsReplicates_valueChanged(dou
   myTotal = makeString(myValue);
 
   ui->lblSVSoilPressureHeadsPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVSoilNMinLayers_valueChanged(double theLayers)
@@ -2499,7 +2504,7 @@ void DatasetClassification::on_dsbSVSoilNMinLayers_valueChanged(double theLayers
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNMinPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVSoilNMinObservations_valueChanged(int theObservations)
 {
@@ -2517,7 +2522,7 @@ void DatasetClassification::on_sbSVSoilNMinObservations_valueChanged(int theObse
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNMinPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilNMinWeightPts_valueChanged(double theWeight)
 {
@@ -2535,7 +2540,7 @@ void DatasetClassification::on_dsbSVSoilNMinWeightPts_valueChanged(double theWei
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNMinPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilNMinReplicates_valueChanged(double theReplicates)
 {
@@ -2553,7 +2558,7 @@ void DatasetClassification::on_dsbSVSoilNMinReplicates_valueChanged(double theRe
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNMinPoints->setText(myTotal);
-  updateSVCropLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(double theLayers)
@@ -2572,7 +2577,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(do
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_sbSVSoilSoilWaterSensorCalObservations_valueChanged(int theObservations)
 {
@@ -2590,7 +2595,7 @@ void DatasetClassification::on_sbSVSoilSoilWaterSensorCalObservations_valueChang
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged(double theWeight)
 {
@@ -2608,7 +2613,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged(double theReplicates)
 {
@@ -2626,7 +2631,7 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalReplicates_valueChange
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVSoilWaterFluxBottomRootObservations_valueChanged(int theObservations)
@@ -2643,7 +2648,7 @@ void DatasetClassification::on_sbSVSoilWaterFluxBottomRootObservations_valueChan
   myTotal = makeString(myValue);
 
   ui->lblSVSoilWaterFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged(double theWeight)
 {
@@ -2659,7 +2664,7 @@ void DatasetClassification::on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChange
   myTotal = makeString(myValue);
 
   ui->lblSVSoilWaterFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged(double theReplicates)
 {
@@ -2675,7 +2680,7 @@ void DatasetClassification::on_dsbSVSoilWaterFluxBottomRootReplicates_valueChang
   myTotal = makeString(myValue);
 
   ui->lblSVSoilWaterFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVSoilNFluxBottomRootObservations_valueChanged(int theObservations)
@@ -2692,7 +2697,7 @@ void DatasetClassification::on_sbSVSoilNFluxBottomRootObservations_valueChanged(
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged(double theWeight)
 {
@@ -2708,7 +2713,7 @@ void DatasetClassification::on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged(do
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilNFluxBottomRootReplicates_valueChanged(double theReplicates)
 {
@@ -2724,7 +2729,7 @@ void DatasetClassification::on_dsbSVSoilNFluxBottomRootReplicates_valueChanged(d
   myTotal = makeString(myValue);
 
   ui->lblSVSoilNFluxBottomRootPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVSurfaceFluxesEtObservations_valueChanged(int theObservations)
@@ -2742,7 +2747,7 @@ void DatasetClassification::on_sbSVSurfaceFluxesEtObservations_valueChanged(int 
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double theWeight)
 {
@@ -2759,25 +2764,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
-//void DatasetClassification::on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates)
-//{
-//  int myObservations;
-//  double myWeight;
-//  RankPointGenerator myPointGen;
-//  double myValue;
-//  QString myTotal;
-
-//  myObservations = ui->sbSVSurfaceFluxesEtObservations->value();
-//  myWeight = ui->dsbSVSurfaceFluxesEtWeightPts->value();
-//  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
-//  myValue = myPointGen.SVMethod5(myObservations, myWeight);
-//  myTotal = makeString(myValue);
-
-//  ui->lblSVSurfaceFluxesEtPoints->setText(myTotal);
-//  updateSVSoilLabels();
-//}
 
 void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged(int theObservations)
 {
@@ -2794,7 +2782,7 @@ void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(double theWeight)
 {
@@ -2811,25 +2799,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(d
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
-//void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(double theReplicates)
-//{
-//  int myObservations;
-//  double myWeight;
-//  RankPointGenerator myPointGen;
-//  double myValue;
-//  QString myTotal;
-
-//  myObservations = ui->sbSVSurfaceFluxesNh3LossObservations->value();
-//  myWeight = ui->dsbSVSurfaceFluxesNh3LossWeightPts->value();
-//  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
-//  myValue = myPointGen.SVMethod5(myObservations, myWeight);
-//  myTotal = makeString(myValue);
-
-//  ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
-//  updateSVSoilLabels();
-//}
 
 void DatasetClassification::on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations)
 {
@@ -2846,7 +2817,7 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2OLossObservations_valueChanged
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight)
 {
@@ -2863,25 +2834,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(d
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
-//void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates)
-//{
-//  int myObservations;
-//  double myWeight;
-//  RankPointGenerator myPointGen;
-//  double myValue;
-//  QString myTotal;
-
-//  myObservations = ui->sbSVSurfaceFluxesN2OLossObservations->value();
-//  myWeight = ui->dsbSVSurfaceFluxesN2OLossWeightPts->value();
-//  //myValue = myPointGen.SVMethod1(myObservations, myWeight, theReplicates);
-//  myValue = myPointGen.SVMethod5(myObservations, myWeight);
-//  myTotal = makeString(myValue);
-
-//  ui->lblSVSurfaceFluxesN2OLossPoints->setText(myTotal);
-//  updateSVSoilLabels();
-//}
 
 void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations)
 {
@@ -2898,7 +2852,7 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight)
 {
@@ -2914,24 +2868,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(do
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
-//void DatasetClassification::on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates)
-//{
-//  int myObservations;
-//  double myWeight;
-//  RankPointGenerator myPointGen;
-//  double myValue;
-//  QString myTotal;
-
-//  myObservations = ui->sbSVSurfaceFluxesN2LossObservations->value();
-//  myWeight = ui->dsbSVSurfaceFluxesN2LossWeightPts->value();
-//  myValue = myPointGen.SVMethod5(myObservations, myWeight);
-//  myTotal = makeString(myValue);
-
-//  ui->lblSVSurfaceFluxesN2LossPoints->setText(myTotal);
-//  updateSVSoilLabels();
-//}
 
 void DatasetClassification::on_sbSVSurfaceFluxesCh4LossObservations_valueChanged(int theObservations)
 {
@@ -2947,7 +2885,7 @@ void DatasetClassification::on_sbSVSurfaceFluxesCh4LossObservations_valueChanged
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(double theWeight)
 {
@@ -2963,26 +2901,8 @@ void DatasetClassification::on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(d
   myTotal = makeString(myValue);
 
   ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
-//void DatasetClassification::on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(double theReplicates)
-//{
-//  int myObservations;
-//  double myWeight;
-//  RankPointGenerator myPointGen;
-//  double myValue;
-//  QString myTotal;
-
-//  myObservations = ui->sbSVSurfaceFluxesCh4LossObservations->value();
-//  myWeight = ui->dsbSVSurfaceFluxesCh4LossWeightPts->value();
-//  myValue = myPointGen.SVMethod5(myObservations, myWeight);
-//  myTotal = makeString(myValue);
-
-//  ui->lblSVSurfaceFluxesCh4LossPoints->setText(myTotal);
-//  updateSVSoilLabels();
-//}
-
-
 
 void DatasetClassification::on_sbSVObservationsLodgingObservations_valueChanged(int theObservations)
 {
@@ -2998,7 +2918,7 @@ void DatasetClassification::on_sbSVObservationsLodgingObservations_valueChanged(
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsLodgingPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVObservationsLodgingWeightPts_valueChanged(double theWeight)
 {
@@ -3014,7 +2934,7 @@ void DatasetClassification::on_dsbSVObservationsLodgingWeightPts_valueChanged(do
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsLodgingPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVObservationsPestsOrDiseasesObservations_valueChanged(int theObservations)
@@ -3031,7 +2951,7 @@ void DatasetClassification::on_sbSVObservationsPestsOrDiseasesObservations_value
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsPestsOrDiseasesPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged(double theWeight)
 {
@@ -3047,7 +2967,7 @@ void DatasetClassification::on_dsbSVObservationsPestsOrDiseasesWeightPts_valueCh
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsPestsOrDiseasesPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 void DatasetClassification::on_sbSVObservationsDamagesObservations_valueChanged(int theObservations)
@@ -3064,7 +2984,7 @@ void DatasetClassification::on_sbSVObservationsDamagesObservations_valueChanged(
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsDamagesPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 void DatasetClassification::on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight)
 {
@@ -3080,7 +3000,7 @@ void DatasetClassification::on_dsbSVObservationsDamagesWeightPts_valueChanged(do
   myTotal = makeString(myValue);
 
   ui->lblSVObservationsDamagesPoints->setText(myTotal);
-  updateSVSoilLabels();
+  updateSVLabels();
 }
 
 // numbers to strings
@@ -3351,7 +3271,7 @@ void DatasetClassification::updateWeatherLabels()
   }
 }
 
-void DatasetClassification::updateSVCropLabels()
+void DatasetClassification::updateSVLabels()
 {
   // updates totals
   float myTotal = 0.0;
@@ -3420,188 +3340,8 @@ void DatasetClassification::updateSVCropLabels()
     ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
 }
-void DatasetClassification::updateSVSoilLabels()
-{
-  // updates totals
-  float mySoilTotal = 0.0;
-  //QPixmap pixmap;
-  mySoilTotal += ui->lblSVSoilSoilWaterGravPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilPressureHeadsPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilNMinPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilSoilWaterSensorCalPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toFloat();
 
-  ui->lblOverallRatingSVSoil->setText(makeString(mySoilTotal));
 
-  int myRank = 0;
-
-  if (mySoilTotal >= 24) myRank=24;
-  else if (mySoilTotal >= 23) myRank=23;
-  else if (mySoilTotal >= 22) myRank=22;
-  else if (mySoilTotal >= 21) myRank=21;
-
-switch (myRank)
-{
-  case 24: ui->lblMedalSVSoil->setVisible(true);
-           ui->lblMedalSVSoil->setScaledContents(true);
-           ui->lblMedalSVSoil->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-           ui->lblRankingSVSoil->setVisible(true);
-           ui->lblRankingSVSoil->setText("Platinum");
-           ui->toolBoxStateVars->setItemIcon(1, (QIcon( ":/Resources/platinum.png")));
-           break;
-
-  case 23: ui->lblMedalSVSoil->setVisible(true);
-           ui->lblMedalSVSoil->setScaledContents(true);
-           ui->lblMedalSVSoil->setPixmap(QPixmap( ":/Resources/gold.png" ));
-           ui->lblRankingSVSoil->setVisible(true);
-           ui->lblRankingSVSoil->setText("Gold");
-           ui->toolBoxStateVars->setItemIcon(1, (QIcon( ":/Resources/gold.png")));
-           break;
-
-  case 22: ui->lblMedalSVSoil->setVisible(true);
-           ui->lblMedalSVSoil->setScaledContents(true);
-           ui->lblMedalSVSoil->setPixmap(QPixmap( ":/Resources/silver.png" ));
-           ui->lblRankingSVSoil->setVisible(true);
-           ui->lblRankingSVSoil->setText("Silver");
-           ui->toolBoxStateVars->setItemIcon(1, (QIcon( ":/Resources/silver.png")));
-           break;
-
-  case 21: ui->lblMedalSVSoil->setVisible(true);
-           ui->lblMedalSVSoil->setScaledContents(true);
-           ui->lblMedalSVSoil->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-           ui->lblRankingSVSoil->setVisible(true);
-           ui->lblRankingSVSoil->setText("Bronze");
-           ui->toolBoxStateVars->setItemIcon(1, (QIcon( ":/Resources/bronze.png")));
-           break;
-
-  default: // hide
-           ui->lblRankingSVSoil->setVisible(false);
-           ui->lblMedalSVSoil->setVisible(false);
-           ui->toolBoxStateVars->setItemIcon(1, (QIcon()));
-           break;
-  }
-}
-void DatasetClassification::updateSVSurfaceFluxesLabels()
-{
-  // updates totals
-  float mySurfaceFluxTotal = 0.0;
-  //QPixmap pixmap;
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesEtPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toFloat();
-
-  ui->lblOverallRatingSVSurfaceFluxes->setText(makeString(mySurfaceFluxTotal));
-
-  int myRank = 0;
-
-  if (mySurfaceFluxTotal >= 24) myRank=24;
-  else if (mySurfaceFluxTotal >= 23) myRank=23;
-  else if (mySurfaceFluxTotal >= 22) myRank=22;
-  else if (mySurfaceFluxTotal >= 21) myRank=21;
-
-  switch (myRank)
-  {
-    case 24: ui->lblMedalSVSurfaceFluxes->setVisible(true);
-             ui->lblMedalSVSurfaceFluxes->setScaledContents(true);
-             ui->lblMedalSVSurfaceFluxes->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-             ui->lblRankingSVSurfaceFluxes->setVisible(true);
-             ui->lblRankingSVSurfaceFluxes->setText("Platinum");
-             ui->toolBoxStateVars->setItemIcon(2, (QIcon( ":/Resources/platinum.png")));
-             break;
-
-    case 23: ui->lblMedalSVSurfaceFluxes->setVisible(true);
-             ui->lblMedalSVSurfaceFluxes->setScaledContents(true);
-             ui->lblMedalSVSurfaceFluxes->setPixmap(QPixmap( ":/Resources/gold.png" ));
-             ui->lblRankingSVSurfaceFluxes->setVisible(true);
-             ui->lblRankingSVSurfaceFluxes->setText("Gold");
-             ui->toolBoxStateVars->setItemIcon(2, (QIcon( ":/Resources/gold.png")));
-             break;
-
-    case 22: ui->lblMedalSVSurfaceFluxes->setVisible(true);
-             ui->lblMedalSVSurfaceFluxes->setScaledContents(true);
-             ui->lblMedalSVSurfaceFluxes->setPixmap(QPixmap( ":/Resources/silver.png" ));
-             ui->lblRankingSVSurfaceFluxes->setVisible(true);
-             ui->lblRankingSVSurfaceFluxes->setText("Silver");
-             ui->toolBoxStateVars->setItemIcon(2, (QIcon( ":/Resources/silver.png")));
-             break;
-
-    case 21: ui->lblMedalSVSurfaceFluxes->setVisible(true);
-             ui->lblMedalSVSurfaceFluxes->setScaledContents(true);
-             ui->lblMedalSVSurfaceFluxes->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-             ui->lblRankingSVSurfaceFluxes->setVisible(true);
-             ui->lblRankingSVSurfaceFluxes->setText("Bronze");
-             ui->toolBoxStateVars->setItemIcon(2, (QIcon( ":/Resources/bronze.png")));
-             break;
-
-    default: // hide
-             ui->lblRankingSVSurfaceFluxes->setVisible(false);
-             ui->lblMedalSVSurfaceFluxes->setVisible(false);
-             ui->toolBoxStateVars->setItemIcon(2, (QIcon()));
-             break;
-  }
-}
-void DatasetClassification::updateSVObservationsLabels()
-{
-  // updates totals
-  float myObservationsTotal = 0.0;
-  //QPixmap pixmap;
-  myObservationsTotal += ui->lblSVObservationsLodgingPoints->text().toFloat();
-  myObservationsTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toFloat();
-  myObservationsTotal += ui->lblSVObservationsDamagesPoints->text().toFloat();
-
-  ui->lblOverallRatingSVObservations->setText(makeString(myObservationsTotal));
-
-  int myRank = 0;
-
-  if (myObservationsTotal >= 24) myRank=24;
-  else if (myObservationsTotal >= 23) myRank=23;
-  else if (myObservationsTotal >= 22) myRank=22;
-  else if (myObservationsTotal >= 21) myRank=21;
-
-  switch (myRank)
-  {
-    case 24: ui->lblMedalSVObservations->setVisible(true);
-             ui->lblMedalSVObservations->setScaledContents(true);
-             ui->lblMedalSVObservations->setPixmap(QPixmap( ":/Resources/platinum.png" ));
-             ui->lblRankingSVObservations->setVisible(true);
-             ui->lblRankingSVObservations->setText("Platinum");
-             ui->toolBoxStateVars->setItemIcon(3, (QIcon( ":/Resources/platinum.png")));
-             break;
-
-    case 23: ui->lblMedalSVObservations->setVisible(true);
-             ui->lblMedalSVObservations->setScaledContents(true);
-             ui->lblMedalSVObservations->setPixmap(QPixmap( ":/Resources/gold.png" ));
-             ui->lblRankingSVObservations->setVisible(true);
-             ui->lblRankingSVObservations->setText("Gold");
-             ui->toolBoxStateVars->setItemIcon(3, (QIcon( ":/Resources/gold.png")));
-             break;
-
-    case 22: ui->lblMedalSVObservations->setVisible(true);
-             ui->lblMedalSVObservations->setScaledContents(true);
-             ui->lblMedalSVObservations->setPixmap(QPixmap( ":/Resources/silver.png" ));
-             ui->lblRankingSVObservations->setVisible(true);
-             ui->lblRankingSVObservations->setText("Silver");
-             ui->toolBoxStateVars->setItemIcon(3, (QIcon( ":/Resources/silver.png")));
-             break;
-
-    case 21: ui->lblMedalSVObservations->setVisible(true);
-             ui->lblMedalSVObservations->setScaledContents(true);
-             ui->lblMedalSVObservations->setPixmap(QPixmap( ":/Resources/bronze.png" ));
-             ui->lblRankingSVObservations->setVisible(true);
-             ui->lblRankingSVObservations->setText("Bronze");
-             ui->toolBoxStateVars->setItemIcon(3, (QIcon( ":/Resources/bronze.png")));
-             break;
-
-    default: // hide
-             ui->lblRankingSVObservations->setVisible(false);
-             ui->lblMedalSVObservations->setVisible(false);
-             ui->toolBoxStateVars->setItemIcon(3, (QIcon()));
-             break;
-  }
-}
 
 void DatasetClassification::on_rbPrecipitationWeatherMeasured_toggled(bool checked)
 {
@@ -3982,4 +3722,51 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_toggled(bool checked)
       // now update the labels
       updateWeatherLabels();
     }
+}
+
+  //---------------------------------------------//
+ //  file i/o functions (including json stuff)  //
+//---------------------------------------------//
+
+void DatasetClassification::saveToFileJson()
+{
+  // create the main qjson object
+  QJsonObject myFormObject;
+  QJsonObject myFormHeader;
+  QJsonObject myFormCategories;
+  QJsonObject myManagementObject;
+  QString myMinDataSetting;
+
+  // create a header
+  myFormHeader.insert("User", ui->cbUser->currentText());
+  myFormHeader.insert("Dataset", ui->cbDatasets->currentText());
+  QDateTime myDateTime = QDateTime::currentDateTime();
+  QString myDateTimeString = myDateTime.toString();
+  myFormHeader.insert("Date", myDateTimeString);
+
+  // insert the header
+  myFormObject.insert("Header", myFormHeader);
+
+  // Management
+  //   variety
+  myMinDataSetting = ui->chbxVariety->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputVariety;
+  myManagementInputVariety.insert("Minimum data requirement", myMinDataSetting);
+  myManagementInputVariety.insert("Observations", ui->sbVarietyObsMgmt->value());
+  myManagementInputVariety.insert("Weight", ui->dsbVarietyWeightMgmt->value());
+  myManagementInputVariety.insert("Points", ui->lblVarietyRating->text());
+
+  // add to the object
+  myManagementObject.insert("Variety", myManagementInputVariety);
+
+
+  myFormObject.insert("Management", myManagementObject);
+  qDebug() << "myManagementObject" << myManagementObject;
+  qDebug() << "myFormObject" << myFormObject;
+}
+
+
+void DatasetClassification::on_pushButton_clicked()
+{
+    saveToFileJson();
 }
