@@ -1,0 +1,30 @@
+#!/bin/sh
+echo "src:"
+find . -name "*build*" -prune -o -name "*."cpp -exec wc -l {} \+
+find . -name "*build*" -prune -o -name "*."h -exec wc -l {} \+
+#echo "gui:"
+#find ./Gui/ -name "*."cpp | xargs wc -l
+#find ./Gui/ -name "*."h | xargs wc -l
+#echo "lib:"
+#find ./RankPointGenerator/ -name "*."cpp | xargs wc -l
+#find ./RankPointGenerator/ -name "*."h | xargs wc -l
+
+
+#echo "src:"
+echo "number of lines in all .cpp files:"
+find . -name "*build*" -prune -o -name "*."cpp -exec wc -l {} \+ | grep total
+echo "number of lines in all .h (header) files:"
+find . -name "*build*" -prune -o -name "*."h -exec wc -l {} \+ | grep total
+#echo " "
+#echo "gui:"
+#echo "cpp files:"
+#find ./Gui/ -name "*."cpp | xargs wc -l |grep total
+#echo "header files:"
+#find ./Gui/ -name "*."h | xargs wc -l | grep total
+#echo " "
+#echo "RankPointGenerator:"
+#echo "cpp files:"
+#find ./RankPointGenerator/ -name "*."cpp | xargs wc -l | grep total
+#echo "header files:"
+#find ./RankPointGenerator/ -name "*."h | xargs wc -l | grep total
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+echo "\nGui:"
+find ./Gui/ -name "*."cpp | xargs wc -l
+echo "\n"
+find ./Gui/ -name "*."h | xargs wc -l
+echo "\nRankPointGenerator:"
+find ./RankPointGenerator/ -name "*."cpp | xargs wc -l
+echo "\n"
+find ./RankPointGenerator/ -name "*."h | xargs wc -l
+
