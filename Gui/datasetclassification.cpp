@@ -3811,15 +3811,22 @@ void DatasetClassification::saveToFileJson()
   myManagementObject.insert("Rank", ui->lblRankingManagement->text());
   myManagementObject.insert("Notes", ui->txbrMgmt->toPlainText());
 
+  // insert management object into the form object
   myFormObject.insert("Management", myManagementObject);
 
+
+
+
+  // dumpt the JSON to the terminal for testing
+  qDebug() << "\n" << "myFormObject" << myFormObject;
+
+  // in order to dump the text, it has to be put into a QJsonDocument
   myQJsonDocument.setObject(myFormObject);
   QString myJsonText = myQJsonDocument.toJson();
-
+  // display the JSON in a QMessageBox (temporary feature)
   QMessageBox::information(0, QString("MAD"),
                            QString("The JSON looks like this:\n" + myJsonText),
                            QMessageBox::Ok);
-  qDebug() << "myFormObject" << myFormObject;
 }
 
 
