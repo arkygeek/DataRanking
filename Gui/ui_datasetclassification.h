@@ -6309,7 +6309,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Description/instructions go here</p></body></html>", 0));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Description/instructions</p></body></html>", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabManagement), QApplication::translate("DatasetClassification", "Management", 0));
         gbxPhenology->setTitle(QApplication::translate("DatasetClassification", "Edit", 0));
         lblMgmtMinData_2->setText(QApplication::translate("DatasetClassification", "Check for min. data", 0));
@@ -7129,7 +7129,7 @@ public:
          << QApplication::translate("DatasetClassification", "Select Dataset", 0)
          << QApplication::translate("DatasetClassification", "Example", 0)
         );
-        pushButton->setText(QApplication::translate("DatasetClassification", "Manage Datasets", 0));
+        pushButton->setText(QApplication::translate("DatasetClassification", "View JSON", 0));
 #ifndef QT_NO_TOOLTIP
         toolButtonDatasetDetails->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Push to see full details for dataset</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -7137,6 +7137,7 @@ public:
         cbUser->clear();
         cbUser->insertItems(0, QStringList()
          << QApplication::translate("DatasetClassification", "If not listed, select Register", 0)
+         << QApplication::translate("DatasetClassification", "Jason Jorgenson", 0)
          << QApplication::translate("DatasetClassification", "Register", 0)
         );
         lblRankImage->setText(QString());

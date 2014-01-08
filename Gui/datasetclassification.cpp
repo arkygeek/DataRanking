@@ -27,6 +27,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QDateTime>
+#include <QMessageBox>
 
 #include "ui_datasetclassification.h"
 
@@ -46,7 +47,6 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   updateSVLabels();
   updateSVLabels();
   updateSVLabels();
-  saveToFileJson();
 }
 
 DatasetClassification::~DatasetClassification()
@@ -3730,38 +3730,95 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_toggled(bool checked)
 
 void DatasetClassification::saveToFileJson()
 {
+  QJsonDocument myQJsonDocument;
   // create the main qjson object
   QJsonObject myFormObject;
-  QJsonObject myFormHeader;
+  QJsonObject myFormDetailsHeader;
   QJsonObject myFormCategories;
   QJsonObject myManagementObject;
   QString myMinDataSetting;
 
   // create a header
-  myFormHeader.insert("User", ui->cbUser->currentText());
-  myFormHeader.insert("Dataset", ui->cbDatasets->currentText());
+  myFormDetailsHeader.insert("User", ui->cbUser->currentText());
+  myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
   QDateTime myDateTime = QDateTime::currentDateTime();
   QString myDateTimeString = myDateTime.toString();
-  myFormHeader.insert("Date", myDateTimeString);
-
+  myFormDetailsHeader.insert("Date", myDateTimeString);
   // insert the header
-  myFormObject.insert("Header", myFormHeader);
+  myFormObject.insert("Details", myFormDetailsHeader);
 
   // Management
   //   variety
-  myMinDataSetting = ui->chbxVariety->checkState()==false?"no":"yes";
+  myMinDataSetting = ui->chbxVariety->checkState()==Qt::Unchecked?"no":"yes";
   QJsonObject myManagementInputVariety;
-  myManagementInputVariety.insert("Minimum data requirement", myMinDataSetting);
+  myManagementInputVariety.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputVariety.insert("Observations", ui->sbVarietyObsMgmt->value());
   myManagementInputVariety.insert("Weight", ui->dsbVarietyWeightMgmt->value());
   myManagementInputVariety.insert("Points", ui->lblVarietyRating->text());
+  //   Sowing
+  myMinDataSetting = ui->chbxSowing->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputSowing;
+  myManagementInputSowing.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputSowing.insert("Observations", ui->sbSowingObsMgmt->value());
+  myManagementInputSowing.insert("Weight", ui->dsbSowingWeightMgmt->value());
+  myManagementInputSowing.insert("Points", ui->lblSowingRating->text());
+  //   Harvest
+  myMinDataSetting = ui->chbxHarvest->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputHarvest;
+  myManagementInputHarvest.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputHarvest.insert("Observations", ui->sbHarvestObsMgmt->value());
+  myManagementInputHarvest.insert("Weight", ui->dsbHarvestWeightMgmt->value());
+  myManagementInputHarvest.insert("Points", ui->lblHarvestRating->text());
+  //   Fertilisation
+  myMinDataSetting = ui->chbxFertilisation->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputFertilisation;
+  myManagementInputFertilisation.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputFertilisation.insert("Observations", ui->sbFertilisationObsMgmt->value());
+  myManagementInputFertilisation.insert("Weight", ui->dsbFertilisationWeightMgmt->value());
+  myManagementInputFertilisation.insert("Points", ui->lblFertilisationRating->text());
+  //   Irrigation
+  myMinDataSetting = ui->chbxIrrigation->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputIrrigation;
+  myManagementInputIrrigation.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputIrrigation.insert("Observations", ui->sbIrrigationObsMgmt->value());
+  myManagementInputIrrigation.insert("Weight", ui->dsbIrrigationWeightMgmt->value());
+  myManagementInputIrrigation.insert("Points", ui->lblIrrigationRating->text());
+  //   SeedDensity
+  myMinDataSetting = ui->chbxSeedDensity->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputSeedDensity;
+  myManagementInputSeedDensity.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputSeedDensity.insert("Observations", ui->sbSeedDensityObsMgmt->value());
+  myManagementInputSeedDensity.insert("Weight", ui->dsbSeedDensityWeightMgmt->value());
+  myManagementInputSeedDensity.insert("Points", ui->lblSeedDensityRating->text());
+  //   Tillage
+  myMinDataSetting = ui->chbxTillage->checkState()==false?"no":"yes";
+  QJsonObject myManagementInputTillage;
+  myManagementInputTillage.insert("MinimumDataRequirement", myMinDataSetting);
+  myManagementInputTillage.insert("Observations", ui->sbTillageObsMgmt->value());
+  myManagementInputTillage.insert("Weight", ui->dsbTillageWeightMgmt->value());
+  myManagementInputTillage.insert("Points", ui->lblTillageRating->text());
 
-  // add to the object
+  // add to the management object
   myManagementObject.insert("Variety", myManagementInputVariety);
-
+  myManagementObject.insert("Sowing", myManagementInputSowing);
+  myManagementObject.insert("Harvest", myManagementInputHarvest);
+  myManagementObject.insert("Fertilisation", myManagementInputFertilisation);
+  myManagementObject.insert("Irrigation", myManagementInputIrrigation);
+  myManagementObject.insert("SeedDensity", myManagementInputSeedDensity);
+  myManagementObject.insert("Tillage", myManagementInputTillage);
+  // add rank info
+  myManagementObject.insert("Points", ui->lblCombinedTotal->text());
+  myManagementObject.insert("Rank", ui->lblRankingManagement->text());
+  myManagementObject.insert("Notes", ui->txbrMgmt->toPlainText());
 
   myFormObject.insert("Management", myManagementObject);
-  qDebug() << "myManagementObject" << myManagementObject;
+
+  myQJsonDocument.setObject(myFormObject);
+  QString myJsonText = myQJsonDocument.toJson();
+
+  QMessageBox::information(0, QString("MAD"),
+                           QString("The JSON looks like this:\n" + myJsonText),
+                           QMessageBox::Ok);
   qDebug() << "myFormObject" << myFormObject;
 }
 
