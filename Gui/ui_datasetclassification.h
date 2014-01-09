@@ -645,7 +645,7 @@ public:
     QDoubleSpinBox *dsbSVSurfaceFluxesN2OLossWeightPts;
     QDoubleSpinBox *dsbSVSurfaceFluxesN2LossWeightPts;
     QDoubleSpinBox *dsbSVSurfaceFluxesCh4LossWeightPts;
-    QTextBrowser *textBrowser_9;
+    QTextBrowser *txbrSVSurfaceFluxes;
     QGridLayout *gridLayoutSVSurfaceFluxesRankingResult;
     QSpacerItem *horizontalSpacerSVSurfaceFluxesLeftRankLabel;
     QLabel *lblMedalSVSurfaceFluxes;
@@ -4908,7 +4908,7 @@ public:
         toolBoxStateVars->addItem(pageSoil, QStringLiteral("Soil"));
         surfaceFluxesPage = new QWidget();
         surfaceFluxesPage->setObjectName(QStringLiteral("surfaceFluxesPage"));
-        surfaceFluxesPage->setGeometry(QRect(0, 0, 522, 379));
+        surfaceFluxesPage->setGeometry(QRect(0, 0, 726, 506));
         gridLayout_15 = new QGridLayout(surfaceFluxesPage);
         gridLayout_15->setSpacing(6);
         gridLayout_15->setContentsMargins(11, 11, 11, 11);
@@ -5168,12 +5168,12 @@ public:
 
         gridLayout_34->addLayout(gridLayoutSVSurfaceFluxesInputs, 0, 0, 1, 2);
 
-        textBrowser_9 = new QTextBrowser(gbxSVSurfaceFluxes);
-        textBrowser_9->setObjectName(QStringLiteral("textBrowser_9"));
-        sizePolicy7.setHeightForWidth(textBrowser_9->sizePolicy().hasHeightForWidth());
-        textBrowser_9->setSizePolicy(sizePolicy7);
+        txbrSVSurfaceFluxes = new QTextBrowser(gbxSVSurfaceFluxes);
+        txbrSVSurfaceFluxes->setObjectName(QStringLiteral("txbrSVSurfaceFluxes"));
+        sizePolicy7.setHeightForWidth(txbrSVSurfaceFluxes->sizePolicy().hasHeightForWidth());
+        txbrSVSurfaceFluxes->setSizePolicy(sizePolicy7);
 
-        gridLayout_34->addWidget(textBrowser_9, 1, 0, 2, 1);
+        gridLayout_34->addWidget(txbrSVSurfaceFluxes, 1, 0, 2, 1);
 
         gridLayoutSVSurfaceFluxesRankingResult = new QGridLayout();
         gridLayoutSVSurfaceFluxesRankingResult->setSpacing(6);
@@ -6223,8 +6223,8 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(2);
-        toolBoxStateVars->setCurrentIndex(1);
+        tabWidgetDataClassification->setCurrentIndex(7);
+        toolBoxStateVars->setCurrentIndex(2);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
         cbSeasonsTreatment5->setCurrentIndex(4);

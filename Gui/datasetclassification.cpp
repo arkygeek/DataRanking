@@ -4346,12 +4346,14 @@ void DatasetClassification::saveToFileJson()
   QJsonObject myStateVariablesObject;
 
   //    SVCrop
-
-  //      Yield
-  QJsonObject myStateVariablesCropYieldObject;
-
-  myMinDataSetting = ui->chbxYield->isChecked()?"yes":"no";
   QJsonObject myStateVariablesCropObject;
+  myStateVariablesCropObject.insert("PointsSubTotal", ui->lblOverallRatingSVCrop->text());
+
+  //    SVCrop
+  //      Yield
+
+  QJsonObject myStateVariablesCropYieldObject;
+  myMinDataSetting = ui->chbxYield->isChecked()?"yes":"no";
   myStateVariablesCropYieldObject.insert("MinimumDataRequirement", myMinDataSetting);
   //myStateVariablesCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
   myStateVariablesCropYieldObject.insert("Weight", ui->dsbSVCropYieldWeightPts->value());
@@ -4361,6 +4363,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the SVCrop object
   myStateVariablesCropObject.insert("Yield", myStateVariablesCropYieldObject);
 
+  //    SVCrop
   //      AGrBiomass
   QJsonObject myStateVariablesCropAGrBiomassObject;
   myMinDataSetting = ui->chbxSVCropAGrBiomass->isChecked()?"yes":"no";
@@ -4373,6 +4376,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the Crop object
   myStateVariablesCropObject.insert("AGrBiomass", myStateVariablesCropAGrBiomassObject);
 
+  //    SVCrop
   //      WeightOrgans
   QJsonObject myStateVariablesCropWeightOrgansObject;
   myMinDataSetting = ui->chbxSVCropWeightOrgans->isChecked()?"yes":"no";
@@ -4385,6 +4389,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the Crop object
   myStateVariablesCropObject.insert("WeightOrgans", myStateVariablesCropWeightOrgansObject);
 
+  //    SVCrop
   //      RootBiomass
   QJsonObject myStateVariablesCropRootBiomassObject;
   myMinDataSetting = ui->chbxSVCropRootBiomass->isChecked()?"yes":"no";
@@ -4397,6 +4402,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the Crop object
   myStateVariablesCropObject.insert("RootBiomass", myStateVariablesCropRootBiomassObject);
 
+  //    SVCrop
   //      NInAGrBiomass
   QJsonObject myStateVariablesCropNInAGrBiomassObject;
   myMinDataSetting = ui->chbxSVCropNInAGrBiomass->isChecked()?"yes":"no";
@@ -4409,6 +4415,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the Crop object
   myStateVariablesCropObject.insert("NInAGrBiomass", myStateVariablesCropNInAGrBiomassObject);
 
+  //    SVCrop
   //      NInOrgans
   QJsonObject myStateVariablesCropNInOrgansObject;
   myMinDataSetting = ui->chbxSVCropNInOrgans->isChecked()?"yes":"no";
@@ -4421,6 +4428,7 @@ void DatasetClassification::saveToFileJson()
   // add this to the Crop object
   myStateVariablesCropObject.insert("NInOrgans", myStateVariablesCropNInOrgansObject);
 
+  //    SVCrop
   //      LAI
   QJsonObject myStateVariablesCropLAIObject;
   myMinDataSetting = ui->chbxSVCropLAI->isChecked()?"yes":"no";
@@ -4435,6 +4443,245 @@ void DatasetClassification::saveToFileJson()
 
   // put all of the SVCrop objects into the state variable object
   myStateVariablesObject.insert("Crop", myStateVariablesCropObject);
+
+  // -----> THIS IS TEMPORARY
+ myQJsonDocument.setObject(myStateVariablesCropObject);
+ myJsonText = myQJsonDocument.toJson();
+ // display the JSON in the temporary text browser
+ ui->txbrSVCrop->clear();
+ ui->txbrSVCrop->setText(myJsonText);
+
+  //    SV Soil
+
+  QJsonObject myStateVariablesSoilObject;
+  myStateVariablesSoilObject.insert("PointsSubTotal", ui->lblOverallRatingSVSoil->text());
+
+  //    SV Soil
+  //      SoilWaterGrav
+  QJsonObject myStateVariablesSoilSoilWaterGravObject;
+  myMinDataSetting = ui->chbxSVSoilSoilWaterGrav->isChecked()?"yes":"no";
+  myStateVariablesSoilSoilWaterGravObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesSoilSoilWaterGravObject.insert("Layers", ui->dsbSVSoilSoilWaterGravLayers->value());
+  myStateVariablesSoilSoilWaterGravObject.insert("Weight", ui->dsbSVSoilSoilWaterGravWeightPts->value());
+  myStateVariablesSoilSoilWaterGravObject.insert("Points", ui->lblSVSoilSoilWaterGravPoints->text());
+  myStateVariablesSoilSoilWaterGravObject.insert("Replicates", ui->dsbSVSoilSoilWaterGravReplicates->text());
+  myStateVariablesSoilSoilWaterGravObject.insert("Observations", ui->sbSVSoilSoilWaterGravObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("SoilWaterGrav", myStateVariablesSoilSoilWaterGravObject);
+
+  //    SV Soil
+  //      PressureHeads
+  QJsonObject myStateVariablesSoilPressureHeadsObject;
+  myMinDataSetting = ui->chbxSVSoilPressureHeads->isChecked()?"yes":"no";
+  myStateVariablesSoilPressureHeadsObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesSoilPressureHeadsObject.insert("Layers", ui->dsbSVSoilPressureHeadsLayers->value());
+  myStateVariablesSoilPressureHeadsObject.insert("Weight", ui->dsbSVSoilPressureHeadsWeightPts->value());
+  myStateVariablesSoilPressureHeadsObject.insert("Points", ui->lblSVSoilPressureHeadsPoints->text());
+  myStateVariablesSoilPressureHeadsObject.insert("Replicates", ui->dsbSVSoilPressureHeadsReplicates->text());
+  myStateVariablesSoilPressureHeadsObject.insert("Observations", ui->sbSVSoilPressureHeadsObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("PressureHeads", myStateVariablesSoilPressureHeadsObject);
+
+  //    SV Soil
+  //      NMin
+  QJsonObject myStateVariablesSoilNMinObject;
+  myMinDataSetting = ui->chbxSVSoilNMin->isChecked()?"yes":"no";
+  myStateVariablesSoilNMinObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesSoilNMinObject.insert("Layers", ui->dsbSVSoilNMinLayers->value());
+  myStateVariablesSoilNMinObject.insert("Weight", ui->dsbSVSoilNMinWeightPts->value());
+  myStateVariablesSoilNMinObject.insert("Points", ui->lblSVSoilNMinPoints->text());
+  myStateVariablesSoilNMinObject.insert("Replicates", ui->dsbSVSoilNMinReplicates->text());
+  myStateVariablesSoilNMinObject.insert("Observations", ui->sbSVSoilNMinObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("NMin", myStateVariablesSoilNMinObject);
+
+  //    SV Soil
+  //      SoilWaterSensorCal
+  QJsonObject myStateVariablesSoilSoilWaterSensorCalObject;
+  myMinDataSetting = ui->chbxSVSoilSoilWaterSensorCal->isChecked()?"yes":"no";
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("Layers", ui->dsbSVSoilSoilWaterSensorCalLayers->value());
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("Weight", ui->dsbSVSoilSoilWaterSensorCalWeightPts->value());
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("Points", ui->lblSVSoilSoilWaterSensorCalPoints->text());
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("Replicates", ui->dsbSVSoilSoilWaterSensorCalReplicates->text());
+  myStateVariablesSoilSoilWaterSensorCalObject.insert("Observations", ui->sbSVSoilSoilWaterSensorCalObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("SoilWaterSensorCal", myStateVariablesSoilSoilWaterSensorCalObject);
+
+  //    SV Soil
+  //      WaterFluxBottomRoot
+  QJsonObject myStateVariablesSoilWaterFluxBottomRootObject;
+  myMinDataSetting = ui->chbxSVSoilWaterFluxBottomRoot->isChecked()?"yes":"no";
+  myStateVariablesSoilWaterFluxBottomRootObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSoilWaterFluxBottomRootObject.insert("Layers", ui->dsbSVSoilWaterFluxBottomRootLayers->value());
+  myStateVariablesSoilWaterFluxBottomRootObject.insert("Weight", ui->dsbSVSoilWaterFluxBottomRootWeightPts->value());
+  myStateVariablesSoilWaterFluxBottomRootObject.insert("Points", ui->lblSVSoilWaterFluxBottomRootPoints->text());
+  myStateVariablesSoilWaterFluxBottomRootObject.insert("Replicates", ui->dsbSVSoilWaterFluxBottomRootReplicates->text());
+  myStateVariablesSoilWaterFluxBottomRootObject.insert("Observations", ui->sbSVSoilWaterFluxBottomRootObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("WaterFluxBottomRoot", myStateVariablesSoilWaterFluxBottomRootObject);
+
+  //    SV Soil
+  //      NFluxBottomRoot
+  QJsonObject myStateVariablesSoilNFluxBottomRootObject;
+  myMinDataSetting = ui->chbxSVSoilNFluxBottomRoot->isChecked()?"yes":"no";
+  myStateVariablesSoilNFluxBottomRootObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSoilNFluxBottomRootObject.insert("Layers", ui->dsbSVSoilNFluxBottomRootLayers->value());
+  myStateVariablesSoilNFluxBottomRootObject.insert("Weight", ui->dsbSVSoilNFluxBottomRootWeightPts->value());
+  myStateVariablesSoilNFluxBottomRootObject.insert("Points", ui->lblSVSoilNFluxBottomRootPoints->text());
+  myStateVariablesSoilNFluxBottomRootObject.insert("Replicates", ui->dsbSVSoilNFluxBottomRootReplicates->text());
+  myStateVariablesSoilNFluxBottomRootObject.insert("Observations", ui->sbSVSoilNFluxBottomRootObservations->text());
+  // add this to the Soil object
+  myStateVariablesSoilObject.insert("NFluxBottomRoot", myStateVariablesSoilNFluxBottomRootObject);
+
+  // put all of the SV Soil objects into the state variable object
+  myStateVariablesObject.insert("Soil", myStateVariablesSoilObject);
+
+  // -----> THIS IS TEMPORARY
+  myQJsonDocument.setObject(myStateVariablesSoilObject);
+  myJsonText = myQJsonDocument.toJson();
+  // display the JSON in the temporary text browser
+  ui->txbrSVSoil->clear();
+  ui->txbrSVSoil->setText(myJsonText);
+
+  //    SV SurfaceFluxes
+
+  QJsonObject myStateVariablesSurfaceFluxesObject;
+  myStateVariablesSurfaceFluxesObject.insert("PointsSubTotal", ui->lblOverallRatingSVSurfaceFluxes->text());
+
+  //    SV SurfaceFluxes
+  //      ET
+  QJsonObject myStateVariablesSurfaceFluxesEtObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesEt->isChecked()?"yes":"no";
+  myStateVariablesSurfaceFluxesEtObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesEtObject.insert("Layers", ui->dsbSVSurfaceFluxesEtLayers->value());
+  myStateVariablesSurfaceFluxesEtObject.insert("Weight", ui->dsbSVSurfaceFluxesEtWeightPts->value());
+  myStateVariablesSurfaceFluxesEtObject.insert("Points", ui->lblSVSurfaceFluxesEtPoints->text());
+  //myStateVariablesSurfaceFluxesEtObject.insert("Replicates", ui->dsbSVSurfaceFluxesEtReplicates->text());
+  myStateVariablesSurfaceFluxesEtObject.insert("Observations", ui->sbSVSurfaceFluxesEtObservations->text());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("ET", myStateVariablesSurfaceFluxesEtObject);
+
+  //    SV SurfaceFluxes
+  //      NH3Loss
+  QJsonObject myStateVariablesSurfaceFluxesNh3LossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesNh3Loss->isChecked()?"yes":"no";
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Layers", ui->dsbSVSurfaceFluxesNh3LossLayers->value());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("Weight", ui->dsbSVSurfaceFluxesNh3LossWeightPts->value());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("Points", ui->lblSVSurfaceFluxesNh3LossPoints->text());
+  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNh3LossReplicates->text());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("Observations", ui->sbSVSurfaceFluxesNh3LossObservations->text());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("NH3Loss", myStateVariablesSurfaceFluxesNh3LossObject);
+
+  //    SV SurfaceFluxes
+  //      N2OLoss
+  QJsonObject myStateVariablesSurfaceFluxesN2OLossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesN2OLoss->isChecked()?"yes":"no";
+  myStateVariablesSurfaceFluxesN2OLossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesN2OLossObject.insert("Layers", ui->dsbSVSurfaceFluxesN2OLossLayers->value());
+  myStateVariablesSurfaceFluxesN2OLossObject.insert("Weight", ui->dsbSVSurfaceFluxesN2OLossWeightPts->value());
+  myStateVariablesSurfaceFluxesN2OLossObject.insert("Points", ui->lblSVSurfaceFluxesN2OLossPoints->text());
+  //myStateVariablesSurfaceFluxesN2OLossObject.insert("Replicates", ui->dsbSVSurfaceFluxesN2OLossReplicates->text());
+  myStateVariablesSurfaceFluxesN2OLossObject.insert("Observations", ui->sbSVSurfaceFluxesN2OLossObservations->text());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("N2OLoss", myStateVariablesSurfaceFluxesN2OLossObject);
+
+  //    SV SurfaceFluxes
+  //      N2Loss
+  QJsonObject myStateVariablesSurfaceFluxesN2LossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesN2Loss->isChecked()?"yes":"no";
+  myStateVariablesSurfaceFluxesN2LossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesN2LossObject.insert("Layers", ui->dsbSVSurfaceFluxesN2LossLayers->value());
+  myStateVariablesSurfaceFluxesN2LossObject.insert("Weight", ui->dsbSVSurfaceFluxesN2LossWeightPts->value());
+  myStateVariablesSurfaceFluxesN2LossObject.insert("Points", ui->lblSVSurfaceFluxesN2LossPoints->text());
+  //myStateVariablesSurfaceFluxesN2LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesN2LossReplicates->text());
+  myStateVariablesSurfaceFluxesN2LossObject.insert("Observations", ui->sbSVSurfaceFluxesN2LossObservations->text());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("N2Loss", myStateVariablesSurfaceFluxesN2LossObject);
+
+  //    SV SurfaceFluxes
+  //      Ch4Loss
+  QJsonObject myStateVariablesSurfaceFluxesCh4LossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesCh4Loss->isChecked()?"yes":"no";
+  myStateVariablesSurfaceFluxesCh4LossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesCh4LossObject.insert("Layers", ui->dsbSVSurfaceFluxesCh4LossLayers->value());
+  myStateVariablesSurfaceFluxesCh4LossObject.insert("Weight", ui->dsbSVSurfaceFluxesCh4LossWeightPts->value());
+  myStateVariablesSurfaceFluxesCh4LossObject.insert("Points", ui->lblSVSurfaceFluxesCh4LossPoints->text());
+  //myStateVariablesSurfaceFluxesCh4LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesCh4LossReplicates->text());
+  myStateVariablesSurfaceFluxesCh4LossObject.insert("Observations", ui->sbSVSurfaceFluxesCh4LossObservations->text());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("CH4Loss", myStateVariablesSurfaceFluxesCh4LossObject);
+
+  // put all of the SV Surface Fluxes objects into the state variable object
+  myStateVariablesObject.insert("SurfaceFluxes", myStateVariablesSurfaceFluxesObject);
+
+  // -----> THIS IS TEMPORARY
+  myQJsonDocument.setObject(myStateVariablesSurfaceFluxesObject);
+  myJsonText = myQJsonDocument.toJson();
+  // display the JSON in the temporary text browser
+  ui->txbrSVSurfaceFluxes->clear();
+  ui->txbrSVSurfaceFluxes->setText(myJsonText);
+
+  //    SV Observations
+
+  QJsonObject myStateVariablesObservationsObject;
+  myStateVariablesObservationsObject.insert("PointsSubTotal", ui->lblOverallRatingSVObservations->text());
+
+  //    SV Observations
+  //      Lodging
+  QJsonObject myStateVariablesObservationsLodgingObject;
+  myMinDataSetting = ui->chbxSVObservationsLodging->isChecked()?"yes":"no";
+  myStateVariablesObservationsLodgingObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesObservationsLodgingObject.insert("Layers", ui->dsbSVObservationsLodgingLayers->value());
+  myStateVariablesObservationsLodgingObject.insert("Weight", ui->dsbSVObservationsLodgingWeightPts->value());
+  myStateVariablesObservationsLodgingObject.insert("Points", ui->lblSVObservationsLodgingPoints->text());
+  //myStateVariablesObservationsLodgingObject.insert("Replicates", ui->dsbSVObservationsLodgingReplicates->text());
+  myStateVariablesObservationsLodgingObject.insert("Observations", ui->sbSVObservationsLodgingObservations->text());
+  // add this to the Observations object
+  myStateVariablesObservationsObject.insert("Lodging", myStateVariablesObservationsLodgingObject);
+
+  //    SV Observations
+  //      Pests
+  QJsonObject myStateVariablesObservationsPestsObject;
+  myMinDataSetting = ui->chbxSVObservationsPestsOrDiseases->isChecked()?"yes":"no";
+  myStateVariablesObservationsPestsObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesObservationsPestsObject.insert("Layers", ui->dsbSVObservationsPestsLayers->value());
+  myStateVariablesObservationsPestsObject.insert("Weight", ui->dsbSVObservationsPestsOrDiseasesWeightPts->value());
+  myStateVariablesObservationsPestsObject.insert("Points", ui->lblSVObservationsPestsOrDiseasesPoints->text());
+  //myStateVariablesObservationsPestsObject.insert("Replicates", ui->dsbSVObservationsPestsReplicates->text());
+  myStateVariablesObservationsPestsObject.insert("Observations", ui->sbSVObservationsPestsOrDiseasesObservations->text());
+  // add this to the Observations object
+  myStateVariablesObservationsObject.insert("PestsOrDiseases", myStateVariablesObservationsPestsObject);
+
+  //    SV Observations
+  //      Damages
+  QJsonObject myStateVariablesObservationsDamagesObject;
+  myMinDataSetting = ui->chbxSVObservationsDamages->isChecked()?"yes":"no";
+  myStateVariablesObservationsDamagesObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesObservationsDamagesObject.insert("Layers", ui->dsbSVObservationsDamagesLayers->value());
+  myStateVariablesObservationsDamagesObject.insert("Weight", ui->dsbSVObservationsDamagesWeightPts->value());
+  myStateVariablesObservationsDamagesObject.insert("Points", ui->lblSVObservationsDamagesPoints->text());
+  //myStateVariablesObservationsDamagesObject.insert("Replicates", ui->dsbSVObservationsDamagesReplicates->text());
+  myStateVariablesObservationsDamagesObject.insert("Observations", ui->sbSVObservationsDamagesObservations->text());
+  // add this to the Observations object
+  myStateVariablesObservationsObject.insert("Damages", myStateVariablesObservationsDamagesObject);
+
+  // put all of the SV Observations objects into the state variable object
+  myStateVariablesObject.insert("Observations", myStateVariablesObservationsObject);
+
+  // -----> THIS IS TEMPORARY
+  myQJsonDocument.setObject(myStateVariablesObservationsObject);
+  myJsonText = myQJsonDocument.toJson();
+  // display the JSON in the temporary text browser
+  ui->txbrSVObservations->clear();
+  ui->txbrSVObservations->setText(myJsonText);
+
+  // add rank info
+  myStateVariablesObject.insert("Points", ui->lblOverallRatingSV->text());
+  myStateVariablesObject.insert("Rank", ui->lblRankingSV->text());
+
 
     //
    // insert the sub-objects into the form object

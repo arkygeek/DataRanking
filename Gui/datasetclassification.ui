@@ -35,7 +35,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -6813,7 +6813,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -8502,8 +8502,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>522</width>
-             <height>379</height>
+             <width>726</width>
+             <height>506</height>
             </rect>
            </property>
            <attribute name="label">
@@ -8912,7 +8912,7 @@ p, li { white-space: pre-wrap; }
                 </layout>
                </item>
                <item row="1" column="0" rowspan="2">
-                <widget class="QTextBrowser" name="textBrowser_9">
+                <widget class="QTextBrowser" name="txbrSVSurfaceFluxes">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                    <horstretch>1</horstretch>
