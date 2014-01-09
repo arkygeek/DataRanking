@@ -4345,7 +4345,96 @@ void DatasetClassification::saveToFileJson()
 
   QJsonObject myStateVariablesObject;
 
+  //    SVCrop
 
+  //      Yield
+  QJsonObject myStateVariablesCropYieldObject;
+
+  myMinDataSetting = ui->chbxYield->isChecked()?"yes":"no";
+  QJsonObject myStateVariablesCropObject;
+  myStateVariablesCropYieldObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
+  myStateVariablesCropYieldObject.insert("Weight", ui->dsbSVCropYieldWeightPts->value());
+  myStateVariablesCropYieldObject.insert("Points", ui->lblSVCropYieldPoints->text());
+  myStateVariablesCropYieldObject.insert("Replicates", ui->dsbSVCropYieldReplicates->text());
+  myStateVariablesCropYieldObject.insert("Observations", ui->sbSVCropYieldObservations->text());
+  // add this to the SVCrop object
+  myStateVariablesCropObject.insert("Yield", myStateVariablesCropYieldObject);
+
+  //      AGrBiomass
+  QJsonObject myStateVariablesCropAGrBiomassObject;
+  myMinDataSetting = ui->chbxSVCropAGrBiomass->isChecked()?"yes":"no";
+  myStateVariablesCropAGrBiomassObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
+  myStateVariablesCropAGrBiomassObject.insert("Weight", ui->dsbSVCropAGrBiomassWeightPts->value());
+  myStateVariablesCropAGrBiomassObject.insert("Points", ui->lblSVCropAGrBiomassPoints->text());
+  myStateVariablesCropAGrBiomassObject.insert("Replicates", ui->dsbSVCropAGrBiomassReplicates->text());
+  myStateVariablesCropAGrBiomassObject.insert("Observations", ui->sbSVCropAGrBiomassObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("AGrBiomass", myStateVariablesCropAGrBiomassObject);
+
+  //      WeightOrgans
+  QJsonObject myStateVariablesCropWeightOrgansObject;
+  myMinDataSetting = ui->chbxSVCropWeightOrgans->isChecked()?"yes":"no";
+  myStateVariablesCropWeightOrgansObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesCropWeightOrgansObject.insert("Layers", ui->dsbSVCropWeightOrgansLayers->value());
+  myStateVariablesCropWeightOrgansObject.insert("Weight", ui->dsbSVCropWeightOrgansWeightPts->value());
+  myStateVariablesCropWeightOrgansObject.insert("Points", ui->lblSVCropWeightOrgansPoints->text());
+  myStateVariablesCropWeightOrgansObject.insert("Replicates", ui->dsbSVCropWeightOrgansReplicates->text());
+  myStateVariablesCropWeightOrgansObject.insert("Observations", ui->sbSVCropWeightOrgansObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("WeightOrgans", myStateVariablesCropWeightOrgansObject);
+
+  //      RootBiomass
+  QJsonObject myStateVariablesCropRootBiomassObject;
+  myMinDataSetting = ui->chbxSVCropRootBiomass->isChecked()?"yes":"no";
+  myStateVariablesCropRootBiomassObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesCropRootBiomassObject.insert("Layers", ui->dsbSVCropRootBiomassLayers->value());
+  myStateVariablesCropRootBiomassObject.insert("Weight", ui->dsbSVCropRootBiomassWeightPts->value());
+  myStateVariablesCropRootBiomassObject.insert("Points", ui->lblSVCropRootBiomassPoints->text());
+  myStateVariablesCropRootBiomassObject.insert("Replicates", ui->dsbSVCropRootBiomassReplicates->text());
+  myStateVariablesCropRootBiomassObject.insert("Observations", ui->sbSVCropRootBiomassObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("RootBiomass", myStateVariablesCropRootBiomassObject);
+
+  //      NInAGrBiomass
+  QJsonObject myStateVariablesCropNInAGrBiomassObject;
+  myMinDataSetting = ui->chbxSVCropNInAGrBiomass->isChecked()?"yes":"no";
+  myStateVariablesCropNInAGrBiomassObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesCropNInAGrBiomassObject.insert("Layers", ui->dsbSVCropNInAGrBiomassLayers->value());
+  myStateVariablesCropNInAGrBiomassObject.insert("Weight", ui->dsbSVCropNInAGrBiomassWeightPts->value());
+  myStateVariablesCropNInAGrBiomassObject.insert("Points", ui->lblSVCropNInAGrBiomassPoints->text());
+  myStateVariablesCropNInAGrBiomassObject.insert("Replicates", ui->dsbSVCropNInAGrBiomassReplicates->text());
+  myStateVariablesCropNInAGrBiomassObject.insert("Observations", ui->sbSVCropNInAGrBiomassObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("NInAGrBiomass", myStateVariablesCropNInAGrBiomassObject);
+
+  //      NInOrgans
+  QJsonObject myStateVariablesCropNInOrgansObject;
+  myMinDataSetting = ui->chbxSVCropNInOrgans->isChecked()?"yes":"no";
+  myStateVariablesCropNInOrgansObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesCropNInOrgansObject.insert("Layers", ui->dsbSVCropNInOrgansLayers->value());
+  myStateVariablesCropNInOrgansObject.insert("Weight", ui->dsbSVCropNInOrgansWeightPts->value());
+  myStateVariablesCropNInOrgansObject.insert("Points", ui->lblSVCropNInOrgansPoints->text());
+  myStateVariablesCropNInOrgansObject.insert("Replicates", ui->dsbSVCropNInOrgansReplicates->text());
+  myStateVariablesCropNInOrgansObject.insert("Observations", ui->sbSVCropNInOrgansObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("NInOrgans", myStateVariablesCropNInOrgansObject);
+
+  //      LAI
+  QJsonObject myStateVariablesCropLAIObject;
+  myMinDataSetting = ui->chbxSVCropLAI->isChecked()?"yes":"no";
+  myStateVariablesCropLAIObject.insert("MinimumDataRequirement", myMinDataSetting);
+  myStateVariablesCropLAIObject.insert("Layers", ui->dsbSVCropLAILayers->value());
+  myStateVariablesCropLAIObject.insert("Weight", ui->dsbSVCropLAIWeightPts->value());
+  myStateVariablesCropLAIObject.insert("Points", ui->lblSVCropLAIPoints->text());
+  myStateVariablesCropLAIObject.insert("Replicates", ui->dsbSVCropLAIReplicates->text());
+  myStateVariablesCropLAIObject.insert("Observations", ui->sbSVCropLAIObservations->text());
+  // add this to the Crop object
+  myStateVariablesCropObject.insert("LAI", myStateVariablesCropLAIObject);
+
+  // put all of the SVCrop objects into the state variable object
+  myStateVariablesObject.insert("Crop", myStateVariablesCropObject);
 
     //
    // insert the sub-objects into the form object
