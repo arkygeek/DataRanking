@@ -69,7 +69,7 @@ public:
 
 private slots:
   void on_cbUser_currentIndexChanged(const QString &theSelection);
-  void uploadFinished(EnginioReply *);
+  void uploadFinished(EnginioReply *reply);
 
 
     //--------------------------------------//

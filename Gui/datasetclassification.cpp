@@ -3757,6 +3757,7 @@ void DatasetClassification::saveToFileJson()
   QJsonDocument myQJsonDocument;
   // create the main qjson object
   QJsonObject myFormObject;
+  myFormObject.insert("objectType", QString("objects.entry"));
   QJsonObject myFormDetailsHeader;
   QJsonObject myFormCategories;
   QString myMinDataSetting;
@@ -4858,8 +4859,9 @@ void DatasetClassification::saveToFileJson()
   EnginioClient *mypClient = new EnginioClient;
   mypClient->setBackendId(myBackendId);
 
+  connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+
   mypClient->create(myFormObject);
-      connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
     //
    // write this out to a file
@@ -4932,8 +4934,9 @@ FormModel *DatasetClassification::getFormModel() const
   return mpFormModel;
 }
 
-void DatasetClassification::uploadFinished(EnginioReply*)
+void DatasetClassification::uploadFinished(EnginioReply* reply)
 {
   qDebug() << "UploadFinished";
-
+  qDebug() << "data: " << reply->data();
+  qDebug() << "isError: " << reply->isError();
 }
