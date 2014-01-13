@@ -756,25 +756,25 @@ public:
     QHBoxLayout *horizontalLayoutSeasonsTop;
     QGroupBox *gbxSeasonsSites;
     QGridLayout *gridLayout_37;
-    QLabel *lblSeasonsSitesNumber;
-    QLabel *lblSeasonsSitesWeight;
-    QLabel *lblSeasonsSitesSeasonsPerCrop;
-    QSpinBox *sbSeasonsSitesSeasonsPerCropNumber;
-    QDoubleSpinBox *dsbSeasonsSitesSeasonsPerCropWeight;
-    QLabel *lblSeasonsPerCropRatingSeasons;
-    QLabel *lblSeasonsSitesSiteVariants;
-    QSpinBox *sbSeasonsSitesSiteVariantsNumber;
-    QDoubleSpinBox *dsbSeasonsSitesSiteVariantsWeight;
-    QLabel *lblSiteVariantsRatingSeasons;
-    QLabel *lblSeasonsSitesMgmtPotential;
     QSpinBox *sbSeasonsSitesMgmtPotentialNumber;
+    QLabel *lblSeasonsSitesZeroNTreatment;
+    QLabel *lblSiteVariantsRatingSeasons;
+    QDoubleSpinBox *dsbSeasonsSitesSiteVariantsWeight;
     QDoubleSpinBox *dsbSeasonsSitesMgmtPotentialWeight;
     QLabel *lblMgmtPotentialRatingSeasons;
-    QLabel *lblSeasonsSitesZeroNTreatment;
+    QLabel *lblSeasonsSitesSiteVariants;
+    QSpinBox *sbSeasonsSitesSiteVariantsNumber;
+    QSpinBox *sbSeasonsSitesSeasonsPerCropNumber;
+    QLabel *lblSeasonsPerCropRatingSeasons;
+    QLabel *lblSeasonsSitesWeight;
+    QDoubleSpinBox *dsbSeasonsSitesSeasonsPerCropWeight;
+    QLabel *lblSeasonsSitesSeasonsPerCrop;
     QComboBox *cbSeasonsSitesZeroNTreatment;
     QDoubleSpinBox *dsbSeasonsSitesZeroNTreatment;
     QLabel *lblZeroNTreatmentRatingSeasons;
     QLabel *lblSeasonsSitesTotal;
+    QLabel *lblSeasonsSitesNumber;
+    QLabel *lblSeasonsSitesMgmtPotential;
     QTextEdit *tedSeasons;
     QHBoxLayout *horizontalLayoutSeasonsMultiplier;
     QLabel *lblSeasonsMultiplier;
@@ -4470,7 +4470,7 @@ public:
         toolBoxStateVars->addItem(pageCrop, QStringLiteral("Crop"));
         pageSoil = new QWidget();
         pageSoil->setObjectName(QStringLiteral("pageSoil"));
-        pageSoil->setGeometry(QRect(0, 0, 726, 506));
+        pageSoil->setGeometry(QRect(0, 0, 546, 421));
         gridLayout_12 = new QGridLayout(pageSoil);
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -5962,68 +5962,27 @@ public:
         gridLayout_37->setSpacing(6);
         gridLayout_37->setContentsMargins(11, 11, 11, 11);
         gridLayout_37->setObjectName(QStringLiteral("gridLayout_37"));
-        lblSeasonsSitesNumber = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesNumber->setObjectName(QStringLiteral("lblSeasonsSitesNumber"));
-        sizePolicy3.setHeightForWidth(lblSeasonsSitesNumber->sizePolicy().hasHeightForWidth());
-        lblSeasonsSitesNumber->setSizePolicy(sizePolicy3);
-        lblSeasonsSitesNumber->setFont(font1);
+        sbSeasonsSitesMgmtPotentialNumber = new QSpinBox(gbxSeasonsSites);
+        sbSeasonsSitesMgmtPotentialNumber->setObjectName(QStringLiteral("sbSeasonsSitesMgmtPotentialNumber"));
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy9);
+        sbSeasonsSitesMgmtPotentialNumber->setMaximumSize(QSize(50, 16777215));
+        sbSeasonsSitesMgmtPotentialNumber->setValue(4);
 
-        gridLayout_37->addWidget(lblSeasonsSitesNumber, 0, 2, 1, 1);
+        gridLayout_37->addWidget(sbSeasonsSitesMgmtPotentialNumber, 3, 2, 1, 1);
 
-        lblSeasonsSitesWeight = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesWeight->setObjectName(QStringLiteral("lblSeasonsSitesWeight"));
-        lblSeasonsSitesWeight->setFont(font1);
+        lblSeasonsSitesZeroNTreatment = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("lblSeasonsSitesZeroNTreatment"));
+        lblSeasonsSitesZeroNTreatment->setFont(font1);
 
-        gridLayout_37->addWidget(lblSeasonsSitesWeight, 0, 3, 1, 1);
+        gridLayout_37->addWidget(lblSeasonsSitesZeroNTreatment, 4, 0, 1, 2);
 
-        lblSeasonsSitesSeasonsPerCrop = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesSeasonsPerCrop->setObjectName(QStringLiteral("lblSeasonsSitesSeasonsPerCrop"));
-        lblSeasonsSitesSeasonsPerCrop->setFont(font1);
+        lblSiteVariantsRatingSeasons = new QLabel(gbxSeasonsSites);
+        lblSiteVariantsRatingSeasons->setObjectName(QStringLiteral("lblSiteVariantsRatingSeasons"));
+        lblSiteVariantsRatingSeasons->setFont(font8);
+        lblSiteVariantsRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_37->addWidget(lblSeasonsSitesSeasonsPerCrop, 1, 0, 1, 2);
-
-        sbSeasonsSitesSeasonsPerCropNumber = new QSpinBox(gbxSeasonsSites);
-        sbSeasonsSitesSeasonsPerCropNumber->setObjectName(QStringLiteral("sbSeasonsSitesSeasonsPerCropNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy9);
-        sbSeasonsSitesSeasonsPerCropNumber->setMaximumSize(QSize(50, 16777215));
-        sbSeasonsSitesSeasonsPerCropNumber->setMinimum(-1000);
-        sbSeasonsSitesSeasonsPerCropNumber->setMaximum(1000);
-        sbSeasonsSitesSeasonsPerCropNumber->setValue(6);
-
-        gridLayout_37->addWidget(sbSeasonsSitesSeasonsPerCropNumber, 1, 2, 1, 1);
-
-        dsbSeasonsSitesSeasonsPerCropWeight = new QDoubleSpinBox(gbxSeasonsSites);
-        dsbSeasonsSitesSeasonsPerCropWeight->setObjectName(QStringLiteral("dsbSeasonsSitesSeasonsPerCropWeight"));
-        dsbSeasonsSitesSeasonsPerCropWeight->setMaximumSize(QSize(60, 16777215));
-        dsbSeasonsSitesSeasonsPerCropWeight->setDecimals(1);
-        dsbSeasonsSitesSeasonsPerCropWeight->setMaximum(5);
-        dsbSeasonsSitesSeasonsPerCropWeight->setSingleStep(0.5);
-        dsbSeasonsSitesSeasonsPerCropWeight->setValue(1);
-
-        gridLayout_37->addWidget(dsbSeasonsSitesSeasonsPerCropWeight, 1, 3, 1, 1);
-
-        lblSeasonsPerCropRatingSeasons = new QLabel(gbxSeasonsSites);
-        lblSeasonsPerCropRatingSeasons->setObjectName(QStringLiteral("lblSeasonsPerCropRatingSeasons"));
-        lblSeasonsPerCropRatingSeasons->setFont(font8);
-        lblSeasonsPerCropRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_37->addWidget(lblSeasonsPerCropRatingSeasons, 1, 4, 1, 1);
-
-        lblSeasonsSitesSiteVariants = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesSiteVariants->setObjectName(QStringLiteral("lblSeasonsSitesSiteVariants"));
-        lblSeasonsSitesSiteVariants->setFont(font1);
-
-        gridLayout_37->addWidget(lblSeasonsSitesSiteVariants, 2, 0, 1, 2);
-
-        sbSeasonsSitesSiteVariantsNumber = new QSpinBox(gbxSeasonsSites);
-        sbSeasonsSitesSiteVariantsNumber->setObjectName(QStringLiteral("sbSeasonsSitesSiteVariantsNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy9);
-        sbSeasonsSitesSiteVariantsNumber->setMaximumSize(QSize(50, 16777215));
-        sbSeasonsSitesSiteVariantsNumber->setValue(1);
-
-        gridLayout_37->addWidget(sbSeasonsSitesSiteVariantsNumber, 2, 2, 1, 1);
+        gridLayout_37->addWidget(lblSiteVariantsRatingSeasons, 2, 4, 1, 1);
 
         dsbSeasonsSitesSiteVariantsWeight = new QDoubleSpinBox(gbxSeasonsSites);
         dsbSeasonsSitesSiteVariantsWeight->setObjectName(QStringLiteral("dsbSeasonsSitesSiteVariantsWeight"));
@@ -6034,28 +5993,6 @@ public:
         dsbSeasonsSitesSiteVariantsWeight->setValue(1);
 
         gridLayout_37->addWidget(dsbSeasonsSitesSiteVariantsWeight, 2, 3, 1, 1);
-
-        lblSiteVariantsRatingSeasons = new QLabel(gbxSeasonsSites);
-        lblSiteVariantsRatingSeasons->setObjectName(QStringLiteral("lblSiteVariantsRatingSeasons"));
-        lblSiteVariantsRatingSeasons->setFont(font8);
-        lblSiteVariantsRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_37->addWidget(lblSiteVariantsRatingSeasons, 2, 4, 1, 1);
-
-        lblSeasonsSitesMgmtPotential = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesMgmtPotential->setObjectName(QStringLiteral("lblSeasonsSitesMgmtPotential"));
-        lblSeasonsSitesMgmtPotential->setFont(font1);
-
-        gridLayout_37->addWidget(lblSeasonsSitesMgmtPotential, 3, 0, 1, 2);
-
-        sbSeasonsSitesMgmtPotentialNumber = new QSpinBox(gbxSeasonsSites);
-        sbSeasonsSitesMgmtPotentialNumber->setObjectName(QStringLiteral("sbSeasonsSitesMgmtPotentialNumber"));
-        sizePolicy9.setHeightForWidth(sbSeasonsSitesMgmtPotentialNumber->sizePolicy().hasHeightForWidth());
-        sbSeasonsSitesMgmtPotentialNumber->setSizePolicy(sizePolicy9);
-        sbSeasonsSitesMgmtPotentialNumber->setMaximumSize(QSize(50, 16777215));
-        sbSeasonsSitesMgmtPotentialNumber->setValue(4);
-
-        gridLayout_37->addWidget(sbSeasonsSitesMgmtPotentialNumber, 3, 2, 1, 1);
 
         dsbSeasonsSitesMgmtPotentialWeight = new QDoubleSpinBox(gbxSeasonsSites);
         dsbSeasonsSitesMgmtPotentialWeight->setObjectName(QStringLiteral("dsbSeasonsSitesMgmtPotentialWeight"));
@@ -6074,11 +6011,60 @@ public:
 
         gridLayout_37->addWidget(lblMgmtPotentialRatingSeasons, 3, 4, 1, 1);
 
-        lblSeasonsSitesZeroNTreatment = new QLabel(gbxSeasonsSites);
-        lblSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("lblSeasonsSitesZeroNTreatment"));
-        lblSeasonsSitesZeroNTreatment->setFont(font1);
+        lblSeasonsSitesSiteVariants = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesSiteVariants->setObjectName(QStringLiteral("lblSeasonsSitesSiteVariants"));
+        lblSeasonsSitesSiteVariants->setFont(font1);
 
-        gridLayout_37->addWidget(lblSeasonsSitesZeroNTreatment, 4, 0, 1, 2);
+        gridLayout_37->addWidget(lblSeasonsSitesSiteVariants, 2, 0, 1, 2);
+
+        sbSeasonsSitesSiteVariantsNumber = new QSpinBox(gbxSeasonsSites);
+        sbSeasonsSitesSiteVariantsNumber->setObjectName(QStringLiteral("sbSeasonsSitesSiteVariantsNumber"));
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesSiteVariantsNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSiteVariantsNumber->setSizePolicy(sizePolicy9);
+        sbSeasonsSitesSiteVariantsNumber->setMaximumSize(QSize(50, 16777215));
+        sbSeasonsSitesSiteVariantsNumber->setValue(1);
+
+        gridLayout_37->addWidget(sbSeasonsSitesSiteVariantsNumber, 2, 2, 1, 1);
+
+        sbSeasonsSitesSeasonsPerCropNumber = new QSpinBox(gbxSeasonsSites);
+        sbSeasonsSitesSeasonsPerCropNumber->setObjectName(QStringLiteral("sbSeasonsSitesSeasonsPerCropNumber"));
+        sizePolicy9.setHeightForWidth(sbSeasonsSitesSeasonsPerCropNumber->sizePolicy().hasHeightForWidth());
+        sbSeasonsSitesSeasonsPerCropNumber->setSizePolicy(sizePolicy9);
+        sbSeasonsSitesSeasonsPerCropNumber->setMaximumSize(QSize(50, 16777215));
+        sbSeasonsSitesSeasonsPerCropNumber->setMinimum(-1000);
+        sbSeasonsSitesSeasonsPerCropNumber->setMaximum(1000);
+        sbSeasonsSitesSeasonsPerCropNumber->setValue(6);
+
+        gridLayout_37->addWidget(sbSeasonsSitesSeasonsPerCropNumber, 1, 2, 1, 1);
+
+        lblSeasonsPerCropRatingSeasons = new QLabel(gbxSeasonsSites);
+        lblSeasonsPerCropRatingSeasons->setObjectName(QStringLiteral("lblSeasonsPerCropRatingSeasons"));
+        lblSeasonsPerCropRatingSeasons->setFont(font8);
+        lblSeasonsPerCropRatingSeasons->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_37->addWidget(lblSeasonsPerCropRatingSeasons, 1, 4, 1, 1);
+
+        lblSeasonsSitesWeight = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesWeight->setObjectName(QStringLiteral("lblSeasonsSitesWeight"));
+        lblSeasonsSitesWeight->setFont(font1);
+
+        gridLayout_37->addWidget(lblSeasonsSitesWeight, 0, 3, 1, 1);
+
+        dsbSeasonsSitesSeasonsPerCropWeight = new QDoubleSpinBox(gbxSeasonsSites);
+        dsbSeasonsSitesSeasonsPerCropWeight->setObjectName(QStringLiteral("dsbSeasonsSitesSeasonsPerCropWeight"));
+        dsbSeasonsSitesSeasonsPerCropWeight->setMaximumSize(QSize(60, 16777215));
+        dsbSeasonsSitesSeasonsPerCropWeight->setDecimals(1);
+        dsbSeasonsSitesSeasonsPerCropWeight->setMaximum(5);
+        dsbSeasonsSitesSeasonsPerCropWeight->setSingleStep(0.5);
+        dsbSeasonsSitesSeasonsPerCropWeight->setValue(1);
+
+        gridLayout_37->addWidget(dsbSeasonsSitesSeasonsPerCropWeight, 1, 3, 1, 1);
+
+        lblSeasonsSitesSeasonsPerCrop = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesSeasonsPerCrop->setObjectName(QStringLiteral("lblSeasonsSitesSeasonsPerCrop"));
+        lblSeasonsSitesSeasonsPerCrop->setFont(font1);
+
+        gridLayout_37->addWidget(lblSeasonsSitesSeasonsPerCrop, 1, 0, 1, 2);
 
         cbSeasonsSitesZeroNTreatment = new QComboBox(gbxSeasonsSites);
         cbSeasonsSitesZeroNTreatment->setObjectName(QStringLiteral("cbSeasonsSitesZeroNTreatment"));
@@ -6113,6 +6099,20 @@ public:
         lblSeasonsSitesTotal->setFont(font1);
 
         gridLayout_37->addWidget(lblSeasonsSitesTotal, 0, 4, 1, 1);
+
+        lblSeasonsSitesNumber = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesNumber->setObjectName(QStringLiteral("lblSeasonsSitesNumber"));
+        sizePolicy3.setHeightForWidth(lblSeasonsSitesNumber->sizePolicy().hasHeightForWidth());
+        lblSeasonsSitesNumber->setSizePolicy(sizePolicy3);
+        lblSeasonsSitesNumber->setFont(font1);
+
+        gridLayout_37->addWidget(lblSeasonsSitesNumber, 0, 2, 1, 1);
+
+        lblSeasonsSitesMgmtPotential = new QLabel(gbxSeasonsSites);
+        lblSeasonsSitesMgmtPotential->setObjectName(QStringLiteral("lblSeasonsSitesMgmtPotential"));
+        lblSeasonsSitesMgmtPotential->setFont(font1);
+
+        gridLayout_37->addWidget(lblSeasonsSitesMgmtPotential, 3, 0, 1, 2);
 
 
         horizontalLayoutSeasonsTop->addWidget(gbxSeasonsSites);
@@ -6223,7 +6223,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(7);
+        tabWidgetDataClassification->setCurrentIndex(8);
         toolBoxStateVars->setCurrentIndex(2);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);
@@ -7089,16 +7089,18 @@ public:
         lblSeasonsTreatmentsWeight->setText(QApplication::translate("DatasetClassification", "Weight", 0));
         lblSeasonsTreatmentsTotal->setText(QApplication::translate("DatasetClassification", "Points", 0));
         gbxSeasonsSites->setTitle(QApplication::translate("DatasetClassification", "Sites", 0));
-        lblSeasonsSitesNumber->setText(QApplication::translate("DatasetClassification", "Number", 0));
-        lblSeasonsSitesWeight->setText(QApplication::translate("DatasetClassification", "Weight", 0));
-        lblSeasonsSitesSeasonsPerCrop->setText(QApplication::translate("DatasetClassification", "Seasons per crop", 0));
 #ifndef QT_NO_TOOLTIP
-        sbSeasonsSitesSeasonsPerCropNumber->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
+        sbSeasonsSitesMgmtPotentialNumber->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>1 limited - 5 optimum</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
+        lblSeasonsSitesZeroNTreatment->setText(QApplication::translate("DatasetClassification", "zero N treatment?", 0));
 #ifndef QT_NO_TOOLTIP
-        lblSeasonsPerCropRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
+        lblSiteVariantsRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblSeasonsPerCropRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSiteVariantsRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
+#ifndef QT_NO_TOOLTIP
+        lblMgmtPotentialRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
+        lblMgmtPotentialRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
 #ifndef QT_NO_TOOLTIP
         lblSeasonsSitesSiteVariants->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>soils, hydrology, etc</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -7107,21 +7109,14 @@ public:
         sbSeasonsSitesSiteVariantsNumber->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>soils, hydrology, etc</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        lblSiteVariantsRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
-#endif // QT_NO_TOOLTIP
-        lblSiteVariantsRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
-#ifndef QT_NO_TOOLTIP
-        lblSeasonsSitesMgmtPotential->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>1 limited - 5 optimum</p></body></html>", 0));
-#endif // QT_NO_TOOLTIP
-        lblSeasonsSitesMgmtPotential->setText(QApplication::translate("DatasetClassification", "Management Potential", 0));
-#ifndef QT_NO_TOOLTIP
-        sbSeasonsSitesMgmtPotentialNumber->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>1 limited - 5 optimum</p></body></html>", 0));
+        sbSeasonsSitesSeasonsPerCropNumber->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>Number of observations</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_TOOLTIP
-        lblMgmtPotentialRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
+        lblSeasonsPerCropRatingSeasons->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p><img src=\":/Images/Resources/MAD_Weather1a.png\"/></p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
-        lblMgmtPotentialRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
-        lblSeasonsSitesZeroNTreatment->setText(QApplication::translate("DatasetClassification", "zero N treatment?", 0));
+        lblSeasonsPerCropRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
+        lblSeasonsSitesWeight->setText(QApplication::translate("DatasetClassification", "Weight", 0));
+        lblSeasonsSitesSeasonsPerCrop->setText(QApplication::translate("DatasetClassification", "Seasons per crop", 0));
         cbSeasonsSitesZeroNTreatment->clear();
         cbSeasonsSitesZeroNTreatment->insertItems(0, QStringList()
          << QApplication::translate("DatasetClassification", "No", 0)
@@ -7132,6 +7127,11 @@ public:
 #endif // QT_NO_TOOLTIP
         lblZeroNTreatmentRatingSeasons->setText(QApplication::translate("DatasetClassification", "0", 0));
         lblSeasonsSitesTotal->setText(QApplication::translate("DatasetClassification", "Points", 0));
+        lblSeasonsSitesNumber->setText(QApplication::translate("DatasetClassification", "Number", 0));
+#ifndef QT_NO_TOOLTIP
+        lblSeasonsSitesMgmtPotential->setToolTip(QApplication::translate("DatasetClassification", "<html><head/><body><p>1 limited - 5 optimum</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
+        lblSeasonsSitesMgmtPotential->setText(QApplication::translate("DatasetClassification", "Management Potential", 0));
         lblSeasonsMultiplier->setText(QApplication::translate("DatasetClassification", "Multiplier:", 0));
         lblSeasonsMultiplierTotal->setText(QApplication::translate("DatasetClassification", "0", 0));
         tabWidgetDataClassification->setTabText(tabWidgetDataClassification->indexOf(tabSeasons), QApplication::translate("DatasetClassification", "Seasons", 0));

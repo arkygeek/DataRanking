@@ -3741,6 +3741,7 @@ void DatasetClassification::saveToFileJson()
   QString myMinDataSetting;
   QString myJsonText;
   QString myIsMeasuredSetting;
+  QString myTreatmentUSedSetting;
 
   // create a header
   myFormDetailsHeader.insert("User", ui->cbUser->currentText());
@@ -4682,6 +4683,125 @@ void DatasetClassification::saveToFileJson()
   myStateVariablesObject.insert("Points", ui->lblOverallRatingSV->text());
   myStateVariablesObject.insert("Rank", ui->lblRankingSV->text());
 
+
+    //
+   // Seasons
+  //
+
+  QJsonObject mySeasonsObject;
+
+  //  Sites
+  //    SeasonsPerCrop
+
+  QJsonObject mySeasonsInputSeasonsPerCrop;
+  mySeasonsInputSeasonsPerCrop.insert("Number", ui->sbSeasonsSitesSeasonsPerCropNumber->value());
+  mySeasonsInputSeasonsPerCrop.insert("Weight", ui->sbSeasonsSitesSeasonsPerCropNumber->value());
+  mySeasonsInputSeasonsPerCrop.insert("Points", ui->lblSeasonsPerCropRatingSeasons->text());
+
+  //  Sites
+  //    SiteVariants
+  QJsonObject mySeasonsInputSiteVariantsObject;
+  mySeasonsInputSiteVariantsObject.insert("Number", ui->sbSeasonsSitesSiteVariantsNumber->value());
+  mySeasonsInputSiteVariantsObject.insert("Weight", ui->sbSeasonsSitesSiteVariantsNumber->value());
+  mySeasonsInputSiteVariantsObject.insert("Points", ui->lblSiteVariantsRatingSeasons->text());
+
+  //  Sites
+  //    MgmtPotential
+  QJsonObject mySeasonsInputMgmtPotentialObject;
+  mySeasonsInputMgmtPotentialObject.insert("Number", ui->sbSeasonsSitesMgmtPotentialNumber->value());
+  mySeasonsInputMgmtPotentialObject.insert("Weight", ui->dsbSeasonsSitesMgmtPotentialWeight->value());
+  mySeasonsInputMgmtPotentialObject.insert("Points", ui->lblMgmtPotentialRatingSeasons->text());
+
+  //  Sites
+  //    ZeroNTreatments
+  QJsonObject mySeasonsInputZeroNTreatmentsObject;
+  mySeasonsInputZeroNTreatmentsObject.insert("Used", ui->cbSeasonsSitesZeroNTreatment->currentText());
+  mySeasonsInputZeroNTreatmentsObject.insert("Weight", ui->dsbSeasonsSitesZeroNTreatment->value());
+  mySeasonsInputZeroNTreatmentsObject.insert("Points", ui->lblZeroNTreatmentRatingSeasons->text());
+
+  //  Treatments
+  //    Treatment1
+  myTreatmentUSedSetting = ui->chbxSeasonsTreatment1->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment1Object;
+  mySeasonsInputTreatment1Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment1Object.insert("TreatmentType", ui->cbSeasonsTreatment1->currentText());
+  mySeasonsInputTreatment1Object.insert("Notes", ui->ledSeasonsTreatment1->text());
+  mySeasonsInputTreatment1Object.insert("Number", ui->sbSeasonsTreatment1Number->value());
+  mySeasonsInputTreatment1Object.insert("Weight", ui->dsbSeasonsTreatment1Weight->value());
+
+  //  Treatments
+  //    Treatment2
+  myTreatmentUSedSetting = ui->chbxSeasonsTreatment2->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment2Object;
+  mySeasonsInputTreatment2Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment2Object.insert("TreatmentType", ui->cbSeasonsTreatment2->currentText());
+  mySeasonsInputTreatment2Object.insert("Notes", ui->ledSeasonsTreatment2->text());
+  mySeasonsInputTreatment2Object.insert("Number", ui->sbSeasonsTreatment2Number->value());
+  mySeasonsInputTreatment2Object.insert("Weight", ui->dsbSeasonsTreatment2Weight->value());
+
+  //  Treatments
+  //    Treatment3
+  myTreatmentUSedSetting = ui->chbxSeedDensity->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment3Object;
+  mySeasonsInputTreatment3Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment3Object.insert("TreatmentType", ui->cbSeasonsTreatment3->currentText());
+  mySeasonsInputTreatment3Object.insert("Notes", ui->ledSeasonsTreatment3->text());
+  mySeasonsInputTreatment3Object.insert("Number", ui->sbSeasonsTreatment3Number->value());
+  mySeasonsInputTreatment3Object.insert("Weight", ui->dsbSeasonsTreatment3Weight->value());
+
+  //  Treatments
+  //    Treatment4
+  myTreatmentUSedSetting = ui->chbxSeedDensity->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment4Object;
+  mySeasonsInputTreatment4Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment4Object.insert("TreatmentType", ui->cbSeasonsTreatment4->currentText());
+  mySeasonsInputTreatment4Object.insert("Notes", ui->ledSeasonsTreatment4->text());
+  mySeasonsInputTreatment4Object.insert("Number", ui->sbSeasonsTreatment4Number->value());
+  mySeasonsInputTreatment4Object.insert("Weight", ui->dsbSeasonsTreatment4Weight->value());
+
+  //  Treatments
+  //    Treatment5
+  myTreatmentUSedSetting = ui->chbxSeedDensity->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment5Object;
+  mySeasonsInputTreatment5Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment5Object.insert("TreatmentType", ui->cbSeasonsTreatment5->currentText());
+  mySeasonsInputTreatment5Object.insert("Notes", ui->ledSeasonsTreatment5->text());
+  mySeasonsInputTreatment5Object.insert("Number", ui->sbSeasonsTreatment5Number->value());
+  mySeasonsInputTreatment5Object.insert("Weight", ui->dsbSeasonsTreatment5Weight->value());
+
+  //  Treatments
+  //    Treatment6
+  myTreatmentUSedSetting = ui->chbxSeedDensity->isChecked()?"yes":"no";
+  QJsonObject mySeasonsInputTreatment6Object;
+  mySeasonsInputTreatment6Object.insert("TreatmentUsed", myTreatmentUSedSetting);
+  mySeasonsInputTreatment6Object.insert("TreatmentType", ui->cbSeasonsTreatment6->currentText());
+  mySeasonsInputTreatment6Object.insert("Notes", ui->ledSeasonsTreatment6->text());
+  mySeasonsInputTreatment6Object.insert("Number", ui->sbSeasonsTreatment6Number->value());
+  mySeasonsInputTreatment6Object.insert("Weight", ui->dsbSeasonsTreatment6Weight->value());
+
+  // add to the Seasons object
+  mySeasonsObject.insert("SeasonsPerCrop", mySeasonsInputSeasonsPerCrop);
+  mySeasonsObject.insert("SiteVariants", mySeasonsInputSiteVariantsObject);
+  mySeasonsObject.insert("MgmtPotential", mySeasonsInputMgmtPotentialObject);
+  mySeasonsObject.insert("ZeroNTreatments", mySeasonsInputZeroNTreatmentsObject);
+  mySeasonsObject.insert("Treatment1", mySeasonsInputTreatment1Object);
+  mySeasonsObject.insert("Treatment2", mySeasonsInputTreatment2Object);
+  mySeasonsObject.insert("Treatment3", mySeasonsInputTreatment3Object);
+  mySeasonsObject.insert("Treatment4", mySeasonsInputTreatment4Object);
+  mySeasonsObject.insert("Treatment5", mySeasonsInputTreatment5Object);
+  mySeasonsObject.insert("Treatment6", mySeasonsInputTreatment6Object);
+
+  // add rank info
+  mySeasonsObject.insert("Multiplier", ui->lblSeasonsMultiplierTotal->text());
+
+
+  myQJsonDocument.setObject(mySeasonsObject);
+  myJsonText = myQJsonDocument.toJson();
+
+  // -----> THIS IS TEMPORARY
+  // display the JSON in the temporary text browser
+  ui->tedSeasons->clear();
+  ui->tedSeasons->setText(myJsonText);
 
     //
    // insert the sub-objects into the form object
