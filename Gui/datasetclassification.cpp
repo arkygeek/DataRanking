@@ -21,8 +21,8 @@
 
 #include "datasetclassification.h"
 
-#include "rankpointgenerator.h"
 #include <QUuid>
+#include <Enginio/enginioclient.h>
 
 #include <QDebug>
 #include <QJsonDocument>
@@ -33,6 +33,8 @@
 #include <QFileDialog>
 
 #include "ui_datasetclassification.h"
+#include "rankpointgenerator.h"
+#include "formmodel.h"
 
 DatasetClassification::DatasetClassification(QWidget *parent) :
   QMainWindow(parent),
@@ -50,6 +52,21 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   updateSVLabels();
   updateSVLabels();
   updateSVLabels();
+
+  QByteArray myBackendId = "529da70ae5bde55cd1026369";
+  EnginioClient *mpEnginioClient = new EnginioClient;
+  mpEnginioClient->setBackendId(myBackendId);
+
+  // in the ctor, we need to define:
+  //   a) the enginio client
+  //   b) the enginio model
+
+  mpListModel = new QStringListModel(this);
+  ui->listView->setAlternatingRowColors(true);
+  ui->listView->setModel(getListModel());
+  ui->listView->setSelectionModel(new QItemSelectionModel(mpListModel,mpListModel));
+
+
 }
 
 DatasetClassification::~DatasetClassification()
@@ -57,6 +74,10 @@ DatasetClassification::~DatasetClassification()
   delete ui;
 }
 
+EnginioClient *DatasetClassification::getEnginioClient() const
+{
+  return mpEnginioClient;
+}
 
 void DatasetClassification::on_cbUser_currentIndexChanged(const QString &theSelection)
 {
@@ -4828,6 +4849,19 @@ void DatasetClassification::saveToFileJson()
   ui->textBrowserJSON->setText(myJsonText);
 
     //
+   // Enginio Stuff
+  //
+
+  // backend id for testing with enginio: 529da70ae5bde55cd1026369
+  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
+  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  EnginioClient *mypClient = new EnginioClient;
+  mypClient->setBackendId(myBackendId);
+
+  mypClient->create(myFormObject);
+      connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+
+    //
    // write this out to a file
   //
 
@@ -4852,10 +4886,54 @@ void DatasetClassification::saveToFileJson()
   QMessageBox::information(0, QString("JsonOut"), QString("You Were Successful!")
                          , QMessageBox::Ok);
 
+
+}
+
+QHash<int, QByteArray> FormModel::roleNames() const
+{
+    QHash<int, QByteArray> roles = EnginioModel::roleNames();
+    roles.insert(TitleDatasetForm, "title");
+    roles.insert(Qt::DisplayRole, "title");
+    roles.insert(Qt::EditRole, "title");
+    roles.insert(CompletedDatasetForm, "completed");
+    return roles;
 }
 
 
 void DatasetClassification::on_pushButton_clicked()
 {
     saveToFileJson();
+}
+
+
+QStringListModel *DatasetClassification::getListModel() const
+{
+  return mpListModel;
+}
+
+void DatasetClassification::setListModel(QStringListModel *theStringListModel)
+{
+  mpListModel = theStringListModel;
+}
+
+QTreeView *DatasetClassification::getTreeView() const
+{
+  return mpTreeView;
+}
+
+void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
+{
+  mpTreeView = theTreeView;
+}
+
+
+FormModel *DatasetClassification::getFormModel() const
+{
+  return mpFormModel;
+}
+
+void DatasetClassification::uploadFinished(EnginioReply*)
+{
+  qDebug() << "UploadFinished";
+
 }

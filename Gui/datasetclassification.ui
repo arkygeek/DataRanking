@@ -35,7 +35,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabManagement">
        <attribute name="title">
@@ -1215,6 +1215,9 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Description/instructions&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QListView" name="listView"/>
         </item>
        </layout>
       </widget>

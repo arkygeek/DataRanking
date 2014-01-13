@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui enginio
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         datasetclassification.cpp \
     madguid.cpp \
-    madserialise.cpp
+    madserialise.cpp \
+    formmodel.cpp
 
 HEADERS  += datasetclassification.h \
     madguid.h \
-    madserialise.h
+    madserialise.h \
+    formmodel.h
 
 FORMS    += datasetclassification.ui
 

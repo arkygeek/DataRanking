@@ -23,6 +23,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -103,6 +104,7 @@ public:
     QToolButton *tlbtnMgmtSilver;
     QToolButton *tlbtnMgmtBronze;
     QTextBrowser *txbrMgmt;
+    QListView *listView;
     QWidget *tabPhenology;
     QGridLayout *gridLayout_22;
     QTextBrowser *txbrPhenology;
@@ -1321,6 +1323,11 @@ public:
         txbrMgmt->setObjectName(QStringLiteral("txbrMgmt"));
 
         gridLayout_13->addWidget(txbrMgmt, 0, 1, 1, 4);
+
+        listView = new QListView(tabManagement);
+        listView->setObjectName(QStringLiteral("listView"));
+
+        gridLayout_13->addWidget(listView, 5, 0, 1, 1);
 
         tabWidgetDataClassification->addTab(tabManagement, QString());
         tabPhenology = new QWidget();
@@ -6223,7 +6230,7 @@ public:
 
         retranslateUi(DatasetClassification);
 
-        tabWidgetDataClassification->setCurrentIndex(8);
+        tabWidgetDataClassification->setCurrentIndex(0);
         toolBoxStateVars->setCurrentIndex(2);
         toolBoxStateVars->layout()->setSpacing(0);
         cbSeasonsTreatment3->setCurrentIndex(2);

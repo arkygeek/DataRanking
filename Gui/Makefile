@@ -12,13 +12,13 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_DECLARATIVE_DEBUG -DQT_ENGINIO_LIB -DQT_WIDGETS_LIB -DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -fPIE $(DEFINES)
 CXXFLAGS      = -pipe -g -gdwarf-2 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -fPIE $(DEFINES)
-INCPATH       = -I/Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-clang -I. -I../RankPointGenerator -I/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Users/arkygeek/dev/qt5/qtbase/lib
+INCPATH       = -I/Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-clang -I. -I../RankPointGenerator -I/Users/arkygeek/dev/qt5/qtbase/lib/Enginio.framework/Versions/1/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtNetwork.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/Versions/5/Headers -I/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Users/arkygeek/dev/qt5/qtbase/lib
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6
-LIBS          = $(SUBLIBS) -F/Users/arkygeek/dev/qt5/qtbase/lib -L/Users/arkygeek/QtProjects/DataRanking/gui/../RankPointGenerator/ -lRankPointGenerator -framework QtWidgets -framework QtGui -framework QtCore -framework OpenGL -framework AGL 
+LIBS          = $(SUBLIBS) -F/Users/arkygeek/dev/qt5/qtbase/lib -L/Users/arkygeek/QtProjects/DataRanking/gui/../RankPointGenerator/ -lRankPointGenerator -framework Enginio -framework QtNetwork -framework QtCore -framework QtGui -framework QtWidgets -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 QMAKE         = /Users/arkygeek/dev/qt5/qtbase/bin/qmake
@@ -48,14 +48,18 @@ OBJECTS_DIR   = ./
 SOURCES       = main.cpp \
 		datasetclassification.cpp \
 		madguid.cpp \
-		madserialise.cpp qrc_Resources.cpp \
-		moc_datasetclassification.cpp
+		madserialise.cpp \
+		formmodel.cpp qrc_Resources.cpp \
+		moc_datasetclassification.cpp \
+		moc_formmodel.cpp
 OBJECTS       = main.o \
 		datasetclassification.o \
 		madguid.o \
 		madserialise.o \
+		formmodel.o \
 		qrc_Resources.o \
-		moc_datasetclassification.o
+		moc_datasetclassification.o \
+		moc_formmodel.o
 DIST          = /Users/arkygeek/dev/qt5/qtbase/mkspecs/features/spec_pre.prf \
 		/Users/arkygeek/dev/qt5/qtbase/mkspecs/qdevice.pri \
 		/Users/arkygeek/dev/qt5/qtbase/mkspecs/features/device_config.prf \
@@ -369,9 +373,11 @@ Makefile: gui.pro ../.qmake.cache /Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-cl
 		/Users/arkygeek/dev/qt5/qtbase/mkspecs/features/lex.prf \
 		gui.pro \
 		Resources.qrc \
-		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/QtWidgets.prl \
+		/Users/arkygeek/dev/qt5/qtbase/lib/Enginio.framework/Enginio.prl \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtNetwork.framework/QtNetwork.prl \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/QtCore.prl \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/QtGui.prl \
-		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/QtCore.prl
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/QtWidgets.prl
 	$(QMAKE) -spec macx-clang CONFIG+=x86_64 CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile gui.pro
 /Users/arkygeek/dev/qt5/qtbase/mkspecs/features/spec_pre.prf:
 /Users/arkygeek/dev/qt5/qtbase/mkspecs/qdevice.pri:
@@ -507,9 +513,11 @@ Makefile: gui.pro ../.qmake.cache /Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-cl
 /Users/arkygeek/dev/qt5/qtbase/mkspecs/features/lex.prf:
 gui.pro:
 Resources.qrc:
-/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/QtWidgets.prl:
-/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/QtGui.prl:
+/Users/arkygeek/dev/qt5/qtbase/lib/Enginio.framework/Enginio.prl:
+/Users/arkygeek/dev/qt5/qtbase/lib/QtNetwork.framework/QtNetwork.prl:
 /Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/QtCore.prl:
+/Users/arkygeek/dev/qt5/qtbase/lib/QtGui.framework/QtGui.prl:
+/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/QtWidgets.prl:
 qmake: FORCE
 	@$(QMAKE) -spec macx-clang CONFIG+=x86_64 CONFIG+=declarative_debug CONFIG+=qml_debug -o Makefile gui.pro
 
@@ -529,7 +537,7 @@ gui.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@EXECUTABLE@,gui,g" -e "s,@TYPEINFO@,????,g" /Users/arkygeek/dev/qt5/qtbase/mkspecs/macx-clang/Info.plist.app >gui.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/gui1.0.0 || mkdir -p .tmp/gui1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/gui1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.h madguid.h madserialise.h .tmp/gui1.0.0/ && $(COPY_FILE) --parents main.cpp datasetclassification.cpp madguid.cpp madserialise.cpp .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.ui .tmp/gui1.0.0/ && (cd `dirname .tmp/gui1.0.0` && $(TAR) gui1.0.0.tar gui1.0.0 && $(COMPRESS) gui1.0.0.tar) && $(MOVE) `dirname .tmp/gui1.0.0`/gui1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/gui1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/gui1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.h madguid.h madserialise.h formmodel.h .tmp/gui1.0.0/ && $(COPY_FILE) --parents main.cpp datasetclassification.cpp madguid.cpp madserialise.cpp formmodel.cpp .tmp/gui1.0.0/ && $(COPY_FILE) --parents datasetclassification.ui .tmp/gui1.0.0/ && (cd `dirname .tmp/gui1.0.0` && $(TAR) gui1.0.0.tar gui1.0.0 && $(COMPRESS) gui1.0.0.tar) && $(MOVE) `dirname .tmp/gui1.0.0`/gui1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/gui1.0.0
 
 
 clean:compiler_clean 
@@ -556,18 +564,23 @@ compiler_rcc_make_all: qrc_Resources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Resources.cpp
 qrc_Resources.cpp: Resources.qrc \
-		Resources/register.png \
-		Resources/platinum.png \
 		Resources/gold.png \
 		Resources/silver.png \
-		Resources/bronze.png
+		Resources/register.png \
+		Resources/bronze.png \
+		Resources/platinum.png
 	/Users/arkygeek/dev/qt5/qtbase/bin/rcc -name Resources Resources.qrc -o qrc_Resources.cpp
 
-compiler_moc_header_make_all: moc_datasetclassification.cpp
+compiler_moc_header_make_all: moc_datasetclassification.cpp moc_formmodel.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_datasetclassification.cpp
+	-$(DEL_FILE) moc_datasetclassification.cpp moc_formmodel.cpp
 moc_datasetclassification.cpp: /Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QByteArray \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qbytearray.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
+		formmodel.h \
 		../RankPointGenerator/rankpointgenerator.h \
 		../RankPointGenerator/rankpointgenerator_global.h \
 		../RankPointGenerator/management.h \
@@ -580,6 +593,9 @@ moc_datasetclassification.cpp: /Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.fram
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		datasetclassification.h
 	/Users/arkygeek/dev/qt5/qtbase/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 $(INCPATH) -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1 -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1/backward -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include datasetclassification.h -o moc_datasetclassification.cpp
+
+moc_formmodel.cpp: formmodel.h
+	/Users/arkygeek/dev/qt5/qtbase/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 $(INCPATH) -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1 -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include/c++/4.2.1/backward -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/usr/include formmodel.h -o moc_formmodel.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -604,6 +620,11 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 main.o: main.cpp datasetclassification.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QByteArray \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qbytearray.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
+		formmodel.h \
 		../RankPointGenerator/rankpointgenerator.h \
 		../RankPointGenerator/rankpointgenerator_global.h \
 		../RankPointGenerator/management.h \
@@ -621,6 +642,11 @@ main.o: main.cpp datasetclassification.h \
 datasetclassification.o: datasetclassification.cpp datasetclassification.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QByteArray \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qbytearray.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QTreeView \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
+		formmodel.h \
 		../RankPointGenerator/rankpointgenerator.h \
 		../RankPointGenerator/rankpointgenerator_global.h \
 		../RankPointGenerator/management.h \
@@ -631,6 +657,8 @@ datasetclassification.o: datasetclassification.cpp datasetclassification.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qpair.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QString \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QUuid \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/quuid.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QJsonDocument \
@@ -641,6 +669,10 @@ datasetclassification.o: datasetclassification.cpp datasetclassification.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QMessageBox \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/QFile \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qfile.h \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		/Users/arkygeek/dev/qt5/qtbase/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		ui_datasetclassification.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o datasetclassification.o datasetclassification.cpp
 
@@ -662,11 +694,17 @@ madserialise.o: madserialise.cpp madserialise.h \
 		/Users/arkygeek/dev/qt5/qtbase/lib/QtCore.framework/Versions/5/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o madserialise.o madserialise.cpp
 
+formmodel.o: formmodel.cpp formmodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o formmodel.o formmodel.cpp
+
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp
 
 moc_datasetclassification.o: moc_datasetclassification.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_datasetclassification.o moc_datasetclassification.cpp
+
+moc_formmodel.o: moc_formmodel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_formmodel.o moc_formmodel.cpp
 
 ####### Install
 
