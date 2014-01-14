@@ -1,7 +1,7 @@
 #!/bin/sh
 echo "src:"
-find . -name "*build*" -prune -o -name "*."cpp -exec wc -l {} \+
-find . -name "*build*" -prune -o -name "*."h -exec wc -l {} \+
+find . -name "*_*" -prune -o -name "*."cpp -exec wc -l {} \+
+find . -name "*_*" -prune -o -name "*."h -exec wc -l {} \+
 #echo "gui:"
 #find ./Gui/ -name "*."cpp | xargs wc -l
 #find ./Gui/ -name "*."h | xargs wc -l
@@ -12,9 +12,9 @@ find . -name "*build*" -prune -o -name "*."h -exec wc -l {} \+
 
 #echo "src:"
 echo "number of lines in all .cpp files:"
-find . -name "*build*" -prune -o -name "*."cpp -exec wc -l {} \+ | grep total
+find . -name "*_*" -prune -o -name "*."cpp -exec wc -l {} \+ | grep total
 echo "number of lines in all .h (header) files:"
-find . -name "*build*" -prune -o -name "*."h -exec wc -l {} \+ | grep total
+find . -name "*_*" -prune -o -name "*."h -exec wc -l {} \+ | grep total
 #echo " "
 #echo "gui:"
 #echo "cpp files:"
