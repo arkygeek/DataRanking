@@ -332,7 +332,7 @@ void on_pbSaveToFile_clicked();
 
 void on_toolButtonInsertVariable_clicked();
 
-void on_toolButtonCitation_pressed();
+void on_toolButtonCitation_clicked();
 
 private:
   Ui::DatasetClassification *ui;
@@ -377,6 +377,7 @@ private:
 
   void syncToCloud(QJsonObject theQJsonObject);
   void saveJsonToFile(QJsonDocument theQJsonDocument);
+  QString generateCitation(QString theText);
 };
 
 #endif // DATASETCLASSIFICATION_H

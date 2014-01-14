@@ -99,7 +99,6 @@ void DatasetClassification::on_cbUser_currentIndexChanged(const QString &theSele
 //--------------------------------------//
 
 // management
-
 void DatasetClassification::on_sbVarietyObsMgmt_valueChanged(int theObservations)
 {
   //update item total
@@ -315,7 +314,6 @@ void DatasetClassification::on_dsbTillageWeightMgmt_valueChanged(double theWeigh
 }
 
 // Phenology
-
 void DatasetClassification::on_sbEmergenceObsPhenology_valueChanged(int theObservations)
 {
   //update item total
@@ -469,7 +467,6 @@ void DatasetClassification::on_dsbYellowRipenessWeightPhenology_valueChanged(dou
 }
 
 // Previous Crop
-
 void DatasetClassification::on_sbCropObsPrevCrop_valueChanged(int theObservations)
 {
   //update item total
@@ -683,7 +680,6 @@ void DatasetClassification::on_dsbIrrigationWeightPrevCrop_valueChanged(double t
 }
 
 // Initial Values
-
 void DatasetClassification::on_sbSoilMoistureObsInitialValues_valueChanged(int theObservations)
 {
   //update item total
@@ -789,8 +785,8 @@ void DatasetClassification::on_dsbNMinDepthInitialValues_valueChanged(double the
 
   updateInitialValuesLabels();
 }
-// Soil
 
+// Soil
 void DatasetClassification::on_sbCOrgLayersSoil_valueChanged(int theLayers)
 {
   //update item total
@@ -1100,7 +1096,6 @@ void DatasetClassification::on_dsbPhDepthSoil_valueChanged(double theDepth)
   updateSoilLabels();
 }
 
-
 void DatasetClassification::on_dsbCOrgWeightSoil_valueChanged(double theWeight)
 {
   //update item total
@@ -1256,7 +1251,6 @@ void DatasetClassification::on_dsbPhWeightSoil_valueChanged(double theWeight)
 }
 
 // Site
-
 void DatasetClassification::on_sbLatitudeObservationsSite_valueChanged(int theObservations)
 {
   //update item total
@@ -1379,9 +1373,8 @@ void DatasetClassification::on_sbSlopeWeightSite_valueChanged(int theWeight)
 
   updateSiteLabels();
 }
-// Weather
-// @TODO set the correct factor for weather methods
 
+// Weather
 void DatasetClassification::on_sbPrecipitationAltDifWeather_valueChanged(int theAltDif)
 {
   // set up required variables
@@ -2036,7 +2029,6 @@ void DatasetClassification::on_sbSunshineHoursOptimalDistanceWeather_valueChange
 // State Variables
 
 // SV - Crop
-
 void DatasetClassification::on_sbSVCropYieldObservations_valueChanged(int theObservations)
 {
   //update item total
@@ -3031,7 +3023,6 @@ void DatasetClassification::on_dsbSVObservationsDamagesWeightPts_valueChanged(do
 }
 
 // numbers to strings
-
 QString DatasetClassification::makeString(double theDouble)
 {
   QString myString = QString::number(theDouble);
@@ -3297,7 +3288,6 @@ void DatasetClassification::updateWeatherLabels()
     ui->tabWidgetDataClassification->setTabIcon(6, (QIcon()));
   }
 }
-
 void DatasetClassification::updateSVLabels()
 {
   // updates totals
@@ -3367,8 +3357,6 @@ void DatasetClassification::updateSVLabels()
     ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
 }
-
-
 
 void DatasetClassification::on_rbPrecipitationWeatherMeasured_toggled(bool checked)
 {
@@ -3749,6 +3737,40 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_toggled(bool checked)
       // now update the labels
       updateWeatherLabels();
     }
+}
+
+void DatasetClassification::on_toolButtonInsertVariable_clicked()
+{
+  // insert variable into list
+  QString myVariable = ui->ledDatasetInsertVariable->text();
+  int myRow = ui->listWidget->count();
+  QListWidgetItem *newVariable = new QListWidgetItem;
+      newVariable->setText(myVariable);
+      ui->listWidget->insertItem(myRow, newVariable);
+  ui->ledDatasetInsertVariable->clear();
+
+}
+void DatasetClassification::on_toolButtonCitation_clicked()
+{
+  // pop up a citation
+  QString myCitationText = "<font size = 2 color = black >Institute for Terrestrial and Planetary Atmospheres/Marine Sciences Research Center/State University of New York/Stony Brook. 2001. Lucas and Waliser Satellite ECT-Corrected Daily, Pentad and Monthly Global OLR Datasets. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. http://rda.ucar.edu/datasets/ds684.1. Accessed dd mmm yyyy.</font>";
+  QMessageBox myQMessageBox;
+
+  myQMessageBox.information(0, "How to cite this dataset", myCitationText, QMessageBox::Ok);
+  //myQMessageBox.setFont(QFont::setPointSize(9));
+}
+void DatasetClassification::on_pbSyncToCloud_clicked()
+{
+    QJsonObject myQJsonObject = generateJson();
+    syncToCloud(myQJsonObject);
+
+}
+void DatasetClassification::on_pbSaveToFile_clicked()
+{
+  QJsonObject myQJsonObject = generateJson();
+  QJsonDocument myQJsonDocument;
+  myQJsonDocument.setObject(myQJsonObject);
+  saveJsonToFile(myQJsonDocument);
 }
 
   //---------------------------------------------//
@@ -4874,23 +4896,6 @@ QHash<int, QByteArray> FormModel::roleNames() const
     return roles;
 }
 
-
-void DatasetClassification::on_pbSyncToCloud_clicked()
-{
-    QJsonObject myQJsonObject = generateJson();
-    syncToCloud(myQJsonObject);
-
-}
-
-void DatasetClassification::on_pbSaveToFile_clicked()
-{
-  QJsonObject myQJsonObject = generateJson();
-  QJsonDocument myQJsonDocument;
-  myQJsonDocument.setObject(myQJsonObject);
-  saveJsonToFile(myQJsonDocument);
-}
-
-
 QStringListModel *DatasetClassification::getListModel() const
 {
   return mpListModel;
@@ -4910,7 +4915,6 @@ void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
 {
   mpTreeView = theTreeView;
 }
-
 
 FormModel *DatasetClassification::getFormModel() const
 {
@@ -4966,24 +4970,9 @@ void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)
   }
 }
 
-void DatasetClassification::on_toolButtonInsertVariable_clicked()
+QString DatasetClassification::generateCitation(QString theText)
 {
-  // insert variable into list
-  QString myVariable = ui->ledDatasetInsertVariable->text();
-  int myRow = ui->listWidget->count();
-  QListWidgetItem *newVariable = new QListWidgetItem;
-      newVariable->setText(myVariable);
-      ui->listWidget->insertItem(myRow, newVariable);
-  ui->ledDatasetInsertVariable->clear();
-
-}
-
-void DatasetClassification::on_toolButtonCitation_pressed()
-{
-  // pop up a citation
-  QString myCitationText = "<font size = 2 color = black >Institute for Terrestrial and Planetary Atmospheres/Marine Sciences Research Center/State University of New York/Stony Brook. 2001. Lucas and Waliser Satellite ECT-Corrected Daily, Pentad and Monthly Global OLR Datasets. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. http://rda.ucar.edu/datasets/ds684.1. Accessed dd mmm yyyy.</font>";
-  QMessageBox myQMessageBox;
-
-  myQMessageBox.information(0, "How to cite this dataset", myCitationText, QMessageBox::Ok);
-  //myQMessageBox.setFont(QFont::setPointSize(9));
+  // make a citation
+  // do something clever here (I'm tired)
+  return theText;
 }
