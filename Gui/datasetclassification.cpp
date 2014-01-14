@@ -53,6 +53,9 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   updateSVLabels();
   updateSVLabels();
 
+  // set the date - will be corrected if a dataset is loaded
+  ui->dteDatasetSubmitted->setDateTime(QDateTime::currentDateTime());
+
   QByteArray myBackendId = "529da70ae5bde55cd1026369";
   EnginioClient *mpEnginioClient = new EnginioClient;
   mpEnginioClient->setBackendId(myBackendId);
@@ -3752,14 +3755,13 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_toggled(bool checked)
  //  file i/o functions (including json stuff)  //
 //---------------------------------------------//
 
-void DatasetClassification::saveToFileJson()
+QJsonObject DatasetClassification::generateJson()
 {
   QJsonDocument myQJsonDocument;
   // create the main qjson object
   QJsonObject myFormObject;
   myFormObject.insert("objectType", QString("objects.entry"));
   QJsonObject myFormDetailsHeader;
-  QJsonObject myFormCategories;
   QString myMinDataSetting;
   QString myJsonText;
   QString myIsMeasuredSetting;
@@ -3781,10 +3783,13 @@ void DatasetClassification::saveToFileJson()
   //
 
   QJsonObject myManagementObject;
+  //myManagementObject.insert("objectType", QString("objects.entry"));
+
 
   //   variety
   myMinDataSetting = ui->chbxVariety->checkState()==Qt::Unchecked?"no":"yes";
   QJsonObject myManagementInputVariety;
+  //myManagementInputVariety.insert("objectType", QString("objects.entry"));
   myManagementInputVariety.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputVariety.insert("Observations", ui->sbVarietyObsMgmt->value());
   myManagementInputVariety.insert("Weight", ui->dsbVarietyWeightMgmt->value());
@@ -3792,6 +3797,7 @@ void DatasetClassification::saveToFileJson()
   //   Sowing
   myMinDataSetting = ui->chbxSowing->isChecked()?"yes":"no";
   QJsonObject myManagementInputSowing;
+  //myManagementInputSowing.insert("objectType", QString("objects.entry"));
   myManagementInputSowing.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputSowing.insert("Observations", ui->sbSowingObsMgmt->value());
   myManagementInputSowing.insert("Weight", ui->dsbSowingWeightMgmt->value());
@@ -3799,6 +3805,7 @@ void DatasetClassification::saveToFileJson()
   //   Harvest
   myMinDataSetting = ui->chbxHarvest->isChecked()?"yes":"no";
   QJsonObject myManagementInputHarvest;
+  //myManagementInputHarvest.insert("objectType", QString("objects.entry"));
   myManagementInputHarvest.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputHarvest.insert("Observations", ui->sbHarvestObsMgmt->value());
   myManagementInputHarvest.insert("Weight", ui->dsbHarvestWeightMgmt->value());
@@ -3806,6 +3813,7 @@ void DatasetClassification::saveToFileJson()
   //   Fertilisation
   myMinDataSetting = ui->chbxFertilisation->isChecked()?"yes":"no";
   QJsonObject myManagementInputFertilisation;
+  //myManagementInputFertilisation.insert("objectType", QString("objects.entry"));
   myManagementInputFertilisation.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputFertilisation.insert("Observations", ui->sbFertilisationObsMgmt->value());
   myManagementInputFertilisation.insert("Weight", ui->dsbFertilisationWeightMgmt->value());
@@ -3813,6 +3821,7 @@ void DatasetClassification::saveToFileJson()
   //   Irrigation
   myMinDataSetting = ui->chbxIrrigation->isChecked()?"yes":"no";
   QJsonObject myManagementInputIrrigation;
+  //myManagementInputIrrigation.insert("objectType", QString("objects.entry"));
   myManagementInputIrrigation.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputIrrigation.insert("Observations", ui->sbIrrigationObsMgmt->value());
   myManagementInputIrrigation.insert("Weight", ui->dsbIrrigationWeightMgmt->value());
@@ -3820,6 +3829,7 @@ void DatasetClassification::saveToFileJson()
   //   SeedDensity
   myMinDataSetting = ui->chbxSeedDensity->isChecked()?"yes":"no";
   QJsonObject myManagementInputSeedDensity;
+  //myManagementInputSeedDensity.insert("objectType", QString("objects.entry"));
   myManagementInputSeedDensity.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputSeedDensity.insert("Observations", ui->sbSeedDensityObsMgmt->value());
   myManagementInputSeedDensity.insert("Weight", ui->dsbSeedDensityWeightMgmt->value());
@@ -3827,6 +3837,7 @@ void DatasetClassification::saveToFileJson()
   //   Tillage
   myMinDataSetting = ui->chbxTillage->isChecked()?"yes":"no";
   QJsonObject myManagementInputTillage;
+  //myManagementInputTillage.insert("objectType", QString("objects.entry"));
   myManagementInputTillage.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputTillage.insert("Observations", ui->sbTillageObsMgmt->value());
   myManagementInputTillage.insert("Weight", ui->dsbTillageWeightMgmt->value());
@@ -4837,10 +4848,11 @@ void DatasetClassification::saveToFileJson()
   myFormObject.insert("Site", mySiteObject);
   myFormObject.insert("Weather", myWeatherObject);
   myFormObject.insert("StateVariables", myStateVariablesObject);
+  myFormObject.insert("Seasons", mySeasonsObject);
 
 
   // dumpt the JSON to the terminal for testing
-  qDebug() << "\n" << "myFormObject" << myFormObject;
+  //qDebug() << "\n" << "myFormObject" << myFormObject;
 
   // in order to dump the text, it has to be put into a QJsonDocument
   myQJsonDocument.setObject(myFormObject);
@@ -4849,46 +4861,7 @@ void DatasetClassification::saveToFileJson()
   ui->textBrowserJSON->clear();
   ui->textBrowserJSON->setText(myJsonText);
 
-    //
-   // Enginio Stuff
-  //
-
-  // backend id for testing with enginio: 529da70ae5bde55cd1026369
-  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
-  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
-  EnginioClient *mypClient = new EnginioClient;
-  mypClient->setBackendId(myBackendId);
-
-  connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
-
-  mypClient->create(myFormObject);
-
-    //
-   // write this out to a file
-  //
-
-  // generate a guid for a filename (this is working)
-  //QString myGuid = QUuid::createUuid().toString().replace("{","").replace("}","");
-  //qDebug() << "\nmyGuid = " << myGuid << "\n";
-
-  // write the file out
-
-  QFile myFile;
-  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
-
-  //    QFileDialog::DialogLabel::FileType;
-
-  myFile.setFileName(myFilename);
-  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
-  {
-    myFile.write(myQJsonDocument.toJson());
-    myFile.close();
-  }
-
-  QMessageBox::information(0, QString("JsonOut"), QString("You Were Successful!")
-                         , QMessageBox::Ok);
-
-
+  return myFormObject;
 }
 
 QHash<int, QByteArray> FormModel::roleNames() const
@@ -4902,9 +4875,19 @@ QHash<int, QByteArray> FormModel::roleNames() const
 }
 
 
-void DatasetClassification::on_pushButton_clicked()
+void DatasetClassification::on_pbSyncToCloud_clicked()
 {
-    saveToFileJson();
+    QJsonObject myQJsonObject = generateJson();
+    syncToCloud(myQJsonObject);
+
+}
+
+void DatasetClassification::on_pbSaveToFile_clicked()
+{
+  QJsonObject myQJsonObject = generateJson();
+  QJsonDocument myQJsonDocument;
+  myQJsonDocument.setObject(myQJsonObject);
+  saveJsonToFile(myQJsonDocument);
 }
 
 
@@ -4937,6 +4920,70 @@ FormModel *DatasetClassification::getFormModel() const
 void DatasetClassification::uploadFinished(EnginioReply* reply)
 {
   qDebug() << "UploadFinished";
-  qDebug() << "data: " << reply->data();
-  qDebug() << "isError: " << reply->isError();
+  // qDebug() << "data: " << reply->data(); // lots of text
+  qDebug() << "isError: " << reply->isError(); // displays error status
+  if (reply->isError())
+  {
+    // there was an error so inform the user
+    QMessageBox::information(0, QString("Cloud Sync Error"),
+                             QString("There was an error sysncing to Enginio. You should probably save to a file.")
+                           , QMessageBox::Ok);
+  }
+  else
+  {
+    // there was no error so inform of success
+    QMessageBox::information(0, QString("Cloud Sync Success"),
+                             QString("Sync to Enginio successful.")
+                           , QMessageBox::Ok);
+  };
+}
+
+void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
+{
+
+  // backend id for testing with enginio: 529da70ae5bde55cd1026369
+  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
+  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  EnginioClient *mypClient = new EnginioClient;
+  mypClient->setBackendId(myBackendId);
+
+  connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+
+  mypClient->create(theQJsonObject);
+}
+
+void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)
+{
+  QFile myFile;
+  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
+
+  myFile.setFileName(myFilename);
+  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+  {
+    myFile.write(theQJsonDocument.toJson());
+    myFile.close();
+    qDebug() << "file saved successfully";
+  }
+}
+
+void DatasetClassification::on_toolButtonInsertVariable_clicked()
+{
+  // insert variable into list
+  QString myVariable = ui->ledDatasetInsertVariable->text();
+  int myRow = ui->listWidget->count();
+  QListWidgetItem *newVariable = new QListWidgetItem;
+      newVariable->setText(myVariable);
+      ui->listWidget->insertItem(myRow, newVariable);
+  ui->ledDatasetInsertVariable->clear();
+
+}
+
+void DatasetClassification::on_toolButtonCitation_pressed()
+{
+  // pop up a citation
+  QString myCitationText = "<font size = 2 color = black >Institute for Terrestrial and Planetary Atmospheres/Marine Sciences Research Center/State University of New York/Stony Brook. 2001. Lucas and Waliser Satellite ECT-Corrected Daily, Pentad and Monthly Global OLR Datasets. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. http://rda.ucar.edu/datasets/ds684.1. Accessed dd mmm yyyy.</font>";
+  QMessageBox myQMessageBox;
+
+  myQMessageBox.information(0, "How to cite this dataset", myCitationText, QMessageBox::Ok);
+  //myQMessageBox.setFont(QFont::setPointSize(9));
 }

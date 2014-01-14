@@ -327,7 +327,12 @@ private slots:
 
 
 
-void on_pushButton_clicked();
+void on_pbSyncToCloud_clicked();
+void on_pbSaveToFile_clicked();
+
+void on_toolButtonInsertVariable_clicked();
+
+void on_toolButtonCitation_pressed();
 
 private:
   Ui::DatasetClassification *ui;
@@ -368,8 +373,10 @@ private:
    //  file i/o functions (including json stuff)  //
   //---------------------------------------------//
 
-  void saveToFileJson();
+  QJsonObject generateJson();
 
+  void syncToCloud(QJsonObject theQJsonObject);
+  void saveJsonToFile(QJsonDocument theQJsonDocument);
 };
 
 #endif // DATASETCLASSIFICATION_H
