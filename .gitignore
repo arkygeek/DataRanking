@@ -3,28 +3,13 @@
 
 Gui/Makefile
 
-Gui/gui.app/Contents/MacOS/gui
-
-Gui/gui.pro
-
-Gui/qrc_Resources.cpp
+*.app
 
 *.o
 
 *.dylib
 
-ModelDetails/ModelDetails.app/Contents/MacOS/ModelDetails
+moc_*
 
-*.o
+qrc_*
 
-Gui/moc_formmodel.cpp
-
-*.user
-
-Gui/qrc_Resources.o
-
-RankPointGenerator/libRankPointGenerator.1.0.0.dylib
-
-DataRanking.pro.user
-
-DataRanking.pro.user
