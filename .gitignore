@@ -13,3 +13,13 @@ moc_*
 
 qrc_*
 
+
+RankPointGenerator/Makefile
+
+ModelDetails/ui_dscmodeldetails.h
+
+ModelDetails/Makefile
+
+Makefile
+
+Gui/ui_datasetclassification.h
