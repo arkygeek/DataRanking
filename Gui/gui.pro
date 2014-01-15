@@ -8,7 +8,7 @@ QT += core gui enginio
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET   = gui
+TARGET   = DatasetRanker
 TEMPLATE = app
 
 

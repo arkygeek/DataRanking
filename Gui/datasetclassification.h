@@ -324,15 +324,24 @@ private slots:
   void on_sbSVObservationsDamagesObservations_valueChanged(int theObservations);
   void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
 
+  void on_sbSeasonsSitesSeasonsPerCropNumber_valueChanged(int theNumber);
+  void on_sbSeasonsSitesSiteVariantsNumber_valueChanged(int theNumber);
+  void on_sbSeasonsSitesMgmtPotentialNumber_valueChanged(int theNumber);
+  void on_cbSeasonsSitesZeroNTreatment_currentIndexChanged(const QString &theText);
+  void on_dsbSeasonsSitesZeroNTreatment_valueChanged(double theWeight);
+  void on_dsbSeasonsSitesMgmtPotentialWeight_valueChanged(double theWeight);
+  void on_dsbSeasonsSitesSiteVariantsWeight_valueChanged(double theWeight);
+  void on_dsbSeasonsSitesSeasonsPerCropWeight_valueChanged(double theWeight);
 
+  void on_pbSyncToCloud_clicked();
+  void on_pbSaveToFile_clicked();
 
+  void on_toolButtonInsertVariable_clicked();
 
-void on_pbSyncToCloud_clicked();
-void on_pbSaveToFile_clicked();
+  void on_toolButtonCitation_clicked();
 
-void on_toolButtonInsertVariable_clicked();
+  void on_actionAbout_triggered();
 
-void on_toolButtonCitation_clicked();
 
 private:
   Ui::DatasetClassification *ui;
@@ -368,6 +377,7 @@ private:
   void updateSiteLabels();
   void updateWeatherLabels();
   void updateSVLabels();
+  void updateSeasonLabels();
 
     //---------------------------------------------//
    //  file i/o functions (including json stuff)  //

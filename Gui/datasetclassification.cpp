@@ -3022,6 +3022,127 @@ void DatasetClassification::on_dsbSVObservationsDamagesWeightPts_valueChanged(do
   updateSVLabels();
 }
 
+// Season
+void DatasetClassification::on_sbSeasonsSitesSeasonsPerCropNumber_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->dsbSeasonsSitesSeasonsPerCropWeight->value();
+  myValue = myPointGen.SeasonsMethod1(theNumber, myWeight);
+  myTotal = makeString(myValue);
+  ui->lblSeasonsPerCropRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsSitesSiteVariantsNumber_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->dsbSeasonsSitesSiteVariantsWeight->value();
+  myValue = myPointGen.SeasonsMethod1(theNumber, myWeight);
+  myTotal = makeString(myValue);
+  ui->lblSiteVariantsRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsSitesMgmtPotentialNumber_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myWeight;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myWeight = ui->dsbSeasonsSitesMgmtPotentialWeight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+  ui->lblMgmtPotentialRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_cbSeasonsSitesZeroNTreatment_currentIndexChanged(const QString &theText)
+{
+  //update item total
+  // this one is different - it is either nothing or just the weight
+
+  QString myTotal;
+  QString myWeight = makeString(ui->dsbSeasonsSitesZeroNTreatment->value());
+
+  myTotal = theText=="Yes"?myWeight:"0";
+  ui->lblZeroNTreatmentRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+
+void DatasetClassification::on_dsbSeasonsSitesSeasonsPerCropWeight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myNumber;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myNumber = ui->sbSeasonsSitesSeasonsPerCropNumber->value();
+  myValue = myPointGen.SeasonsMethod1(myNumber, theWeight);
+  myTotal = makeString(myValue);
+  ui->lblSeasonsPerCropRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsSitesSiteVariantsWeight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myNumber;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myNumber = ui->sbSeasonsSitesSiteVariantsNumber->value();
+  myValue = myPointGen.SeasonsMethod1(myNumber, theWeight);
+  myTotal = makeString(myValue);
+  ui->lblSiteVariantsRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsSitesMgmtPotentialWeight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myNumber;
+  RankPointGenerator myPointGen;
+  double myValue;
+
+  myNumber = ui->sbSeasonsSitesMgmtPotentialNumber->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+  ui->lblMgmtPotentialRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsSitesZeroNTreatment_valueChanged(double theWeight)
+{
+  //update item total
+  // this one is different - it is either nothing or just the weight
+
+  QString myTotal;
+  QString myWeight = makeString(theWeight);
+
+  myTotal = ui->cbSeasonsSitesZeroNTreatment->currentText()=="Yes"?myWeight:"0";
+  ui->lblZeroNTreatmentRatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+
+
+
 // numbers to strings
 QString DatasetClassification::makeString(double theDouble)
 {
@@ -3356,6 +3477,33 @@ void DatasetClassification::updateSVLabels()
     ui->lblMedalSV->setVisible(false);
     ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
+}
+void DatasetClassification::updateSeasonLabels()
+{
+  // updates totals
+  double myTotal = 0.0;
+  myTotal += ui->lblSeasonsPerCropRatingSeasons->text().toFloat();
+  myTotal += ui->lblSiteVariantsRatingSeasons->text().toFloat();
+  myTotal += ui->lblMgmtPotentialRatingSeasons->text().toFloat();
+  myTotal += ui->lblZeroNTreatmentRatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment1RatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment2RatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment3RatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment4RatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment5RatingSeasons->text().toFloat();
+  myTotal += ui->lblTreatment6RatingSeasons->text().toFloat();
+
+
+  ui->lblSeasonsPointsValue->setText(makeString(myTotal));
+
+  // go find out what the multiplier is
+
+  RankPointGenerator myRankGen;
+  QString myMultiplier = makeString(myRankGen.multiplier(myTotal));
+
+
+  ui->lblSeasonsMultiplierValue->setText(myMultiplier);
+
 }
 
 void DatasetClassification::on_rbPrecipitationWeatherMeasured_toggled(bool checked)
@@ -4847,7 +4995,8 @@ QJsonObject DatasetClassification::generateJson()
   mySeasonsObject.insert("Treatment6", mySeasonsInputTreatment6Object);
 
   // add rank info
-  mySeasonsObject.insert("Multiplier", ui->lblSeasonsMultiplierTotal->text());
+  mySeasonsObject.insert("Multiplier", ui->lblSeasonsMultiplierValue->text());
+  mySeasonsObject.insert("Points", ui->lblSeasonsPointsValue->text());
 
 
   myQJsonDocument.setObject(mySeasonsObject);
@@ -4976,3 +5125,12 @@ QString DatasetClassification::generateCitation(QString theText)
   // do something clever here (I'm tired)
   return theText;
 }
+
+void DatasetClassification::on_actionAbout_triggered()
+{
+  QMessageBox::information(0, QString("About this software"),
+                           QString("Copyright (C) 2013 by: Jason S. Jorgenson.   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.")
+                         , QMessageBox::Ok);
+}
+
+

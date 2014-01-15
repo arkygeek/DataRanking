@@ -84,22 +84,15 @@ double SVObservationsLodging(int theObservations, double theWeight);
 double SVObservationsPests(int theObservations, double theWeight);
 double SVObservationsDamages(int theObservations, double theWeight);
 
-
-double SVMethod1(int theObservations, double theWeight, double theReplicates);
-double SVMethod2(int theObservations, double theWeight, double theLayers, double theReplicates, double theMinFactor);
-double SVMethod3(int theObservations, double theWeight, double theLayers, double theMinFactor);
-double SVMethod4(int theObservations, double theWeight);
-double SVMethod5(int theObservations, double theWeight);
-
 //seasons
-double SeasonsMethod1(int theNumber, int theWeight);
-double SeasonsMethod2(int theNumber, int theWeight);
+double SeasonsMethod1(int theNumber, double theWeight);
+double SeasonsMethod2(int theNumber, double theWeight);
 
   //-----------------------------//
  //     Overall calculations    //
 //-----------------------------//
 
-double multiplier(int theSeasonsTotal);
+double multiplier(double theSeasonsTotal);
 
 QString getRankManagement(int theTotal);
 QString getRankPhenology(int theTotal);

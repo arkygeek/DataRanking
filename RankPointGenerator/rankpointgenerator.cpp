@@ -29,7 +29,6 @@ RankPointGenerator::RankPointGenerator()
 }
 
 // Management
-
 double RankPointGenerator::mgmtMethod(double theObservations, double theWeight)
 {
   // the calculation of total points for Management
@@ -38,7 +37,6 @@ double RankPointGenerator::mgmtMethod(double theObservations, double theWeight)
 }
 
 // phenology
-
 double RankPointGenerator::phenologyMethod(double theObservations, double theWeight)
 {
  // the calculation of total points for Phenology
@@ -47,7 +45,6 @@ double RankPointGenerator::phenologyMethod(double theObservations, double theWei
 }
 
 // previous crop
-
 double RankPointGenerator::previousCropMethod(double theObservations, double theWeight)
 {
   // the calculation of total points for prev. crop
@@ -56,7 +53,6 @@ double RankPointGenerator::previousCropMethod(double theObservations, double the
 }
 
 // initial values
-
 double RankPointGenerator::initialValuesMethod(double theObservations, double theWeight, double theDepth)
 {
   // the calculation of total points for initial values
@@ -66,7 +62,6 @@ double RankPointGenerator::initialValuesMethod(double theObservations, double th
 }
 
 // soil
-
 double RankPointGenerator::soilMethod1(double theDepth, double theLayers, double theWeight)
 {
   // min(depth/1.5,1.25) * MIN(layers/3,1.2) * weight
@@ -107,8 +102,6 @@ double RankPointGenerator::weatherMethodSunshineHours(double theDistance, double
   }
   return myTotal;
 }
-
-
 double RankPointGenerator::weatherMethod1(double theDistance, double theWeight,
                                              int theAltDif, double theFactor,
                                              int theOptimalDistance)
@@ -147,7 +140,6 @@ double RankPointGenerator::weatherMethod1(double theDistance, double theWeight,
 }
 
 // State Variables
-
 double RankPointGenerator::SVCropYield(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -158,7 +150,6 @@ double RankPointGenerator::SVCropYield(int theObservations, double theWeight, do
   myTotal = (theWeight * theObservations) + ((theReplicates-1.0)*0.5);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropAGrBiomass(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -176,7 +167,6 @@ double RankPointGenerator::SVCropAGrBiomass(int theObservations, double theWeigh
   myTotal = (myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropWeightOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -196,7 +186,6 @@ double RankPointGenerator::SVCropWeightOrgans(int theLayers, int theObservations
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropRootBiomass(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -216,7 +205,6 @@ double RankPointGenerator::SVCropRootBiomass(int theLayers, int theObservations,
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropNInAGrBiomass(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -234,7 +222,6 @@ double RankPointGenerator::SVCropNInAGrBiomass(int theObservations, double theWe
   myTotal = (myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropNInOrgans(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -254,7 +241,6 @@ double RankPointGenerator::SVCropNInOrgans(int theLayers, int theObservations, d
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVCropLAI(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -272,7 +258,6 @@ double RankPointGenerator::SVCropLAI(int theObservations, double theWeight, doub
   myTotal = (myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilSoilWaterGrav(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -292,7 +277,6 @@ double RankPointGenerator::SVSoilSoilWaterGrav(int theLayers, int theObservation
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilPressureHeads(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -312,7 +296,6 @@ double RankPointGenerator::SVSoilPressureHeads(int theLayers, int theObservation
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilNMin(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -332,7 +315,6 @@ double RankPointGenerator::SVSoilNMin(int theLayers, int theObservations, double
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilSoilWaterSensorCal(int theLayers, int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -352,7 +334,6 @@ double RankPointGenerator::SVSoilSoilWaterSensorCal(int theLayers, int theObserv
   myTotal = (myMinLayers * myMinObservations * theWeight * myMinReplicates);
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilWaterFluxBottomRoot(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -362,7 +343,6 @@ double RankPointGenerator::SVSoilWaterFluxBottomRoot(int theObservations, double
   myTotal = ((theObservations/10.0>1.25?1.25:theObservations/10.0) * theWeight * theReplicates) / 3.0;
   return myTotal;
 }
-
 double RankPointGenerator::SVSoilNFluxBottomRoot(int theObservations, double theWeight, double theReplicates)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -384,7 +364,6 @@ double RankPointGenerator::SVSurfaceFluxesET(int theObservations, double theWeig
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVSurfaceFluxesNH3Loss(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -395,7 +374,6 @@ double RankPointGenerator::SVSurfaceFluxesNH3Loss(int theObservations, double th
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVSurfaceFluxesN2OLoss(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -406,7 +384,6 @@ double RankPointGenerator::SVSurfaceFluxesN2OLoss(int theObservations, double th
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVSurfaceFluxesN2Loss(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -417,7 +394,6 @@ double RankPointGenerator::SVSurfaceFluxesN2Loss(int theObservations, double the
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVSurfaceFluxesCH4Loss(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -439,7 +415,6 @@ double RankPointGenerator::SVObservationsLodging(int theObservations, double the
   myTotal = theObservations * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVObservationsPests(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -450,7 +425,6 @@ double RankPointGenerator::SVObservationsPests(int theObservations, double theWe
   myTotal = theObservations * theWeight;
   return myTotal;
 }
-
 double RankPointGenerator::SVObservationsDamages(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
@@ -462,53 +436,8 @@ double RankPointGenerator::SVObservationsDamages(int theObservations, double the
   return myTotal;
 }
 
-
-double RankPointGenerator::SVMethod1(int theObservations, double theWeight, double theReplicates)
-{
-  // (observations x weight x replicates) / 3
-  double myTotal;
-  myTotal = (theObservations * theWeight * theReplicates) / 3.0;
-  return myTotal;
-}
-double RankPointGenerator::SVMethod2(int theObservations, double theWeight, double theLayers,
-                                        double theReplicates, double theMinFactor)
-{
-  // (layers x MIN(observations, minFactor) * weight * replicates) / 3
-  double myTotal;
-  double myMinValue;
-
-  myMinValue = theObservations < theMinFactor ? theObservations*1.0 : theMinFactor;
-  myTotal = (theLayers * myMinValue * theWeight * theReplicates) / 3;
-  return myTotal;
-}
-double RankPointGenerator::SVMethod3(int theObservations, double theWeight,
-                                        double theLayers, double theMinFactor)
-{
-  // for use with SVCrop WeightOrgans, RootBioMass
-  // (layers * (min(observations,minFactor) * weight)
-  double myTotal;
-  double myMinValue = theObservations < theMinFactor ? theObservations : theMinFactor;
-  myTotal = theLayers * myMinValue * theWeight;
-  return myTotal;
-}
-
-double RankPointGenerator::SVMethod4(int theObservations, double theWeight)
-{
-  // observations x weight
-  double myTotal;
-  myTotal = theObservations * theWeight;
-  return myTotal;
-}
-double RankPointGenerator::SVMethod5(int theObservations, double theWeight)
-{
-  // min (observations,1) x weight
-  double myTotal;
-  myTotal = (theObservations>1?1:theObservations) * theWeight;
-  return myTotal;
-}
-
 // Seasons
-double RankPointGenerator::SeasonsMethod1(int theNumber, int theWeight)
+double RankPointGenerator::SeasonsMethod1(int theNumber, double theWeight)
 {
   // MIN(theNumber*TheWeight,5)
   double myTotal;
@@ -517,20 +446,19 @@ double RankPointGenerator::SeasonsMethod1(int theNumber, int theWeight)
   myTotal = mySubTotal<5 ? mySubTotal : 5.0;
   return myTotal;
 }
-double RankPointGenerator::SeasonsMethod2(int theNumber, int theWeight)
+double RankPointGenerator::SeasonsMethod2(int theNumber, double theWeight)
 {
   double myTotal;
   myTotal = theNumber*theWeight;
   return myTotal;
 }
 
-
     //-----------------------------//
    //     Overall calculations    //
   //-----------------------------//
 
 
-double RankPointGenerator::multiplier(int theSeasonsTotal)
+double RankPointGenerator::multiplier(double theSeasonsTotal)
 {
   double myTotal;
   // 1 + [(theSeasonsTotal / 7) - 1] * 0.1
@@ -791,10 +719,13 @@ QString RankPointGenerator::getRank(int theTotal)
   int myRankNumber = 0;
   QString myRank;
 
-  if (theTotal >= 180) myRankNumber=180;
-  else if (theTotal >= 145) myRankNumber=145;
-  else if (theTotal >= 90) myRankNumber=90;
-  else if (theTotal >= 60) myRankNumber=60;
+  double myTotal = theTotal;
+  // might have to adjust theTotal here...
+
+  if (myTotal >= 180) myRankNumber=180;
+  else if (myTotal >= 145) myRankNumber=145;
+  else if (myTotal >= 90) myRankNumber=90;
+  else if (myTotal >= 60) myRankNumber=60;
 
    switch (myRankNumber)
    {

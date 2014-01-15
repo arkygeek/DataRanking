@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>952</width>
-    <height>933</height>
+    <height>950</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -182,7 +182,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -4173,6 +4173,9 @@ p, li { white-space: pre-wrap; }
             <widget class="QSpinBox" name="sbSowingDateObsPrevCrop">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
              </property>
             </widget>
            </item>
@@ -8764,7 +8767,7 @@ p, li { white-space: pre-wrap; }
            </font>
           </property>
           <property name="text">
-           <string>55.6</string>
+           <string>44.6</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -8820,7 +8823,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -9729,8 +9732,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>546</width>
-             <height>421</height>
+             <width>830</width>
+             <height>651</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9787,7 +9790,7 @@ p, li { white-space: pre-wrap; }
                     <number>999999</number>
                    </property>
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10063,7 +10066,7 @@ p, li { white-space: pre-wrap; }
                     <number>999999</number>
                    </property>
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10509,8 +10512,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>830</width>
-             <height>634</height>
+             <width>522</width>
+             <height>379</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10563,7 +10566,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>2</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10583,7 +10586,7 @@ p, li { white-space: pre-wrap; }
                  <item row="1" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10612,7 +10615,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>2</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10726,7 +10729,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>3</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10736,14 +10739,14 @@ p, li { white-space: pre-wrap; }
                  <item row="4" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10765,7 +10768,7 @@ p, li { white-space: pre-wrap; }
                  <item row="5" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10777,7 +10780,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>2</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10787,7 +10790,7 @@ p, li { white-space: pre-wrap; }
                  <item row="2" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations">
                    <property name="value">
-                    <number>1</number>
+                    <number>0</number>
                    </property>
                   </widget>
                  </item>
@@ -10809,7 +10812,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>2</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10839,7 +10842,7 @@ p, li { white-space: pre-wrap; }
                     </font>
                    </property>
                    <property name="text">
-                    <string>11</string>
+                    <string>0</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -12305,7 +12308,7 @@ p, li { white-space: pre-wrap; }
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>0</string>
+              <string>2</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -12824,7 +12827,7 @@ p, li { white-space: pre-wrap; }
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>0</string>
+                <string>1</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -12886,7 +12889,7 @@ p, li { white-space: pre-wrap; }
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>0</string>
+                <string>4</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -12969,7 +12972,7 @@ p, li { white-space: pre-wrap; }
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/Images/Resources/MAD_Weather1a.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
-                <string>0</string>
+                <string>5</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -13144,6 +13147,23 @@ p, li { white-space: pre-wrap; }
         <item row="3" column="0">
          <layout class="QHBoxLayout" name="horizontalLayoutSeasonsMultiplier">
           <item>
+           <widget class="QLabel" name="lblSeasonsTotalPoints">
+            <property name="text">
+             <string>Total:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblSeasonsPointsValue">
+            <property name="text">
+             <string>12</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="lblSeasonsMultiplier">
             <property name="text">
              <string>Multiplier:</string>
@@ -13154,9 +13174,9 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="lblSeasonsMultiplierTotal">
+           <widget class="QLabel" name="lblSeasonsMultiplierValue">
             <property name="text">
-             <string>0</string>
+             <string>1.07142857</string>
             </property>
            </widget>
           </item>
@@ -13177,6 +13197,22 @@ p, li { white-space: pre-wrap; }
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSync_to_Cloud"/>
+    <addaction name="actionSave_to_Disk"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionNone_yet"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -13187,6 +13223,29 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSync_to_Cloud">
+   <property name="text">
+    <string>Sync to Cloud</string>
+   </property>
+  </action>
+  <action name="actionSave_to_Disk">
+   <property name="text">
+    <string>Save to Disk</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionNone_yet">
+   <property name="text">
+    <string>None (yet)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
