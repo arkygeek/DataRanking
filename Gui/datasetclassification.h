@@ -402,6 +402,8 @@ private:
   QJsonObject generateSVSoilJson();
   QJsonObject generateSVSurfaceFluxesJson();
   QJsonObject generateSVObservationsJson();
+  QJsonObject generateHeaderJson();
+  QJsonObject generateSeasonJSON();
 };
 
 #endif // DATASETCLASSIFICATION_H

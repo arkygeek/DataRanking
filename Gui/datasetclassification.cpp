@@ -3935,6 +3935,21 @@ void DatasetClassification::on_pbSaveToFile_clicked()
  //  file i/o functions (including json stuff)  //
 //---------------------------------------------//
 
+QJsonObject DatasetClassification::generateHeaderJson()
+{
+  QJsonObject myFormDetailsHeader;
+  myFormDetailsHeader.insert("User", ui->cbUser->currentText());
+  myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
+  myFormDetailsHeader.insert("PreMultiplierPoints", ui->lblTotalPreMultiplier->text());
+  myFormDetailsHeader.insert("PostMultiplierPoints", ui->lblTotalPostMultiplier->text());
+  myFormDetailsHeader.insert("Rank", ui->lblOverallRank->text());
+
+  QDateTime myDateTime = QDateTime::currentDateTime();
+  QString myDateTimeString = myDateTime.toString();
+  myFormDetailsHeader.insert("Date", myDateTimeString);
+  return myFormDetailsHeader;
+}
+
 QJsonObject DatasetClassification::generateDatasetJson()
 {
   QString myIsChecked;
@@ -4429,6 +4444,11 @@ QJsonObject DatasetClassification::generateSiteJson()
   mySiteObject.insert("Longitude", mySiteInputLongitude);
   mySiteObject.insert("Altitude", mySiteInputAltitude);
   mySiteObject.insert("Slope", mySiteInputSlope);
+
+  mySiteObject.insert("Points", ui->lblOverallRatingSite->text());
+  mySiteObject.insert("Rank", ui->lblRankingSite->text());
+  mySiteObject.insert("Notes", ui->txbrSite->toPlainText());
+
   return mySiteObject;
 }
 QJsonObject DatasetClassification::generateWeatherJson()
@@ -4577,6 +4597,10 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherObject.insert("SunshineHours", myWeatherInputSunshineHours);
   myWeatherObject.insert("LeafWetness", myWeatherInputLeafWetness);
   myWeatherObject.insert("SoilTemp", myWeatherInputSoilTemp);
+
+  myWeatherObject.insert("Points", ui->lblOverallRatingWeather->text());
+  myWeatherObject.insert("Rank", ui->lblRankingWeather->text());
+  myWeatherObject.insert("Notes", ui->txbrWeather->toPlainText());
   return myWeatherObject;
 }
 QJsonObject DatasetClassification::generateStateVarsJson()
@@ -4584,7 +4608,12 @@ QJsonObject DatasetClassification::generateStateVarsJson()
   // call the individual objects
   QJsonObject mySVObject;
   mySVObject.insert("Crop", generateSVCropJson());
+  mySVObject.insert("Soil", generateSVSoilJson());
+  mySVObject.insert("SurfaceFluxes", generateSVSurfaceFluxesJson());
+  mySVObject.insert("Observations", generateSVObservationsJson());
 
+  mySVObject.insert("Points", ui->lblOverallRatingSV->text());
+  mySVObject.insert("Rank", ui->lblRankingSV->text());
   return mySVObject;
 }
 QJsonObject DatasetClassification::generateSVCropJson()
@@ -4689,187 +4718,8 @@ QJsonObject DatasetClassification::generateSVCropJson()
 }
 QJsonObject DatasetClassification::generateSVSoilJson()
 {
-
-}
-QJsonObject DatasetClassification::generateSVSurfaceFluxesJson()
-{
-
-}
-QJsonObject DatasetClassification::generateSVObservationsJson()
-{
-
-}
-
-
-QJsonObject DatasetClassification::generateJson()
-{
-  QJsonDocument myQJsonDocument;
-  // create the main qjson object
-  QJsonObject myFormObject;
-  myFormObject.insert("objectType", QString("objects.entry"));
-  QJsonObject myFormDetailsHeader;
-  QString myMinDataSetting;
-  QString myJsonText;
-  QString myIsMeasuredSetting;
-  QString myTreatmentUSedSetting;
-  QString myIsCheckedText;
-
-  // create a header
-  myFormDetailsHeader.insert("User", ui->cbUser->currentText());
-  myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
-  myFormDetailsHeader.insert("PreMultiplierPoints", ui->lblTotalPreMultiplier->text());
-  myFormDetailsHeader.insert("PostMultiplierPoints", ui->lblTotalPostMultiplier->text());
-  myFormDetailsHeader.insert("Rank", ui->lblOverallRank->text());
-
-  QDateTime myDateTime = QDateTime::currentDateTime();
-  QString myDateTimeString = myDateTime.toString();
-  myFormDetailsHeader.insert("Date", myDateTimeString);
-  // insert the header
-  myFormObject.insert("Header", myFormDetailsHeader);
-
-
-    //
-   // Dataset
-  //
-
-  QJsonObject myDatasetObject = generateDatasetJson();
-
-
-
-
-
-
-
-    //
-   // Management
-  //
-  QJsonObject myManagementObject = generateManagementJson();
-
-  myQJsonDocument.setObject(myManagementObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrMgmt->clear();
-  ui->txbrMgmt->setText(myJsonText);
-
-    //
-   // Phenology
-  //
-
-  QJsonObject myPhenologyObject = generatePhenologyJson();
-
-
-  myQJsonDocument.setObject(myPhenologyObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrPhenology->clear();
-  ui->txbrPhenology->setText(myJsonText);
-
-    //
-   // Previous Crop
-  //
-
-  QJsonObject myPrevCropObject = generatePrevCropJson();
-
-  myQJsonDocument.setObject(myPrevCropObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrPrevCrop->clear();
-  ui->txbrPrevCrop->setText(myJsonText);
-
-    //
-   // Initial Values
-  //
-
-  QJsonObject myInitialValuesObject = generateInitialValuesJson();
-
-  myQJsonDocument.setObject(myInitialValuesObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrInitialValues->clear();
-  ui->txbrInitialValues->setText(myJsonText);
-
-    //
-   // Soil
-  //
-
-  QJsonObject mySoilObject = generateSoilJson();
-
-  myQJsonDocument.setObject(mySoilObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrSoil->clear();
-  ui->txbrSoil->setText(myJsonText);
-
-
-    //
-   // Site
-  //
-
-  QJsonObject mySiteObject = generateSiteJson();
-
-  // add rank info
-  mySiteObject.insert("Points", ui->lblOverallRatingSite->text());
-  mySiteObject.insert("Rank", ui->lblRankingSite->text());
-  mySiteObject.insert("Notes", ui->txbrSite->toPlainText());
-
-  myQJsonDocument.setObject(mySiteObject);
-  myJsonText = myQJsonDocument.toJson();
-
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->txbrSite->clear();
-  ui->txbrSite->setText(myJsonText);
-
-    //
-   // Weather
-  //
-
-  QJsonObject myWeatherObject = generateWeatherJson();
-
-
-  // add rank info
-  myWeatherObject.insert("Points", ui->lblOverallRatingWeather->text());
-  myWeatherObject.insert("Rank", ui->lblRankingWeather->text());
-  myWeatherObject.insert("Notes", ui->txbrWeather->toPlainText());
-
-   // -----> THIS IS TEMPORARY
-  myQJsonDocument.setObject(myWeatherObject);
-  myJsonText = myQJsonDocument.toJson();
-  // display the JSON in the temporary text browser
-  ui->txbrWeather->clear();
-  ui->txbrWeather->setText(myJsonText);
-
-
-    //
-   // State Variables
-  //
-
-  QJsonObject myStateVariablesObject = generateStateVarsJson();
-
-
-
-  // put all of the SVCrop objects into the state variable object
-
-  // -----> THIS IS TEMPORARY
- myQJsonDocument.setObject(myStateVariablesObject);
- myJsonText = myQJsonDocument.toJson();
- // display the JSON in the temporary text browser
- ui->txbrSVCrop->clear();
- ui->txbrSVCrop->setText(myJsonText);
-
-  //    SV Soil
-
   QJsonObject myStateVariablesSoilObject;
+  QString myMinDataSetting;
   myStateVariablesSoilObject.insert("PointsSubTotal", ui->lblOverallRatingSVSoil->text());
 
   //    SV Soil
@@ -4951,18 +4801,12 @@ QJsonObject DatasetClassification::generateJson()
   myStateVariablesSoilObject.insert("NFluxBottomRoot", myStateVariablesSoilNFluxBottomRootObject);
 
   // put all of the SV Soil objects into the state variable object
-  myStateVariablesObject.insert("Soil", myStateVariablesSoilObject);
-
-  // -----> THIS IS TEMPORARY
-  myQJsonDocument.setObject(myStateVariablesSoilObject);
-  myJsonText = myQJsonDocument.toJson();
-  // display the JSON in the temporary text browser
-  ui->txbrSVSoil->clear();
-  ui->txbrSVSoil->setText(myJsonText);
-
-  //    SV SurfaceFluxes
-
+  return myStateVariablesSoilObject;
+}
+QJsonObject DatasetClassification::generateSVSurfaceFluxesJson()
+{
   QJsonObject myStateVariablesSurfaceFluxesObject;
+  QString myMinDataSetting;
   myStateVariablesSurfaceFluxesObject.insert("PointsSubTotal", ui->lblOverallRatingSVSurfaceFluxes->text());
 
   //    SV SurfaceFluxes
@@ -5030,19 +4874,12 @@ QJsonObject DatasetClassification::generateJson()
   // add this to the SurfaceFluxes object
   myStateVariablesSurfaceFluxesObject.insert("CH4Loss", myStateVariablesSurfaceFluxesCh4LossObject);
 
-  // put all of the SV Surface Fluxes objects into the state variable object
-  myStateVariablesObject.insert("SurfaceFluxes", myStateVariablesSurfaceFluxesObject);
-
-  // -----> THIS IS TEMPORARY
-  myQJsonDocument.setObject(myStateVariablesSurfaceFluxesObject);
-  myJsonText = myQJsonDocument.toJson();
-  // display the JSON in the temporary text browser
-  ui->txbrSVSurfaceFluxes->clear();
-  ui->txbrSVSurfaceFluxes->setText(myJsonText);
-
-  //    SV Observations
-
+  return myStateVariablesSurfaceFluxesObject;
+}
+QJsonObject DatasetClassification::generateSVObservationsJson()
+{
   QJsonObject myStateVariablesObservationsObject;
+  QString myMinDataSetting;
   myStateVariablesObservationsObject.insert("PointsSubTotal", ui->lblOverallRatingSVObservations->text());
 
   //    SV Observations
@@ -5083,28 +4920,12 @@ QJsonObject DatasetClassification::generateJson()
   myStateVariablesObservationsDamagesObject.insert("Observations", ui->sbSVObservationsDamagesObservations->text());
   // add this to the Observations object
   myStateVariablesObservationsObject.insert("Damages", myStateVariablesObservationsDamagesObject);
-
-  // put all of the SV Observations objects into the state variable object
-  myStateVariablesObject.insert("Observations", myStateVariablesObservationsObject);
-
-  // -----> THIS IS TEMPORARY
-  myQJsonDocument.setObject(myStateVariablesObservationsObject);
-  myJsonText = myQJsonDocument.toJson();
-  // display the JSON in the temporary text browser
-  ui->txbrSVObservations->clear();
-  ui->txbrSVObservations->setText(myJsonText);
-
-  // add rank info
-  myStateVariablesObject.insert("Points", ui->lblOverallRatingSV->text());
-  myStateVariablesObject.insert("Rank", ui->lblRankingSV->text());
-
-
-    //
-   // Seasons
-  //
-
+  return myStateVariablesObservationsObject;
+}
+QJsonObject DatasetClassification::generateSeasonJSON()
+{
   QJsonObject mySeasonsObject;
-
+  QString myTreatmentUSedSetting;
   //  Sites
   //    SeasonsPerCrop
 
@@ -5210,18 +5031,37 @@ QJsonObject DatasetClassification::generateJson()
   mySeasonsObject.insert("Multiplier", ui->lblSeasonsMultiplierValue->text());
   mySeasonsObject.insert("Points", ui->lblSeasonsPointsValue->text());
 
+  return mySeasonsObject;
+}
 
-  myQJsonDocument.setObject(mySeasonsObject);
-  myJsonText = myQJsonDocument.toJson();
+QJsonObject DatasetClassification::generateJson()
+{
+  // create the main qjson object
+  QJsonObject myFormObject;
+  myFormObject.insert("objectType", QString("objects.entry"));
+  QString myMinDataSetting;
+  QJsonDocument myQJsonDocument;
 
-  // -----> THIS IS TEMPORARY
-  // display the JSON in the temporary text browser
-  ui->tedSeasons->clear();
-  ui->tedSeasons->setText(myJsonText);
+  QString myJsonText;
+  QString myIsMeasuredSetting;
+  QString myTreatmentUSedSetting;
+  QString myIsCheckedText;
 
-    //
-   // insert the sub-objects into the form object
-  //
+  // insert the header
+  myFormObject.insert("Header", generateHeaderJson());
+
+  QJsonObject myDatasetObject = generateDatasetJson();
+  QJsonObject myManagementObject = generateManagementJson();
+  QJsonObject myPhenologyObject = generatePhenologyJson();
+  QJsonObject myPrevCropObject = generatePrevCropJson();
+  QJsonObject myInitialValuesObject = generateInitialValuesJson();
+  QJsonObject mySoilObject = generateSoilJson();
+  QJsonObject mySiteObject = generateSiteJson();
+  QJsonObject myWeatherObject = generateWeatherJson();
+  QJsonObject myStateVariablesObject = generateStateVarsJson();
+  QJsonObject mySeasonsObject = generateSeasonJSON();
+
+  // insert the sub-objects into the form object
 
   myFormObject.insert("Dataset", myDatasetObject);
   myFormObject.insert("Management", myManagementObject);
@@ -5233,10 +5073,6 @@ QJsonObject DatasetClassification::generateJson()
   myFormObject.insert("Weather", myWeatherObject);
   myFormObject.insert("StateVariables", myStateVariablesObject);
   myFormObject.insert("Seasons", mySeasonsObject);
-
-
-  // dumpt the JSON to the terminal for testing
-  //qDebug() << "\n" << "myFormObject" << myFormObject;
 
   // in order to dump the text, it has to be put into a QJsonDocument
   myQJsonDocument.setObject(myFormObject);
