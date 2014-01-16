@@ -389,6 +389,19 @@ private:
   void saveJsonToFile(QJsonDocument theQJsonDocument);
   QString generateCitation(QString theText);
   void updateGrandTotals();
+  QJsonObject generateDatasetJson();
+  QJsonObject generateManagementJson();
+  QJsonObject generatePhenologyJson();
+  QJsonObject generatePrevCropJson();
+  QJsonObject generateInitialValuesJson();
+  QJsonObject generateSoilJson();
+  QJsonObject generateSiteJson();
+  QJsonObject generateWeatherJson();
+  QJsonObject generateStateVarsJson();
+  QJsonObject generateSVCropJson();
+  QJsonObject generateSVSoilJson();
+  QJsonObject generateSVSurfaceFluxesJson();
+  QJsonObject generateSVObservationsJson();
 };
 
 #endif // DATASETCLASSIFICATION_H
