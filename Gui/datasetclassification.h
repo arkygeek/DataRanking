@@ -388,6 +388,7 @@ private:
   void syncToCloud(QJsonObject theQJsonObject);
   void saveJsonToFile(QJsonDocument theQJsonDocument);
   QString generateCitation(QString theText);
+  void updateGrandTotals();
 };
 
 #endif // DATASETCLASSIFICATION_H

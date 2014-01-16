@@ -6,147 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>952</width>
-    <height>950</height>
+    <width>959</width>
+    <height>893</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>DatasetClassification</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="3" column="7">
-     <widget class="QPushButton" name="pbSaveToFile">
-      <property name="text">
-       <string>Save to File</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="6">
-     <widget class="QLabel" name="lblOverallRank">
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Platinum</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="5">
-     <widget class="QLabel" name="lblRankImage">
-      <property name="minimumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>40</width>
-        <height>40</height>
-       </size>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="0">
-     <widget class="QComboBox" name="cbUser">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <item>
-       <property name="text">
-        <string>If not listed, select Register</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Jason Jorgenson</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Register</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="2" column="3">
-     <widget class="QToolButton" name="toolButtonDatasetDetails">
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Push to see full details for dataset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="text">
-       <string>...</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="7">
-     <widget class="QPushButton" name="pbSyncToCloud">
-      <property name="text">
-       <string>Sync to Cloud</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QComboBox" name="cbDatasets">
-      <property name="currentIndex">
-       <number>1</number>
-      </property>
-      <item>
-       <property name="text">
-        <string>Select Dataset</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Example</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="2" column="4">
-     <widget class="QLabel" name="lblEstimatedRanking">
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Estimated Ranking:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pbAuthenticate">
-      <property name="maximumSize">
-       <size>
-        <width>110</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Authenticate</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
      <widget class="QLabel" name="lblUser">
       <property name="font">
        <font>
@@ -162,7 +36,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="8">
+    <item row="0" column="0" colspan="6">
      <widget class="QTabWidget" name="tabWidgetDataClassification">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -182,7 +56,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -194,609 +68,316 @@
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
+            <verstretch>1</verstretch>
            </sizepolicy>
           </property>
           <property name="title">
            <string>Data Types</string>
           </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_11">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesEconomic">
-               <property name="minimumSize">
-                <size>
-                 <width>125</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Economic</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleEconomic">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <item>
+           <item row="0" column="3" rowspan="7">
+            <widget class="QGroupBox" name="gbDatasetDataTypesLivestock">
+             <property name="title">
+              <string>Livestock</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <property name="verticalSpacing">
+               <number>-1</number>
+              </property>
+              <item row="2" column="0">
+               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockPathogens">
                 <property name="text">
-                 <string>spatial scale</string>
+                 <string>Pathogens/Diseases</string>
                 </property>
-               </item>
-               <item>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockMgmt">
                 <property name="text">
-                 <string>Individual Person</string>
+                 <string>Management</string>
                 </property>
-               </item>
-               <item>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockGenetic">
                 <property name="text">
-                 <string>Household</string>
+                 <string>Genetic</string>
                 </property>
-               </item>
-               <item>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockPathogens">
+                <item>
+                 <property name="text">
+                  <string>spatial scale</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Molecular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Cellular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Organ</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Whole Animal</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Flock</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Herd</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Administrative Area</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>National</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>International Region</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Global</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockGenetic">
+                <item>
+                 <property name="text">
+                  <string>spatial scale</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Molecular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Cellular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Organ</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Whole Animal</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Flock</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Herd</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Administrative Area</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>National</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>International Region</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Global</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockMgmt">
+                <item>
+                 <property name="text">
+                  <string>spatial scale</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Molecular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Cellular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Organ</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Whole Animal</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Flock</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Herd</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Administrative Area</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>National</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>International Region</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Global</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockPhysiology">
+                <item>
+                 <property name="text">
+                  <string>spatial scale</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Molecular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Cellular</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Organ</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Whole Animal</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Flock</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Herd</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Administrative Area</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>National</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>International Region</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Global</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockPhysiology">
                 <property name="text">
-                 <string>Village</string>
+                 <string>Physiology</string>
                 </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
+               </widget>
+              </item>
+              <item row="4" column="0" colspan="2">
+               <widget class="QTextEdit" name="tedDatasetLivestockNotes">
+                <property name="documentTitle">
+                 <string>Livestock Notes</string>
                 </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
+                <property name="placeholderText">
+                 <string>Livestock Notes</string>
                 </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </item>
-           <item row="5" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_21">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesClimateProjection">
-               <property name="minimumSize">
-                <size>
-                 <width>125</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Climate Projection</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleClimateProjection">
-               <item>
-                <property name="text">
-                 <string>spatial scale</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Individual Person</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Household</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Village</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="3" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_19">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesWeather">
-               <property name="minimumSize">
-                <size>
-                 <width>125</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Weather</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleWeather">
-               <item>
-                <property name="text">
-                 <string>spatial scale</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Individual Person</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Household</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Village</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="2" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesSoils">
-               <property name="minimumSize">
-                <size>
-                 <width>125</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Soils</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleSoils">
-               <item>
-                <property name="text">
-                 <string>spatial scale</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Individual Person</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Household</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Village</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="4" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_20">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesWeatherGenerator">
-               <property name="text">
-                <string>Weather Generator</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleWeatherGenerator">
-               <item>
-                <property name="text">
-                 <string>spatial scale</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Individual Person</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Household</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Village</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="1" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_17">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesGeneric">
-               <property name="minimumSize">
-                <size>
-                 <width>125</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Generic</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetSpatialScaleGeneric">
-               <item>
-                <property name="text">
-                 <string>spatial scale</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Individual Person</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Household</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Village</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Rural Community</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Administrative Area</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>International Region</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Local Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>National Sector</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Global Sector</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="6" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_23">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetDataTypesGrid">
-               <property name="text">
-                <string>Grid</string>
-               </property>
-               <property name="checked">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetGridResolutionX">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="inputMethodHints">
-                <set>Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
-               </property>
-               <property name="text">
-                <string>2.5</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetDataTypesGridX">
-               <property name="text">
-                <string>x</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetGridResolutionY">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="inputMethodHints">
-                <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
-               </property>
-               <property name="text">
-                <string>2.5</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetGridUnits">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <item>
-                <property name="text">
-                 <string>degrees</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>mm</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>cm</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>meters</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>km</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>inches</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>feet</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>yards</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>miles</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="0" column="1" rowspan="7">
+           <item row="0" column="2" rowspan="7">
             <widget class="QGroupBox" name="gbDatasetDataTypesCrop">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="title">
               <string>Crop</string>
              </property>
@@ -807,6 +388,12 @@
               <bool>false</bool>
              </property>
              <layout class="QGridLayout" name="gridLayout_4">
+              <property name="horizontalSpacing">
+               <number>-1</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>4</number>
+              </property>
               <item row="2" column="1">
                <widget class="QComboBox" name="cbDatasetSpatialScaleCropMgmt">
                 <item>
@@ -1137,286 +724,599 @@
                 </item>
                </widget>
               </item>
+              <item row="5" column="0" colspan="2">
+               <widget class="QTextEdit" name="tedDatasetCropNotes">
+                <property name="documentTitle">
+                 <string>Crop Notes</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Crop Notes</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </widget>
            </item>
-           <item row="0" column="2" rowspan="7">
-            <widget class="QGroupBox" name="gbDatasetDataTypesLivestock">
-             <property name="title">
-              <string>Livestock</string>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesGeneric">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="checkable">
-              <bool>true</bool>
+             <property name="text">
+              <string>Generic</string>
              </property>
-             <property name="checked">
-              <bool>false</bool>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesSoils">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>0</height>
+              </size>
              </property>
-             <layout class="QGridLayout" name="gridLayout_5">
-              <item row="2" column="0">
-               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockPathogens">
+             <property name="text">
+              <string>Soils</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_23">
+             <property name="spacing">
+              <number>-1</number>
+             </property>
+             <property name="sizeConstraint">
+              <enum>QLayout::SetDefaultConstraint</enum>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QCheckBox" name="chbxDatasetDataTypesGrid">
+               <property name="text">
+                <string>Grid</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="ledDatasetGridResolutionX">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="inputMethodHints">
+                <set>Qt::ImhFormattedNumbersOnly|Qt::ImhPreferNumbers</set>
+               </property>
+               <property name="text">
+                <string>2.5</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblDatasetDataTypesGridX">
+               <property name="text">
+                <string>x</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="ledDatasetGridResolutionY">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="inputMethodHints">
+                <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+               </property>
+               <property name="text">
+                <string>2.5</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbDatasetGridUnits">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>1</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <item>
                 <property name="text">
-                 <string>Pathogens/Diseases</string>
+                 <string>degrees</string>
                 </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockMgmt">
+               </item>
+               <item>
                 <property name="text">
-                 <string>Management</string>
+                 <string>mm</string>
                 </property>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockGenetic">
+               </item>
+               <item>
                 <property name="text">
-                 <string>Genetic</string>
+                 <string>cm</string>
                 </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockPathogens">
-                <item>
-                 <property name="text">
-                  <string>spatial scale</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Molecular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Cellular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Organ</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Whole Animal</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Flock</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Herd</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Administrative Area</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>National</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>International Region</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Global</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="0" column="1">
-               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockGenetic">
-                <item>
-                 <property name="text">
-                  <string>spatial scale</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Molecular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Cellular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Organ</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Whole Animal</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Flock</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Herd</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Administrative Area</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>National</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>International Region</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Global</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockMgmt">
-                <item>
-                 <property name="text">
-                  <string>spatial scale</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Molecular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Cellular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Organ</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Whole Animal</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Flock</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Herd</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Administrative Area</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>National</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>International Region</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Global</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="3" column="1">
-               <widget class="QComboBox" name="cbDatasetSpatialScaleLivestockPhysiology">
-                <item>
-                 <property name="text">
-                  <string>spatial scale</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Molecular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Cellular</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Organ</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Whole Animal</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Flock</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Herd</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Administrative Area</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>National</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>International Region</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Global</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item row="3" column="0">
-               <widget class="QCheckBox" name="chbxDatasetDataTypesLivestockPhysiology">
+               </item>
+               <item>
                 <property name="text">
-                 <string>Physiology</string>
+                 <string>meters</string>
                 </property>
-               </widget>
-              </item>
-             </layout>
+               </item>
+               <item>
+                <property name="text">
+                 <string>km</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>inches</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>feet</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>yards</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>miles</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleGeneric">
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesEconomic">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Economic</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesWeatherGenerator">
+             <property name="text">
+              <string>Weather Generator</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesClimateProjection">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Climate Projection</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleWeatherGenerator">
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleWeather">
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleSoils">
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="chbxDatasetDataTypesWeather">
+             <property name="minimumSize">
+              <size>
+               <width>125</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Weather</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleClimateProjection">
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="cbDatasetSpatialScaleEconomic">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <item>
+              <property name="text">
+               <string>spatial scale</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Individual Person</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Household</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Village</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Rural Community</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Administrative Area</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>International Region</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Local Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>National Sector</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Global Sector</string>
+              </property>
+             </item>
             </widget>
            </item>
           </layout>
@@ -1431,9 +1331,30 @@
            </sizepolicy>
           </property>
           <property name="title">
-           <string>Overview</string>
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>-1</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>0</number>
+           </property>
            <item row="2" column="0" colspan="2">
             <layout class="QHBoxLayout" name="horizontalLayout_13">
              <item>
@@ -1700,7 +1621,7 @@ p, li { white-space: pre-wrap; }
                 </layout>
                </item>
                <item>
-                <widget class="QListWidget" name="listWidget">
+                <widget class="QListWidget" name="listWidgetVariables">
                  <property name="dragDropMode">
                   <enum>QAbstractItemView::DragDrop</enum>
                  </property>
@@ -1746,6 +1667,14 @@ p, li { white-space: pre-wrap; }
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
                  <property name="dateTime">
                   <datetime>
                    <hour>0</hour>
@@ -1778,6 +1707,14 @@ p, li { white-space: pre-wrap; }
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>10</pointsize>
+                  </font>
+                 </property>
+                 <property name="frame">
+                  <bool>false</bool>
+                 </property>
                  <property name="dateTime">
                   <datetime>
                    <hour>0</hour>
@@ -1806,7 +1743,7 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit">
+                <widget class="QLineEdit" name="ledWebLink">
                  <property name="inputMethodHints">
                   <set>Qt::ImhUrlCharactersOnly</set>
                  </property>
@@ -5356,7 +5293,7 @@ p, li { white-space: pre-wrap; }
        <attribute name="title">
         <string>Soil</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_24">
+       <layout class="QGridLayout" name="gridLayout_10">
         <item row="0" column="0" rowspan="2">
          <widget class="QGroupBox" name="gbxSoil">
           <property name="title">
@@ -6336,7 +6273,288 @@ p, li { white-space: pre-wrap; }
         <string>Site</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_7">
-        <item row="0" column="0" colspan="2" alignment="Qt::AlignTop">
+        <item row="2" column="0">
+         <layout class="QFormLayout" name="formLayoutSiteRankLevels">
+          <property name="horizontalSpacing">
+           <number>2</number>
+          </property>
+          <property name="verticalSpacing">
+           <number>2</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblSitePlatinumMin">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Platinum Minimum: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lblSitePlatinumMinVal">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>12</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblSiteGoldMin">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Gold Minimum: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lblSiteGoldMinVal">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>11</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblSiteSilverMin">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Silver Minimum: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lblSiteSilverMinVal">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>8</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lblSiteBronzeMin">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bronze Minimum: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="lblSiteBronzeMinVal">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>5</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="1">
+         <layout class="QGridLayout" name="gridLayoutSiteRankingResult">
+          <item row="0" column="1">
+           <widget class="QLabel" name="lblMedalSite">
+            <property name="minimumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>20</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="lineWidth">
+             <number>0</number>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <spacer name="horizontalSpacerSiteLeftRankLabel">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacerSiteRightRankLabel">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <widget class="QLabel" name="lblRankingSite">
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>n/a</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0" rowspan="2" colspan="2">
          <widget class="QGroupBox" name="gbxSite">
           <property name="title">
            <string>Edit</string>
@@ -6672,309 +6890,28 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="0" column="2" rowspan="2">
-         <widget class="QTextBrowser" name="txbrSite">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>1</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <layout class="QFormLayout" name="formLayoutSiteRankLevels">
-          <property name="horizontalSpacing">
-           <number>2</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>2</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="lblSitePlatinumMin">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Platinum Minimum: </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="lblSitePlatinumMinVal">
-            <property name="minimumSize">
-             <size>
-              <width>25</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>12</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="lblSiteGoldMin">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Gold Minimum: </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="lblSiteGoldMinVal">
-            <property name="minimumSize">
-             <size>
-              <width>25</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>11</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="lblSiteSilverMin">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Silver Minimum: </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="lblSiteSilverMinVal">
-            <property name="minimumSize">
-             <size>
-              <width>25</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>8</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lblSiteBronzeMin">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Bronze Minimum: </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLabel" name="lblSiteBronzeMinVal">
-            <property name="minimumSize">
-             <size>
-              <width>25</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>5</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>1</number>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="1" column="1">
-         <layout class="QGridLayout" name="gridLayoutSiteRankingResult">
-          <item row="0" column="1">
-           <widget class="QLabel" name="lblMedalSite">
-            <property name="minimumSize">
-             <size>
-              <width>40</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>40</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>20</width>
-              <height>60</height>
-             </size>
-            </property>
-            <property name="lineWidth">
-             <number>0</number>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <spacer name="horizontalSpacerSiteLeftRankLabel">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="2">
-           <spacer name="horizontalSpacerSiteRightRankLabel">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0" colspan="3">
-           <widget class="QLabel" name="lblRankingSite">
-            <property name="font">
-             <font>
-              <pointsize>20</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>n/a</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="2" column="0" colspan="3">
+        <item row="3" column="1" colspan="2">
          <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>468</width>
-            <height>160</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="0" column="2" rowspan="3">
+         <widget class="QTextBrowser" name="txbrSite">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -8823,7 +8760,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -9732,8 +9669,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>830</width>
-             <height>651</height>
+             <width>546</width>
+             <height>421</height>
             </rect>
            </property>
            <attribute name="label">
@@ -11232,8 +11169,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>500</width>
-             <height>317</height>
+             <width>837</width>
+             <height>572</height>
             </rect>
            </property>
            <attribute name="label">
@@ -13186,6 +13123,443 @@ p, li { white-space: pre-wrap; }
       </widget>
      </widget>
     </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pbAuthenticate">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Authenticate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4" rowspan="4">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_26">
+        <item>
+         <layout class="QGridLayout" name="gridLayoutSoilRankLevels_2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblSoilPlatinumMin_2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Platinum: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-1</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="lblSoilBronzeMinVal_2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>60</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-1</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lblSoilBronzeMin_2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Bronze: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-2</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lblSoilGoldMinVal_2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>145</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-1</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblSoilSilverMin_2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Silver: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-2</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lblSoilPlatinumMinVal_2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>180</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-1</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblSoilGoldMin_2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Gold: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-2</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lblSoilSilverMinVal_2">
+            <property name="minimumSize">
+             <size>
+              <width>25</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>90</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>-1</number>
+            </property>
+            <property name="indent">
+             <number>1</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblRankImage">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblOverallRank">
+            <property name="font">
+             <font>
+              <pointsize>20</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Platinum</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblEstimatedRanking">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+              <italic>true</italic>
+             </font>
+            </property>
+            <property name="text">
+             <string>Estimated Ranking</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <property name="spacing">
+           <number>-1</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>total before multiplier</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblTotalPreMultiplier">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>199.14</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_25">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>total after multiplier</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblTotalPostMultiplier">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>213.3642857</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="pbSaveToFile">
+      <property name="text">
+       <string>Save to File</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QComboBox" name="cbUser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <item>
+       <property name="text">
+        <string>If not listed, select Register</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jason Jorgenson</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <widget class="QPushButton" name="pbSyncToCloud">
+      <property name="text">
+       <string>Sync to Cloud</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QComboBox" name="cbDatasets">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Select Dataset</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Example</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QToolButton" name="toolButtonDatasetEdit">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Push to see full details for dataset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -13193,7 +13567,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>952</width>
+     <width>959</width>
      <height>22</height>
     </rect>
    </property>

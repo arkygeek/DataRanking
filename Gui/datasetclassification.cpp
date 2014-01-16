@@ -3191,15 +3191,16 @@ void DatasetClassification::updateManagementLabels()
   ui->lblRankingManagement->setVisible(true);
   ui->lblRankingManagement->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingManagement->setVisible(false);
     ui->lblMedalManagement->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
   }
 
+  updateGrandTotals();
 }
 void DatasetClassification::updatePhenologyLabels()
 {
@@ -3225,14 +3226,15 @@ void DatasetClassification::updatePhenologyLabels()
   ui->lblRankingPhenology->setVisible(true);
   ui->lblRankingPhenology->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingPhenology->setVisible(false);
     ui->lblMedalPhenology->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updatePrevCropLabels()
 {
@@ -3261,14 +3263,15 @@ void DatasetClassification::updatePrevCropLabels()
   ui->lblRankingPrevCrop->setVisible(true);
   ui->lblRankingPrevCrop->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingPrevCrop->setVisible(false);
     ui->lblMedalPrevCrop->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateInitialValuesLabels()
 {
@@ -3291,14 +3294,15 @@ void DatasetClassification::updateInitialValuesLabels()
   ui->lblRankingInitialValues->setVisible(true);
   ui->lblRankingInitialValues->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(4, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingInitialValues->setVisible(false);
     ui->lblMedalInitialValues->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(4, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateSoilLabels()
 {
@@ -3329,14 +3333,15 @@ void DatasetClassification::updateSoilLabels()
   ui->lblRankingSoil->setVisible(true);
   ui->lblRankingSoil->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(4, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(5, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingSoil->setVisible(false);
     ui->lblMedalSoil->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(4, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(5, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateSiteLabels()
 {
@@ -3346,6 +3351,7 @@ void DatasetClassification::updateSiteLabels()
   myTotal += ui->lblLatitudeRatingSite->text().toFloat();
   myTotal += ui->lblLongitudeRatingSite->text().toFloat();
   myTotal += ui->lblAltitudeRatingSite->text().toFloat();
+  myTotal += ui->lblSlopeRatingSite->text().toFloat();
 
   ui->lblOverallRatingSite->setText(makeString(myTotal));
 
@@ -3361,14 +3367,15 @@ void DatasetClassification::updateSiteLabels()
   ui->lblRankingSite->setVisible(true);
   ui->lblRankingSite->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(5, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(6, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingSite->setVisible(false);
     ui->lblMedalSite->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(5, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(6, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateWeatherLabels()
 {
@@ -3400,14 +3407,15 @@ void DatasetClassification::updateWeatherLabels()
   ui->lblRankingWeather->setVisible(true);
   ui->lblRankingWeather->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(6, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(7, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
     ui->lblRankingWeather->setVisible(false);
     ui->lblMedalWeather->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(6, (QIcon()));
+    ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateSVLabels()
 {
@@ -3469,7 +3477,7 @@ void DatasetClassification::updateSVLabels()
   ui->lblRankingSV->setVisible(true);
   ui->lblRankingSV->setText(myRank);
   // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(7, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+  ui->tabWidgetDataClassification->setTabIcon(8, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
 
   if (myRank == "na") // just to tidy things up a bit
   {
@@ -3477,6 +3485,7 @@ void DatasetClassification::updateSVLabels()
     ui->lblMedalSV->setVisible(false);
     ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
+  updateGrandTotals();
 }
 void DatasetClassification::updateSeasonLabels()
 {
@@ -3504,6 +3513,7 @@ void DatasetClassification::updateSeasonLabels()
 
   ui->lblSeasonsMultiplierValue->setText(myMultiplier);
 
+  updateGrandTotals();
 }
 
 void DatasetClassification::on_rbPrecipitationWeatherMeasured_toggled(bool checked)
@@ -3891,10 +3901,10 @@ void DatasetClassification::on_toolButtonInsertVariable_clicked()
 {
   // insert variable into list
   QString myVariable = ui->ledDatasetInsertVariable->text();
-  int myRow = ui->listWidget->count();
+  int myRow = ui->listWidgetVariables->count();
   QListWidgetItem *newVariable = new QListWidgetItem;
       newVariable->setText(myVariable);
-      ui->listWidget->insertItem(myRow, newVariable);
+      ui->listWidgetVariables->insertItem(myRow, newVariable);
   ui->ledDatasetInsertVariable->clear();
 
 }
@@ -3936,17 +3946,144 @@ QJsonObject DatasetClassification::generateJson()
   QString myJsonText;
   QString myIsMeasuredSetting;
   QString myTreatmentUSedSetting;
+  QString myIsCheckedText;
 
   // create a header
   myFormDetailsHeader.insert("User", ui->cbUser->currentText());
   myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
-  myFormDetailsHeader.insert("OverallRank", ui->lblOverallRank->text());
+  myFormDetailsHeader.insert("PreMultiplierPoints", ui->lblTotalPreMultiplier->text());
+  myFormDetailsHeader.insert("PostMultiplierPoints", ui->lblTotalPostMultiplier->text());
+  myFormDetailsHeader.insert("Rank", ui->lblOverallRank->text());
 
   QDateTime myDateTime = QDateTime::currentDateTime();
   QString myDateTimeString = myDateTime.toString();
   myFormDetailsHeader.insert("Date", myDateTimeString);
   // insert the header
   myFormObject.insert("Details", myFormDetailsHeader);
+
+
+    //
+   // Dataset
+  //
+
+  QJsonObject myDatasetObject;
+  //myDatasetObject.insert("objectType", QString("objects.entry"));
+
+
+  //   general info
+  QJsonObject myDatasetDetails;
+  //myDatasetInputVariety.insert("objectType", QString("objects.entry"));
+  myDatasetDetails.insert("cbDatasetName", ui->cbDatasetName->currentText());
+  myDatasetDetails.insert("ledDatasetDatasetName", ui->ledDatasetDatasetName->text());
+  myDatasetDetails.insert("ledDatasetVersion", ui->ledDatasetVersion->text());
+  myDatasetDetails.insert("ledDatasetSubmitter", ui->ledDatasetSubmitter->text());
+  myDatasetDetails.insert("ledDatasetEmail", ui->ledDatasetEmail->text());
+  myDatasetDetails.insert("dteDatasetSubmitted", ui->dteDatasetSubmitted->text());
+
+  myIsCheckedText = ui->chbxDatasetPeriodOfRecord->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetPeriodOfRecord", myIsCheckedText);
+
+  myDatasetDetails.insert("dateEditFrom", ui->dateEditFrom->text());
+  myDatasetDetails.insert("dateEditTo", ui->dateEditTo->text());
+  myDatasetDetails.insert("ledWebLink", ui->ledWebLink->text());
+  myDatasetDetails.insert("cbDatasetTemporalScale", ui->cbDatasetTemporalScale->currentText());
+  myDatasetDetails.insert("ledDatasetUsageRestrictions", ui->ledDatasetUsageRestrictions->text());
+  myDatasetDetails.insert("tedDatasetCoverage", ui->tedDatasetCoverage->toPlainText());
+  myDatasetDetails.insert("tedDatasetComments", ui->tedDatasetComments->toPlainText());
+  myDatasetDetails.insert("tedDatasetResolution", ui->tedDatasetResolution->toPlainText());
+
+  // pull out the variables from the list widget and put into a csv string
+  QString myVariablesList = "START,";
+  for (int i = 0; i < ui->listWidgetVariables->count(); i++) {
+         myVariablesList += ui->listWidgetVariables->item(i)->text();
+         myVariablesList += ",";
+      }
+  myVariablesList += "END";
+  myDatasetDetails.insert("listWidgetVariables", myVariablesList);
+
+  myIsCheckedText = ui->chbxDatasetDataTypesEconomic->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesEconomic", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleEconomic", ui->cbDatasetSpatialScaleEconomic->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesGeneric->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesGeneric", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleGeneric", ui->cbDatasetSpatialScaleGeneric->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesSoils->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesSoils", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleSoils", ui->cbDatasetSpatialScaleSoils->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesWeather->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesWeather", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleWeather", ui->cbDatasetSpatialScaleWeather->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesWeatherGenerator->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesWeatherGenerator", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleWeatherGenerator", ui->cbDatasetSpatialScaleWeatherGenerator->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesClimateProjection->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesClimateProjection", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleClimateProjection", ui->cbDatasetSpatialScaleClimateProjection->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesGrid->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesGrid", myIsCheckedText);
+  myDatasetDetails.insert("ledDatasetGridResolutionX", ui->ledDatasetGridResolutionX->text());
+  myDatasetDetails.insert("ledDatasetGridResolutionY", ui->ledDatasetGridResolutionY->text());
+  myDatasetDetails.insert("cbDatasetGridUnits", ui->cbDatasetGridUnits->currentText());
+
+  // crop groupbox and contents
+  myIsCheckedText = ui->gbDatasetDataTypesCrop->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("gbDatasetDataTypesCrop", myIsCheckedText);
+  myDatasetDetails.insert("tedDatasetCropNotes", ui->tedDatasetCropNotes->toPlainText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesCropFieldExperiments->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropFieldExperiments", myIsCheckedText);
+
+  myIsCheckedText = ui->chbxDatasetDataTypesCropGenetic->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropGenetic", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleCropGenetic", ui->cbDatasetSpatialScaleCropGenetic->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesCropMgmt->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropMgmt", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleCropMgmt", ui->cbDatasetSpatialScaleCropMgmt->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesCropPathogens->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropPathogens", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleCropPathogens", ui->cbDatasetSpatialScaleCropPathogens->currentText());
+
+  myIsCheckedText = ui->chbxDatasetDataTypesCropPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropPhysiology", myIsCheckedText);
+  myDatasetDetails.insert("cbDatasetSpatialScaleCropPhysiology", ui->cbDatasetSpatialScaleCropPhysiology->currentText());
+
+  // livestock groupbox and contents
+    myIsCheckedText = ui->gbDatasetDataTypesLivestock->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("gbDatasetDataTypesLivestock", myIsCheckedText);
+    myDatasetDetails.insert("tedDatasetLivestockNotes", ui->tedDatasetLivestockNotes->toPlainText());
+
+    myIsCheckedText = ui->chbxDatasetDataTypesLivestockGenetic->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockGenetic", myIsCheckedText);
+    myDatasetDetails.insert("cbDatasetSpatialScaleLivestockGenetic", ui->cbDatasetSpatialScaleLivestockGenetic->currentText());
+
+    myIsCheckedText = ui->chbxDatasetDataTypesLivestockMgmt->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockMgmt", myIsCheckedText);
+    myDatasetDetails.insert("cbDatasetSpatialScaleLivestockMgmt", ui->cbDatasetSpatialScaleLivestockMgmt->currentText());
+
+    myIsCheckedText = ui->chbxDatasetDataTypesLivestockPathogens->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPathogens", myIsCheckedText);
+    myDatasetDetails.insert("cbDatasetSpatialScaleLivestockPathogens", ui->cbDatasetSpatialScaleLivestockPathogens->currentText());
+
+    myIsCheckedText = ui->chbxDatasetDataTypesLivestockPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPhysiology", myIsCheckedText);
+    myDatasetDetails.insert("cbDatasetSpatialScaleLivestockPhysiology", ui->cbDatasetSpatialScaleLivestockPhysiology->currentText());
+
+
+
+
+  // add to the dataset object
+  myDatasetObject.insert("DatasetDetails", myDatasetDetails);
+
+
+
 
     //
    // Management
@@ -3957,7 +4094,6 @@ QJsonObject DatasetClassification::generateJson()
 
 
   //   variety
-  myMinDataSetting = ui->chbxVariety->checkState()==Qt::Unchecked?"no":"yes";
   QJsonObject myManagementInputVariety;
   //myManagementInputVariety.insert("objectType", QString("objects.entry"));
   myManagementInputVariety.insert("MinimumDataRequirement", myMinDataSetting);
@@ -5011,6 +5147,7 @@ QJsonObject DatasetClassification::generateJson()
    // insert the sub-objects into the form object
   //
 
+  myFormObject.insert("Dataset", myDatasetObject);
   myFormObject.insert("Management", myManagementObject);
   myFormObject.insert("Phenology", myPhenologyObject);
   myFormObject.insert("PrevCrop", myPrevCropObject);
@@ -5133,4 +5270,137 @@ void DatasetClassification::on_actionAbout_triggered()
                          , QMessageBox::Ok);
 }
 
+void DatasetClassification::updateGrandTotals()
+{
+  double myTotal = 0.0;
+  myTotal += ui->lblVarietyRating->text().toFloat();
+  myTotal += ui->lblSowingRating->text().toFloat();
+  myTotal += ui->lblHarvestRating->text().toFloat();
+  myTotal += ui->lblFertilisationRating->text().toFloat();
+  myTotal += ui->lblIrrigationRating->text().toFloat();
+  myTotal += ui->lblSeedDensityRating->text().toFloat();
+  myTotal += ui->lblTillageRating->text().toFloat();
 
+  myTotal += ui->lblEmergenceRatingPhenology->text().toFloat();
+  myTotal += ui->lblStemElongationRatingPhenology->text().toFloat();
+  myTotal += ui->lblEarEmergenceRatingPhenology->text().toFloat();
+  myTotal += ui->lblFloweringRatingPhenology->text().toFloat();
+  myTotal += ui->lblYellowRipenessRatingPhenology->text().toFloat();
+
+  myTotal += ui->lblCropRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblSowingDateRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblHarvestDateRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblYieldRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblResidueMgmtRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblFertilisationRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblIrrigationRatingPrevCrop->text().toFloat();
+
+  myTotal += ui->lblSoilMoistureRatingInitialValues->text().toFloat();
+  myTotal += ui->lblNMinRatingInitialValues->text().toFloat();
+
+  myTotal += ui->lblCOrgRatingSoil->text().toFloat();
+  myTotal += ui->lblNOrgRatingSoil->text().toFloat();
+  myTotal += ui->lblTextureRatingSoil->text().toFloat();
+  myTotal += ui->lblBulkDensityRatingSoil->text().toFloat();
+  myTotal += ui->lblFieldCapacityRatingSoil->text().toFloat();
+  myTotal += ui->lblWiltingPointRatingSoil->text().toFloat();
+  myTotal += ui->lblPfCurveRatingSoil->text().toFloat();
+  myTotal += ui->lblHydrCondCurveRatingSoil->text().toFloat();
+  myTotal += ui->lblPhRatingSoil->text().toFloat();
+
+  myTotal += ui->lblLatitudeRatingSite->text().toFloat();
+  myTotal += ui->lblLongitudeRatingSite->text().toFloat();
+  myTotal += ui->lblAltitudeRatingSite->text().toFloat();
+  myTotal += ui->lblSlopeRatingSite->text().toFloat();
+
+  myTotal += ui->lblPrecipitationRatingWeather->text().toFloat();
+  myTotal += ui->lblTAveRatingWeather->text().toFloat();
+  myTotal += ui->lblTMinRatingWeather->text().toFloat();
+  myTotal += ui->lblTMaxRatingWeather->text().toFloat();
+  myTotal += ui->lblRelHumidityRatingWeather->text().toFloat();
+  myTotal += ui->lblWindSpeedRatingWeather->text().toFloat();
+  myTotal += ui->lblGlobalRadiationRatingWeather->text().toFloat();
+  myTotal += ui->lblSunshineHoursRatingWeather->text().toFloat();
+  myTotal += ui->lblLeafWetnessRatingWeather->text().toFloat();
+  myTotal += ui->lblSoilTempRatingWeather->text().toFloat();
+
+  myTotal += ui->lblSVCropAGrBiomassPoints->text().toFloat();
+  myTotal += ui->lblSVCropWeightOrgansPoints->text().toFloat();
+  myTotal += ui->lblSVCropRootBiomassPoints->text().toFloat();
+  myTotal += ui->lblSVCropNInAGrBiomassPoints->text().toFloat();
+  myTotal += ui->lblSVCropNInOrgansPoints->text().toFloat();
+  myTotal += ui->lblSVCropLAIPoints->text().toFloat();
+  myTotal += ui->lblSVCropYieldPoints->text().toFloat();
+
+  myTotal += ui->lblSVSoilSoilWaterGravPoints->text().toFloat();
+  myTotal += ui->lblSVSoilPressureHeadsPoints->text().toFloat();
+  myTotal += ui->lblSVSoilNMinPoints->text().toFloat();
+  myTotal += ui->lblSVSoilSoilWaterSensorCalPoints->text().toFloat();
+  myTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toFloat();
+  myTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toFloat();
+
+  myTotal += ui->lblSVSurfaceFluxesEtPoints->text().toFloat();
+  myTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toFloat();
+  myTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toFloat();
+  myTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toFloat();
+  myTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toFloat();
+
+  myTotal += ui->lblSVObservationsLodgingPoints->text().toFloat();
+  myTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toFloat();
+  myTotal += ui->lblSVObservationsDamagesPoints->text().toFloat();
+
+  qDebug() << "myTotal = " << myTotal;
+
+  // get the multiplier to adjust the total
+  double myMultiplierTotal;
+  myMultiplierTotal = ui->lblSeasonsPerCropRatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblSiteVariantsRatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblMgmtPotentialRatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblZeroNTreatmentRatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment1RatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment2RatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment3RatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment4RatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment5RatingSeasons->text().toFloat();
+  myMultiplierTotal += ui->lblTreatment6RatingSeasons->text().toFloat();
+
+  qDebug() << "myMultiplierTotal = " << myMultiplierTotal;
+
+  // go find out what the multiplier is
+
+  RankPointGenerator myRankGen;
+  double myMultiplier = myRankGen.multiplier(myMultiplierTotal);
+  qDebug() << "myMultiplier = " << myMultiplier;
+
+  double myPostMultiplierTotal = myTotal * myMultiplier;
+  qDebug() << "myPostMultiplierTotal = " << myPostMultiplierTotal;
+
+  int myPreMultiplierTotalInt = myTotal;
+  qDebug() << "myPreMultiplierTotalInt = " << myPreMultiplierTotalInt;
+
+  int myPostMultiplierTotalInt = myPostMultiplierTotal;
+  qDebug() << "myPostMultiplierTotalInt = " << myPostMultiplierTotalInt;
+
+  // use int to kill the decimal points (sloppy? ... don't care!)
+  ui->lblTotalPreMultiplier->setText(makeString(myPreMultiplierTotalInt));
+  ui->lblTotalPostMultiplier->setText(makeString(myPostMultiplierTotalInt));
+
+  // get the rank
+  QString myRank = myRankGen.getRank(myPostMultiplierTotalInt);
+
+  ui->lblRankImage->setVisible(true);
+  ui->lblRankImage->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblRankImage->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblOverallRank->setVisible(true);
+  ui->lblOverallRank->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingSV->setVisible(false);
+    ui->lblMedalSV->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
+  }
+}
