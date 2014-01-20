@@ -3141,7 +3141,320 @@ void DatasetClassification::on_dsbSeasonsSitesZeroNTreatment_valueChanged(double
   updateSeasonLabels();
 }
 
+void DatasetClassification::on_sbSeasonsTreatment1Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
 
+  double myWeight = ui->dsbSeasonsTreatment1Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment1->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment1RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsTreatment2Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment2Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment2->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment2RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsTreatment3Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment3Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment3->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment3RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsTreatment4Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment4Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment4->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment4RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsTreatment5Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment5Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment5->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment5RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_sbSeasonsTreatment6Number_valueChanged(int theNumber)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment6Weight->value();
+  myValue = myPointGen.SeasonsMethod2(theNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment6->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment6RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+
+void DatasetClassification::on_dsbSeasonsTreatment1Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment1Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment1->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment1RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsTreatment2Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment2Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment2->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment2RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsTreatment3Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment3Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment3->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment3RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsTreatment4Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment4Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment4->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment4RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsTreatment5Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment5Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment5->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment5RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_dsbSeasonsTreatment6Weight_valueChanged(double theWeight)
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  int myNumber = ui->sbSeasonsTreatment6Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, theWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment6->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment6RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+
+void DatasetClassification::on_chbxSeasonsTreatment1_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment1Weight->value();
+  int myNumber = ui->sbSeasonsTreatment1Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment1->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment1RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_chbxSeasonsTreatment2_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment2Weight->value();
+  int myNumber = ui->sbSeasonsTreatment2Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment2->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment2RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_chbxSeasonsTreatment3_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment3Weight->value();
+  int myNumber = ui->sbSeasonsTreatment3Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment3->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment3RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_chbxSeasonsTreatment4_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment4Weight->value();
+  int myNumber = ui->sbSeasonsTreatment4Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment4->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment4RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_chbxSeasonsTreatment5_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment5Weight->value();
+  int myNumber = ui->sbSeasonsTreatment5Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment5->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment5RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
+void DatasetClassification::on_chbxSeasonsTreatment6_clicked()
+{
+  //update item total
+  QString myTotal;
+  double myValue;
+  RankPointGenerator myPointGen;
+
+  double myWeight = ui->dsbSeasonsTreatment6Weight->value();
+  int myNumber = ui->sbSeasonsTreatment6Number->value();
+  myValue = myPointGen.SeasonsMethod2(myNumber, myWeight);
+  myTotal = makeString(myValue);
+
+  // check for whether the treatment is selected; if not, result must be zero
+  myTotal = ui->chbxSeasonsTreatment6->checkState()==Qt::Unchecked?"0":myTotal;
+  ui->lblTreatment6RatingSeasons->setText(myTotal);
+
+  updateSeasonLabels();
+}
 
 // numbers to strings
 QString DatasetClassification::makeString(double theDouble)
@@ -5316,3 +5629,5 @@ void DatasetClassification::updateGrandTotals()
     ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
   }
 }
+
+

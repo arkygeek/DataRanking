@@ -343,6 +343,25 @@ private slots:
   void on_actionAbout_triggered();
 
 
+  void on_sbSeasonsTreatment1Number_valueChanged(int theNumber);
+  void on_sbSeasonsTreatment2Number_valueChanged(int theNumber);
+  void on_sbSeasonsTreatment3Number_valueChanged(int theNumber);
+  void on_sbSeasonsTreatment4Number_valueChanged(int theNumber);
+  void on_sbSeasonsTreatment5Number_valueChanged(int theNumber);
+  void on_sbSeasonsTreatment6Number_valueChanged(int theNumber);
+  void on_dsbSeasonsTreatment1Weight_valueChanged(double theWeight);
+  void on_dsbSeasonsTreatment2Weight_valueChanged(double theWeight);
+  void on_dsbSeasonsTreatment3Weight_valueChanged(double theWeight);
+  void on_dsbSeasonsTreatment4Weight_valueChanged(double theWeight);
+  void on_dsbSeasonsTreatment5Weight_valueChanged(double theWeight);
+  void on_dsbSeasonsTreatment6Weight_valueChanged(double theWeight);
+  void on_chbxSeasonsTreatment1_clicked();
+  void on_chbxSeasonsTreatment2_clicked();
+  void on_chbxSeasonsTreatment3_clicked();
+  void on_chbxSeasonsTreatment4_clicked();
+  void on_chbxSeasonsTreatment5_clicked();
+  void on_chbxSeasonsTreatment6_clicked();
+
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble);
