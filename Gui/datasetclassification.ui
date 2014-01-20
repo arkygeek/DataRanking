@@ -8770,8 +8770,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>484</width>
-             <height>455</height>
+             <width>837</width>
+             <height>600</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9669,8 +9669,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>546</width>
-             <height>421</height>
+             <width>837</width>
+             <height>600</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10449,8 +10449,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>522</width>
-             <height>379</height>
+             <width>837</width>
+             <height>600</height>
             </rect>
            </property>
            <attribute name="label">
@@ -12045,6 +12045,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="4" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment3">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentIndex">
               <number>2</number>
              </property>
@@ -12338,6 +12341,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="6" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment5">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentIndex">
               <number>4</number>
              </property>
@@ -12385,6 +12391,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="5" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment4">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentIndex">
               <number>3</number>
              </property>
@@ -12432,6 +12441,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="7" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment6">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentIndex">
               <number>5</number>
              </property>
@@ -12523,6 +12535,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="2" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment1">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <item>
               <property name="text">
                <string>Irrigation</string>
@@ -12567,6 +12582,9 @@ p, li { white-space: pre-wrap; }
            </item>
            <item row="3" column="2">
             <widget class="QComboBox" name="cbSeasonsTreatment2">
+             <property name="editable">
+              <bool>false</bool>
+             </property>
              <property name="currentIndex">
               <number>1</number>
              </property>

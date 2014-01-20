@@ -31,6 +31,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QFileDialog>
+#include <QInputDialog>
 
 #include "ui_datasetclassification.h"
 #include "rankpointgenerator.h"
@@ -5961,6 +5962,471 @@ void DatasetClassification::updateGrandTotals()
     ui->lblMedalSV->setVisible(false);
     ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
   }
+}
+
+
+
+void DatasetClassification::on_chbxVariety_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxSowing_clicked()
+{
+  updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxHarvest_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxFertilisation_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxIrrigation_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxSeedDensity_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxTillage_clicked()
+{
+    updateManagementLabels();
+}
+
+void DatasetClassification::on_chbxEmergencePhenology_clicked()
+{
+    updatePhenologyLabels();
+}
+
+void DatasetClassification::on_chbxStemElongationPhenology_clicked()
+{
+    updatePhenologyLabels();
+}
+
+void DatasetClassification::on_chbxEarEmergencePhenology_clicked()
+{
+    updatePhenologyLabels();
+}
+
+void DatasetClassification::on_chbxFloweringPhenology_clicked()
+{
+    updatePhenologyLabels();
+}
+
+void DatasetClassification::on_chbxYellowRipenessPhenology_clicked()
+{
+    updatePhenologyLabels();
+}
+
+void DatasetClassification::on_chbxCropPrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxSowingDatePrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxHarvestDatePrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxYieldPrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxResidueMgmtPrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxFertilisationPrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxIrrigationPrevCrop_clicked()
+{
+    updatePrevCropLabels();
+}
+
+void DatasetClassification::on_chbxSoilMoistureInitialValues_clicked()
+{
+    updateInitialValuesLabels();
+}
+
+void DatasetClassification::on_chbxNMinInitialValues_clicked()
+{
+    updateInitialValuesLabels();
+}
+
+void DatasetClassification::on_chbxCOrgSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxNOrgSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxTextureSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxBulkDensitySoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxFieldCapacitySoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxWiltingPointSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxPfCurveSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxHydrCondCurveSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxPhSoil_clicked()
+{
+    updateSoilLabels();
+}
+
+void DatasetClassification::on_chbxLatitudeSite_clicked()
+{
+    updateSiteLabels();
+}
+
+void DatasetClassification::on_chbxLongitudeSite_clicked()
+{
+    updateSiteLabels();
+}
+
+void DatasetClassification::on_chbxAltitudeSite_clicked()
+{
+    updateSiteLabels();
+}
+
+void DatasetClassification::on_chbxSlopeSite_clicked()
+{
+    updateSiteLabels();
+}
+
+void DatasetClassification::on_chbxPrecipitationWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxTAveWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxTMinWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxTMaxWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxRelHumidityWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxWindSpeedWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxGlobalRadiationWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxSunshineHoursWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxLeafWetnessWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxSoilTempWeather_clicked()
+{
+    updateWeatherLabels();
+}
+
+void DatasetClassification::on_chbxYield_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropAGrBiomass_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropWeightOrgans_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropRootBiomass_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropNInAGrBiomass_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropNInOrgans_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVCropLAI_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilSoilWaterGrav_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilPressureHeads_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilNMin_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilSoilWaterSensorCal_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilWaterFluxBottomRoot_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSoilNFluxBottomRoot_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSurfaceFluxesEt_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSurfaceFluxesNh3Loss_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSurfaceFluxesN2OLoss_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSurfaceFluxesN2Loss_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVSurfaceFluxesCh4Loss_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVObservationsLodging_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVObservationsPestsOrDiseases_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_chbxSVObservationsDamages_clicked()
+{
+    updateSVLabels();
+}
+
+void DatasetClassification::on_cbSeasonsTreatment1_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment1->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment1->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment1->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment1->currentText() + " notes go here";
+  ui->ledSeasonsTreatment1->setPlaceholderText(myNotes);
+
+}
+
+void DatasetClassification::on_cbSeasonsTreatment2_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment2->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment2->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment2->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment2->currentText() + " notes go here";
+  ui->ledSeasonsTreatment2->setPlaceholderText(myNotes);
+
+}
+
+void DatasetClassification::on_cbSeasonsTreatment3_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment3->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment3->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment3->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment3->currentText() + " notes go here";
+  ui->ledSeasonsTreatment3->setPlaceholderText(myNotes);
+
+}
+
+void DatasetClassification::on_cbSeasonsTreatment4_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment4->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment4->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment4->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment4->currentText() + " notes go here";
+  ui->ledSeasonsTreatment4->setPlaceholderText(myNotes);
+
+}
+
+void DatasetClassification::on_cbSeasonsTreatment5_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment5->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment5->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment5->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment5->currentText() + " notes go here";
+  ui->ledSeasonsTreatment5->setPlaceholderText(myNotes);
+
+}
+
+void DatasetClassification::on_cbSeasonsTreatment6_currentIndexChanged(const QString &theCurrentText)
+{
+  if (theCurrentText == "Other (specify)")
+  {
+    QString myNewTreatment;
+    bool myIsOk;
+    myNewTreatment = QInputDialog::getText(this, tr("QInputDialog::getText()"),
+                                           tr("New Treatment name:"), QLineEdit::Normal,
+                                           "name", &myIsOk);
+      if (myIsOk && !myNewTreatment.isEmpty())
+      {
+         ui->cbSeasonsTreatment6->addItem(myNewTreatment);
+         int myCount = ui->cbSeasonsTreatment6->count();
+         qDebug() << "current index is: " << myCount;
+         ui->cbSeasonsTreatment6->setCurrentIndex(myCount-1);
+      }
+  }
+
+  QString myNotes = ui->cbSeasonsTreatment6->currentText() + " notes go here";
+  ui->ledSeasonsTreatment6->setPlaceholderText(myNotes);
+
 }
 
 
