@@ -3490,7 +3490,44 @@ void DatasetClassification::updateManagementLabels()
   myTotal += ui->lblSeedDensityRating->text().toFloat();
   myTotal += ui->lblTillageRating->text().toFloat();
 
+
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxVariety->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblVarietyRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSowing->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSowingRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxHarvest->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblHarvestRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxFertilisation->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblFertilisationRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxIrrigation->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblIrrigationRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSeedDensity->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSeedDensityRating->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxTillage->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblTillageRating->text()=="0"?true:myMinDataMissing;
+  }
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
   ui->lblCombinedTotal->setText(makeString(myTotal));
+
 
   // go find out what the rank is
 
@@ -3525,11 +3562,42 @@ void DatasetClassification::updatePhenologyLabels()
   myTotal += ui->lblEarEmergenceRatingPhenology->text().toFloat();
   myTotal += ui->lblFloweringRatingPhenology->text().toFloat();
   myTotal += ui->lblYellowRipenessRatingPhenology->text().toFloat();
+
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxEmergencePhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblEmergenceRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxEmergencePhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblEmergenceRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxStemElongationPhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblStemElongationRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxEarEmergencePhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblEarEmergenceRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxFloweringPhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblFloweringRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxYellowRipenessPhenology->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblYellowRipenessRatingPhenology->text()=="0"?true:myMinDataMissing;
+  }
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
   ui->lblCombinedTotalPhenology->setText(makeString(myTotal));
   // go find out what the rank is
 
   RankPointGenerator myRankGen;
-  qDebug() << "myTotal - Phenology - is: " << myTotal;
   QString myRank = myRankGen.getRankPhenology(myTotal);
 
   ui->lblMedalPhenology->setVisible(true);
@@ -3562,6 +3630,42 @@ void DatasetClassification::updatePrevCropLabels()
   myTotal += ui->lblFertilisationRatingPrevCrop->text().toFloat();
   myTotal += ui->lblIrrigationRatingPrevCrop->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxCropPrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblCropRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSowingDatePrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSowingDateRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxHarvestDatePrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblHarvestDateRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxYieldPrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblYieldRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxResidueMgmtPrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblResidueMgmtRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxFertilisationPrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblFertilisationRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxIrrigationPrevCrop->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblIrrigationRatingPrevCrop->text()=="0"?true:myMinDataMissing;
+  }
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
+
   ui->lblOverallRatingPrevCrop->setText(makeString(myTotal));
 
   // go find out what the rank is
@@ -3593,6 +3697,24 @@ void DatasetClassification::updateInitialValuesLabels()
   //QPixmap pixmap;
   myTotal += ui->lblSoilMoistureRatingInitialValues->text().toFloat();
   myTotal += ui->lblNMinRatingInitialValues->text().toFloat();
+
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxSoilMoistureInitialValues->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSoilMoistureRatingInitialValues->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxNMinInitialValues->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblNMinRatingInitialValues->text()=="0"?true:myMinDataMissing;
+  }
+
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
+
   ui->lblOverallRatingInitialValues->setText(makeString(myTotal));
 
   // go find out what the rank is
@@ -3632,6 +3754,50 @@ void DatasetClassification::updateSoilLabels()
   myTotal += ui->lblHydrCondCurveRatingSoil->text().toFloat();
   myTotal += ui->lblPhRatingSoil->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxCOrgSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblCOrgRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxNOrgSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblNOrgRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxTextureSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblTextureRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxBulkDensitySoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblBulkDensityRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxFieldCapacitySoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblFieldCapacityRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxWiltingPointSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblWiltingPointRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxPfCurveSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblPfCurveRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxHydrCondCurveSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblHydrCondCurveRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxPhSoil->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblPhRatingSoil->text()=="0"?true:myMinDataMissing;
+  }
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
+
   ui->lblOverallRatingSoil->setText(makeString(myTotal));
 
   // go find out what the rank is
@@ -3665,6 +3831,30 @@ void DatasetClassification::updateSiteLabels()
   myTotal += ui->lblLongitudeRatingSite->text().toFloat();
   myTotal += ui->lblAltitudeRatingSite->text().toFloat();
   myTotal += ui->lblSlopeRatingSite->text().toFloat();
+
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxLatitudeSite->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblLatitudeRatingSite->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxLongitudeSite->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblLongitudeRatingSite->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxAltitudeSite->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblAltitudeRatingSite->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSlopeSite->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSlopeRatingSite->text()=="0"?true:myMinDataMissing;
+  }
+
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
 
   ui->lblOverallRatingSite->setText(makeString(myTotal));
 
@@ -3706,6 +3896,53 @@ void DatasetClassification::updateWeatherLabels()
   myTotal += ui->lblLeafWetnessRatingWeather->text().toFloat();
   myTotal += ui->lblSoilTempRatingWeather->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  bool myMinDataMissing = false;
+
+  if(ui->chbxPrecipitationWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblPrecipitationRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxTAveWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblTAveRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxTMinWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblTMinRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxTMaxWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblTMaxRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxRelHumidityWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblRelHumidityRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxWindSpeedWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblWindSpeedRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxGlobalRadiationWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblGlobalRadiationRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSunshineHoursWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSunshineHoursRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxLeafWetnessWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblLeafWetnessRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSoilTempWeather->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSoilTempRatingWeather->text()=="0"?true:myMinDataMissing;
+  }
+  // if any mindata is missing set the total zero
+  myTotal = myMinDataMissing?0:myTotal;
+
+
   ui->lblOverallRatingWeather->setText(makeString(myTotal));
 
   // go find out what the rank is
@@ -3735,6 +3972,8 @@ void DatasetClassification::updateSVLabels()
   // updates totals
   float myTotal = 0.0;
   float myCropTotal = 0.0;
+  bool myMinDataMissing = false;
+
   //QPixmap pixmap;
   myCropTotal += ui->lblSVCropAGrBiomassPoints->text().toFloat();
   myCropTotal += ui->lblSVCropWeightOrgansPoints->text().toFloat();
@@ -3743,6 +3982,33 @@ void DatasetClassification::updateSVLabels()
   myCropTotal += ui->lblSVCropNInOrgansPoints->text().toFloat();
   myCropTotal += ui->lblSVCropLAIPoints->text().toFloat();
   myCropTotal += ui->lblSVCropYieldPoints->text().toFloat();
+
+  // check to see if any items set to min data are zero
+  if(ui->chbxYield->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropYieldPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVCropWeightOrgans->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropWeightOrgansPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVCropRootBiomass->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropRootBiomassPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVCropNInAGrBiomass->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropNInAGrBiomassPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVCropNInOrgans->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropNInOrgansPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVCropLAI->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVCropLAIPoints->text()=="0"?true:myMinDataMissing;
+  }
+
 
   ui->lblOverallRatingSVCrop->setText(makeString(myCropTotal));
 
@@ -3755,6 +4021,32 @@ void DatasetClassification::updateSVLabels()
   mySoilTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toFloat();
   mySoilTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  if(ui->chbxSVSoilSoilWaterGrav->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilSoilWaterGravPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSoilPressureHeads->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilPressureHeadsPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSoilNMin->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilNMinPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSoilSoilWaterSensorCal->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilSoilWaterSensorCalPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSoilWaterFluxBottomRoot->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilWaterFluxBottomRootPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSoilNFluxBottomRoot->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSoilNFluxBottomRootPoints->text()=="0"?true:myMinDataMissing;
+  }
+
   ui->lblOverallRatingSVSoil->setText(makeString(mySoilTotal));
 
   float mySurfaceFluxTotal = 0.0;
@@ -3765,6 +4057,28 @@ void DatasetClassification::updateSVLabels()
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toFloat();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  if(ui->chbxSVSurfaceFluxesEt->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesEtPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSurfaceFluxesNh3Loss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesNh3LossPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSurfaceFluxesN2OLoss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesN2OLossPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSurfaceFluxesN2Loss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesN2LossPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSurfaceFluxesCh4Loss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesCh4LossPoints->text()=="0"?true:myMinDataMissing;
+  }
+
   ui->lblOverallRatingSVSurfaceFluxes->setText(makeString(mySurfaceFluxTotal));
 
   float myObservationsTotal = 0.0;
@@ -3773,9 +4087,28 @@ void DatasetClassification::updateSVLabels()
   myObservationsTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toFloat();
   myObservationsTotal += ui->lblSVObservationsDamagesPoints->text().toFloat();
 
+  // check to see if any items set to min data are zero
+  if(ui->chbxSVObservationsLodging->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVObservationsLodgingPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVObservationsPestsOrDiseases->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVObservationsPestsOrDiseasesPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVObservationsDamages->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVObservationsDamagesPoints->text()=="0"?true:myMinDataMissing;
+  }
+
   ui->lblOverallRatingSVObservations->setText(makeString(myObservationsTotal));
 
   myTotal = myCropTotal + mySoilTotal + mySurfaceFluxTotal + myObservationsTotal;
+
+  // if any mindata is zero set the total to zero
+  myTotal = myMinDataMissing?0:myTotal;
+
+
   ui->lblOverallRatingSV->setText(makeString(myTotal));
 
   // go find out what the rank is
