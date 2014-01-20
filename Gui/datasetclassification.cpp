@@ -5687,7 +5687,6 @@ QJsonObject DatasetClassification::generateJson()
   // create the main qjson object
   QJsonObject myFormObject;
   myFormObject.insert("objectType", QString("objects.entry"));
-  bool myMinDataSetting;
   QJsonDocument myQJsonDocument;
 
   QString myJsonText;
