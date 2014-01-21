@@ -560,6 +560,15 @@ private:
   QJsonObject generateSVObservationsJson();
   QJsonObject generateHeaderJson();
   QJsonObject generateSeasonJSON();
+  QPair<bool, double> calculatePointsMgmt();
+  QPair<bool, double> calculatePointsPhenology();
+  QPair<bool, double> calculatePointsPrevCrop();
+  QPair<bool, double> calculatePointsInitialValues();
+  QPair<bool, double> calculatePointsSoil();
+  QPair<bool, double> calculatePointsSite();
+  QPair<bool, double> calculatePointsWeather();
+  QPair<double, double> calculateMultiplier();
+  QPair<bool, double> calculatePointsStateVars();
 };
 
 #endif // DATASETCLASSIFICATION_H

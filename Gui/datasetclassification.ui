@@ -56,7 +56,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>9</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -8770,8 +8770,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>600</height>
+             <width>484</width>
+             <height>455</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9669,8 +9669,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>600</height>
+             <width>546</width>
+             <height>421</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10449,8 +10449,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>600</height>
+             <width>522</width>
+             <height>379</height>
             </rect>
            </property>
            <attribute name="label">

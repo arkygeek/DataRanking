@@ -3478,18 +3478,18 @@ QString DatasetClassification::makeString(float theFloat)
  //  Update ranking labels and pixmaps  //
 //-------------------------------------//
 
-void DatasetClassification::updateManagementLabels()
+QPair<bool,double> DatasetClassification::calculatePointsMgmt()
 {
   // updates totals
-  float myTotal = 0.0;
+  double myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblVarietyRating->text().toFloat();
-  myTotal += ui->lblSowingRating->text().toFloat();
-  myTotal += ui->lblHarvestRating->text().toFloat();
-  myTotal += ui->lblFertilisationRating->text().toFloat();
-  myTotal += ui->lblIrrigationRating->text().toFloat();
-  myTotal += ui->lblSeedDensityRating->text().toFloat();
-  myTotal += ui->lblTillageRating->text().toFloat();
+  myTotal += ui->lblVarietyRating->text().toDouble();
+  myTotal += ui->lblSowingRating->text().toDouble();
+  myTotal += ui->lblHarvestRating->text().toDouble();
+  myTotal += ui->lblFertilisationRating->text().toDouble();
+  myTotal += ui->lblIrrigationRating->text().toDouble();
+  myTotal += ui->lblSeedDensityRating->text().toDouble();
+  myTotal += ui->lblTillageRating->text().toDouble();
 
 
   // check to see if any items set to min data are zero
@@ -3526,43 +3526,21 @@ void DatasetClassification::updateManagementLabels()
 
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
-
-  ui->lblCombinedTotal->setText(makeString(myTotal));
-
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankManagement(myTotal);
-
-  ui->lblMedalManagement->setVisible(true);
-  ui->lblMedalManagement->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingManagement->setVisible(true);
-  ui->lblRankingManagement->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingManagement->setVisible(false);
-    ui->lblMedalManagement->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
-  }
-
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updatePhenologyLabels()
+QPair<bool,double> DatasetClassification::calculatePointsPhenology()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblEmergenceRatingPhenology->text().toFloat();
-  myTotal += ui->lblStemElongationRatingPhenology->text().toFloat();
-  myTotal += ui->lblEarEmergenceRatingPhenology->text().toFloat();
-  myTotal += ui->lblFloweringRatingPhenology->text().toFloat();
-  myTotal += ui->lblYellowRipenessRatingPhenology->text().toFloat();
+  myTotal += ui->lblEmergenceRatingPhenology->text().toDouble();
+  myTotal += ui->lblStemElongationRatingPhenology->text().toDouble();
+  myTotal += ui->lblEarEmergenceRatingPhenology->text().toDouble();
+  myTotal += ui->lblFloweringRatingPhenology->text().toDouble();
+  myTotal += ui->lblYellowRipenessRatingPhenology->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3595,41 +3573,24 @@ void DatasetClassification::updatePhenologyLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-  ui->lblCombinedTotalPhenology->setText(makeString(myTotal));
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankPhenology(myTotal);
-
-  ui->lblMedalPhenology->setVisible(true);
-  ui->lblMedalPhenology->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingPhenology->setVisible(true);
-  ui->lblRankingPhenology->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingPhenology->setVisible(false);
-    ui->lblMedalPhenology->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updatePrevCropLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsPrevCrop()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblCropRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblSowingDateRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblHarvestDateRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblYieldRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblResidueMgmtRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblFertilisationRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblIrrigationRatingPrevCrop->text().toFloat();
+  myTotal += ui->lblCropRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblSowingDateRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblHarvestDateRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblYieldRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblResidueMgmtRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblFertilisationRatingPrevCrop->text().toDouble();
+  myTotal += ui->lblIrrigationRatingPrevCrop->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3666,38 +3627,19 @@ void DatasetClassification::updatePrevCropLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-
-  ui->lblOverallRatingPrevCrop->setText(makeString(myTotal));
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankPrevCrop(myTotal);
-
-  ui->lblMedalPrevCrop->setVisible(true);
-  ui->lblMedalPrevCrop->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingPrevCrop->setVisible(true);
-  ui->lblRankingPrevCrop->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingPrevCrop->setVisible(false);
-    ui->lblMedalPrevCrop->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updateInitialValuesLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsInitialValues()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblSoilMoistureRatingInitialValues->text().toFloat();
-  myTotal += ui->lblNMinRatingInitialValues->text().toFloat();
+  myTotal += ui->lblSoilMoistureRatingInitialValues->text().toDouble();
+  myTotal += ui->lblNMinRatingInitialValues->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3715,45 +3657,26 @@ void DatasetClassification::updateInitialValuesLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-
-  ui->lblOverallRatingInitialValues->setText(makeString(myTotal));
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankInitialValues(myTotal);
-
-  ui->lblMedalInitialValues->setVisible(true);
-  ui->lblMedalInitialValues->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingInitialValues->setVisible(true);
-  ui->lblRankingInitialValues->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(4, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingInitialValues->setVisible(false);
-    ui->lblMedalInitialValues->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(4, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updateSoilLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsSoil()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblCOrgRatingSoil->text().toFloat();
-  myTotal += ui->lblNOrgRatingSoil->text().toFloat();
-  myTotal += ui->lblTextureRatingSoil->text().toFloat();
-  myTotal += ui->lblBulkDensityRatingSoil->text().toFloat();
-  myTotal += ui->lblFieldCapacityRatingSoil->text().toFloat();
-  myTotal += ui->lblWiltingPointRatingSoil->text().toFloat();
-  myTotal += ui->lblPfCurveRatingSoil->text().toFloat();
-  myTotal += ui->lblHydrCondCurveRatingSoil->text().toFloat();
-  myTotal += ui->lblPhRatingSoil->text().toFloat();
+  myTotal += ui->lblCOrgRatingSoil->text().toDouble();
+  myTotal += ui->lblNOrgRatingSoil->text().toDouble();
+  myTotal += ui->lblTextureRatingSoil->text().toDouble();
+  myTotal += ui->lblBulkDensityRatingSoil->text().toDouble();
+  myTotal += ui->lblFieldCapacityRatingSoil->text().toDouble();
+  myTotal += ui->lblWiltingPointRatingSoil->text().toDouble();
+  myTotal += ui->lblPfCurveRatingSoil->text().toDouble();
+  myTotal += ui->lblHydrCondCurveRatingSoil->text().toDouble();
+  myTotal += ui->lblPhRatingSoil->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3798,40 +3721,21 @@ void DatasetClassification::updateSoilLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-
-  ui->lblOverallRatingSoil->setText(makeString(myTotal));
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankSoil(myTotal);
-
-  ui->lblMedalSoil->setVisible(true);
-  ui->lblMedalSoil->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalSoil->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingSoil->setVisible(true);
-  ui->lblRankingSoil->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(5, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingSoil->setVisible(false);
-    ui->lblMedalSoil->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(5, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updateSiteLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsSite()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblLatitudeRatingSite->text().toFloat();
-  myTotal += ui->lblLongitudeRatingSite->text().toFloat();
-  myTotal += ui->lblAltitudeRatingSite->text().toFloat();
-  myTotal += ui->lblSlopeRatingSite->text().toFloat();
+  myTotal += ui->lblLatitudeRatingSite->text().toDouble();
+  myTotal += ui->lblLongitudeRatingSite->text().toDouble();
+  myTotal += ui->lblAltitudeRatingSite->text().toDouble();
+  myTotal += ui->lblSlopeRatingSite->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3856,46 +3760,27 @@ void DatasetClassification::updateSiteLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-
-  ui->lblOverallRatingSite->setText(makeString(myTotal));
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankSite(myTotal);
-
-  ui->lblMedalSite->setVisible(true);
-  ui->lblMedalSite->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalSite->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingSite->setVisible(true);
-  ui->lblRankingSite->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(6, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingSite->setVisible(false);
-    ui->lblMedalSite->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(6, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updateWeatherLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsWeather()
 {
   // updates totals
   float myTotal = 0.0;
   //QPixmap pixmap;
-  myTotal += ui->lblPrecipitationRatingWeather->text().toFloat();
-  myTotal += ui->lblTAveRatingWeather->text().toFloat();
-  myTotal += ui->lblTMinRatingWeather->text().toFloat();
-  myTotal += ui->lblTMaxRatingWeather->text().toFloat();
-  myTotal += ui->lblRelHumidityRatingWeather->text().toFloat();
-  myTotal += ui->lblWindSpeedRatingWeather->text().toFloat();
-  myTotal += ui->lblGlobalRadiationRatingWeather->text().toFloat();
-  myTotal += ui->lblSunshineHoursRatingWeather->text().toFloat();
-  myTotal += ui->lblLeafWetnessRatingWeather->text().toFloat();
-  myTotal += ui->lblSoilTempRatingWeather->text().toFloat();
+  myTotal += ui->lblPrecipitationRatingWeather->text().toDouble();
+  myTotal += ui->lblTAveRatingWeather->text().toDouble();
+  myTotal += ui->lblTMinRatingWeather->text().toDouble();
+  myTotal += ui->lblTMaxRatingWeather->text().toDouble();
+  myTotal += ui->lblRelHumidityRatingWeather->text().toDouble();
+  myTotal += ui->lblWindSpeedRatingWeather->text().toDouble();
+  myTotal += ui->lblGlobalRadiationRatingWeather->text().toDouble();
+  myTotal += ui->lblSunshineHoursRatingWeather->text().toDouble();
+  myTotal += ui->lblLeafWetnessRatingWeather->text().toDouble();
+  myTotal += ui->lblSoilTempRatingWeather->text().toDouble();
 
   // check to see if any items set to min data are zero
   bool myMinDataMissing = false;
@@ -3943,46 +3828,27 @@ void DatasetClassification::updateWeatherLabels()
   // if any mindata is missing set the total zero
   myTotal = myMinDataMissing?0:myTotal;
 
-
-  ui->lblOverallRatingWeather->setText(makeString(myTotal));
-
-  // go find out what the rank is
-
-  RankPointGenerator myRankGen;
-  QString myRank = myRankGen.getRankWeather(myTotal);
-
-  ui->lblMedalWeather->setVisible(true);
-  ui->lblMedalWeather->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblMedalWeather->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblRankingWeather->setVisible(true);
-  ui->lblRankingWeather->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(7, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingWeather->setVisible(false);
-    ui->lblMedalWeather->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
-  }
-  updateGrandTotals();
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
 }
-void DatasetClassification::updateSVLabels()
+
+QPair<bool,double> DatasetClassification::calculatePointsStateVars()
 {
   // updates totals
-  float myTotal = 0.0;
-  float myCropTotal = 0.0;
+  double myTotal = 0.0;
+  double myCropTotal = 0.0;
   bool myMinDataMissing = false;
 
   //QPixmap pixmap;
-  myCropTotal += ui->lblSVCropAGrBiomassPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropWeightOrgansPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropRootBiomassPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropNInAGrBiomassPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropNInOrgansPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropLAIPoints->text().toFloat();
-  myCropTotal += ui->lblSVCropYieldPoints->text().toFloat();
+  myCropTotal += ui->lblSVCropAGrBiomassPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropWeightOrgansPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropRootBiomassPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropNInAGrBiomassPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropNInOrgansPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropLAIPoints->text().toDouble();
+  myCropTotal += ui->lblSVCropYieldPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxYield->checkState()==Qt::Checked)
@@ -4015,12 +3881,12 @@ void DatasetClassification::updateSVLabels()
 
   float mySoilTotal = 0.0;
   //QPixmap pixmap;
-  mySoilTotal += ui->lblSVSoilSoilWaterGravPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilPressureHeadsPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilNMinPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilSoilWaterSensorCalPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toFloat();
-  mySoilTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toFloat();
+  mySoilTotal += ui->lblSVSoilSoilWaterGravPoints->text().toDouble();
+  mySoilTotal += ui->lblSVSoilPressureHeadsPoints->text().toDouble();
+  mySoilTotal += ui->lblSVSoilNMinPoints->text().toDouble();
+  mySoilTotal += ui->lblSVSoilSoilWaterSensorCalPoints->text().toDouble();
+  mySoilTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toDouble();
+  mySoilTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxSVSoilSoilWaterGrav->checkState()==Qt::Checked)
@@ -4052,11 +3918,11 @@ void DatasetClassification::updateSVLabels()
 
   float mySurfaceFluxTotal = 0.0;
   //QPixmap pixmap;
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesEtPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toFloat();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toFloat();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesEtPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxSVSurfaceFluxesEt->checkState()==Qt::Checked)
@@ -4084,9 +3950,9 @@ void DatasetClassification::updateSVLabels()
 
   float myObservationsTotal = 0.0;
   //QPixmap pixmap;
-  myObservationsTotal += ui->lblSVObservationsLodgingPoints->text().toFloat();
-  myObservationsTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toFloat();
-  myObservationsTotal += ui->lblSVObservationsDamagesPoints->text().toFloat();
+  myObservationsTotal += ui->lblSVObservationsLodgingPoints->text().toDouble();
+  myObservationsTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toDouble();
+  myObservationsTotal += ui->lblSVObservationsDamagesPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxSVObservationsLodging->checkState()==Qt::Checked)
@@ -4108,6 +3974,337 @@ void DatasetClassification::updateSVLabels()
 
   // if any mindata is zero set the total to zero
   myTotal = myMinDataMissing?0:myTotal;
+
+  QPair<bool,double> myPair;
+  myPair.first = myMinDataMissing;
+  myPair.second = myTotal;
+  return myPair;
+}
+
+QPair<double,double> DatasetClassification::calculateMultiplier()
+{
+  // updates totals
+  double myTotal = 0.0;
+  double myMultiplier = 0.0;
+  myTotal += ui->lblSeasonsPerCropRatingSeasons->text().toDouble();
+  myTotal += ui->lblSiteVariantsRatingSeasons->text().toDouble();
+  myTotal += ui->lblMgmtPotentialRatingSeasons->text().toDouble();
+  myTotal += ui->lblZeroNTreatmentRatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment1RatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment2RatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment3RatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment4RatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment5RatingSeasons->text().toDouble();
+  myTotal += ui->lblTreatment6RatingSeasons->text().toDouble();
+  RankPointGenerator myRankGen;
+  myMultiplier = myRankGen.multiplier(myTotal);
+
+  QPair<double,double> myPair;
+  myPair.first = myMultiplier;
+  myPair.second = myTotal;
+  return myPair;
+}
+
+void DatasetClassification::updateManagementLabels()
+{
+  // updates totals
+  QPair<bool,double> myPair = calculatePointsMgmt();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblCombinedTotal->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankManagement(myTotal);
+
+  ui->lblMedalManagement->setVisible(true);
+  ui->lblMedalManagement->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingManagement->setVisible(true);
+  ui->lblRankingManagement->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingManagement->setVisible(false);
+    ui->lblMedalManagement->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalManagement->setVisible(true);
+    ui->lblMedalManagement->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingManagement->setVisible(true);
+    ui->lblRankingManagement->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(1, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updatePhenologyLabels()
+{
+  QPair<bool,double> myPair = calculatePointsPhenology();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblCombinedTotalPhenology->setText(makeString(myTotal));
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankPhenology(myTotal);
+
+  ui->lblMedalPhenology->setVisible(true);
+  ui->lblMedalPhenology->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingPhenology->setVisible(true);
+  ui->lblRankingPhenology->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingPhenology->setVisible(false);
+    ui->lblMedalPhenology->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalPhenology->setVisible(true);
+    ui->lblMedalPhenology->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingPhenology->setVisible(true);
+    ui->lblRankingPhenology->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(2, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updatePrevCropLabels()
+{
+
+  QPair<bool,double> myPair = calculatePointsPrevCrop();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblOverallRatingPrevCrop->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankPrevCrop(myTotal);
+
+  ui->lblMedalPrevCrop->setVisible(true);
+  ui->lblMedalPrevCrop->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingPrevCrop->setVisible(true);
+  ui->lblRankingPrevCrop->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingPrevCrop->setVisible(false);
+    ui->lblMedalPrevCrop->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalPrevCrop->setVisible(true);
+    ui->lblMedalPrevCrop->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingPrevCrop->setVisible(true);
+    ui->lblRankingPrevCrop->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(3, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updateInitialValuesLabels()
+{
+  QPair<bool,double> myPair = calculatePointsInitialValues();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblOverallRatingInitialValues->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankInitialValues(myTotal);
+
+  ui->lblMedalInitialValues->setVisible(true);
+  ui->lblMedalInitialValues->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingInitialValues->setVisible(true);
+  ui->lblRankingInitialValues->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(4, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingInitialValues->setVisible(false);
+    ui->lblMedalInitialValues->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(4, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalInitialValues->setVisible(true);
+    ui->lblMedalInitialValues->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingInitialValues->setVisible(true);
+    ui->lblRankingInitialValues->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(4, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updateSoilLabels()
+{
+  QPair<bool,double> myPair = calculatePointsSoil();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblOverallRatingSoil->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankSoil(myTotal);
+
+  ui->lblMedalSoil->setVisible(true);
+  ui->lblMedalSoil->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalSoil->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingSoil->setVisible(true);
+  ui->lblRankingSoil->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(5, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingSoil->setVisible(false);
+    ui->lblMedalSoil->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(5, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalSoil->setVisible(true);
+    ui->lblMedalSoil->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingSoil->setVisible(true);
+    ui->lblRankingSoil->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(5, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updateSiteLabels()
+{
+  QPair<bool,double> myPair = calculatePointsSite();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblOverallRatingSite->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankSite(myTotal);
+
+  ui->lblMedalSite->setVisible(true);
+  ui->lblMedalSite->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalSite->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingSite->setVisible(true);
+  ui->lblRankingSite->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(6, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingSite->setVisible(false);
+    ui->lblMedalSite->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(6, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalSite->setVisible(true);
+    ui->lblMedalSite->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingSite->setVisible(true);
+    ui->lblRankingSite->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(6, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updateWeatherLabels()
+{
+  QPair<bool,double> myPair = calculatePointsWeather();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
+
+  ui->lblOverallRatingWeather->setText(makeString(myTotal));
+
+  // go find out what the rank is
+
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRankWeather(myTotal);
+
+  ui->lblMedalWeather->setVisible(true);
+  ui->lblMedalWeather->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblMedalWeather->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblRankingWeather->setVisible(true);
+  ui->lblRankingWeather->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(7, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingWeather->setVisible(false);
+    ui->lblMedalWeather->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
+  }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalWeather->setVisible(true);
+    ui->lblMedalWeather->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingWeather->setVisible(true);
+    ui->lblRankingWeather->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(7, (QIcon( ":/Resources/exceptions.png")));
+  }
+
+  updateGrandTotals();
+}
+void DatasetClassification::updateSVLabels()
+{
+  QPair<bool,double> myPair = calculatePointsStateVars();
+  double myTotal = myPair.second;
+  bool myMinDataMissing = myPair.first;
 
 
   ui->lblOverallRatingSV->setText(makeString(myTotal));
@@ -4132,36 +4329,90 @@ void DatasetClassification::updateSVLabels()
     ui->lblMedalSV->setVisible(false);
     ui->tabWidgetDataClassification->setTabIcon(7, (QIcon()));
   }
+
+  if (myMinDataMissing)
+  {
+    // the following line assumes that the pix resource is aptly named
+    ui->lblMedalSV->setVisible(true);
+    ui->lblMedalSV->setPixmap(QPixmap( ":/Resources/exceptions.png"));
+    ui->lblRankingSV->setVisible(true);
+    ui->lblRankingSV->setText("MinData Missing!");
+    // the following line assumes that the pix resource is aptly named
+    ui->tabWidgetDataClassification->setTabIcon(8, (QIcon( ":/Resources/exceptions.png")));
+  }
+
   updateGrandTotals();
 }
 void DatasetClassification::updateSeasonLabels()
 {
-  // updates totals
+  double myMultiplier = 0.0;
   double myTotal = 0.0;
-  myTotal += ui->lblSeasonsPerCropRatingSeasons->text().toFloat();
-  myTotal += ui->lblSiteVariantsRatingSeasons->text().toFloat();
-  myTotal += ui->lblMgmtPotentialRatingSeasons->text().toFloat();
-  myTotal += ui->lblZeroNTreatmentRatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment1RatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment2RatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment3RatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment4RatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment5RatingSeasons->text().toFloat();
-  myTotal += ui->lblTreatment6RatingSeasons->text().toFloat();
-
-
-  ui->lblSeasonsPointsValue->setText(makeString(myTotal));
 
   // go find out what the multiplier is
+  QPair<double,double> myPair = calculateMultiplier();
+  myMultiplier = myPair.first;
+  myTotal = myPair.second;
 
-  RankPointGenerator myRankGen;
-  QString myMultiplier = makeString(myRankGen.multiplier(myTotal));
-
-
-  ui->lblSeasonsMultiplierValue->setText(myMultiplier);
+  ui->lblSeasonsPointsValue->setText(makeString(myTotal));
+  ui->lblSeasonsMultiplierValue->setText(makeString(myMultiplier));
 
   updateGrandTotals();
 }
+void DatasetClassification::updateGrandTotals()
+{
+  double myTotal = 0.0;
+  double myMultiplier = 0.0;
+
+  myTotal += calculatePointsMgmt().second;
+  myTotal += calculatePointsPhenology().second;
+  myTotal += calculatePointsPrevCrop().second;
+  myTotal += calculatePointsInitialValues().second;
+  myTotal += calculatePointsSoil().second;
+  myTotal += calculatePointsSite().second;
+  myTotal += calculatePointsWeather().second;
+  myTotal += calculatePointsStateVars().second;
+
+  qDebug() << "myTotal = " << myTotal;
+
+  // get the multiplier to adjust the total
+  myMultiplier = calculateMultiplier().first;
+
+  qDebug() << "myMultiplier = " << myMultiplier;
+
+  double myPostMultiplierTotal = myTotal * myMultiplier;
+  qDebug() << "myPostMultiplierTotal = " << myPostMultiplierTotal;
+
+  int myPreMultiplierTotalInt = myTotal;
+  qDebug() << "myPreMultiplierTotalInt = " << myPreMultiplierTotalInt;
+
+  int myPostMultiplierTotalInt = myPostMultiplierTotal;
+  qDebug() << "myPostMultiplierTotalInt = " << myPostMultiplierTotalInt;
+
+  // use int to kill the decimal points (sloppy? ... don't care!)
+  ui->lblTotalPreMultiplier->setText(makeString(myPreMultiplierTotalInt));
+  ui->lblTotalPostMultiplier->setText(makeString(myPostMultiplierTotalInt));
+
+  // get the rank
+  RankPointGenerator myRankGen;
+  QString myRank = myRankGen.getRank(myPostMultiplierTotalInt);
+
+  ui->lblRankImage->setVisible(true);
+  ui->lblRankImage->setScaledContents(true);
+  // the following line assumes that the pix resource is aptly named
+  ui->lblRankImage->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
+  ui->lblOverallRank->setVisible(true);
+  ui->lblOverallRank->setText(myRank);
+  // the following line assumes that the pix resource is aptly named
+  ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
+
+  if (myRank == "na") // just to tidy things up a bit
+  {
+    ui->lblRankingSV->setVisible(false);
+    ui->lblMedalSV->setVisible(false);
+    ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
+  }
+}
+
 
 void DatasetClassification::on_rbPrecipitationWeatherMeasured_toggled(bool checked)
 {
@@ -5820,140 +6071,6 @@ void DatasetClassification::on_actionAbout_triggered()
   QMessageBox::information(0, QString("About this software"),
                            QString("Copyright (C) 2013 by: Jason S. Jorgenson.   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.")
                          , QMessageBox::Ok);
-}
-void DatasetClassification::updateGrandTotals()
-{
-  double myTotal = 0.0;
-  myTotal += ui->lblVarietyRating->text().toFloat();
-  myTotal += ui->lblSowingRating->text().toFloat();
-  myTotal += ui->lblHarvestRating->text().toFloat();
-  myTotal += ui->lblFertilisationRating->text().toFloat();
-  myTotal += ui->lblIrrigationRating->text().toFloat();
-  myTotal += ui->lblSeedDensityRating->text().toFloat();
-  myTotal += ui->lblTillageRating->text().toFloat();
-
-  myTotal += ui->lblEmergenceRatingPhenology->text().toFloat();
-  myTotal += ui->lblStemElongationRatingPhenology->text().toFloat();
-  myTotal += ui->lblEarEmergenceRatingPhenology->text().toFloat();
-  myTotal += ui->lblFloweringRatingPhenology->text().toFloat();
-  myTotal += ui->lblYellowRipenessRatingPhenology->text().toFloat();
-
-  myTotal += ui->lblCropRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblSowingDateRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblHarvestDateRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblYieldRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblResidueMgmtRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblFertilisationRatingPrevCrop->text().toFloat();
-  myTotal += ui->lblIrrigationRatingPrevCrop->text().toFloat();
-
-  myTotal += ui->lblSoilMoistureRatingInitialValues->text().toFloat();
-  myTotal += ui->lblNMinRatingInitialValues->text().toFloat();
-
-  myTotal += ui->lblCOrgRatingSoil->text().toFloat();
-  myTotal += ui->lblNOrgRatingSoil->text().toFloat();
-  myTotal += ui->lblTextureRatingSoil->text().toFloat();
-  myTotal += ui->lblBulkDensityRatingSoil->text().toFloat();
-  myTotal += ui->lblFieldCapacityRatingSoil->text().toFloat();
-  myTotal += ui->lblWiltingPointRatingSoil->text().toFloat();
-  myTotal += ui->lblPfCurveRatingSoil->text().toFloat();
-  myTotal += ui->lblHydrCondCurveRatingSoil->text().toFloat();
-  myTotal += ui->lblPhRatingSoil->text().toFloat();
-
-  myTotal += ui->lblLatitudeRatingSite->text().toFloat();
-  myTotal += ui->lblLongitudeRatingSite->text().toFloat();
-  myTotal += ui->lblAltitudeRatingSite->text().toFloat();
-  myTotal += ui->lblSlopeRatingSite->text().toFloat();
-
-  myTotal += ui->lblPrecipitationRatingWeather->text().toFloat();
-  myTotal += ui->lblTAveRatingWeather->text().toFloat();
-  myTotal += ui->lblTMinRatingWeather->text().toFloat();
-  myTotal += ui->lblTMaxRatingWeather->text().toFloat();
-  myTotal += ui->lblRelHumidityRatingWeather->text().toFloat();
-  myTotal += ui->lblWindSpeedRatingWeather->text().toFloat();
-  myTotal += ui->lblGlobalRadiationRatingWeather->text().toFloat();
-  myTotal += ui->lblSunshineHoursRatingWeather->text().toFloat();
-  myTotal += ui->lblLeafWetnessRatingWeather->text().toFloat();
-  myTotal += ui->lblSoilTempRatingWeather->text().toFloat();
-
-  myTotal += ui->lblSVCropAGrBiomassPoints->text().toFloat();
-  myTotal += ui->lblSVCropWeightOrgansPoints->text().toFloat();
-  myTotal += ui->lblSVCropRootBiomassPoints->text().toFloat();
-  myTotal += ui->lblSVCropNInAGrBiomassPoints->text().toFloat();
-  myTotal += ui->lblSVCropNInOrgansPoints->text().toFloat();
-  myTotal += ui->lblSVCropLAIPoints->text().toFloat();
-  myTotal += ui->lblSVCropYieldPoints->text().toFloat();
-
-  myTotal += ui->lblSVSoilSoilWaterGravPoints->text().toFloat();
-  myTotal += ui->lblSVSoilPressureHeadsPoints->text().toFloat();
-  myTotal += ui->lblSVSoilNMinPoints->text().toFloat();
-  myTotal += ui->lblSVSoilSoilWaterSensorCalPoints->text().toFloat();
-  myTotal += ui->lblSVSoilWaterFluxBottomRootPoints->text().toFloat();
-  myTotal += ui->lblSVSoilNFluxBottomRootPoints->text().toFloat();
-
-  myTotal += ui->lblSVSurfaceFluxesEtPoints->text().toFloat();
-  myTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toFloat();
-  myTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toFloat();
-  myTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toFloat();
-  myTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toFloat();
-
-  myTotal += ui->lblSVObservationsLodgingPoints->text().toFloat();
-  myTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toFloat();
-  myTotal += ui->lblSVObservationsDamagesPoints->text().toFloat();
-
-  qDebug() << "myTotal = " << myTotal;
-
-  // get the multiplier to adjust the total
-  double myMultiplierTotal;
-  myMultiplierTotal = ui->lblSeasonsPerCropRatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblSiteVariantsRatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblMgmtPotentialRatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblZeroNTreatmentRatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment1RatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment2RatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment3RatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment4RatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment5RatingSeasons->text().toFloat();
-  myMultiplierTotal += ui->lblTreatment6RatingSeasons->text().toFloat();
-
-  qDebug() << "myMultiplierTotal = " << myMultiplierTotal;
-
-  // go find out what the multiplier is
-
-  RankPointGenerator myRankGen;
-  double myMultiplier = myRankGen.multiplier(myMultiplierTotal);
-  qDebug() << "myMultiplier = " << myMultiplier;
-
-  double myPostMultiplierTotal = myTotal * myMultiplier;
-  qDebug() << "myPostMultiplierTotal = " << myPostMultiplierTotal;
-
-  int myPreMultiplierTotalInt = myTotal;
-  qDebug() << "myPreMultiplierTotalInt = " << myPreMultiplierTotalInt;
-
-  int myPostMultiplierTotalInt = myPostMultiplierTotal;
-  qDebug() << "myPostMultiplierTotalInt = " << myPostMultiplierTotalInt;
-
-  // use int to kill the decimal points (sloppy? ... don't care!)
-  ui->lblTotalPreMultiplier->setText(makeString(myPreMultiplierTotalInt));
-  ui->lblTotalPostMultiplier->setText(makeString(myPostMultiplierTotalInt));
-
-  // get the rank
-  QString myRank = myRankGen.getRank(myPostMultiplierTotalInt);
-
-  ui->lblRankImage->setVisible(true);
-  ui->lblRankImage->setScaledContents(true);
-  // the following line assumes that the pix resource is aptly named
-  ui->lblRankImage->setPixmap(QPixmap( ":/Resources/" + myRank.toLower() + ".png" ));
-  ui->lblOverallRank->setVisible(true);
-  ui->lblOverallRank->setText(myRank);
-  // the following line assumes that the pix resource is aptly named
-  ui->tabWidgetDataClassification->setTabIcon(0, (QIcon( ":/Resources/" + myRank.toLower() + ".png")));
-
-  if (myRank == "na") // just to tidy things up a bit
-  {
-    ui->lblRankingSV->setVisible(false);
-    ui->lblMedalSV->setVisible(false);
-    ui->tabWidgetDataClassification->setTabIcon(0, (QIcon()));
-  }
 }
 
 
