@@ -5995,21 +5995,21 @@ QStringListModel *DatasetClassification::getListModel() const
   return mpListModel;
 }
 
-void DatasetClassification::setListModel(QStringListModel *theStringListModel)
-{
-  mpListModel = theStringListModel;
-}
 QTreeView *DatasetClassification::getTreeView() const
 {
   return mpTreeView;
 }
-void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
-{
-  mpTreeView = theTreeView;
-}
 FormModel *DatasetClassification::getFormModel() const
 {
   return mpFormModel;
+}
+void DatasetClassification::setListModel(QStringListModel *theStringListModel)
+{
+  mpListModel = theStringListModel;
+}
+void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
+{
+  mpTreeView = theTreeView;
 }
 
 void DatasetClassification::uploadFinished(EnginioReply* reply)
@@ -6475,4 +6475,12 @@ void DatasetClassification::on_cbSeasonsTreatment6_currentIndexChanged(const QSt
 
 }
 
+void DatasetClassification::setFormFromJson(QJsonObject theJsonObject)
+{
+  // this is going to be a large function
+  QVariantMap myVariantMap;
+  myVariantMap = theJsonObject.toVariantMap();
 
+
+
+}

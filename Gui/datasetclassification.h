@@ -569,6 +569,7 @@ private:
   QPair<bool, double> calculatePointsWeather();
   QPair<double, double> calculateMultiplier();
   QPair<bool, double> calculatePointsStateVars();
+  void setFormFromJson(QJsonObject theJsonObject);
 };
 
 #endif // DATASETCLASSIFICATION_H

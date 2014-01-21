@@ -14,13 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
            datasetclassification.cpp \
-           madguid.cpp \
-           madserialise.cpp \
            formmodel.cpp
 
 HEADERS += datasetclassification.h \
-           madguid.h \
-           madserialise.h \
            formmodel.h
 
 FORMS   += datasetclassification.ui
