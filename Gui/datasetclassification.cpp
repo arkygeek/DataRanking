@@ -6475,12 +6475,41 @@ void DatasetClassification::on_cbSeasonsTreatment6_currentIndexChanged(const QSt
 
 }
 
-void DatasetClassification::setFormFromJson(QJsonObject theJsonObject)
+void DatasetClassification::setFormFromJson()
 {
   // this is going to be a large function
-  QVariantMap myVariantMap;
-  myVariantMap = theJsonObject.toVariantMap();
 
+  QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                  "/home",
+                                                  tr("JSON (*.json *.txt)"));
+  QFile myFile(myFileName);
+  if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+  {
+      qDebug() << "File open error:" << myFile.errorString();
+      //return 1;
+  }
 
+  QByteArray myJsonByteArray = myFile.readAll();
 
+  myFile.close();
+
+  QJsonParseError myJsonParseError;
+  QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+  if (myJsonParseError.error != QJsonParseError::NoError)
+  {
+      qDebug() << "Error happened:" << myJsonParseError.errorString();
+  }
+
+  // the two lines below dump the file, and looks good, so commenting out
+  //qDebug() << "myJsonDocument --->\n" << myJsonDocument << "\n";
+  //qDebug() << "myJsonDocument formatted --->\n" <<myJsonDocument.toJson();
+
+  // the tricky part here is to parse through the document because it
+  //     has "nested" QJsonObjects
+
+}
+
+void DatasetClassification::on_toolButtonDatasetEdit_clicked()
+{
+    setFormFromJson();
 }

@@ -499,6 +499,8 @@ private slots:
   void on_cbSeasonsTreatment5_currentIndexChanged(const QString &theCurrentText);
   void on_cbSeasonsTreatment6_currentIndexChanged(const QString &theCurrentText);
 
+  void on_toolButtonDatasetEdit_clicked();
+
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble);
@@ -569,7 +571,7 @@ private:
   QPair<bool, double> calculatePointsWeather();
   QPair<double, double> calculateMultiplier();
   QPair<bool, double> calculatePointsStateVars();
-  void setFormFromJson(QJsonObject theJsonObject);
+  void setFormFromJson();
 };
 
 #endif // DATASETCLASSIFICATION_H
