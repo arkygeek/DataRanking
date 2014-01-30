@@ -4,4 +4,5 @@ cache()
 SUBDIRS += \
     gui \
     RankPointGenerator \
-    ModelDetails
+    ModelDetails \
+    Scenarios

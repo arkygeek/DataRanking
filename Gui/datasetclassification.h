@@ -25,6 +25,7 @@
 // local includes
 #include "formmodel.h"
 #include "rankpointgenerator.h"
+#include "dr.h"
 
 // Qt includes
 #include <QMainWindow>
@@ -54,7 +55,8 @@ class DatasetClassification : public QMainWindow
 public:
   explicit DatasetClassification(QWidget *parent = 0);
   ~DatasetClassification();
-
+  DrInputType InputType;
+  DrTabs TabName;
   // getters
   EnginioClient *getEnginioClient() const;
   FormModel *getFormModel() const;
@@ -572,6 +574,7 @@ private:
   QPair<double, double> calculateMultiplier();
   QPair<bool, double> calculatePointsStateVars();
   void setFormFromJson();
+  void setFormExample();
 };
 
 #endif // DATASETCLASSIFICATION_H

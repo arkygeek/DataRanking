@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>825</width>
-    <height>1071</height>
+    <width>820</width>
+    <height>979</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,6 +17,11 @@
    <layout class="QGridLayout" name="gridLayout_10">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
       <property name="currentIndex">
        <number>0</number>
       </property>
@@ -31,6 +36,15 @@
            <string>Model</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_2">
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>3</number>
+           </property>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
@@ -44,7 +58,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoModelName"/>
+              <widget class="QLineEdit" name="leBasicInfoModelName">
+               <property name="text">
+                <string>ORANI España Dynamic</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -61,7 +79,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoAcronym"/>
+              <widget class="QLineEdit" name="leBasicInfoAcronym">
+               <property name="text">
+                <string>ORANI-ESP DYN</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QLabel" name="lblBasicInfoModelType">
@@ -231,7 +253,15 @@
                 </widget>
                </item>
                <item>
-                <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel"/>
+                <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel">
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;Employing the well known neoclassical single country CGE ORANI model template (developed at Monash University), a Spanish CGE model was constructed employing input output data for 2000. The model has subsequently been updated to 2007 with a data aggregation of 28 agricultural activities and 11 food activities, explicit CAP modeling, supplementary income transfers from national accounts to make up a full SAM and a dynamic extension. A further ‘green’ variant of the model is currently developing to examine emissions restrictions in Spain. Includes energy nests, full emissions database and complementary slack conditions to model permits (ETS) and non permit schemes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -248,7 +278,16 @@
                 </widget>
                </item>
                <item>
-                <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel"/>
+                <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel">
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The initial objective of the model was the examination of agricultural policy reform in Spain. The input output data have been disaggregated to accommodate a detailed coverage of agricultural and food sectors, whilst the CAP is modeled explicitly (SFP, set aside, intervention etc). &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;More recent research has focused on developing the synergy between economy-wide emissions restrictions (Kyoto and EU 20/20/20) and the impact on the agricultural sector.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -263,6 +302,15 @@
            <string>Development</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_7">
              <item>
@@ -273,7 +321,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoPrincipleDeveloper"/>
+              <widget class="QLineEdit" name="leBasicInfoPrincipleDeveloper">
+               <property name="text">
+                <string>CITA, Zaragoza, Spain</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -287,7 +339,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoSupportedBy"/>
+              <widget class="QLineEdit" name="leBasicInfoSupportedBy">
+               <property name="text">
+                <string>Two three year projects supported by the Spanish Ministry of Agriculture (INIA)</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -301,7 +357,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoMaintainers"/>
+              <widget class="QLineEdit" name="leBasicInfoMaintainers">
+               <property name="text">
+                <string>CITA, Zaragoza, Spain</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -314,6 +374,15 @@
            <string>Major Focus</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
            <item row="0" column="0">
             <widget class="QCheckBox" name="chkbxBasicInfoExAnteEvaluation">
              <property name="sizePolicy">
@@ -324,6 +393,9 @@
              </property>
              <property name="text">
               <string>ex-ante evaluation</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -341,9 +413,12 @@
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QCheckBox" name="chkbxExPostEvaluation">
+            <widget class="QCheckBox" name="chkbxBasicInfoExPostEvaluation">
              <property name="text">
               <string>ex-post evaluation</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -358,6 +433,9 @@
             <widget class="QCheckBox" name="chkbxBasicInfoMethodologicalDevel">
              <property name="text">
               <string>Methodological Development</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -406,7 +484,11 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leBasicInfoName"/>
+                <widget class="QLineEdit" name="leBasicInfoName">
+                 <property name="text">
+                  <string>George Philippidis</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -423,7 +505,11 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leBasicInfoPartnerNumber"/>
+                <widget class="QLineEdit" name="leBasicInfoPartnerNumber">
+                 <property name="text">
+                  <string>36</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="lblBasicInfoDateOfReport">
@@ -439,6 +525,13 @@
                 <widget class="QDateEdit" name="dateEditBasicInfoDateOfReport">
                  <property name="toolTip">
                   <string>day/month/year</string>
+                 </property>
+                 <property name="date">
+                  <date>
+                   <year>2012</year>
+                   <month>7</month>
+                   <day>1</day>
+                  </date>
                  </property>
                 </widget>
                </item>
@@ -457,14 +550,25 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leBasicInfoSubmitter"/>
+                <widget class="QLineEdit" name="leBasicInfoSubmitter">
+                 <property name="text">
+                  <string>George Philippidis</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
             </layout>
            </item>
            <item row="0" column="1" rowspan="2">
-            <widget class="QTextEdit" name="txtedBasicInfoAdditionalNotes">
+            <widget class="QTextEdit" name="tedBasicInfoAdditionalNotes">
+             <property name="html">
+              <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;gphilippidis@aragon.es&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="placeholderText">
               <string>Additional notes</string>
              </property>
@@ -495,27 +599,52 @@
        <layout class="QGridLayout" name="gridLayout_9">
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBox_2">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string/>
           </property>
           <layout class="QGridLayout" name="gridLayout_6">
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
            <property name="horizontalSpacing">
             <number>-1</number>
            </property>
            <property name="verticalSpacing">
-            <number>0</number>
+            <number>2</number>
            </property>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_14">
              <item>
               <widget class="QLabel" name="lblTechnicalTypeOfModel">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Type of Model</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leTechnicalTypeOfModel"/>
+              <widget class="QLineEdit" name="leTechnicalTypeOfModel">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Recursive dynamic multi-sector neoclassical single country CGE model</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -523,13 +652,27 @@
             <layout class="QHBoxLayout" name="horizontalLayout_15">
              <item>
               <widget class="QLabel" name="lblTechnicalProgrammingLanguage">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Programming Language</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leTechnicalProgrammingLanguage"/>
+              <widget class="QLineEdit" name="leTechnicalProgrammingLanguage">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>GEMPACK	</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -537,27 +680,65 @@
             <layout class="QHBoxLayout" name="horizontalLayout_16">
              <item>
               <widget class="QLabel" name="lblTechnicalAggergationOfRegions">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Aggregation of Regions</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leTechnicalAggergationOfRegions"/>
+              <widget class="QLineEdit" name="leTechnicalAggergationOfRegions">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
            <item row="3" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_17">
+             <property name="spacing">
+              <number>-1</number>
+             </property>
              <item>
               <widget class="QLabel" name="lblTechnicalDimensions">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Dimensions</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leTechnicalDimensions"/>
+              <widget class="QPlainTextEdit" name="tedTechnicalDimensions">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>33</height>
+                </size>
+               </property>
+               <property name="plainText">
+                <string>countries (1), commodities (146 in total; 28 agricultural, 11 food); industries (112 in total, 28 agricultural, 11 food), time (n), endowments (land, capital, 10 labour types), 8 households stratified by income</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -565,13 +746,27 @@
             <layout class="QHBoxLayout" name="horizontalLayout_18">
              <item>
               <widget class="QLabel" name="lblTechnicalRegionsCovered">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Regions Covered</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leTechnicalRegionsCovered"/>
+              <widget class="QLineEdit" name="leTechnicalRegionsCovered">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Spain (with tops-down extension)</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -579,6 +774,11 @@
             <layout class="QHBoxLayout" name="horizontalLayout_13">
              <item>
               <widget class="QLabel" name="lblTechnicalSmallestRegionalUnit">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Smallest Regional Unit</string>
                </property>
@@ -586,6 +786,16 @@
              </item>
              <item>
               <widget class="QComboBox" name="cbTechnicalSmallestRegionalUnit">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <item>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </item>
                <item>
                 <property name="text">
                  <string>Global</string>
@@ -619,9 +829,14 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit">
+              <widget class="QLineEdit" name="leTechnicalSmallestRegionalUnit">
                <property name="enabled">
                 <bool>false</bool>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
                </property>
                <property name="placeholderText">
                 <string>other</string>
@@ -632,6 +847,11 @@
               <widget class="QToolButton" name="toolButton">
                <property name="enabled">
                 <bool>false</bool>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
                </property>
                <property name="text">
                 <string>Add</string>
@@ -645,26 +865,80 @@
         </item>
         <item row="1" column="0">
          <widget class="QGroupBox" name="groupBox_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>General Details</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_5">
+           <property name="topMargin">
+            <number>4</number>
+           </property>
+           <property name="bottomMargin">
+            <number>4</number>
+           </property>
+           <property name="horizontalSpacing">
+            <number>-1</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_25">
+             <property name="spacing">
+              <number>3</number>
+             </property>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_23">
+              <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="0,0,0,1">
+               <property name="sizeConstraint">
+                <enum>QLayout::SetDefaultConstraint</enum>
+               </property>
                <item>
                 <widget class="QLabel" name="lblTechnicalTimeHorizon">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Time Horizon</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="spinBox"/>
+                <widget class="QSpinBox" name="sbTechnicalTimeHorizon">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                 <property name="value">
+                  <number>1</number>
+                 </property>
+                </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="comboBox">
+                <widget class="QComboBox" name="cbTechnicalTimeHorizonUnit">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>1</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <item>
                   <property name="text">
                    <string>Years</string>
@@ -697,31 +971,74 @@
                  </item>
                 </widget>
                </item>
+               <item>
+                <spacer name="horizontalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
               </layout>
              </item>
              <item>
               <widget class="Line" name="line">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
               </widget>
              </item>
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_6">
+              <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,1">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QLabel" name="lblTechnicalTemporalScale">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Temporal Scale: (shortest to longest)</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_24">
+                <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="0,1,0,0,1">
                  <item>
-                  <widget class="QSpinBox" name="spinBox_2"/>
+                  <widget class="QSpinBox" name="sbTechnicalTemporalScaleFrom">
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <widget class="QComboBox" name="comboBox_2">
+                  <widget class="QComboBox" name="cbTechnicalTemporalScaleFrom">
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="currentText">
+                    <string>Seconds</string>
+                   </property>
                    <item>
                     <property name="text">
                      <string>Seconds</string>
@@ -744,6 +1061,11 @@
                    </item>
                    <item>
                     <property name="text">
+                     <string>Weeks</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
                      <string>Months</string>
                     </property>
                    </item>
@@ -755,17 +1077,39 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label">
+                  <widget class="QLabel" name="lblTechnicalTemporalScaleTo">
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
                    <property name="text">
                     <string>to</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QSpinBox" name="spinBox_3"/>
+                  <widget class="QSpinBox" name="sbTechnicalTemporalScaleTo">
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="maximum">
+                    <number>9999</number>
+                   </property>
+                   <property name="value">
+                    <number>30</number>
+                   </property>
+                  </widget>
                  </item>
                  <item>
-                  <widget class="QComboBox" name="comboBox_3">
+                  <widget class="QComboBox" name="cbTechnicalTemporalScaleTo">
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
                    <item>
                     <property name="text">
                      <string>Years</string>
@@ -774,6 +1118,11 @@
                    <item>
                     <property name="text">
                      <string>Months</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Weeks</string>
                     </property>
                    </item>
                    <item>
@@ -804,56 +1153,493 @@
              </item>
             </layout>
            </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_36">
+             <item>
+              <widget class="QLabel" name="lblTechnicalExogenousProjVarsAndSources">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Exogenous projection
+variables and sources</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="tedTechnicalExogenousProjVars">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>44</height>
+                </size>
+               </property>
+               <property name="plainText">
+                <string>Population (IMF), World fossil fuel prices (US EIA), World biofuels prices (OECD/FAO), TFPs (Ludena et al 2006), Spanish budget deficit (IMF), GDP (IMF), exports (IMF), investment (European Commission), household consumption (European Commission), CAP payments (FEGA)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_4">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to view in pop-up window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
            <item row="1" column="0">
-            <widget class="QLabel" name="lblTechnicalRepresentationOfTrade">
-             <property name="text">
-              <string>Representation of Trade</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_34">
+             <item>
+              <widget class="QLabel" name="lblTechnicalRepresentationOfTrade">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Representation of Trade</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalRepresentationOfTrade">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Armington assumption</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_2">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to view in pop-up window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item row="2" column="0">
-            <widget class="QLabel" name="lblTechnicalDescriptionOfParameters">
-             <property name="text">
-              <string>Description of parameters</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="lblTechnicalExogenousProjVarsAndSources">
-             <property name="text">
-              <string>Exogenous projection variables and sources</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_35">
+             <item>
+              <widget class="QLabel" name="lblTechnicalDescriptionOfParameters">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Description of parameters</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="tedTechnicalDescriptionOfParameters">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>33</height>
+                </size>
+               </property>
+               <property name="plainText">
+                <string>Substitution and expenditure elasticities are borrowed from different sources and refined according to robustness tests and expert opinion within Spain. Regional land supply function econometrically estimated. </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_3">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to view in pop-up window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item row="4" column="0">
-            <widget class="QLabel" name="lblTechnicalSectorsCovered">
-             <property name="text">
-              <string>Sectors Covered</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_37">
+             <item>
+              <widget class="QLabel" name="lblTechnicalSectorsCovered">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Sectors Covered</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalSectorsCovered">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Full coverage of agricultural and non agricultural sectors.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_5">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to view in pop-up window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item row="5" column="0">
-            <widget class="QLabel" name="lblTechnicalModelClosureRules">
-             <property name="text">
-              <string>Model Closure Rules</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_38">
+             <item>
+              <widget class="QLabel" name="lblTechnicalModelClosureRules">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Model Closure Rules</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPlainTextEdit" name="tedTechnicalModelClosureRules">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>55</height>
+                </size>
+               </property>
+               <property name="plainText">
+                <string>Small country assumption, so all world prices exogenous. Real GDP, exports, investment and private consumption are exogenous, whilst government spending is controlled largely by exogenous budget deficit shocks. Imports adjust endogenously. Aggregate employment is endogenous, whilst total capital stock accumulation is endogenous but dependant on total (exogenous) net investment shocks. </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QToolButton" name="toolButton_6">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to view in pop-up window&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
         </item>
         <item row="2" column="0">
          <widget class="QGroupBox" name="grpbxTechnicalInputData">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>Input Data</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_7">
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_20">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataVariants">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Variants (mgmt/intensity)</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataVariants">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>standard production, organic production</string>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="4" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_21">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataOther">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Other</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cbTechnicalInputDataOther">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>2</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Climate projection data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop field experimental data</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop pathogens and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Crop physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Economic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Generic data - all types/repository</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestoc genetic</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock management</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock pest and disease</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Livestock physiology</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Soils</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Weather generator data</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataOtherNotes">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_22">
+             <item>
+              <widget class="QCheckBox" name="chkbxTechnicalInputDataLivestockProdn">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Livestock Production</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>3</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>6 sectors: product structure as in Eurostat economic accounts of agriculture,</string>
+               </property>
+               <property name="placeholderText">
+                <string>notes</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
            <item row="0" column="0">
             <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>2</number>
+             </property>
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item>
                 <widget class="QLabel" name="lblTechnicalInputDataGeneralNotes">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>General Notes</string>
                  </property>
@@ -861,6 +1647,11 @@
                </item>
                <item>
                 <widget class="QToolButton" name="toolButtonTechnicalGeneralNotes">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <property name="toolTip">
                   <string>Click to view in pop-out window</string>
                  </property>
@@ -871,6 +1662,11 @@
                </item>
                <item>
                 <spacer name="horizontalSpacer">
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
@@ -885,17 +1681,18 @@
               </layout>
              </item>
              <item>
-              <widget class="QTextEdit" name="textEdit">
+              <widget class="QTextEdit" name="tedTechnicalInputDataGeneralNotes">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="html">
                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Primary (collected by field survey to experts and farmers) and secondary data referring to a specific year (baseline).&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The Primary data refer to the cropping technics, practices and prices.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The secondary data come from the FADN,Agricultural Census and Water User Association database served to define the structural characteristic of the farming typologies and the water use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;Principal sources of data: Spanish national accounts and input-output table for 2007 (Instituto Nacional de Estadística (&lt;/span&gt;&lt;a href=&quot;http://www.ine.es/&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt; text-decoration: underline; color:#0000ff;&quot;&gt;www.ine.es&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;). Additional data taken from household budget survey data and labour market data (INE), whilst Eurostat agricultural accounts data were employed to disaggregate the agricultural activity/commodity accounts of the IO database. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -905,94 +1702,17 @@ p, li { white-space: pre-wrap; }
             <layout class="QHBoxLayout" name="horizontalLayout_19">
              <item>
               <widget class="QCheckBox" name="chkbxTechnicalInputDataCropProdn">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Crop Production</string>
                </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbTechnicalInputDataCrop">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>2</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
+               <property name="checked">
+                <bool>true</bool>
                </property>
-               <item>
-                <property name="text">
-                 <string>Climate projection data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop field experimental data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop pathogens and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Economic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Generic data - all types/repository</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestoc genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock pest and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Soils</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather generator data</string>
-                </property>
-               </item>
               </widget>
              </item>
              <item>
@@ -1006,341 +1726,13 @@ p, li { white-space: pre-wrap; }
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="placeholderText">
-                <string>notes</string>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
                </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="2" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_22">
-             <item>
-              <widget class="QCheckBox" name="chkbxTechnicalInputDataLivestockProdn_2">
                <property name="text">
-                <string>Livestock Production</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbTechnicalInputDataLivestock">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>2</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Climate projection data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop field experimental data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop pathogens and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Economic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Generic data - all types/repository</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestoc genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock pest and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Soils</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather generator data</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn_2">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>3</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="placeholderText">
-                <string>notes</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="3" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_20">
-             <item>
-              <widget class="QCheckBox" name="chkbxTechnicalInputDataLivestockProdn">
-               <property name="text">
-                <string>Variants (mgmt/intensity)</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbTechnicalInputDataVariants">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>2</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Climate projection data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop field experimental data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop pathogens and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Economic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Generic data - all types/repository</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestoc genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock pest and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Soils</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather generator data</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>3</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="placeholderText">
-                <string>notes</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="4" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_21">
-             <item>
-              <widget class="QCheckBox" name="chkbxTechnicalInputDataOther">
-               <property name="text">
-                <string>Other</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbTechnicalInputDataOther">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>2</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <item>
-                <property name="text">
-                 <string>Climate projection data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop field experimental data</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop pathogens and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Crop physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Economic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Generic data - all types/repository</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestoc genetic</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock management</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock pest and disease</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Livestock physiology</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Soils</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weather generator data</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_2">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>3</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
+                <string>22 sectors: product structure as in Eurostat economic accounts of agriculture</string>
                </property>
                <property name="placeholderText">
                 <string>notes</string>
@@ -1354,14 +1746,33 @@ p, li { white-space: pre-wrap; }
         </item>
         <item row="3" column="0">
          <widget class="QGroupBox" name="grpbxlTechnicalMoreDetailsOnRepOfAgric">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="title">
            <string>More details on representation of agriculture</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_8">
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>7</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_30">
              <item>
               <widget class="QLabel" name="lblTechnicalGeneralNotes">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>General Notes</string>
                </property>
@@ -1378,6 +1789,14 @@ p, li { white-space: pre-wrap; }
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>one representative farm per country</string>
+               </property>
                <property name="placeholderText">
                 <string>notes</string>
                </property>
@@ -1389,6 +1808,11 @@ p, li { white-space: pre-wrap; }
             <layout class="QHBoxLayout" name="horizontalLayout_31">
              <item>
               <widget class="QLabel" name="lblTechnicalFarmTypes">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Farm Types</string>
                </property>
@@ -1405,6 +1829,11 @@ p, li { white-space: pre-wrap; }
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="placeholderText">
                 <string>notes</string>
                </property>
@@ -1416,6 +1845,11 @@ p, li { white-space: pre-wrap; }
             <layout class="QHBoxLayout" name="horizontalLayout_32">
              <item>
               <widget class="QLabel" name="lblTechnicalFarmStructure">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Farm Structure</string>
                </property>
@@ -1432,6 +1866,11 @@ p, li { white-space: pre-wrap; }
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="placeholderText">
                 <string>notes</string>
                </property>
@@ -1443,6 +1882,11 @@ p, li { white-space: pre-wrap; }
             <layout class="QHBoxLayout" name="horizontalLayout_33">
              <item>
               <widget class="QLabel" name="lblTechnicalVariantsOfMgmtIntensity">
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Variants of management/intensity</string>
                </property>
@@ -1458,6 +1902,14 @@ p, li { white-space: pre-wrap; }
                  <horstretch>2</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>9</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>standard production</string>
                </property>
                <property name="placeholderText">
                 <string>notes</string>
@@ -1476,7 +1928,95 @@ p, li { white-space: pre-wrap; }
         <string>Diagrams</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_18">
-        <item row="3" column="0">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblDiagramsTheDiagram">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>4</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>750</width>
+            <height>600</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Resources.qrc">:/image/images/ORANI_DataStructure.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_39">
+          <item>
+           <widget class="QComboBox" name="cbDiagramsSelectDiagram">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <item>
+             <property name="text">
+              <string>Standard ORANI model data structure</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Production Nest</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Private consumption nest for each household ‘h’</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_8">
+            <property name="text">
+             <string>-</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Zoom</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_7">
+            <property name="text">
+             <string>+</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
          <widget class="QTextEdit" name="textEdit_23">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1486,36 +2026,6 @@ p, li { white-space: pre-wrap; }
           </property>
           <property name="placeholderText">
            <string>description</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QComboBox" name="cbDiagramsSelectDiagram">
-          <item>
-           <property name="text">
-            <string>Select Diagram</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Example</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="lblDiagramsTheDiagram">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>4</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="scaledContents">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -1588,6 +2098,15 @@ p, li { white-space: pre-wrap; }
            <string>Target User Group</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_11">
+           <property name="topMargin">
+            <number>6</number>
+           </property>
+           <property name="bottomMargin">
+            <number>6</number>
+           </property>
+           <property name="verticalSpacing">
+            <number>2</number>
+           </property>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_27">
              <item>
@@ -1778,7 +2297,7 @@ p, li { white-space: pre-wrap; }
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="pageBioPhysicalLinks">
          <property name="geometry">
@@ -1786,7 +2305,7 @@ p, li { white-space: pre-wrap; }
            <x>0</x>
            <y>0</y>
            <width>424</width>
-           <height>704</height>
+           <height>698</height>
           </rect>
          </property>
          <attribute name="label">
@@ -1954,8 +2473,8 @@ p, li { white-space: pre-wrap; }
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>671</width>
-           <height>721</height>
+           <width>498</width>
+           <height>470</height>
           </rect>
          </property>
          <attribute name="label">
@@ -2053,8 +2572,8 @@ p, li { white-space: pre-wrap; }
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>218</width>
-           <height>589</height>
+           <width>671</width>
+           <height>746</height>
           </rect>
          </property>
          <attribute name="label">
@@ -2139,7 +2658,7 @@ p, li { white-space: pre-wrap; }
            <x>0</x>
            <y>0</y>
            <width>490</width>
-           <height>359</height>
+           <height>356</height>
           </rect>
          </property>
          <attribute name="label">
@@ -2238,7 +2757,7 @@ p, li { white-space: pre-wrap; }
            <x>0</x>
            <y>0</y>
            <width>401</width>
-           <height>359</height>
+           <height>356</height>
           </rect>
          </property>
          <attribute name="label">
@@ -2342,7 +2861,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>825</width>
+     <width>820</width>
      <height>22</height>
     </rect>
    </property>
@@ -2358,6 +2877,8 @@ p, li { white-space: pre-wrap; }
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

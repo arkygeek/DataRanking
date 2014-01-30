@@ -56,7 +56,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -2011,14 +2011,17 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtPoints">
+            <widget class="QLabel" name="lblMgmtWeight">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
               </font>
              </property>
              <property name="text">
-              <string>Points</string>
+              <string>Weight</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -2826,6 +2829,18 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblMgmtPoints">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -3197,7 +3212,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_9">
            <item row="0" column="0">
-            <widget class="QLabel" name="lblMgmtMinData_2">
+            <widget class="QLabel" name="lblPhenologyMinData">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -3212,7 +3227,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLabel" name="lblMgmtObservations_2">
+            <widget class="QLabel" name="lblPhenologyObservations">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -3230,14 +3245,17 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtPoints_2">
+            <widget class="QLabel" name="lblPhenologyWeight">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
               </font>
              </property>
              <property name="text">
-              <string>Points</string>
+              <string>Weight</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -3597,6 +3615,18 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblPhenologyPts">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>
@@ -3918,8 +3948,23 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <layout class="QGridLayout" name="gridLayoutSoil">
-           <item row="6" column="3">
-            <widget class="QLabel" name="lblResidueMgmtRatingPrevCrop">
+           <item row="9" column="2">
+            <widget class="QLabel" name="lblCombinedPrevCrop">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Combined:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="3">
+            <widget class="QLabel" name="lblOverallRatingPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3934,286 +3979,135 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>4</string>
+              <string>19</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="6" column="2">
-            <widget class="QDoubleSpinBox" name="dsbResidueMgmtWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
+           <item row="3" column="3">
+            <widget class="QLabel" name="lblSowingDateRatingPrevCrop">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>4.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QCheckBox" name="chbxYieldPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
              </property>
              <property name="text">
-              <string>Yield</string>
+              <string>2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QCheckBox" name="chbxSowingDatePrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <item row="0" column="1">
+            <widget class="QLabel" name="lblPrevCropObservations">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
              </property>
              <property name="text">
-              <string>Sowing Date</string>
+              <string>Observations</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
-            <widget class="QSpinBox" name="sbCropObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="2">
-            <widget class="QDoubleSpinBox" name="dsbFertilisationWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>3.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="2">
-            <widget class="QDoubleSpinBox" name="dsbIrrigationWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>2.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="2">
-            <widget class="QDoubleSpinBox" name="dsbYieldWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>2.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QSpinBox" name="sbResidueMgmtObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="QCheckBox" name="chbxCropPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+           <item row="0" column="0">
+            <widget class="QLabel" name="lblPrevCropMinData">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
              </property>
              <property name="text">
-              <string>Crop</string>
+              <string>Check for min. data</string>
              </property>
-             <property name="tristate">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="1">
-            <widget class="QSpinBox" name="sbHarvestDateObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="value">
-              <number>1</number>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="4" column="2">
-            <widget class="QDoubleSpinBox" name="dsbHarvestDateWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
+           <item row="5" column="3">
+            <widget class="QLabel" name="lblYieldRatingPrevCrop">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>3.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QCheckBox" name="chbxHarvestDatePrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
              </property>
              <property name="text">
-              <string>Harvest Date</string>
+              <string>2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QSpinBox" name="sbSowingDateObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <item row="8" column="3">
+            <widget class="QLabel" name="lblIrrigationRatingPrevCrop">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="1">
-            <widget class="QSpinBox" name="sbFertilisationObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="2">
-            <widget class="QDoubleSpinBox" name="dsbSowingDateWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>2.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QCheckBox" name="chbxIrrigationPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
              </property>
              <property name="text">
-              <string>Irrigation</string>
+              <string>2</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
-            <widget class="QSpinBox" name="sbYieldObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <item row="2" column="3">
+            <widget class="QLabel" name="lblCropRatingPrevCrop">
+             <property name="minimumSize">
+              <size>
+               <width>25</width>
+               <height>0</height>
+              </size>
              </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="0">
-            <widget class="QCheckBox" name="chbxResidueMgmtPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
              </property>
              <property name="text">
-              <string>Residue Mgmt</string>
+              <string>3</string>
              </property>
-            </widget>
-           </item>
-           <item row="7" column="0">
-            <widget class="QCheckBox" name="chbxFertilisationPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="layoutDirection">
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="text">
-              <string>Fertilisation</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="1">
-            <widget class="QSpinBox" name="sbIrrigationObsPrevCrop">
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="value">
-              <number>1</number>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
-            <widget class="QDoubleSpinBox" name="dsbCropWeightPrevCrop">
-             <property name="decimals">
-              <number>1</number>
-             </property>
-             <property name="maximum">
-              <double>5.000000000000000</double>
-             </property>
-             <property name="singleStep">
-              <double>0.500000000000000</double>
-             </property>
-             <property name="value">
-              <double>3.000000000000000</double>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -4263,8 +4157,284 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
-            <widget class="QLabel" name="lblCropRatingPrevCrop">
+           <item row="7" column="0">
+            <widget class="QCheckBox" name="chbxFertilisationPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Fertilisation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QDoubleSpinBox" name="dsbCropWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QSpinBox" name="sbIrrigationObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QSpinBox" name="sbYieldObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QCheckBox" name="chbxResidueMgmtPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Residue Mgmt</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QCheckBox" name="chbxIrrigationPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Irrigation</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="sbSowingDateObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QSpinBox" name="sbFertilisationObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QSpinBox" name="sbResidueMgmtObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QDoubleSpinBox" name="dsbHarvestDateWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="sbHarvestDateObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="chbxHarvestDatePrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Harvest Date</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QDoubleSpinBox" name="dsbSowingDateWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QDoubleSpinBox" name="dsbYieldWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="chbxCropPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Crop</string>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QDoubleSpinBox" name="dsbIrrigationWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>2.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2">
+            <widget class="QDoubleSpinBox" name="dsbFertilisationWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="sbCropObsPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="chbxYieldPrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Yield</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="2">
+            <widget class="QDoubleSpinBox" name="dsbResidueMgmtWeightPrevCrop">
+             <property name="decimals">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <double>5.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.500000000000000</double>
+             </property>
+             <property name="value">
+              <double>4.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="chbxSowingDatePrevCrop">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Sowing Date</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="3">
+            <widget class="QLabel" name="lblResidueMgmtRatingPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4279,117 +4449,15 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="text">
-              <string>3</string>
+              <string>4</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
-           <item row="5" column="3">
-            <widget class="QLabel" name="lblYieldRatingPrevCrop">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="3">
-            <widget class="QLabel" name="lblSowingDateRatingPrevCrop">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="3">
-            <widget class="QLabel" name="lblIrrigationRatingPrevCrop">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>2</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="lblMgmtMinData_3">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Check for min. data</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="lblMgmtObservations_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Observations</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtPoints_3">
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblPrevCropPoints">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -4400,41 +4468,18 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="9" column="2">
-            <widget class="QLabel" name="lblCombinedPrevCrop">
+           <item row="0" column="2">
+            <widget class="QLabel" name="lblPrevCropWeight">
              <property name="font">
               <font>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <italic>false</italic>
-               <bold>true</bold>
+               <pointsize>9</pointsize>
               </font>
              </property>
              <property name="text">
-              <string>Combined:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="3">
-            <widget class="QLabel" name="lblOverallRatingPrevCrop">
-             <property name="minimumSize">
-              <size>
-               <width>25</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>19</string>
+              <string>Weight</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -4903,18 +4948,6 @@ p, li { white-space: pre-wrap; }
              </property>
             </widget>
            </item>
-           <item row="0" column="3">
-            <widget class="QLabel" name="lblInitialValuesPoints">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Points</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="3">
             <widget class="QDoubleSpinBox" name="dsbSoilMoistureWeightInitialValues">
              <property name="decimals">
@@ -4981,6 +5014,33 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="text">
               <string>Depth(m)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="lblInitialValuesPoints">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblInitialValuesWeight">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Weight</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -5307,7 +5367,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayoutWeather">
            <item row="0" column="3">
-            <widget class="QLabel" name="lblMgmtPoints_8">
+            <widget class="QLabel" name="lblSoilWeight">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -5739,7 +5799,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLabel" name="lblMgmtPoints_7">
+            <widget class="QLabel" name="lblSoilDepth">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -5751,7 +5811,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtObservations_7">
+            <widget class="QLabel" name="lblSoilLayers">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -5769,7 +5829,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="lblMgmtMinData_7">
+            <widget class="QLabel" name="lblSoilMinData">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -5964,6 +6024,18 @@ p, li { white-space: pre-wrap; }
              </property>
              <property name="value">
               <double>0.900000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="lblSoilPoints">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
              </property>
             </widget>
            </item>
@@ -6786,7 +6858,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="0">
-            <widget class="QLabel" name="lblMgmtMinData_6">
+            <widget class="QLabel" name="lblSiteMinData">
              <property name="font">
               <font>
                <pointsize>9</pointsize>
@@ -6801,7 +6873,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLabel" name="lblMgmtObservations_6">
+            <widget class="QLabel" name="lblSiteObservations">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -6819,7 +6891,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="lblMgmtObservations_8">
+            <widget class="QLabel" name="lblSiteWeight">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -6884,6 +6956,18 @@ p, li { white-space: pre-wrap; }
             <widget class="QSpinBox" name="sbSlopeWeightSite">
              <property name="value">
               <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Points</string>
              </property>
             </widget>
            </item>
@@ -13651,12 +13735,12 @@ p, li { white-space: pre-wrap; }
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>121</x>
-     <y>216</y>
+     <x>139</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>187</x>
-     <y>213</y>
+     <x>237</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>
@@ -13667,12 +13751,12 @@ p, li { white-space: pre-wrap; }
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>105</x>
-     <y>226</y>
+     <x>123</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>328</x>
-     <y>215</y>
+     <x>358</x>
+     <y>182</y>
     </hint>
    </hints>
   </connection>

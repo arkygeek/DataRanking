@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>MAGPIE.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>icons/new.png</file>
+        <file>icons/barley.png</file>
+        <file>icons/chicken.png</file>
+        <file>icons/copy.png</file>
+        <file>icons/cow.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/eggs.png</file>
+        <file>icons/exceptions.png</file>
+        <file>icons/goat_icon.png</file>
+        <file>icons/grape_icon.png</file>
+        <file>icons/kidscorner_infopage_cowpigchick.jpg</file>
+        <file>icons/localdata.png</file>
+        <file>icons/olive.png</file>
+        <file>icons/pig.png</file>
+        <file>icons/sheep.png</file>
+        <file>icons/status_error.png</file>
+        <file>icons/status_ok.png</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>images/ORANI_DataStructure.png</file>
+        <file>images/ORANI_ProdnNest.png</file>
+        <file>images/ORANI_ProdnNesta.png</file>
+    </qresource>
+</RCC>

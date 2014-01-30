@@ -1,6 +1,6 @@
 /***************************************************************************
- *   File:  dsc.h created: 17/12/2013                                    *
- *   Class info:                                                *
+ *   File:  drcroptab.h created: 23/01/2014                                    *
+ *   Class info: DrCropTab                                               *
  *   Copyright (C) 2013 by: Jason S. Jorgenson                             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,22 +19,24 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DSC_H
-#define DSC_H
+#ifndef DRCROPTAB_H
+#define DRCROPTAB_H
 
-#include <QMap>
-#include <QPair>
-#include <QString>
+#include "drinputtypes.h"
 
-//typedef QPair<int,double> MgmtDetails;
+class DrCropTab : public DrInputTypes
+{
+public:
+  DrCropTab();
 
-//typedef QPair <QPair<QString,QString>, QPair<QString,QString> > LaRasterInfo;
-//typedef QMap < QString, LaFoodSource > LaFoodSourceMap;
-//typedef QPair <float,float> HerdSize;
-//typedef QMap <QString,QPair<QString,float> > LaReportMap;
+  // accessors
 
-//enum Block {Management,Phenology,PrevCrop,InitialValues,Soil,Site,Weather,StateVars};
-//enum Rank {Platinum,Gold,Silver,Bronze};
 
-//enum MgmtParam {Variety,Sowing,Harvest,Fertilisation,Irrigation,SeedDensity,Tillage};
-#endif // DSC_H
+  // mutators
+
+
+private:
+
+};
+
+#endif // DRCROPTAB_H

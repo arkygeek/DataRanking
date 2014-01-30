@@ -1,6 +1,6 @@
 /***************************************************************************
- *   File:  dsc.h created: 17/12/2013                                    *
- *   Class info:                                                *
+ *   File:  drmanagement.cpp created: 22/01/2014                                    *
+ *   Class info: DRManagement                                               *
  *   Copyright (C) 2013 by: Jason S. Jorgenson                             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,22 +19,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DSC_H
-#define DSC_H
+#include "drmanagement.h"
+#include "dr.h"
+#include "drinputtypes.h"
 
-#include <QMap>
-#include <QPair>
-#include <QString>
+DrManagement::DrManagement()
+{
+}
 
-//typedef QPair<int,double> MgmtDetails;
+// accessors
 
-//typedef QPair <QPair<QString,QString>, QPair<QString,QString> > LaRasterInfo;
-//typedef QMap < QString, LaFoodSource > LaFoodSourceMap;
-//typedef QPair <float,float> HerdSize;
-//typedef QMap <QString,QPair<QString,float> > LaReportMap;
+DrPairObsWgt DrManagement::variety() const
+{
+  return mVariety;
+}
 
-//enum Block {Management,Phenology,PrevCrop,InitialValues,Soil,Site,Weather,StateVars};
-//enum Rank {Platinum,Gold,Silver,Bronze};
 
-//enum MgmtParam {Variety,Sowing,Harvest,Fertilisation,Irrigation,SeedDensity,Tillage};
-#endif // DSC_H
+// mutators
+
+//void DrManagement::setVariety(DrPairBoolPts theVarietyBoolPts,
+//                              DrPairObsWgt theVarietyObsWgt)
+//{
+//  //mVariety = theVarietyValues;
+//}

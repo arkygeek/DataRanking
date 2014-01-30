@@ -1,6 +1,6 @@
 /***************************************************************************
- *   File:  dsc.h created: 17/12/2013                                    *
- *   Class info:                                                *
+ *   File:  drdiagrammanager.cpp created: 28/01/2014                                    *
+ *   Class info: DrDiagramManager                                               *
  *   Copyright (C) 2013 by: Jason S. Jorgenson                             *
  *                                                                         *
  *   This program is free software; you can redistribute it and/or modify  *
@@ -19,22 +19,19 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef DSC_H
-#define DSC_H
+#include "drdiagrammanager.h"
+#include "ui_drdiagrammanager.h"
 
-#include <QMap>
-#include <QPair>
-#include <QString>
+DrDiagramManager::DrDiagramManager(QWidget *parent) :
+  QDialog(parent),
+  ui(new Ui::DrDiagramManager)
+{
+  ui->setupUi(this);
+}
 
-//typedef QPair<int,double> MgmtDetails;
+DrDiagramManager::~DrDiagramManager()
+{
+  delete ui;
+}
 
-//typedef QPair <QPair<QString,QString>, QPair<QString,QString> > LaRasterInfo;
-//typedef QMap < QString, LaFoodSource > LaFoodSourceMap;
-//typedef QPair <float,float> HerdSize;
-//typedef QMap <QString,QPair<QString,float> > LaReportMap;
 
-//enum Block {Management,Phenology,PrevCrop,InitialValues,Soil,Site,Weather,StateVars};
-//enum Rank {Platinum,Gold,Silver,Bronze};
-
-//enum MgmtParam {Variety,Sowing,Harvest,Fertilisation,Irrigation,SeedDensity,Tillage};
-#endif // DSC_H

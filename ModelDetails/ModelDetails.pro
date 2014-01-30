@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dscmodeldetails.cpp
+        dscmodeldetails.cpp \
+    drdiagrammanager.cpp
 
-HEADERS  += dscmodeldetails.h
+HEADERS  += dscmodeldetails.h \
+    drdiagrammanager.h
 
-FORMS    += dscmodeldetails.ui
+FORMS    += dscmodeldetails.ui \
+    drdiagrammanager.ui
+
+RESOURCES += \
+    Resources.qrc

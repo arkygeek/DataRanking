@@ -23,6 +23,7 @@
 #define DSCMODELDETAILS_H
 
 #include <QMainWindow>
+#include <QJsonObject>
 
 namespace Ui {
   class DscModelDetails;
@@ -36,8 +37,14 @@ public:
   explicit DscModelDetails(QWidget *parent = 0);
   ~DscModelDetails();
 
+private slots:
+  void on_tlbtnBasicInfoGoToWebsite_clicked();
+
 private:
   Ui::DscModelDetails *ui;
+  QJsonObject generateHeaderJson();
+  QJsonObject generateTechnicalJson();
+  QJsonObject generateDiagramsJson();
 };
 
 #endif // DSCMODELDETAILS_H

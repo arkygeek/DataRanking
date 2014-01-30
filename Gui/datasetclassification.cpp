@@ -34,6 +34,7 @@
 #include <QInputDialog>
 
 #include "ui_datasetclassification.h"
+#include "dr.h"
 #include "rankpointgenerator.h"
 #include "formmodel.h"
 
@@ -6511,5 +6512,27 @@ void DatasetClassification::setFormFromJson()
 
 void DatasetClassification::on_toolButtonDatasetEdit_clicked()
 {
-    setFormFromJson();
+    //setFormFromJson();
+    setFormExample();
+}
+
+void DatasetClassification::setFormExample()
+{
+  // resets the form to example - check with user first as the form will be overwritten
+  int myProceed = QMessageBox::question(0, QString("Current settings will be lost"),
+                           QString("The form is about to be reset to the example. Ok to proceed?"),
+                           QMessageBox::Cancel, QMessageBox::Ok);
+  // qDebug() << "myInt value from QMessageBox is: " << myProceed;
+
+  if (myProceed == QMessageBox::Cancel)
+  {
+    // qDebug() << "this should return now";
+    return;
+  }
+
+  // qDebug() << "Let's do it";
+
+
+
+
 }

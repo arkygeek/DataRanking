@@ -14,10 +14,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
            datasetclassification.cpp \
-           formmodel.cpp
+           formmodel.cpp \
+           drmanagement.cpp \
+    drinputtypes.cpp \
+    drcroptab.cpp
 
 HEADERS += datasetclassification.h \
-           formmodel.h
+           formmodel.h \
+           dr.h \
+           drmanagement.h \
+    drinputtypes.h \
+    drcroptab.h
 
 FORMS   += datasetclassification.ui
 
