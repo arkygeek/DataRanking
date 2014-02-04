@@ -26,7 +26,27 @@
 
 namespace Ui {
   class DrScenarios;
+  class DrGuid;
 }
+
+class DrGuid
+{
+public:
+  /** Constructor . */
+  DrGuid();
+  /** Desctructor . */
+  virtual ~DrGuid();
+  /** Retrieve the globally unique identifier */
+  QString guid() const;
+  /** Set the globally unique identifier for this object.
+   *  If no Parameter is passed a guid will be self assigned
+   *  @param theGuid - a guid for this model
+   */
+  void setGuid(QString theGuid="");
+private:
+  /** A globally unique identifier for this model */
+  QString mGuid;
+};
 
 class DrScenarios : public QMainWindow
 {
@@ -36,8 +56,39 @@ public:
   explicit DrScenarios(QWidget *parent = 0);
   ~DrScenarios();
 
+private slots:
+  void on_cbOverviewNutrition_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewProduction_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewConsumption_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewMitigation_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewAdaptation_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewVolatility_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewNonFarmIncome_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewFarmLevelIncome_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewChangesToBiodiversity_currentIndexChanged(int theIndex);
+
+  void on_cbOverviewSocialDevelopment_currentIndexChanged(int theIndex);
+
+  void on_toolButton_clicked();
+
+  void on_pbText_clicked();
+
 private:
   Ui::DrScenarios *ui;
+  QString getPixmap(int theIndex);
+  QJsonObject generateHeaderJson(QString theGuid);
+  QJsonObject generateOverviewJSON(QString theGuid);
+  QJsonObject generateJson(QString theGuid);
 };
+
+
 
 #endif // DRSCENARIOS_H

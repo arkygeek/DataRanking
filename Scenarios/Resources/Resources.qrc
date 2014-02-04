@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>configure-2.png</file>
+        <file>deadend.png</file>
+        <file>folder-important.png</file>
+        <file>folder-locked.png</file>
+        <file>important.png</file>
+        <file>irkick.png</file>
+        <file>irkickflash.png</file>
+        <file>irkickoff.png</file>
+        <file>na.png</file>
+        <file>vipTransparent.png</file>
+    </qresource>
+</RCC>

@@ -16,44 +16,19 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_4">
     <item row="1" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_9">
-      <item>
-       <widget class="QPushButton" name="pushButton_8">
-        <property name="text">
-         <string>Manage Scenarios</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_9">
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_10">
-        <property name="text">
-         <string>Text</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+     <widget class="QLabel" name="lblGuidLabel">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <italic>true</italic>
+       </font>
       </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>597</width>
-        <height>20</height>
-       </size>
+      <property name="text">
+       <string>Guid: </string>
       </property>
-     </spacer>
+     </widget>
     </item>
-    <item row="0" column="0" colspan="2">
+    <item row="0" column="0" colspan="5">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
@@ -68,29 +43,99 @@
         <string>Overview</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0,1">
+        <item row="3" column="0" colspan="3">
+         <layout class="QHBoxLayout" name="horizontalLayout_16">
           <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Organisation</string>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="buddy">
-             <cstring>lineEdit</cstring>
-            </property>
-           </widget>
+            <item>
+             <widget class="QLabel" name="lblOverviewMainModel">
+              <property name="text">
+               <string>Main Model</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cbOverviewMainModel">
+              <item>
+               <property name="text">
+                <string>ORANI-ESP DYN</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="text">
-             <string>Centro de Investigación y Tecnología Agroalimentaria (CITA), Spain</string>
+            <item>
+             <widget class="QLabel" name="lblOverviewLinkModel1">
+              <property name="text">
+               <string>Linking Model 1</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cbOverviewLinkModel1">
+              <item>
+               <property name="text">
+                <string>none</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <property name="spacing">
+             <number>0</number>
             </property>
-           </widget>
+            <item>
+             <widget class="QLabel" name="lblOverviewLinkModel2">
+              <property name="text">
+               <string>Linking Model 2</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cbOverviewLinkModel2">
+              <item>
+               <property name="text">
+                <string>none</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lblOverviewLinkModel3">
+              <property name="text">
+               <string>Linking Model 3</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cbOverviewLinkModel3">
+              <item>
+               <property name="text">
+                <string>none</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>
@@ -100,7 +145,7 @@
            <number>-1</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="chbxFoodSecurity_3">
+           <widget class="QCheckBox" name="chbxOverviewFoodSecurity">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -112,7 +157,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxGHGEmissions_3">
+           <widget class="QCheckBox" name="chbxOverviewGHGEmissions">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -127,7 +172,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxClimateChange_3">
+           <widget class="QCheckBox" name="chbxOverviewClimateChange">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -142,7 +187,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxClimateVariability_3">
+           <widget class="QCheckBox" name="chbxOverviewClimateVariability">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -154,7 +199,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxLanduse_3">
+           <widget class="QCheckBox" name="chbxOverviewLanduse">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -166,7 +211,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxFoodPriceDynamics_3">
+           <widget class="QCheckBox" name="chbxOverviewFoodPriceDynamics">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -181,7 +226,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxWaterUse_3">
+           <widget class="QCheckBox" name="chbxOverviewWaterUse">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -193,7 +238,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxOtherEnvImpacts_3">
+           <widget class="QCheckBox" name="chbxOverviewOtherEnvImpacts">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -205,7 +250,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxFoodMarkets_3">
+           <widget class="QCheckBox" name="chbxOverviewFoodMarkets">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -220,7 +265,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="chbxResourceCompetition_3">
+           <widget class="QCheckBox" name="chbxOverviewResourceCompetition">
             <property name="font">
              <font>
               <pointsize>11</pointsize>
@@ -233,665 +278,17 @@
           </item>
          </layout>
         </item>
-        <item row="0" column="2" rowspan="3">
-         <layout class="QGridLayout" name="gridLayout_9">
-          <property name="verticalSpacing">
-           <number>0</number>
-          </property>
-          <item row="6" column="2">
-           <widget class="QComboBox" name="cbVolatility_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QComboBox" name="cbMitigation_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>2</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="QComboBox" name="cbConsumption_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>1</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QComboBox" name="cbProduction_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>1</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="11" column="2">
-           <widget class="QComboBox" name="cbSocialDevelopment_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="0" colspan="2">
-           <widget class="QLabel" name="lblFarmLevelIncome_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Farm-level income effect</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="lblClimateChange_3">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Climate Change</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLabel" name="lblAdaptation_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Adaptation</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="0" colspan="2">
-           <widget class="QLabel" name="lblNonFarmIncome_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Non-farm income effect</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="0" colspan="2">
-           <widget class="QLabel" name="lblSocialDevelopment_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Social Development effect</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
-           <widget class="QLabel" name="lblVolatility_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Volatility</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="lblFoodProduction_3">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Food Security</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="lblNutrition_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Nutrition</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QComboBox" name="cbNutrition_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>0</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="3" column="0" colspan="3">
-           <widget class="Line" name="line_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="0" colspan="3">
-           <widget class="Line" name="line_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="2">
-           <widget class="QComboBox" name="cbFarmLevelIncome_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>2</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="lblProduction_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Production</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0" colspan="2">
-           <widget class="QLabel" name="lblChangesToBiodiversity_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Changes to biodiversity</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="lblConsumption_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Consumption</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="2">
-           <widget class="QComboBox" name="cbAdaptation_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="8" column="2">
-           <widget class="QComboBox" name="cbNonFarmIncome_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="currentIndex">
-             <number>1</number>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="10" column="2">
-           <widget class="QComboBox" name="cbBiodiversityChange_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <item>
-             <property name="text">
-              <string>Not Applicable</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Important</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Very Important</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLabel" name="lblMitigation_3">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Mitigation</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="3">
-           <widget class="QLabel" name="label_32">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QLabel" name="label_33">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="3">
-           <widget class="QLabel" name="label_34">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="3">
-           <widget class="QLabel" name="label_35">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="3">
-           <widget class="QLabel" name="label_36">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="3">
-           <widget class="QLabel" name="label_37">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="3">
-           <widget class="QLabel" name="label_38">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="3">
-           <widget class="QLabel" name="label_39">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="3">
-           <widget class="QLabel" name="label_40">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="3">
-           <widget class="QLabel" name="label_41">
-            <property name="maximumSize">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-            <property name="pixmap">
-             <pixmap resource="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc">:/icons/na.png</pixmap>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
         <item row="0" column="0">
          <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0,1,0">
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="lblOverviewScenario">
             <property name="text">
              <string>Scenario</string>
-            </property>
-            <property name="buddy">
-             <cstring>lineEdit_2</cstring>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="ledOverviewScenario">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -917,6 +314,681 @@
           </item>
          </layout>
         </item>
+        <item row="0" column="1" rowspan="3">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" rowspan="3">
+         <layout class="QGridLayout" name="gridLayout_9">
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
+          <item row="8" column="0" colspan="2">
+           <widget class="QLabel" name="lblOverviewNonFarmIncome">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Non-farm income effect</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0" colspan="2">
+           <widget class="QLabel" name="lblOverviewSocialDevelopment">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Social Development effect</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="lblOverviewMitigation">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Mitigation</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="3">
+           <widget class="QComboBox" name="cbOverviewChangesToBiodiversity">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="3">
+           <widget class="QComboBox" name="cbOverviewVolatility">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QComboBox" name="cbOverviewAdaptation">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="lblOverviewConsumption">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Consumption</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" colspan="2">
+           <widget class="QLabel" name="lblOverviewChangesToBiodiversity">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Changes to biodiversity</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="lblOverviewProduction">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Production</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="3">
+           <widget class="QComboBox" name="cbOverviewFarmLevelIncome">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="4">
+           <widget class="Line" name="line_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0" colspan="4">
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QComboBox" name="cbOverviewProduction">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="11" column="3">
+           <widget class="QComboBox" name="cbOverviewSocialDevelopment">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QComboBox" name="cbOverviewMitigation">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>2</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="3">
+           <widget class="QComboBox" name="cbOverviewNonFarmIncome">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QComboBox" name="cbOverviewConsumption">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>1</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="lblOverviewVolatility">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Volatility</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblOverviewFoodSecurity">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Food Security</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QComboBox" name="cbOverviewNutrition">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>Not Applicable</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Important</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Very Important</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="lblOverviewNutrition">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Nutrition</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="2">
+           <widget class="QLabel" name="lblOverviewFarmLevelIncome">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Farm-level income effect</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="lblOverviewAdaptation">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Adaptation</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lblOverviewClimateChange">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Climate Change</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="lblOverviewNutritionPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/na.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="lblOverviewProductionPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/important.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="lblOverviewConsumptionPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/important.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="lblOverviewMitigationPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/vipTransparent.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="lblOverviewAdaptationPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/na.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QLabel" name="lblOverviewVolatilityPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/na.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="2">
+           <widget class="QLabel" name="lblOverviewNonFarmIncomePix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/important.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QLabel" name="lblOverviewFarmLevelIncomePix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/vipTransparent.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QLabel" name="lblOverviewChangesToBiodiversityPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/na.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="2">
+           <widget class="QLabel" name="lblOverviewSocialDevelopmentPix">
+            <property name="maximumSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="Resources/Resources.qrc">:/na.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0,1">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Organisation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledOverviewOrganisation">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Centro de Investigación y Tecnología Agroalimentaria (CITA), Spain</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item row="4" column="0" colspan="3">
          <widget class="QSplitter" name="splitter_2">
           <property name="sizePolicy">
@@ -935,7 +1007,7 @@
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
+             <verstretch>1</verstretch>
             </sizepolicy>
            </property>
            <property name="orientation">
@@ -944,7 +1016,7 @@
            <property name="childrenCollapsible">
             <bool>false</bool>
            </property>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <layout class="QVBoxLayout" name="verticalLayout_17">
              <property name="spacing">
               <number>0</number>
@@ -952,7 +1024,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_12">
                <item>
-                <widget class="QLabel" name="lblCCFSLinkToScenario_9">
+                <widget class="QLabel" name="lblOverviewCCFSLinkToScenario_9">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -961,15 +1033,12 @@
                  <property name="text">
                   <string>Climate Change and Food Security link to this scenario</string>
                  </property>
-                 <property name="buddy">
-                  <cstring>textBrowser</cstring>
-                 </property>
                 </widget>
                </item>
               </layout>
              </item>
              <item>
-              <widget class="QTextBrowser" name="textBrowser">
+              <widget class="QTextBrowser" name="tbrOverviewCCFSLinkToScenario">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -992,7 +1061,7 @@ p, li { white-space: pre-wrap; }
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <layout class="QVBoxLayout" name="verticalLayout_16">
              <property name="spacing">
               <number>0</number>
@@ -1000,7 +1069,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
-                <widget class="QLabel" name="lblCCFSLinkToScenario_8">
+                <widget class="QLabel" name="lblOverviewCCMitigation">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -1009,15 +1078,12 @@ p, li { white-space: pre-wrap; }
                  <property name="text">
                   <string>Climate Change Mitigation</string>
                  </property>
-                 <property name="buddy">
-                  <cstring>textBrowser</cstring>
-                 </property>
                 </widget>
                </item>
               </layout>
              </item>
              <item>
-              <widget class="QTextBrowser" name="textBrowser_2">
+              <widget class="QTextBrowser" name="tbrOverviewCCMitigation">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -1041,18 +1107,18 @@ p, li { white-space: pre-wrap; }
             </layout>
            </widget>
           </widget>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <layout class="QVBoxLayout" name="verticalLayout_18" stretch="0,2">
             <property name="spacing">
              <number>0</number>
             </property>
             <property name="sizeConstraint">
-             <enum>QLayout::SetNoConstraint</enum>
+             <enum>QLayout::SetMaximumSize</enum>
             </property>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <item>
-               <widget class="QLabel" name="lblCCFSLinkToScenario_7">
+               <widget class="QLabel" name="lblOverviewExplainWrtCCFS">
                 <property name="font">
                  <font>
                   <pointsize>11</pointsize>
@@ -1061,15 +1127,12 @@ p, li { white-space: pre-wrap; }
                 <property name="text">
                  <string>Explain the scenario with respect to modelling Climate Change and Food Security.</string>
                 </property>
-                <property name="buddy">
-                 <cstring>textBrowser</cstring>
-                </property>
                </widget>
               </item>
              </layout>
             </item>
             <item>
-             <widget class="QTextEdit" name="textEdit">
+             <widget class="QTextEdit" name="tedOverviewExplainWrtCCFS">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
@@ -1105,121 +1168,6 @@ p, li { white-space: pre-wrap; }
           </widget>
          </widget>
         </item>
-        <item row="3" column="0" colspan="3">
-         <layout class="QHBoxLayout" name="horizontalLayout_16">
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_12">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_42">
-              <property name="text">
-               <string>Main Model</string>
-              </property>
-              <property name="buddy">
-               <cstring>comboBox_3</cstring>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_11">
-              <item>
-               <property name="text">
-                <string>ORANI-ESP DYN</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_13">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_43">
-              <property name="text">
-               <string>Linking Model 1</string>
-              </property>
-              <property name="buddy">
-               <cstring>comboBox_4</cstring>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_12">
-              <item>
-               <property name="text">
-                <string>none</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_14">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_44">
-              <property name="text">
-               <string>Linking Model 2</string>
-              </property>
-              <property name="buddy">
-               <cstring>comboBox_5</cstring>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_13">
-              <item>
-               <property name="text">
-                <string>none</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QVBoxLayout" name="verticalLayout_15">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_45">
-              <property name="text">
-               <string>Linking Model 3</string>
-              </property>
-              <property name="buddy">
-               <cstring>comboBox_6</cstring>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox_14">
-              <item>
-               <property name="text">
-                <string>none</string>
-               </property>
-              </item>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item row="0" column="1" rowspan="3">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tabForecasting">
@@ -1228,7 +1176,7 @@ p, li { white-space: pre-wrap; }
        </attribute>
        <layout class="QGridLayout" name="gridLayout_16">
         <item row="1" column="0">
-         <widget class="QGroupBox" name="groupBox_3">
+         <widget class="QGroupBox" name="grbxForecastingExoParamsIntMktChg">
           <property name="title">
            <string/>
           </property>
@@ -1257,7 +1205,7 @@ p, li { white-space: pre-wrap; }
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
-              <widget class="QGroupBox" name="groupBox">
+              <widget class="QGroupBox" name="grbxForecastingExoParamsIntlMktChanges">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1292,31 +1240,31 @@ p, li { white-space: pre-wrap; }
                  <number>6</number>
                 </property>
                 <item row="1" column="0" colspan="4">
-                 <widget class="QTextEdit" name="textEdit_2"/>
+                 <widget class="QTextEdit" name="tedForecastingExoParamsIntlMktChanges"/>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QCheckBox" name="checkBox_2">
+                 <widget class="QCheckBox" name="chbxForecastingFao_2">
                   <property name="text">
                    <string>FAO</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="0">
-                 <widget class="QCheckBox" name="checkBox">
+                 <widget class="QCheckBox" name="chbxForecastingFapri">
                   <property name="text">
                    <string>FAPRI</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="3">
-                 <widget class="QCheckBox" name="checkBox_4">
+                 <widget class="QCheckBox" name="chbxForecastingOtherApproaches">
                   <property name="text">
                    <string>Other Approaches</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="2">
-                 <widget class="QCheckBox" name="checkBox_7">
+                 <widget class="QCheckBox" name="chbxForecastingOecd">
                   <property name="text">
                    <string>OECD</string>
                   </property>
@@ -1327,7 +1275,7 @@ p, li { white-space: pre-wrap; }
                 </item>
                </layout>
               </widget>
-              <widget class="QGroupBox" name="groupBox_2">
+              <widget class="QGroupBox" name="grbxForecastingExoParamsConsumptionPatterns">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -1365,33 +1313,33 @@ p, li { white-space: pre-wrap; }
                  <number>-1</number>
                 </property>
                 <item row="0" column="0">
-                 <widget class="QCheckBox" name="checkBox_3">
+                 <widget class="QCheckBox" name="chbxForecastingWorldBank">
                   <property name="text">
                    <string>World Bank</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QCheckBox" name="checkBox_5">
+                 <widget class="QCheckBox" name="chbxForecastingFao">
                   <property name="text">
                    <string>FAO</string>
                   </property>
                  </widget>
                 </item>
                 <item row="0" column="2">
-                 <widget class="QCheckBox" name="checkBox_6">
+                 <widget class="QCheckBox" name="chbxForecastingOtherSources">
                   <property name="text">
                    <string>Other Sources</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="0" colspan="3">
-                 <widget class="QTextEdit" name="textEdit_3"/>
+                 <widget class="QTextEdit" name="tedForecastingExoParamsConsumptionPatterns"/>
                 </item>
                </layout>
               </widget>
              </widget>
-             <widget class="QGroupBox" name="groupBox_5">
+             <widget class="QGroupBox" name="grbxForecastingStructuralFarmChange">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -1424,11 +1372,11 @@ p, li { white-space: pre-wrap; }
                 <number>6</number>
                </property>
                <item row="0" column="0">
-                <widget class="QTextEdit" name="textEdit_4"/>
+                <widget class="QTextEdit" name="tedForecastingStructuralFarmChange"/>
                </item>
               </layout>
              </widget>
-             <widget class="QGroupBox" name="groupBox_4">
+             <widget class="QGroupBox" name="grbxForecastingOtherForecastsUsed">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -1465,7 +1413,7 @@ p, li { white-space: pre-wrap; }
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
-                 <widget class="QGroupBox" name="groupBox_7">
+                 <widget class="QGroupBox" name="grbxForecastingOtherForecast1">
                   <property name="title">
                    <string>Forecast 1</string>
                   </property>
@@ -1489,7 +1437,7 @@ p, li { white-space: pre-wrap; }
                     <number>4</number>
                    </property>
                    <item row="0" column="0">
-                    <widget class="QTextEdit" name="textEdit_6">
+                    <widget class="QTextEdit" name="tedForecastingOtherForecast1">
                      <property name="html">
                       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1500,10 +1448,8 @@ p, li { white-space: pre-wrap; }
                     </widget>
                    </item>
                   </layout>
-                  <zorder>textEdit_6</zorder>
-                  <zorder>textEdit_6</zorder>
                  </widget>
-                 <widget class="QGroupBox" name="groupBox_6">
+                 <widget class="QGroupBox" name="grbxForecastingOtherForecast2">
                   <property name="title">
                    <string>Forecast 2</string>
                   </property>
@@ -1530,7 +1476,7 @@ p, li { white-space: pre-wrap; }
                     <number>4</number>
                    </property>
                    <item row="0" column="1">
-                    <widget class="QTextEdit" name="textEdit_5"/>
+                    <widget class="QTextEdit" name="tedForecastingOtherForecast2"/>
                    </item>
                   </layout>
                  </widget>
@@ -1544,7 +1490,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox_15">
+         <widget class="QGroupBox" name="gbxTimeFrames">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1556,7 +1502,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayout_25">
            <item row="0" column="0">
-            <widget class="QCheckBox" name="checkBox_8">
+            <widget class="QCheckBox" name="chbxForecastingExPost">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>1</horstretch>
@@ -1569,7 +1515,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QCheckBox" name="checkBox_10">
+            <widget class="QCheckBox" name="chbxForecastingShortTerm">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>1</horstretch>
@@ -1585,7 +1531,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QCheckBox" name="checkBox_12">
+            <widget class="QCheckBox" name="chbxForecastingFarFuture">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                <horstretch>2</horstretch>
@@ -1598,14 +1544,14 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QCheckBox" name="checkBox_9">
+            <widget class="QCheckBox" name="chbxForecastingNearTerm">
              <property name="text">
               <string>Near-term (2012-2015)</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QCheckBox" name="checkBox_13">
+            <widget class="QCheckBox" name="chbxForecastingLongTerm">
              <property name="text">
               <string>Long term (up to 2050)</string>
              </property>
@@ -1640,7 +1586,7 @@ p, li { white-space: pre-wrap; }
        </attribute>
        <layout class="QGridLayout" name="gridLayout_24">
         <item row="0" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_8">
+         <widget class="QGroupBox" name="grbxFrameworkCCMitigation">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1670,7 +1616,7 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_7">
+            <widget class="QTextEdit" name="tedFrameworkCCMitigation">
              <property name="html">
               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1684,7 +1630,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QGroupBox" name="groupBox_9">
+         <widget class="QGroupBox" name="grbxFrameworkCCAdaptation">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1717,13 +1663,13 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_8"/>
+            <widget class="QTextEdit" name="tedFrameworkCCAdaptation"/>
            </item>
           </layout>
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QGroupBox" name="groupBox_11">
+         <widget class="QGroupBox" name="grbxFrameworkExtremeWeather">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1756,13 +1702,13 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_10"/>
+            <widget class="QTextEdit" name="tedFrameworkExtremeWeather"/>
            </item>
           </layout>
          </widget>
         </item>
         <item row="2" column="0">
-         <widget class="QGroupBox" name="groupBox_10">
+         <widget class="QGroupBox" name="grbxFrameworkFoodSecurity">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1795,13 +1741,13 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_9"/>
+            <widget class="QTextEdit" name="tedFrameworkFoodSecurity"/>
            </item>
           </layout>
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QGroupBox" name="groupBox_13">
+         <widget class="QGroupBox" name="grbxFrameworkUncertaintyAndRisk">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1834,13 +1780,13 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_12"/>
+            <widget class="QTextEdit" name="tedFrameworkUncertaintyAndRisk"/>
            </item>
           </layout>
          </widget>
         </item>
         <item row="3" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_12">
+         <widget class="QGroupBox" name="grbxFrameworkQuestionsToAddress">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1870,7 +1816,7 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_11">
+            <widget class="QTextEdit" name="tedFrameworkQuestionsToAddress">
              <property name="html">
               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1884,7 +1830,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="4" column="0" colspan="2">
-         <widget class="QGroupBox" name="groupBox_14">
+         <widget class="QGroupBox" name="grbxFrameworkMechanismsLink">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
@@ -1914,7 +1860,7 @@ p, li { white-space: pre-wrap; }
             <number>6</number>
            </property>
            <item row="0" column="0">
-            <widget class="QTextEdit" name="textEdit_13">
+            <widget class="QTextEdit" name="tedFrameworkMechanismsLink">
              <property name="html">
               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1934,6 +1880,57 @@ p, li { white-space: pre-wrap; }
        </layout>
       </widget>
      </widget>
+    </item>
+    <item row="1" column="4">
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QPushButton" name="pbManageScenarios">
+        <property name="text">
+         <string>Manage Scenarios</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pbSave">
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pbText">
+        <property name="text">
+         <string>Text</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lblTheGuid">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>597</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>
@@ -1959,7 +1956,7 @@ p, li { white-space: pre-wrap; }
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../../macsur-adapter/src/MacsurAdapter/resources/resources.qrc"/>
+  <include location="Resources/Resources.qrc"/>
  </resources>
  <connections>
   <connection>

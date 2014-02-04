@@ -18,3 +18,6 @@ SOURCES += main.cpp\
 HEADERS  += drscenarios.h
 
 FORMS    += drscenariosbase.ui
+
+RESOURCES += \
+    Resources/Resources.qrc

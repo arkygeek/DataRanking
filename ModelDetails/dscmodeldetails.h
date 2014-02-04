@@ -23,8 +23,17 @@
 #define DSCMODELDETAILS_H
 
 #include <QMainWindow>
+#ifndef QT_NO_PRINTER
+#include <QPrinter>
+#endif
 #include <QJsonObject>
-
+QT_BEGIN_NAMESPACE
+class QAction;
+class QLabel;
+class QMenu;
+class QScrollArea;
+class QScrollBar;
+QT_END_NAMESPACE
 namespace Ui {
   class DscModelDetails;
 }
@@ -39,12 +48,54 @@ public:
 
 private slots:
   void on_tlbtnBasicInfoGoToWebsite_clicked();
+  void on_cbDiagramsSelectDiagram_currentIndexChanged(int theIndex);
+
+  void open();
+  void print();
+  void zoomIn();
+  void zoomOut();
+  void normalSize();
+  void fitToWindow();
+  void about();
+
+  void on_toolButtonZoomOut_clicked();
+
+  void on_toolButtonZoomIn_clicked();
+
+  void on_chbxDiagramsFitToWindow_clicked(bool theCheckedBool);
 
 private:
   Ui::DscModelDetails *ui;
   QJsonObject generateHeaderJson();
   QJsonObject generateTechnicalJson();
   QJsonObject generateDiagramsJson();
+
+  void createActions();
+  void createMenus();
+  void updateActions();
+  void scaleImage(double theFactor);
+  void adjustScrollBar(QScrollBar *thepScrollBar, double factor);
+
+  double mScaleFactor;
+
+#ifndef QT_NO_PRINTER
+    QPrinter printer;
+#endif
+
+    QAction *openAct;
+    QAction *printAct;
+    QAction *exitAct;
+    QAction *zoomInAct;
+    QAction *zoomOutAct;
+    QAction *normalSizeAct;
+    QAction *fitToWindowAct;
+    QAction *aboutAct;
+    QAction *aboutQtAct;
+
+    QMenu *fileMenu;
+    QMenu *viewMenu;
+    QMenu *helpMenu;
+
 };
 
 #endif // DSCMODELDETAILS_H
