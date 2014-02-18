@@ -307,6 +307,10 @@ private slots:
   void on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates);
 
+  void on_sbSVSurfaceFluxesNOLossObservations_valueChanged(int theObservations);
+  void on_dsbSVSurfaceFluxesNOLossWeightPts_valueChanged(double theWeight);
+  //void on_dsbSVSurfaceFluxesNOLossReplicates_valueChanged(double theReplicates);
+
   void on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
@@ -314,6 +318,10 @@ private slots:
   void on_sbSVSurfaceFluxesCh4LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(double theReplicates);
+
+  void on_sbSVSurfaceFluxesCO2LossObservations_valueChanged(int theObservations);
+  void on_dsbSVSurfaceFluxesCO2LossWeightPts_valueChanged(double theWeight);
+  //void on_dsbSVSurfaceFluxesCO2LossReplicates_valueChanged(double theReplicates);
 
   // SV observations
 
@@ -325,6 +333,9 @@ private slots:
 
   void on_sbSVObservationsDamagesObservations_valueChanged(int theObservations);
   void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
+
+  void on_sbSVObservationsWeedsObservations_valueChanged(int theObservations);
+  void on_dsbSVObservationsWeedsWeightPts_valueChanged(double theWeight);
 
   void on_sbSeasonsSitesSeasonsPerCropNumber_valueChanged(int theNumber);
   void on_sbSeasonsSitesSiteVariantsNumber_valueChanged(int theNumber);
@@ -487,10 +498,13 @@ private slots:
   void on_chbxSVSurfaceFluxesN2Loss_clicked();
 
   void on_chbxSVSurfaceFluxesCh4Loss_clicked();
+  void on_chbxSVSurfaceFluxesNOLoss_clicked();
+  void on_chbxSVSurfaceFluxesCO2Loss_clicked();
 
   void on_chbxSVObservationsLodging_clicked();
 
   void on_chbxSVObservationsPestsOrDiseases_clicked();
+  void on_chbxSVObservationsWeeds_clicked();
 
   void on_chbxSVObservationsDamages_clicked();
 
@@ -502,6 +516,8 @@ private slots:
   void on_cbSeasonsTreatment6_currentIndexChanged(const QString &theCurrentText);
 
   void on_toolButtonDatasetEdit_clicked();
+
+  void on_pbLoad_clicked();
 
 private:
   Ui::DatasetClassification *ui;

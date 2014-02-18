@@ -44,7 +44,7 @@ enum DrTabs {Dataset, Management, Phenology, PrevCrop, InitialValues,
 //enum AreaUnits {Dunum, Hectare, Acre, SquareKm, SquareMile};
 //enum FileType {CSV, TAB, OtherDelimited, Binary};
 
-enum DrDataClass {Platinum, Gold, Silver, Bronze};
+enum DrDataClass {Platinum, Gold, Silver, Copper};
 
 typedef QPair<int,double> DrPairObsWgt;
 typedef QPair<bool,double> DrPairBoolPts;

@@ -34,7 +34,7 @@
 //typedef QMap <QString,QPair<QString,float> > LaReportMap;
 
 //enum Block {Management,Phenology,PrevCrop,InitialValues,Soil,Site,Weather,StateVars};
-//enum Rank {Platinum,Gold,Silver,Bronze};
+//enum Rank {Platinum,Gold,Silver,Copper};
 
 //enum MgmtParam {Variety,Sowing,Harvest,Fertilisation,Irrigation,SeedDensity,Tillage};
 #endif // DSC_H

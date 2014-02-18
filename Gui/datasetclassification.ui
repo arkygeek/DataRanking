@@ -20,19 +20,23 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="3" column="0">
-     <widget class="QLabel" name="lblUser">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <italic>true</italic>
-       </font>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="pbSaveToFile">
+      <property name="text">
+       <string>Save to File</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pbAuthenticate">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="text">
-       <string>please login or register</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       <string>Authenticate</string>
       </property>
      </widget>
     </item>
@@ -2940,7 +2944,7 @@ p, li { white-space: pre-wrap; }
         <item row="1" column="1" rowspan="4">
          <layout class="QGridLayout" name="gridLayoutManagementRankLevels">
           <item row="3" column="1">
-           <widget class="QLabel" name="lblManagementBronzeMinVal">
+           <widget class="QLabel" name="lblManagementCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -2967,14 +2971,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblManagementBronzeMin">
+           <widget class="QLabel" name="lblManagementCopperMin">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3153,7 +3157,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QToolButton" name="tlbtnMgmtBronze">
+           <widget class="QToolButton" name="tlbtnMgmtCopper">
             <property name="text">
              <string>...</string>
             </property>
@@ -3777,14 +3781,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblPhenologyBronzeMin">
+           <widget class="QLabel" name="lblPhenologyCopperMin">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3798,7 +3802,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblPhenologyBronzeMinVal">
+           <widget class="QLabel" name="lblPhenologyCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -4602,14 +4606,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0" colspan="2">
-           <widget class="QLabel" name="lblPrevCropBronzeMin">
+           <widget class="QLabel" name="lblPrevCropCopperMin">
             <property name="font">
              <font>
               <pointsize>9</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4623,7 +4627,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QLabel" name="lblPrevCropBronzeMinVal">
+           <widget class="QLabel" name="lblPrevCropCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -5204,14 +5208,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblInitialValuesBronzeMin">
+           <widget class="QLabel" name="lblInitialValuesCopperMin">
             <property name="font">
              <font>
               <pointsize>9</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -5225,7 +5229,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblInitialValuesBronzeMinVal">
+           <widget class="QLabel" name="lblInitialValuesCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -6072,7 +6076,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblSoilBronzeMinVal">
+           <widget class="QLabel" name="lblSoilCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -6099,14 +6103,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblSoilBronzeMin">
+           <widget class="QLabel" name="lblSoilCopperMin">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -6498,14 +6502,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblSiteBronzeMin">
+           <widget class="QLabel" name="lblSiteCopperMin">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -6519,7 +6523,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblSiteBronzeMinVal">
+           <widget class="QLabel" name="lblSiteCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -8605,14 +8609,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblWeatherBronzeMin">
+           <widget class="QLabel" name="lblWeatherCopperMin">
             <property name="font">
              <font>
               <pointsize>12</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze Minimum: </string>
+             <string>Copper Minimum: </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -8626,7 +8630,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblWeatherBronzeMinVal">
+           <widget class="QLabel" name="lblWeatherCopperMinVal">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -8844,7 +8848,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>1</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -8971,7 +8975,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinValSVCrop">
+                  <widget class="QLabel" name="lblWeatherCopperMinValSVCrop">
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
@@ -8998,14 +9002,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinSVCrop">
+                  <widget class="QLabel" name="lblWeatherCopperMinSVCrop">
                    <property name="font">
                     <font>
                      <pointsize>9</pointsize>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Bronze: </string>
+                    <string>Copper: </string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -9753,8 +9757,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>546</width>
-             <height>421</height>
+             <width>837</width>
+             <height>596</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10065,6 +10069,9 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="text">
                     <string notr="true">0</string>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -10434,14 +10441,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinSVSoil">
+                  <widget class="QLabel" name="lblWeatherCopperMinSVSoil">
                    <property name="font">
                     <font>
                      <pointsize>9</pointsize>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Bronze: </string>
+                    <string>Copper: </string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -10482,7 +10489,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinValSVSoil">
+                  <widget class="QLabel" name="lblWeatherCopperMinValSVSoil">
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
@@ -10534,7 +10541,7 @@ p, li { white-space: pre-wrap; }
              <x>0</x>
              <y>0</y>
              <width>522</width>
-             <height>379</height>
+             <height>447</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10555,307 +10562,10 @@ p, li { white-space: pre-wrap; }
               <layout class="QGridLayout" name="gridLayout_34">
                <item row="0" column="0" colspan="2">
                 <layout class="QGridLayout" name="gridLayoutSVSurfaceFluxesInputs">
-                 <item row="5" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
+                 <item row="6" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNOLossObservations"/>
                  </item>
-                 <item row="4" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N2O Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesNh3LossPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCh4Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>CH4 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesEt">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>ET</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesN2LossPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesPointsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Points</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesWeightPtsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Weight Pts</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesObservationsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Observations</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNh3Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>NH3 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="4">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesReplicatesHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Replicates</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesEtPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Min.Data</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesN2OLossPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N2 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesCh4LossPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>0</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="4">
-                  <widget class="QLabel" name="lblCombinedSVSurfaceFluxes">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Combined</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="5">
+                 <item row="8" column="5">
                   <widget class="QLabel" name="lblOverallRatingSVSurfaceFluxes">
                    <property name="font">
                     <font>
@@ -10877,50 +10587,39 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossLayers">
+                 <item row="6" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossLayers">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossLayers">
+                 <item row="3" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>N2O Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossReplicates">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossLayers">
+                 <item row="4" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossReplicates">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeightPts">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossWeightPts">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeightPts">
+                 <item row="5" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossWeightPts">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
@@ -10933,10 +10632,408 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossWeightPts">
+                 <item row="3" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeightPts">
                    <property name="value">
                     <double>2.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossWeightPts">
+                   <property name="value">
+                    <double>2.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeightPts">
+                   <property name="value">
+                    <double>3.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="4">
+                  <widget class="QLabel" name="lblCombinedSVSurfaceFluxes">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Combined</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesCh4LossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2Loss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>N2 Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesN2OLossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesMinDataHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Min.Data</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesEtPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesReplicatesHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Replicates</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNh3Loss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>NH3 Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesObservationsHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Observations</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesWeightPtsHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Weight Pts</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesLayersHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Layers</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesPointsHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Points</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesN2LossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesEt">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>ET</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
+                   <property name="value">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCh4Loss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>CH4 Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesNh3LossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossWeightPts"/>
+                 </item>
+                 <item row="6" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesNOLossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNOLoss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>NO Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCO2Loss">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>CO2 Loss</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="2">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCO2LossObservations"/>
+                 </item>
+                 <item row="7" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossWeightPts"/>
+                 </item>
+                 <item row="7" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="5">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesCO2LossPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -11154,14 +11251,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinSVSurfaceFluxes">
+                  <widget class="QLabel" name="lblWeatherCopperMinSVSurfaceFluxes">
                    <property name="font">
                     <font>
                      <pointsize>9</pointsize>
                     </font>
                    </property>
                    <property name="text">
-                    <string>Bronze: </string>
+                    <string>Copper: </string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignBottom|Qt::AlignHCenter</set>
@@ -11202,7 +11299,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinValSVSurfaceFluxes">
+                  <widget class="QLabel" name="lblWeatherCopperMinValSVSurfaceFluxes">
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
@@ -11253,8 +11350,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>600</height>
+             <width>500</width>
+             <height>353</height>
             </rect>
            </property>
            <attribute name="label">
@@ -11275,6 +11372,73 @@ p, li { white-space: pre-wrap; }
               <layout class="QGridLayout" name="gridLayout_35">
                <item row="0" column="0" colspan="2">
                 <layout class="QGridLayout" name="gridLayoutSVObservationsInputs">
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="lblSVObservationsLayersHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Layers</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="lblSVObservationsWeightPtsHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Weight Pts</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="lblSVObservationsMinDataHeader">
+                   <property name="font">
+                    <font>
+                     <pointsize>11</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Min.Data</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QSpinBox" name="sbSVObservationsDamagesObservations">
+                   <property name="value">
+                    <number>1</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="5">
+                  <widget class="QLabel" name="lblSVObservationsDamagesPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>3</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="2" column="5">
                   <widget class="QLabel" name="lblSVObservationsPestsOrDiseasesPoints">
                    <property name="font">
@@ -11364,73 +11528,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVObservationsDamagesObservations">
-                   <property name="value">
-                    <number>1</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="5">
-                  <widget class="QLabel" name="lblSVObservationsDamagesPoints">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>3</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="lblSVObservationsMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Min.Data</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVObservationsWeightPtsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Weight Pts</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="lblSVObservationsLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="2">
                   <widget class="QSpinBox" name="sbSVObservationsLodgingObservations">
                    <property name="value">
@@ -11482,22 +11579,7 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="4">
-                  <widget class="QLabel" name="lblCombinedSVObservations">
-                   <property name="font">
-                    <font>
-                     <pointsize>10</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Combined</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="5">
+                 <item row="5" column="5">
                   <widget class="QLabel" name="lblOverallRatingSVObservations">
                    <property name="font">
                     <font>
@@ -11509,6 +11591,21 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="4">
+                  <widget class="QLabel" name="lblCombinedSVObservations">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>Combined</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -11551,6 +11648,51 @@ p, li { white-space: pre-wrap; }
                   <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesWeightPts">
                    <property name="value">
                     <double>3.000000000000000</double>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QCheckBox" name="chbxSVObservationsWeeds">
+                   <property name="layoutDirection">
+                    <enum>Qt::RightToLeft</enum>
+                   </property>
+                   <property name="text">
+                    <string>Weeds</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QSpinBox" name="sbSVObservationsWeedsObservations"/>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsLayers">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="3">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsWeightPts"/>
+                 </item>
+                 <item row="4" column="4">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsReplicates">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="5">
+                  <widget class="QLabel" name="lblSVObservationsWeedsPoints">
+                   <property name="font">
+                    <font>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -11644,6 +11786,19 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                 </layout>
+               </item>
+               <item row="3" column="0">
+                <spacer name="verticalSpacerSVObservations">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
                <item row="2" column="1">
                 <layout class="QGridLayout" name="gridLayoutSVObservationsRankLvls">
@@ -11764,27 +11919,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinSVObservations">
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Bronze: </string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="margin">
-                    <number>-2</number>
-                   </property>
-                   <property name="indent">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="2">
                   <widget class="QLabel" name="lblWeatherSilverMinValSVObservations">
                    <property name="minimumSize">
@@ -11812,8 +11946,44 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="3">
+                  <widget class="QLabel" name="lblWeatherCopperMinSVObservations">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>2</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>33</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="font">
+                    <font>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="layoutDirection">
+                    <enum>Qt::LeftToRight</enum>
+                   </property>
+                   <property name="text">
+                    <string>Copper</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="margin">
+                    <number>-1</number>
+                   </property>
+                   <property name="indent">
+                    <number>0</number>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="1" column="3">
-                  <widget class="QLabel" name="lblWeatherBronzeMinValSVObservations">
+                  <widget class="QLabel" name="lblWeatherCopperMinValSVObservations">
                    <property name="minimumSize">
                     <size>
                      <width>25</width>
@@ -11840,19 +12010,6 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                 </layout>
-               </item>
-               <item row="3" column="0">
-                <spacer name="verticalSpacerSVObservations">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
               </layout>
              </widget>
@@ -13225,19 +13382,6 @@ p, li { white-space: pre-wrap; }
       </widget>
      </widget>
     </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="pbAuthenticate">
-      <property name="maximumSize">
-       <size>
-        <width>110</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Authenticate</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="4" rowspan="4">
      <layout class="QVBoxLayout" name="verticalLayout_6">
       <property name="spacing">
@@ -13272,7 +13416,7 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLabel" name="lblSoilBronzeMinVal_2">
+           <widget class="QLabel" name="lblSoilCopperMinVal_2">
             <property name="minimumSize">
              <size>
               <width>25</width>
@@ -13299,14 +13443,14 @@ p, li { white-space: pre-wrap; }
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="lblSoilBronzeMin_2">
+           <widget class="QLabel" name="lblSoilCopperMin_2">
             <property name="font">
              <font>
               <pointsize>9</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Bronze: </string>
+             <string>Copper:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -13596,13 +13740,6 @@ p, li { white-space: pre-wrap; }
       </item>
      </layout>
     </item>
-    <item row="4" column="5">
-     <widget class="QPushButton" name="pbSaveToFile">
-      <property name="text">
-       <string>Save to File</string>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="0">
      <widget class="QComboBox" name="cbUser">
       <property name="sizePolicy">
@@ -13659,6 +13796,29 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string>Edit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="lblUser">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>please login or register</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="pbLoad">
+      <property name="text">
+       <string>Load</string>
       </property>
      </widget>
     </item>

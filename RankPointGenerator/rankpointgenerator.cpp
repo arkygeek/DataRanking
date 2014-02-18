@@ -404,6 +404,26 @@ double RankPointGenerator::SVSurfaceFluxesCH4Loss(int theObservations, double th
   myTotal = (theObservations>1?1:theObservations) * theWeight;
   return myTotal;
 }
+double RankPointGenerator::SVSurfaceFluxesNOLoss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E64,1)*F64
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
+double RankPointGenerator::SVSurfaceFluxesCO2Loss(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =MIN(E64,1)*F64
+  // min (observations,1) x weight
+
+  double myTotal;
+  myTotal = (theObservations>1?1:theObservations) * theWeight;
+  return myTotal;
+}
 
 double RankPointGenerator::SVObservationsLodging(int theObservations, double theWeight)
 {
@@ -426,6 +446,16 @@ double RankPointGenerator::SVObservationsPests(int theObservations, double theWe
   return myTotal;
 }
 double RankPointGenerator::SVObservationsDamages(int theObservations, double theWeight)
+{
+  // D==layers E==observations F==weight  G==replicates
+  // =E69*F69
+  // observations x weight
+
+  double myTotal;
+  myTotal = theObservations * theWeight;
+  return myTotal;
+}
+double RankPointGenerator::SVObservationsWeeds(int theObservations, double theWeight)
 {
   // D==layers E==observations F==weight  G==replicates
   // =E69*F69
@@ -487,7 +517,7 @@ QString RankPointGenerator::getRankManagement(int theTotal)
      case 17: myRank = "Silver";
               break;
 
-     case 15: myRank = "Bronze";
+     case 15: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -518,7 +548,7 @@ QString RankPointGenerator::getRankPhenology(int theTotal)
      case 8: myRank = "Silver";
               break;
 
-     case 5: myRank = "Bronze";
+     case 5: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -549,7 +579,7 @@ QString RankPointGenerator::getRankPrevCrop(int theTotal)
      case 12: myRank = "Silver";
               break;
 
-     case 9: myRank = "Bronze";
+     case 9: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -580,7 +610,7 @@ QString RankPointGenerator::getRankInitialValues(int theTotal)
      case 4: myRank = "Silver";
               break;
 
-     case 1: myRank = "Bronze";
+     case 1: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -611,7 +641,7 @@ QString RankPointGenerator::getRankSoil(int theTotal)
      case 12: myRank = "Silver";
               break;
 
-     case 5: myRank = "Bronze";
+     case 5: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -642,7 +672,7 @@ QString RankPointGenerator::getRankSite(int theTotal)
      case 8: myRank = "Silver";
               break;
 
-     case 5: myRank = "Bronze";
+     case 5: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -673,7 +703,7 @@ QString RankPointGenerator::getRankWeather(int theTotal)
      case 22: myRank = "Silver";
               break;
 
-     case 14: myRank = "Bronze";
+     case 14: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -704,7 +734,7 @@ QString RankPointGenerator::getRankSV(int theTotal)
      case 10: myRank = "Silver";
               break;
 
-     case 6: myRank = "Bronze";
+     case 6: myRank = "Copper";
               break;
 
      default: myRank = "na";
@@ -738,7 +768,7 @@ QString RankPointGenerator::getRank(int theTotal)
      case 90: myRank = "Silver";
               break;
 
-     case 60: myRank = "Bronze";
+     case 60: myRank = "Copper";
               break;
 
      default: myRank = "na";

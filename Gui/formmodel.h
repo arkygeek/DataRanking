@@ -22,19 +22,31 @@
 #ifndef FORMMODEL_H
 #define FORMMODEL_H
 
-#include <Enginio/Enginio>
+#include <Enginio/enginiomodel.h>
 
 class FormModel : public EnginioModel
 {
   Q_OBJECT
-  QHash<int, QByteArray> roleNames() const;
+
 public:
-  explicit FormModel(QObject *parent = 0);
-  enum DatasetForm
+  enum Role
   {
-      TitleDatasetForm = Enginio::CustomPropertyRole,
-      CompletedDatasetForm
+    TitleRole = Enginio::CustomPropertyRole,
+    CompletedRole,
+    ObservationsRole
   };
+
+  explicit FormModel(QObject *parent = 0);
+  virtual QVariant data(const QModelIndex &theIndex,
+                        int theRole = Qt::DisplayRole
+                       ) const Q_DECL_OVERRIDE;
+  virtual QVariant headerData(int theSection,
+                              Qt::Orientation theOrientation,
+                              int theRole
+                             ) const Q_DECL_OVERRIDE;
+  virtual QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
+
+
 signals:
 
 public slots:

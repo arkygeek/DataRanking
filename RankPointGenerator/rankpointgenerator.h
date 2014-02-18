@@ -79,10 +79,13 @@ double SVSurfaceFluxesNH3Loss(int theObservations, double theWeight);
 double SVSurfaceFluxesN2OLoss(int theObservations, double theWeight);
 double SVSurfaceFluxesN2Loss(int theObservations, double theWeight);
 double SVSurfaceFluxesCH4Loss(int theObservations, double theWeight);
+double SVSurfaceFluxesNOLoss(int theObservations, double theWeight);
+double SVSurfaceFluxesCO2Loss(int theObservations, double theWeight);
 
 double SVObservationsLodging(int theObservations, double theWeight);
 double SVObservationsPests(int theObservations, double theWeight);
 double SVObservationsDamages(int theObservations, double theWeight);
+double SVObservationsWeeds(int theObservations, double theWeight);
 
 //seasons
 double SeasonsMethod1(int theNumber, double theWeight);

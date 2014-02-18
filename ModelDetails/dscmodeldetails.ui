@@ -26,7 +26,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -51,28 +51,153 @@
            <property name="verticalSpacing">
             <number>3</number>
            </property>
-           <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item row="4" column="0">
+            <widget class="QGroupBox" name="grbxBasicInfoMajorStrengths">
+             <property name="title">
+              <string>Major Strengths</string>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_20">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>-1</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QPlainTextEdit" name="tedBasicInfoMajorStrengths"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QGroupBox" name="grbxBasicInfoMajorWeaknesses">
+             <property name="title">
+              <string>Major Weaknesses</string>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_21">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>12</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="horizontalSpacing">
+               <number>-1</number>
+              </property>
+              <property name="verticalSpacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="QPlainTextEdit" name="tedBasicInfoMajorWeaknesses"/>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
-              <widget class="QLabel" name="lblBasicInfoModelName">
-               <property name="text">
-                <string>Model Name</string>
-               </property>
-               <property name="buddy">
-                <cstring>leBasicInfoModelName</cstring>
-               </property>
-              </widget>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <item>
+                <widget class="QLabel" name="lblShortDescriptionOfModel">
+                 <property name="text">
+                  <string>Short Description of the model</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>txtbrwsShortDescriptionOfModel</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel">
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;Employing the well known neoclassical single country CGE ORANI model template (developed at Monash University), a Spanish CGE model was constructed employing input output data for 2000. The model has subsequently been updated to 2007 with a data aggregation of 28 agricultural activities and 11 food activities, explicit CAP modeling, supplementary income transfers from national accounts to make up a full SAM and a dynamic extension. A further ‘green’ variant of the model is currently developing to examine emissions restrictions in Spain. Includes energy nests, full emissions database and complementary slack conditions to model permits (ETS) and non permit schemes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
              <item>
-              <widget class="QLineEdit" name="leBasicInfoModelName">
-               <property name="text">
-                <string>ORANI España Dynamic</string>
-               </property>
-              </widget>
+              <layout class="QVBoxLayout" name="verticalLayout">
+               <item>
+                <widget class="QLabel" name="lblObjectivesOfModel">
+                 <property name="text">
+                  <string>Objectives of the model</string>
+                 </property>
+                 <property name="buddy">
+                  <cstring>txtbrwsObjectivesOfModel</cstring>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel">
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The initial objective of the model was the examination of agricultural policy reform in Spain. The input output data have been disaggregated to accommodate a detailed coverage of agricultural and food sectors, whilst the CAP is modeled explicitly (SFP, set aside, intervention etc). &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;More recent research has focused on developing the synergy between economy-wide emissions restrictions (Kyoto and EU 20/20/20) and the impact on the agricultural sector.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
            </item>
-           <item row="1" column="0">
+           <item row="2" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="lblBasicInfoWebsite">
+               <property name="text">
+                <string>Website</string>
+               </property>
+               <property name="buddy">
+                <cstring>leBasicInfoWebsite</cstring>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QLineEdit" name="leBasicInfoWebsite"/>
+               </item>
+               <item>
+                <widget class="QToolButton" name="tlbtnBasicInfoGoToWebsite">
+                 <property name="toolTip">
+                  <string>View Website</string>
+                 </property>
+                 <property name="text">
+                  <string>...</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" colspan="2">
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
               <widget class="QLabel" name="lblBasicInfoAcronym">
@@ -213,89 +338,24 @@
              </item>
             </layout>
            </item>
-           <item row="2" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item row="0" column="0" colspan="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
              <item>
-              <widget class="QLabel" name="lblBasicInfoWebsite">
+              <widget class="QLabel" name="lblBasicInfoModelName">
                <property name="text">
-                <string>Website</string>
+                <string>Model Name</string>
                </property>
                <property name="buddy">
-                <cstring>leBasicInfoWebsite</cstring>
+                <cstring>leBasicInfoModelName</cstring>
                </property>
               </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <item>
-                <widget class="QLineEdit" name="leBasicInfoWebsite"/>
-               </item>
-               <item>
-                <widget class="QToolButton" name="tlbtnBasicInfoGoToWebsite">
-                 <property name="toolTip">
-                  <string>View Website</string>
-                 </property>
-                 <property name="text">
-                  <string>...</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item row="3" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_2">
-               <item>
-                <widget class="QLabel" name="lblShortDescriptionOfModel">
-                 <property name="text">
-                  <string>Short Description of the model</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>txtbrwsShortDescriptionOfModel</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel">
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;Employing the well known neoclassical single country CGE ORANI model template (developed at Monash University), a Spanish CGE model was constructed employing input output data for 2000. The model has subsequently been updated to 2007 with a data aggregation of 28 agricultural activities and 11 food activities, explicit CAP modeling, supplementary income transfers from national accounts to make up a full SAM and a dynamic extension. A further ‘green’ variant of the model is currently developing to examine emissions restrictions in Spain. Includes energy nests, full emissions database and complementary slack conditions to model permits (ETS) and non permit schemes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout">
-               <item>
-                <widget class="QLabel" name="lblObjectivesOfModel">
-                 <property name="text">
-                  <string>Objectives of the model</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>txtbrwsObjectivesOfModel</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel">
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The initial objective of the model was the examination of agricultural policy reform in Spain. The input output data have been disaggregated to accommodate a detailed coverage of agricultural and food sectors, whilst the CAP is modeled explicitly (SFP, set aside, intervention etc). &lt;/p&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Calibri'; font-size:11pt;&quot;&gt;More recent research has focused on developing the synergy between economy-wide emissions restrictions (Kyoto and EU 20/20/20) and the impact on the agricultural sector.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QLineEdit" name="leBasicInfoModelName">
+               <property name="text">
+                <string>ORANI España Dynamic</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
@@ -2595,8 +2655,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>498</width>
-             <height>470</height>
+             <width>750</width>
+             <height>628</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2694,8 +2754,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>671</width>
-             <height>746</height>
+             <width>750</width>
+             <height>628</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2779,8 +2839,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>490</width>
-             <height>356</height>
+             <width>750</width>
+             <height>628</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2878,8 +2938,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>401</width>
-             <height>356</height>
+             <width>750</width>
+             <height>628</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2969,6 +3029,185 @@ p, li { white-space: pre-wrap; }
                <widget class="QTextEdit" name="textEdit_51"/>
               </item>
              </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pageMore">
+           <attribute name="label">
+            <string>More</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_24">
+            <item row="4" column="0" colspan="2">
+             <layout class="QVBoxLayout" name="verticalLayout_68">
+              <item>
+               <widget class="QLabel" name="label_68">
+                <property name="text">
+                 <string>Main challenges to be tackled to attain above enhancements</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextEdit" name="tedMoreMoreMainChallenges"/>
+              </item>
+             </layout>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <layout class="QVBoxLayout" name="verticalLayout_67">
+              <item>
+               <widget class="QLabel" name="label_67">
+                <property name="text">
+                 <string>Expected/planned enhancements (in the next three years)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextEdit" name="tedMoreMoreExpectedEnhancements"/>
+              </item>
+             </layout>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBox_5">
+              <property name="title">
+               <string>Benefits FOR:</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_22">
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
+               <item row="1" column="1">
+                <layout class="QVBoxLayout" name="verticalLayout_65">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_65">
+                   <property name="text">
+                    <string>CropM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsForCropM"/>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="0">
+                <layout class="QVBoxLayout" name="verticalLayout_61">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_61">
+                   <property name="text">
+                    <string>TradeM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsForTradeM"/>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="2">
+                <layout class="QVBoxLayout" name="verticalLayout_66">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_66">
+                   <property name="text">
+                    <string>LiveM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsForLiveM"/>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string>Benefits FROM:</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_23">
+               <property name="leftMargin">
+                <number>6</number>
+               </property>
+               <property name="rightMargin">
+                <number>6</number>
+               </property>
+               <property name="bottomMargin">
+                <number>6</number>
+               </property>
+               <property name="horizontalSpacing">
+                <number>-1</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>0</number>
+               </property>
+               <item row="1" column="0">
+                <layout class="QVBoxLayout" name="verticalLayout_69">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_69">
+                   <property name="text">
+                    <string>TradeM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsFromTradeM"/>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="2">
+                <layout class="QVBoxLayout" name="verticalLayout_71">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_71">
+                   <property name="text">
+                    <string>LiveM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsFromLiveM"/>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="1">
+                <layout class="QVBoxLayout" name="verticalLayout_70">
+                 <property name="spacing">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_70">
+                   <property name="text">
+                    <string>CropM</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="tedMoreMoreBenefitsFromCropM"/>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
             </item>
            </layout>
           </widget>

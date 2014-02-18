@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>Resources/bronze.png</file>
+        <file>Resources/copper.png</file>
         <file>Resources/gold.png</file>
         <file>Resources/platinum.png</file>
         <file>Resources/register.png</file>

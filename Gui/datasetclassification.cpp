@@ -2397,6 +2397,43 @@ void DatasetClassification::on_sbSVSoilSoilWaterGravObservations_valueChanged(in
   myTotal = makeString(myValue);
 
   ui->lblSVSoilSoilWaterGravPoints->setText(myTotal);
+
+  if (theObservations<2)
+  {
+    /*
+     * The point is that "calibrated" sensor means that the sensor should have been adjusted to
+     * at least 2 gravimetric measurements (to cover the range of wet to dry conditions).
+     *
+     * Some people think that factory calibration is enough, but in practice it is not (see our chapter 4.3).
+     * Therefore, I think it would be useful to cross check with the gravimetric measurements since if
+     * there are no measurements the field calibration would not be possible.
+     *
+     *         Christian Kersebaum (email to Jason Jorgenson)
+     */
+
+    // set points of Soil water sensor cal to zero and indicate an error
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    ui->lblSVSoilSoilWaterSensorCalPoints->setScaledContents(true);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(24);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setPixmap(QPixmap(":/Resources/exceptions.png"));
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("Too few observations\nfor soil water grav.");
+
+  }
+  else
+  {
+    // make sure the label is set back
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    int myCurrentLabelWidth = ui->lblSVSoilNFluxBottomRootPoints->width();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(myCurrentLabelWidth);
+    int myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("");
+
+    on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(myLayers);
+
+  }
+
   updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterGravWeightPts_valueChanged(double theWeight)
@@ -2594,10 +2631,43 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(do
   myObservations = ui->sbSVSoilSoilWaterSensorCalObservations->value();
   myWeight = ui->dsbSVSoilSoilWaterSensorCalWeightPts->value();
   myReplicates = ui->dsbSVSoilSoilWaterSensorCalReplicates->value();
-  myValue = myPointGen.SVSoilSoilWaterSensorCal(theLayers, myObservations, myWeight, myReplicates);
-  myTotal = makeString(myValue);
+  if (ui->sbSVSoilSoilWaterGravObservations->value()<2)
+  {
+    /*
+     * The point is that "calibrated" sensor means that the sensor should have been adjusted to
+     * at least 2 gravimetric measurements (to cover the range of wet to dry conditions).
+     *
+     * Some people think that factory calibration is enough, but in practice it is not (see our chapter 4.3).
+     * Therefore, I think it would be useful to cross check with the gravimetric measurements since if
+     * there are no measurements the field calibration would not be possible.
+     *
+     *         Christian Kersebaum (email to Jason Jorgenson)
+     */
 
-  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+    // set points of Soil water sensor cal to zero and indicate an error
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    ui->lblSVSoilSoilWaterSensorCalPoints->setScaledContents(true);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(24);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setPixmap(QPixmap(":/Resources/exceptions.png"));
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("Too few observations\nfor soil water grav.");
+  }
+  else
+  {
+    // make sure the label is set back
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    int myCurrentLabelWidth = ui->lblSVSoilNFluxBottomRootPoints->width();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(myCurrentLabelWidth);
+    //on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(myLayers);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("");
+
+    myValue = myPointGen.SVSoilSoilWaterSensorCal(theLayers, myObservations, myWeight, myReplicates);
+    myTotal = makeString(myValue);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+  }
+
   updateSVLabels();
 }
 void DatasetClassification::on_sbSVSoilSoilWaterSensorCalObservations_valueChanged(int theObservations)
@@ -2612,10 +2682,45 @@ void DatasetClassification::on_sbSVSoilSoilWaterSensorCalObservations_valueChang
   myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
   myWeight = ui->dsbSVSoilSoilWaterSensorCalWeightPts->value();
   myReplicates = ui->dsbSVSoilSoilWaterSensorCalReplicates->value();
-  myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, theObservations, myWeight, myReplicates);
-  myTotal = makeString(myValue);
+  if (ui->sbSVSoilSoilWaterGravObservations->value()<2)
+  {
+    /*
+     * The point is that "calibrated" sensor means that the sensor should have been adjusted to
+     * at least 2 gravimetric measurements (to cover the range of wet to dry conditions).
+     *
+     * Some people think that factory calibration is enough, but in practice it is not (see our chapter 4.3).
+     * Therefore, I think it would be useful to cross check with the gravimetric measurements since if
+     * there are no measurements the field calibration would not be possible.
+     *
+     *         Christian Kersebaum (email to Jason Jorgenson)
+     */
 
-  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+    // set points of Soil water sensor cal to zero and indicate an error
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    ui->lblSVSoilSoilWaterSensorCalPoints->setScaledContents(true);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(24);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setPixmap(QPixmap(":/Resources/exceptions.png"));
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("Too few observations\nfor soil water grav.");
+
+  }
+  else
+  {
+    // make sure the label is set back
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    int myCurrentLabelWidth = ui->lblSVSoilNFluxBottomRootPoints->width();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(myCurrentLabelWidth);
+    int myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("");
+
+    //on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(myLayers);
+    myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, theObservations, myWeight, myReplicates);
+    myTotal = makeString(myValue);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+  }
+
   updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged(double theWeight)
@@ -2630,10 +2735,48 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged
   myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
   myObservations = ui->sbSVSoilSoilWaterSensorCalObservations->value();
   myReplicates = ui->dsbSVSoilSoilWaterSensorCalReplicates->value();
-  myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, myObservations, theWeight, myReplicates);
-  myTotal = makeString(myValue);
 
-  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+  if (ui->sbSVSoilSoilWaterGravObservations->value()<2)
+  {
+    /*
+     * The point is that "calibrated" sensor means that the sensor should have been adjusted to
+     * at least 2 gravimetric measurements (to cover the range of wet to dry conditions).
+     *
+     * Some people think that factory calibration is enough, but in practice it is not (see our chapter 4.3).
+     * Therefore, I think it would be useful to cross check with the gravimetric measurements since if
+     * there are no measurements the field calibration would not be possible.
+     *
+     *         Christian Kersebaum (email to Jason Jorgenson)
+     */
+
+    // set points of Soil water sensor cal to zero and indicate an error
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    ui->lblSVSoilSoilWaterSensorCalPoints->setScaledContents(true);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(24);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setPixmap(QPixmap(":/Resources/exceptions.png"));
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("Too few observations\nfor soil water grav.");
+
+  }
+  else
+  {
+    // make sure the label is set back
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    int myCurrentLabelWidth = ui->lblSVSoilNFluxBottomRootPoints->width();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(myCurrentLabelWidth);
+    int myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("");
+
+    //on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(myLayers);
+    myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, myObservations, theWeight, myReplicates);
+    myTotal = makeString(myValue);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+  }
+
+
+
   updateSVLabels();
 }
 void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged(double theReplicates)
@@ -2648,10 +2791,45 @@ void DatasetClassification::on_dsbSVSoilSoilWaterSensorCalReplicates_valueChange
   myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
   myObservations = ui->sbSVSoilSoilWaterSensorCalObservations->value();
   myWeight = ui->dsbSVSoilSoilWaterSensorCalWeightPts->value();
-  myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, myObservations, myWeight, theReplicates);
-  myTotal = makeString(myValue);
+  if (ui->sbSVSoilSoilWaterGravObservations->value()<2)
+  {
+    /*
+     * The point is that "calibrated" sensor means that the sensor should have been adjusted to
+     * at least 2 gravimetric measurements (to cover the range of wet to dry conditions).
+     *
+     * Some people think that factory calibration is enough, but in practice it is not (see our chapter 4.3).
+     * Therefore, I think it would be useful to cross check with the gravimetric measurements since if
+     * there are no measurements the field calibration would not be possible.
+     *
+     *         Christian Kersebaum (email to Jason Jorgenson)
+     */
 
-  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+    // set points of Soil water sensor cal to zero and indicate an error
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    ui->lblSVSoilSoilWaterSensorCalPoints->setScaledContents(true);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(24);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setPixmap(QPixmap(":/Resources/exceptions.png"));
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("Too few observations\nfor soil water grav.");
+
+  }
+  else
+  {
+    // make sure the label is set back
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText("0");
+    int myCurrentLabelWidth = ui->lblSVSoilNFluxBottomRootPoints->width();
+    ui->lblSVSoilSoilWaterSensorCalPoints->setMaximumWidth(myCurrentLabelWidth);
+    int myLayers = ui->dsbSVSoilSoilWaterSensorCalLayers->value();
+    //on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(myLayers);
+    ui->lblSVSoilSoilWaterSensorCalPoints->setToolTip("");
+
+    myValue = myPointGen.SVSoilSoilWaterSensorCal(myLayers, myObservations, myWeight, theReplicates);
+    myTotal = makeString(myValue);
+
+    ui->lblSVSoilSoilWaterSensorCalPoints->setText(myTotal);
+  }
+
   updateSVLabels();
 }
 
@@ -2858,6 +3036,77 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(d
   updateSVLabels();
 }
 
+void DatasetClassification::on_sbSVSurfaceFluxesNOLossObservations_valueChanged(int theObservations)
+{
+  RankPointGenerator myPointGen;
+  double myWeight;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myWeight = ui->dsbSVSurfaceFluxesNOLossWeightPts->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesNOLossReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVSurfaceFluxesNOLoss(theObservations, myWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVSurfaceFluxesNOLossPoints->setText(myTotal);
+  updateSVLabels();
+}
+void DatasetClassification::on_dsbSVSurfaceFluxesNOLossWeightPts_valueChanged(double theWeight)
+{
+  RankPointGenerator myPointGen;
+  int myObservations;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myObservations = ui->sbSVSurfaceFluxesNOLossObservations->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesNOLossReplicates->value();
+  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  myValue = myPointGen.SVSurfaceFluxesNOLoss(myObservations, theWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVSurfaceFluxesNOLossPoints->setText(myTotal);
+  updateSVLabels();
+}
+
+void DatasetClassification::on_sbSVSurfaceFluxesCO2LossObservations_valueChanged(int theObservations)
+{
+  RankPointGenerator myPointGen;
+  double myWeight;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myWeight = ui->dsbSVSurfaceFluxesCO2LossWeightPts->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesCO2LossReplicates->value();
+  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
+  myValue = myPointGen.SVSurfaceFluxesCO2Loss(theObservations, myWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVSurfaceFluxesCO2LossPoints->setText(myTotal);
+  updateSVLabels();
+}
+void DatasetClassification::on_dsbSVSurfaceFluxesCO2LossWeightPts_valueChanged(double theWeight)
+{
+  RankPointGenerator myPointGen;
+  int myObservations;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myObservations = ui->sbSVSurfaceFluxesCO2LossObservations->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesCO2LossReplicates->value();
+  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
+  myValue = myPointGen.SVSurfaceFluxesCO2Loss(myObservations, theWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVSurfaceFluxesCO2LossPoints->setText(myTotal);
+  updateSVLabels();
+}
+
+
 void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations)
 {
   RankPointGenerator myPointGen;
@@ -3023,6 +3272,40 @@ void DatasetClassification::on_dsbSVObservationsDamagesWeightPts_valueChanged(do
   ui->lblSVObservationsDamagesPoints->setText(myTotal);
   updateSVLabels();
 }
+
+void DatasetClassification::on_sbSVObservationsWeedsObservations_valueChanged(int theObservations)
+{
+  RankPointGenerator myPointGen;
+  double myWeight;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myWeight = ui->dsbSVObservationsWeedsWeightPts->value();
+  //myReplicates = ui->dsbSVObservationsWeedsReplicates->value();
+  myValue = myPointGen.SVObservationsWeeds(theObservations, myWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVObservationsWeedsPoints->setText(myTotal);
+  updateSVLabels();
+}
+void DatasetClassification::on_dsbSVObservationsWeedsWeightPts_valueChanged(double theWeight)
+{
+  RankPointGenerator myPointGen;
+  int myObservations;
+  //double myReplicates;
+  double myValue;
+  QString myTotal;
+
+  myObservations = ui->sbSVObservationsWeedsObservations->value();
+  //myReplicates = ui->dsbSVObservationsWeedsReplicates->value();
+  myValue = myPointGen.SVObservationsWeeds(myObservations, theWeight);
+  myTotal = makeString(myValue);
+
+  ui->lblSVObservationsWeedsPoints->setText(myTotal);
+  updateSVLabels();
+}
+
 
 // Season
 void DatasetClassification::on_sbSeasonsSitesSeasonsPerCropNumber_valueChanged(int theNumber)
@@ -3924,6 +4207,8 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toDouble();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toDouble();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCh4LossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNOLossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCO2LossPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxSVSurfaceFluxesEt->checkState()==Qt::Checked)
@@ -3946,7 +4231,14 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   {
     myMinDataMissing = ui->lblSVSurfaceFluxesCh4LossPoints->text()=="0"?true:myMinDataMissing;
   }
-
+  if(ui->chbxSVSurfaceFluxesNOLoss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesNOLossPoints->text()=="0"?true:myMinDataMissing;
+  }
+  if(ui->chbxSVSurfaceFluxesCO2Loss->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVSurfaceFluxesCO2LossPoints->text()=="0"?true:myMinDataMissing;
+  }
   ui->lblOverallRatingSVSurfaceFluxes->setText(makeString(mySurfaceFluxTotal));
 
   float myObservationsTotal = 0.0;
@@ -3954,6 +4246,7 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   myObservationsTotal += ui->lblSVObservationsLodgingPoints->text().toDouble();
   myObservationsTotal += ui->lblSVObservationsPestsOrDiseasesPoints->text().toDouble();
   myObservationsTotal += ui->lblSVObservationsDamagesPoints->text().toDouble();
+  myObservationsTotal += ui->lblSVObservationsWeedsPoints->text().toDouble();
 
   // check to see if any items set to min data are zero
   if(ui->chbxSVObservationsLodging->checkState()==Qt::Checked)
@@ -3968,7 +4261,10 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   {
     myMinDataMissing = ui->lblSVObservationsDamagesPoints->text()=="0"?true:myMinDataMissing;
   }
-
+  if(ui->chbxSVObservationsWeeds->checkState()==Qt::Checked)
+  {
+    myMinDataMissing = ui->lblSVObservationsWeedsPoints->text()=="0"?true:myMinDataMissing;
+  }
   ui->lblOverallRatingSVObservations->setText(makeString(myObservationsTotal));
 
   myTotal = myCropTotal + mySoilTotal + mySurfaceFluxTotal + myObservationsTotal;
@@ -5042,6 +5338,7 @@ void DatasetClassification::on_chbxSVCropLAI_clicked()
 {
     updateSVLabels();
 }
+
 void DatasetClassification::on_chbxSVSoilSoilWaterGrav_clicked()
 {
     updateSVLabels();
@@ -5066,6 +5363,7 @@ void DatasetClassification::on_chbxSVSoilNFluxBottomRoot_clicked()
 {
     updateSVLabels();
 }
+
 void DatasetClassification::on_chbxSVSurfaceFluxesEt_clicked()
 {
     updateSVLabels();
@@ -5086,6 +5384,14 @@ void DatasetClassification::on_chbxSVSurfaceFluxesCh4Loss_clicked()
 {
     updateSVLabels();
 }
+void DatasetClassification::on_chbxSVSurfaceFluxesNOLoss_clicked()
+{
+    updateSVLabels();
+}
+void DatasetClassification::on_chbxSVSurfaceFluxesCO2Loss_clicked()
+{
+    updateSVLabels();
+}
 void DatasetClassification::on_chbxSVObservationsLodging_clicked()
 {
     updateSVLabels();
@@ -5095,6 +5401,10 @@ void DatasetClassification::on_chbxSVObservationsPestsOrDiseases_clicked()
     updateSVLabels();
 }
 void DatasetClassification::on_chbxSVObservationsDamages_clicked()
+{
+    updateSVLabels();
+}
+void DatasetClassification::on_chbxSVObservationsWeeds_clicked()
 {
     updateSVLabels();
 }
@@ -5241,11 +5551,11 @@ void DatasetClassification::on_cbSeasonsTreatment6_currentIndexChanged(const QSt
 QJsonObject DatasetClassification::generateHeaderJson()
 {
   QJsonObject myFormDetailsHeader;
-  myFormDetailsHeader.insert("User", ui->cbUser->currentText());
-  myFormDetailsHeader.insert("Dataset", ui->cbDatasets->currentText());
-  myFormDetailsHeader.insert("PreMultiplierPoints", ui->lblTotalPreMultiplier->text());
-  myFormDetailsHeader.insert("PostMultiplierPoints", ui->lblTotalPostMultiplier->text());
-  myFormDetailsHeader.insert("Rank", ui->lblOverallRank->text());
+  myFormDetailsHeader.insert("cbUser", ui->cbUser->currentText());
+  myFormDetailsHeader.insert("cbDatasets", ui->cbDatasets->currentText());
+  myFormDetailsHeader.insert("lblTotalPreMultiplier", ui->lblTotalPreMultiplier->text());
+  myFormDetailsHeader.insert("lblTotalPostMultiplier", ui->lblTotalPostMultiplier->text());
+  myFormDetailsHeader.insert("lblOverallRank", ui->lblOverallRank->text());
 
   QDateTime myDateTime = QDateTime::currentDateTime();
   QString myDateTimeString = myDateTime.toString();
@@ -6178,6 +6488,32 @@ QJsonObject DatasetClassification::generateSVSurfaceFluxesJson()
   // add this to the SurfaceFluxes object
   myStateVariablesSurfaceFluxesObject.insert("CH4Loss", myStateVariablesSurfaceFluxesCh4LossObject);
 
+  //    SV SurfaceFluxes
+  //      NOLoss
+  QJsonObject myStateVariablesSurfaceFluxesNOLossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesNOLoss->isChecked()?true:false;
+  myStateVariablesSurfaceFluxesNOLossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesNOLossObject.insert("Layers", ui->dsbSVSurfaceFluxesNOLossLayers->value());
+  myStateVariablesSurfaceFluxesNOLossObject.insert("Weight", ui->dsbSVSurfaceFluxesNOLossWeightPts->value());
+  myStateVariablesSurfaceFluxesNOLossObject.insert("Points", ui->lblSVSurfaceFluxesNOLossPoints->text().toDouble());
+  //myStateVariablesSurfaceFluxesNOLossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNOLossReplicates->text());
+  myStateVariablesSurfaceFluxesNOLossObject.insert("Observations", ui->sbSVSurfaceFluxesNOLossObservations->value());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("NOLoss", myStateVariablesSurfaceFluxesNOLossObject);
+
+  //    SV SurfaceFluxes
+  //      CO2Loss
+  QJsonObject myStateVariablesSurfaceFluxesCO2LossObject;
+  myMinDataSetting = ui->chbxSVSurfaceFluxesCO2Loss->isChecked()?true:false;
+  myStateVariablesSurfaceFluxesCO2LossObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesCO2LossObject.insert("Layers", ui->dsbSVSurfaceFluxesCO2LossLayers->value());
+  myStateVariablesSurfaceFluxesCO2LossObject.insert("Weight", ui->dsbSVSurfaceFluxesCO2LossWeightPts->value());
+  myStateVariablesSurfaceFluxesCO2LossObject.insert("Points", ui->lblSVSurfaceFluxesCO2LossPoints->text().toDouble());
+  //myStateVariablesSurfaceFluxesCO2LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesCO2LossReplicates->text());
+  myStateVariablesSurfaceFluxesCO2LossObject.insert("Observations", ui->sbSVSurfaceFluxesCO2LossObservations->value());
+  // add this to the SurfaceFluxes object
+  myStateVariablesSurfaceFluxesObject.insert("CO2Loss", myStateVariablesSurfaceFluxesCO2LossObject);
+
   return myStateVariablesSurfaceFluxesObject;
 }
 QJsonObject DatasetClassification::generateSVObservationsJson()
@@ -6224,6 +6560,20 @@ QJsonObject DatasetClassification::generateSVObservationsJson()
   myStateVariablesObservationsDamagesObject.insert("Observations", ui->sbSVObservationsDamagesObservations->value());
   // add this to the Observations object
   myStateVariablesObservationsObject.insert("Damages", myStateVariablesObservationsDamagesObject);
+
+  //    SV Observations
+  //      Weeds
+  QJsonObject myStateVariablesObservationsWeedsObject;
+  myMinDataSetting = ui->chbxSVObservationsWeeds->isChecked()?true:false;
+  myStateVariablesObservationsWeedsObject.insert("MinimumDataRequirement", myMinDataSetting);
+  //myStateVariablesObservationsWeedsObject.insert("Layers", ui->dsbSVObservationsWeedsLayers->value());
+  myStateVariablesObservationsWeedsObject.insert("Weight", ui->dsbSVObservationsWeedsWeightPts->value());
+  myStateVariablesObservationsWeedsObject.insert("Points", ui->lblSVObservationsWeedsPoints->text().toDouble());
+  //myStateVariablesObservationsWeedsObject.insert("Replicates", ui->dsbSVObservationsWeedsReplicates->text());
+  myStateVariablesObservationsWeedsObject.insert("Observations", ui->sbSVObservationsWeedsObservations->value());
+  // add this to the Observations object
+  myStateVariablesObservationsObject.insert("Weeds", myStateVariablesObservationsWeedsObject);
+
   return myStateVariablesObservationsObject;
 }
 QJsonObject DatasetClassification::generateSeasonJSON()
@@ -6386,15 +6736,15 @@ QJsonObject DatasetClassification::generateJson()
   return myFormObject;
 }
 
-QHash<int, QByteArray> FormModel::roleNames() const
-{
-    QHash<int, QByteArray> roles = EnginioModel::roleNames();
-    roles.insert(TitleDatasetForm, "title");
-    roles.insert(Qt::DisplayRole, "title");
-    roles.insert(Qt::EditRole, "title");
-    roles.insert(CompletedDatasetForm, "completed");
-    return roles;
-}
+//QHash<int, QByteArray> FormModel::roleNames() const
+//{
+//    QHash<int, QByteArray> roles = EnginioModel::roleNames();
+//    roles.insert(TitleRole, "title");
+//    roles.insert(Qt::DisplayRole, "title");
+//    roles.insert(Qt::EditRole, "title");
+//    roles.insert(CompletedRole, "completed");
+//    return roles;
+//}
 QStringListModel *DatasetClassification::getListModel() const
 {
   return mpListModel;
@@ -6537,4 +6887,25 @@ void DatasetClassification::setFormExample()
 
 
 
+}
+
+void DatasetClassification::on_pbLoad_clicked()
+{
+  // load a file
+
+  // I will start by manually selecting a file for now.  When that works, this
+  // should be changed to bring up a list of models that have been saved.  These
+  // files should all be kept in the ~/.macsur/dr/models or something like that.
+  // The files should all be name [GUID].json or something like that, and should
+  // contain model name, submitter, and ranking in the JSON.
+  // With this info, a ranked datasets manager dialog will open, listing the available
+  // items sans GUID.  The GUID is something that should never ever need to be seen or
+  // even know about by the user.  Authenticated users should be somehow be linked to
+  // these files so that they, and only they, are able to edit their previous work.
+
+  // Additionally, (maybe ideally?) the local files should be checked to ensure they are
+  // synced with the Enginio cloud.
+  // @TODO check to see if Enginio has anything built in to do this kind of thing
+
+  //
 }
