@@ -7083,6 +7083,86 @@ void DatasetClassification::setFormFromJson()
     QJsonObject mySecondNestedObject_TMin = mySecondNestedValue_TMin.toObject();
     QJsonValue mySecondNestedValue_WindSpeed = myFirstNestedObject_Weather.value("WindSpeed");
     QJsonObject mySecondNestedObject_WindSpeed = mySecondNestedValue_WindSpeed.toObject();
+
+  // now that the objects are all in place, we can start to populate the form
+  // @TODO put some error control in here catch a mismatch between the form and data
+
+  // Dataset tab
+  int myIndex;
+  myIndex = ui->cbDatasetGridUnits->findText(mySecondNestedObject_Dataset["cbDatasetGridUnits"].toString());
+  ui->cbDatasetGridUnits->setCurrentIndex(myIndex);
+  // @TODO put in something for the combo boxes so that if the content isn't listed, it will add it
+
+  myIndex = ui->cbDatasetName->findText(mySecondNestedObject_Dataset["cbDatasetName"].toString());
+  ui->cbDatasetName->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleClimateProjection->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleClimateProjection"].toString());
+  ui->cbDatasetSpatialScaleClimateProjection->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleCropGenetic->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleCropGenetic"].toString());
+  ui->cbDatasetSpatialScaleCropGenetic->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleCropMgmt->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleCropMgmt"].toString());
+  ui->cbDatasetSpatialScaleCropMgmt->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleCropPathogens->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleCropPathogens"].toString());
+  ui->cbDatasetSpatialScaleCropPathogens->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleCropPhysiology->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleCropPhysiology"].toString());
+  ui->cbDatasetSpatialScaleCropPhysiology->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleEconomic->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleEconomic"].toString());
+  ui->cbDatasetSpatialScaleEconomic->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleGeneric->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleGeneric"].toString());
+  ui->cbDatasetSpatialScaleGeneric->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleLivestockGenetic->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleLivestockGenetic"].toString());
+  ui->cbDatasetSpatialScaleLivestockGenetic->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleLivestockMgmt->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleLivestockMgmt"].toString());
+  ui->cbDatasetSpatialScaleLivestockMgmt->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleLivestockPathogens->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleLivestockPathogens"].toString());
+  ui->cbDatasetSpatialScaleLivestockPathogens->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleLivestockPhysiology->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleLivestockPhysiology"].toString());
+  ui->cbDatasetSpatialScaleLivestockPhysiology->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleSoils->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleSoils"].toString());
+  ui->cbDatasetSpatialScaleSoils->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleWeather->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleWeather"].toString());
+  ui->cbDatasetSpatialScaleWeather->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetSpatialScaleWeatherGenerator->findText(mySecondNestedObject_Dataset["cbDatasetSpatialScaleWeatherGenerator"].toString());
+  ui->cbDatasetSpatialScaleWeatherGenerator->setCurrentIndex(myIndex);
+
+  myIndex = ui->cbDatasetTemporalScale->findText(mySecondNestedObject_Dataset["cbDatasetTemporalScale"].toString());
+  ui->cbDatasetTemporalScale->setCurrentIndex(myIndex);
+
+  ui->chbxDatasetDataTypesClimateProjection->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesClimateProjection"].toBool());
+  ui->chbxDatasetDataTypesCropFieldExperiments->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesCropFieldExperiments"].toBool());
+  ui->chbxDatasetDataTypesCropGenetic->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesCropGenetic"].toBool());
+  ui->chbxDatasetDataTypesCropMgmt->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesCropMgmt"].toBool());
+  ui->chbxDatasetDataTypesCropPathogens->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesCropPathogens"].toBool());
+  ui->chbxDatasetDataTypesCropPhysiology->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesCropPhysiology"].toBool());
+  ui->chbxDatasetDataTypesEconomic->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesEconomic"].toBool());
+  ui->chbxDatasetDataTypesGeneric->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesGeneric"].toBool());
+  ui->chbxDatasetDataTypesGrid->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesGrid"].toBool());
+  ui->chbxDatasetDataTypesLivestockGenetic->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesLivestockGenetic"].toBool());
+  ui->chbxDatasetDataTypesLivestockMgmt->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesLivestockMgmt"].toBool());
+  ui->chbxDatasetDataTypesLivestockPathogens->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesLivestockPathogens"].toBool());
+  ui->chbxDatasetDataTypesLivestockPhysiology->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesLivestockPhysiology"].toBool());
+  ui->chbxDatasetDataTypesSoils->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesSoils"].toBool());
+  ui->chbxDatasetDataTypesWeather->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesWeather"].toBool());
+  ui->chbxDatasetDataTypesWeatherGenerator->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesWeatherGenerator"].toBool());
+  ui->chbxDatasetPeriodOfRecord->setChecked(mySecondNestedObject_Dataset["chbxDatasetPeriodOfRecord"].toBool());
+
+  ui->dateEditFrom->setDate(QDate::fromString(mySecondNestedObject_Dataset["dateEditFrom"].toString(),"dd/MM/yyyy"));
+
+
+
 }
 
 
