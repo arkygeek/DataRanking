@@ -5573,7 +5573,7 @@ QJsonObject DatasetClassification::generateDatasetJson()
 
   //   general info
   QJsonObject myDatasetDetails;
-  //myDatasetInputVariety.insert("objectType", QString("objects.entry"));
+  myDatasetDetails.insert("objectType", QString("objects.datasetDetails"));
   myDatasetDetails.insert("cbDatasetName", ui->cbDatasetName->currentText());
   myDatasetDetails.insert("ledDatasetDatasetName", ui->ledDatasetDatasetName->text());
   myDatasetDetails.insert("ledDatasetVersion", ui->ledDatasetVersion->text());
@@ -5594,6 +5594,9 @@ QJsonObject DatasetClassification::generateDatasetJson()
   myDatasetDetails.insert("tedDatasetResolution", ui->tedDatasetResolution->toPlainText());
 
   // pull out the variables from the list widget and put into a csv string
+
+  //  @TODO change this to an array
+
   QString myVariablesList = "START,";
   for (int i = 0; i < ui->listWidgetVariables->count(); i++) {
          myVariablesList += ui->listWidgetVariables->item(i)->text();
@@ -5685,12 +5688,14 @@ QJsonObject DatasetClassification::generateManagementJson()
   QJsonObject myManagementObject;
   bool myMinDataSetting;
   //myManagementObject.insert("objectType", QString("objects.entry"));
-
+  myManagementObject.insert("objectType", QString("objects.management"));
 
   //   variety
   myMinDataSetting = ui->chbxVariety->isChecked()?true:false;
   QJsonObject myManagementInputVariety;
   //myManagementInputVariety.insert("objectType", QString("objects.entry"));
+
+
   myManagementInputVariety.insert("MinimumDataRequirement", myMinDataSetting);
   myManagementInputVariety.insert("Observations", ui->sbVarietyObsMgmt->value());
   myManagementInputVariety.insert("Weight", ui->dsbVarietyWeightMgmt->value());
@@ -6736,15 +6741,6 @@ QJsonObject DatasetClassification::generateJson()
   return myFormObject;
 }
 
-//QHash<int, QByteArray> FormModel::roleNames() const
-//{
-//    QHash<int, QByteArray> roles = EnginioModel::roleNames();
-//    roles.insert(TitleRole, "title");
-//    roles.insert(Qt::DisplayRole, "title");
-//    roles.insert(Qt::EditRole, "title");
-//    roles.insert(CompletedRole, "completed");
-//    return roles;
-//}
 QStringListModel *DatasetClassification::getListModel() const
 {
   return mpListModel;
@@ -6853,22 +6849,258 @@ void DatasetClassification::setFormFromJson()
       qDebug() << "Error happened:" << myJsonParseError.errorString();
   }
 
-  // the two lines below dump the file, and looks good, so commenting out
-  //qDebug() << "myJsonDocument --->\n" << myJsonDocument << "\n";
-  //qDebug() << "myJsonDocument formatted --->\n" <<myJsonDocument.toJson();
 
-  // the tricky part here is to parse through the document because it
-  //     has "nested" QJsonObjects
+  /* WHEW! Got it figured out finally.
+   * This is how the parsing works:
+   *
+   * Step 1. Load the whole json file into a QJsonDocument
+   *          ie/   QJsonDocument myJsonDocument
+   *
+   * Step 2. for "root" level objects create a QJsonObject
+   *          ie/   QJsonObject myRootObject = myJsonDocument.object();
+   *         then you can pick out what you need like this:
+   *          ie/  QString myObjectType = myRootObject["objectType"].toString();
+   *
+   * Step 3. for "first-level" objects you must first do two steps
+   *
+   *         for -each- object (I've used Header as an example):
+   *          ie/  QJsonValue myFirstNestedValue_Header = myRootObject.value("Header");
+   *                QJsonObject myFirstNestedObject_Header = myFirstNestedValue_Header.toObject();
+   *
+   *         then you are able to pick out what you need like this:
+   *          ie/  QString myDate = myFirstNestedObject_Header["Date"].toString();
+   *          or   QString my_lblTotalPostMultiplier = myFirstNestedObject_Header["lblTotalPostMultiplier"].toString();
+   *
+   * Step 4. for each subsequent "next-level" or "nested" object, you need to repeat step 3
+   *          ie/  QJsonValue mySecondNestedValue_ObjName = myFirstNestedObject_ObjName.value("ObjName");
+   *                QJsonObject mySecondNestedObject_ObjName = mySecondNestedValue_ObjName.toObject();
+   *         and then of course you pull it out the same way:
+   *          ie/  QString myValueName = mySecondNestedObject_ObjName["ValueName"].toString();
+   *
+   * Step 5. this is the easy bit - just populate the form
+   *
+   */
 
+  QJsonObject myRootObject = myJsonDocument.object();
+  QJsonValue myFirstNestedValue_Header = myRootObject.value("Header");
+  QJsonObject myFirstNestedObject_Header = myFirstNestedValue_Header.toObject();
+
+  QJsonValue myFirstNestedValue_Dataset = myRootObject.value("Dataset");
+  QJsonObject myFirstNestedObject_Dataset = myFirstNestedValue_Dataset.toObject();
+    QJsonValue mySecondNestedValue_Dataset = myRootObject.value("Dataset");
+    QJsonObject mySecondNestedObject_Dataset = mySecondNestedValue_Dataset.toObject();
+
+  QJsonValue myFirstNestedValue_InitialValues = myRootObject.value("InitialValues");
+  QJsonObject myFirstNestedObject_InitialValues = myFirstNestedValue_InitialValues.toObject();
+    QJsonValue mySecondNestedValue_NMin = myFirstNestedObject_InitialValues.value("NMin");
+    QJsonObject mySecondNestedObject_NMin = mySecondNestedValue_NMin.toObject();
+    QJsonValue mySecondNestedValue_SoilMoisture = myFirstNestedObject_InitialValues.value("SoilMoisture");
+    QJsonObject mySecondNestedObject_SoilMoisture = mySecondNestedValue_SoilMoisture.toObject();
+
+  QJsonValue myFirstNestedValue_Management = myRootObject.value("Management");
+  QJsonObject myFirstNestedObject_Management = myFirstNestedValue_Management.toObject();
+    QJsonValue mySecondNestedValue_Fertilisation = myFirstNestedObject_Management.value("Fertilisation");
+    QJsonObject mySecondNestedObject_Fertilisation = mySecondNestedValue_Fertilisation.toObject();
+    QJsonValue mySecondNestedValue_Harvest = myFirstNestedObject_Management.value("Harvest");
+    QJsonObject mySecondNestedObject_Harvest = mySecondNestedValue_Harvest.toObject();
+    QJsonValue mySecondNestedValue_Irrigation = myFirstNestedObject_Management.value("Irrigation");
+    QJsonObject mySecondNestedObject_Irrigation = mySecondNestedValue_Irrigation.toObject();
+    QJsonValue mySecondNestedValue_SeedDensity = myFirstNestedObject_Management.value("SeedDensity");
+    QJsonObject mySecondNestedObject_SeedDensity = mySecondNestedValue_SeedDensity.toObject();
+    QJsonValue mySecondNestedValue_Sowing = myFirstNestedObject_Management.value("Sowing");
+    QJsonObject mySecondNestedObject_Sowing = mySecondNestedValue_Sowing.toObject();
+    QJsonValue mySecondNestedValue_Tillage = myFirstNestedObject_Management.value("Tillage");
+    QJsonObject mySecondNestedObject_Tillage = mySecondNestedValue_Tillage.toObject();
+    QJsonValue mySecondNestedValue_Variety = myFirstNestedObject_Management.value("Variety");
+    QJsonObject mySecondNestedObject_Variety = mySecondNestedValue_Variety.toObject();
+
+  QJsonValue myFirstNestedValue_Phenology = myRootObject.value("Phenology");
+  QJsonObject myFirstNestedObject_Phenology = myFirstNestedValue_Phenology.toObject();
+    QJsonValue mySecondNestedValue_EarEmergence = myFirstNestedObject_Phenology.value("EarEmergence");
+    QJsonObject mySecondNestedObject_EarEmergence = mySecondNestedValue_EarEmergence.toObject();
+    QJsonValue mySecondNestedValue_Emergence = myFirstNestedObject_Phenology.value("Emergence");
+    QJsonObject mySecondNestedObject_Emergence = mySecondNestedValue_Emergence.toObject();
+    QJsonValue mySecondNestedValue_Flowering = myFirstNestedObject_Phenology.value("Flowering");
+    QJsonObject mySecondNestedObject_Flowering = mySecondNestedValue_Flowering.toObject();
+    QJsonValue mySecondNestedValue_StemElongation = myFirstNestedObject_Phenology.value("StemElongation");
+    QJsonObject mySecondNestedObject_StemElongation = mySecondNestedValue_StemElongation.toObject();
+    QJsonValue mySecondNestedValue_YellowRipeness = myFirstNestedObject_Phenology.value("YellowRipeness");
+    QJsonObject mySecondNestedObject_YellowRipeness = mySecondNestedValue_YellowRipeness.toObject();
+
+  QJsonValue myFirstNestedValue_PrevCrop = myRootObject.value("PrevCrop");
+  QJsonObject myFirstNestedObject_PrevCrop = myFirstNestedValue_PrevCrop.toObject();
+    QJsonValue mySecondNestedValue_Crop = myFirstNestedObject_PrevCrop.value("Crop");
+    QJsonObject mySecondNestedObject_Crop = mySecondNestedValue_Crop.toObject();
+    QJsonValue mySecondNestedValue_Fertilisation = myFirstNestedObject_PrevCrop.value("Fertilisation");
+    QJsonObject mySecondNestedObject_Fertilisation = mySecondNestedValue_Fertilisation.toObject();
+    QJsonValue mySecondNestedValue_HarvestDate = myFirstNestedObject_PrevCrop.value("HarvestDate");
+    QJsonObject mySecondNestedObject_HarvestDate = mySecondNestedValue_HarvestDate.toObject();
+    QJsonValue mySecondNestedValue_Irrigation = myFirstNestedObject_PrevCrop.value("Irrigation");
+    QJsonObject mySecondNestedObject_Irrigation = mySecondNestedValue_Irrigation.toObject();
+    QJsonValue mySecondNestedValue_ResidueMgmt = myFirstNestedObject_PrevCrop.value("ResidueMgmt");
+    QJsonObject mySecondNestedObject_ResidueMgmt = mySecondNestedValue_ResidueMgmt.toObject();
+    QJsonValue mySecondNestedValue_SowingDate = myFirstNestedObject_PrevCrop.value("SowingDate");
+    QJsonObject mySecondNestedObject_SowingDate = mySecondNestedValue_SowingDate.toObject();
+    QJsonValue mySecondNestedValue_Yield = myFirstNestedObject_PrevCrop.value("Yield");
+    QJsonObject mySecondNestedObject_Yield = mySecondNestedValue_Yield.toObject();
+
+  QJsonValue myFirstNestedValue_Seasons = myRootObject.value("Seasons");
+  QJsonObject myFirstNestedObject_Seasons = myFirstNestedValue_Seasons.toObject();
+    QJsonValue mySecondNestedValue_MgmtPotential = myFirstNestedObject_Seasons.value("MgmtPotential");
+    QJsonObject mySecondNestedObject_MgmtPotential = mySecondNestedValue_MgmtPotential.toObject();
+    QJsonValue mySecondNestedValue_SeasonsPerCrop = myFirstNestedObject_Seasons.value("SeasonsPerCrop");
+    QJsonObject mySecondNestedObject_SeasonsPerCrop = mySecondNestedValue_SeasonsPerCrop.toObject();
+    QJsonValue mySecondNestedValue_SiteVariants = myFirstNestedObject_Seasons.value("SiteVariants");
+    QJsonObject mySecondNestedObject_SiteVariants = mySecondNestedValue_SiteVariants.toObject();
+    QJsonValue mySecondNestedValue_Treatment1 = myFirstNestedObject_Seasons.value("Treatment1");
+    QJsonObject mySecondNestedObject_Treatment1 = mySecondNestedValue_Treatment1.toObject();
+    QJsonValue mySecondNestedValue_Treatment2 = myFirstNestedObject_Seasons.value("Treatment2");
+    QJsonObject mySecondNestedObject_Treatment2 = mySecondNestedValue_Treatment2.toObject();
+    QJsonValue mySecondNestedValue_Treatment3 = myFirstNestedObject_Seasons.value("Treatment3");
+    QJsonObject mySecondNestedObject_Treatment3 = mySecondNestedValue_Treatment3.toObject();
+    QJsonValue mySecondNestedValue_Treatment4 = myFirstNestedObject_Seasons.value("Treatment4");
+    QJsonObject mySecondNestedObject_Treatment4 = mySecondNestedValue_Treatment4.toObject();
+    QJsonValue mySecondNestedValue_Treatment5 = myFirstNestedObject_Seasons.value("Treatment5");
+    QJsonObject mySecondNestedObject_Treatment5 = mySecondNestedValue_Treatment5.toObject();
+    QJsonValue mySecondNestedValue_Treatment6 = myFirstNestedObject_Seasons.value("Treatment6");
+    QJsonObject mySecondNestedObject_Treatment6 = mySecondNestedValue_Treatment6.toObject();
+    QJsonValue mySecondNestedValue_ZeroNTreatments = myFirstNestedObject_Seasons.value("ZeroNTreatments");
+    QJsonObject mySecondNestedObject_ZeroNTreatments = mySecondNestedValue_ZeroNTreatments.toObject();
+
+  QJsonValue myFirstNestedValue_Site = myRootObject.value("Site");
+  QJsonObject myFirstNestedObject_Site = myFirstNestedValue_Site.toObject();
+    QJsonValue mySecondNestedValue_Altitude = myFirstNestedObject_Site.value("Altitude");
+    QJsonObject mySecondNestedObject_Altitude = mySecondNestedValue_Altitude.toObject();
+    QJsonValue mySecondNestedValue_Latitude = myFirstNestedObject_Site.value("Latitude");
+    QJsonObject mySecondNestedObject_Latitude = mySecondNestedValue_Latitude.toObject();
+    QJsonValue mySecondNestedValue_Longitude = myFirstNestedObject_Site.value("Longitude");
+    QJsonObject mySecondNestedObject_Longitude = mySecondNestedValue_Longitude.toObject();
+    QJsonValue mySecondNestedValue_Slope = myFirstNestedObject_Site.value("Slope");
+    QJsonObject mySecondNestedObject_Slope = mySecondNestedValue_Slope.toObject();
+
+  QJsonValue myFirstNestedValue_Soil = myRootObject.value("Soil");
+  QJsonObject myFirstNestedObject_Soil = myFirstNestedValue_Soil.toObject();
+    QJsonValue mySecondNestedValue_BulkDensity = myFirstNestedObject_Soil.value("BulkDensity");
+    QJsonObject mySecondNestedObject_BulkDensity = mySecondNestedValue_BulkDensity.toObject();
+    QJsonValue mySecondNestedValue_COrg = myFirstNestedObject_Soil.value("COrg");
+    QJsonObject mySecondNestedObject_COrg = mySecondNestedValue_COrg.toObject();
+    QJsonValue mySecondNestedValue_FieldCapacity = myFirstNestedObject_Soil.value("FieldCapacity");
+    QJsonObject mySecondNestedObject_FieldCapacity = mySecondNestedValue_FieldCapacity.toObject();
+    QJsonValue mySecondNestedValue_HydrCondCurve = myFirstNestedObject_Soil.value("HydrCondCurve");
+    QJsonObject mySecondNestedObject_HydrCondCurve = mySecondNestedValue_HydrCondCurve.toObject();
+    QJsonValue mySecondNestedValue_InputPfCurve = myFirstNestedObject_Soil.value("InputPfCurve");
+    QJsonObject mySecondNestedObject_InputPfCurve = mySecondNestedValue_InputPfCurve.toObject();
+    QJsonValue mySecondNestedValue_NOrg = myFirstNestedObject_Soil.value("NOrg");
+    QJsonObject mySecondNestedObject_NOrg = mySecondNestedValue_NOrg.toObject();
+    QJsonValue mySecondNestedValue_Texture = myFirstNestedObject_Soil.value("Texture");
+    QJsonObject mySecondNestedObject_Texture = mySecondNestedValue_Texture.toObject();
+    QJsonValue mySecondNestedValue_WiltingPoint = myFirstNestedObject_Soil.value("WiltingPoint");
+    QJsonObject mySecondNestedObject_WiltingPoint = mySecondNestedValue_WiltingPoint.toObject();
+    QJsonValue mySecondNestedValue_pH = myFirstNestedObject_Soil.value("pH");
+    QJsonObject mySecondNestedObject_pH = mySecondNestedValue_pH.toObject();
+
+  QJsonValue myFirstNestedValue_StateVariables = myRootObject.value("StateVariables");
+  QJsonObject myFirstNestedObject_StateVariables = myFirstNestedValue_StateVariables.toObject();
+    QJsonValue mySecondNestedValue_StateVariables = myFirstNestedObject_StateVariables.value("StateVariables");
+    QJsonObject mySecondNestedObject_StateVariables = mySecondNestedValue_StateVariables.toObject();
+      QJsonValue myThirdNestedValue_AGrBiomass = mySecondNestedObject_Crop.value("AGrBiomass");
+      QJsonObject myThirdNestedObject_AGrBiomass = myThirdNestedValue_AGrBiomass.toObject();
+      QJsonValue myThirdNestedValue_LAI = mySecondNestedObject_Crop.value("LAI");
+      QJsonObject myThirdNestedObject_LAI = myThirdNestedValue_LAI.toObject();
+      QJsonValue myThirdNestedValue_NInAGrBiomass = mySecondNestedObject_Crop.value("NInAGrBiomass");
+      QJsonObject myThirdNestedObject_NInAGrBiomass = myThirdNestedValue_NInAGrBiomass.toObject();
+      QJsonValue myThirdNestedValue_NInOrgans = mySecondNestedObject_Crop.value("NInOrgans");
+      QJsonObject myThirdNestedObject_NInOrgans = myThirdNestedValue_NInOrgans.toObject();
+      QJsonValue myThirdNestedValue_RootBiomass = mySecondNestedObject_Crop.value("RootBiomass");
+      QJsonObject myThirdNestedObject_RootBiomass = myThirdNestedValue_RootBiomass.toObject();
+      QJsonValue myThirdNestedValue_WeightOrgans = mySecondNestedObject_Crop.value("WeightOrgans");
+      QJsonObject myThirdNestedObject_WeightOrgans = myThirdNestedValue_WeightOrgans.toObject();
+      QJsonValue myThirdNestedValue_Yield = mySecondNestedObject_Crop.value("Yield");
+      QJsonObject myThirdNestedObject_Yield = myThirdNestedValue_Yield.toObject();
+
+    QJsonValue mySecondNestedValue_Observations = myFirstNestedObject_StateVariables.value("Observations");
+    QJsonObject mySecondNestedObject_Observations = mySecondNestedValue_Observations.toObject();
+      QJsonValue myThirdNestedValue_Damages = mySecondNestedObject_Observations.value("Damages");
+      QJsonObject myThirdNestedObject_Damages = myThirdNestedValue_Damages.toObject();
+      QJsonValue myThirdNestedValue_Lodging = mySecondNestedObject_Observations.value("Lodging");
+      QJsonObject myThirdNestedObject_Lodging = myThirdNestedValue_Lodging.toObject();
+      QJsonValue myThirdNestedValue_PestsOrDiseases = mySecondNestedObject_Observations.value("PestsOrDiseases");
+      QJsonObject myThirdNestedObject_PestsOrDiseases = myThirdNestedValue_PestsOrDiseases.toObject();
+      QJsonValue myThirdNestedValue_Weeds = mySecondNestedObject_Observations.value("Weeds");
+      QJsonObject myThirdNestedObject_Weeds = myThirdNestedValue_Weeds.toObject();
+
+    QJsonValue mySecondNestedValue_Soil = myFirstNestedObject_StateVariables.value("Soil");
+    QJsonObject mySecondNestedObject_Soil = mySecondNestedValue_Soil.toObject();
+      QJsonValue myThirdNestedValue_NFluxBottomRoot = mySecondNestedObject_Soil.value("NFluxBottomRoot");
+      QJsonObject myThirdNestedObject_NFluxBottomRoot = myThirdNestedValue_NFluxBottomRoot.toObject();
+      QJsonValue myThirdNestedValue_NMin = mySecondNestedObject_Soil.value("NMin");
+      QJsonObject myThirdNestedObject_NMin = myThirdNestedValue_NMin.toObject();
+      QJsonValue myThirdNestedValue_PressureHeads = mySecondNestedObject_Soil.value("PressureHeads");
+      QJsonObject myThirdNestedObject_PressureHeads = myThirdNestedValue_PressureHeads.toObject();
+      QJsonValue myThirdNestedValue_SoilWaterGrav = mySecondNestedObject_Soil.value("SoilWaterGrav");
+      QJsonObject myThirdNestedObject_SoilWaterGrav = myThirdNestedValue_SoilWaterGrav.toObject();
+      QJsonValue myThirdNestedValue_SoilWaterSensorCal = mySecondNestedObject_Soil.value("SoilWaterSensorCal");
+      QJsonObject myThirdNestedObject_SoilWaterSensorCal = myThirdNestedValue_SoilWaterSensorCal.toObject();
+      QJsonValue myThirdNestedValue_WaterFluxBottomRoot = mySecondNestedObject_Soil.value("WaterFluxBottomRoot");
+      QJsonObject myThirdNestedObject_WaterFluxBottomRoot = myThirdNestedValue_WaterFluxBottomRoot.toObject();
+
+    QJsonValue mySecondNestedValue_SurfaceFluxes = myFirstNestedObject_StateVariables.value("SurfaceFluxes");
+    QJsonObject mySecondNestedObject_SurfaceFluxes = mySecondNestedValue_SurfaceFluxes.toObject();
+      QJsonValue myThirdNestedValue_CH4Loss = mySecondNestedObject_SurfaceFluxes.value("CH4Loss");
+      QJsonObject myThirdNestedObject_CH4Loss = myThirdNestedValue_CH4Loss.toObject();
+      QJsonValue myThirdNestedValue_CO2Loss = mySecondNestedObject_SurfaceFluxes.value("CO2Loss");
+      QJsonObject myThirdNestedObject_CO2Loss = myThirdNestedValue_CO2Loss.toObject();
+      QJsonValue myThirdNestedValue_ET = mySecondNestedObject_SurfaceFluxes.value("ET");
+      QJsonObject myThirdNestedObject_ET = myThirdNestedValue_ET.toObject();
+      QJsonValue myThirdNestedValue_N2Loss = mySecondNestedObject_SurfaceFluxes.value("N2Loss");
+      QJsonObject myThirdNestedObject_N2Loss = myThirdNestedValue_N2Loss.toObject();
+      QJsonValue myThirdNestedValue_N2OLoss = mySecondNestedObject_SurfaceFluxes.value("N2OLoss");
+      QJsonObject myThirdNestedObject_N2OLoss = myThirdNestedValue_N2OLoss.toObject();
+      QJsonValue myThirdNestedValue_NH3Loss = mySecondNestedObject_SurfaceFluxes.value("NH3Loss");
+      QJsonObject myThirdNestedObject_NH3Loss = myThirdNestedValue_NH3Loss.toObject();
+      QJsonValue myThirdNestedValue_NOLoss = mySecondNestedObject_SurfaceFluxes.value("NOLoss");
+      QJsonObject myThirdNestedObject_NOLoss = myThirdNestedValue_NOLoss.toObject();
+
+  QJsonValue myFirstNestedValue_Weather = myRootObject.value("Weather");
+  QJsonObject myFirstNestedObject_Weather = myFirstNestedValue_Weather.toObject();
+    QJsonValue mySecondNestedValue_GlobalRadiation = myFirstNestedObject_Weather.value("GlobalRadiation");
+    QJsonObject mySecondNestedObject_GlobalRadiation = mySecondNestedValue_GlobalRadiation.toObject();
+    QJsonValue mySecondNestedValue_LeafWetness = myFirstNestedObject_Weather.value("LeafWetness");
+    QJsonObject mySecondNestedObject_LeafWetness = mySecondNestedValue_LeafWetness.toObject();
+    QJsonValue mySecondNestedValue_Precipitation = myFirstNestedObject_Weather.value("Precipitation");
+    QJsonObject mySecondNestedObject_Precipitation = mySecondNestedValue_Precipitation.toObject();
+    QJsonValue mySecondNestedValue_RelHumidity = myFirstNestedObject_Weather.value("RelHumidity");
+    QJsonObject mySecondNestedObject_RelHumidity = mySecondNestedValue_RelHumidity.toObject();
+    QJsonValue mySecondNestedValue_SoilTemp = myFirstNestedObject_Weather.value("SoilTemp");
+    QJsonObject mySecondNestedObject_SoilTemp = mySecondNestedValue_SoilTemp.toObject();
+    QJsonValue mySecondNestedValue_SunshineHours = myFirstNestedObject_Weather.value("SunshineHours");
+    QJsonObject mySecondNestedObject_SunshineHours = mySecondNestedValue_SunshineHours.toObject();
+    QJsonValue mySecondNestedValue_TAve = myFirstNestedObject_Weather.value("TAve");
+    QJsonObject mySecondNestedObject_TAve = mySecondNestedValue_TAve.toObject();
+    QJsonValue mySecondNestedValue_TMax = myFirstNestedObject_Weather.value("TMax");
+    QJsonObject mySecondNestedObject_TMax = mySecondNestedValue_TMax.toObject();
+    QJsonValue mySecondNestedValue_TMin = myFirstNestedObject_Weather.value("TMin");
+    QJsonObject mySecondNestedObject_TMin = mySecondNestedValue_TMin.toObject();
+    QJsonValue mySecondNestedValue_WindSpeed = myFirstNestedObject_Weather.value("WindSpeed");
+    QJsonObject mySecondNestedObject_WindSpeed = mySecondNestedValue_WindSpeed.toObject();
 }
+
+
+
+
+
+
+
+
 
 void DatasetClassification::on_toolButtonDatasetEdit_clicked()
 {
-    //setFormFromJson();
-    setFormExample();
+  //setFormFromJson();
+  QString myLoadedForm = ui->cbDatasets->currentText();
+  setFormExample(myLoadedForm);
 }
 
-void DatasetClassification::setFormExample()
+void DatasetClassification::setFormExample(QString theExample)
 {
   // resets the form to example - check with user first as the form will be overwritten
   int myProceed = QMessageBox::question(0, QString("Current settings will be lost"),
@@ -6884,7 +7116,36 @@ void DatasetClassification::setFormExample()
 
   // qDebug() << "Let's do it";
 
+  /*
+   * QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+   *                                              "/home",
+   *                                              tr("JSON (*.json *.txt)"));
+   */
+  QString myFilename = theExample;
+  QFile myFile(myFilename);
+  if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+  {
+      qDebug() << "File open error:" << myFile.errorString();
+      //return 1;
+  }
 
+  QByteArray myJsonByteArray = myFile.readAll();
+
+  myFile.close();
+
+  QJsonParseError myJsonParseError;
+  QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+  if (myJsonParseError.error != QJsonParseError::NoError)
+  {
+      qDebug() << "Error happened:" << myJsonParseError.errorString();
+  }
+
+  // the two lines below dump the file, and look good, so commenting out
+  //qDebug() << "myJsonDocument --->\n" << myJsonDocument << "\n";
+  //qDebug() << "myJsonDocument formatted --->\n" <<myJsonDocument.toJson();
+
+  // the tricky part here is to parse through the document because it
+  //     has "nested" QJsonObjects
 
 
 }
@@ -6908,4 +7169,12 @@ void DatasetClassification::on_pbLoad_clicked()
   // @TODO check to see if Enginio has anything built in to do this kind of thing
 
   //
+
+  setFormFromJson();
+
+}
+
+void DatasetClassification::on_cbDatasets_currentIndexChanged(const QString &theExample)
+{
+  setFormExample(theExample);
 }

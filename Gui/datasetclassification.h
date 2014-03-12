@@ -23,9 +23,9 @@
 #define DATASETCLASSIFICATION_H
 
 // local includes
-#include "formmodel.h"
-#include "rankpointgenerator.h"
-#include "dr.h"
+#include "formmodel.h" // this needs attention - not sure how to do this
+#include "rankpointgenerator.h" // the calculations library
+#include "dr.h" // meant for enums and typedefs but not used yet
 
 // Qt includes
 #include <QMainWindow>
@@ -368,6 +368,8 @@ private slots:
   void on_dsbSeasonsTreatment4Weight_valueChanged(double theWeight);
   void on_dsbSeasonsTreatment5Weight_valueChanged(double theWeight);
   void on_dsbSeasonsTreatment6Weight_valueChanged(double theWeight);
+
+  // checkbox Seasons
   void on_chbxSeasonsTreatment1_clicked();
   void on_chbxSeasonsTreatment2_clicked();
   void on_chbxSeasonsTreatment3_clicked();
@@ -375,139 +377,97 @@ private slots:
   void on_chbxSeasonsTreatment5_clicked();
   void on_chbxSeasonsTreatment6_clicked();
 
+  // checkbox Management
   void on_chbxVariety_clicked();
-
   void on_chbxSowing_clicked();
-
   void on_chbxHarvest_clicked();
-
   void on_chbxFertilisation_clicked();
-
   void on_chbxIrrigation_clicked();
-
   void on_chbxSeedDensity_clicked();
-
   void on_chbxTillage_clicked();
 
+  // checkbox Phenology
   void on_chbxEmergencePhenology_clicked();
-
   void on_chbxStemElongationPhenology_clicked();
-
   void on_chbxEarEmergencePhenology_clicked();
-
   void on_chbxFloweringPhenology_clicked();
-
   void on_chbxYellowRipenessPhenology_clicked();
 
+  // checkbox Previous Crop
   void on_chbxCropPrevCrop_clicked();
-
   void on_chbxSowingDatePrevCrop_clicked();
-
   void on_chbxHarvestDatePrevCrop_clicked();
-
   void on_chbxYieldPrevCrop_clicked();
-
   void on_chbxResidueMgmtPrevCrop_clicked();
-
   void on_chbxFertilisationPrevCrop_clicked();
-
   void on_chbxIrrigationPrevCrop_clicked();
 
+  // checkbox Initial Values
   void on_chbxSoilMoistureInitialValues_clicked();
-
   void on_chbxNMinInitialValues_clicked();
 
+  // checkbox Soil
   void on_chbxCOrgSoil_clicked();
-
   void on_chbxNOrgSoil_clicked();
-
   void on_chbxTextureSoil_clicked();
-
   void on_chbxBulkDensitySoil_clicked();
-
   void on_chbxFieldCapacitySoil_clicked();
-
   void on_chbxWiltingPointSoil_clicked();
-
   void on_chbxPfCurveSoil_clicked();
-
   void on_chbxHydrCondCurveSoil_clicked();
-
   void on_chbxPhSoil_clicked();
 
+  // checkbox Site
   void on_chbxLatitudeSite_clicked();
-
   void on_chbxLongitudeSite_clicked();
-
   void on_chbxAltitudeSite_clicked();
-
   void on_chbxSlopeSite_clicked();
 
+  // checkbox Weather
   void on_chbxPrecipitationWeather_clicked();
-
   void on_chbxTAveWeather_clicked();
-
   void on_chbxTMinWeather_clicked();
-
   void on_chbxTMaxWeather_clicked();
-
   void on_chbxRelHumidityWeather_clicked();
-
   void on_chbxWindSpeedWeather_clicked();
-
   void on_chbxGlobalRadiationWeather_clicked();
-
   void on_chbxSunshineHoursWeather_clicked();
-
   void on_chbxLeafWetnessWeather_clicked();
-
   void on_chbxSoilTempWeather_clicked();
-
   void on_chbxYield_clicked();
 
+  // checkbox StateVars Crop
   void on_chbxSVCropAGrBiomass_clicked();
-
   void on_chbxSVCropWeightOrgans_clicked();
-
   void on_chbxSVCropRootBiomass_clicked();
-
   void on_chbxSVCropNInAGrBiomass_clicked();
-
   void on_chbxSVCropNInOrgans_clicked();
-
   void on_chbxSVCropLAI_clicked();
 
+  // checkbox StateVars Soil
   void on_chbxSVSoilSoilWaterGrav_clicked();
-
   void on_chbxSVSoilPressureHeads_clicked();
-
   void on_chbxSVSoilNMin_clicked();
-
   void on_chbxSVSoilSoilWaterSensorCal_clicked();
-
   void on_chbxSVSoilWaterFluxBottomRoot_clicked();
-
   void on_chbxSVSoilNFluxBottomRoot_clicked();
 
+  // checkbox StateVars Surface Fluxes
   void on_chbxSVSurfaceFluxesEt_clicked();
-
   void on_chbxSVSurfaceFluxesNh3Loss_clicked();
-
   void on_chbxSVSurfaceFluxesN2OLoss_clicked();
-
   void on_chbxSVSurfaceFluxesN2Loss_clicked();
-
   void on_chbxSVSurfaceFluxesCh4Loss_clicked();
   void on_chbxSVSurfaceFluxesNOLoss_clicked();
   void on_chbxSVSurfaceFluxesCO2Loss_clicked();
 
+  // checkbox StateVars Observations
   void on_chbxSVObservationsLodging_clicked();
-
   void on_chbxSVObservationsPestsOrDiseases_clicked();
   void on_chbxSVObservationsWeeds_clicked();
-
   void on_chbxSVObservationsDamages_clicked();
 
+  // Seasons Treatment selection comboboxes
   void on_cbSeasonsTreatment1_currentIndexChanged(const QString &theCurrentText);
   void on_cbSeasonsTreatment2_currentIndexChanged(const QString &theCurrentText);
   void on_cbSeasonsTreatment3_currentIndexChanged(const QString &theCurrentText);
@@ -515,15 +475,17 @@ private slots:
   void on_cbSeasonsTreatment5_currentIndexChanged(const QString &theCurrentText);
   void on_cbSeasonsTreatment6_currentIndexChanged(const QString &theCurrentText);
 
+  // misc buttons
   void on_toolButtonDatasetEdit_clicked();
-
   void on_pbLoad_clicked();
+
+  void on_cbDatasets_currentIndexChanged(const QString &theExample);
 
 private:
   Ui::DatasetClassification *ui;
-  QString makeString(double theDouble);
-  QString makeString(int theInt);
-  QString makeString(float theFloat);
+  QString makeString(double theDouble); // returns double as a QString
+  QString makeString(int theInt); // returns int as a QString
+  QString makeString(float theFloat); // returns float as a QString
 
     //--------------------//
    //  Qt Enginio stuff  //
@@ -565,6 +527,7 @@ private:
   void saveJsonToFile(QJsonDocument theQJsonDocument);
   QString generateCitation(QString theText);
   void updateGrandTotals();
+
   QJsonObject generateDatasetJson();
   QJsonObject generateManagementJson();
   QJsonObject generatePhenologyJson();
@@ -589,8 +552,9 @@ private:
   QPair<bool, double> calculatePointsWeather();
   QPair<double, double> calculateMultiplier();
   QPair<bool, double> calculatePointsStateVars();
+
   void setFormFromJson();
-  void setFormExample();
+  void setFormExample(QString theExample);
 };
 
 #endif // DATASETCLASSIFICATION_H

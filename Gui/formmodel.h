@@ -39,11 +39,13 @@ public:
   explicit FormModel(QObject *parent = 0);
   virtual QVariant data(const QModelIndex &theIndex,
                         int theRole = Qt::DisplayRole
-                       ) const Q_DECL_OVERRIDE;
+                       )
+                        const Q_DECL_OVERRIDE;
   virtual QVariant headerData(int theSection,
                               Qt::Orientation theOrientation,
                               int theRole
-                             ) const Q_DECL_OVERRIDE;
+                             )
+                              const Q_DECL_OVERRIDE;
   virtual QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
 
 
