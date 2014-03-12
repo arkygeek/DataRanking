@@ -5567,7 +5567,7 @@ QJsonObject DatasetClassification::generateDatasetJson()
 {
   QString myIsChecked;
   QString myIsCheckedText;
-  QJsonObject myDatasetObject;
+  //QJsonObject myDatasetObject;
   //myDatasetObject.insert("objectType", QString("objects.entry"));
 
 
@@ -5680,8 +5680,8 @@ QJsonObject DatasetClassification::generateDatasetJson()
     myDatasetDetails.insert("chbxDatasetDataTypesLivestockPhysiology", myIsCheckedText);
     myDatasetDetails.insert("cbDatasetSpatialScaleLivestockPhysiology", ui->cbDatasetSpatialScaleLivestockPhysiology->currentText());
     // add to the dataset object
-    myDatasetObject.insert("DatasetDetails", myDatasetDetails);
-    return myDatasetObject;
+    //myDatasetObject.insert("DatasetDetails", myDatasetDetails);
+    return myDatasetDetails;
 }
 QJsonObject DatasetClassification::generateManagementJson()
 {
@@ -6899,12 +6899,12 @@ void DatasetClassification::setFormFromJson()
 
   QJsonValue myFirstNestedValue_Management = myRootObject.value("Management");
   QJsonObject myFirstNestedObject_Management = myFirstNestedValue_Management.toObject();
-    QJsonValue mySecondNestedValue_Fertilisation = myFirstNestedObject_Management.value("Fertilisation");
-    QJsonObject mySecondNestedObject_Fertilisation = mySecondNestedValue_Fertilisation.toObject();
+    QJsonValue mySecondNestedValue_Fertilisation1 = myFirstNestedObject_Management.value("Fertilisation");
+    QJsonObject mySecondNestedObject_Fertilisation1 = mySecondNestedValue_Fertilisation1.toObject();
     QJsonValue mySecondNestedValue_Harvest = myFirstNestedObject_Management.value("Harvest");
     QJsonObject mySecondNestedObject_Harvest = mySecondNestedValue_Harvest.toObject();
-    QJsonValue mySecondNestedValue_Irrigation = myFirstNestedObject_Management.value("Irrigation");
-    QJsonObject mySecondNestedObject_Irrigation = mySecondNestedValue_Irrigation.toObject();
+    QJsonValue mySecondNestedValue_Irrigation1 = myFirstNestedObject_Management.value("Irrigation");
+    QJsonObject mySecondNestedObject_Irrigation1 = mySecondNestedValue_Irrigation1.toObject();
     QJsonValue mySecondNestedValue_SeedDensity = myFirstNestedObject_Management.value("SeedDensity");
     QJsonObject mySecondNestedObject_SeedDensity = mySecondNestedValue_SeedDensity.toObject();
     QJsonValue mySecondNestedValue_Sowing = myFirstNestedObject_Management.value("Sowing");
