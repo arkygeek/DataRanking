@@ -5566,7 +5566,7 @@ QJsonObject DatasetClassification::generateHeaderJson()
 QJsonObject DatasetClassification::generateDatasetJson()
 {
   QString myIsChecked;
-  QString myIsCheckedText;
+  //QString myIsCheckedText;
   //QJsonObject myDatasetObject;
   //myDatasetObject.insert("objectType", QString("objects.entry"));
 
@@ -5581,8 +5581,8 @@ QJsonObject DatasetClassification::generateDatasetJson()
   myDatasetDetails.insert("ledDatasetEmail", ui->ledDatasetEmail->text());
   myDatasetDetails.insert("dteDatasetSubmitted", ui->dteDatasetSubmitted->text());
 
-  myIsCheckedText = ui->chbxDatasetPeriodOfRecord->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetPeriodOfRecord", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetPeriodOfRecord->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetPeriodOfRecord", ui->chbxDatasetPeriodOfRecord->isChecked());
 
   myDatasetDetails.insert("dateEditFrom", ui->dateEditFrom->text());
   myDatasetDetails.insert("dateEditTo", ui->dateEditTo->text());
@@ -5605,79 +5605,79 @@ QJsonObject DatasetClassification::generateDatasetJson()
   myVariablesList += "END";
   myDatasetDetails.insert("listWidgetVariables", myVariablesList);
 
-  myIsCheckedText = ui->chbxDatasetDataTypesEconomic->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesEconomic", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesEconomic->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesEconomic", ui->chbxDatasetDataTypesEconomic->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleEconomic", ui->cbDatasetSpatialScaleEconomic->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesGeneric->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesGeneric", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesGeneric->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesGeneric", ui->chbxDatasetDataTypesGeneric->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleGeneric", ui->cbDatasetSpatialScaleGeneric->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesSoils->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesSoils", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesSoils->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesSoils", ui->chbxDatasetDataTypesSoils->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleSoils", ui->cbDatasetSpatialScaleSoils->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesWeather->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesWeather", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesWeather->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesWeather", ui->chbxDatasetDataTypesWeather->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleWeather", ui->cbDatasetSpatialScaleWeather->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesWeatherGenerator->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesWeatherGenerator", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesWeatherGenerator->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesWeatherGenerator", ui->chbxDatasetDataTypesWeatherGenerator->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleWeatherGenerator", ui->cbDatasetSpatialScaleWeatherGenerator->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesClimateProjection->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesClimateProjection", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesClimateProjection->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesClimateProjection", ui->chbxDatasetDataTypesClimateProjection->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleClimateProjection", ui->cbDatasetSpatialScaleClimateProjection->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesGrid->checkState()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesGrid", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesGrid->checkState()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesGrid", ui->chbxDatasetDataTypesGrid->isChecked());
   myDatasetDetails.insert("ledDatasetGridResolutionX", ui->ledDatasetGridResolutionX->text());
   myDatasetDetails.insert("ledDatasetGridResolutionY", ui->ledDatasetGridResolutionY->text());
   myDatasetDetails.insert("cbDatasetGridUnits", ui->cbDatasetGridUnits->currentText());
 
   // crop groupbox and contents
-  myIsCheckedText = ui->gbDatasetDataTypesCrop->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("gbDatasetDataTypesCrop", myIsCheckedText);
+  //myIsCheckedText = ui->gbDatasetDataTypesCrop->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("gbDatasetDataTypesCrop", ui->gbDatasetDataTypesCrop->isChecked());
   myDatasetDetails.insert("tedDatasetCropNotes", ui->tedDatasetCropNotes->toPlainText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesCropFieldExperiments->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesCropFieldExperiments", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesCropFieldExperiments->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropFieldExperiments", ui->chbxDatasetDataTypesCropFieldExperiments->isChecked());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesCropGenetic->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesCropGenetic", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesCropGenetic->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropGenetic", ui->chbxDatasetDataTypesCropGenetic->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleCropGenetic", ui->cbDatasetSpatialScaleCropGenetic->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesCropMgmt->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesCropMgmt", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesCropMgmt->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropMgmt", ui->chbxDatasetDataTypesCropMgmt->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleCropMgmt", ui->cbDatasetSpatialScaleCropMgmt->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesCropPathogens->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesCropPathogens", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesCropPathogens->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropPathogens", ui->chbxDatasetDataTypesCropPathogens->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleCropPathogens", ui->cbDatasetSpatialScaleCropPathogens->currentText());
 
-  myIsCheckedText = ui->chbxDatasetDataTypesCropPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
-  myDatasetDetails.insert("chbxDatasetDataTypesCropPhysiology", myIsCheckedText);
+  //myIsCheckedText = ui->chbxDatasetDataTypesCropPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
+  myDatasetDetails.insert("chbxDatasetDataTypesCropPhysiology", ui->chbxDatasetDataTypesCropPhysiology->isChecked());
   myDatasetDetails.insert("cbDatasetSpatialScaleCropPhysiology", ui->cbDatasetSpatialScaleCropPhysiology->currentText());
 
   // livestock groupbox and contents
-    myIsCheckedText = ui->gbDatasetDataTypesLivestock->isChecked()==Qt::Unchecked?"no":"yes";
-    myDatasetDetails.insert("gbDatasetDataTypesLivestock", myIsCheckedText);
+    //myIsCheckedText = ui->gbDatasetDataTypesLivestock->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("gbDatasetDataTypesLivestock", ui->gbDatasetDataTypesLivestock->isChecked());
     myDatasetDetails.insert("tedDatasetLivestockNotes", ui->tedDatasetLivestockNotes->toPlainText());
 
-    myIsCheckedText = ui->chbxDatasetDataTypesLivestockGenetic->isChecked()==Qt::Unchecked?"no":"yes";
-    myDatasetDetails.insert("chbxDatasetDataTypesLivestockGenetic", myIsCheckedText);
+    //myIsCheckedText = ui->chbxDatasetDataTypesLivestockGenetic->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockGenetic", ui->chbxDatasetDataTypesLivestockGenetic->isChecked());
     myDatasetDetails.insert("cbDatasetSpatialScaleLivestockGenetic", ui->cbDatasetSpatialScaleLivestockGenetic->currentText());
 
-    myIsCheckedText = ui->chbxDatasetDataTypesLivestockMgmt->isChecked()==Qt::Unchecked?"no":"yes";
-    myDatasetDetails.insert("chbxDatasetDataTypesLivestockMgmt", myIsCheckedText);
+    //myIsCheckedText = ui->chbxDatasetDataTypesLivestockMgmt->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockMgmt", ui->chbxDatasetDataTypesLivestockMgmt->isChecked());
     myDatasetDetails.insert("cbDatasetSpatialScaleLivestockMgmt", ui->cbDatasetSpatialScaleLivestockMgmt->currentText());
 
-    myIsCheckedText = ui->chbxDatasetDataTypesLivestockPathogens->isChecked()==Qt::Unchecked?"no":"yes";
-    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPathogens", myIsCheckedText);
+    //myIsCheckedText = ui->chbxDatasetDataTypesLivestockPathogens->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPathogens", ui->chbxDatasetDataTypesLivestockPathogens->isChecked());
     myDatasetDetails.insert("cbDatasetSpatialScaleLivestockPathogens", ui->cbDatasetSpatialScaleLivestockPathogens->currentText());
 
-    myIsCheckedText = ui->chbxDatasetDataTypesLivestockPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
-    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPhysiology", myIsCheckedText);
+    //myIsCheckedText = ui->chbxDatasetDataTypesLivestockPhysiology->isChecked()==Qt::Unchecked?"no":"yes";
+    myDatasetDetails.insert("chbxDatasetDataTypesLivestockPhysiology", ui->chbxDatasetDataTypesLivestockPhysiology->isChecked());
     myDatasetDetails.insert("cbDatasetSpatialScaleLivestockPhysiology", ui->cbDatasetSpatialScaleLivestockPhysiology->currentText());
     // add to the dataset object
     //myDatasetObject.insert("DatasetDetails", myDatasetDetails);
@@ -7159,9 +7159,31 @@ void DatasetClassification::setFormFromJson()
   ui->chbxDatasetDataTypesWeatherGenerator->setChecked(mySecondNestedObject_Dataset["chbxDatasetDataTypesWeatherGenerator"].toBool());
   ui->chbxDatasetPeriodOfRecord->setChecked(mySecondNestedObject_Dataset["chbxDatasetPeriodOfRecord"].toBool());
 
+
   ui->dateEditFrom->setDate(QDate::fromString(mySecondNestedObject_Dataset["dateEditFrom"].toString(),"dd/MM/yyyy"));
+  ui->dateEditTo->setDate(QDate::fromString(mySecondNestedObject_Dataset["dateEditTo"].toString(),"dd/MM/yyyy"));
+  ui->dteDatasetSubmitted->setDate(QDate::fromString(mySecondNestedObject_Dataset["dteDatasetSubmitted"].toString(),"dd/MM/yyyy"));
 
+  ui->gbDatasetDataTypesCrop->setChecked(mySecondNestedObject_Dataset["gbDatasetDataTypesCrop"].toBool());
+  ui->gbDatasetDataTypesLivestock->setChecked(mySecondNestedObject_Dataset["gbDatasetDataTypesLivestock"].toBool());
 
+  ui->ledDatasetDatasetName->setText(mySecondNestedObject_Dataset["ledDatasetDatasetName"].toString());
+  ui->ledDatasetEmail->setText(mySecondNestedObject_Dataset["ledDatasetEmail"].toString());
+  ui->ledDatasetGridResolutionX->setText(mySecondNestedObject_Dataset["ledDatasetGridResolutionX"].toString());
+  ui->ledDatasetGridResolutionY->setText(mySecondNestedObject_Dataset["ledDatasetGridResolutionY"].toString());
+  ui->ledDatasetSubmitter->setText(mySecondNestedObject_Dataset["ledDatasetSubmitter"].toString());
+  ui->ledDatasetUsageRestrictions->setText(mySecondNestedObject_Dataset["ledDatasetUsageRestrictions"].toString());
+  ui->ledDatasetVersion->setText(mySecondNestedObject_Dataset["ledDatasetVersion"].toString());
+  ui->ledWebLink->setText(mySecondNestedObject_Dataset["ledWebLink"].toString());
+
+  // @TODO fix this, make it an array
+  //ui->listWidgetVariables->setText(mySecondNestedObject_Dataset["listWidgetVariables"].toString());
+
+  ui->tedDatasetComments->setText(mySecondNestedObject_Dataset["tedDatasetComments"].toString());
+  ui->tedDatasetCoverage->setText(mySecondNestedObject_Dataset["tedDatasetCoverage"].toString());
+  ui->tedDatasetCropNotes->setText(mySecondNestedObject_Dataset["tedDatasetCropNotes"].toString());
+  ui->tedDatasetLivestockNotes->setText(mySecondNestedObject_Dataset["tedDatasetLivestockNotes"].toString());
+  ui->tedDatasetResolution->setText(mySecondNestedObject_Dataset["tedDatasetResolution"].toString());
 
 }
 
