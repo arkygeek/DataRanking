@@ -6691,7 +6691,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="1">
-            <widget class="QSpinBox" name="sbLatitudeObservationsSite">
+            <widget class="QSpinBox" name="sbLatitudeObsSite">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -6717,7 +6717,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="1">
-            <widget class="QSpinBox" name="sbAltitudeObservationsSite">
+            <widget class="QSpinBox" name="sbAltitudeObsSite">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -6759,7 +6759,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="1">
-            <widget class="QSpinBox" name="sbLongitudeObservationsSite">
+            <widget class="QSpinBox" name="sbLongitudeObsSite">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -6929,7 +6929,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="2">
-            <widget class="QSpinBox" name="sbSlopeObservationsSite">
+            <widget class="QSpinBox" name="sbSlopeObsSite">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -8822,7 +8822,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
+           <pixmap>:/Resources/platinum.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -8848,7 +8848,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -8858,8 +8858,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>484</width>
-             <height>455</height>
+             <width>837</width>
+             <height>596</height>
             </rect>
            </property>
            <attribute name="label">
@@ -9540,7 +9540,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxYield">
+                  <widget class="QCheckBox" name="chbxSVCropYield">
                    <property name="font">
                     <font>
                      <pointsize>11</pointsize>
@@ -10605,7 +10605,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossReplicates">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossReplicates">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -10619,7 +10619,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossWeightPts">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
@@ -10654,7 +10654,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCh4LossLayers">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossLayers">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -10697,7 +10697,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesCh4LossPoints">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesCH4LossPoints">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -10744,7 +10744,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCh4LossObservations">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCH4LossObservations">
                    <property name="value">
                     <number>0</number>
                    </property>
@@ -10933,7 +10933,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCh4Loss">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCH4Loss">
                    <property name="layoutDirection">
                     <enum>Qt::RightToLeft</enum>
                    </property>
@@ -13606,7 +13606,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
+           <pixmap>:/Resources/platinum.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -13884,9 +13884,7 @@ p, li { white-space: pre-wrap; }
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="Resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>chbxDatasetPeriodOfRecord</sender>

@@ -169,10 +169,10 @@ private slots:
   void on_dsbPhWeightSoil_valueChanged(double theWeight);
 
   // site
-  void on_sbLatitudeObservationsSite_valueChanged(int theObservations);
-  void on_sbLongitudeObservationsSite_valueChanged(int theObservations);
-  void on_sbAltitudeObservationsSite_valueChanged(int theObservations);
-  void on_sbSlopeObservationsSite_valueChanged(int theObservations);
+  void on_sbLatitudeObsSite_valueChanged(int theObservations);
+  void on_sbLongitudeObsSite_valueChanged(int theObservations);
+  void on_sbAltitudeObsSite_valueChanged(int theObservations);
+  void on_sbSlopeObsSite_valueChanged(int theObservations);
 
   void on_dsbLatitudeWeightSite_valueChanged(double theWeight);
   void on_dsbLongitudeWeightSite_valueChanged(double theWeight);
@@ -315,9 +315,9 @@ private slots:
   void on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
 
-  void on_sbSVSurfaceFluxesCh4LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesCh4LossWeightPts_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesCh4LossReplicates_valueChanged(double theReplicates);
+  void on_sbSVSurfaceFluxesCH4LossObservations_valueChanged(int theObservations);
+  void on_dsbSVSurfaceFluxesCH4LossWeightPts_valueChanged(double theWeight);
+  //void on_dsbSVSurfaceFluxesCH4LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesCO2LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesCO2LossWeightPts_valueChanged(double theWeight);
@@ -457,7 +457,7 @@ private slots:
   void on_chbxSVSurfaceFluxesNh3Loss_clicked();
   void on_chbxSVSurfaceFluxesN2OLoss_clicked();
   void on_chbxSVSurfaceFluxesN2Loss_clicked();
-  void on_chbxSVSurfaceFluxesCh4Loss_clicked();
+  void on_chbxSVSurfaceFluxesCH4Loss_clicked();
   void on_chbxSVSurfaceFluxesNOLoss_clicked();
   void on_chbxSVSurfaceFluxesCO2Loss_clicked();
 
