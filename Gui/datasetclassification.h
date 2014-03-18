@@ -299,9 +299,9 @@ private slots:
   void on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates);
 
-  void on_sbSVSurfaceFluxesNh3LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesNh3LossReplicates_valueChanged(double theReplicates);
+  void on_sbSVSurfaceFluxesNH3LossObservations_valueChanged(int theObservations);
+  void on_dsbSVSurfaceFluxesNH3LossWeightPts_valueChanged(double theWeight);
+  //void on_dsbSVSurfaceFluxesNH3LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight);
@@ -454,7 +454,7 @@ private slots:
 
   // checkbox StateVars Surface Fluxes
   void on_chbxSVSurfaceFluxesEt_clicked();
-  void on_chbxSVSurfaceFluxesNh3Loss_clicked();
+  void on_chbxSVSurfaceFluxesNH3Loss_clicked();
   void on_chbxSVSurfaceFluxesN2OLoss_clicked();
   void on_chbxSVSurfaceFluxesN2Loss_clicked();
   void on_chbxSVSurfaceFluxesCH4Loss_clicked();

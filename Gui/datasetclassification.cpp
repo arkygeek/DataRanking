@@ -2966,7 +2966,7 @@ void DatasetClassification::on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double
   updateSVLabels();
 }
 
-void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged(int theObservations)
+void DatasetClassification::on_sbSVSurfaceFluxesNH3LossObservations_valueChanged(int theObservations)
 {
   RankPointGenerator myPointGen;
   double myWeight;
@@ -2974,16 +2974,16 @@ void DatasetClassification::on_sbSVSurfaceFluxesNh3LossObservations_valueChanged
   double myValue;
   QString myTotal;
 
-  myWeight = ui->dsbSVSurfaceFluxesNh3LossWeightPts->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
+  myWeight = ui->dsbSVSurfaceFluxesNH3LossWeightPts->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesNH3LossReplicates->value();
   //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNH3Loss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
-  ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
+  ui->lblSVSurfaceFluxesNH3LossPoints->setText(myTotal);
   updateSVLabels();
 }
-void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(double theWeight)
+void DatasetClassification::on_dsbSVSurfaceFluxesNH3LossWeightPts_valueChanged(double theWeight)
 {
   int myObservations;
   //double myReplicates;
@@ -2991,13 +2991,13 @@ void DatasetClassification::on_dsbSVSurfaceFluxesNh3LossWeightPts_valueChanged(d
   double myValue;
   QString myTotal;
 
-  myObservations = ui->sbSVSurfaceFluxesNh3LossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNh3LossReplicates->value();
+  myObservations = ui->sbSVSurfaceFluxesNH3LossObservations->value();
+  //myReplicates = ui->dsbSVSurfaceFluxesNH3LossReplicates->value();
   //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNH3Loss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
-  ui->lblSVSurfaceFluxesNh3LossPoints->setText(myTotal);
+  ui->lblSVSurfaceFluxesNH3LossPoints->setText(myTotal);
   updateSVLabels();
 }
 
@@ -4203,7 +4203,7 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   float mySurfaceFluxTotal = 0.0;
   //QPixmap pixmap;
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesEtPoints->text().toDouble();
-  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNh3LossPoints->text().toDouble();
+  mySurfaceFluxTotal += ui->lblSVSurfaceFluxesNH3LossPoints->text().toDouble();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2OLossPoints->text().toDouble();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesN2LossPoints->text().toDouble();
   mySurfaceFluxTotal += ui->lblSVSurfaceFluxesCH4LossPoints->text().toDouble();
@@ -4215,9 +4215,9 @@ QPair<bool,double> DatasetClassification::calculatePointsStateVars()
   {
     myMinDataMissing = ui->lblSVSurfaceFluxesEtPoints->text()=="0"?true:myMinDataMissing;
   }
-  if(ui->chbxSVSurfaceFluxesNh3Loss->checkState()==Qt::Checked)
+  if(ui->chbxSVSurfaceFluxesNH3Loss->checkState()==Qt::Checked)
   {
-    myMinDataMissing = ui->lblSVSurfaceFluxesNh3LossPoints->text()=="0"?true:myMinDataMissing;
+    myMinDataMissing = ui->lblSVSurfaceFluxesNH3LossPoints->text()=="0"?true:myMinDataMissing;
   }
   if(ui->chbxSVSurfaceFluxesN2OLoss->checkState()==Qt::Checked)
   {
@@ -5368,7 +5368,7 @@ void DatasetClassification::on_chbxSVSurfaceFluxesEt_clicked()
 {
     updateSVLabels();
 }
-void DatasetClassification::on_chbxSVSurfaceFluxesNh3Loss_clicked()
+void DatasetClassification::on_chbxSVSurfaceFluxesNH3Loss_clicked()
 {
     updateSVLabels();
 }
@@ -6447,13 +6447,13 @@ QJsonObject DatasetClassification::generateSVSurfaceFluxesJson()
   //    SV SurfaceFluxes
   //      NH3Loss
   QJsonObject myStateVariablesSurfaceFluxesNh3LossObject;
-  myMinDataSetting = ui->chbxSVSurfaceFluxesNh3Loss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("chbxSVSurfaceFluxesNh3Loss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Layers", ui->dsbSVSurfaceFluxesNh3LossLayers->value());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("dsbSVSurfaceFluxesNh3LossWeightPts", ui->dsbSVSurfaceFluxesNh3LossWeightPts->value());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("lblSVSurfaceFluxesNh3LossPoints", ui->lblSVSurfaceFluxesNh3LossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNh3LossReplicates->text());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("sbSVSurfaceFluxesNh3LossObservations", ui->sbSVSurfaceFluxesNh3LossObservations->value());
+  myMinDataSetting = ui->chbxSVSurfaceFluxesNH3Loss->isChecked()?true:false;
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("chbxSVSurfaceFluxesNH3Loss", myMinDataSetting);
+  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Layers", ui->dsbSVSurfaceFluxesNH3LossLayers->value());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("dsbSVSurfaceFluxesNH3LossWeightPts", ui->dsbSVSurfaceFluxesNH3LossWeightPts->value());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("lblSVSurfaceFluxesNH3LossPoints", ui->lblSVSurfaceFluxesNH3LossPoints->text().toDouble());
+  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNH3LossReplicates->text());
+  myStateVariablesSurfaceFluxesNh3LossObject.insert("sbSVSurfaceFluxesNH3LossObservations", ui->sbSVSurfaceFluxesNH3LossObservations->value());
   // add this to the SurfaceFluxes object
   myStateVariablesSurfaceFluxesObject.insert("NH3Loss", myStateVariablesSurfaceFluxesNh3LossObject);
 
@@ -7053,8 +7053,8 @@ void DatasetClassification::setFormFromJson()
       QJsonObject myObjStateVars_SurfaceFluxes_CH4Loss = myValStateVars_SurfaceFluxes_CH4Loss.toObject();
       QJsonValue myValStateVars_SurfaceFluxes_CO2Loss = myObjStateVars_SurfaceFluxes.value("CO2Loss");
       QJsonObject myObjStateVars_SurfaceFluxes_CO2Loss = myValStateVars_SurfaceFluxes_CO2Loss.toObject();
-      QJsonValue myValStateVars_SurfaceFluxes_ET = myObjStateVars_SurfaceFluxes.value("ET");
-      QJsonObject myObjStateVars_SurfaceFluxes_ET = myValStateVars_SurfaceFluxes_ET.toObject();
+      QJsonValue myValStateVars_SurfaceFluxes_Et = myObjStateVars_SurfaceFluxes.value("ET");
+      QJsonObject myObjStateVars_SurfaceFluxes_Et = myValStateVars_SurfaceFluxes_Et.toObject();
       QJsonValue myValStateVars_SurfaceFluxes_N2Loss = myObjStateVars_SurfaceFluxes.value("N2Loss");
       QJsonObject myObjStateVars_SurfaceFluxes_N2Loss = myValStateVars_SurfaceFluxes_N2Loss.toObject();
       QJsonValue myValStateVars_SurfaceFluxes_N2OLoss = myObjStateVars_SurfaceFluxes.value("N2OLoss");
@@ -7570,6 +7570,53 @@ void DatasetClassification::setFormFromJson()
   ui->lblSVSurfaceFluxesCH4LossPoints->setText(myObjStateVars_SurfaceFluxes_CH4Loss["lblSVSurfaceFluxesCH4LossPoints"].toString());
   ui->sbSVSurfaceFluxesCH4LossObservations->setValue(myObjStateVars_SurfaceFluxes_CH4Loss["sbSVSurfaceFluxesCH4LossObservations"].toInt());
 
+  ui->chbxSVSurfaceFluxesCO2Loss->setChecked(myObjStateVars_SurfaceFluxes_CO2Loss["chbxSVSurfaceFluxesCO2Loss"].toBool());
+  ui->dsbSVSurfaceFluxesCO2LossLayers->setValue(myObjStateVars_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesCO2LossReplicates->setValue(myObjStateVars_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesCO2LossWeightPts->setValue(myObjStateVars_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesCO2LossPoints->setText(myObjStateVars_SurfaceFluxes_CO2Loss["lblSVSurfaceFluxesCO2LossPoints"].toString());
+  ui->sbSVSurfaceFluxesCO2LossObservations->setValue(myObjStateVars_SurfaceFluxes_CO2Loss["sbSVSurfaceFluxesCO2LossObservations"].toInt());
+
+  ui->chbxSVSurfaceFluxesEt->setChecked(myObjStateVars_SurfaceFluxes_Et["chbxSVSurfaceFluxesEt"].toBool());
+  ui->dsbSVSurfaceFluxesEtLayers->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesEtReplicates->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesEtWeightPts->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesEtPoints->setText(myObjStateVars_SurfaceFluxes_Et["lblSVSurfaceFluxesEtPoints"].toString());
+  ui->sbSVSurfaceFluxesEtObservations->setValue(myObjStateVars_SurfaceFluxes_Et["sbSVSurfaceFluxesEtObservations"].toInt());
+
+  ui->chbxSVSurfaceFluxesEt->setChecked(myObjStateVars_SurfaceFluxes_Et["chbxSVSurfaceFluxesEt"].toBool());
+  ui->dsbSVSurfaceFluxesEtLayers->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesEtReplicates->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesEtWeightPts->setValue(myObjStateVars_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesEtPoints->setText(myObjStateVars_SurfaceFluxes_Et["lblSVSurfaceFluxesEtPoints"].toString());
+  ui->sbSVSurfaceFluxesEtObservations->setValue(myObjStateVars_SurfaceFluxes_Et["sbSVSurfaceFluxesEtObservations"].toInt());
+
+  ui->chbxSVSurfaceFluxesN2OLoss->setChecked(myObjStateVars_SurfaceFluxes_N2OLoss["chbxSVSurfaceFluxesN2OLoss"].toBool());
+  ui->dsbSVSurfaceFluxesN2OLossLayers->setValue(myObjStateVars_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesN2OLossReplicates->setValue(myObjStateVars_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesN2OLossWeightPts->setValue(myObjStateVars_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesN2OLossPoints->setText(myObjStateVars_SurfaceFluxes_N2OLoss["lblSVSurfaceFluxesN2OLossPoints"].toString());
+  ui->sbSVSurfaceFluxesN2OLossObservations->setValue(myObjStateVars_SurfaceFluxes_N2OLoss["sbSVSurfaceFluxesN2OLossObservations"].toInt());
+
+  ui->chbxSVSurfaceFluxesNH3Loss->setChecked(myObjStateVars_SurfaceFluxes_NH3Loss["chbxSVSurfaceFluxesNH3Loss"].toBool());
+  ui->dsbSVSurfaceFluxesNH3LossLayers->setValue(myObjStateVars_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesNH3LossReplicates->setValue(myObjStateVars_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesNH3LossWeightPts->setValue(myObjStateVars_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesNH3LossPoints->setText(myObjStateVars_SurfaceFluxes_NH3Loss["lblSVSurfaceFluxesNH3LossPoints"].toString());
+  ui->sbSVSurfaceFluxesNH3LossObservations->setValue(myObjStateVars_SurfaceFluxes_NH3Loss["sbSVSurfaceFluxesNH3LossObservations"].toInt());
+
+  ui->chbxSVSurfaceFluxesNOLoss->setChecked(myObjStateVars_SurfaceFluxes_NOLoss["chbxSVSurfaceFluxesNOLoss"].toBool());
+  ui->dsbSVSurfaceFluxesNOLossLayers->setValue(myObjStateVars_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossMinLayers"].toDouble());
+  ui->dsbSVSurfaceFluxesNOLossReplicates->setValue(myObjStateVars_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossReplicates"].toDouble());
+  ui->dsbSVSurfaceFluxesNOLossWeightPts->setValue(myObjStateVars_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossWeightPts"].toDouble());
+  ui->lblSVSurfaceFluxesNOLossPoints->setText(myObjStateVars_SurfaceFluxes_NOLoss["lblSVSurfaceFluxesNOLossPoints"].toString());
+  ui->sbSVSurfaceFluxesNOLossObservations->setValue(myObjStateVars_SurfaceFluxes_NOLoss["sbSVSurfaceFluxesNOLossObservations"].toInt());
+
+  ui->lblOverallRatingSVSurfaceFluxes->setText(myObjStateVars_SurfaceFluxes_NOLoss["lblOverallRatingSVSurfaceFluxes"].toString());
+
+  ui->lblOverallRatingSV->setText(myObjStateVars["lblOverallRatingSV"].toString());
+  ui->lblRankingSV->setText(myObjStateVars["lblRankingSV"].toString());
+  //ui->txbrStateVariables->setText(myObjStateVariables["txbrStateVariables"].toString());
 
     //
    //  Weather Tab

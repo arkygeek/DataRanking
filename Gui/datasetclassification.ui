@@ -60,7 +60,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>8</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -8848,7 +8848,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -9757,8 +9757,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>596</height>
+             <width>546</width>
+             <height>421</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10540,8 +10540,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>522</width>
-             <height>447</height>
+             <width>837</width>
+             <height>596</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10640,7 +10640,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossWeightPts">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
@@ -10675,7 +10675,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossLayers">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossLayers">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -10722,7 +10722,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNh3LossObservations">
+                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNH3LossObservations">
                    <property name="value">
                     <number>0</number>
                    </property>
@@ -10810,7 +10810,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNh3Loss">
+                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNH3Loss">
                    <property name="layoutDirection">
                     <enum>Qt::RightToLeft</enum>
                    </property>
@@ -10919,7 +10919,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNh3LossReplicates">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossReplicates">
                    <property name="enabled">
                     <bool>false</bool>
                    </property>
@@ -10943,7 +10943,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="5">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesNh3LossPoints">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesNH3LossPoints">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
