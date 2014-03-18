@@ -309,7 +309,7 @@ QJsonObject DscModelDetails::generateTechnicalJson()
   myFormDetailsTechnical.insert("Dimensions", ui->tedTechnicalDimensions->toPlainText());
   myFormDetailsTechnical.insert("RegionsCovered", ui->leTechnicalRegionsCovered->text());
 
-  // @TODO fix this up to act the same as dataset ranking form to insert new type of unit
+  // TODO fix this up to act the same as dataset ranking form to insert new type of unit
   myFormDetailsTechnical.insert("SmallestRegionalUnit", ui->cbTechnicalSmallestRegionalUnit->currentText());
   myFormDetailsTechnical.insert("SmallestRegionalUnitOther", ui->leTechnicalSmallestRegionalUnit->text());
 

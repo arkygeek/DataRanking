@@ -125,7 +125,7 @@ QJsonObject DrScenarios::generateOverviewJSON(QString theGuid)
 {
   QJsonObject myOverviewObject;
   bool myCheckboxState=false;
-  //@TODO myOverviewObject.insert("Publications", getPublications();
+  //TODO myOverviewObject.insert("Publications", getPublications();
   myOverviewObject.insert("GUID", theGuid);
 
   myCheckboxState = ui->chbxOverviewFoodSecurity->isChecked()?true:false;

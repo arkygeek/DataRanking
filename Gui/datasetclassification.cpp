@@ -5595,7 +5595,7 @@ QJsonObject DatasetClassification::generateDatasetJson()
 
   // pull out the variables from the list widget and put into a csv string
 
-  //  @TODO change this to an array
+  //  TODO change this to an array
 
   QString myVariablesList = "START,";
   for (int i = 0; i < ui->listWidgetVariables->count(); i++) {
@@ -7064,37 +7064,37 @@ void DatasetClassification::setFormFromJson()
       QJsonValue myValStateVars_SurfaceFluxes_NOLoss = myObjStateVars_SurfaceFluxes.value("NOLoss");
       QJsonObject myObjStateVars_SurfaceFluxes_NOLoss = myValStateVars_SurfaceFluxes_NOLoss.toObject();
 
-    QJsonValue myValStateVars_Weather = myRootObject.value("Weather");
-    QJsonObject myObjStateVars_Weather = myValStateVars_Weather.toObject();
-      QJsonValue myValStateVars_Weather_GlobalRadiation = myObjStateVars_Weather.value("GlobalRadiation");
-      QJsonObject myObjStateVars_Weather_GlobalRadiation = myValStateVars_Weather_GlobalRadiation.toObject();
-      QJsonValue myValStateVars_Weather_LeafWetness = myObjStateVars_Weather.value("LeafWetness");
-      QJsonObject myObjStateVars_Weather_LeafWetness = myValStateVars_Weather_LeafWetness.toObject();
-      QJsonValue myValStateVars_Weather_Precipitation = myObjStateVars_Weather.value("Precipitation");
-      QJsonObject myObjStateVars_Weather_Precipitation = myValStateVars_Weather_Precipitation.toObject();
-      QJsonValue myValStateVars_Weather_RelHumidity = myObjStateVars_Weather.value("RelHumidity");
-      QJsonObject myObjStateVars_Weather_RelHumidity = myValStateVars_Weather_RelHumidity.toObject();
-      QJsonValue myValStateVars_Weather_SoilTemp = myObjStateVars_Weather.value("SoilTemp");
-      QJsonObject myObjStateVars_Weather_SoilTemp = myValStateVars_Weather_SoilTemp.toObject();
-      QJsonValue myValStateVars_Weather_SunshineHours = myObjStateVars_Weather.value("SunshineHours");
-      QJsonObject myObjStateVars_Weather_SunshineHours = myValStateVars_Weather_SunshineHours.toObject();
-      QJsonValue myValStateVars_Weather_TAve = myObjStateVars_Weather.value("TAve");
-      QJsonObject myObjStateVars_Weather_TAve = myValStateVars_Weather_TAve.toObject();
-      QJsonValue myValStateVars_Weather_TMax = myObjStateVars_Weather.value("TMax");
-      QJsonObject myObjStateVars_Weather_TMax = myValStateVars_Weather_TMax.toObject();
-      QJsonValue myValStateVars_Weather_TMin = myObjStateVars_Weather.value("TMin");
-      QJsonObject myObjStateVars_Weather_TMin = myValStateVars_Weather_TMin.toObject();
-      QJsonValue myValStateVars_Weather_WindSpeed = myObjStateVars_Weather.value("WindSpeed");
-      QJsonObject myObjStateVars_Weather_WindSpeed = myValStateVars_Weather_WindSpeed.toObject();
+    QJsonValue myValWeather = myRootObject.value("Weather");
+    QJsonObject myObjWeather = myValWeather.toObject();
+      QJsonValue myValWeather_GlobalRadiation = myObjWeather.value("GlobalRadiation");
+      QJsonObject myObjWeather_GlobalRadiation = myValWeather_GlobalRadiation.toObject();
+      QJsonValue myValWeather_LeafWetness = myObjWeather.value("LeafWetness");
+      QJsonObject myObjWeather_LeafWetness = myValWeather_LeafWetness.toObject();
+      QJsonValue myValWeather_Precipitation = myObjWeather.value("Precipitation");
+      QJsonObject myObjWeather_Precipitation = myValWeather_Precipitation.toObject();
+      QJsonValue myValWeather_RelHumidity = myObjWeather.value("RelHumidity");
+      QJsonObject myObjWeather_RelHumidity = myValWeather_RelHumidity.toObject();
+      QJsonValue myValWeather_SoilTemp = myObjWeather.value("SoilTemp");
+      QJsonObject myObjWeather_SoilTemp = myValWeather_SoilTemp.toObject();
+      QJsonValue myValWeather_SunshineHours = myObjWeather.value("SunshineHours");
+      QJsonObject myObjWeather_SunshineHours = myValWeather_SunshineHours.toObject();
+      QJsonValue myValWeather_TAve = myObjWeather.value("TAve");
+      QJsonObject myObjWeather_TAve = myValWeather_TAve.toObject();
+      QJsonValue myValWeather_TMax = myObjWeather.value("TMax");
+      QJsonObject myObjWeather_TMax = myValWeather_TMax.toObject();
+      QJsonValue myValWeather_TMin = myObjWeather.value("TMin");
+      QJsonObject myObjWeather_TMin = myValWeather_TMin.toObject();
+      QJsonValue myValWeather_WindSpeed = myObjWeather.value("WindSpeed");
+      QJsonObject myObjWeather_WindSpeed = myValWeather_WindSpeed.toObject();
 
   // now that the objects are all in place, we can start to populate the form
-  // @TODO put some error control in here catch a mismatch between the form and data
+  // TODO put some error control in here catch a mismatch between the form and data
 
   // Dataset tab
   int myIndex;
   myIndex = ui->cbDatasetGridUnits->findText(myObjDataset["cbDatasetGridUnits"].toString());
   ui->cbDatasetGridUnits->setCurrentIndex(myIndex);
-  // @TODO put in something for the combo boxes so that if the content isn't listed, it will add it
+  // TODO put in something for the combo boxes so that if the content isn't listed, it will add it
 
   myIndex = ui->cbDatasetName->findText(myObjDataset["cbDatasetName"].toString());
   ui->cbDatasetName->setCurrentIndex(myIndex);
@@ -7178,7 +7178,7 @@ void DatasetClassification::setFormFromJson()
   ui->ledDatasetVersion->setText(myObjDataset["ledDatasetVersion"].toString());
   ui->ledWebLink->setText(myObjDataset["ledWebLink"].toString());
 
-  // @TODO fix this, make it an array
+  // TODO fix this, make it an array
   //ui->listWidgetVariables->setText(mySecondNestedObject_Dataset["listWidgetVariables"].toString());
 
   ui->tedDatasetComments->setText(myObjDataset["tedDatasetComments"].toString());
@@ -7191,10 +7191,10 @@ void DatasetClassification::setFormFromJson()
     //
    //  Header Tab
   //
-  // @TODO fix the date time format so that it works!
+  // TODO fix the date time format so that it works!
   ui->dteDatasetSubmitted->setDate(QDate::fromString(myObjDataset["dteDatasetSubmitted"].toString(),"dd/MM/yyyy"));
 
-  // @TODO fix this so that user doesn't get warned about resetting the form
+  // TODO fix this so that user doesn't get warned about resetting the form
   myIndex = ui->cbDatasets->findText(myObjDataset["cbDatasets"].toString());
   //ui->cbDatasets->setCurrentIndex(myIndex);
 
@@ -7352,6 +7352,20 @@ void DatasetClassification::setFormFromJson()
    //  Seasons Tab
   //
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //
    //  Site Tab
   //
@@ -7444,6 +7458,8 @@ void DatasetClassification::setFormFromJson()
     //
    //  StateVariables Tab
   //
+
+  // TODO sort out the text browsers in State Vars
 
   // Crop
   ui->chbxSVCropAGrBiomass->setChecked(myObjStateVars_Crop_AGrBiomass["chbxSVCropAGrBiomass"].toBool());
@@ -7618,13 +7634,94 @@ void DatasetClassification::setFormFromJson()
   ui->lblRankingSV->setText(myObjStateVars["lblRankingSV"].toString());
   //ui->txbrStateVariables->setText(myObjStateVariables["txbrStateVariables"].toString());
 
+
     //
    //  Weather Tab
   //
 
+  ui->chbxGlobalRadiationWeather->setChecked(myObjWeather_GlobalRadiation["chbxGlobalRadiationWeather"].toBool());
+  ui->rbGlobalRadiationWeatherMeasured->setChecked(myObjWeather_GlobalRadiation["rbGlobalRadiationWeatherMeasured"].toBool());
+  ui->dsbGlobalRadiationKmWeather->setValue(myObjWeather_GlobalRadiation["dsbGlobalRadiationKmWeather"].toDouble());
+  ui->dsbGlobalRadiationWeightWeather->setValue(myObjWeather_GlobalRadiation["dsbGlobalRadiationWeightWeather"].toDouble());
+  ui->lblGlobalRadiationRatingWeather->setText(myObjWeather_GlobalRadiation["lblGlobalRadiationRatingWeather"].toString());
+  ui->sbGlobalRadiationAltDifWeather->setValue(myObjWeather_GlobalRadiation["sbGlobalRadiationAltDifWeather"].toInt());
+  ui->sbGlobalRadiationOptimalDistanceWeather->setValue(myObjWeather_GlobalRadiation["sbGlobalRadiationOptimalDistanceWeather"].toInt());
 
+  ui->chbxLeafWetnessWeather->setChecked(myObjWeather_LeafWetness["chbxLeafWetnessWeather"].toBool());
+  ui->rbLeafWetnessWeatherMeasured->setChecked(myObjWeather_LeafWetness["rbLeafWetnessWeatherMeasured"].toBool());
+  ui->dsbLeafWetnessKmWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessKmWeather"].toDouble());
+  ui->dsbLeafWetnessWeightWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessWeightWeather"].toDouble());
+  ui->lblLeafWetnessRatingWeather->setText(myObjWeather_LeafWetness["lblLeafWetnessRatingWeather"].toString());
+  //ui->sbLeafWetnessAltDifWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessAltDifWeather"].toInt());
+  ui->sbLeafWetnessOptimalDistanceWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessOptimalDistanceWeather"].toInt());
 
+  ui->chbxPrecipitationWeather->setChecked(myObjWeather_Precipitation["chbxPrecipitationWeather"].toBool());
+  ui->rbPrecipitationWeatherMeasured->setChecked(myObjWeather_Precipitation["rbPrecipitationWeatherMeasured"].toBool());
+  ui->dsbPrecipitationKmWeather->setValue(myObjWeather_Precipitation["dsbPrecipitationKmWeather"].toDouble());
+  ui->dsbPrecipitationWeightWeather->setValue(myObjWeather_Precipitation["dsbPrecipitationWeightWeather"].toDouble());
+  ui->lblPrecipitationRatingWeather->setText(myObjWeather_Precipitation["lblPrecipitationRatingWeather"].toString());
+  ui->sbPrecipitationAltDifWeather->setValue(myObjWeather_Precipitation["sbPrecipitationAltDifWeather"].toInt());
+  ui->sbPrecipitationOptimalDistanceWeather->setValue(myObjWeather_Precipitation["sbPrecipitationOptimalDistanceWeather"].toInt());
 
+  ui->chbxRelHumidityWeather->setChecked(myObjWeather_RelHumidity["chbxRelHumidityWeather"].toBool());
+  ui->rbRelHumidityWeatherMeasured->setChecked(myObjWeather_RelHumidity["rbRelHumidityWeatherMeasured"].toBool());
+  ui->dsbRelHumidityKmWeather->setValue(myObjWeather_RelHumidity["dsbRelHumidityKmWeather"].toDouble());
+  ui->dsbRelHumidityWeightWeather->setValue(myObjWeather_RelHumidity["dsbRelHumidityWeightWeather"].toDouble());
+  ui->lblRelHumidityRatingWeather->setText(myObjWeather_RelHumidity["lblRelHumidityRatingWeather"].toString());
+  ui->sbRelHumidityAltDifWeather->setValue(myObjWeather_RelHumidity["sbRelHumidityAltDifWeather"].toInt());
+  ui->sbRelHumidityOptimalDistanceWeather->setValue(myObjWeather_RelHumidity["sbRelHumidityOptimalDistanceWeather"].toInt());
+
+  ui->chbxSoilTempWeather->setChecked(myObjWeather_SoilTemp["chbxSoilTempWeather"].toBool());
+  ui->rbSoilTempWeatherMeasured->setChecked(myObjWeather_SoilTemp["rbSoilTempWeatherMeasured"].toBool());
+  ui->dsbSoilTempKmWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempKmWeather"].toDouble());
+  ui->dsbSoilTempWeightWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempWeightWeather"].toDouble());
+  ui->lblSoilTempRatingWeather->setText(myObjWeather_SoilTemp["lblSoilTempRatingWeather"].toString());
+  ui->sbSoilTempAltDifWeather->setValue(myObjWeather_SoilTemp["sbSoilTempAltDifWeather"].toInt());
+  //ui->sbSoilTempOptimalDistanceWeather->setValue(myObjWeather_SoilTemp["sbSoilTempOptimalDistanceWeather"].toInt());
+
+  ui->chbxSunshineHoursWeather->setChecked(myObjWeather_SunshineHours["chbxSunshineHoursWeather"].toBool());
+  ui->rbSunshineHoursWeatherMeasured->setChecked(myObjWeather_SunshineHours["rbSunshineHoursWeatherMeasured"].toBool());
+  ui->dsbSunshineHoursKmWeather->setValue(myObjWeather_SunshineHours["dsbSunshineHoursKmWeather"].toDouble());
+  ui->dsbSunshineHoursWeightWeather->setValue(myObjWeather_SunshineHours["dsbSunshineHoursWeightWeather"].toDouble());
+  ui->lblSunshineHoursRatingWeather->setText(myObjWeather_SunshineHours["lblSunshineHoursRatingWeather"].toString());
+  //ui->sbSunshineHoursAltDifWeather->setValue(myObjWeather_SunshineHours["sbSunshineHoursAltDifWeather"].toInt());
+  ui->sbSunshineHoursOptimalDistanceWeather->setValue(myObjWeather_SunshineHours["sbSunshineHoursOptimalDistanceWeather"].toInt());
+
+  ui->chbxTAveWeather->setChecked(myObjWeather_TAve["chbxTAveWeather"].toBool());
+  ui->rbTAveWeatherMeasured->setChecked(myObjWeather_TAve["rbTAveWeatherMeasured"].toBool());
+  ui->dsbTAveKmWeather->setValue(myObjWeather_TAve["dsbTAveKmWeather"].toDouble());
+  ui->dsbTAveWeightWeather->setValue(myObjWeather_TAve["dsbTAveWeightWeather"].toDouble());
+  ui->lblTAveRatingWeather->setText(myObjWeather_TAve["lblTAveRatingWeather"].toString());
+  ui->sbTAveAltDifWeather->setValue(myObjWeather_TAve["sbTAveAltDifWeather"].toInt());
+  ui->sbTAveOptimalDistanceWeather->setValue(myObjWeather_TAve["sbTAveOptimalDistanceWeather"].toInt());
+
+  ui->chbxTMaxWeather->setChecked(myObjWeather_TMax["chbxTMaxWeather"].toBool());
+  ui->rbTMaxWeatherMeasured->setChecked(myObjWeather_TMax["rbTMaxWeatherMeasured"].toBool());
+  ui->dsbTMaxKmWeather->setValue(myObjWeather_TMax["dsbTMaxKmWeather"].toDouble());
+  ui->dsbTMaxWeightWeather->setValue(myObjWeather_TMax["dsbTMaxWeightWeather"].toDouble());
+  ui->lblTMaxRatingWeather->setText(myObjWeather_TMax["lblTMaxRatingWeather"].toString());
+  ui->sbTMaxAltDifWeather->setValue(myObjWeather_TMax["sbTMaxAltDifWeather"].toInt());
+  ui->sbTMaxOptimalDistanceWeather->setValue(myObjWeather_TMax["sbTMaxOptimalDistanceWeather"].toInt());
+
+  ui->chbxTMinWeather->setChecked(myObjWeather_TMin["chbxTMinWeather"].toBool());
+  ui->rbTMinWeatherMeasured->setChecked(myObjWeather_TMin["rbTMinWeatherMeasured"].toBool());
+  ui->dsbTMinKmWeather->setValue(myObjWeather_TMin["dsbTMinKmWeather"].toDouble());
+  ui->dsbTMinWeightWeather->setValue(myObjWeather_TMin["dsbTMinWeightWeather"].toDouble());
+  ui->lblTMinRatingWeather->setText(myObjWeather_TMin["lblTMinRatingWeather"].toString());
+  ui->sbTMinAltDifWeather->setValue(myObjWeather_TMin["sbTMinAltDifWeather"].toInt());
+  ui->sbTMinOptimalDistanceWeather->setValue(myObjWeather_TMin["sbTMinOptimalDistanceWeather"].toInt());
+
+  ui->chbxWindSpeedWeather->setChecked(myObjWeather_WindSpeed["chbxWindSpeedWeather"].toBool());
+  ui->rbWindSpeedWeatherMeasured->setChecked(myObjWeather_WindSpeed["rbWindSpeedWeatherMeasured"].toBool());
+  ui->dsbWindSpeedKmWeather->setValue(myObjWeather_WindSpeed["dsbWindSpeedKmWeather"].toDouble());
+  ui->dsbWindSpeedWeightWeather->setValue(myObjWeather_WindSpeed["dsbWindSpeedWeightWeather"].toDouble());
+  ui->lblWindSpeedRatingWeather->setText(myObjWeather_WindSpeed["lblWindSpeedRatingWeather"].toString());
+  ui->sbWindSpeedAltDifWeather->setValue(myObjWeather_WindSpeed["sbWindSpeedAltDifWeather"].toInt());
+  ui->sbWindSpeedOptimalDistanceWeather->setValue(myObjWeather_WindSpeed["sbWindSpeedOptimalDistanceWeather"].toInt());
+
+  ui->lblCombinedWeather->setText(myObjWeather["lblCombinedTotalWeather"].toString());
+  ui->lblRankingWeather->setText(myObjWeather["lblRankingWeather"].toString());
+  ui->txbrWeather->setText(myObjWeather["txbrWeather"].toString());
 
 
 
@@ -7704,7 +7801,7 @@ void DatasetClassification::on_pbLoad_clicked()
 
   // Additionally, (maybe ideally?) the local files should be checked to ensure they are
   // synced with the Enginio cloud.
-  // @TODO check to see if Enginio has anything built in to do this kind of thing
+  // TODO check to see if Enginio has anything built in to do this kind of thing
 
   //
 
