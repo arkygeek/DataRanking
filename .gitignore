@@ -23,3 +23,5 @@ ModelDetails/Makefile
 Makefile
 
 Gui/ui_datasetclassification.h
+
+*.a
