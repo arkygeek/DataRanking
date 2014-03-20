@@ -21,7 +21,7 @@
 
 #include "rankpointgenerator.h"
 #include "management.h"
-#include <QDebug>
+//#include <QDebug>
 
 
 RankPointGenerator::RankPointGenerator()
@@ -112,7 +112,7 @@ double RankPointGenerator::weatherMethod1(double theDistance, double theWeight,
   double myTempTotalA = theWeight; // theWeight is the default if theDistance < D.opt
   double myTempTotalB = theWeight; // theWeight is the default if theAltDif > 30
   double myTotal = 0;
-  qDebug() << "theWeight" << theWeight;
+  //qDebug() << "theWeight" << theWeight;
 
   //double myMax = 0;
   // calculate first value
@@ -554,7 +554,6 @@ QString RankPointGenerator::getRankPhenology(int theTotal)
      default: myRank = "na";
               break;
    }
-   qDebug() << "myRank - Phenology - is: " << myRank;
    return myRank;
 }
 

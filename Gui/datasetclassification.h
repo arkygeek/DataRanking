@@ -222,129 +222,129 @@ private slots:
   void on_sbGlobalRadiationOptimalDistanceWeather_valueChanged(int theOptimalDistance);
   void on_sbSunshineHoursOptimalDistanceWeather_valueChanged(int theOptimalDistance);
 
-  void on_rbPrecipitationWeatherMeasured_toggled(bool checked);
-  void on_rbTAveWeatherMeasured_toggled(bool checked);
-  void on_rbTMinWeatherMeasured_toggled(bool checked);
-  void on_rbTMaxWeatherMeasured_toggled(bool checked);
-  void on_rbRelHumidityWeatherMeasured_toggled(bool checked);
-  void on_rbWindSpeedWeatherMeasured_toggled(bool checked);
-  void on_rbGlobalRadiationWeatherMeasured_toggled(bool checked);
-  void on_rbSunshineHoursWeatherMeasured_toggled(bool checked);
-  void on_rbLeafWetnessWeatherMeasured_toggled(bool checked);
-  void on_rbSoilTempWeatherMeasured_toggled(bool checked);
+  void on_rbPrecipitationWeatherMeasured_clicked(bool checked);
+  void on_rbTAveWeatherMeasured_clicked(bool checked);
+  void on_rbTMinWeatherMeasured_clicked(bool checked);
+  void on_rbTMaxWeatherMeasured_clicked(bool checked);
+  void on_rbRelHumidityWeatherMeasured_clicked(bool checked);
+  void on_rbWindSpeedWeatherMeasured_clicked(bool checked);
+  void on_rbGlobalRadiationWeatherMeasured_clicked(bool checked);
+  void on_rbSunshineHoursWeatherMeasured_clicked(bool checked);
+  void on_rbLeafWetnessWeatherMeasured_clicked(bool checked);
+  void on_rbSoilTempWeatherMeasured_clicked(bool checked);
 
   // state vars
 
   // SV Crop
-  void on_dsbSVCropYieldWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropYieldWeighting_valueChanged(double theWeight);
   void on_sbSVCropYieldObservations_valueChanged(int theObservations);
   void on_dsbSVCropYieldReplicates_valueChanged(double theReplicates);
 
 
   void on_sbSVCropAGrBiomassObservations_valueChanged(int theObservations);
-  void on_dsbSVCropAGrBiomassWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropAGrBiomassWeighting_valueChanged(double theWeight);
   void on_dsbSVCropAGrBiomassReplicates_valueChanged(double theReplicates);
 
   void on_dsbSVCropWeightOrgansLayers_valueChanged(double theLayers);
   void on_sbSVCropWeightOrgansObservations_valueChanged(int theObservations);
-  void on_dsbSVCropWeightOrgansWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropWeightOrgansWeighting_valueChanged(double theWeight);
 
   void on_dsbSVCropRootBiomassLayers_valueChanged(double theLayers);
   void on_sbSVCropRootBiomassObservations_valueChanged(int theObservations);
-  void on_dsbSVCropRootBiomassWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropRootBiomassWeighting_valueChanged(double theWeight);
 
   void on_sbSVCropNInAGrBiomassObservations_valueChanged(int theObservations);
-  void on_dsbSVCropNInAGrBiomassWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropNInAGrBiomassWeighting_valueChanged(double theWeight);
   void on_dsbSVCropNInAGrBiomassReplicates_valueChanged(double theReplicates);
 
   void on_sbSVCropNInOrgansObservations_valueChanged(int theObservations);
-  void on_dsbSVCropNInOrgansWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropNInOrgansWeighting_valueChanged(double theWeight);
   void on_dsbSVCropNInOrgansReplicates_valueChanged(double theReplicates);
 
   void on_sbSVCropLAIObservations_valueChanged(int theObservations);
-  void on_dsbSVCropLAIWeightPts_valueChanged(double theWeight);
+  void on_dsbSVCropLAIWeighting_valueChanged(double theWeight);
   void on_dsbSVCropLAIReplicates_valueChanged(double theReplicates);
 
   // SV Soil
   void on_dsbSVSoilSoilWaterGravLayers_valueChanged(double theLayers);
   void on_sbSVSoilSoilWaterGravObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilSoilWaterGravWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilSoilWaterGravWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilSoilWaterGravReplicates_valueChanged(double theReplicates);
 
   void on_dsbSVSoilPressureHeadsLayers_valueChanged(double theLayers);
   void on_sbSVSoilPressureHeadsObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilPressureHeadsWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilPressureHeadsWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilPressureHeadsReplicates_valueChanged(double theReplicates);
 
   void on_dsbSVSoilNMinLayers_valueChanged(double theLayers);
   void on_sbSVSoilNMinObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilNMinWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilNMinWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilNMinReplicates_valueChanged(double theReplicates);
 
   void on_dsbSVSoilSoilWaterSensorCalLayers_valueChanged(double theLayers);
   void on_sbSVSoilSoilWaterSensorCalObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilSoilWaterSensorCalWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilSoilWaterSensorCalWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilSoilWaterSensorCalReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSoilWaterFluxBottomRootObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilWaterFluxBottomRootWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilWaterFluxBottomRootWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilWaterFluxBottomRootReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSoilNFluxBottomRootObservations_valueChanged(int theObservations);
-  void on_dsbSVSoilNFluxBottomRootWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSoilNFluxBottomRootWeighting_valueChanged(double theWeight);
   void on_dsbSVSoilNFluxBottomRootReplicates_valueChanged(double theReplicates);
 
   // SV surface fluxes
   void on_sbSVSurfaceFluxesEtObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesEtWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesEtWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesNH3LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesNH3LossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesNH3LossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesNH3LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesN2OLossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesN2OLossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesNOLossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesNOLossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesNOLossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesNOLossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesN2LossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesN2LossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesCH4LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesCH4LossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesCH4LossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesCH4LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesCO2LossObservations_valueChanged(int theObservations);
-  void on_dsbSVSurfaceFluxesCO2LossWeightPts_valueChanged(double theWeight);
+  void on_dsbSVSurfaceFluxesCO2LossWeighting_valueChanged(double theWeight);
   //void on_dsbSVSurfaceFluxesCO2LossReplicates_valueChanged(double theReplicates);
 
   // SV observations
 
   void on_sbSVObservationsLodgingObservations_valueChanged(int theObservations);
-  void on_dsbSVObservationsLodgingWeightPts_valueChanged(double theWeight);
+  void on_dsbSVObservationsLodgingWeighting_valueChanged(double theWeight);
 
   void on_sbSVObservationsPestsOrDiseasesObservations_valueChanged(int theObservations);
-  void on_dsbSVObservationsPestsOrDiseasesWeightPts_valueChanged(double theWeight);
+  void on_dsbSVObservationsPestsOrDiseasesWeighting_valueChanged(double theWeight);
 
   void on_sbSVObservationsDamagesObservations_valueChanged(int theObservations);
-  void on_dsbSVObservationsDamagesWeightPts_valueChanged(double theWeight);
+  void on_dsbSVObservationsDamagesWeighting_valueChanged(double theWeight);
 
   void on_sbSVObservationsWeedsObservations_valueChanged(int theObservations);
-  void on_dsbSVObservationsWeedsWeightPts_valueChanged(double theWeight);
+  void on_dsbSVObservationsWeedsWeighting_valueChanged(double theWeight);
 
-  void on_sbSeasonsSitesSeasonsPerCropNumber_valueChanged(int theNumber);
-  void on_sbSeasonsSitesSiteVariantsNumber_valueChanged(int theNumber);
-  void on_sbSeasonsSitesMgmtPotentialNumber_valueChanged(int theNumber);
-  void on_cbSeasonsSitesZeroNTreatment_currentIndexChanged(const QString &theText);
-  void on_dsbSeasonsSitesZeroNTreatment_valueChanged(double theWeight);
-  void on_dsbSeasonsSitesMgmtPotentialWeight_valueChanged(double theWeight);
-  void on_dsbSeasonsSitesSiteVariantsWeight_valueChanged(double theWeight);
-  void on_dsbSeasonsSitesSeasonsPerCropWeight_valueChanged(double theWeight);
+  void on_sbSeasonsSeasonsPerCropNumber_valueChanged(int theNumber);
+  void on_sbSeasonsSiteVariantsNumber_valueChanged(int theNumber);
+  void on_sbSeasonsMgmtPotentialNumber_valueChanged(int theNumber);
+  void on_cbSeasonsZeroNTreatment_currentIndexChanged(const QString &theText);
+  void on_dsbSeasonsZeroNTreatment_valueChanged(double theWeight);
+  void on_dsbSeasonsMgmtPotentialWeight_valueChanged(double theWeight);
+  void on_dsbSeasonsSiteVariantsWeight_valueChanged(double theWeight);
+  void on_dsbSeasonsSeasonsPerCropWeight_valueChanged(double theWeight);
 
   void on_pbSyncToCloud_clicked();
   void on_pbSaveToFile_clicked();
@@ -378,13 +378,13 @@ private slots:
   void on_chbxSeasonsTreatment6_clicked();
 
   // checkbox Management
-  void on_chbxVariety_clicked();
-  void on_chbxSowing_clicked();
-  void on_chbxHarvest_clicked();
-  void on_chbxFertilisation_clicked();
-  void on_chbxIrrigation_clicked();
-  void on_chbxSeedDensity_clicked();
-  void on_chbxTillage_clicked();
+  void on_chbxVarietyMgmt_clicked();
+  void on_chbxSowingMgmt_clicked();
+  void on_chbxHarvestMgmt_clicked();
+  void on_chbxFertilisationMgmt_clicked();
+  void on_chbxIrrigationMgmt_clicked();
+  void on_chbxSeedDensityMgmt_clicked();
+  void on_chbxTillageMgmt_clicked();
 
   // checkbox Phenology
   void on_chbxEmergencePhenology_clicked();
@@ -434,9 +434,9 @@ private slots:
   void on_chbxSunshineHoursWeather_clicked();
   void on_chbxLeafWetnessWeather_clicked();
   void on_chbxSoilTempWeather_clicked();
-  void on_chbxYield_clicked();
 
   // checkbox StateVars Crop
+  void on_chbxSVCropYield_clicked();
   void on_chbxSVCropAGrBiomass_clicked();
   void on_chbxSVCropWeightOrgans_clicked();
   void on_chbxSVCropRootBiomass_clicked();
@@ -536,7 +536,7 @@ private:
   QJsonObject generateSoilJson();
   QJsonObject generateSiteJson();
   QJsonObject generateWeatherJson();
-  QJsonObject generateStateVarsJson();
+  QJsonObject generateSVJson();
   QJsonObject generateSVCropJson();
   QJsonObject generateSVSoilJson();
   QJsonObject generateSVSurfaceFluxesJson();

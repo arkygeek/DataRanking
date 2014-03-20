@@ -60,7 +60,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -1747,7 +1747,7 @@ p, li { white-space: pre-wrap; }
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="ledWebLink">
+                <widget class="QLineEdit" name="ledDatasetWebLink">
                  <property name="inputMethodHints">
                   <set>Qt::ImhUrlCharactersOnly</set>
                  </property>
@@ -2084,7 +2084,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QCheckBox" name="chbxSowing">
+            <widget class="QCheckBox" name="chbxSowingMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2180,7 +2180,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="0">
-            <widget class="QCheckBox" name="chbxIrrigation">
+            <widget class="QCheckBox" name="chbxIrrigationMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2222,7 +2222,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="3">
-            <widget class="QLabel" name="lblIrrigationRating">
+            <widget class="QLabel" name="lblIrrigationPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2278,7 +2278,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="3">
-            <widget class="QLabel" name="lblFertilisationRating">
+            <widget class="QLabel" name="lblFertilisationPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2313,7 +2313,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="QLabel" name="lblHarvestRating">
+            <widget class="QLabel" name="lblHarvestPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2348,7 +2348,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="3">
-            <widget class="QLabel" name="lblCombinedTotal">
+            <widget class="QLabel" name="lblCombinedTotalMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2404,7 +2404,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="0">
-            <widget class="QCheckBox" name="chbxTillage">
+            <widget class="QCheckBox" name="chbxTillageMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2422,7 +2422,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="3">
-            <widget class="QLabel" name="lblTillageRating">
+            <widget class="QLabel" name="lblTillagePtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2457,7 +2457,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="2">
-            <widget class="QLabel" name="lblCombined">
+            <widget class="QLabel" name="lblCombinedMgmt">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -2525,7 +2525,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="0">
-            <widget class="QCheckBox" name="chbxFertilisation">
+            <widget class="QCheckBox" name="chbxFertilisationMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2573,7 +2573,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="0">
-            <widget class="QCheckBox" name="chbxSeedDensity">
+            <widget class="QCheckBox" name="chbxSeedDensityMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2618,7 +2618,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="3">
-            <widget class="QLabel" name="lblSeedDensityRating">
+            <widget class="QLabel" name="lblSeedDensityPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2653,7 +2653,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="0">
-            <widget class="QCheckBox" name="chbxHarvest">
+            <widget class="QCheckBox" name="chbxHarvestMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2674,7 +2674,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="3">
-            <widget class="QLabel" name="lblSowingRating">
+            <widget class="QLabel" name="lblSowingPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2778,7 +2778,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QCheckBox" name="chbxVariety">
+            <widget class="QCheckBox" name="chbxVarietyMgmt">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -2799,7 +2799,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="1" column="3">
-            <widget class="QLabel" name="lblVarietyRating">
+            <widget class="QLabel" name="lblVarietyPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -2886,7 +2886,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="3" column="2" colspan="3">
-         <widget class="QLabel" name="lblRankingManagement">
+         <widget class="QLabel" name="lblRankingMgmt">
           <property name="font">
            <font>
             <pointsize>20</pointsize>
@@ -3167,6 +3167,9 @@ p, li { white-space: pre-wrap; }
         </item>
         <item row="0" column="1" colspan="4">
          <widget class="QTextBrowser" name="txbrMgmt">
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -3188,6 +3191,9 @@ p, li { white-space: pre-wrap; }
        <layout class="QGridLayout" name="gridLayout_22">
         <item row="0" column="1" colspan="4">
          <widget class="QTextBrowser" name="txbrPhenology">
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -3306,7 +3312,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="1" column="3">
-            <widget class="QLabel" name="lblEmergenceRatingPhenology">
+            <widget class="QLabel" name="lblEmergencePtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3368,7 +3374,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="3">
-            <widget class="QLabel" name="lblStemElongationRatingPhenology">
+            <widget class="QLabel" name="lblStemElongationPtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3430,7 +3436,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="QLabel" name="lblEarEmergenceRatingPhenology">
+            <widget class="QLabel" name="lblEarEmergencePtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3495,7 +3501,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="3">
-            <widget class="QLabel" name="lblFloweringRatingPhenology">
+            <widget class="QLabel" name="lblFloweringPtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3557,7 +3563,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="3">
-            <widget class="QLabel" name="lblYellowRipenessRatingPhenology">
+            <widget class="QLabel" name="lblYellowRipenessPtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3968,7 +3974,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="9" column="3">
-            <widget class="QLabel" name="lblOverallRatingPrevCrop">
+            <widget class="QLabel" name="lblOverallPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3991,7 +3997,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="QLabel" name="lblSowingDateRatingPrevCrop">
+            <widget class="QLabel" name="lblSowingDatePtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4047,7 +4053,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="3">
-            <widget class="QLabel" name="lblYieldRatingPrevCrop">
+            <widget class="QLabel" name="lblYieldPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4070,7 +4076,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="3">
-            <widget class="QLabel" name="lblIrrigationRatingPrevCrop">
+            <widget class="QLabel" name="lblIrrigationPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4093,7 +4099,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="3">
-            <widget class="QLabel" name="lblCropRatingPrevCrop">
+            <widget class="QLabel" name="lblCropPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4116,7 +4122,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="3">
-            <widget class="QLabel" name="lblHarvestDateRatingPrevCrop">
+            <widget class="QLabel" name="lblHarvestDatePtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4139,7 +4145,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="3">
-            <widget class="QLabel" name="lblFertilisationRatingPrevCrop">
+            <widget class="QLabel" name="lblFertilisationPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4438,7 +4444,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="3">
-            <widget class="QLabel" name="lblResidueMgmtRatingPrevCrop">
+            <widget class="QLabel" name="lblResidueMgmtPtsPrevCrop">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -4492,6 +4498,9 @@ p, li { white-space: pre-wrap; }
         </item>
         <item row="0" column="1" colspan="2">
          <widget class="QTextBrowser" name="txbrPrevCrop">
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -4817,7 +4826,7 @@ p, li { white-space: pre-wrap; }
           </property>
           <layout class="QGridLayout" name="gridLayoutSite">
            <item row="5" column="4">
-            <widget class="QLabel" name="lblOverallRatingInitialValues">
+            <widget class="QLabel" name="lblOverallPtsInitialValues">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -4861,7 +4870,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="4">
-            <widget class="QLabel" name="lblSoilMoistureRatingInitialValues">
+            <widget class="QLabel" name="lblSoilMoisturePtsInitialValues">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -4883,7 +4892,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="4">
-            <widget class="QLabel" name="lblNMinRatingInitialValues">
+            <widget class="QLabel" name="lblNMinPtsInitialValues">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -5058,6 +5067,9 @@ p, li { white-space: pre-wrap; }
             <horstretch>1</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -5503,7 +5515,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="4">
-            <widget class="QLabel" name="lblNOrgRatingSoil">
+            <widget class="QLabel" name="lblNOrgPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5515,7 +5527,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="4">
-            <widget class="QLabel" name="lblBulkDensityRatingSoil">
+            <widget class="QLabel" name="lblBulkDensityPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5527,7 +5539,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="4">
-            <widget class="QLabel" name="lblWiltingPointRatingSoil">
+            <widget class="QLabel" name="lblWiltingPointPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5539,7 +5551,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="4">
-            <widget class="QLabel" name="lblTextureRatingSoil">
+            <widget class="QLabel" name="lblTexturePtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5551,7 +5563,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="4">
-            <widget class="QLabel" name="lblFieldCapacityRatingSoil">
+            <widget class="QLabel" name="lblFieldCapacityPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5563,7 +5575,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="10" column="4">
-            <widget class="QLabel" name="lblPhRatingSoil">
+            <widget class="QLabel" name="lblPhPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5592,7 +5604,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="4">
-            <widget class="QLabel" name="lblPfCurveRatingSoil">
+            <widget class="QLabel" name="lblPfCurvePtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5614,7 +5626,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="11" column="4">
-            <widget class="QLabel" name="lblOverallRatingSoil">
+            <widget class="QLabel" name="lblOverallPtsSoil">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -5878,7 +5890,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="4">
-            <widget class="QLabel" name="lblCOrgRatingSoil">
+            <widget class="QLabel" name="lblCOrgPtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -5890,7 +5902,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="9" column="4">
-            <widget class="QLabel" name="lblHydrCondCurveRatingSoil">
+            <widget class="QLabel" name="lblHydrCondCurvePtsSoil">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -6047,7 +6059,11 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="0" column="1" colspan="2">
-         <widget class="QTextBrowser" name="txbrSoil"/>
+         <widget class="QTextBrowser" name="txbrSoil">
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item row="1" column="1">
          <layout class="QGridLayout" name="gridLayoutSoilRankLevels">
@@ -6787,7 +6803,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="9" column="3">
-            <widget class="QLabel" name="lblOverallRatingSite">
+            <widget class="QLabel" name="lblOverallPtsSite">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -6808,7 +6824,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="3">
-            <widget class="QLabel" name="lblLongitudeRatingSite">
+            <widget class="QLabel" name="lblLongitudePtsSite">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -6826,7 +6842,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="3">
-            <widget class="QLabel" name="lblAltitudeRatingSite">
+            <widget class="QLabel" name="lblAltitudePtsSite">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -6844,7 +6860,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="3">
-            <widget class="QLabel" name="lblLatitudeRatingSite">
+            <widget class="QLabel" name="lblLatitudePtsSite">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -6939,7 +6955,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="3">
-            <widget class="QLabel" name="lblSlopeRatingSite">
+            <widget class="QLabel" name="lblSlopePtsSite">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -6998,6 +7014,9 @@ p, li { white-space: pre-wrap; }
             <horstretch>1</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
@@ -7250,7 +7269,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="1" column="6">
-            <widget class="QLabel" name="lblPrecipitationRatingWeather">
+            <widget class="QLabel" name="lblPrecipitationPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -7377,7 +7396,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="6">
-            <widget class="QLabel" name="lblTAveRatingWeather">
+            <widget class="QLabel" name="lblTAvePtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -7507,7 +7526,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="6">
-            <widget class="QLabel" name="lblTMinRatingWeather">
+            <widget class="QLabel" name="lblTMinPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -7637,7 +7656,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="6">
-            <widget class="QLabel" name="lblTMaxRatingWeather">
+            <widget class="QLabel" name="lblTMaxPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -7767,7 +7786,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="6">
-            <widget class="QLabel" name="lblRelHumidityRatingWeather">
+            <widget class="QLabel" name="lblRelHumidityPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -7906,7 +7925,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="6">
-            <widget class="QLabel" name="lblWindSpeedRatingWeather">
+            <widget class="QLabel" name="lblWindSpeedPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -8039,7 +8058,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="6">
-            <widget class="QLabel" name="lblGlobalRadiationRatingWeather">
+            <widget class="QLabel" name="lblGlobalRadiationPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -8169,7 +8188,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="6">
-            <widget class="QLabel" name="lblSunshineHoursRatingWeather">
+            <widget class="QLabel" name="lblSunshineHoursPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -8290,7 +8309,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="9" column="6">
-            <widget class="QLabel" name="lblLeafWetnessRatingWeather">
+            <widget class="QLabel" name="lblLeafWetnessPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -8408,7 +8427,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="10" column="6">
-            <widget class="QLabel" name="lblSoilTempRatingWeather">
+            <widget class="QLabel" name="lblSoilTempPtsWeather">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -8434,7 +8453,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="11" column="6">
-            <widget class="QLabel" name="lblOverallRatingWeather">
+            <widget class="QLabel" name="lblOverallPtsWeather">
              <property name="font">
               <font>
                <pointsize>14</pointsize>
@@ -8452,6 +8471,9 @@ p, li { white-space: pre-wrap; }
         </item>
         <item row="0" column="1" colspan="2">
          <widget class="QTextBrowser" name="txbrWeather">
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -8785,7 +8807,7 @@ p, li { white-space: pre-wrap; }
          </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QLabel" name="lblOverallRatingSV">
+         <widget class="QLabel" name="lblOverallPtsSV">
           <property name="font">
            <font>
             <pointsize>10</pointsize>
@@ -8848,7 +8870,7 @@ p, li { white-space: pre-wrap; }
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <property name="tabSpacing">
            <number>0</number>
@@ -9298,7 +9320,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="10" column="5">
-                  <widget class="QLabel" name="lblOverallRatingSVCrop">
+                  <widget class="QLabel" name="lblOverallPtsSVCrop">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -9345,7 +9367,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassWeighting">
                    <property name="value">
                     <double>4.000000000000000</double>
                    </property>
@@ -9362,14 +9384,14 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
@@ -9386,21 +9408,21 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="7" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="8" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropLAIWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropLAIWeighting">
                    <property name="value">
                     <double>4.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="6" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
@@ -9582,7 +9604,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropYieldWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVCropYieldWeighting">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
                      <horstretch>0</horstretch>
@@ -9744,6 +9766,9 @@ p, li { white-space: pre-wrap; }
                    <horstretch>1</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -10021,7 +10046,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVSoilWeightPtsHeader">
+                  <widget class="QLabel" name="lblSVSoilWeightingHeader">
                    <property name="font">
                     <font>
                      <pointsize>11</pointsize>
@@ -10129,7 +10154,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="7" column="5">
-                  <widget class="QLabel" name="lblOverallRatingSVSoil">
+                  <widget class="QLabel" name="lblOverallPtsSVSoil">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -10189,42 +10214,42 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="6" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
@@ -10239,6 +10264,9 @@ p, li { white-space: pre-wrap; }
                    <horstretch>1</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -10540,8 +10568,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>837</width>
-             <height>596</height>
+             <width>522</width>
+             <height>447</height>
             </rect>
            </property>
            <attribute name="label">
@@ -10566,7 +10594,7 @@ p, li { white-space: pre-wrap; }
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesNOLossObservations"/>
                  </item>
                  <item row="8" column="5">
-                  <widget class="QLabel" name="lblOverallRatingSVSurfaceFluxes">
+                  <widget class="QLabel" name="lblOverallPtsSVSurfaceFluxes">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -10619,35 +10647,35 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossWeighting">
                    <property name="value">
                     <double>2.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
@@ -10842,7 +10870,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesWeightPtsHeader">
+                  <widget class="QLabel" name="lblSVSurfaceFluxesWeightingHeader">
                    <property name="font">
                     <font>
                      <pointsize>11</pointsize>
@@ -10958,7 +10986,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="6" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossWeighting"/>
                  </item>
                  <item row="6" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossReplicates">
@@ -11013,7 +11041,7 @@ p, li { white-space: pre-wrap; }
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesCO2LossObservations"/>
                  </item>
                  <item row="7" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossWeighting"/>
                  </item>
                  <item row="7" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossReplicates">
@@ -11046,6 +11074,9 @@ p, li { white-space: pre-wrap; }
                    <horstretch>1</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -11388,7 +11419,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVObservationsWeightPtsHeader">
+                  <widget class="QLabel" name="lblSVObservationsWeightingHeader">
                    <property name="font">
                     <font>
                      <pointsize>11</pointsize>
@@ -11580,7 +11611,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="5" column="5">
-                  <widget class="QLabel" name="lblOverallRatingSVObservations">
+                  <widget class="QLabel" name="lblOverallPtsSVObservations">
                    <property name="font">
                     <font>
                      <pointsize>10</pointsize>
@@ -11631,21 +11662,21 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesWeightPts">
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
                    </property>
@@ -11672,7 +11703,7 @@ p, li { white-space: pre-wrap; }
                   </widget>
                  </item>
                  <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsWeightPts"/>
+                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsWeighting"/>
                  </item>
                  <item row="4" column="4">
                   <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsReplicates">
@@ -11705,6 +11736,9 @@ p, li { white-space: pre-wrap; }
                    <horstretch>1</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
+                 </property>
+                 <property name="readOnly">
+                  <bool>false</bool>
                  </property>
                 </widget>
                </item>
@@ -12421,7 +12455,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="3" column="7">
-            <widget class="QLabel" name="lblTreatment2RatingSeasons">
+            <widget class="QLabel" name="lblTreatment2PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12439,7 +12473,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="4" column="7">
-            <widget class="QLabel" name="lblTreatment3RatingSeasons">
+            <widget class="QLabel" name="lblTreatment3PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12479,7 +12513,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="2" column="7">
-            <widget class="QLabel" name="lblTreatment1RatingSeasons">
+            <widget class="QLabel" name="lblTreatment1PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12507,7 +12541,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="7" column="7">
-            <widget class="QLabel" name="lblTreatment6RatingSeasons">
+            <widget class="QLabel" name="lblTreatment6PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12522,7 +12556,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="7">
-            <widget class="QLabel" name="lblTreatment5RatingSeasons">
+            <widget class="QLabel" name="lblTreatment5PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12537,7 +12571,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="5" column="7">
-            <widget class="QLabel" name="lblTreatment4RatingSeasons">
+            <widget class="QLabel" name="lblTreatment4PtsSeasons">
              <property name="font">
               <font>
                <pointsize>10</pointsize>
@@ -12979,7 +13013,7 @@ p, li { white-space: pre-wrap; }
             </property>
             <layout class="QGridLayout" name="gridLayout_37">
              <item row="3" column="2">
-              <widget class="QSpinBox" name="sbSeasonsSitesMgmtPotentialNumber">
+              <widget class="QSpinBox" name="sbSeasonsMgmtPotentialNumber">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -13013,7 +13047,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="2" column="4">
-              <widget class="QLabel" name="lblSiteVariantsRatingSeasons">
+              <widget class="QLabel" name="lblSeasonsSiteVariantsPts">
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
@@ -13031,7 +13065,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="2" column="3">
-              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesSiteVariantsWeight">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSiteVariantsWeight">
                <property name="maximumSize">
                 <size>
                  <width>60</width>
@@ -13053,7 +13087,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="3" column="3">
-              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesMgmtPotentialWeight">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsMgmtPotentialWeight">
                <property name="maximumSize">
                 <size>
                  <width>60</width>
@@ -13075,7 +13109,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="3" column="4">
-              <widget class="QLabel" name="lblMgmtPotentialRatingSeasons">
+              <widget class="QLabel" name="lblSeasonsMgmtPotentialPts">
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
@@ -13108,7 +13142,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="2" column="2">
-              <widget class="QSpinBox" name="sbSeasonsSitesSiteVariantsNumber">
+              <widget class="QSpinBox" name="sbSeasonsSiteVariantsNumber">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -13130,7 +13164,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="1" column="2">
-              <widget class="QSpinBox" name="sbSeasonsSitesSeasonsPerCropNumber">
+              <widget class="QSpinBox" name="sbSeasonsSeasonsPerCropNumber">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -13158,7 +13192,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="1" column="4">
-              <widget class="QLabel" name="lblSeasonsPerCropRatingSeasons">
+              <widget class="QLabel" name="lblSeasonsSeasonsPerCropPts">
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
@@ -13188,7 +13222,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="1" column="3">
-              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesSeasonsPerCropWeight">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsSeasonsPerCropWeight">
                <property name="maximumSize">
                 <size>
                  <width>60</width>
@@ -13222,7 +13256,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="4" column="2">
-              <widget class="QComboBox" name="cbSeasonsSitesZeroNTreatment">
+              <widget class="QComboBox" name="cbSeasonsZeroNTreatment">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -13248,7 +13282,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="4" column="3">
-              <widget class="QDoubleSpinBox" name="dsbSeasonsSitesZeroNTreatment">
+              <widget class="QDoubleSpinBox" name="dsbSeasonsZeroNTreatment">
                <property name="maximumSize">
                 <size>
                  <width>60</width>
@@ -13270,7 +13304,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="4" column="4">
-              <widget class="QLabel" name="lblZeroNTreatmentRatingSeasons">
+              <widget class="QLabel" name="lblSeasonsZeroNTreatmentPts">
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
@@ -13318,7 +13352,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item row="3" column="0" colspan="2">
-              <widget class="QLabel" name="lblSeasonsSitesMgmtPotential">
+              <widget class="QLabel" name="lblSeasonsMgmtPotential">
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>

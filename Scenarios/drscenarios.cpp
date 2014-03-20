@@ -26,7 +26,7 @@
 #include <QJsonObject>
 #include <QJsonDocument>
 #include <QUuid>
-#include <QDebug>
+//#include <QDebug>
 
 
 DrScenarios::DrScenarios(QWidget *parent) :
@@ -207,7 +207,7 @@ void DrScenarios::on_pbText_clicked()
 {
   // spit out the JSON in the form for now to check it
   QString myGuid = QUuid::createUuid().toString().replace("{","").replace("}","");
-  qDebug() << "GUID is: " << myGuid;
+  //qDebug() << "GUID is: " << myGuid;
   ui->lblTheGuid->setText(myGuid);
   generateJson(myGuid);
 }

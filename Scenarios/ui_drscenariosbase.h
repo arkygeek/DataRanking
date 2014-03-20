@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'drscenariosbase.ui'
 **
-** Created by: Qt User Interface Compiler version 5.2.0
+** Created by: Qt User Interface Compiler version 5.2.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -121,12 +121,12 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QLabel *lblOverviewCCFSLinkToScenario_9;
     QTextBrowser *tbrOverviewCCFSLinkToScenario;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget_1;
     QVBoxLayout *verticalLayout_16;
     QHBoxLayout *horizontalLayout_11;
     QLabel *lblOverviewCCMitigation;
     QTextBrowser *tbrOverviewCCMitigation;
-    QWidget *layoutWidget2;
+    QWidget *layoutWidget_2;
     QVBoxLayout *verticalLayout_18;
     QHBoxLayout *horizontalLayout_10;
     QLabel *lblOverviewExplainWrtCCFS;
@@ -726,9 +726,9 @@ public:
         verticalLayout_17->addWidget(tbrOverviewCCFSLinkToScenario);
 
         splitter->addWidget(layoutWidget);
-        layoutWidget1 = new QWidget(splitter);
-        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        verticalLayout_16 = new QVBoxLayout(layoutWidget1);
+        layoutWidget_1 = new QWidget(splitter);
+        layoutWidget_1->setObjectName(QStringLiteral("layoutWidget_1"));
+        verticalLayout_16 = new QVBoxLayout(layoutWidget_1);
         verticalLayout_16->setSpacing(0);
         verticalLayout_16->setContentsMargins(11, 11, 11, 11);
         verticalLayout_16->setObjectName(QStringLiteral("verticalLayout_16"));
@@ -736,7 +736,7 @@ public:
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(6);
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        lblOverviewCCMitigation = new QLabel(layoutWidget1);
+        lblOverviewCCMitigation = new QLabel(layoutWidget_1);
         lblOverviewCCMitigation->setObjectName(QStringLiteral("lblOverviewCCMitigation"));
         lblOverviewCCMitigation->setFont(font1);
 
@@ -745,7 +745,7 @@ public:
 
         verticalLayout_16->addLayout(horizontalLayout_11);
 
-        tbrOverviewCCMitigation = new QTextBrowser(layoutWidget1);
+        tbrOverviewCCMitigation = new QTextBrowser(layoutWidget_1);
         tbrOverviewCCMitigation->setObjectName(QStringLiteral("tbrOverviewCCMitigation"));
         sizePolicy3.setHeightForWidth(tbrOverviewCCMitigation->sizePolicy().hasHeightForWidth());
         tbrOverviewCCMitigation->setSizePolicy(sizePolicy3);
@@ -753,11 +753,11 @@ public:
 
         verticalLayout_16->addWidget(tbrOverviewCCMitigation);
 
-        splitter->addWidget(layoutWidget1);
+        splitter->addWidget(layoutWidget_1);
         splitter_2->addWidget(splitter);
-        layoutWidget2 = new QWidget(splitter_2);
-        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        verticalLayout_18 = new QVBoxLayout(layoutWidget2);
+        layoutWidget_2 = new QWidget(splitter_2);
+        layoutWidget_2->setObjectName(QStringLiteral("layoutWidget_2"));
+        verticalLayout_18 = new QVBoxLayout(layoutWidget_2);
         verticalLayout_18->setSpacing(0);
         verticalLayout_18->setContentsMargins(11, 11, 11, 11);
         verticalLayout_18->setObjectName(QStringLiteral("verticalLayout_18"));
@@ -766,7 +766,7 @@ public:
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        lblOverviewExplainWrtCCFS = new QLabel(layoutWidget2);
+        lblOverviewExplainWrtCCFS = new QLabel(layoutWidget_2);
         lblOverviewExplainWrtCCFS->setObjectName(QStringLiteral("lblOverviewExplainWrtCCFS"));
         lblOverviewExplainWrtCCFS->setFont(font1);
 
@@ -775,7 +775,7 @@ public:
 
         verticalLayout_18->addLayout(horizontalLayout_10);
 
-        tedOverviewExplainWrtCCFS = new QTextEdit(layoutWidget2);
+        tedOverviewExplainWrtCCFS = new QTextEdit(layoutWidget_2);
         tedOverviewExplainWrtCCFS->setObjectName(QStringLiteral("tedOverviewExplainWrtCCFS"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy4.setHorizontalStretch(0);
@@ -786,7 +786,7 @@ public:
         verticalLayout_18->addWidget(tedOverviewExplainWrtCCFS);
 
         verticalLayout_18->setStretch(1, 2);
-        splitter_2->addWidget(layoutWidget2);
+        splitter_2->addWidget(layoutWidget_2);
 
         gridLayout_3->addWidget(splitter_2, 4, 0, 1, 3);
 

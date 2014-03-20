@@ -19,7 +19,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include <QJsonObject>
-#include <QDebug>
+//#include <QDebug>
 #include <QLabel>
 #include <QScrollArea>
 #include <QtWidgets>
@@ -375,11 +375,11 @@ QJsonObject DscModelDetails::generateDiagramsJson()
 
   for(int i=0; i<myNumberOfDiagrams; i++)
   {
-    qDebug() << "iteration number: " << i;
+    //qDebug() << "iteration number: " << i;
 
     ui->cbDiagramsSelectDiagram->setCurrentIndex(i);
     myListOfDiagrams.insert("ImageList",ui->cbDiagramsSelectDiagram->currentText());
-    qDebug() << "text at index " << i << " is " << ui->cbDiagramsSelectDiagram->currentText();
+    //qDebug() << "text at index " << i << " is " << ui->cbDiagramsSelectDiagram->currentText();
 
   }
 
@@ -392,14 +392,14 @@ QJsonObject DscModelDetails::generateDiagramsJson()
 
 void DscModelDetails::on_tlbtnBasicInfoGoToWebsite_clicked()
 {
-    qDebug() << "do stuff...";
+    //qDebug() << "do stuff...";
     QJsonObject myJsonObject;
     myJsonObject.insert("Header", generateHeaderJson());
-    qDebug() << "Header:\n" << myJsonObject;
+    //qDebug() << "Header:\n" << myJsonObject;
     myJsonObject.insert("TechnicalInfo", generateTechnicalJson());
-    qDebug() << "Technical:\n" << myJsonObject;
+    //qDebug() << "Technical:\n" << myJsonObject;
     myJsonObject.insert("Diagrams", generateDiagramsJson());
-    qDebug() << "Diagrams:\n" << myJsonObject;
+    //qDebug() << "Diagrams:\n" << myJsonObject;
 
 
 }
