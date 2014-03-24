@@ -187,9 +187,9 @@ private slots:
   void on_sbRelHumidityAltDifWeather_valueChanged(int theAltDif);
   void on_sbWindSpeedAltDifWeather_valueChanged(int theAltDif);
   void on_sbGlobalRadiationAltDifWeather_valueChanged(int theAltDif);
-  //void on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif);
-  void on_sbLeafWetnessAltDifWeather_valueChanged(int theAltDif);
-  void on_sbSoilTempAltDifWeather_valueChanged(int theAltDif);
+  void on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif);
+  //void on_sbLeafWetnessAltDifWeather_valueChanged(int theAltDif);
+  //void on_sbSoilTempAltDifWeather_valueChanged(int theAltDif);
 
   void on_dsbPrecipitationWeightWeather_valueChanged(double theWeight);
   void on_dsbTAveWeightWeather_valueChanged(double theWeight);
@@ -210,8 +210,8 @@ private slots:
   void on_dsbWindSpeedKmWeather_valueChanged(double theDistance);
   void on_dsbGlobalRadiationKmWeather_valueChanged(double theDistance);
   void on_dsbSunshineHoursKmWeather_valueChanged(double theDistance);
-  void on_dsbLeafWetnessKmWeather_valueChanged(double theDistance);
-  void on_dsbSoilTempKmWeather_valueChanged(double theDistance);
+  //void on_dsbLeafWetnessKmWeather_valueChanged(double theDistance);
+  //void on_dsbSoilTempKmWeather_valueChanged(double theDistance);
 
   void on_sbPrecipitationOptimalDistanceWeather_valueChanged(int theOptimalDistance);
   void on_sbTAveOptimalDistanceWeather_valueChanged(int theOptimalDistance);
@@ -229,9 +229,9 @@ private slots:
   void on_rbRelHumidityWeatherMeasured_clicked(bool checked);
   void on_rbWindSpeedWeatherMeasured_clicked(bool checked);
   void on_rbGlobalRadiationWeatherMeasured_clicked(bool checked);
-  void on_rbSunshineHoursWeatherMeasured_clicked(bool checked);
-  void on_rbLeafWetnessWeatherMeasured_clicked(bool checked);
-  void on_rbSoilTempWeatherMeasured_clicked(bool checked);
+  void on_rbSunshineHoursWeatherMeasured_clicked(bool theButtonIsChecked);
+  void on_rbLeafWetnessWeatherMeasured_clicked(bool theButtonIsChecked);
+  void on_rbSoilTempWeatherMeasured_clicked(bool theButtonIsChecked);
 
   // state vars
 
@@ -252,6 +252,7 @@ private slots:
   void on_dsbSVCropRootBiomassLayers_valueChanged(double theLayers);
   void on_sbSVCropRootBiomassObservations_valueChanged(int theObservations);
   void on_dsbSVCropRootBiomassWeighting_valueChanged(double theWeight);
+  void on_dsbSVCropRootBiomassReplicates_valueChanged(double theReplicates);
 
   void on_sbSVCropNInAGrBiomassObservations_valueChanged(int theObservations);
   void on_dsbSVCropNInAGrBiomassWeighting_valueChanged(double theWeight);
@@ -481,6 +482,8 @@ private slots:
 
   void on_cbDatasets_currentIndexChanged(const QString &theExample);
 
+  void on_dsbSVCropWeightOrgansReplicates_valueChanged(double theReplicates);
+  void on_dsbSVCropNInOrgansLayers_valueChanged(double theLayers);
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble); // returns double as a QString

@@ -58,7 +58,9 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   // set the date - will be corrected if a dataset is loaded
   ui->dteDatasetSubmitted->setDateTime(QDateTime::currentDateTime());
 
-  QByteArray myBackendId = "529da70ae5bde55cd1026369";
+  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
+  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+
   EnginioClient *mpEnginioClient = new EnginioClient;
   mpEnginioClient->setBackendId(myBackendId);
 
@@ -1517,12 +1519,12 @@ void DatasetClassification::on_sbGlobalRadiationAltDifWeather_valueChanged(int t
 
   updateWeatherLabels();
 }
-void DatasetClassification::on_sbLeafWetnessAltDifWeather_valueChanged(int theAltDif)
+void DatasetClassification::on_sbSunshineHoursAltDifWeather_valueChanged(int theAltDif)
 {
   QString myTotal;
-  double myWeight = ui->dsbLeafWetnessWeightWeather->value();
-  double myDistance = ui->dsbLeafWetnessKmWeather->value();
-  int myOptimalDistance = ui->sbLeafWetnessOptimalDistanceWeather->value();
+  double myWeight = ui->dsbSunshineHoursWeightWeather->value();
+  double myDistance = ui->dsbSunshineHoursKmWeather->value();
+  int myOptimalDistance = ui->sbSunshineHoursOptimalDistanceWeather->value();
 
   double myFactor = 1.0; //  this variable is hard coded (for now)
   RankPointGenerator myPointGen;
@@ -1533,27 +1535,7 @@ void DatasetClassification::on_sbLeafWetnessAltDifWeather_valueChanged(int theAl
 
   //change myTotal to QString text
   myTotal = makeString(myValue);
-  ui->lblLeafWetnessPtsWeather->setText(myTotal);
-
-  updateWeatherLabels();
-}
-void DatasetClassification::on_sbSoilTempAltDifWeather_valueChanged(int theAltDif)
-{
-  QString myTotal;
-  double myWeight = ui->dsbSoilTempWeightWeather->value();
-  double myDistance = ui->dsbSoilTempKmWeather->value();
-  int myOptimalDistance = ui->sbSoilTempOptimalDistanceWeather->value();
-
-  double myFactor = 1.0; //  this variable is hard coded (for now)
-  RankPointGenerator myPointGen;
-  double myValue;
-
-  // go get the total
-  myValue = myPointGen.weatherMethod1(myDistance, myWeight, theAltDif, myFactor, myOptimalDistance);
-
-  //change myTotal to QString text
-  myTotal = makeString(myValue);
-  ui->lblSoilTempPtsWeather->setText(myTotal);
+  ui->lblSunshineHoursPtsWeather->setText(myTotal);
 
   updateWeatherLabels();
 }
@@ -1673,15 +1655,16 @@ void DatasetClassification::on_dsbGlobalRadiationWeightWeather_valueChanged(doub
 void DatasetClassification::on_dsbSunshineHoursWeightWeather_valueChanged(double theWeight)
 {
   // the following two vars not needed for sunshine hours
-  //int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
-  //double myFactor = 1.0;
+  int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
+  double myFactor = 1.0;
   double myDistance = ui->dsbSunshineHoursKmWeather->value();
+  int myOptimalDistance = ui->sbSunshineHoursOptimalDistanceWeather->value();
 
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
-  myValue = myPointGen.weatherMethodSunshineHours(myDistance, theWeight);
+  myValue = myPointGen.weatherMethod1(myDistance, theWeight, myAltDif, myFactor, myOptimalDistance);
   myTotal = makeString(myValue);
   ui->lblSunshineHoursPtsWeather->setText(myTotal);
 
@@ -1689,15 +1672,13 @@ void DatasetClassification::on_dsbSunshineHoursWeightWeather_valueChanged(double
 }
 void DatasetClassification::on_dsbLeafWetnessWeightWeather_valueChanged(double theWeight)
 {
-  QString myTotal;
+  bool myIsMeasured = ui->rbLeafWetnessWeatherMeasured->isChecked();
+
   RankPointGenerator myPointGen;
   double myValue;
-  int myAltDif = ui->sbLeafWetnessAltDifWeather->value();
-  double myFactor = 1.0;
-  double myDistance = ui->dsbLeafWetnessKmWeather->value();
-  int myOptimalDistance = ui->sbLeafWetnessOptimalDistanceWeather->value();
+  QString myTotal;
 
-  myValue = myPointGen.weatherMethod1(myDistance, theWeight, myAltDif, myFactor, myOptimalDistance);
+  myValue = myPointGen.weatherMethod2(myIsMeasured, theWeight);
   myTotal = makeString(myValue);
   ui->lblLeafWetnessPtsWeather->setText(myTotal);
 
@@ -1705,15 +1686,13 @@ void DatasetClassification::on_dsbLeafWetnessWeightWeather_valueChanged(double t
 }
 void DatasetClassification::on_dsbSoilTempWeightWeather_valueChanged(double theWeight)
 {
-  QString myTotal;
+  bool myIsMeasured = ui->rbSoilTempWeatherMeasured->isChecked();
+
   RankPointGenerator myPointGen;
   double myValue;
-  int myAltDif = ui->sbSoilTempAltDifWeather->value();
-  double myFactor = 1.0;
-  double myDistance = ui->dsbSoilTempKmWeather->value();
-  int myOptimalDistance = ui->sbSoilTempOptimalDistanceWeather->value();
+  QString myTotal;
 
-  myValue = myPointGen.weatherMethod1(myDistance, theWeight, myAltDif, myFactor, myOptimalDistance);
+  myValue = myPointGen.weatherMethod2(myIsMeasured, theWeight);
   myTotal = makeString(myValue);
   ui->lblSoilTempPtsWeather->setText(myTotal);
 
@@ -1841,52 +1820,19 @@ void DatasetClassification::on_dsbGlobalRadiationKmWeather_valueChanged(double t
 }
 void DatasetClassification::on_dsbSunshineHoursKmWeather_valueChanged(double theDistance)
 {
-  // the following two vars not needed for sunshine hours
-  //int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
-  //double myFactor = 1.0;
+  int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
+  double myFactor = 1.0;
   double myWeight = ui->dsbSunshineHoursWeightWeather->value();
-
+  int myOptimalDistance = ui->sbSunshineHoursOptimalDistanceWeather->value();
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
-  myValue = myPointGen.weatherMethodSunshineHours(theDistance, myWeight);
+  myValue = myPointGen.weatherMethod1(theDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
+
+  //myValue = myPointGen.weatherMethodSunshineHours(theDistance, myWeight);
   myTotal = makeString(myValue);
   ui->lblSunshineHoursPtsWeather->setText(myTotal);
-
-  updateWeatherLabels();
-}
-void DatasetClassification::on_dsbLeafWetnessKmWeather_valueChanged(double theDistance)
-{
-  int myAltDif = ui->sbLeafWetnessAltDifWeather->value();
-  double myFactor = 1.0;
-  double myWeight = ui->dsbLeafWetnessWeightWeather->value();
-  int myOptimalDistance = ui->sbLeafWetnessOptimalDistanceWeather->value();
-
-  RankPointGenerator myPointGen;
-  double myValue;
-  QString myTotal;
-
-  myValue = myPointGen.weatherMethod1(theDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
-  myTotal = makeString(myValue);
-  ui->lblLeafWetnessPtsWeather->setText(myTotal);
-
-  updateWeatherLabels();
-}
-void DatasetClassification::on_dsbSoilTempKmWeather_valueChanged(double theDistance)
-{
-  int myAltDif = ui->sbSoilTempAltDifWeather->value();
-  double myFactor = 1.0;
-  double myWeight = ui->dsbSoilTempWeightWeather->value();
-  int myOptimalDistance = ui->sbSoilTempOptimalDistanceWeather->value();
-
-  RankPointGenerator myPointGen;
-  double myValue;
-  QString myTotal;
-
-  myValue = myPointGen.weatherMethod1(theDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
-  myTotal = makeString(myValue);
-  ui->lblSoilTempPtsWeather->setText(myTotal);
 
   updateWeatherLabels();
 }
@@ -2168,7 +2114,23 @@ void DatasetClassification::on_dsbSVCropWeightOrgansWeighting_valueChanged(doubl
   // update the labels and ranking
   updateSVLabels();
 }
+void DatasetClassification::on_dsbSVCropWeightOrgansReplicates_valueChanged(double theReplicates)
+{
+  int myObservations = ui->sbSVCropWeightOrgansObservations->value();
+  double myWeight = ui->dsbSVCropWeightOrgansWeighting->value();
+  double myLayers = ui->dsbSVCropWeightOrgansLayers->value();
 
+  //double myWeight = myObservations * myGivenWeighting * theLayers;
+  RankPointGenerator myPointGen;
+  double myValue = myPointGen.SVCropWeightOrgans(myLayers, myObservations, myWeight, theReplicates);
+
+  QString myTotal = makeString(myValue);
+
+  ui->lblSVCropWeightOrgansPoints->setText(myTotal);
+
+  updateSVLabels();
+}
+// TODO add replicates etc here
 void DatasetClassification::on_dsbSVCropRootBiomassLayers_valueChanged(double theLayers)
 {
   // set local variables
@@ -2212,6 +2174,21 @@ void DatasetClassification::on_dsbSVCropRootBiomassWeighting_valueChanged(double
   QString myTotal = makeString(myValue);
   ui->lblSVCropRootBiomassPoints->setText(myTotal);
   // update the labels and ranking
+  updateSVLabels();
+}
+void DatasetClassification::on_dsbSVCropRootBiomassReplicates_valueChanged(double theReplicates)
+{
+  int myObservations = ui->sbSVCropRootBiomassObservations->value();
+  double myWeight = ui->dsbSVCropRootBiomassWeighting->value();
+
+  //double myWeight = myObservations * myGivenWeighting * theLayers;
+  RankPointGenerator myPointGen;
+  double myValue = myPointGen.SVCropNInAGrBiomass(myObservations, myWeight, theReplicates);
+
+  QString myTotal = makeString(myValue);
+
+  ui->lblSVCropRootBiomassPoints->setText(myTotal);
+
   updateSVLabels();
 }
 
@@ -2259,6 +2236,21 @@ void DatasetClassification::on_dsbSVCropNInAGrBiomassReplicates_valueChanged(dou
   updateSVLabels();
 }
 
+void DatasetClassification::on_dsbSVCropNInOrgansLayers_valueChanged(double theLayers)
+{
+  // set local variables
+  double myWeight = ui->dsbSVCropNInOrgansWeighting->value();
+  int myObservations = ui->sbSVCropNInOrgansObservations->value();
+  double myReplicates = ui->dsbSVCropAGrBiomassReplicates->value();
+  // calculate points
+  RankPointGenerator myPointGen;
+  double myValue = myPointGen.SVCropNInOrgans(theLayers, myObservations, myWeight, myReplicates);
+  // update points total on ui
+  QString myTotal = makeString(myValue);
+  ui->lblSVCropNInOrgansPoints->setText(myTotal);
+  // update the labels and ranking
+  updateSVLabels();
+}
 void DatasetClassification::on_sbSVCropNInOrgansObservations_valueChanged(int theObservations)
 {
   double myWeight;
@@ -2935,13 +2927,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesEtObservations_valueChanged(int 
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesEtWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesET(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -2952,13 +2941,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesEtWeighting_valueChanged(double
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesEtObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesEtReplicates->value();
-  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesET(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -2970,13 +2956,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesNH3LossObservations_valueChanged
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesNH3LossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNH3LossReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNH3Loss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -2986,14 +2969,11 @@ void DatasetClassification::on_sbSVSurfaceFluxesNH3LossObservations_valueChanged
 void DatasetClassification::on_dsbSVSurfaceFluxesNH3LossWeighting_valueChanged(double theWeight)
 {
   int myObservations;
-  //double myReplicates;
   RankPointGenerator myPointGen;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesNH3LossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNH3LossReplicates->value();
-  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNH3Loss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3005,13 +2985,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesN2OLossObservations_valueChanged
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesN2OLossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesN2OLoss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3022,13 +2999,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2OLossWeighting_valueChanged(d
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesN2OLossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesN2OLossReplicates->value();
-  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesN2OLoss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3040,13 +3014,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesNOLossObservations_valueChanged(
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesNOLossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNOLossReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNOLoss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3057,13 +3028,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesNOLossWeighting_valueChanged(do
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesNOLossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesNOLossReplicates->value();
-  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesNOLoss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3075,13 +3043,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesCO2LossObservations_valueChanged
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesCO2LossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesCO2LossReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesCO2Loss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3092,13 +3057,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesCO2LossWeighting_valueChanged(d
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesCO2LossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesCO2LossReplicates->value();
-  //myValue = myPointGen.SVMethod1(myObservations, theWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesCO2Loss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3106,18 +3068,14 @@ void DatasetClassification::on_dsbSVSurfaceFluxesCO2LossWeighting_valueChanged(d
   updateSVLabels();
 }
 
-
 void DatasetClassification::on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations)
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesN2LossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
-  //myValue = myPointGen.SVMethod1(theObservations, myWeight, myReplicates);
   myValue = myPointGen.SVSurfaceFluxesN2Loss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3128,12 +3086,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesN2LossWeighting_valueChanged(do
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesN2LossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesN2LossReplicates->value();
   myValue = myPointGen.SVSurfaceFluxesN2Loss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3145,12 +3101,10 @@ void DatasetClassification::on_sbSVSurfaceFluxesCH4LossObservations_valueChanged
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVSurfaceFluxesCH4LossWeighting->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesCH4LossReplicates->value();
   myValue = myPointGen.SVSurfaceFluxesCH4Loss(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3161,12 +3115,10 @@ void DatasetClassification::on_dsbSVSurfaceFluxesCH4LossWeighting_valueChanged(d
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVSurfaceFluxesCH4LossObservations->value();
-  //myReplicates = ui->dsbSVSurfaceFluxesCH4LossReplicates->value();
   myValue = myPointGen.SVSurfaceFluxesCH4Loss(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -3277,12 +3229,10 @@ void DatasetClassification::on_sbSVObservationsWeedsObservations_valueChanged(in
 {
   RankPointGenerator myPointGen;
   double myWeight;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myWeight = ui->dsbSVObservationsWeedsWeighting->value();
-  //myReplicates = ui->dsbSVObservationsWeedsReplicates->value();
   myValue = myPointGen.SVObservationsWeeds(theObservations, myWeight);
   myTotal = makeString(myValue);
 
@@ -3293,12 +3243,10 @@ void DatasetClassification::on_dsbSVObservationsWeedsWeighting_valueChanged(doub
 {
   RankPointGenerator myPointGen;
   int myObservations;
-  //double myReplicates;
   double myValue;
   QString myTotal;
 
   myObservations = ui->sbSVObservationsWeedsObservations->value();
-  //myReplicates = ui->dsbSVObservationsWeedsReplicates->value();
   myValue = myPointGen.SVObservationsWeeds(myObservations, theWeight);
   myTotal = makeString(myValue);
 
@@ -4977,17 +4925,17 @@ void DatasetClassification::on_rbGlobalRadiationWeatherMeasured_clicked(bool che
       updateWeatherLabels();
     }
 }
-void DatasetClassification::on_rbSunshineHoursWeatherMeasured_clicked(bool checked)
+void DatasetClassification::on_rbSunshineHoursWeatherMeasured_clicked(bool theButtonIsChecked)
 {
   // if not selected, disable associated spinboxes and set points to 0
   RankPointGenerator myPointGen;
 
-    ui->chbxSunshineHoursWeather->setDisabled(!checked);
-    ui->dsbSunshineHoursKmWeather->setDisabled(!checked);
-    ui->sbSunshineHoursAltDifWeather->setDisabled(!checked);
-    ui->dsbSunshineHoursWeightWeather->setDisabled(!checked);
-    ui->sbSunshineHoursOptimalDistanceWeather->setDisabled(!checked);
-    if (!checked)
+    ui->chbxSunshineHoursWeather->setDisabled(!theButtonIsChecked);
+    ui->dsbSunshineHoursKmWeather->setDisabled(!theButtonIsChecked);
+    ui->sbSunshineHoursAltDifWeather->setDisabled(!theButtonIsChecked);
+    ui->dsbSunshineHoursWeightWeather->setDisabled(!theButtonIsChecked);
+    ui->sbSunshineHoursOptimalDistanceWeather->setDisabled(!theButtonIsChecked);
+    if (!theButtonIsChecked)
     {
       ui->lblSunshineHoursPtsWeather->setText("0");
       updateWeatherLabels();
@@ -4998,13 +4946,15 @@ void DatasetClassification::on_rbSunshineHoursWeatherMeasured_clicked(bool check
       QString myTotal;
       double myWeight = ui->dsbSunshineHoursWeightWeather->value();
       double myDistance = ui->dsbSunshineHoursKmWeather->value();
-      //int myOptimalDistance = ui->sbSunshineHoursOptimalDistanceWeather->value();
-      //int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
-      //double myFactor = 1.0; //  this variable is hard coded (for now)
-      double myValue = 0;
+      int myAltDif = ui->sbSunshineHoursAltDifWeather->value();
+      double myFactor = 1.0;
+      int myOptimalDistance = ui->sbSunshineHoursOptimalDistanceWeather->value();
+
+      RankPointGenerator myPointGen;
+      double myValue;
 
       // go get the total
-      myValue = myPointGen.weatherMethodSunshineHours(myDistance, myWeight);
+      myValue = myPointGen.weatherMethod1(myDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
 
       //change myTotal to QString text
       myTotal = makeString(myValue);
@@ -5015,72 +4965,41 @@ void DatasetClassification::on_rbSunshineHoursWeatherMeasured_clicked(bool check
       updateWeatherLabels();
     }
 }
-void DatasetClassification::on_rbLeafWetnessWeatherMeasured_clicked(bool checked)
+void DatasetClassification::on_rbLeafWetnessWeatherMeasured_clicked(bool theButtonIsChecked)
 {
-  // if not selected, disable associated spinboxes and set points to 0
   RankPointGenerator myPointGen;
 
-    ui->chbxLeafWetnessWeather->setDisabled(!checked);
-    ui->dsbLeafWetnessKmWeather->setDisabled(!checked);
-    ui->sbLeafWetnessAltDifWeather->setDisabled(!checked);
-    ui->dsbLeafWetnessWeightWeather->setDisabled(!checked);
-    ui->sbLeafWetnessOptimalDistanceWeather->setDisabled(!checked);
-    if (!checked)
-    {
-      ui->lblLeafWetnessPtsWeather->setText("0");
-      updateWeatherLabels();
-    }
-    else
-    {
+    ui->chbxLeafWetnessWeather->setDisabled(!theButtonIsChecked);
+    ui->dsbLeafWetnessWeightWeather->setDisabled(!theButtonIsChecked);
+
       // calculate the points
       QString myTotal;
       double myWeight = ui->dsbLeafWetnessWeightWeather->value();
-      double myDistance = ui->dsbLeafWetnessKmWeather->value();
-      int myOptimalDistance = ui->sbLeafWetnessOptimalDistanceWeather->value();
-      int myAltDif = ui->sbLeafWetnessAltDifWeather->value();
-      double myFactor = 1.0; //  this variable is hard coded (for now)
-      double myValue = 0;
 
       // go get the total
-      myValue = myPointGen.weatherMethod1(myDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
+      double myValue = myPointGen.weatherMethod2(theButtonIsChecked, myWeight);
 
       //change myTotal to QString text
       myTotal = makeString(myValue);
       ui->lblLeafWetnessPtsWeather->setText(myTotal);
 
-
       // now update the labels
       updateWeatherLabels();
-    }
+
 }
-void DatasetClassification::on_rbSoilTempWeatherMeasured_clicked(bool checked)
+void DatasetClassification::on_rbSoilTempWeatherMeasured_clicked(bool theButtonIsChecked)
 {
-  // if not selected, disable associated spinboxes and set points to 0
   RankPointGenerator myPointGen;
 
-    ui->chbxSoilTempWeather->setDisabled(!checked);
-    ui->dsbSoilTempKmWeather->setDisabled(!checked);
-    ui->sbSoilTempAltDifWeather->setDisabled(!checked);
-    ui->dsbSoilTempWeightWeather->setDisabled(!checked);
-    ui->sbSoilTempOptimalDistanceWeather->setDisabled(!checked);
-    if (!checked)
-    {
-      ui->lblSoilTempPtsWeather->setText("0");
-      updateWeatherLabels();
-    }
-    else
-    {
+    ui->chbxSoilTempWeather->setDisabled(!theButtonIsChecked);
+    ui->dsbSoilTempWeightWeather->setDisabled(!theButtonIsChecked);
+
       // calculate the points
       QString myTotal;
       double myWeight = ui->dsbSoilTempWeightWeather->value();
-      double myDistance = ui->dsbSoilTempKmWeather->value();
-      int myOptimalDistance = ui->sbSoilTempOptimalDistanceWeather->value();
-      int myAltDif = ui->sbSoilTempAltDifWeather->value();
-      double myFactor = 1.0; //  this variable is hard coded (for now)
-      double myValue = 0;
 
       // go get the total
-      myValue = myPointGen.weatherMethod1(myDistance, myWeight, myAltDif, myFactor, myOptimalDistance);
+      double myValue = myPointGen.weatherMethod2(theButtonIsChecked, myWeight);
 
       //change myTotal to QString text
       myTotal = makeString(myValue);
@@ -5089,7 +5008,6 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_clicked(bool checked)
 
       // now update the labels
       updateWeatherLabels();
-    }
 }
 
 void DatasetClassification::on_toolButtonInsertVariable_clicked()
@@ -5309,11 +5227,11 @@ void DatasetClassification::on_chbxSoilTempWeather_clicked()
 {
     updateWeatherLabels();
 }
+
 void DatasetClassification::on_chbxSVCropYield_clicked()
 {
     updateSVLabels();
 }
-
 void DatasetClassification::on_chbxSVCropAGrBiomass_clicked()
 {
     updateSVLabels();
@@ -6087,7 +6005,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputPrecipitation.insert("lblPrecipitationPtsWeather", ui->lblPrecipitationPtsWeather->text().toDouble());
   myWeatherInputPrecipitation.insert("dsbPrecipitationKmWeather", ui->dsbPrecipitationKmWeather->value());
   myWeatherInputPrecipitation.insert("sbPrecipitationOptimalDistanceWeather", ui->sbPrecipitationOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbPrecipitationWeatherMeasured->isChecked()?true:false;
   myWeatherInputPrecipitation.insert("rbPrecipitationWeatherMeasured", myIsMeasuredSetting);
 
@@ -6100,7 +6018,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputTAve.insert("lblTAvePtsWeather", ui->lblTAvePtsWeather->text().toDouble());
   myWeatherInputTAve.insert("dsbTAveKmWeather", ui->dsbTAveKmWeather->value());
   myWeatherInputTAve.insert("sbTAveOptimalDistanceWeather", ui->sbTAveOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbTAveWeatherMeasured->isChecked()?true:false;
   myWeatherInputTAve.insert("rbTAveWeatherMeasured", myIsMeasuredSetting);
 
@@ -6113,7 +6031,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputTMin.insert("lblTMinPtsWeather", ui->lblTMinPtsWeather->text().toDouble());
   myWeatherInputTMin.insert("dsbTMinKmWeather", ui->dsbTMinKmWeather->value());
   myWeatherInputTMin.insert("sbTMinOptimalDistanceWeather", ui->sbTMinOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbTMinWeatherMeasured->isChecked()?true:false;
   myWeatherInputTMin.insert("rbTMinWeatherMeasured", myIsMeasuredSetting);
 
@@ -6126,7 +6044,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputTMax.insert("lblTMaxPtsWeather", ui->lblTMaxPtsWeather->text().toDouble());
   myWeatherInputTMax.insert("dsbTMaxKmWeather", ui->dsbTMaxKmWeather->value());
   myWeatherInputTMax.insert("sbTMaxOptimalDistanceWeather", ui->sbTMaxOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbTMaxWeatherMeasured->isChecked()?true:false;
   myWeatherInputTMax.insert("rbTMaxWeatherMeasured", myIsMeasuredSetting);
 
@@ -6139,7 +6057,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputRelHumidity.insert("lblRelHumidityPtsWeather", ui->lblRelHumidityPtsWeather->text().toDouble());
   myWeatherInputRelHumidity.insert("dsbRelHumidityKmWeather", ui->dsbRelHumidityKmWeather->value());
   myWeatherInputRelHumidity.insert("sbRelHumidityOptimalDistanceWeather", ui->sbRelHumidityOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbRelHumidityWeatherMeasured->isChecked()?true:false;
   myWeatherInputRelHumidity.insert("rbRelHumidityWeatherMeasured", myIsMeasuredSetting);
 
@@ -6152,7 +6070,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputWindSpeed.insert("lblWindSpeedPtsWeather", ui->lblWindSpeedPtsWeather->text().toDouble());
   myWeatherInputWindSpeed.insert("dsbWindSpeedKmWeather", ui->dsbWindSpeedKmWeather->value());
   myWeatherInputWindSpeed.insert("sbWindSpeedOptimalDistanceWeather", ui->sbWindSpeedOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbWindSpeedWeatherMeasured->isChecked()?true:false;
   myWeatherInputWindSpeed.insert("rbWindSpeedWeatherMeasured", myIsMeasuredSetting);
 
@@ -6165,7 +6083,7 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myWeatherInputGlobalRadiation.insert("lblGlobalRadiationPtsWeather", ui->lblGlobalRadiationPtsWeather->text().toDouble());
   myWeatherInputGlobalRadiation.insert("dsbGlobalRadiationKmWeather", ui->dsbGlobalRadiationKmWeather->value());
   myWeatherInputGlobalRadiation.insert("sbGlobalRadiationOptimalDistanceWeather", ui->sbGlobalRadiationOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbGlobalRadiationWeatherMeasured->isChecked()?true:false;
   myWeatherInputGlobalRadiation.insert("rbGlobalRadiationWeatherMeasured", myIsMeasuredSetting);
 
@@ -6173,12 +6091,12 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myMinDataSetting = ui->chbxSunshineHoursWeather->isChecked()?true:false;
   QJsonObject myWeatherInputSunshineHours;
   myWeatherInputSunshineHours.insert("chbxSunshineHoursWeather", myMinDataSetting);
-  //myWeatherInputSunshineHours.insert("AltDif", ui->sbSunshineHoursAltDifWeather->value());
+  myWeatherInputSunshineHours.insert("AltDif", ui->sbSunshineHoursAltDifWeather->value());
   myWeatherInputSunshineHours.insert("dsbSunshineHoursWeightWeather", ui->dsbSunshineHoursWeightWeather->value());
   myWeatherInputSunshineHours.insert("lblSunshineHoursPtsWeather", ui->lblSunshineHoursPtsWeather->text().toDouble());
   myWeatherInputSunshineHours.insert("dsbSunshineHoursKmWeather", ui->dsbSunshineHoursKmWeather->value());
   myWeatherInputSunshineHours.insert("sbSunshineHoursOptimalDistanceWeather", ui->sbSunshineHoursOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+
   myIsMeasuredSetting = ui->rbSunshineHoursWeatherMeasured->isChecked()?true:false;
   myWeatherInputSunshineHours.insert("rbSunshineHoursWeatherMeasured", myIsMeasuredSetting);
 
@@ -6186,12 +6104,12 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myMinDataSetting = ui->chbxLeafWetnessWeather->isChecked()?true:false;
   QJsonObject myWeatherInputLeafWetness;
   myWeatherInputLeafWetness.insert("chbxLeafWetnessWeather", myMinDataSetting);
-  myWeatherInputLeafWetness.insert("sbLeafWetnessAltDifWeather", ui->sbLeafWetnessAltDifWeather->value());
+  //myWeatherInputLeafWetness.insert("sbLeafWetnessAltDifWeather", ui->sbLeafWetnessAltDifWeather->value());
   myWeatherInputLeafWetness.insert("dsbLeafWetnessWeightWeather", ui->dsbLeafWetnessWeightWeather->value());
   myWeatherInputLeafWetness.insert("lblLeafWetnessPtsWeather", ui->lblLeafWetnessPtsWeather->text().toDouble());
-  myWeatherInputLeafWetness.insert("dsbLeafWetnessKmWeather", ui->dsbLeafWetnessKmWeather->value());
-  myWeatherInputLeafWetness.insert("sbLeafWetnessOptimalDistanceWeather", ui->sbLeafWetnessOptimalDistanceWeather->value());
-  // convert the measured radio button to text (yes/no)
+  //myWeatherInputLeafWetness.insert("dsbLeafWetnessKmWeather", ui->dsbLeafWetnessKmWeather->value());
+  //myWeatherInputLeafWetness.insert("sbLeafWetnessOptimalDistanceWeather", ui->sbLeafWetnessOptimalDistanceWeather->value());
+
   myIsMeasuredSetting = ui->rbLeafWetnessWeatherMeasured->isChecked()?true:false;
   myWeatherInputLeafWetness.insert("rbLeafWetnessWeatherMeasured", myIsMeasuredSetting);
 
@@ -6199,12 +6117,12 @@ QJsonObject DatasetClassification::generateWeatherJson()
   myMinDataSetting = ui->chbxSoilTempWeather->isChecked()?true:false;
   QJsonObject myWeatherInputSoilTemp;
   myWeatherInputSoilTemp.insert("chbxSoilTempWeather", myMinDataSetting);
-  myWeatherInputSoilTemp.insert("sbSoilTempAltDifWeather", ui->sbSoilTempAltDifWeather->value());
+  //myWeatherInputSoilTemp.insert("sbSoilTempAltDifWeather", ui->sbSoilTempAltDifWeather->value());
   myWeatherInputSoilTemp.insert("dsbSoilTempWeightWeather", ui->dsbSoilTempWeightWeather->value());
   myWeatherInputSoilTemp.insert("lblSoilTempPtsWeather", ui->lblSoilTempPtsWeather->text().toDouble());
-  myWeatherInputSoilTemp.insert("dsbSoilTempKmWeather", ui->dsbSoilTempKmWeather->value());
-  myWeatherInputSoilTemp.insert("sbSoilTempOptimalDistanceWeather", ui->sbSoilTempOptimalDistanceWeather->text());
-  // convert the measured radio button to text (yes/no)
+  //myWeatherInputSoilTemp.insert("dsbSoilTempKmWeather", ui->dsbSoilTempKmWeather->value());
+  //myWeatherInputSoilTemp.insert("sbSoilTempOptimalDistanceWeather", ui->sbSoilTempOptimalDistanceWeather->text());
+
   myIsMeasuredSetting = ui->rbSoilTempWeatherMeasured->isChecked()?true:false;
   myWeatherInputSoilTemp.insert("rbSoilTempWeatherMeasured", myIsMeasuredSetting);
 
@@ -6242,347 +6160,326 @@ QJsonObject DatasetClassification::generateSVCropJson()
 {
   //    SVCrop
   bool myMinDataSetting;
-  QJsonObject myStateVariablesCropObject;
-  myStateVariablesCropObject.insert("lblOverallPtsSVCrop", ui->lblOverallPtsSVCrop->text().toDouble());
+  QJsonObject mySVCropObject;
+  mySVCropObject.insert("lblOverallPtsSVCrop", ui->lblOverallPtsSVCrop->text().toDouble());
 
   //    SVCrop
   //      Yield
 
-  QJsonObject myStateVariablesCropYieldObject;
+  QJsonObject mySVCropYieldObject;
   myMinDataSetting = ui->chbxSVCropYield->isChecked()?true:false;
-  myStateVariablesCropYieldObject.insert("chbxSVCropYield", myMinDataSetting);
-  //myStateVariablesCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
-  myStateVariablesCropYieldObject.insert("dsbSVCropYieldWeighting", ui->dsbSVCropYieldWeighting->value());
-  myStateVariablesCropYieldObject.insert("lblSVCropYieldPoints", ui->lblSVCropYieldPoints->text().toDouble());
-  myStateVariablesCropYieldObject.insert("dsbSVCropYieldReplicates", ui->dsbSVCropYieldReplicates->value());
-  myStateVariablesCropYieldObject.insert("sbSVCropYieldObservations", ui->sbSVCropYieldObservations->value());
+  mySVCropYieldObject.insert("chbxSVCropYield", myMinDataSetting);
+  //mySVCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
+  mySVCropYieldObject.insert("dsbSVCropYieldWeighting", ui->dsbSVCropYieldWeighting->value());
+  mySVCropYieldObject.insert("lblSVCropYieldPoints", ui->lblSVCropYieldPoints->text().toDouble());
+  mySVCropYieldObject.insert("dsbSVCropYieldReplicates", ui->dsbSVCropYieldReplicates->value());
+  mySVCropYieldObject.insert("sbSVCropYieldObservations", ui->sbSVCropYieldObservations->value());
   // add this to the SVCrop object
-  myStateVariablesCropObject.insert("Yield", myStateVariablesCropYieldObject);
+  mySVCropObject.insert("Yield", mySVCropYieldObject);
 
   //    SVCrop
   //      AGrBiomass
-  QJsonObject myStateVariablesCropAGrBiomassObject;
+  QJsonObject mySVCropAGrBiomassObject;
   myMinDataSetting = ui->chbxSVCropAGrBiomass->isChecked()?true:false;
-  myStateVariablesCropAGrBiomassObject.insert("chbxSVCropAGrBiomass", myMinDataSetting);
-  //myStateVariablesCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
-  myStateVariablesCropAGrBiomassObject.insert("dsbSVCropAGrBiomassWeighting", ui->dsbSVCropAGrBiomassWeighting->value());
-  myStateVariablesCropAGrBiomassObject.insert("lblSVCropAGrBiomassPoints", ui->lblSVCropAGrBiomassPoints->text().toDouble());
-  myStateVariablesCropAGrBiomassObject.insert("dsbSVCropAGrBiomassReplicates", ui->dsbSVCropAGrBiomassReplicates->value());
-  myStateVariablesCropAGrBiomassObject.insert("sbSVCropAGrBiomassObservations", ui->sbSVCropAGrBiomassObservations->value());
+  mySVCropAGrBiomassObject.insert("chbxSVCropAGrBiomass", myMinDataSetting);
+  //mySVCropObject.insert("Layers", ui->dsbSVCropAGrBiomassLayers->value());
+  mySVCropAGrBiomassObject.insert("dsbSVCropAGrBiomassWeighting", ui->dsbSVCropAGrBiomassWeighting->value());
+  mySVCropAGrBiomassObject.insert("lblSVCropAGrBiomassPoints", ui->lblSVCropAGrBiomassPoints->text().toDouble());
+  mySVCropAGrBiomassObject.insert("dsbSVCropAGrBiomassReplicates", ui->dsbSVCropAGrBiomassReplicates->value());
+  mySVCropAGrBiomassObject.insert("sbSVCropAGrBiomassObservations", ui->sbSVCropAGrBiomassObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("AGrBiomass", myStateVariablesCropAGrBiomassObject);
+  mySVCropObject.insert("AGrBiomass", mySVCropAGrBiomassObject);
 
   //    SVCrop
   //      WeightOrgans
-  QJsonObject myStateVariablesCropWeightOrgansObject;
+  QJsonObject mySVCropWeightOrgansObject;
   myMinDataSetting = ui->chbxSVCropWeightOrgans->isChecked()?true:false;
-  myStateVariablesCropWeightOrgansObject.insert("chbxSVCropWeightOrgans", myMinDataSetting);
-  myStateVariablesCropWeightOrgansObject.insert("dsbSVCropWeightOrgansLayers", ui->dsbSVCropWeightOrgansLayers->value());
-  myStateVariablesCropWeightOrgansObject.insert("dsbSVCropWeightOrgansWeighting", ui->dsbSVCropWeightOrgansWeighting->value());
-  myStateVariablesCropWeightOrgansObject.insert("lblSVCropWeightOrgansPoints", ui->lblSVCropWeightOrgansPoints->text().toDouble());
-  myStateVariablesCropWeightOrgansObject.insert("dsbSVCropWeightOrgansReplicates", ui->dsbSVCropWeightOrgansReplicates->value());
-  myStateVariablesCropWeightOrgansObject.insert("sbSVCropWeightOrgansObservations", ui->sbSVCropWeightOrgansObservations->value());
+  mySVCropWeightOrgansObject.insert("chbxSVCropWeightOrgans", myMinDataSetting);
+  mySVCropWeightOrgansObject.insert("dsbSVCropWeightOrgansLayers", ui->dsbSVCropWeightOrgansLayers->value());
+  mySVCropWeightOrgansObject.insert("dsbSVCropWeightOrgansWeighting", ui->dsbSVCropWeightOrgansWeighting->value());
+  mySVCropWeightOrgansObject.insert("lblSVCropWeightOrgansPoints", ui->lblSVCropWeightOrgansPoints->text().toDouble());
+  mySVCropWeightOrgansObject.insert("dsbSVCropWeightOrgansReplicates", ui->dsbSVCropWeightOrgansReplicates->value());
+  mySVCropWeightOrgansObject.insert("sbSVCropWeightOrgansObservations", ui->sbSVCropWeightOrgansObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("WeightOrgans", myStateVariablesCropWeightOrgansObject);
+  mySVCropObject.insert("WeightOrgans", mySVCropWeightOrgansObject);
 
   //    SVCrop
   //      RootBiomass
-  QJsonObject myStateVariablesCropRootBiomassObject;
+  QJsonObject mySVCropRootBiomassObject;
   myMinDataSetting = ui->chbxSVCropRootBiomass->isChecked()?true:false;
-  myStateVariablesCropRootBiomassObject.insert("chbxSVCropRootBiomass", myMinDataSetting);
-  myStateVariablesCropRootBiomassObject.insert("dsbSVCropRootBiomassLayers", ui->dsbSVCropRootBiomassLayers->value());
-  myStateVariablesCropRootBiomassObject.insert("dsbSVCropRootBiomassWeighting", ui->dsbSVCropRootBiomassWeighting->value());
-  myStateVariablesCropRootBiomassObject.insert("lblSVCropRootBiomassPoints", ui->lblSVCropRootBiomassPoints->text().toDouble());
-  myStateVariablesCropRootBiomassObject.insert("dsbSVCropRootBiomassReplicates", ui->dsbSVCropRootBiomassReplicates->value());
-  myStateVariablesCropRootBiomassObject.insert("sbSVCropRootBiomassObservations", ui->sbSVCropRootBiomassObservations->value());
+  mySVCropRootBiomassObject.insert("chbxSVCropRootBiomass", myMinDataSetting);
+  mySVCropRootBiomassObject.insert("dsbSVCropRootBiomassLayers", ui->dsbSVCropRootBiomassLayers->value());
+  mySVCropRootBiomassObject.insert("dsbSVCropRootBiomassWeighting", ui->dsbSVCropRootBiomassWeighting->value());
+  mySVCropRootBiomassObject.insert("lblSVCropRootBiomassPoints", ui->lblSVCropRootBiomassPoints->text().toDouble());
+  mySVCropRootBiomassObject.insert("dsbSVCropRootBiomassReplicates", ui->dsbSVCropRootBiomassReplicates->value());
+  mySVCropRootBiomassObject.insert("sbSVCropRootBiomassObservations", ui->sbSVCropRootBiomassObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("RootBiomass", myStateVariablesCropRootBiomassObject);
+  mySVCropObject.insert("RootBiomass", mySVCropRootBiomassObject);
 
   //    SVCrop
   //      NInAGrBiomass
-  QJsonObject myStateVariablesCropNInAGrBiomassObject;
+  QJsonObject mySVCropNInAGrBiomassObject;
   myMinDataSetting = ui->chbxSVCropNInAGrBiomass->isChecked()?true:false;
-  myStateVariablesCropNInAGrBiomassObject.insert("chbxSVCropNInAGrBiomass", myMinDataSetting);
-  myStateVariablesCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassLayers", ui->dsbSVCropNInAGrBiomassLayers->value());
-  myStateVariablesCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassWeighting", ui->dsbSVCropNInAGrBiomassWeighting->value());
-  myStateVariablesCropNInAGrBiomassObject.insert("lblSVCropNInAGrBiomassPoints", ui->lblSVCropNInAGrBiomassPoints->text().toDouble());
-  myStateVariablesCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassReplicates", ui->dsbSVCropNInAGrBiomassReplicates->value());
-  myStateVariablesCropNInAGrBiomassObject.insert("sbSVCropNInAGrBiomassObservations", ui->sbSVCropNInAGrBiomassObservations->value());
+  mySVCropNInAGrBiomassObject.insert("chbxSVCropNInAGrBiomass", myMinDataSetting);
+  //mySVCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassLayers", ui->dsbSVCropNInAGrBiomassLayers->value());
+  mySVCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassWeighting", ui->dsbSVCropNInAGrBiomassWeighting->value());
+  mySVCropNInAGrBiomassObject.insert("lblSVCropNInAGrBiomassPoints", ui->lblSVCropNInAGrBiomassPoints->text().toDouble());
+  mySVCropNInAGrBiomassObject.insert("dsbSVCropNInAGrBiomassReplicates", ui->dsbSVCropNInAGrBiomassReplicates->value());
+  mySVCropNInAGrBiomassObject.insert("sbSVCropNInAGrBiomassObservations", ui->sbSVCropNInAGrBiomassObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("NInAGrBiomass", myStateVariablesCropNInAGrBiomassObject);
+  mySVCropObject.insert("NInAGrBiomass", mySVCropNInAGrBiomassObject);
 
   //    SVCrop
   //      NInOrgans
-  QJsonObject myStateVariablesCropNInOrgansObject;
+  QJsonObject mySVCropNInOrgansObject;
   myMinDataSetting = ui->chbxSVCropNInOrgans->isChecked()?true:false;
-  myStateVariablesCropNInOrgansObject.insert("chbxSVCropNInOrgans", myMinDataSetting);
-  myStateVariablesCropNInOrgansObject.insert("dsbSVCropNInOrgansLayers", ui->dsbSVCropNInOrgansLayers->value());
-  myStateVariablesCropNInOrgansObject.insert("dsbSVCropNInOrgansWeighting", ui->dsbSVCropNInOrgansWeighting->value());
-  myStateVariablesCropNInOrgansObject.insert("lblSVCropNInOrgansPoints", ui->lblSVCropNInOrgansPoints->text().toDouble());
-  myStateVariablesCropNInOrgansObject.insert("dsbSVCropNInOrgansReplicates", ui->dsbSVCropNInOrgansReplicates->value());
-  myStateVariablesCropNInOrgansObject.insert("sbSVCropNInOrgansObservations", ui->sbSVCropNInOrgansObservations->value());
+  mySVCropNInOrgansObject.insert("chbxSVCropNInOrgans", myMinDataSetting);
+  mySVCropNInOrgansObject.insert("dsbSVCropNInOrgansLayers", ui->dsbSVCropNInOrgansLayers->value());
+  mySVCropNInOrgansObject.insert("dsbSVCropNInOrgansWeighting", ui->dsbSVCropNInOrgansWeighting->value());
+  mySVCropNInOrgansObject.insert("lblSVCropNInOrgansPoints", ui->lblSVCropNInOrgansPoints->text().toDouble());
+  mySVCropNInOrgansObject.insert("dsbSVCropNInOrgansReplicates", ui->dsbSVCropNInOrgansReplicates->value());
+  mySVCropNInOrgansObject.insert("sbSVCropNInOrgansObservations", ui->sbSVCropNInOrgansObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("NInOrgans", myStateVariablesCropNInOrgansObject);
+  mySVCropObject.insert("NInOrgans", mySVCropNInOrgansObject);
 
   //    SVCrop
   //      LAI
-  QJsonObject myStateVariablesCropLAIObject;
+  QJsonObject mySVCropLAIObject;
   myMinDataSetting = ui->chbxSVCropLAI->isChecked()?true:false;
-  myStateVariablesCropLAIObject.insert("chbxSVCropLAI", myMinDataSetting);
-  myStateVariablesCropLAIObject.insert("dsbSVCropLAILayers", ui->dsbSVCropLAILayers->value());
-  myStateVariablesCropLAIObject.insert("dsbSVCropLAIWeighting", ui->dsbSVCropLAIWeighting->value());
-  myStateVariablesCropLAIObject.insert("lblSVCropLAIPoints", ui->lblSVCropLAIPoints->text().toDouble());
-  myStateVariablesCropLAIObject.insert("dsbSVCropLAIReplicates", ui->dsbSVCropLAIReplicates->value());
-  myStateVariablesCropLAIObject.insert("sbSVCropLAIObservations", ui->sbSVCropLAIObservations->value());
+  mySVCropLAIObject.insert("chbxSVCropLAI", myMinDataSetting);
+  //mySVCropLAIObject.insert("dsbSVCropLAILayers", ui->dsbSVCropLAILayers->value());
+  mySVCropLAIObject.insert("dsbSVCropLAIWeighting", ui->dsbSVCropLAIWeighting->value());
+  mySVCropLAIObject.insert("lblSVCropLAIPoints", ui->lblSVCropLAIPoints->text().toDouble());
+  mySVCropLAIObject.insert("dsbSVCropLAIReplicates", ui->dsbSVCropLAIReplicates->value());
+  mySVCropLAIObject.insert("sbSVCropLAIObservations", ui->sbSVCropLAIObservations->value());
   // add this to the Crop object
-  myStateVariablesCropObject.insert("LAI", myStateVariablesCropLAIObject);
-  return myStateVariablesCropObject;
+  mySVCropObject.insert("LAI", mySVCropLAIObject);
+  return mySVCropObject;
 }
 QJsonObject DatasetClassification::generateSVSoilJson()
 {
-  QJsonObject myStateVariablesSoilObject;
+  QJsonObject mySVSoilObject;
   bool myMinDataSetting;
-  myStateVariablesSoilObject.insert("lblOverallPtsSVSoil", ui->lblOverallPtsSVSoil->text().toDouble());
+  mySVSoilObject.insert("lblOverallPtsSVSoil", ui->lblOverallPtsSVSoil->text().toDouble());
 
   //    SV Soil
   //      SoilWaterGrav
-  QJsonObject myStateVariablesSoilSoilWaterGravObject;
+  QJsonObject mySVSoilSoilWaterGravObject;
   myMinDataSetting = ui->chbxSVSoilSoilWaterGrav->isChecked()?true:false;
-  myStateVariablesSoilSoilWaterGravObject.insert("chbxSVSoilSoilWaterGrav", myMinDataSetting);
-  myStateVariablesSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravLayers", ui->dsbSVSoilSoilWaterGravLayers->value());
-  myStateVariablesSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravWeighting", ui->dsbSVSoilSoilWaterGravWeighting->value());
-  myStateVariablesSoilSoilWaterGravObject.insert("lblSVSoilSoilWaterGravPoints", ui->lblSVSoilSoilWaterGravPoints->text().toDouble());
-  myStateVariablesSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravReplicates", ui->dsbSVSoilSoilWaterGravReplicates->value());
-  myStateVariablesSoilSoilWaterGravObject.insert("sbSVSoilSoilWaterGravObservations", ui->sbSVSoilSoilWaterGravObservations->value());
+  mySVSoilSoilWaterGravObject.insert("chbxSVSoilSoilWaterGrav", myMinDataSetting);
+  mySVSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravLayers", ui->dsbSVSoilSoilWaterGravLayers->value());
+  mySVSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravWeighting", ui->dsbSVSoilSoilWaterGravWeighting->value());
+  mySVSoilSoilWaterGravObject.insert("lblSVSoilSoilWaterGravPoints", ui->lblSVSoilSoilWaterGravPoints->text().toDouble());
+  mySVSoilSoilWaterGravObject.insert("dsbSVSoilSoilWaterGravReplicates", ui->dsbSVSoilSoilWaterGravReplicates->value());
+  mySVSoilSoilWaterGravObject.insert("sbSVSoilSoilWaterGravObservations", ui->sbSVSoilSoilWaterGravObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("SoilWaterGrav", myStateVariablesSoilSoilWaterGravObject);
+  mySVSoilObject.insert("SoilWaterGrav", mySVSoilSoilWaterGravObject);
 
   //    SV Soil
   //      PressureHeads
-  QJsonObject myStateVariablesSoilPressureHeadsObject;
+  QJsonObject mySVSoilPressureHeadsObject;
   myMinDataSetting = ui->chbxSVSoilPressureHeads->isChecked()?true:false;
-  myStateVariablesSoilPressureHeadsObject.insert("chbxSVSoilPressureHeads", myMinDataSetting);
-  myStateVariablesSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsLayers", ui->dsbSVSoilPressureHeadsLayers->value());
-  myStateVariablesSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsWeighting", ui->dsbSVSoilPressureHeadsWeighting->value());
-  myStateVariablesSoilPressureHeadsObject.insert("lblSVSoilPressureHeadsPoints", ui->lblSVSoilPressureHeadsPoints->text().toDouble());
-  myStateVariablesSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsReplicates", ui->dsbSVSoilPressureHeadsReplicates->value());
-  myStateVariablesSoilPressureHeadsObject.insert("sbSVSoilPressureHeadsObservations", ui->sbSVSoilPressureHeadsObservations->value());
+  mySVSoilPressureHeadsObject.insert("chbxSVSoilPressureHeads", myMinDataSetting);
+  mySVSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsLayers", ui->dsbSVSoilPressureHeadsLayers->value());
+  mySVSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsWeighting", ui->dsbSVSoilPressureHeadsWeighting->value());
+  mySVSoilPressureHeadsObject.insert("lblSVSoilPressureHeadsPoints", ui->lblSVSoilPressureHeadsPoints->text().toDouble());
+  mySVSoilPressureHeadsObject.insert("dsbSVSoilPressureHeadsReplicates", ui->dsbSVSoilPressureHeadsReplicates->value());
+  mySVSoilPressureHeadsObject.insert("sbSVSoilPressureHeadsObservations", ui->sbSVSoilPressureHeadsObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("PressureHeads", myStateVariablesSoilPressureHeadsObject);
+  mySVSoilObject.insert("PressureHeads", mySVSoilPressureHeadsObject);
 
   //    SV Soil
   //      NMin
-  QJsonObject myStateVariablesSoilNMinObject;
+  QJsonObject mySVSoilNMinObject;
   myMinDataSetting = ui->chbxSVSoilNMin->isChecked()?true:false;
-  myStateVariablesSoilNMinObject.insert("chbxSVSoilNMin", myMinDataSetting);
-  myStateVariablesSoilNMinObject.insert("dsbSVSoilNMinLayers", ui->dsbSVSoilNMinLayers->value());
-  myStateVariablesSoilNMinObject.insert("dsbSVSoilNMinWeighting", ui->dsbSVSoilNMinWeighting->value());
-  myStateVariablesSoilNMinObject.insert("lblSVSoilNMinPoints", ui->lblSVSoilNMinPoints->text().toDouble());
-  myStateVariablesSoilNMinObject.insert("dsbSVSoilNMinReplicates", ui->dsbSVSoilNMinReplicates->value());
-  myStateVariablesSoilNMinObject.insert("sbSVSoilNMinObservations", ui->sbSVSoilNMinObservations->value());
+  mySVSoilNMinObject.insert("chbxSVSoilNMin", myMinDataSetting);
+  mySVSoilNMinObject.insert("dsbSVSoilNMinLayers", ui->dsbSVSoilNMinLayers->value());
+  mySVSoilNMinObject.insert("dsbSVSoilNMinWeighting", ui->dsbSVSoilNMinWeighting->value());
+  mySVSoilNMinObject.insert("lblSVSoilNMinPoints", ui->lblSVSoilNMinPoints->text().toDouble());
+  mySVSoilNMinObject.insert("dsbSVSoilNMinReplicates", ui->dsbSVSoilNMinReplicates->value());
+  mySVSoilNMinObject.insert("sbSVSoilNMinObservations", ui->sbSVSoilNMinObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("NMin", myStateVariablesSoilNMinObject);
+  mySVSoilObject.insert("NMin", mySVSoilNMinObject);
 
   //    SV Soil
   //      SoilWaterSensorCal
-  QJsonObject myStateVariablesSoilSoilWaterSensorCalObject;
+  QJsonObject mySVSoilSoilWaterSensorCalObject;
   myMinDataSetting = ui->chbxSVSoilSoilWaterSensorCal->isChecked()?true:false;
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("chbxSVSoilSoilWaterSensorCal", myMinDataSetting);
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalLayers", ui->dsbSVSoilSoilWaterSensorCalLayers->value());
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalWeighting", ui->dsbSVSoilSoilWaterSensorCalWeighting->value());
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("lblSVSoilSoilWaterSensorCalPoints", ui->lblSVSoilSoilWaterSensorCalPoints->text().toDouble());
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalReplicates", ui->dsbSVSoilSoilWaterSensorCalReplicates->value());
-  myStateVariablesSoilSoilWaterSensorCalObject.insert("sbSVSoilSoilWaterSensorCalObservations", ui->sbSVSoilSoilWaterSensorCalObservations->value());
+  mySVSoilSoilWaterSensorCalObject.insert("chbxSVSoilSoilWaterSensorCal", myMinDataSetting);
+  mySVSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalLayers", ui->dsbSVSoilSoilWaterSensorCalLayers->value());
+  mySVSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalWeighting", ui->dsbSVSoilSoilWaterSensorCalWeighting->value());
+  mySVSoilSoilWaterSensorCalObject.insert("lblSVSoilSoilWaterSensorCalPoints", ui->lblSVSoilSoilWaterSensorCalPoints->text().toDouble());
+  mySVSoilSoilWaterSensorCalObject.insert("dsbSVSoilSoilWaterSensorCalReplicates", ui->dsbSVSoilSoilWaterSensorCalReplicates->value());
+  mySVSoilSoilWaterSensorCalObject.insert("sbSVSoilSoilWaterSensorCalObservations", ui->sbSVSoilSoilWaterSensorCalObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("SoilWaterSensorCal", myStateVariablesSoilSoilWaterSensorCalObject);
+  mySVSoilObject.insert("SoilWaterSensorCal", mySVSoilSoilWaterSensorCalObject);
 
   //    SV Soil
   //      WaterFluxBottomRoot
-  QJsonObject myStateVariablesSoilWaterFluxBottomRootObject;
+  QJsonObject mySVSoilWaterFluxBottomRootObject;
   myMinDataSetting = ui->chbxSVSoilWaterFluxBottomRoot->isChecked()?true:false;
-  myStateVariablesSoilWaterFluxBottomRootObject.insert("chbxSVSoilWaterFluxBottomRoot", myMinDataSetting);
-  //myStateVariablesSoilWaterFluxBottomRootObject.insert("Layers", ui->dsbSVSoilWaterFluxBottomRootLayers->value());
-  myStateVariablesSoilWaterFluxBottomRootObject.insert("dsbSVSoilWaterFluxBottomRootWeighting", ui->dsbSVSoilWaterFluxBottomRootWeighting->value());
-  myStateVariablesSoilWaterFluxBottomRootObject.insert("lblSVSoilWaterFluxBottomRootPoints", ui->lblSVSoilWaterFluxBottomRootPoints->text().toDouble());
-  myStateVariablesSoilWaterFluxBottomRootObject.insert("dsbSVSoilWaterFluxBottomRootReplicates", ui->dsbSVSoilWaterFluxBottomRootReplicates->value());
-  myStateVariablesSoilWaterFluxBottomRootObject.insert("sbSVSoilWaterFluxBottomRootObservations", ui->sbSVSoilWaterFluxBottomRootObservations->value());
+  mySVSoilWaterFluxBottomRootObject.insert("chbxSVSoilWaterFluxBottomRoot", myMinDataSetting);
+  //mySVSoilWaterFluxBottomRootObject.insert("Layers", ui->dsbSVSoilWaterFluxBottomRootLayers->value());
+  mySVSoilWaterFluxBottomRootObject.insert("dsbSVSoilWaterFluxBottomRootWeighting", ui->dsbSVSoilWaterFluxBottomRootWeighting->value());
+  mySVSoilWaterFluxBottomRootObject.insert("lblSVSoilWaterFluxBottomRootPoints", ui->lblSVSoilWaterFluxBottomRootPoints->text().toDouble());
+  mySVSoilWaterFluxBottomRootObject.insert("dsbSVSoilWaterFluxBottomRootReplicates", ui->dsbSVSoilWaterFluxBottomRootReplicates->value());
+  mySVSoilWaterFluxBottomRootObject.insert("sbSVSoilWaterFluxBottomRootObservations", ui->sbSVSoilWaterFluxBottomRootObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("WaterFluxBottomRoot", myStateVariablesSoilWaterFluxBottomRootObject);
+  mySVSoilObject.insert("WaterFluxBottomRoot", mySVSoilWaterFluxBottomRootObject);
 
   //    SV Soil
   //      NFluxBottomRoot
-  QJsonObject myStateVariablesSoilNFluxBottomRootObject;
+  QJsonObject mySVSoilNFluxBottomRootObject;
   myMinDataSetting = ui->chbxSVSoilNFluxBottomRoot->isChecked()?true:false;
-  myStateVariablesSoilNFluxBottomRootObject.insert("chbxSVSoilNFluxBottomRoot", myMinDataSetting);
-  //myStateVariablesSoilNFluxBottomRootObject.insert("Layers", ui->dsbSVSoilNFluxBottomRootLayers->value());
-  myStateVariablesSoilNFluxBottomRootObject.insert("dsbSVSoilNFluxBottomRootWeighting", ui->dsbSVSoilNFluxBottomRootWeighting->value());
-  myStateVariablesSoilNFluxBottomRootObject.insert("lblSVSoilNFluxBottomRootPoints", ui->lblSVSoilNFluxBottomRootPoints->text().toDouble());
-  myStateVariablesSoilNFluxBottomRootObject.insert("dsbSVSoilNFluxBottomRootReplicates", ui->dsbSVSoilNFluxBottomRootReplicates->value());
-  myStateVariablesSoilNFluxBottomRootObject.insert("sbSVSoilNFluxBottomRootObservations", ui->sbSVSoilNFluxBottomRootObservations->value());
+  mySVSoilNFluxBottomRootObject.insert("chbxSVSoilNFluxBottomRoot", myMinDataSetting);
+  //mySVSoilNFluxBottomRootObject.insert("Layers", ui->dsbSVSoilNFluxBottomRootLayers->value());
+  mySVSoilNFluxBottomRootObject.insert("dsbSVSoilNFluxBottomRootWeighting", ui->dsbSVSoilNFluxBottomRootWeighting->value());
+  mySVSoilNFluxBottomRootObject.insert("lblSVSoilNFluxBottomRootPoints", ui->lblSVSoilNFluxBottomRootPoints->text().toDouble());
+  mySVSoilNFluxBottomRootObject.insert("dsbSVSoilNFluxBottomRootReplicates", ui->dsbSVSoilNFluxBottomRootReplicates->value());
+  mySVSoilNFluxBottomRootObject.insert("sbSVSoilNFluxBottomRootObservations", ui->sbSVSoilNFluxBottomRootObservations->value());
   // add this to the Soil object
-  myStateVariablesSoilObject.insert("NFluxBottomRoot", myStateVariablesSoilNFluxBottomRootObject);
+  mySVSoilObject.insert("NFluxBottomRoot", mySVSoilNFluxBottomRootObject);
 
   // put all of the SV Soil objects into the state variable object
-  return myStateVariablesSoilObject;
+  return mySVSoilObject;
 }
 QJsonObject DatasetClassification::generateSVSurfaceFluxesJson()
 {
-  QJsonObject myStateVariablesSurfaceFluxesObject;
+  QJsonObject mySVSurfaceFluxesObject;
   bool myMinDataSetting;
-  myStateVariablesSurfaceFluxesObject.insert("lblOverallPtsSVSurfaceFluxes", ui->lblOverallPtsSVSurfaceFluxes->text().toDouble());
+  mySVSurfaceFluxesObject.insert("lblOverallPtsSVSurfaceFluxes", ui->lblOverallPtsSVSurfaceFluxes->text().toDouble());
 
   //    SV SurfaceFluxes
   //      ET
-  QJsonObject myStateVariablesSurfaceFluxesEtObject;
+  QJsonObject mySVSurfaceFluxesEtObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesEt->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesEtObject.insert("chbxSVSurfaceFluxesEt", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesEtObject.insert("Layers", ui->dsbSVSurfaceFluxesEtLayers->value());
-  myStateVariablesSurfaceFluxesEtObject.insert("dsbSVSurfaceFluxesEtWeighting", ui->dsbSVSurfaceFluxesEtWeighting->value());
-  myStateVariablesSurfaceFluxesEtObject.insert("lblSVSurfaceFluxesEtPoints", ui->lblSVSurfaceFluxesEtPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesEtObject.insert("Replicates", ui->dsbSVSurfaceFluxesEtReplicates->text());
-  myStateVariablesSurfaceFluxesEtObject.insert("sbSVSurfaceFluxesEtObservations", ui->sbSVSurfaceFluxesEtObservations->value());
+  mySVSurfaceFluxesEtObject.insert("chbxSVSurfaceFluxesEt", myMinDataSetting);
+  mySVSurfaceFluxesEtObject.insert("dsbSVSurfaceFluxesEtWeighting", ui->dsbSVSurfaceFluxesEtWeighting->value());
+  mySVSurfaceFluxesEtObject.insert("lblSVSurfaceFluxesEtPoints", ui->lblSVSurfaceFluxesEtPoints->text().toDouble());
+  mySVSurfaceFluxesEtObject.insert("sbSVSurfaceFluxesEtObservations", ui->sbSVSurfaceFluxesEtObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("ET", myStateVariablesSurfaceFluxesEtObject);
+  mySVSurfaceFluxesObject.insert("ET", mySVSurfaceFluxesEtObject);
 
   //    SV SurfaceFluxes
   //      NH3Loss
-  QJsonObject myStateVariablesSurfaceFluxesNh3LossObject;
+  QJsonObject mySVSurfaceFluxesNh3LossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesNH3Loss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("chbxSVSurfaceFluxesNH3Loss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Layers", ui->dsbSVSurfaceFluxesNH3LossLayers->value());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("dsbSVSurfaceFluxesNH3LossWeighting", ui->dsbSVSurfaceFluxesNH3LossWeighting->value());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("lblSVSurfaceFluxesNH3LossPoints", ui->lblSVSurfaceFluxesNH3LossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesNh3LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNH3LossReplicates->text());
-  myStateVariablesSurfaceFluxesNh3LossObject.insert("sbSVSurfaceFluxesNH3LossObservations", ui->sbSVSurfaceFluxesNH3LossObservations->value());
+  mySVSurfaceFluxesNh3LossObject.insert("chbxSVSurfaceFluxesNH3Loss", myMinDataSetting);
+  mySVSurfaceFluxesNh3LossObject.insert("dsbSVSurfaceFluxesNH3LossWeighting", ui->dsbSVSurfaceFluxesNH3LossWeighting->value());
+  mySVSurfaceFluxesNh3LossObject.insert("lblSVSurfaceFluxesNH3LossPoints", ui->lblSVSurfaceFluxesNH3LossPoints->text().toDouble());
+  mySVSurfaceFluxesNh3LossObject.insert("sbSVSurfaceFluxesNH3LossObservations", ui->sbSVSurfaceFluxesNH3LossObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("NH3Loss", myStateVariablesSurfaceFluxesNh3LossObject);
+  mySVSurfaceFluxesObject.insert("NH3Loss", mySVSurfaceFluxesNh3LossObject);
 
   //    SV SurfaceFluxes
   //      N2OLoss
-  QJsonObject myStateVariablesSurfaceFluxesN2OLossObject;
+  QJsonObject mySVSurfaceFluxesN2OLossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesN2OLoss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesN2OLossObject.insert("chbxSVSurfaceFluxesN2OLoss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesN2OLossObject.insert("Layers", ui->dsbSVSurfaceFluxesN2OLossLayers->value());
-  myStateVariablesSurfaceFluxesN2OLossObject.insert("dsbSVSurfaceFluxesN2OLossWeighting", ui->dsbSVSurfaceFluxesN2OLossWeighting->value());
-  myStateVariablesSurfaceFluxesN2OLossObject.insert("lblSVSurfaceFluxesN2OLossPoints", ui->lblSVSurfaceFluxesN2OLossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesN2OLossObject.insert("Replicates", ui->dsbSVSurfaceFluxesN2OLossReplicates->text());
-  myStateVariablesSurfaceFluxesN2OLossObject.insert("sbSVSurfaceFluxesN2OLossObservations", ui->sbSVSurfaceFluxesN2OLossObservations->value());
+  mySVSurfaceFluxesN2OLossObject.insert("chbxSVSurfaceFluxesN2OLoss", myMinDataSetting);
+  mySVSurfaceFluxesN2OLossObject.insert("dsbSVSurfaceFluxesN2OLossWeighting", ui->dsbSVSurfaceFluxesN2OLossWeighting->value());
+  mySVSurfaceFluxesN2OLossObject.insert("lblSVSurfaceFluxesN2OLossPoints", ui->lblSVSurfaceFluxesN2OLossPoints->text().toDouble());
+  mySVSurfaceFluxesN2OLossObject.insert("sbSVSurfaceFluxesN2OLossObservations", ui->sbSVSurfaceFluxesN2OLossObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("N2OLoss", myStateVariablesSurfaceFluxesN2OLossObject);
+  mySVSurfaceFluxesObject.insert("N2OLoss", mySVSurfaceFluxesN2OLossObject);
 
   //    SV SurfaceFluxes
   //      N2Loss
-  QJsonObject myStateVariablesSurfaceFluxesN2LossObject;
+  QJsonObject mySVSurfaceFluxesN2LossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesN2Loss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesN2LossObject.insert("chbxSVSurfaceFluxesN2Loss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesN2LossObject.insert("Layers", ui->dsbSVSurfaceFluxesN2LossLayers->value());
-  myStateVariablesSurfaceFluxesN2LossObject.insert("dsbSVSurfaceFluxesN2LossWeighting", ui->dsbSVSurfaceFluxesN2LossWeighting->value());
-  myStateVariablesSurfaceFluxesN2LossObject.insert("lblSVSurfaceFluxesN2LossPoints", ui->lblSVSurfaceFluxesN2LossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesN2LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesN2LossReplicates->text());
-  myStateVariablesSurfaceFluxesN2LossObject.insert("sbSVSurfaceFluxesN2LossObservations", ui->sbSVSurfaceFluxesN2LossObservations->value());
+  mySVSurfaceFluxesN2LossObject.insert("chbxSVSurfaceFluxesN2Loss", myMinDataSetting);
+  mySVSurfaceFluxesN2LossObject.insert("dsbSVSurfaceFluxesN2LossWeighting", ui->dsbSVSurfaceFluxesN2LossWeighting->value());
+  mySVSurfaceFluxesN2LossObject.insert("lblSVSurfaceFluxesN2LossPoints", ui->lblSVSurfaceFluxesN2LossPoints->text().toDouble());
+  mySVSurfaceFluxesN2LossObject.insert("sbSVSurfaceFluxesN2LossObservations", ui->sbSVSurfaceFluxesN2LossObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("N2Loss", myStateVariablesSurfaceFluxesN2LossObject);
+  mySVSurfaceFluxesObject.insert("N2Loss", mySVSurfaceFluxesN2LossObject);
 
   //    SV SurfaceFluxes
   //      CH4Loss
-  QJsonObject myStateVariablesSurfaceFluxesCH4LossObject;
+  QJsonObject mySVSurfaceFluxesCH4LossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesCH4Loss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesCH4LossObject.insert("chbxSVSurfaceFluxesCH4Loss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesCH4LossObject.insert("Layers", ui->dsbSVSurfaceFluxesCH4LossLayers->value());
-  myStateVariablesSurfaceFluxesCH4LossObject.insert("dsbSVSurfaceFluxesCH4LossWeighting", ui->dsbSVSurfaceFluxesCH4LossWeighting->value());
-  myStateVariablesSurfaceFluxesCH4LossObject.insert("lblSVSurfaceFluxesCH4LossPoints", ui->lblSVSurfaceFluxesCH4LossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesCH4LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesCH4LossReplicates->text());
-  myStateVariablesSurfaceFluxesCH4LossObject.insert("sbSVSurfaceFluxesCH4LossObservations", ui->sbSVSurfaceFluxesCH4LossObservations->value());
+  mySVSurfaceFluxesCH4LossObject.insert("chbxSVSurfaceFluxesCH4Loss", myMinDataSetting);
+  mySVSurfaceFluxesCH4LossObject.insert("dsbSVSurfaceFluxesCH4LossWeighting", ui->dsbSVSurfaceFluxesCH4LossWeighting->value());
+  mySVSurfaceFluxesCH4LossObject.insert("lblSVSurfaceFluxesCH4LossPoints", ui->lblSVSurfaceFluxesCH4LossPoints->text().toDouble());
+  mySVSurfaceFluxesCH4LossObject.insert("sbSVSurfaceFluxesCH4LossObservations", ui->sbSVSurfaceFluxesCH4LossObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("CH4Loss", myStateVariablesSurfaceFluxesCH4LossObject);
+  mySVSurfaceFluxesObject.insert("CH4Loss", mySVSurfaceFluxesCH4LossObject);
 
   //    SV SurfaceFluxes
   //      NOLoss
-  QJsonObject myStateVariablesSurfaceFluxesNOLossObject;
+  QJsonObject mySVSurfaceFluxesNOLossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesNOLoss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesNOLossObject.insert("chbxSVSurfaceFluxesNOLoss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesNOLossObject.insert("Layers", ui->dsbSVSurfaceFluxesNOLossLayers->value());
-  myStateVariablesSurfaceFluxesNOLossObject.insert("dsbSVSurfaceFluxesNOLossWeighting", ui->dsbSVSurfaceFluxesNOLossWeighting->value());
-  myStateVariablesSurfaceFluxesNOLossObject.insert("lblSVSurfaceFluxesNOLossPoints", ui->lblSVSurfaceFluxesNOLossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesNOLossObject.insert("Replicates", ui->dsbSVSurfaceFluxesNOLossReplicates->text());
-  myStateVariablesSurfaceFluxesNOLossObject.insert("sbSVSurfaceFluxesNOLossObservations", ui->sbSVSurfaceFluxesNOLossObservations->value());
+  mySVSurfaceFluxesNOLossObject.insert("chbxSVSurfaceFluxesNOLoss", myMinDataSetting);
+  mySVSurfaceFluxesNOLossObject.insert("dsbSVSurfaceFluxesNOLossWeighting", ui->dsbSVSurfaceFluxesNOLossWeighting->value());
+  mySVSurfaceFluxesNOLossObject.insert("lblSVSurfaceFluxesNOLossPoints", ui->lblSVSurfaceFluxesNOLossPoints->text().toDouble());
+  mySVSurfaceFluxesNOLossObject.insert("sbSVSurfaceFluxesNOLossObservations", ui->sbSVSurfaceFluxesNOLossObservations->value());
+
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("NOLoss", myStateVariablesSurfaceFluxesNOLossObject);
+  mySVSurfaceFluxesObject.insert("NOLoss", mySVSurfaceFluxesNOLossObject);
 
   //    SV SurfaceFluxes
   //      CO2Loss
-  QJsonObject myStateVariablesSurfaceFluxesCO2LossObject;
+  QJsonObject mySVSurfaceFluxesCO2LossObject;
   myMinDataSetting = ui->chbxSVSurfaceFluxesCO2Loss->isChecked()?true:false;
-  myStateVariablesSurfaceFluxesCO2LossObject.insert("chbxSVSurfaceFluxesCO2Loss", myMinDataSetting);
-  //myStateVariablesSurfaceFluxesCO2LossObject.insert("Layers", ui->dsbSVSurfaceFluxesCO2LossLayers->value());
-  myStateVariablesSurfaceFluxesCO2LossObject.insert("dsbSVSurfaceFluxesCO2LossWeighting", ui->dsbSVSurfaceFluxesCO2LossWeighting->value());
-  myStateVariablesSurfaceFluxesCO2LossObject.insert("lblSVSurfaceFluxesCO2LossPoints", ui->lblSVSurfaceFluxesCO2LossPoints->text().toDouble());
-  //myStateVariablesSurfaceFluxesCO2LossObject.insert("Replicates", ui->dsbSVSurfaceFluxesCO2LossReplicates->text());
-  myStateVariablesSurfaceFluxesCO2LossObject.insert("sbSVSurfaceFluxesCO2LossObservations", ui->sbSVSurfaceFluxesCO2LossObservations->value());
+  mySVSurfaceFluxesCO2LossObject.insert("chbxSVSurfaceFluxesCO2Loss", myMinDataSetting);
+  mySVSurfaceFluxesCO2LossObject.insert("dsbSVSurfaceFluxesCO2LossWeighting", ui->dsbSVSurfaceFluxesCO2LossWeighting->value());
+  mySVSurfaceFluxesCO2LossObject.insert("lblSVSurfaceFluxesCO2LossPoints", ui->lblSVSurfaceFluxesCO2LossPoints->text().toDouble());
+  mySVSurfaceFluxesCO2LossObject.insert("sbSVSurfaceFluxesCO2LossObservations", ui->sbSVSurfaceFluxesCO2LossObservations->value());
   // add this to the SurfaceFluxes object
-  myStateVariablesSurfaceFluxesObject.insert("CO2Loss", myStateVariablesSurfaceFluxesCO2LossObject);
+  mySVSurfaceFluxesObject.insert("CO2Loss", mySVSurfaceFluxesCO2LossObject);
 
-  return myStateVariablesSurfaceFluxesObject;
+  return mySVSurfaceFluxesObject;
 }
 QJsonObject DatasetClassification::generateSVObservationsJson()
 {
-  QJsonObject myStateVariablesObservationsObject;
+  QJsonObject mySVObsObject;
   bool myMinDataSetting;
-  myStateVariablesObservationsObject.insert("lblOverallPtsSVObservations", ui->lblOverallPtsSVObservations->text().toDouble());
+  mySVObsObject.insert("lblOverallPtsSVObservations", ui->lblOverallPtsSVObservations->text().toDouble());
 
   //    SV Observations
   //      Lodging
-  QJsonObject myStateVariablesObservationsLodgingObject;
+  QJsonObject mySVObsLodgingObject;
   myMinDataSetting = ui->chbxSVObservationsLodging->isChecked()?true:false;
-  myStateVariablesObservationsLodgingObject.insert("chbxSVObservationsLodging", myMinDataSetting);
-  //myStateVariablesObservationsLodgingObject.insert("Layers", ui->dsbSVObservationsLodgingLayers->value());
-  myStateVariablesObservationsLodgingObject.insert("dsbSVObservationsLodgingWeighting", ui->dsbSVObservationsLodgingWeighting->value());
-  myStateVariablesObservationsLodgingObject.insert("lblSVObservationsLodgingPoints", ui->lblSVObservationsLodgingPoints->text().toDouble());
-  //myStateVariablesObservationsLodgingObject.insert("Replicates", ui->dsbSVObservationsLodgingReplicates->text());
-  myStateVariablesObservationsLodgingObject.insert("sbSVObservationsLodgingObservations", ui->sbSVObservationsLodgingObservations->value());
+  mySVObsLodgingObject.insert("chbxSVObservationsLodging", myMinDataSetting);
+  mySVObsLodgingObject.insert("dsbSVObservationsLodgingWeighting", ui->dsbSVObservationsLodgingWeighting->value());
+  mySVObsLodgingObject.insert("lblSVObservationsLodgingPoints", ui->lblSVObservationsLodgingPoints->text().toDouble());
+  mySVObsLodgingObject.insert("sbSVObservationsLodgingObservations", ui->sbSVObservationsLodgingObservations->value());
   // add this to the Observations object
-  myStateVariablesObservationsObject.insert("Lodging", myStateVariablesObservationsLodgingObject);
+  mySVObsObject.insert("Lodging", mySVObsLodgingObject);
 
   //    SV Observations
   //      Pests
-  QJsonObject myStateVariablesObservationsPestsObject;
+  QJsonObject mySVObsPestsObject;
   myMinDataSetting = ui->chbxSVObservationsPestsOrDiseases->isChecked()?true:false;
-  myStateVariablesObservationsPestsObject.insert("chbxSVObservationsPestsOrDiseases", myMinDataSetting);
-  //myStateVariablesObservationsPestsObject.insert("Layers", ui->dsbSVObservationsPestsLayers->value());
-  myStateVariablesObservationsPestsObject.insert("dsbSVObservationsPestsOrDiseasesWeighting", ui->dsbSVObservationsPestsOrDiseasesWeighting->value());
-  myStateVariablesObservationsPestsObject.insert("lblSVObservationsPestsOrDiseasesPoints", ui->lblSVObservationsPestsOrDiseasesPoints->text().toDouble());
-  //myStateVariablesObservationsPestsObject.insert("Replicates", ui->dsbSVObservationsPestsReplicates->text());
-  myStateVariablesObservationsPestsObject.insert("sbSVObservationsPestsOrDiseasesObservations", ui->sbSVObservationsPestsOrDiseasesObservations->value());
+  mySVObsPestsObject.insert("chbxSVObservationsPestsOrDiseases", myMinDataSetting);
+  mySVObsPestsObject.insert("dsbSVObservationsPestsOrDiseasesWeighting", ui->dsbSVObservationsPestsOrDiseasesWeighting->value());
+  mySVObsPestsObject.insert("lblSVObservationsPestsOrDiseasesPoints", ui->lblSVObservationsPestsOrDiseasesPoints->text().toDouble());
+  mySVObsPestsObject.insert("sbSVObservationsPestsOrDiseasesObservations", ui->sbSVObservationsPestsOrDiseasesObservations->value());
   // add this to the Observations object
-  myStateVariablesObservationsObject.insert("PestsOrDiseases", myStateVariablesObservationsPestsObject);
+  mySVObsObject.insert("PestsOrDiseases", mySVObsPestsObject);
 
   //    SV Observations
   //      Damages
-  QJsonObject myStateVariablesObservationsDamagesObject;
+  QJsonObject mySVObsDamagesObject;
   myMinDataSetting = ui->chbxSVObservationsDamages->isChecked()?true:false;
-  myStateVariablesObservationsDamagesObject.insert("chbxSVObservationsDamages", myMinDataSetting);
-  //myStateVariablesObservationsDamagesObject.insert("Layers", ui->dsbSVObservationsDamagesLayers->value());
-  myStateVariablesObservationsDamagesObject.insert("dsbSVObservationsDamagesWeighting", ui->dsbSVObservationsDamagesWeighting->value());
-  myStateVariablesObservationsDamagesObject.insert("lblSVObservationsDamagesPoints", ui->lblSVObservationsDamagesPoints->text().toDouble());
-  //myStateVariablesObservationsDamagesObject.insert("Replicates", ui->dsbSVObservationsDamagesReplicates->text());
-  myStateVariablesObservationsDamagesObject.insert("sbSVObservationsDamagesObservations", ui->sbSVObservationsDamagesObservations->value());
+  mySVObsDamagesObject.insert("chbxSVObservationsDamages", myMinDataSetting);
+  mySVObsDamagesObject.insert("dsbSVObservationsDamagesWeighting", ui->dsbSVObservationsDamagesWeighting->value());
+  mySVObsDamagesObject.insert("lblSVObservationsDamagesPoints", ui->lblSVObservationsDamagesPoints->text().toDouble());
+  mySVObsDamagesObject.insert("sbSVObservationsDamagesObservations", ui->sbSVObservationsDamagesObservations->value());
   // add this to the Observations object
-  myStateVariablesObservationsObject.insert("Damages", myStateVariablesObservationsDamagesObject);
+  mySVObsObject.insert("Damages", mySVObsDamagesObject);
 
   //    SV Observations
   //      Weeds
-  QJsonObject myStateVariablesObservationsWeedsObject;
+  QJsonObject mySVObsWeedsObject;
   myMinDataSetting = ui->chbxSVObservationsWeeds->isChecked()?true:false;
-  myStateVariablesObservationsWeedsObject.insert("chbxSVObservationsWeeds", myMinDataSetting);
-  //myStateVariablesObservationsWeedsObject.insert("Layers", ui->dsbSVObservationsWeedsLayers->value());
-  myStateVariablesObservationsWeedsObject.insert("dsbSVObservationsWeedsWeighting", ui->dsbSVObservationsWeedsWeighting->value());
-  myStateVariablesObservationsWeedsObject.insert("lblSVObservationsWeedsPoints", ui->lblSVObservationsWeedsPoints->text().toDouble());
-  //myStateVariablesObservationsWeedsObject.insert("Replicates", ui->dsbSVObservationsWeedsReplicates->text());
-  myStateVariablesObservationsWeedsObject.insert("sbSVObservationsWeedsObservations", ui->sbSVObservationsWeedsObservations->value());
+  mySVObsWeedsObject.insert("chbxSVObservationsWeeds", myMinDataSetting);
+  mySVObsWeedsObject.insert("dsbSVObservationsWeedsWeighting", ui->dsbSVObservationsWeedsWeighting->value());
+  mySVObsWeedsObject.insert("lblSVObservationsWeedsPoints", ui->lblSVObservationsWeedsPoints->text().toDouble());
+  mySVObsWeedsObject.insert("sbSVObservationsWeedsObservations", ui->sbSVObservationsWeedsObservations->value());
   // add this to the Observations object
-  myStateVariablesObservationsObject.insert("Weeds", myStateVariablesObservationsWeedsObject);
+  mySVObsObject.insert("Weeds", mySVObsWeedsObject);
 
-  return myStateVariablesObservationsObject;
+  return mySVObsObject;
 }
 QJsonObject DatasetClassification::generateSeasonJSON()
 {
@@ -6724,7 +6621,7 @@ QJsonObject DatasetClassification::generateJson()
   QJsonObject mySoilObject = generateSoilJson();
   QJsonObject mySiteObject = generateSiteJson();
   QJsonObject myWeatherObject = generateWeatherJson();
-  QJsonObject myStateVariablesObject = generateSVJson();
+  QJsonObject mySVObject = generateSVJson();
   QJsonObject mySeasonsObject = generateSeasonJSON();
 
   // insert the sub-objects into the form object
@@ -6737,7 +6634,7 @@ QJsonObject DatasetClassification::generateJson()
   myFormObject.insert("Soil", mySoilObject);
   myFormObject.insert("Site", mySiteObject);
   myFormObject.insert("Weather", myWeatherObject);
-  myFormObject.insert("StateVariables", myStateVariablesObject);
+  myFormObject.insert("StateVariables", mySVObject);
   myFormObject.insert("Seasons", mySeasonsObject);
 
   // in order to dump the text, it has to be put into a QJsonDocument
@@ -6774,9 +6671,9 @@ void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
 
 void DatasetClassification::uploadFinished(EnginioReply* reply)
 {
-  //qDebug() << "UploadFinished";
-  //qDebug() << "data: " << reply->data(); // lots of text
-  //qDebug() << "isError: " << reply->isError(); // displays error status
+  qDebug() << "UploadFinished";
+  qDebug() << "data: " << reply->data(); // lots of text
+  qDebug() << "isError: " << reply->isError(); // displays error status
   if (reply->isError())
   {
     // there was an error so inform the user
@@ -6798,6 +6695,7 @@ void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
   // backend id for testing with enginio: 529da70ae5bde55cd1026369
   // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
   QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
   EnginioClient *mypClient = new EnginioClient;
   mypClient->setBackendId(myBackendId);
 
@@ -6836,7 +6734,6 @@ void DatasetClassification::on_actionAbout_triggered()
 void DatasetClassification::setFormFromJson()
 {
   // this is going to be a large function
-
   QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                   "/home",
                                                   tr("JSON (*.json *.txt)"));
@@ -7505,178 +7402,172 @@ void DatasetClassification::setFormFromJson()
   //
 
   // TODO sort out the text browsers in State Vars
+  ui->lblOverallPtsSVSurfaceFluxes->setText(myObjSV_SurfaceFluxes["lblOverallPtsSVSurfaceFluxes"].toString());
+  ui->lblOverallPtsSVCrop->setText(myObjSV_Crop["lblOverallPtsSVCrop"].toString());
+  ui->lblOverallPtsSVObservations->setText(myObjSV_Obs["lblOverallPtsSVObservations"].toString());
+  ui->lblOverallPtsSVSoil->setText(myObjSV_Soil["lblOverallPtsSVSoil"].toString());
+  ui->lblOverallPtsSVSurfaceFluxes->setText(myObjSV_SurfaceFluxes["lblOverallPtsSVSurfaceFluxes"].toString());
+
+  ui->lblSVObservationsDamagesPoints->setText(myObjSV_Obs_Damages["lblSVObservationsDamagesPoints"].toString());
+  ui->lblSVObservationsLodgingPoints->setText(myObjSV_Obs_Lodging["lblSVObservationsLodgingPoints"].toString());
+  ui->lblSVObservationsPestsOrDiseasesPoints->setText(myObjSV_Obs_PestsOrDiseases["lblSVObservationsPestsOrDiseasesPoints"].toString());
+  ui->lblSVObservationsWeedsPoints->setText(myObjSV_Obs_Weeds["lblSVObservationsWeedsPoints"].toString());
+
+  ui->lblSVSoilNFluxBottomRootPoints->setText(myObjSV_Soil_NFluxBottomRoot["lblSVSoilNFluxBottomRootPoints"].toString());
+  ui->lblSVSoilNMinPoints->setText(myObjSV_Soil_NMin["lblSVSoilNMinPoints"].toString());
+  ui->lblSVSoilPressureHeadsPoints->setText(myObjSV_Soil_PressureHeads["lblSVSoilPressureHeadsPoints"].toString());
+  ui->lblSVSoilSoilWaterGravPoints->setText(myObjSV_Soil_SoilWaterGrav["lblSVSoilSoilWaterGravPoints"].toString());
+  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myObjSV_Soil_SoilWaterSensorCal["lblSVSoilSoilWaterSensorCalPoints"].toString());
+  ui->lblSVSoilWaterFluxBottomRootPoints->setText(myObjSV_Soil_WaterFluxBottomRoot["lblSVSoilWaterFluxBottomRootPoints"].toString());
+
+  ui->lblSVSurfaceFluxesCH4LossPoints->setText(myObjSV_SurfaceFluxes_CH4Loss["lblSVSurfaceFluxesCH4LossPoints"].toString());
+  ui->lblSVSurfaceFluxesCO2LossPoints->setText(myObjSV_SurfaceFluxes_CO2Loss["lblSVSurfaceFluxesCO2LossPoints"].toString());
+  ui->lblSVSurfaceFluxesEtPoints->setText(myObjSV_SurfaceFluxes_Et["lblSVSurfaceFluxesEtPoints"].toString());
+  ui->lblSVSurfaceFluxesN2LossPoints->setText(myObjSV_SurfaceFluxes_N2Loss["lblSVSurfaceFluxesN2LossPoints"].toString());
+  ui->lblSVSurfaceFluxesN2OLossPoints->setText(myObjSV_SurfaceFluxes_N2OLoss["lblSVSurfaceFluxesN2OLossPoints"].toString());
+  ui->lblSVSurfaceFluxesNH3LossPoints->setText(myObjSV_SurfaceFluxes_NH3Loss["lblSVSurfaceFluxesNH3LossPoints"].toString());
+  ui->lblSVSurfaceFluxesNOLossPoints->setText(myObjSV_SurfaceFluxes_NOLoss["lblSVSurfaceFluxesNOLossPoints"].toString());
+
+  ui->lblOverallPtsSV->setText(myObjSV["lblOverallPtsSV"].toString());
+  ui->lblRankingSV->setText(myObjSV["lblRankingSV"].toString());
 
   // Crop
+  ui->lblSVCropAGrBiomassPoints->setText(myObjSV_Crop_AGrBiomass["lblSVCropAGrBiomassPoints"].toString());
+  ui->lblSVCropLAIPoints->setText(myObjSV_Crop_LAI["lblSVCropLAIPoints"].toString());
+  ui->lblSVCropNInAGrBiomassPoints->setText(myObjSV_Crop_NInAGrBiomass["lblSVCropNInAGrBiomassPoints"].toString());
+  ui->lblSVCropNInOrgansPoints->setText(myObjSV_Crop_NInOrgans["lblSVCropNInOrgansPoints"].toString());
+  ui->lblSVCropRootBiomassPoints->setText(myObjSV_Crop_RootBiomass["lblSVCropRootBiomassPoints"].toString());
+  ui->lblSVCropWeightOrgansPoints->setText(myObjSV_Crop_WeightOrgans["lblSVCropWeightOrgansPoints"].toString());
+  ui->lblSVCropYieldPoints->setText(myObjSV_Crop_Yield["lblSVCropYieldPoints"].toString());
+
   ui->chbxSVCropAGrBiomass->setChecked(myObjSV_Crop_AGrBiomass["chbxSVCropAGrBiomass"].toBool());
   ui->dsbSVCropAGrBiomassReplicates->setValue(myObjSV_Crop_AGrBiomass["dsbSVCropAGrBiomassReplicates"].toDouble());
   ui->dsbSVCropAGrBiomassWeighting->setValue(myObjSV_Crop_AGrBiomass["dsbSVCropAGrBiomassWeighting"].toDouble());
-  ui->lblSVCropAGrBiomassPoints->setText(myObjSV_Crop_AGrBiomass["lblSVCropAGrBiomassPoints"].toString());
   ui->sbSVCropAGrBiomassObservations->setValue(myObjSV_Crop_AGrBiomass["sbSVCropAGrBiomassObservations"].toInt());
 
   ui->chbxSVCropLAI->setChecked(myObjSV_Crop_LAI["chbxSVCropLAI"].toBool());
   ui->dsbSVCropLAIReplicates->setValue(myObjSV_Crop_LAI["dsbSVCropLAIReplicates"].toDouble());
   ui->dsbSVCropLAIWeighting->setValue(myObjSV_Crop_LAI["dsbSVCropLAIWeighting"].toDouble());
-  ui->lblSVCropLAIPoints->setText(myObjSV_Crop_LAI["lblSVCropLAIPoints"].toString());
   ui->sbSVCropLAIObservations->setValue(myObjSV_Crop_LAI["sbSVCropLAIObservations"].toInt());
 
   ui->chbxSVCropNInAGrBiomass->setChecked(myObjSV_Crop_NInAGrBiomass["chbxSVCropNInAGrBiomass"].toBool());
   ui->dsbSVCropNInAGrBiomassReplicates->setValue(myObjSV_Crop_NInAGrBiomass["dsbSVCropNInAGrBiomassReplicates"].toDouble());
   ui->dsbSVCropNInAGrBiomassWeighting->setValue(myObjSV_Crop_NInAGrBiomass["dsbSVCropNInAGrBiomassWeighting"].toDouble());
-  ui->lblSVCropNInAGrBiomassPoints->setText(myObjSV_Crop_NInAGrBiomass["lblSVCropNInAGrBiomassPoints"].toString());
   ui->sbSVCropNInAGrBiomassObservations->setValue(myObjSV_Crop_NInAGrBiomass["sbSVCropNInAGrBiomassObservations"].toInt());
 
   ui->chbxSVCropNInOrgans->setChecked(myObjSV_Crop_NInOrgans["chbxSVCropNInOrgans"].toBool());
   ui->dsbSVCropNInOrgansReplicates->setValue(myObjSV_Crop_NInOrgans["dsbSVCropNInOrgansReplicates"].toDouble());
   ui->dsbSVCropNInOrgansWeighting->setValue(myObjSV_Crop_NInOrgans["dsbSVCropNInOrgansWeighting"].toDouble());
-  ui->lblSVCropNInOrgansPoints->setText(myObjSV_Crop_NInOrgans["lblSVCropNInOrgansPoints"].toString());
   ui->sbSVCropNInOrgansObservations->setValue(myObjSV_Crop_NInOrgans["sbSVCropNInOrgansObservations"].toInt());
 
   ui->chbxSVCropRootBiomass->setChecked(myObjSV_Crop_RootBiomass["chbxSVCropRootBiomass"].toBool());
   ui->dsbSVCropRootBiomassReplicates->setValue(myObjSV_Crop_RootBiomass["dsbSVCropRootBiomassReplicates"].toDouble());
   ui->dsbSVCropRootBiomassWeighting->setValue(myObjSV_Crop_RootBiomass["dsbSVCropRootBiomassWeighting"].toDouble());
-  ui->lblSVCropRootBiomassPoints->setText(myObjSV_Crop_RootBiomass["lblSVCropRootBiomassPoints"].toString());
   ui->sbSVCropRootBiomassObservations->setValue(myObjSV_Crop_RootBiomass["sbSVCropRootBiomassObservations"].toInt());
 
   ui->chbxSVCropWeightOrgans->setChecked(myObjSV_Crop_WeightOrgans["chbxSVCropWeightOrgans"].toBool());
   ui->dsbSVCropWeightOrgansReplicates->setValue(myObjSV_Crop_WeightOrgans["dsbSVCropWeightOrgansReplicates"].toDouble());
   ui->dsbSVCropWeightOrgansWeighting->setValue(myObjSV_Crop_WeightOrgans["dsbSVCropWeightOrgansWeighting"].toDouble());
-  ui->lblSVCropWeightOrgansPoints->setText(myObjSV_Crop_WeightOrgans["lblSVCropWeightOrgansPoints"].toString());
   ui->sbSVCropWeightOrgansObservations->setValue(myObjSV_Crop_WeightOrgans["sbSVCropWeightOrgansObservations"].toInt());
 
   ui->chbxSVCropYield->setChecked(myObjSV_Crop_Yield["chbxSVCropYield"].toBool());
   ui->dsbSVCropYieldReplicates->setValue(myObjSV_Crop_Yield["dsbSVCropYieldReplicates"].toDouble());
   ui->dsbSVCropYieldWeighting->setValue(myObjSV_Crop_Yield["dsbSVCropYieldWeighting"].toDouble());
-  ui->lblSVCropYieldPoints->setText(myObjSV_Crop_Yield["lblSVCropYieldPoints"].toString());
   ui->sbSVCropYieldObservations->setValue(myObjSV_Crop_Yield["sbSVCropYieldObservations"].toInt());
 
-  ui->lblOverallPtsSVCrop->setText(myObjSV_Crop_Yield["lblOverallPtsSVCrop"].toString());
 
   //Observations
+
   ui->chbxSVObservationsDamages->setChecked(myObjSV_Obs_Damages["chbxSVObservationsDamages"].toBool());
   ui->dsbSVObservationsDamagesReplicates->setValue(myObjSV_Obs_Damages["dsbSVObservationsDamagesReplicates"].toDouble());
   ui->dsbSVObservationsDamagesWeighting->setValue(myObjSV_Obs_Damages["dsbSVObservationsDamagesWeighting"].toDouble());
-  ui->lblSVObservationsDamagesPoints->setText(myObjSV_Obs_Damages["lblSVObservationsDamagesPoints"].toString());
   ui->sbSVObservationsDamagesObservations->setValue(myObjSV_Obs_Damages["sbSVObservationsDamagesObservations"].toInt());
 
   ui->chbxSVObservationsLodging->setChecked(myObjSV_Obs_Lodging["chbxSVObservationsLodging"].toBool());
   ui->dsbSVObservationsLodgingReplicates->setValue(myObjSV_Obs_Lodging["dsbSVObservationsLodgingReplicates"].toDouble());
   ui->dsbSVObservationsLodgingWeighting->setValue(myObjSV_Obs_Lodging["dsbSVObservationsLodgingWeighting"].toDouble());
-  ui->lblSVObservationsLodgingPoints->setText(myObjSV_Obs_Lodging["lblSVObservationsLodgingPoints"].toString());
   ui->sbSVObservationsLodgingObservations->setValue(myObjSV_Obs_Lodging["sbSVObservationsLodgingObservations"].toInt());
 
   ui->chbxSVObservationsPestsOrDiseases->setChecked(myObjSV_Obs_PestsOrDiseases["chbxSVObservationsPestsOrDiseases"].toBool());
   ui->dsbSVObservationsPestsOrDiseasesReplicates->setValue(myObjSV_Obs_PestsOrDiseases["dsbSVObservationsPestsOrDiseasesReplicates"].toDouble());
   ui->dsbSVObservationsPestsOrDiseasesWeighting->setValue(myObjSV_Obs_PestsOrDiseases["dsbSVObservationsPestsOrDiseasesWeighting"].toDouble());
-  ui->lblSVObservationsPestsOrDiseasesPoints->setText(myObjSV_Obs_PestsOrDiseases["lblSVObservationsPestsOrDiseasesPoints"].toString());
   ui->sbSVObservationsPestsOrDiseasesObservations->setValue(myObjSV_Obs_PestsOrDiseases["sbSVObservationsPestsOrDiseasesObservations"].toInt());
 
   ui->chbxSVObservationsWeeds->setChecked(myObjSV_Obs_Weeds["chbxSVObservationsWeeds"].toBool());
   ui->dsbSVObservationsWeedsReplicates->setValue(myObjSV_Obs_Weeds["dsbSVObservationsWeedsReplicates"].toDouble());
   ui->dsbSVObservationsWeedsWeighting->setValue(myObjSV_Obs_Weeds["dsbSVObservationsWeedsWeighting"].toDouble());
-  ui->lblSVObservationsWeedsPoints->setText(myObjSV_Obs_Weeds["lblSVObservationsWeedsPoints"].toString());
   ui->sbSVObservationsWeedsObservations->setValue(myObjSV_Obs_Weeds["sbSVObservationsWeedsObservations"].toInt());
 
-  ui->lblOverallPtsSVObservations->setText(myObjSV_Obs_Weeds["lblOverallPtsSVObservations"].toString());
 
   // soil
+
   ui->chbxSVSoilNFluxBottomRoot->setChecked(myObjSV_Soil_NFluxBottomRoot["chbxSVSoilNFluxBottomRoot"].toBool());
   ui->dsbSVSoilNFluxBottomRootLayers->setValue(myObjSV_Soil_NFluxBottomRoot["dsbSVSoilNFluxBottomRootMinLayers"].toDouble());
   ui->dsbSVSoilNFluxBottomRootReplicates->setValue(myObjSV_Soil_NFluxBottomRoot["dsbSVSoilNFluxBottomRootReplicates"].toDouble());
   ui->dsbSVSoilNFluxBottomRootWeighting->setValue(myObjSV_Soil_NFluxBottomRoot["dsbSVSoilNFluxBottomRootWeighting"].toDouble());
-  ui->lblSVSoilNFluxBottomRootPoints->setText(myObjSV_Soil_NFluxBottomRoot["lblSVSoilNFluxBottomRootPoints"].toString());
   ui->sbSVSoilNFluxBottomRootObservations->setValue(myObjSV_Soil_NFluxBottomRoot["sbSVSoilNFluxBottomRootObservations"].toInt());
 
   ui->chbxSVSoilNMin->setChecked(myObjSV_Soil_NMin["chbxSVSoilNMin"].toBool());
   ui->dsbSVSoilNMinLayers->setValue(myObjSV_Soil_NMin["dsbSVSoilNMinMinLayers"].toDouble());
   ui->dsbSVSoilNMinReplicates->setValue(myObjSV_Soil_NMin["dsbSVSoilNMinReplicates"].toDouble());
   ui->dsbSVSoilNMinWeighting->setValue(myObjSV_Soil_NMin["dsbSVSoilNMinWeighting"].toDouble());
-  ui->lblSVSoilNMinPoints->setText(myObjSV_Soil_NMin["lblSVSoilNMinPoints"].toString());
   ui->sbSVSoilNMinObservations->setValue(myObjSV_Soil_NMin["sbSVSoilNMinObservations"].toInt());
 
   ui->chbxSVSoilPressureHeads->setChecked(myObjSV_Soil_PressureHeads["chbxSVSoilPressureHeads"].toBool());
   ui->dsbSVSoilPressureHeadsLayers->setValue(myObjSV_Soil_PressureHeads["dsbSVSoilPressureHeadsMinLayers"].toDouble());
   ui->dsbSVSoilPressureHeadsReplicates->setValue(myObjSV_Soil_PressureHeads["dsbSVSoilPressureHeadsReplicates"].toDouble());
   ui->dsbSVSoilPressureHeadsWeighting->setValue(myObjSV_Soil_PressureHeads["dsbSVSoilPressureHeadsWeighting"].toDouble());
-  ui->lblSVSoilPressureHeadsPoints->setText(myObjSV_Soil_PressureHeads["lblSVSoilPressureHeadsPoints"].toString());
   ui->sbSVSoilPressureHeadsObservations->setValue(myObjSV_Soil_PressureHeads["sbSVSoilPressureHeadsObservations"].toInt());
 
   ui->chbxSVSoilSoilWaterGrav->setChecked(myObjSV_Soil_SoilWaterGrav["chbxSVSoilSoilWaterGrav"].toBool());
   ui->dsbSVSoilSoilWaterGravLayers->setValue(myObjSV_Soil_SoilWaterGrav["dsbSVSoilSoilWaterGravMinLayers"].toDouble());
   ui->dsbSVSoilSoilWaterGravReplicates->setValue(myObjSV_Soil_SoilWaterGrav["dsbSVSoilSoilWaterGravReplicates"].toDouble());
   ui->dsbSVSoilSoilWaterGravWeighting->setValue(myObjSV_Soil_SoilWaterGrav["dsbSVSoilSoilWaterGravWeighting"].toDouble());
-  ui->lblSVSoilSoilWaterGravPoints->setText(myObjSV_Soil_SoilWaterGrav["lblSVSoilSoilWaterGravPoints"].toString());
   ui->sbSVSoilSoilWaterGravObservations->setValue(myObjSV_Soil_SoilWaterGrav["sbSVSoilSoilWaterGravObservations"].toInt());
 
   ui->chbxSVSoilSoilWaterSensorCal->setChecked(myObjSV_Soil_SoilWaterSensorCal["chbxSVSoilSoilWaterSensorCal"].toBool());
   ui->dsbSVSoilSoilWaterSensorCalLayers->setValue(myObjSV_Soil_SoilWaterSensorCal["dsbSVSoilSoilWaterSensorCalMinLayers"].toDouble());
   ui->dsbSVSoilSoilWaterSensorCalReplicates->setValue(myObjSV_Soil_SoilWaterSensorCal["dsbSVSoilSoilWaterSensorCalReplicates"].toDouble());
   ui->dsbSVSoilSoilWaterSensorCalWeighting->setValue(myObjSV_Soil_SoilWaterSensorCal["dsbSVSoilSoilWaterSensorCalWeighting"].toDouble());
-  ui->lblSVSoilSoilWaterSensorCalPoints->setText(myObjSV_Soil_SoilWaterSensorCal["lblSVSoilSoilWaterSensorCalPoints"].toString());
   ui->sbSVSoilSoilWaterSensorCalObservations->setValue(myObjSV_Soil_SoilWaterSensorCal["sbSVSoilSoilWaterSensorCalObservations"].toInt());
 
   ui->chbxSVSoilWaterFluxBottomRoot->setChecked(myObjSV_Soil_WaterFluxBottomRoot["chbxSVSoilWaterFluxBottomRoot"].toBool());
   ui->dsbSVSoilWaterFluxBottomRootLayers->setValue(myObjSV_Soil_WaterFluxBottomRoot["dsbSVSoilWaterFluxBottomRootMinLayers"].toDouble());
   ui->dsbSVSoilWaterFluxBottomRootReplicates->setValue(myObjSV_Soil_WaterFluxBottomRoot["dsbSVSoilWaterFluxBottomRootReplicates"].toDouble());
   ui->dsbSVSoilWaterFluxBottomRootWeighting->setValue(myObjSV_Soil_WaterFluxBottomRoot["dsbSVSoilWaterFluxBottomRootWeighting"].toDouble());
-  ui->lblSVSoilWaterFluxBottomRootPoints->setText(myObjSV_Soil_WaterFluxBottomRoot["lblSVSoilWaterFluxBottomRootPoints"].toString());
   ui->sbSVSoilWaterFluxBottomRootObservations->setValue(myObjSV_Soil_WaterFluxBottomRoot["sbSVSoilWaterFluxBottomRootObservations"].toInt());
 
-  ui->lblOverallPtsSVSoil->setText(myObjSV_Soil_WaterFluxBottomRoot["lblOverallPtsSVSoil"].toString());
 
   // Surface Fluxes
+
   ui->chbxSVSurfaceFluxesCH4Loss->setChecked(myObjSV_SurfaceFluxes_CH4Loss["chbxSVSurfaceFluxesCH4Loss"].toBool());
-  ui->dsbSVSurfaceFluxesCH4LossLayers->setValue(myObjSV_SurfaceFluxes_CH4Loss["dsbSVSurfaceFluxesCH4LossMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesCH4LossReplicates->setValue(myObjSV_SurfaceFluxes_CH4Loss["dsbSVSurfaceFluxesCH4LossReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesCH4LossWeighting->setValue(myObjSV_SurfaceFluxes_CH4Loss["dsbSVSurfaceFluxesCH4LossWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesCH4LossPoints->setText(myObjSV_SurfaceFluxes_CH4Loss["lblSVSurfaceFluxesCH4LossPoints"].toString());
   ui->sbSVSurfaceFluxesCH4LossObservations->setValue(myObjSV_SurfaceFluxes_CH4Loss["sbSVSurfaceFluxesCH4LossObservations"].toInt());
 
   ui->chbxSVSurfaceFluxesCO2Loss->setChecked(myObjSV_SurfaceFluxes_CO2Loss["chbxSVSurfaceFluxesCO2Loss"].toBool());
-  ui->dsbSVSurfaceFluxesCO2LossLayers->setValue(myObjSV_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesCO2LossReplicates->setValue(myObjSV_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesCO2LossWeighting->setValue(myObjSV_SurfaceFluxes_CO2Loss["dsbSVSurfaceFluxesCO2LossWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesCO2LossPoints->setText(myObjSV_SurfaceFluxes_CO2Loss["lblSVSurfaceFluxesCO2LossPoints"].toString());
   ui->sbSVSurfaceFluxesCO2LossObservations->setValue(myObjSV_SurfaceFluxes_CO2Loss["sbSVSurfaceFluxesCO2LossObservations"].toInt());
 
   ui->chbxSVSurfaceFluxesEt->setChecked(myObjSV_SurfaceFluxes_Et["chbxSVSurfaceFluxesEt"].toBool());
-  ui->dsbSVSurfaceFluxesEtLayers->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesEtReplicates->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesEtWeighting->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesEtPoints->setText(myObjSV_SurfaceFluxes_Et["lblSVSurfaceFluxesEtPoints"].toString());
   ui->sbSVSurfaceFluxesEtObservations->setValue(myObjSV_SurfaceFluxes_Et["sbSVSurfaceFluxesEtObservations"].toInt());
 
-  ui->chbxSVSurfaceFluxesEt->setChecked(myObjSV_SurfaceFluxes_Et["chbxSVSurfaceFluxesEt"].toBool());
-  ui->dsbSVSurfaceFluxesEtLayers->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesEtReplicates->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtReplicates"].toDouble());
-  ui->dsbSVSurfaceFluxesEtWeighting->setValue(myObjSV_SurfaceFluxes_Et["dsbSVSurfaceFluxesEtWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesEtPoints->setText(myObjSV_SurfaceFluxes_Et["lblSVSurfaceFluxesEtPoints"].toString());
-  ui->sbSVSurfaceFluxesEtObservations->setValue(myObjSV_SurfaceFluxes_Et["sbSVSurfaceFluxesEtObservations"].toInt());
+  ui->chbxSVSurfaceFluxesN2Loss->setChecked(myObjSV_SurfaceFluxes_N2Loss["chbxSVSurfaceFluxesN2Loss"].toBool());
+  ui->dsbSVSurfaceFluxesN2LossWeighting->setValue(myObjSV_SurfaceFluxes_N2Loss["dsbSVSurfaceFluxesN2LossWeighting"].toDouble());
+  ui->sbSVSurfaceFluxesN2LossObservations->setValue(myObjSV_SurfaceFluxes_N2Loss["sbSVSurfaceFluxesN2LossObservations"].toInt());
 
   ui->chbxSVSurfaceFluxesN2OLoss->setChecked(myObjSV_SurfaceFluxes_N2OLoss["chbxSVSurfaceFluxesN2OLoss"].toBool());
-  ui->dsbSVSurfaceFluxesN2OLossLayers->setValue(myObjSV_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesN2OLossReplicates->setValue(myObjSV_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesN2OLossWeighting->setValue(myObjSV_SurfaceFluxes_N2OLoss["dsbSVSurfaceFluxesN2OLossWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesN2OLossPoints->setText(myObjSV_SurfaceFluxes_N2OLoss["lblSVSurfaceFluxesN2OLossPoints"].toString());
   ui->sbSVSurfaceFluxesN2OLossObservations->setValue(myObjSV_SurfaceFluxes_N2OLoss["sbSVSurfaceFluxesN2OLossObservations"].toInt());
 
   ui->chbxSVSurfaceFluxesNH3Loss->setChecked(myObjSV_SurfaceFluxes_NH3Loss["chbxSVSurfaceFluxesNH3Loss"].toBool());
-  ui->dsbSVSurfaceFluxesNH3LossLayers->setValue(myObjSV_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesNH3LossReplicates->setValue(myObjSV_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesNH3LossWeighting->setValue(myObjSV_SurfaceFluxes_NH3Loss["dsbSVSurfaceFluxesNH3LossWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesNH3LossPoints->setText(myObjSV_SurfaceFluxes_NH3Loss["lblSVSurfaceFluxesNH3LossPoints"].toString());
   ui->sbSVSurfaceFluxesNH3LossObservations->setValue(myObjSV_SurfaceFluxes_NH3Loss["sbSVSurfaceFluxesNH3LossObservations"].toInt());
 
   ui->chbxSVSurfaceFluxesNOLoss->setChecked(myObjSV_SurfaceFluxes_NOLoss["chbxSVSurfaceFluxesNOLoss"].toBool());
-  ui->dsbSVSurfaceFluxesNOLossLayers->setValue(myObjSV_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossMinLayers"].toDouble());
-  ui->dsbSVSurfaceFluxesNOLossReplicates->setValue(myObjSV_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossReplicates"].toDouble());
   ui->dsbSVSurfaceFluxesNOLossWeighting->setValue(myObjSV_SurfaceFluxes_NOLoss["dsbSVSurfaceFluxesNOLossWeighting"].toDouble());
-  ui->lblSVSurfaceFluxesNOLossPoints->setText(myObjSV_SurfaceFluxes_NOLoss["lblSVSurfaceFluxesNOLossPoints"].toString());
   ui->sbSVSurfaceFluxesNOLossObservations->setValue(myObjSV_SurfaceFluxes_NOLoss["sbSVSurfaceFluxesNOLossObservations"].toInt());
 
-  ui->lblOverallPtsSVSurfaceFluxes->setText(myObjSV_SurfaceFluxes_NOLoss["lblOverallPtsSVSurfaceFluxes"].toString());
-
-  ui->lblOverallPtsSV->setText(myObjSV["lblOverallPtsSV"].toString());
-  ui->lblRankingSV->setText(myObjSV["lblRankingSV"].toString());
   //ui->txbrStateVariables->setText(myObjStateVariables["txbrStateVariables"].toString());
 
 
@@ -7684,83 +7575,83 @@ void DatasetClassification::setFormFromJson()
    //  Weather Tab
   //
 
+  ui->lblGlobalRadiationPtsWeather->setText(myObjWeather_GlobalRadiation["lblGlobalRadiationPtsWeather"].toString());
   ui->chbxGlobalRadiationWeather->setChecked(myObjWeather_GlobalRadiation["chbxGlobalRadiationWeather"].toBool());
   ui->rbGlobalRadiationWeatherMeasured->setChecked(myObjWeather_GlobalRadiation["rbGlobalRadiationWeatherMeasured"].toBool());
   ui->dsbGlobalRadiationKmWeather->setValue(myObjWeather_GlobalRadiation["dsbGlobalRadiationKmWeather"].toDouble());
   ui->dsbGlobalRadiationWeightWeather->setValue(myObjWeather_GlobalRadiation["dsbGlobalRadiationWeightWeather"].toDouble());
-  ui->lblGlobalRadiationPtsWeather->setText(myObjWeather_GlobalRadiation["lblGlobalRadiationPtsWeather"].toString());
   ui->sbGlobalRadiationAltDifWeather->setValue(myObjWeather_GlobalRadiation["sbGlobalRadiationAltDifWeather"].toInt());
   ui->sbGlobalRadiationOptimalDistanceWeather->setValue(myObjWeather_GlobalRadiation["sbGlobalRadiationOptimalDistanceWeather"].toInt());
 
-  ui->chbxLeafWetnessWeather->setChecked(myObjWeather_LeafWetness["chbxLeafWetnessWeather"].toBool());
-  ui->rbLeafWetnessWeatherMeasured->setChecked(myObjWeather_LeafWetness["rbLeafWetnessWeatherMeasured"].toBool());
-  ui->dsbLeafWetnessKmWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessKmWeather"].toDouble());
-  ui->dsbLeafWetnessWeightWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessWeightWeather"].toDouble());
   ui->lblLeafWetnessPtsWeather->setText(myObjWeather_LeafWetness["lblLeafWetnessPtsWeather"].toString());
-  ui->sbLeafWetnessAltDifWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessAltDifWeather"].toInt());
-  ui->sbLeafWetnessOptimalDistanceWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessOptimalDistanceWeather"].toInt());
+  ui->chbxLeafWetnessWeather->setChecked(myObjWeather_LeafWetness["chbxLeafWetnessWeather"].toBool());
+  //ui->dsbLeafWetnessKmWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessKmWeather"].toDouble());
+  ui->dsbLeafWetnessWeightWeather->setValue(myObjWeather_LeafWetness["dsbLeafWetnessWeightWeather"].toDouble());
+  //ui->sbLeafWetnessAltDifWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessAltDifWeather"].toInt());
+  //ui->sbLeafWetnessOptimalDistanceWeather->setValue(myObjWeather_LeafWetness["sbLeafWetnessOptimalDistanceWeather"].toInt());
+  ui->rbLeafWetnessWeatherMeasured->setChecked(myObjWeather_LeafWetness["rbLeafWetnessWeatherMeasured"].toBool());
 
+  ui->lblPrecipitationPtsWeather->setText(myObjWeather_Precipitation["lblPrecipitationPtsWeather"].toString());
   ui->chbxPrecipitationWeather->setChecked(myObjWeather_Precipitation["chbxPrecipitationWeather"].toBool());
   ui->rbPrecipitationWeatherMeasured->setChecked(myObjWeather_Precipitation["rbPrecipitationWeatherMeasured"].toBool());
   ui->dsbPrecipitationKmWeather->setValue(myObjWeather_Precipitation["dsbPrecipitationKmWeather"].toDouble());
   ui->dsbPrecipitationWeightWeather->setValue(myObjWeather_Precipitation["dsbPrecipitationWeightWeather"].toDouble());
-  ui->lblPrecipitationPtsWeather->setText(myObjWeather_Precipitation["lblPrecipitationPtsWeather"].toString());
   ui->sbPrecipitationAltDifWeather->setValue(myObjWeather_Precipitation["sbPrecipitationAltDifWeather"].toInt());
   ui->sbPrecipitationOptimalDistanceWeather->setValue(myObjWeather_Precipitation["sbPrecipitationOptimalDistanceWeather"].toInt());
 
+  ui->lblRelHumidityPtsWeather->setText(myObjWeather_RelHumidity["lblRelHumidityPtsWeather"].toString());
   ui->chbxRelHumidityWeather->setChecked(myObjWeather_RelHumidity["chbxRelHumidityWeather"].toBool());
   ui->rbRelHumidityWeatherMeasured->setChecked(myObjWeather_RelHumidity["rbRelHumidityWeatherMeasured"].toBool());
   ui->dsbRelHumidityKmWeather->setValue(myObjWeather_RelHumidity["dsbRelHumidityKmWeather"].toDouble());
   ui->dsbRelHumidityWeightWeather->setValue(myObjWeather_RelHumidity["dsbRelHumidityWeightWeather"].toDouble());
-  ui->lblRelHumidityPtsWeather->setText(myObjWeather_RelHumidity["lblRelHumidityPtsWeather"].toString());
   ui->sbRelHumidityAltDifWeather->setValue(myObjWeather_RelHumidity["sbRelHumidityAltDifWeather"].toInt());
   ui->sbRelHumidityOptimalDistanceWeather->setValue(myObjWeather_RelHumidity["sbRelHumidityOptimalDistanceWeather"].toInt());
 
-  ui->chbxSoilTempWeather->setChecked(myObjWeather_SoilTemp["chbxSoilTempWeather"].toBool());
-  ui->rbSoilTempWeatherMeasured->setChecked(myObjWeather_SoilTemp["rbSoilTempWeatherMeasured"].toBool());
-  ui->dsbSoilTempKmWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempKmWeather"].toDouble());
-  ui->dsbSoilTempWeightWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempWeightWeather"].toDouble());
   ui->lblSoilTempPtsWeather->setText(myObjWeather_SoilTemp["lblSoilTempPtsWeather"].toString());
-  ui->sbSoilTempAltDifWeather->setValue(myObjWeather_SoilTemp["sbSoilTempAltDifWeather"].toInt());
-  ui->sbSoilTempOptimalDistanceWeather->setValue(myObjWeather_SoilTemp["sbSoilTempOptimalDistanceWeather"].toInt());
+  ui->chbxSoilTempWeather->setChecked(myObjWeather_SoilTemp["chbxSoilTempWeather"].toBool());
+  //ui->dsbSoilTempKmWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempKmWeather"].toDouble());
+  ui->dsbSoilTempWeightWeather->setValue(myObjWeather_SoilTemp["dsbSoilTempWeightWeather"].toDouble());
+  //ui->sbSoilTempAltDifWeather->setValue(myObjWeather_SoilTemp["sbSoilTempAltDifWeather"].toInt());
+  //ui->sbSoilTempOptimalDistanceWeather->setValue(myObjWeather_SoilTemp["sbSoilTempOptimalDistanceWeather"].toInt());
+  ui->rbSoilTempWeatherMeasured->setChecked(myObjWeather_SoilTemp["rbSoilTempWeatherMeasured"].toBool());
 
+  ui->lblSunshineHoursPtsWeather->setText(myObjWeather_SunshineHours["lblSunshineHoursPtsWeather"].toString());
   ui->chbxSunshineHoursWeather->setChecked(myObjWeather_SunshineHours["chbxSunshineHoursWeather"].toBool());
   ui->rbSunshineHoursWeatherMeasured->setChecked(myObjWeather_SunshineHours["rbSunshineHoursWeatherMeasured"].toBool());
   ui->dsbSunshineHoursKmWeather->setValue(myObjWeather_SunshineHours["dsbSunshineHoursKmWeather"].toDouble());
   ui->dsbSunshineHoursWeightWeather->setValue(myObjWeather_SunshineHours["dsbSunshineHoursWeightWeather"].toDouble());
-  ui->lblSunshineHoursPtsWeather->setText(myObjWeather_SunshineHours["lblSunshineHoursPtsWeather"].toString());
-  //ui->sbSunshineHoursAltDifWeather->setValue(myObjWeather_SunshineHours["sbSunshineHoursAltDifWeather"].toInt());
+  ui->sbSunshineHoursAltDifWeather->setValue(myObjWeather_SunshineHours["sbSunshineHoursAltDifWeather"].toInt());
   ui->sbSunshineHoursOptimalDistanceWeather->setValue(myObjWeather_SunshineHours["sbSunshineHoursOptimalDistanceWeather"].toInt());
 
+  ui->lblTAvePtsWeather->setText(myObjWeather_TAve["lblTAvePtsWeather"].toString());
   ui->chbxTAveWeather->setChecked(myObjWeather_TAve["chbxTAveWeather"].toBool());
   ui->rbTAveWeatherMeasured->setChecked(myObjWeather_TAve["rbTAveWeatherMeasured"].toBool());
   ui->dsbTAveKmWeather->setValue(myObjWeather_TAve["dsbTAveKmWeather"].toDouble());
   ui->dsbTAveWeightWeather->setValue(myObjWeather_TAve["dsbTAveWeightWeather"].toDouble());
-  ui->lblTAvePtsWeather->setText(myObjWeather_TAve["lblTAvePtsWeather"].toString());
   ui->sbTAveAltDifWeather->setValue(myObjWeather_TAve["sbTAveAltDifWeather"].toInt());
   ui->sbTAveOptimalDistanceWeather->setValue(myObjWeather_TAve["sbTAveOptimalDistanceWeather"].toInt());
 
+  ui->lblTMaxPtsWeather->setText(myObjWeather_TMax["lblTMaxPtsWeather"].toString());
   ui->chbxTMaxWeather->setChecked(myObjWeather_TMax["chbxTMaxWeather"].toBool());
   ui->rbTMaxWeatherMeasured->setChecked(myObjWeather_TMax["rbTMaxWeatherMeasured"].toBool());
   ui->dsbTMaxKmWeather->setValue(myObjWeather_TMax["dsbTMaxKmWeather"].toDouble());
   ui->dsbTMaxWeightWeather->setValue(myObjWeather_TMax["dsbTMaxWeightWeather"].toDouble());
-  ui->lblTMaxPtsWeather->setText(myObjWeather_TMax["lblTMaxPtsWeather"].toString());
   ui->sbTMaxAltDifWeather->setValue(myObjWeather_TMax["sbTMaxAltDifWeather"].toInt());
   ui->sbTMaxOptimalDistanceWeather->setValue(myObjWeather_TMax["sbTMaxOptimalDistanceWeather"].toInt());
 
+  ui->lblTMinPtsWeather->setText(myObjWeather_TMin["lblTMinPtsWeather"].toString());
   ui->chbxTMinWeather->setChecked(myObjWeather_TMin["chbxTMinWeather"].toBool());
   ui->rbTMinWeatherMeasured->setChecked(myObjWeather_TMin["rbTMinWeatherMeasured"].toBool());
   ui->dsbTMinKmWeather->setValue(myObjWeather_TMin["dsbTMinKmWeather"].toDouble());
   ui->dsbTMinWeightWeather->setValue(myObjWeather_TMin["dsbTMinWeightWeather"].toDouble());
-  ui->lblTMinPtsWeather->setText(myObjWeather_TMin["lblTMinPtsWeather"].toString());
   ui->sbTMinAltDifWeather->setValue(myObjWeather_TMin["sbTMinAltDifWeather"].toInt());
   ui->sbTMinOptimalDistanceWeather->setValue(myObjWeather_TMin["sbTMinOptimalDistanceWeather"].toInt());
 
+  ui->lblWindSpeedPtsWeather->setText(myObjWeather_WindSpeed["lblWindSpeedPtsWeather"].toString());
   ui->chbxWindSpeedWeather->setChecked(myObjWeather_WindSpeed["chbxWindSpeedWeather"].toBool());
   ui->rbWindSpeedWeatherMeasured->setChecked(myObjWeather_WindSpeed["rbWindSpeedWeatherMeasured"].toBool());
   ui->dsbWindSpeedKmWeather->setValue(myObjWeather_WindSpeed["dsbWindSpeedKmWeather"].toDouble());
   ui->dsbWindSpeedWeightWeather->setValue(myObjWeather_WindSpeed["dsbWindSpeedWeightWeather"].toDouble());
-  ui->lblWindSpeedPtsWeather->setText(myObjWeather_WindSpeed["lblWindSpeedPtsWeather"].toString());
   ui->sbWindSpeedAltDifWeather->setValue(myObjWeather_WindSpeed["sbWindSpeedAltDifWeather"].toInt());
   ui->sbWindSpeedOptimalDistanceWeather->setValue(myObjWeather_WindSpeed["sbWindSpeedOptimalDistanceWeather"].toInt());
 
@@ -7851,7 +7742,17 @@ void DatasetClassification::on_pbLoad_clicked()
   //
 
   setFormFromJson();
-
+    updateManagementLabels();
+    updatePhenologyLabels();
+    updatePrevCropLabels();
+    updateInitialValuesLabels();
+    updateSiteLabels();
+    updateSoilLabels();
+    updateWeatherLabels();
+    updateSVLabels();
+    updateSVLabels();
+    updateSVLabels();
+    updateSVLabels();
 }
 
 void DatasetClassification::on_cbDatasets_currentIndexChanged(const QString &theExample)

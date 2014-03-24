@@ -56,7 +56,7 @@ double siteMethod(double theObservations, double theWeight);
 
 //weather
 double weatherMethod1(double theDistance, double theWeight, int theAltDif, double theFactor, int theOptimalDistance);
-double weatherMethodSunshineHours(double theDistance, double theWeight);
+double weatherMethod2(bool theIsMeasured, double theWeight);
 
 //state variables
 double SVCropYield(int theObservations, double theWeight, double theReplicates);
