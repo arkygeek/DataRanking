@@ -298,31 +298,24 @@ private slots:
   // SV surface fluxes
   void on_sbSVSurfaceFluxesEtObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesEtWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesEtReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesNH3LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesNH3LossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesNH3LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesN2OLossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesN2OLossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesN2OLossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesNOLossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesNOLossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesNOLossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesN2LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesN2LossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesN2LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesCH4LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesCH4LossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesCH4LossReplicates_valueChanged(double theReplicates);
 
   void on_sbSVSurfaceFluxesCO2LossObservations_valueChanged(int theObservations);
   void on_dsbSVSurfaceFluxesCO2LossWeighting_valueChanged(double theWeight);
-  //void on_dsbSVSurfaceFluxesCO2LossReplicates_valueChanged(double theReplicates);
 
   // SV observations
 

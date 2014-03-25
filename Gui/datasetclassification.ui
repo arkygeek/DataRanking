@@ -60,7 +60,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -2348,7 +2348,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="8" column="3">
-            <widget class="QLabel" name="lblCombinedTotalMgmt">
+            <widget class="QLabel" name="lblOverallPtsMgmt">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -3603,7 +3603,7 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item row="6" column="3">
-            <widget class="QLabel" name="lblCombinedTotalPhenology">
+            <widget class="QLabel" name="lblOverallPtsPhenology">
              <property name="minimumSize">
               <size>
                <width>25</width>
@@ -9412,16 +9412,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="8" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropLAILayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="value">
-                    <double>0.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="7" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansWeighting">
                    <property name="value">
@@ -9445,26 +9435,6 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item row="5" column="1">
                   <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassLayers">
-                   <property name="value">
-                    <double>1.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="value">
-                    <double>1.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
                    <property name="value">
                     <double>1.000000000000000</double>
                    </property>
@@ -10214,20 +10184,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="5" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="6" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootWeighting">
                    <property name="value">
@@ -10623,20 +10579,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="3" column="0">
                   <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
                    <property name="layoutDirection">
@@ -10644,20 +10586,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="text">
                     <string>N2O Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -10693,34 +10621,6 @@ p, li { white-space: pre-wrap; }
                   <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeighting">
                    <property name="value">
                     <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -10877,13 +10777,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="3" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="3">
                   <widget class="QLabel" name="lblSVSurfaceFluxesWeightingHeader">
                    <property name="font">
@@ -10896,13 +10789,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -10961,13 +10847,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
                    <property name="value">
@@ -11002,13 +10881,6 @@ p, li { white-space: pre-wrap; }
                  </item>
                  <item row="6" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossWeighting"/>
-                 </item>
-                 <item row="6" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
                  </item>
                  <item row="6" column="5">
                   <widget class="QLabel" name="lblSVSurfaceFluxesNOLossPoints">
@@ -11045,25 +10917,11 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="7" column="2">
                   <widget class="QSpinBox" name="sbSVSurfaceFluxesCO2LossObservations"/>
                  </item>
                  <item row="7" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossWeighting"/>
-                 </item>
-                 <item row="7" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
                  </item>
                  <item row="7" column="5">
                   <widget class="QLabel" name="lblSVSurfaceFluxesCO2LossPoints">
@@ -11396,7 +11254,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>500</width>
+             <width>462</width>
              <height>353</height>
             </rect>
            </property>
@@ -11510,13 +11368,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="5">
                   <widget class="QLabel" name="lblSVObservationsLodgingPoints">
                    <property name="font">
@@ -11581,13 +11432,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="0" column="5">
                   <widget class="QLabel" name="lblSVObservationsPointsHeader">
                    <property name="font">
@@ -11600,13 +11444,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -11655,27 +11492,6 @@ p, li { white-space: pre-wrap; }
                    </property>
                   </widget>
                  </item>
-                 <item row="1" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsPestsOrDiseasesLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsDamagesLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVObservationsLodgingWeighting">
                    <property name="value">
@@ -11710,22 +11526,8 @@ p, li { white-space: pre-wrap; }
                  <item row="4" column="2">
                   <widget class="QSpinBox" name="sbSVObservationsWeedsObservations"/>
                  </item>
-                 <item row="4" column="1">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsLayers">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="4" column="3">
                   <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsWeighting"/>
-                 </item>
-                 <item row="4" column="4">
-                  <widget class="QDoubleSpinBox" name="dsbSVObservationsWeedsReplicates">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
                  </item>
                  <item row="4" column="5">
                   <widget class="QLabel" name="lblSVObservationsWeedsPoints">
