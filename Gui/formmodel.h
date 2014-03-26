@@ -27,26 +27,38 @@
 class FormModel : public EnginioModel
 {
   Q_OBJECT
-
+  QHash<int, QByteArray> roleNames() const;
 public:
-  enum Role
+  explicit FormModel(QObject *parent = 0);
+  enum DatasetForm
   {
-    TitleRole = Enginio::CustomPropertyRole,
-    CompletedRole,
-    ObservationsRole
+      TitleDatasetForm = Enginio::CustomPropertyRole,
+      CompletedDatasetForm
   };
 
-  explicit FormModel(QObject *parent = 0);
-  virtual QVariant data(const QModelIndex &theIndex,
-                        int theRole = Qt::DisplayRole
-                       )
-                        const Q_DECL_OVERRIDE;
-  virtual QVariant headerData(int theSection,
-                              Qt::Orientation theOrientation,
-                              int theRole
-                             )
-                              const Q_DECL_OVERRIDE;
-  virtual QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
+
+//class FormModel : public EnginioModel
+//{
+//  Q_OBJECT
+
+//public:
+//  enum Role
+//  {
+//    TitleRole = Enginio::CustomPropertyRole,
+//    CompletedRole
+//  };
+
+//  explicit FormModel(QObject *parent = 0);
+//  virtual QVariant data(const QModelIndex &theIndex,
+//                        int theRole = Qt::DisplayRole
+//                       )
+//                        const Q_DECL_OVERRIDE;
+//  virtual QVariant headerData(int theSection,
+//                              Qt::Orientation theOrientation,
+//                              int theRole
+//                             )
+//                              const Q_DECL_OVERRIDE;
+//  virtual QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
 
 
 signals:

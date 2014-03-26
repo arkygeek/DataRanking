@@ -26,41 +26,41 @@ FormModel::FormModel(QObject *parent) : EnginioModel(parent)
 {
 }
 
-QVariant FormModel::headerData(int theSection, Qt::Orientation theOrientation, int theRole) const
-{
-    if (theOrientation == Qt::Horizontal && theSection == 0 && theRole == Qt::DisplayRole)
-        return QStringLiteral("Todo List");
-    return EnginioModel::headerData(theSection, theOrientation, theRole);
-}
+//QVariant FormModel::headerData(int theSection, Qt::Orientation theOrientation, int theRole) const
+//{
+//    if (theOrientation == Qt::Horizontal && theSection == 0 && theRole == Qt::DisplayRole)
+//        return QStringLiteral("Todo List");
+//    return EnginioModel::headerData(theSection, theOrientation, theRole);
+//}
 
-QVariant FormModel::data(const QModelIndex &theIndex, int theRole) const
-{
-    if (theRole == Qt::FontRole) {
-        bool myCompleted = EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
-        QFont myFont;
-        myFont.setPointSize(20);
-        myFont.setStrikeOut(myCompleted);
-        return myFont;
-    }
+//QVariant FormModel::data(const QModelIndex &theIndex, int theRole) const
+//{
+//    if (theRole == Qt::FontRole) {
+//        bool myCompleted = EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
+//        QFont myFont;
+//        myFont.setPointSize(20);
+//        myFont.setStrikeOut(myCompleted);
+//        return myFont;
+//    }
 
-    if (theRole == Qt::TextColorRole) {
-        bool myCompleted = EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
-        return myCompleted ? QColor("#999") : QColor("#333");
-    }
+//    if (theRole == Qt::TextColorRole) {
+//        bool myCompleted = EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
+//        return myCompleted ? QColor("#999") : QColor("#333");
+//    }
 
-    if (theRole == CompletedRole)
-        return EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
+//    if (theRole == CompletedRole)
+//        return EnginioModel::data(theIndex, CompletedRole).value<QJsonValue>().toBool();
 
-    // fallback to base class
-    return EnginioModel::data(theIndex, theRole);
-}
+//    // fallback to base class
+//    return EnginioModel::data(theIndex, theRole);
+//}
 
-QHash<int, QByteArray> FormModel::roleNames() const
-{
-    QHash<int, QByteArray> roles = EnginioModel::roleNames();
-    roles.insert(TitleRole, "title");
-    roles.insert(Qt::DisplayRole, "title");
-    roles.insert(Qt::EditRole, "title");
-    roles.insert(CompletedRole, "completed");
-    return roles;
-}
+//QHash<int, QByteArray> FormModel::roleNames() const
+//{
+//    QHash<int, QByteArray> roles = EnginioModel::roleNames();
+//    roles.insert(TitleRole, "title");
+//    roles.insert(Qt::DisplayRole, "title");
+//    roles.insert(Qt::EditRole, "title");
+//    roles.insert(CompletedRole, "completed");
+//    return roles;
+//}

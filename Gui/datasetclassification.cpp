@@ -6650,47 +6650,78 @@ QJsonObject DatasetClassification::generateJson()
   return myFormObject;
 }
 
+QHash<int, QByteArray> FormModel::roleNames() const
+{
+    QHash<int, QByteArray> roles = EnginioModel::roleNames();
+    roles.insert(TitleDatasetForm, "title");
+    roles.insert(Qt::DisplayRole, "title");
+    roles.insert(Qt::EditRole, "title");
+    roles.insert(CompletedDatasetForm, "completed");
+    return roles;
+}
+
 QStringListModel *DatasetClassification::getListModel() const
 {
   return mpListModel;
+}
+
+void DatasetClassification::setListModel(QStringListModel *theStringListModel)
+{
+  mpListModel = theStringListModel;
 }
 
 QTreeView *DatasetClassification::getTreeView() const
 {
   return mpTreeView;
 }
-FormModel *DatasetClassification::getFormModel() const
-{
-  return mpFormModel;
-}
-void DatasetClassification::setListModel(QStringListModel *theStringListModel)
-{
-  mpListModel = theStringListModel;
-}
 void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
 {
   mpTreeView = theTreeView;
 }
 
+FormModel *DatasetClassification::getFormModel() const
+{
+  return mpFormModel;
+}
+
+
 void DatasetClassification::uploadFinished(EnginioReply* reply)
 {
+
   qDebug() << "UploadFinished";
-  qDebug() << "data: " << reply->data(); // lots of text
-  qDebug() << "isError: " << reply->isError(); // displays error status
-  if (reply->isError())
-  {
-    // there was an error so inform the user
-    QMessageBox::information(0, QString("Cloud Sync Error"),
-                             QString("There was an error sysncing to Enginio. You should probably save to a file.")
-                           , QMessageBox::Ok);
-  }
-  else
-  {
-    // there was no error so inform of success
-    QMessageBox::information(0, QString("Cloud Sync Success"),
-                             QString("Sync to Enginio successful.")
-                           , QMessageBox::Ok);
-  };
+    // qDebug() << "data: " << reply->data(); // lots of text
+    qDebug() << "isError: " << reply->isError(); // displays error status
+    if (reply->isError())
+    {
+      // there was an error so inform the user
+      QMessageBox::information(0, QString("Cloud Sync Error"),
+                               QString("There was an error sysncing to Enginio. You should probably save to a file.")
+                             , QMessageBox::Ok);
+    }
+    else
+    {
+      // there was no error so inform of success
+      QMessageBox::information(0, QString("Cloud Sync Success"),
+                               QString("Sync to Enginio successful.")
+                             , QMessageBox::Ok);
+    };
+//  qDebug() << "UploadFinished";
+//  qDebug() << "data: " << reply->data(); // lots of text
+//  qDebug() << "isError: " << reply->isError(); // displays error status
+//  if (reply->isError())
+//  {
+//    // there was an error so inform the user
+//    QMessageBox::information(0, QString("Cloud Sync Error"),
+//                             QString("There was an error sysncing to Enginio. You should probably save to a file.")
+//                           , QMessageBox::Ok);
+//  }
+//  else
+//  {
+//    // there was no error so inform of success
+//    QMessageBox::information(0, QString("Cloud Sync Success"),
+//                             QString("Sync to Enginio successful.")
+//                           , QMessageBox::Ok);
+//  };
 }
 void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
 {
@@ -6698,14 +6729,26 @@ void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
   // backend id for testing with enginio: 529da70ae5bde55cd1026369
   // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
   QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
-  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
   EnginioClient *mypClient = new EnginioClient;
   mypClient->setBackendId(myBackendId);
 
   connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
   mypClient->create(theQJsonObject);
+  // ---
+
+  // backend id for testing with enginio: 529da70ae5bde55cd1026369
+  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
+  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
+  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
+  //EnginioClient *mypClient = new EnginioClient;
+  //mypClient->setBackendId(myBackendId);
+
+  //connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+
+  //mypClient->create(theQJsonObject);
 }
+
 void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)
 {
   QFile myFile;
