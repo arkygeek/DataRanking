@@ -477,6 +477,8 @@ private slots:
 
   void on_dsbSVCropWeightOrgansReplicates_valueChanged(double theReplicates);
   void on_dsbSVCropNInOrgansLayers_valueChanged(double theLayers);
+  void on_actionNone_yet_triggered();
+
 private:
   Ui::DatasetClassification *ui;
   QString makeString(double theDouble); // returns double as a QString

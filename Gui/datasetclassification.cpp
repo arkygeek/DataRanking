@@ -7769,3 +7769,8 @@ void DatasetClassification::on_cbDatasets_currentIndexChanged(const QString &the
 {
   setFormExample(theExample);
 }
+
+void DatasetClassification::on_actionNone_yet_triggered()
+{
+    // put in a message box with help
+}
