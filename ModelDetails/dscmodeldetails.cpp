@@ -313,13 +313,13 @@ QJsonObject DscModelDetails::generateTechnicalJson()
   myFormDetailsTechnical.insert("SmallestRegionalUnit", ui->cbTechnicalSmallestRegionalUnit->currentText());
   myFormDetailsTechnical.insert("SmallestRegionalUnitOther", ui->leTechnicalSmallestRegionalUnit->text());
 
-  myFormDetailsTechnical.insert("TimeHorizonNumber", ui->sbTechnicalTimeHorizon->value());
+  myFormDetailsTechnical.insert("TimeHorizonNumber", ui->sbTechnicalTimeHorizon->value()+1);
   myFormDetailsTechnical.insert("TimeHorizonUnit", ui->cbTechnicalTimeHorizonUnit->currentText());
 
-  myFormDetailsTechnical.insert("TemporalScaleNumberFrom", ui->sbTechnicalTemporalScaleFrom->value());
+  myFormDetailsTechnical.insert("TemporalScaleNumberFrom", ui->sbTechnicalTemporalScaleFrom->value()+1);
   myFormDetailsTechnical.insert("TemporalScaleUnitFrom", ui->cbTechnicalTemporalScaleFrom->currentText());
 
-  myFormDetailsTechnical.insert("TemporalScaleNumberTo", ui->sbTechnicalTemporalScaleTo->value());
+  myFormDetailsTechnical.insert("TemporalScaleNumberTo", ui->sbTechnicalTemporalScaleTo->value()+1);
   myFormDetailsTechnical.insert("TemporalScaleUnitTo", ui->cbTechnicalTemporalScaleTo->currentText());
 
   myFormDetailsTechnical.insert("RepresentationOfTrade", ui->leTechnicalRepresentationOfTrade->text());
