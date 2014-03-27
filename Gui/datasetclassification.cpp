@@ -3307,7 +3307,7 @@ void DatasetClassification::on_cbSeasonsZeroNTreatment_currentIndexChanged(const
   // this one is different - it is either nothing or just the weight
 
   QString myTotal;
-  QString myWeight = makeString(ui->dsbSeasonsZeroNTreatment->value()+1);
+  QString myWeight = makeString(ui->dsbSeasonsZeroNTreatment->value());
 
   myTotal = theText=="Yes"?myWeight:"0";
   ui->lblSeasonsZeroNTreatmentPts->setText(myTotal);
@@ -7181,6 +7181,10 @@ void DatasetClassification::setFormFromJson()
   ui->lblSoilMoisturePtsInitialValues->setText(QString::number(myObjInitialValues_SoilMoisture["lblSoilMoisturePtsInitialValues"].toDouble()-1));
   ui->sbSoilMoistureObsInitialValues->setValue(myObjInitialValues_SoilMoisture["sbSoilMoistureObsInitialValues"].toInt()-1);
 
+  ui->lblOverallPtsInitialValues->setText(QString::number(myObjInitialValues["lblOverallPtsInitialValues"].toDouble()-1));
+  ui->lblRankingInitialValues->setText(myObjInitialValues["lblRankingInitialValues"].toString());
+  ui->txbrInitialValues->setText(myObjInitialValues["txbrInitialValues"].toString());
+
     //
    //  Management Tab
   //
@@ -7481,16 +7485,19 @@ void DatasetClassification::setFormFromJson()
   ui->chbxSVCropNInOrgans->setChecked(myObjSV_Crop_NInOrgans["chbxSVCropNInOrgans"].toBool());
   ui->dsbSVCropNInOrgansReplicates->setValue(myObjSV_Crop_NInOrgans["dsbSVCropNInOrgansReplicates"].toDouble()-1);
   ui->dsbSVCropNInOrgansWeighting->setValue(myObjSV_Crop_NInOrgans["dsbSVCropNInOrgansWeighting"].toDouble()-1);
+  ui->dsbSVCropNInOrgansLayers->setValue(myObjSV_Crop_NInOrgans["dsbSVCropNInOrgansLayers"].toDouble()-1);
   ui->sbSVCropNInOrgansObservations->setValue(myObjSV_Crop_NInOrgans["sbSVCropNInOrgansObservations"].toInt()-1);
 
   ui->chbxSVCropRootBiomass->setChecked(myObjSV_Crop_RootBiomass["chbxSVCropRootBiomass"].toBool());
   ui->dsbSVCropRootBiomassReplicates->setValue(myObjSV_Crop_RootBiomass["dsbSVCropRootBiomassReplicates"].toDouble()-1);
   ui->dsbSVCropRootBiomassWeighting->setValue(myObjSV_Crop_RootBiomass["dsbSVCropRootBiomassWeighting"].toDouble()-1);
+  ui->dsbSVCropRootBiomassLayers->setValue(myObjSV_Crop_RootBiomass["dsbSVCropRootBiomassLayers"].toDouble()-1);
   ui->sbSVCropRootBiomassObservations->setValue(myObjSV_Crop_RootBiomass["sbSVCropRootBiomassObservations"].toInt()-1);
 
   ui->chbxSVCropWeightOrgans->setChecked(myObjSV_Crop_WeightOrgans["chbxSVCropWeightOrgans"].toBool());
   ui->dsbSVCropWeightOrgansReplicates->setValue(myObjSV_Crop_WeightOrgans["dsbSVCropWeightOrgansReplicates"].toDouble()-1);
   ui->dsbSVCropWeightOrgansWeighting->setValue(myObjSV_Crop_WeightOrgans["dsbSVCropWeightOrgansWeighting"].toDouble()-1);
+  ui->dsbSVCropWeightOrgansLayers->setValue(myObjSV_Crop_WeightOrgans["dsbSVCropWeightOrgansLayers"].toDouble()-1);
   ui->sbSVCropWeightOrgansObservations->setValue(myObjSV_Crop_WeightOrgans["sbSVCropWeightOrgansObservations"].toInt()-1);
 
   ui->chbxSVCropYield->setChecked(myObjSV_Crop_Yield["chbxSVCropYield"].toBool());
