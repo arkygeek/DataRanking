@@ -32,9 +32,7 @@
 #include "ui_dscmodeldetails.h"
 
 
-DscModelDetails::DscModelDetails(QWidget *parent) :
-  QMainWindow(parent),
-  ui(new Ui::DscModelDetails)
+DscModelDetails::DscModelDetails(QWidget *parent) : QMainWindow(parent), ui(new Ui::DscModelDetails)
 {
   ui->setupUi(this);
 
@@ -63,7 +61,6 @@ DscModelDetails::DscModelDetails(QWidget *parent) :
 
 
 }
-
 DscModelDetails::~DscModelDetails()
 {
   delete ui;
@@ -91,9 +88,7 @@ void DscModelDetails::open()
             ui->lblDiagramsTheDiagram->adjustSize();
     }
 }
-
 void DscModelDetails::print()
-
 {
   Q_ASSERT(ui->lblDiagramsTheDiagram->pixmap());
   #if !defined(QT_NO_PRINTER) && !defined(QT_NO_PRINTDIALOG)
@@ -126,7 +121,6 @@ void DscModelDetails::normalSize()
   ui->lblDiagramsTheDiagram->adjustSize();
   mScaleFactor = 1.0;
 }
-
 void DscModelDetails::fitToWindow()
 {
     bool fitToWindow = fitToWindowAct->isChecked();
@@ -190,7 +184,6 @@ void DscModelDetails::createActions()
     aboutQtAct = new QAction(tr("About &Qt"), this);
     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 }
-
 void DscModelDetails::createMenus()
 {
     fileMenu = new QMenu(tr("&File"), this);
@@ -214,7 +207,6 @@ void DscModelDetails::createMenus()
     menuBar()->addMenu(viewMenu);
     menuBar()->addMenu(helpMenu);
 }
-
 void DscModelDetails::updateActions()
 {
     zoomInAct->setEnabled(!fitToWindowAct->isChecked());
@@ -225,11 +217,6 @@ void DscModelDetails::updateActions()
     ui->toolButtonZoomIn->setDisabled(myState);
     ui->toolButtonZoomOut->setDisabled(myState);
 }
-
-
-
-
-
 
 void DscModelDetails::scaleImage(double theFactor)
 {
@@ -243,14 +230,11 @@ void DscModelDetails::scaleImage(double theFactor)
     zoomInAct->setEnabled(mScaleFactor < 3.0);
     zoomOutAct->setEnabled(mScaleFactor > 0.1);
 }
-
 void DscModelDetails::adjustScrollBar(QScrollBar *thepScrollBar, double theFactor)
 {
     thepScrollBar->setValue(int(theFactor * thepScrollBar->value()
                             + ((theFactor - 1) * thepScrollBar->pageStep()/2)));
 }
-
-
 
 QJsonObject DscModelDetails::generateHeaderJson()
 {
@@ -297,7 +281,6 @@ QJsonObject DscModelDetails::generateHeaderJson()
   myFormDetailsHeader.insert("Date", myDateTimeString);
   return myFormDetailsHeader;
 }
-
 QJsonObject DscModelDetails::generateTechnicalJson()
 {
   QJsonObject myFormDetailsTechnical;
@@ -353,7 +336,6 @@ QJsonObject DscModelDetails::generateTechnicalJson()
 
   return myFormDetailsTechnical;
 }
-
 QJsonObject DscModelDetails::generateDiagramsJson()
 {
   // not sure exactly how to do this
@@ -388,8 +370,6 @@ QJsonObject DscModelDetails::generateDiagramsJson()
   return myListOfDiagrams;
 }
 
-
-
 void DscModelDetails::on_tlbtnBasicInfoGoToWebsite_clicked()
 {
     //qDebug() << "do stuff...";
@@ -403,9 +383,6 @@ void DscModelDetails::on_tlbtnBasicInfoGoToWebsite_clicked()
 
 
 }
-
-
-
 void DscModelDetails::on_cbDiagramsSelectDiagram_currentIndexChanged(int theIndex)
 {
     // change the diagram
@@ -451,12 +428,10 @@ void DscModelDetails::on_toolButtonZoomOut_clicked()
 {
     zoomOut();
 }
-
 void DscModelDetails::on_toolButtonZoomIn_clicked()
 {
     zoomIn();
 }
-
 void DscModelDetails::on_chbxDiagramsFitToWindow_clicked(bool theCheckedBool)
 {
   fitToWindowAct->setChecked(theCheckedBool);

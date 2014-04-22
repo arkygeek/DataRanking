@@ -6729,12 +6729,12 @@ void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
   // backend id for testing with enginio: 529da70ae5bde55cd1026369
   // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
   QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
-  EnginioClient *mypClient = new EnginioClient;
-  mypClient->setBackendId(myBackendId);
+  EnginioClient *mypEnginioClient = new EnginioClient;
+  mypEnginioClient->setBackendId(myBackendId);
 
-  connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+  connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
-  mypClient->create(theQJsonObject);
+  mypEnginioClient->create(theQJsonObject);
   // ---
 
   // backend id for testing with enginio: 529da70ae5bde55cd1026369
@@ -6777,31 +6777,36 @@ void DatasetClassification::on_actionAbout_triggered()
                          , QMessageBox::Ok);
 }
 
+QJsonDocument DatasetClassification::openJsonFile()
+{
+QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                "/home",
+                                                tr("JSON (*.json *.txt)"));
+QFile myFile(myFileName);
+if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+{
+    //qDebug() << "File open error:" << myFile.errorString();
+    //return 1;
+}
+
+QByteArray myJsonByteArray = myFile.readAll();
+
+myFile.close();
+
+QJsonParseError myJsonParseError;
+QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+if (myJsonParseError.error != QJsonParseError::NoError)
+{
+    //qDebug() << "Error happened:" << myJsonParseError.errorString();
+}
+
+return myJsonDocument;
+
+}
 void DatasetClassification::setFormFromJson()
 {
   // this is going to be a large function
-  QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                  "/home",
-                                                  tr("JSON (*.json *.txt)"));
-  QFile myFile(myFileName);
-  if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
-  {
-      //qDebug() << "File open error:" << myFile.errorString();
-      //return 1;
-  }
-
-  QByteArray myJsonByteArray = myFile.readAll();
-
-  myFile.close();
-
-  QJsonParseError myJsonParseError;
-  QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
-  if (myJsonParseError.error != QJsonParseError::NoError)
-  {
-      //qDebug() << "Error happened:" << myJsonParseError.errorString();
-  }
-
-
+  QJsonDocument myJsonDocument = openJsonFile();
   /* WHEW! Got it figured out finally.
    * This is how the parsing works:
    *
