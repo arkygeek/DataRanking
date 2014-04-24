@@ -59,10 +59,11 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   ui->dteDatasetSubmitted->setDateTime(QDateTime::currentDateTime());
 
   //QByteArray myBackendId = "529da70ae5bde55cd1026369";
-  //QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
 
-  //EnginioClient *mpEnginioClient = new EnginioClient;
-  //mpEnginioClient->setBackendId(myBackendId);
+  mpEnginioClient = new EnginioClient;
+  mpEnginioClient->setBackendId(myBackendId);
+  connect(mpEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
   // in the ctor, we need to define:
   //   a) the enginio client
@@ -6727,13 +6728,13 @@ void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
 {
   // I was told that this creates a memory leak.  I don't know how to fix it though
 
-  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
-  EnginioClient *mypEnginioClient = new EnginioClient;
-  mypEnginioClient->setBackendId(myBackendId);
+  //QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  //EnginioClient *mypEnginioClient = new EnginioClient;
+  //mypEnginioClient->setBackendId(myBackendId);
 
-  connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
+  //connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
-  mypEnginioClient->create(theQJsonObject);
+  mpEnginioClient->create(theQJsonObject);
 
   //delete mypEnginioClient;  // this causes badness ie. it won't sync to cloud
 }
