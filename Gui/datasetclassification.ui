@@ -60,7 +60,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tabDataset">
        <attribute name="title">
@@ -8928,7 +8928,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/Resources/platinum.png</pixmap>
+           <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -13526,7 +13526,7 @@ p, li { white-space: pre-wrap; }
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>:/Resources/platinum.png</pixmap>
+           <pixmap resource="Resources.qrc">:/Resources/platinum.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -13804,7 +13804,9 @@ p, li { white-space: pre-wrap; }
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>chbxDatasetPeriodOfRecord</sender>

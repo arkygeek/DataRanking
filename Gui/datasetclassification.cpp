@@ -59,10 +59,10 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   ui->dteDatasetSubmitted->setDateTime(QDateTime::currentDateTime());
 
   //QByteArray myBackendId = "529da70ae5bde55cd1026369";
-  QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+  //QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
 
-  EnginioClient *mpEnginioClient = new EnginioClient;
-  mpEnginioClient->setBackendId(myBackendId);
+  //EnginioClient *mpEnginioClient = new EnginioClient;
+  //mpEnginioClient->setBackendId(myBackendId);
 
   // in the ctor, we need to define:
   //   a) the enginio client
@@ -6725,9 +6725,8 @@ void DatasetClassification::uploadFinished(EnginioReply* reply)
 }
 void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
 {
+  // I was told that this creates a memory leak.  I don't know how to fix it though
 
-  // backend id for testing with enginio: 529da70ae5bde55cd1026369
-  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
   QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
   EnginioClient *mypEnginioClient = new EnginioClient;
   mypEnginioClient->setBackendId(myBackendId);
@@ -6735,18 +6734,8 @@ void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
   connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
 
   mypEnginioClient->create(theQJsonObject);
-  // ---
 
-  // backend id for testing with enginio: 529da70ae5bde55cd1026369
-  // backend secret for testing with enginio: 8869648810af732cd0ab10e585aa30ba
-  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
-  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
-  //EnginioClient *mypClient = new EnginioClient;
-  //mypClient->setBackendId(myBackendId);
-
-  //connect(mypClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
-
-  //mypClient->create(theQJsonObject);
+  //delete mypEnginioClient;  // this causes badness ie. it won't sync to cloud
 }
 
 void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)

@@ -5,4 +5,5 @@ SUBDIRS += \
     gui \
     RankPointGenerator \
     ModelDetails \
-    Scenarios
+    Scenarios \
+    Datasets
