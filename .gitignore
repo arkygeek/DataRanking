@@ -25,3 +25,9 @@ Makefile
 Gui/ui_datasetclassification.h
 
 *.a
+
+.qmake.stash
+
+DataRanking.pro.user.cfe90c3
+
+Datasets/ui_datasetmetadata.h
