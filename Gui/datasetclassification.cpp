@@ -58,7 +58,6 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   // set the date - will be corrected if a dataset is loaded
   ui->dteDatasetSubmitted->setDateTime(QDateTime::currentDateTime());
 
-  //QByteArray myBackendId = "529da70ae5bde55cd1026369";
   QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
 
   mpEnginioClient = new EnginioClient;
@@ -73,8 +72,6 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   ui->listView->setAlternatingRowColors(true);
   ui->listView->setModel(getListModel());
   ui->listView->setSelectionModel(new QItemSelectionModel(mpListModel,mpListModel));
-
-
 }
 
 DatasetClassification::~DatasetClassification()
@@ -5462,6 +5459,98 @@ void DatasetClassification::on_cbSeasonsTreatment6_currentIndexChanged(const QSt
 
 }
 
+void DatasetClassification::on_toolButtonDatasetEdit_clicked()
+{
+  //setFormFromJson();
+  QString myLoadedForm = ui->cbDatasets->currentText();
+  setFormExample(myLoadedForm);
+}
+void DatasetClassification::on_actionAbout_triggered()
+{
+  QMessageBox::information(0, QString("About this software"),
+                           QString("Copyright (C) 2013 by: Jason S. Jorgenson.   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.")
+                         , QMessageBox::Ok);
+}
+void DatasetClassification::setFormExample(QString theExample)
+{
+  // resets the form to example - check with user first as the form will be overwritten
+  int myProceed = QMessageBox::question(0, QString("Current settings will be lost"),
+                           QString("The form is about to be reset to the example. Ok to proceed?"),
+                           QMessageBox::Cancel, QMessageBox::Ok);
+  //qDebug() << "myInt value from QMessageBox is: " << myProceed;
+
+  if (myProceed == QMessageBox::Cancel)
+  {
+    //qDebug() << "this should return now";
+    return;
+  }
+
+  //qDebug() << "Let's do it";
+
+  /*
+   * QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+   *                                              "/home",
+   *                                              tr("JSON (*.json *.txt)"));
+   */
+  QString myFilename = theExample;
+  QFile myFile(myFilename);
+  if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+  {
+      qDebug() << "File open error:" << myFile.errorString();
+      //return 1;
+  }
+
+  QByteArray myJsonByteArray = myFile.readAll();
+
+  myFile.close();
+
+  QJsonParseError myJsonParseError;
+  QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+  if (myJsonParseError.error != QJsonParseError::NoError)
+  {
+      qDebug() << "Error happened:" << myJsonParseError.errorString();
+  }
+
+  // the two lines below dump the file, and look good, so commenting out
+  //qDebug() << "myJsonDocument --->\n" << myJsonDocument << "\n";
+  //qDebug() << "myJsonDocument formatted --->\n" <<myJsonDocument.toJson();
+
+  // the tricky part here is to parse through the document because it
+  //     has "nested" QJsonObjects
+
+
+}
+void DatasetClassification::on_pbLoad_clicked()
+{
+  // load a file
+
+  // I will start by manually selecting a file for now.  When that works, this
+  // should be changed to bring up a list of models that have been saved.  These
+  // files should all be kept in the ~/.macsur/dr/models or something like that.
+  // The files should all be name [GUID].json or something like that, and should
+  // contain model name, submitter, and ranking in the JSON.
+  // With this info, a ranked datasets manager dialog will open, listing the available
+  // items sans GUID.  The GUID is something that should never ever need to be seen or
+  // even know about by the user.  Authenticated users should somehow be linked to
+  // these files so that they, and only they, are able to edit their previous work.
+
+  // Additionally, (maybe ideally?) the local files should be checked to ensure they are
+  // synced with the Enginio cloud.
+  // TODO check to see if Enginio has anything built in to do this kind of thing
+
+  //
+
+  setFormFromJson();
+
+}
+void DatasetClassification::on_cbDatasets_currentIndexChanged(const QString &theExample)
+{
+  setFormExample(theExample);
+}
+void DatasetClassification::on_actionNone_yet_triggered()
+{
+    // put in a message box with help
+}
 
 
   //---------------------------------------------//
@@ -6651,150 +6740,6 @@ QJsonObject DatasetClassification::generateJson()
   return myFormObject;
 }
 
-QHash<int, QByteArray> FormModel::roleNames() const
-{
-    QHash<int, QByteArray> roles = EnginioModel::roleNames();
-    roles.insert(TitleDatasetForm, "title");
-    roles.insert(Qt::DisplayRole, "title");
-    roles.insert(Qt::EditRole, "title");
-    roles.insert(CompletedDatasetForm, "completed");
-    return roles;
-}
-
-QStringListModel *DatasetClassification::getListModel() const
-{
-  return mpListModel;
-}
-
-void DatasetClassification::setListModel(QStringListModel *theStringListModel)
-{
-  mpListModel = theStringListModel;
-}
-
-QTreeView *DatasetClassification::getTreeView() const
-{
-  return mpTreeView;
-}
-void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
-{
-  mpTreeView = theTreeView;
-}
-
-FormModel *DatasetClassification::getFormModel() const
-{
-  return mpFormModel;
-}
-
-
-void DatasetClassification::uploadFinished(EnginioReply* reply)
-{
-
-  qDebug() << "UploadFinished";
-    qDebug() << "data: " << reply->data(); // lots of text
-    qDebug() << "isError: " << reply->isError(); // displays error status
-    if (reply->isError())
-    {
-      // there was an error so inform the user
-      QMessageBox::information(0, QString("Cloud Sync Error"),
-                               QString("There was an error sysncing to Enginio. You should probably save to a file.")
-                             , QMessageBox::Ok);
-    }
-    else
-    {
-      // there was no error so inform of success
-      QMessageBox::information(0, QString("Cloud Sync Success"),
-                               QString("Sync to Enginio successful.")
-                             , QMessageBox::Ok);
-    };
-//  qDebug() << "UploadFinished";
-//  qDebug() << "data: " << reply->data(); // lots of text
-//  qDebug() << "isError: " << reply->isError(); // displays error status
-//  if (reply->isError())
-//  {
-//    // there was an error so inform the user
-//    QMessageBox::information(0, QString("Cloud Sync Error"),
-//                             QString("There was an error sysncing to Enginio. You should probably save to a file.")
-//                           , QMessageBox::Ok);
-//  }
-//  else
-//  {
-//    // there was no error so inform of success
-//    QMessageBox::information(0, QString("Cloud Sync Success"),
-//                             QString("Sync to Enginio successful.")
-//                           , QMessageBox::Ok);
-//  };
-}
-void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
-{
-  // I was told that the commented stuff creates a memory leak.
-  // so I put this stuff in the ctor
-
-  /* I was told that the commented stuff creates a memory leak.
-   * so I put this stuff in the ctor
-   *
-   * QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
-   * EnginioClient *mypEnginioClient = new EnginioClient;
-   * mypEnginioClient->setBackendId(myBackendId);
-   * connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
-   */
-
-  mpEnginioClient->create(theQJsonObject); // no memory leak now :-)
-}
-
-void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)
-{
-  QFile myFile;
-  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
-
-  myFile.setFileName(myFilename);
-  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
-  {
-    myFile.write(theQJsonDocument.toJson());
-    myFile.close();
-    //qDebug() << "file saved successfully";
-  }
-}
-
-QString DatasetClassification::generateCitation(QString theText)
-{
-  // make a citation
-  // do something clever here (I'm tired)
-  return theText;
-}
-
-void DatasetClassification::on_actionAbout_triggered()
-{
-  QMessageBox::information(0, QString("About this software"),
-                           QString("Copyright (C) 2013 by: Jason S. Jorgenson.   This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful,  but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.")
-                         , QMessageBox::Ok);
-}
-
-QJsonDocument DatasetClassification::openJsonFile()
-{
-QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                "/home",
-                                                tr("JSON (*.json *.txt)"));
-QFile myFile(myFileName);
-if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
-{
-    //qDebug() << "File open error:" << myFile.errorString();
-    //return 1;
-}
-
-QByteArray myJsonByteArray = myFile.readAll();
-
-myFile.close();
-
-QJsonParseError myJsonParseError;
-QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
-if (myJsonParseError.error != QJsonParseError::NoError)
-{
-    //qDebug() << "Error happened:" << myJsonParseError.errorString();
-}
-
-return myJsonDocument;
-
-}
 void DatasetClassification::setFormFromJson()
 {
   // this is going to be a large function
@@ -7720,94 +7665,119 @@ void DatasetClassification::setFormFromJson()
 
 }
 
-
-void DatasetClassification::on_toolButtonDatasetEdit_clicked()
+QHash<int, QByteArray> FormModel::roleNames() const
 {
-  //setFormFromJson();
-  QString myLoadedForm = ui->cbDatasets->currentText();
-  setFormExample(myLoadedForm);
+    QHash<int, QByteArray> roles = EnginioModel::roleNames();
+    roles.insert(TitleDatasetForm, "title");
+    roles.insert(Qt::DisplayRole, "title");
+    roles.insert(Qt::EditRole, "title");
+    roles.insert(CompletedDatasetForm, "completed");
+    return roles;
+}
+FormModel *DatasetClassification::getFormModel() const
+{
+  return mpFormModel;
 }
 
-void DatasetClassification::setFormExample(QString theExample)
+void DatasetClassification::uploadFinished(EnginioReply* reply)
 {
-  // resets the form to example - check with user first as the form will be overwritten
-  int myProceed = QMessageBox::question(0, QString("Current settings will be lost"),
-                           QString("The form is about to be reset to the example. Ok to proceed?"),
-                           QMessageBox::Cancel, QMessageBox::Ok);
-  //qDebug() << "myInt value from QMessageBox is: " << myProceed;
 
-  if (myProceed == QMessageBox::Cancel)
-  {
-    //qDebug() << "this should return now";
-    return;
-  }
+  qDebug() << "UploadFinished";
+    qDebug() << "data: " << reply->data(); // lots of text
+    qDebug() << "isError: " << reply->isError(); // displays error status
+    if (reply->isError())
+    {
+      // there was an error so inform the user
+      QMessageBox::information(0, QString("Cloud Sync Error"),
+                               QString("There was an error sysncing to Enginio. You should probably save to a file.")
+                             , QMessageBox::Ok);
+    }
+    else
+    {
+      // there was no error so inform of success
+      QMessageBox::information(0, QString("Cloud Sync Success"),
+                               QString("Sync to Enginio successful.")
+                             , QMessageBox::Ok);
+    };
+}
+void DatasetClassification::syncToCloud(QJsonObject theQJsonObject)
+{
+  // I was told that the commented stuff creates a memory leak.
+  // so I put this stuff in the ctor
 
-  //qDebug() << "Let's do it";
-
-  /*
-   * QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-   *                                              "/home",
-   *                                              tr("JSON (*.json *.txt)"));
+  /* I was told that the commented stuff creates a memory leak.
+   * so I put this stuff in the ctor
+   *
+   * QByteArray myBackendId = "5277c0b5e5bde5260c01ba88";
+   * EnginioClient *mypEnginioClient = new EnginioClient;
+   * mypEnginioClient->setBackendId(myBackendId);
+   * connect(mypEnginioClient, SIGNAL(finished(EnginioReply*)), this, SLOT(uploadFinished(EnginioReply*)));
    */
-  QString myFilename = theExample;
-  QFile myFile(myFilename);
-  if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+
+  mpEnginioClient->create(theQJsonObject); // no memory leak now :-)
+}
+
+void DatasetClassification::saveJsonToFile(QJsonDocument theQJsonDocument)
+{
+  QFile myFile;
+  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
+
+  myFile.setFileName(myFilename);
+  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
   {
-      qDebug() << "File open error:" << myFile.errorString();
-      //return 1;
+    myFile.write(theQJsonDocument.toJson());
+    myFile.close();
+    //qDebug() << "file saved successfully";
   }
+}
+QJsonDocument DatasetClassification::openJsonFile()
+{
+QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                "/home",
+                                                tr("JSON (*.json *.txt)"));
+QFile myFile(myFileName);
+if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+{
+    //qDebug() << "File open error:" << myFile.errorString();
+    //return 1;
+}
 
-  QByteArray myJsonByteArray = myFile.readAll();
+QByteArray myJsonByteArray = myFile.readAll();
 
-  myFile.close();
+myFile.close();
 
-  QJsonParseError myJsonParseError;
-  QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
-  if (myJsonParseError.error != QJsonParseError::NoError)
-  {
-      qDebug() << "Error happened:" << myJsonParseError.errorString();
-  }
+QJsonParseError myJsonParseError;
+QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+if (myJsonParseError.error != QJsonParseError::NoError)
+{
+    //qDebug() << "Error happened:" << myJsonParseError.errorString();
+}
 
-  // the two lines below dump the file, and look good, so commenting out
-  //qDebug() << "myJsonDocument --->\n" << myJsonDocument << "\n";
-  //qDebug() << "myJsonDocument formatted --->\n" <<myJsonDocument.toJson();
-
-  // the tricky part here is to parse through the document because it
-  //     has "nested" QJsonObjects
-
+return myJsonDocument;
 
 }
 
-void DatasetClassification::on_pbLoad_clicked()
+QStringListModel *DatasetClassification::getListModel() const
 {
-  // load a file
-
-  // I will start by manually selecting a file for now.  When that works, this
-  // should be changed to bring up a list of models that have been saved.  These
-  // files should all be kept in the ~/.macsur/dr/models or something like that.
-  // The files should all be name [GUID].json or something like that, and should
-  // contain model name, submitter, and ranking in the JSON.
-  // With this info, a ranked datasets manager dialog will open, listing the available
-  // items sans GUID.  The GUID is something that should never ever need to be seen or
-  // even know about by the user.  Authenticated users should somehow be linked to
-  // these files so that they, and only they, are able to edit their previous work.
-
-  // Additionally, (maybe ideally?) the local files should be checked to ensure they are
-  // synced with the Enginio cloud.
-  // TODO check to see if Enginio has anything built in to do this kind of thing
-
-  //
-
-  setFormFromJson();
-
+  return mpListModel;
+}
+void DatasetClassification::setListModel(QStringListModel *theStringListModel)
+{
+  mpListModel = theStringListModel;
+}
+QTreeView *DatasetClassification::getTreeView() const
+{
+  return mpTreeView;
+}
+void DatasetClassification::setMpTreeView(QTreeView *theTreeView)
+{
+  mpTreeView = theTreeView;
 }
 
-void DatasetClassification::on_cbDatasets_currentIndexChanged(const QString &theExample)
-{
-  setFormExample(theExample);
-}
 
-void DatasetClassification::on_actionNone_yet_triggered()
+QString DatasetClassification::generateCitation(QString theText)
 {
-    // put in a message box with help
+  // make a citation
+  // do something clever here (I'm tired)
+  return theText;
 }

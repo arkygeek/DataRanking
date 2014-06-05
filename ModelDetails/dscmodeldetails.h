@@ -66,9 +66,6 @@ private slots:
 
 private:
   Ui::DscModelDetails *ui;
-  QJsonObject generateHeaderJson();
-  QJsonObject generateTechnicalJson();
-  QJsonObject generateDiagramsJson();
 
   void createActions();
   void createMenus();
@@ -96,6 +93,22 @@ private:
     QMenu *viewMenu;
     QMenu *helpMenu;
 
+    QJsonObject generateHeaderJson();
+    QJsonObject generateTechnicalJson();
+    QJsonObject generateDiagramsJson();
+    QJsonObject generateUseApplicationJson();
+    QJsonObject generateEconResultIndicatorsJson();
+    QJsonObject generateBiophysicalLinksJson();
+    QJsonObject generateIntegrationJson();
+    QJsonObject generateStateOfDevelopmentJson();
+    QJsonObject generatePropertyRightsJson();
+    QJsonObject generatePublicationsJson();
+    QJsonObject generateMoreJson();
+    QJsonObject generateJson();
+
+    void saveJsonToFile(QJsonDocument theQJsonDocument);
+    void setFormFromJson();
+    QJsonDocument openJsonFile();
 };
 
 #endif // DSCMODELDETAILS_H

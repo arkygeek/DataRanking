@@ -4258,10 +4258,10 @@ p, li { white-space: pre-wrap; }
                <string>Edit</string>
               </property>
               <property name="checkable">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
               <property name="checked">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
               <layout class="QGridLayout" name="gridLayout_47">
                <item row="0" column="0" colspan="2">
@@ -4623,8 +4623,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>470</width>
-             <height>384</height>
+             <width>903</width>
+             <height>564</height>
             </rect>
            </property>
            <attribute name="label">
@@ -4949,8 +4949,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>522</width>
-             <height>416</height>
+             <width>903</width>
+             <height>564</height>
             </rect>
            </property>
            <attribute name="label">
@@ -5242,8 +5242,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>202</width>
-             <height>214</height>
+             <width>903</width>
+             <height>564</height>
             </rect>
            </property>
            <attribute name="label">

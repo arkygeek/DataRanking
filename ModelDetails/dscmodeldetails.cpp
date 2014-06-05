@@ -239,42 +239,36 @@ void DscModelDetails::adjustScrollBar(QScrollBar *thepScrollBar, double theFacto
 QJsonObject DscModelDetails::generateHeaderJson()
 {
   QJsonObject myFormDetailsHeader;
-  bool myIsChecked = false;
 
+  myFormDetailsHeader.insert("leBasicInfoModelName", ui->leBasicInfoModelName->text());
+  myFormDetailsHeader.insert("leBasicInfoAcronym", ui->leBasicInfoAcronym->text());
+  myFormDetailsHeader.insert("cbBasicInfoModelType", ui->cbBasicInfoModelType->currentText());
+  myFormDetailsHeader.insert("leBasicInfoWebsite", ui->leBasicInfoWebsite->text());
+  myFormDetailsHeader.insert("txtbrwsShortDescriptionOfModel", ui->txtbrwsShortDescriptionOfModel->toPlainText());
+  myFormDetailsHeader.insert("txtbrwsObjectivesOfModel", ui->txtbrwsObjectivesOfModel->toPlainText());
+  myFormDetailsHeader.insert("leBasicInfoPrincipleDeveloper", ui->leBasicInfoPrincipleDeveloper->text());
+  myFormDetailsHeader.insert("leBasicInfoSupportedBy", ui->leBasicInfoSupportedBy->text());
+  myFormDetailsHeader.insert("leBasicInfoMaintainers", ui->leBasicInfoMaintainers->text());
 
-  myFormDetailsHeader.insert("ModelName", ui->leBasicInfoModelName->text());
-  myFormDetailsHeader.insert("Acronym", ui->leBasicInfoAcronym->text());
-  myFormDetailsHeader.insert("ModelType", ui->cbBasicInfoModelType->currentText());
-  myFormDetailsHeader.insert("Website", ui->leBasicInfoWebsite->text());
-  myFormDetailsHeader.insert("ShortDescriptionOfModel", ui->txtbrwsShortDescriptionOfModel->toPlainText());
-  myFormDetailsHeader.insert("ObjectivesOfModel", ui->txtbrwsObjectivesOfModel->toPlainText());
-  myFormDetailsHeader.insert("PrincipleDeveloper", ui->leBasicInfoPrincipleDeveloper->text());
-  myFormDetailsHeader.insert("SupportedBy", ui->leBasicInfoSupportedBy->text());
-  myFormDetailsHeader.insert("Maintainers", ui->leBasicInfoMaintainers->text());
+  myFormDetailsHeader.insert("chkbxBasicInfoExAnteEvaluation", ui->chkbxBasicInfoExAnteEvaluation->isChecked());
+  myFormDetailsHeader.insert("leBasicInfoExAnteEvalNotes", ui->leBasicInfoExAnteEvalNotes->text());
 
-  myIsChecked = ui->chkbxBasicInfoExAnteEvaluation->isChecked()?true:false;
-  myFormDetailsHeader.insert("MajorFocusExAnteEval", myIsChecked);
-  myFormDetailsHeader.insert("MajorFocusExAnteEvalNotes", ui->leBasicInfoExAnteEvalNotes->text());
+  myFormDetailsHeader.insert("chkbxBasicInfoExPostEvaluation", ui->chkbxBasicInfoExPostEvaluation->isChecked());
+  myFormDetailsHeader.insert("leBasicInfoExPostEvalNotes", ui->leBasicInfoExPostEvalNotes->text());
 
-  myIsChecked = ui->chkbxBasicInfoExPostEvaluation->isChecked()?true:false;
-  myFormDetailsHeader.insert("MajorFocusExPostEval", myIsChecked);
-  myFormDetailsHeader.insert("MajorFocusExPostEvalNotes", ui->leBasicInfoExPostEvalNotes->text());
+  myFormDetailsHeader.insert("chkbxBasicInfoMethodologicalDevel", ui->chkbxBasicInfoMethodologicalDevel->isChecked());
+  myFormDetailsHeader.insert("leBasicInfoMethDevelNotes", ui->leBasicInfoMethDevelNotes->text());
 
-  myIsChecked = ui->chkbxBasicInfoMethodologicalDevel->isChecked()?true:false;
-  myFormDetailsHeader.insert("MethDevel", myIsChecked);
-  myFormDetailsHeader.insert("MethDevelNotes", ui->leBasicInfoMethDevelNotes->text());
+  myFormDetailsHeader.insert("chkbxBasicInfoSpecificProblemsOfClients", ui->chkbxBasicInfoSpecificProblemsOfClients->isChecked());
+  myFormDetailsHeader.insert("leBasicInfoSpecificProbsNotes", ui->leBasicInfoSpecificProbsNotes->text());
 
-  myIsChecked = ui->chkbxBasicInfoSpecificProblemsOfClients->isChecked()?true:false;
-  myFormDetailsHeader.insert("SpecificProblemsOfClients", myIsChecked);
-  myFormDetailsHeader.insert("SpecificProblemsOfClientsNotes", ui->leBasicInfoSpecificProbsNotes->text());
+  myFormDetailsHeader.insert("leBasicInfoSupportedBy", ui->leBasicInfoSupportedBy->text());
 
-  myFormDetailsHeader.insert("SupportedBy", ui->leBasicInfoSupportedBy->text());
-
-  myFormDetailsHeader.insert("InfoProvidedByName", ui->leBasicInfoName->text());
-  myFormDetailsHeader.insert("InfoProvidedByPartnerNumber", ui->leBasicInfoPartnerNumber->text());
-  myFormDetailsHeader.insert("InfoProvidedBySubmitter", ui->leBasicInfoSubmitter->text());
-  myFormDetailsHeader.insert("InfoProvidedByDateOfReport", ui->dateEditBasicInfoDateOfReport->text());
-  myFormDetailsHeader.insert("AdditionalNotes", ui->tedBasicInfoAdditionalNotes->toPlainText());
+  myFormDetailsHeader.insert("leBasicInfoName", ui->leBasicInfoName->text());
+  myFormDetailsHeader.insert("leBasicInfoPartnerNumber", ui->leBasicInfoPartnerNumber->text());
+  myFormDetailsHeader.insert("leBasicInfoSubmitter", ui->leBasicInfoSubmitter->text());
+  myFormDetailsHeader.insert("dateEditBasicInfoDateOfReport", ui->dateEditBasicInfoDateOfReport->text());
+  myFormDetailsHeader.insert("tedBasicInfoAdditionalNotes", ui->tedBasicInfoAdditionalNotes->toPlainText());
 
   QDateTime myDateTime = QDateTime::currentDateTime();
   QString myDateTimeString = myDateTime.toString();
@@ -284,55 +278,50 @@ QJsonObject DscModelDetails::generateHeaderJson()
 QJsonObject DscModelDetails::generateTechnicalJson()
 {
   QJsonObject myFormDetailsTechnical;
-  bool myIsChecked = false;
 
-  myFormDetailsTechnical.insert("TypeOfModelFreeText", ui->leTechnicalTypeOfModel->text());
-  myFormDetailsTechnical.insert("ProgrammingLanguage", ui->leTechnicalProgrammingLanguage->text());
-  myFormDetailsTechnical.insert("AggregationOfRegions", ui->leTechnicalAggergationOfRegions->text());
-  myFormDetailsTechnical.insert("Dimensions", ui->tedTechnicalDimensions->toPlainText());
-  myFormDetailsTechnical.insert("RegionsCovered", ui->leTechnicalRegionsCovered->text());
+  myFormDetailsTechnical.insert("leTechnicalTypeOfModel", ui->leTechnicalTypeOfModel->text());
+  myFormDetailsTechnical.insert("leTechnicalProgrammingLanguage", ui->leTechnicalProgrammingLanguage->text());
+  myFormDetailsTechnical.insert("leTechnicalAggergationOfRegions", ui->leTechnicalAggergationOfRegions->text());
+  myFormDetailsTechnical.insert("tedTechnicalDimensions", ui->tedTechnicalDimensions->toPlainText());
+  myFormDetailsTechnical.insert("leTechnicalRegionsCovered", ui->leTechnicalRegionsCovered->text());
 
   // TODO fix this up to act the same as dataset ranking form to insert new type of unit
-  myFormDetailsTechnical.insert("SmallestRegionalUnit", ui->cbTechnicalSmallestRegionalUnit->currentText());
-  myFormDetailsTechnical.insert("SmallestRegionalUnitOther", ui->leTechnicalSmallestRegionalUnit->text());
+  myFormDetailsTechnical.insert("cbTechnicalSmallestRegionalUnit", ui->cbTechnicalSmallestRegionalUnit->currentText());
+  myFormDetailsTechnical.insert("leTechnicalSmallestRegionalUnit", ui->leTechnicalSmallestRegionalUnit->text());
 
-  myFormDetailsTechnical.insert("TimeHorizonNumber", ui->sbTechnicalTimeHorizon->value()+1);
-  myFormDetailsTechnical.insert("TimeHorizonUnit", ui->cbTechnicalTimeHorizonUnit->currentText());
+  myFormDetailsTechnical.insert("sbTechnicalTimeHorizon", ui->sbTechnicalTimeHorizon->value()+1);
+  myFormDetailsTechnical.insert("cbTechnicalTimeHorizonUnit", ui->cbTechnicalTimeHorizonUnit->currentText());
 
-  myFormDetailsTechnical.insert("TemporalScaleNumberFrom", ui->sbTechnicalTemporalScaleFrom->value()+1);
-  myFormDetailsTechnical.insert("TemporalScaleUnitFrom", ui->cbTechnicalTemporalScaleFrom->currentText());
+  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleFrom", ui->sbTechnicalTemporalScaleFrom->value()+1);
+  myFormDetailsTechnical.insert("cbTechnicalTemporalScaleFrom", ui->cbTechnicalTemporalScaleFrom->currentText());
 
-  myFormDetailsTechnical.insert("TemporalScaleNumberTo", ui->sbTechnicalTemporalScaleTo->value()+1);
-  myFormDetailsTechnical.insert("TemporalScaleUnitTo", ui->cbTechnicalTemporalScaleTo->currentText());
+  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleTo", ui->sbTechnicalTemporalScaleTo->value()+1);
+  myFormDetailsTechnical.insert("cbTechnicalTemporalScaleTo", ui->cbTechnicalTemporalScaleTo->currentText());
 
-  myFormDetailsTechnical.insert("RepresentationOfTrade", ui->leTechnicalRepresentationOfTrade->text());
-  myFormDetailsTechnical.insert("DescriptionOfParameters", ui->lblTechnicalDescriptionOfParameters->text());
-  myFormDetailsTechnical.insert("ExogenousProjectionVars", ui->tedTechnicalExogenousProjVars->toPlainText());
-  myFormDetailsTechnical.insert("SectorsCovered", ui->leTechnicalSectorsCovered->text());
-  myFormDetailsTechnical.insert("ModelClosureRules", ui->tedTechnicalModelClosureRules->toPlainText());
+  myFormDetailsTechnical.insert("leTechnicalRepresentationOfTrade", ui->leTechnicalRepresentationOfTrade->text());
+  myFormDetailsTechnical.insert("tedTechnicalDescriptionOfParameters", ui->tedTechnicalDescriptionOfParameters->toPlainText());
+  myFormDetailsTechnical.insert("tedTechnicalExogenousProjVars", ui->tedTechnicalExogenousProjVars->toPlainText());
+  myFormDetailsTechnical.insert("leTechnicalSectorsCovered", ui->leTechnicalSectorsCovered->text());
+  myFormDetailsTechnical.insert("tedTechnicalModelClosureRules", ui->tedTechnicalModelClosureRules->toPlainText());
 
-  myFormDetailsTechnical.insert("InputData_GeneralNotes", ui->tedTechnicalInputDataGeneralNotes->toPlainText());
+  myFormDetailsTechnical.insert("tedTechnicalInputDataGeneralNotes", ui->tedTechnicalInputDataGeneralNotes->toPlainText());
 
-  myIsChecked = ui->chkbxTechnicalInputDataCropProdn->isChecked()?true:false;
-  myFormDetailsTechnical.insert("InputData_CropProd", myIsChecked);
-  myFormDetailsTechnical.insert("InputData_CropProdNotes", ui->leTechnicalInputDataCropProdn->text());
+  myFormDetailsTechnical.insert("chkbxTechnicalInputDataCropProdn", ui->chkbxTechnicalInputDataCropProdn->isChecked());
+  myFormDetailsTechnical.insert("leTechnicalInputDataCropProdn", ui->leTechnicalInputDataCropProdn->text());
 
-  myIsChecked = ui->chkbxTechnicalInputDataLivestockProdn->isChecked()?true:false;
-  myFormDetailsTechnical.insert("InputData_LivestockProdn", myIsChecked);
-  myFormDetailsTechnical.insert("InputData_LivestockProdnNotes", ui->leTechnicalInputDataLivestockProdn->text());
+  myFormDetailsTechnical.insert("chkbxTechnicalInputDataLivestockProdn", ui->chkbxTechnicalInputDataLivestockProdn->isChecked());
+  myFormDetailsTechnical.insert("leTechnicalInputDataLivestockProdn", ui->leTechnicalInputDataLivestockProdn->text());
 
-  myIsChecked = ui->chkbxTechnicalInputDataVariants->isChecked()?true:false;
-  myFormDetailsTechnical.insert("InputData_Variants", myIsChecked);
-  myFormDetailsTechnical.insert("InputData_VariantsNotes", ui->leTechnicalInputDataVariants->text());
+  myFormDetailsTechnical.insert("chkbxTechnicalInputDataVariants", ui->chkbxTechnicalInputDataVariants->isChecked());
+  myFormDetailsTechnical.insert("leTechnicalInputDataVariants", ui->leTechnicalInputDataVariants->text());
 
-  myIsChecked = ui->chkbxTechnicalInputDataOther->isChecked()?true:false;
-  myFormDetailsTechnical.insert("InputData_Other", myIsChecked);
-  myFormDetailsTechnical.insert("InputData_OtherNotes", ui->leTechnicalInputDataOtherNotes->text());
+  myFormDetailsTechnical.insert("chkbxTechnicalInputDataOther", ui->chkbxTechnicalInputDataOther->isChecked());
+  myFormDetailsTechnical.insert("leTechnicalInputDataOtherNotes", ui->leTechnicalInputDataOtherNotes->text());
 
-  myFormDetailsTechnical.insert("RepresentationOfAgric_GeneralNotes", ui->leUseInputDataMoreGenNotes->text());
-  myFormDetailsTechnical.insert("RepresentationOfAgric_FarmTypes", ui->leUseInputDataMoreFarmTypes->text());
-  myFormDetailsTechnical.insert("RepresentationOfAgric_FarmStructure", ui->leUseInputDataMoreFarmStructure->text());
-  myFormDetailsTechnical.insert("RepresentationOfAgric_VariantsOfMgmt", ui->leUseInputDataMoreVariants->text());
+  myFormDetailsTechnical.insert("ledUseInputDataMoreGenNotes", ui->ledUseInputDataMoreGenNotes->text());
+  myFormDetailsTechnical.insert("ledUseInputDataMoreFarmTypes", ui->ledUseInputDataMoreFarmTypes->text());
+  myFormDetailsTechnical.insert("ledUseInputDataMoreFarmStructure", ui->ledUseInputDataMoreFarmStructure->text());
+  myFormDetailsTechnical.insert("ledUseInputDataMoreVariants", ui->ledUseInputDataMoreVariants->text());
 
   return myFormDetailsTechnical;
 }
@@ -369,18 +358,268 @@ QJsonObject DscModelDetails::generateDiagramsJson()
 
   return myListOfDiagrams;
 }
+QJsonObject DscModelDetails::generateUseApplicationJson()
+{
+    QJsonObject myFormDetailsUseApplication;
+
+    myFormDetailsUseApplication.insert("chkbxUseTUGFarmers", ui->chkbxUseTUGFarmers->isChecked());
+    myFormDetailsUseApplication.insert("ledUseTUGFarmers", ui->ledUseTUGFarmers->text());
+
+    myFormDetailsUseApplication.insert("chkbxUseTUGScientists", ui->chkbxUseTUGScientists->isChecked());
+    myFormDetailsUseApplication.insert("ledUseTUGScientists", ui->ledUseTUGScientists->text());
+
+    myFormDetailsUseApplication.insert("chkbxUseTUGOthers", ui->chkbxUseTUGOthers->isChecked());
+    myFormDetailsUseApplication.insert("ledUseTUGOthers", ui->ledUseTUGOthers->text());
+
+    myFormDetailsUseApplication.insert("chkbxUseTUGPolicyMakers", ui->chkbxUseTUGPolicyMakers->isChecked());
+    myFormDetailsUseApplication.insert("ledUseTUGPolicyMakers", ui->ledUseTUGPolicyMakers->text());
+
+    myFormDetailsUseApplication.insert("ledUseInputDataMoreGenNotes", ui->ledUseInputDataMoreGenNotes->text());
+    myFormDetailsUseApplication.insert("ledUseInputDataMoreFarmTypes", ui->ledUseInputDataMoreFarmTypes->text());
+    myFormDetailsUseApplication.insert("ledUseInputDataMoreFarmStructure", ui->ledUseInputDataMoreFarmStructure->text());
+    myFormDetailsUseApplication.insert("ledUseInputDataMoreVariants", ui->ledUseInputDataMoreVariants->text());
+
+    myFormDetailsUseApplication.insert("tedUsePoliciesMostCases", ui->tedUsePoliciesMostCases->toPlainText());
+    myFormDetailsUseApplication.insert("tedUsePoliciesMostRecently", ui->tedUsePoliciesMostRecently->toPlainText());
+    myFormDetailsUseApplication.insert("tedUsePoliciesOther", ui->tedUsePoliciesOther->toPlainText());
+    myFormDetailsUseApplication.insert("tedUseOtherAnalysis", ui->tedUseOtherAnalysis->toPlainText());
+
+
+    return myFormDetailsUseApplication;
+}
+QJsonObject DscModelDetails::generateEconResultIndicatorsJson()
+{
+    QJsonObject myFormDetailsEconResultIndicators;
+
+    myFormDetailsEconResultIndicators.insert("tedEconIncomeRelated", ui->tedEconIncomeRelated->toPlainText());
+    myFormDetailsEconResultIndicators.insert("tedEconProdCostRelated", ui->tedEconProdCostRelated->toPlainText());
+    myFormDetailsEconResultIndicators.insert("tedEconOther", ui->tedEconOther->toPlainText());
+
+    return myFormDetailsEconResultIndicators;
+}
+QJsonObject DscModelDetails::generateBiophysicalLinksJson()
+{
+    QJsonObject myFormDetailsBiophysicalLinks;
+
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksLandTypes", ui->tedBioPhysicalLinksLandTypes->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksLandUses", ui->tedBioPhysicalLinksLandUses->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksManureMgmt", ui->tedBioPhysicalLinksManureMgmt->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksWaterIndicators", ui->tedBioPhysicalLinksWaterIndicators->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksAirIndicators", ui->tedBioPhysicalLinksAirIndicators->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksSoilIndicators", ui->tedBioPhysicalLinksSoilIndicators->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksBiodiversityFlora", ui->tedBioPhysicalLinksBiodiversityFlora->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksBiodiversityFauna", ui->tedBioPhysicalLinksBiodiversityFauna->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksLandscape", ui->tedBioPhysicalLinksLandscape->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksOtherEnvironmental", ui->tedBioPhysicalLinksOtherEnvironmental->toPlainText());
+    myFormDetailsBiophysicalLinks.insert("tedBioPhysicalLinksOther", ui->tedBioPhysicalLinksOther->toPlainText());
+
+    return myFormDetailsBiophysicalLinks;
+}
+QJsonObject DscModelDetails::generateIntegrationJson()
+{
+    QJsonObject myFormDetailsIntegration;
+
+    myFormDetailsIntegration.insert("tedIntegrationNameOfModelLink", ui->tedIntegrationNameOfModelLink->toPlainText());
+    myFormDetailsIntegration.insert("tedIntegrationDatabases", ui->tedIntegrationDatabases->toPlainText());
+    myFormDetailsIntegration.insert("tedIntegrationGIS", ui->tedIntegrationGIS->toPlainText());
+    myFormDetailsIntegration.insert("tedIntegrationLinkToClimateChange", ui->tedIntegrationLinkToClimateChange->toPlainText());
+    myFormDetailsIntegration.insert("tedIntegrationLinkToFoodSecurity", ui->tedIntegrationLinkToFoodSecurity->toPlainText());
+    myFormDetailsIntegration.insert("tedIntegrationOther", ui->tedIntegrationOther->toPlainText());
+
+    return myFormDetailsIntegration;
+}
+QJsonObject DscModelDetails::generateStateOfDevelopmentJson()
+{
+    QJsonObject myFormDetailsStateOfDevelopment;
+
+    myFormDetailsStateOfDevelopment.insert("tedStateOfDevRegionalCoverage", ui->tedStateOfDevRegionalCoverage->toPlainText());
+    myFormDetailsStateOfDevelopment.insert("tedStateOfDevSectorCoverage", ui->tedStateOfDevSectorCoverage->toPlainText());
+    myFormDetailsStateOfDevelopment.insert("tedStateOfDevMethodologicalEnhancements", ui->tedStateOfDevMethodologicalEnhancements->toPlainText());
+    myFormDetailsStateOfDevelopment.insert("tedStateOfDevNewModules", ui->tedStateOfDevNewModules->toPlainText());
+    myFormDetailsStateOfDevelopment.insert("tedStateOfDevOther", ui->tedStateOfDevOther->toPlainText());
+
+    return myFormDetailsStateOfDevelopment;
+}
+QJsonObject DscModelDetails::generatePropertyRightsJson()
+{
+    QJsonObject myFormDetailsPropertyRights;
+
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToCode", ui->tedPropertyRightsAccessToCode->toPlainText());
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToScenarios", ui->tedPropertyRightsAccessToScenarios->toPlainText());
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToInputData", ui->tedPropertyRightsAccessToInputData->toPlainText());
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToResultDataOutput", ui->tedPropertyRightsAccessToResultDataOutput->toPlainText());
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToParameters", ui->tedPropertyRightsAccessToParameters->toPlainText());
+    myFormDetailsPropertyRights.insert("tedPropertyRightsAccessToOther", ui->tedPropertyRightsAccessToOther->toPlainText());
+
+    return myFormDetailsPropertyRights;
+}
+QJsonObject DscModelDetails::generatePublicationsJson()
+{
+    QJsonObject myFormDetailsPublications;
+
+    myFormDetailsPublications.insert("tedPublicationsJournalPapers", ui->tedPublicationsJournalPapers->toPlainText());
+    myFormDetailsPublications.insert("tedPublicationsConferencePresentations", ui->tedPublicationsConferencePresentations->toPlainText());
+    myFormDetailsPublications.insert("tedPublicationsTechnicalPapers", ui->tedPublicationsTechnicalPapers->toPlainText());
+    myFormDetailsPublications.insert("tedPublicationsPolicyPapers", ui->tedPublicationsPolicyPapers->toPlainText());
+    myFormDetailsPublications.insert("tedPublicationsWebsites", ui->tedPublicationsWebsites->toPlainText());
+    myFormDetailsPublications.insert("tedPublicationsOther", ui->tedPublicationsOther->toPlainText());
+
+    return myFormDetailsPublications;
+}
+QJsonObject DscModelDetails::generateMoreJson()
+{
+    QJsonObject myFormDetailsMore;
+
+    myFormDetailsMore.insert("tedMoreMoreBenefitsFromTradeM", ui->tedMoreMoreBenefitsFromTradeM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreBenefitsFromCropM", ui->tedMoreMoreBenefitsFromCropM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreBenefitsFromLiveM", ui->tedMoreMoreBenefitsFromLiveM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreBenefitsForTradeM", ui->tedMoreMoreBenefitsForTradeM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreBenefitsForCropM", ui->tedMoreMoreBenefitsForCropM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreBenefitsForLiveM", ui->tedMoreMoreBenefitsForLiveM->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreExpectedEnhancements", ui->tedMoreMoreExpectedEnhancements->toPlainText());
+    myFormDetailsMore.insert("tedMoreMoreMainChallenges", ui->tedMoreMoreMainChallenges->toPlainText());
+
+    return myFormDetailsMore;
+}
+
+QJsonObject DscModelDetails::generateJson()
+{
+  // create the main qjson object
+  QJsonObject myFormObject;
+
+  // insert the object type (for enginio management)
+  myFormObject.insert("objectType", QString("objects.entry"));
+
+  // insert the header
+  myFormObject.insert("Header", generateHeaderJson());
+
+  // insert the sub-objects into the form object
+  myFormObject.insert("Technical", generateTechnicalJson());
+  myFormObject.insert("Diagrams", generateDiagramsJson());
+  myFormObject.insert("UseApplications", generateUseApplicationJson());
+  myFormObject.insert("EconResultIndicators", generateEconResultIndicatorsJson());
+  myFormObject.insert("BiophysicalLinks", generateBiophysicalLinksJson());
+  myFormObject.insert("Integration", generateIntegrationJson());
+  myFormObject.insert("StateOfDevelopment", generateStateOfDevelopmentJson());
+  myFormObject.insert("PropertyRights", generatePropertyRightsJson());
+  myFormObject.insert("Publications", generatePublicationsJson());
+  myFormObject.insert("More", generateMoreJson());
+
+  // in order to dump the text, it has to be put into a QJsonDocument
+  QJsonDocument myQJsonDocument;
+  QString myJsonText;
+
+  myQJsonDocument.setObject(myFormObject);
+  myJsonText = myQJsonDocument.toJson();
+  // display the JSON in a temporary text browser
+  ui->tedDiagrams->clear();
+  ui->tedDiagrams->setText(myJsonText);
+
+  return myFormObject;
+}
+
+void DscModelDetails::saveJsonToFile(QJsonDocument theQJsonDocument)
+{
+  QFile myFile;
+  QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
+
+  myFile.setFileName(myFilename);
+  if(myFile.open(QFile::ReadOnly | QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate))
+  {
+    myFile.write(theQJsonDocument.toJson());
+    myFile.close();
+    //qDebug() << "file saved successfully";
+  }
+}
+
+QJsonDocument DscModelDetails::openJsonFile()
+{
+QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                "/home",
+                                                tr("JSON (*.json *.txt)"));
+QFile myFile(myFileName);
+if (!myFile.open(QIODevice::ReadOnly | QIODevice::Text))
+{
+    //qDebug() << "File open error:" << myFile.errorString();
+    //return 1;
+}
+
+QByteArray myJsonByteArray = myFile.readAll();
+
+myFile.close();
+
+QJsonParseError myJsonParseError;
+QJsonDocument myJsonDocument = QJsonDocument::fromJson(myJsonByteArray, &myJsonParseError);
+if (myJsonParseError.error != QJsonParseError::NoError)
+{
+    //qDebug() << "Error happened:" << myJsonParseError.errorString();
+}
+
+return myJsonDocument;
+
+}
+
+void DscModelDetails::setFormFromJson()
+{
+  // this is going to be a large function
+  QJsonDocument myJsonDocument = openJsonFile();
+  /* WHEW! Got it figured out finally.
+   * This is how the parsing works:
+   *
+   * Step 1. Load the whole json file into a QJsonDocument
+   *          ie/   QJsonDocument myJsonDocument
+   *
+   * Step 2. for "root" level objects create a QJsonObject
+   *          ie/   QJsonObject myRootObject = myJsonDocument.object();
+   *         then you can pick out what you need like this:
+   *          ie/  QString myObjectType = myRootObject["objectType"].toString();
+   *
+   * Step 3. for "first-level" objects you must first do two steps
+   *
+   *         for -each- object (I've used Header as an example):
+   *          ie/  QJsonValue myFirstNestedValue_Header = myRootObject.value("Header");
+   *                QJsonObject myFirstNestedObject_Header = myFirstNestedValue_Header.toObject();
+   *
+   *         then you are able to pick out what you need like this:
+   *          ie/  QString myDate = myFirstNestedObject_Header["Date"].toString();
+   *          or   QString my_lblTotalPostMultiplier = myFirstNestedObject_Header["lblTotalPostMultiplier"].toString();
+   *
+   * Step 4. for each subsequent "next-level" or "nested" object, you need to repeat step 3
+   *          ie/  QJsonValue mySecondNestedValue_ObjName = myFirstNestedObject_ObjName.value("ObjName");
+   *                QJsonObject mySecondNestedObject_ObjName = mySecondNestedValue_ObjName.toObject();
+   *         and then of course you pull it out the same way:
+   *          ie/  QString myValueName = mySecondNestedObject_ObjName["ValueName"].toString();
+   *
+   * Step 5. this is the easy bit - just populate the form
+   *
+   */
+
+  QJsonObject myRootObject = myJsonDocument.object();
+
+  QJsonValue myValHeader = myRootObject.value("Header");
+  QJsonObject myObjHeader = myValHeader.toObject();
+
+  QJsonValue myValTechnical = myRootObject.value("DatasetTechnical");
+  QJsonObject myObjTechnical = myValTechnical.toObject();
+
+  QJsonValue myValInitialValues = myRootObject.value("InitialValues");
+  QJsonObject myObjInitialValues = myValInitialValues.toObject();
+
+
+}
 
 void DscModelDetails::on_tlbtnBasicInfoGoToWebsite_clicked()
 {
     //qDebug() << "do stuff...";
-    QJsonObject myJsonObject;
-    myJsonObject.insert("Header", generateHeaderJson());
+    //QJsonObject myJsonObject;
+    //myJsonObject.insert("Header", generateHeaderJson());
     //qDebug() << "Header:\n" << myJsonObject;
-    myJsonObject.insert("TechnicalInfo", generateTechnicalJson());
+    //myJsonObject.insert("TechnicalInfo", generateTechnicalJson());
     //qDebug() << "Technical:\n" << myJsonObject;
-    myJsonObject.insert("Diagrams", generateDiagramsJson());
+    //myJsonObject.insert("Diagrams", generateDiagramsJson());
     //qDebug() << "Diagrams:\n" << myJsonObject;
-
+  QJsonObject myQJsonObject = generateJson();
+  qDebug() << "the QJsonObject \n" << myQJsonObject;
 
 }
 void DscModelDetails::on_cbDiagramsSelectDiagram_currentIndexChanged(int theIndex)

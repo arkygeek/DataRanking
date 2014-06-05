@@ -26,7 +26,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>5</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -76,7 +76,11 @@
                <number>0</number>
               </property>
               <item row="0" column="0">
-               <widget class="QPlainTextEdit" name="tedBasicInfoMajorStrengths"/>
+               <widget class="QPlainTextEdit" name="tedBasicInfoMajorStrengths">
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -106,7 +110,11 @@
                <number>0</number>
               </property>
               <item row="0" column="0">
-               <widget class="QPlainTextEdit" name="tedBasicInfoMajorWeaknesses"/>
+               <widget class="QPlainTextEdit" name="tedBasicInfoMajorWeaknesses">
+                <property name="readOnly">
+                 <bool>false</bool>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -127,6 +135,9 @@
                </item>
                <item>
                 <widget class="QTextBrowser" name="txtbrwsObjectivesOfModel">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
                  <property name="html">
                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -152,6 +163,9 @@ p, li { white-space: pre-wrap; }
                </item>
                <item>
                 <widget class="QTextBrowser" name="txtbrwsShortDescriptionOfModel">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
                  <property name="html">
                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -1817,6 +1831,19 @@ p, li { white-space: pre-wrap; }
         <string>Diagrams</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_18">
+        <item row="2" column="0" colspan="2">
+         <widget class="QTextEdit" name="tedDiagrams">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="placeholderText">
+           <string>description</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0" colspan="2">
          <widget class="QScrollArea" name="scrollArea">
           <property name="sizePolicy">
@@ -1901,19 +1928,6 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </widget>
-         </widget>
-        </item>
-        <item row="2" column="0" colspan="2">
-         <widget class="QTextEdit" name="textEdit_23">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>1</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="placeholderText">
-           <string>description</string>
-          </property>
          </widget>
         </item>
         <item row="1" column="0" colspan="2">
@@ -2006,7 +2020,7 @@ p, li { white-space: pre-wrap; }
        </attribute>
        <layout class="QGridLayout" name="gridLayout_12">
         <item row="0" column="0">
-         <widget class="QGroupBox" name="groupBox_4">
+         <widget class="QGroupBox" name="grbxTargetUserGroup">
           <property name="title">
            <string>Target User Group</string>
           </property>
@@ -2023,21 +2037,21 @@ p, li { white-space: pre-wrap; }
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_27">
              <item>
-              <widget class="QCheckBox" name="checkBox_2">
+              <widget class="QCheckBox" name="chkbxUseTUGFarmers">
                <property name="text">
                 <string>Farmers/Advisory Services</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_4">
+              <widget class="QLineEdit" name="ledUseTUGFarmers">
                <property name="placeholderText">
                 <string>notes</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupFarmers">
+              <widget class="QToolButton" name="tlbtnUseTUGFarmers">
                <property name="text">
                 <string>...</string>
                </property>
@@ -2048,21 +2062,21 @@ p, li { white-space: pre-wrap; }
            <item row="1" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_28">
              <item>
-              <widget class="QCheckBox" name="checkBox_3">
+              <widget class="QCheckBox" name="chkbxUseTUGScientists">
                <property name="text">
                 <string>Scientists</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_5">
+              <widget class="QLineEdit" name="ledUseTUGScientists">
                <property name="placeholderText">
                 <string>notes</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupScientists">
+              <widget class="QToolButton" name="tlbtnUSeTUGScientists">
                <property name="text">
                 <string>...</string>
                </property>
@@ -2073,21 +2087,21 @@ p, li { white-space: pre-wrap; }
            <item row="2" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_29">
              <item>
-              <widget class="QCheckBox" name="checkBox_4">
+              <widget class="QCheckBox" name="chkbxUseTUGOthers">
                <property name="text">
                 <string>Others</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_6">
+              <widget class="QLineEdit" name="ledUseTUGOthers">
                <property name="placeholderText">
                 <string>notes</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupOthers">
+              <widget class="QToolButton" name="tlbtnUseTUGOthers">
                <property name="text">
                 <string>...</string>
                </property>
@@ -2098,21 +2112,21 @@ p, li { white-space: pre-wrap; }
            <item row="3" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_26">
              <item>
-              <widget class="QCheckBox" name="checkBox">
+              <widget class="QCheckBox" name="chkbxUseTUGPolicyMakers">
                <property name="text">
                 <string>Policy Makers</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="lineEdit_3">
+              <widget class="QLineEdit" name="ledUseTUGPolicyMakers">
                <property name="placeholderText">
                 <string>notes</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QToolButton" name="tlbtnUseApplicationTargetUserGroupPolicyMakers">
+              <widget class="QToolButton" name="tlbtnUseTUGPolicyMakers">
                <property name="text">
                 <string>...</string>
                </property>
@@ -2158,7 +2172,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leUseInputDataMoreGenNotes">
+              <widget class="QLineEdit" name="ledUseInputDataMoreGenNotes">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -2198,7 +2212,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leUseInputDataMoreFarmTypes">
+              <widget class="QLineEdit" name="ledUseInputDataMoreFarmTypes">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -2235,7 +2249,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leUseInputDataMoreFarmStructure">
+              <widget class="QLineEdit" name="ledUseInputDataMoreFarmStructure">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -2272,7 +2286,7 @@ p, li { white-space: pre-wrap; }
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leUseInputDataMoreVariants">
+              <widget class="QLineEdit" name="ledUseInputDataMoreVariants">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -2303,56 +2317,56 @@ p, li { white-space: pre-wrap; }
         <item row="2" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
-           <widget class="QLabel" name="label_8">
+           <widget class="QLabel" name="lblPoliciesAnalysedMostCases">
             <property name="text">
              <string>Policies analysed in most cases</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QTextEdit" name="textEdit_2"/>
+           <widget class="QTextEdit" name="tedUsePoliciesMostCases"/>
           </item>
          </layout>
         </item>
         <item row="3" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
-           <widget class="QLabel" name="label_9">
+           <widget class="QLabel" name="lblPoliciesAnalysedMostRecently">
             <property name="text">
              <string>Policies analysed most recently</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QTextEdit" name="textEdit_3"/>
+           <widget class="QTextEdit" name="tedUsePoliciesMostRecently"/>
           </item>
          </layout>
         </item>
         <item row="4" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_9">
           <item>
-           <widget class="QLabel" name="label_10">
+           <widget class="QLabel" name="lblUsePoliciesOtherAspects">
             <property name="text">
              <string>Policies - Other Aspects</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QTextEdit" name="textEdit_4"/>
+           <widget class="QTextEdit" name="tedUsePoliciesOther"/>
           </item>
          </layout>
         </item>
         <item row="5" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_10">
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="lblUseOtherAnalysis">
             <property name="text">
              <string>Other Analysis</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QTextEdit" name="textEdit_5"/>
+           <widget class="QTextEdit" name="tedUseOtherAnalysis"/>
           </item>
          </layout>
         </item>
@@ -2373,14 +2387,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_11">
          <item>
-          <widget class="QLabel" name="label_11">
+          <widget class="QLabel" name="lblEconIncomeRelated">
            <property name="text">
             <string>Income / Wealth / Utility / Related</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="textEdit_6"/>
+          <widget class="QTextEdit" name="tedEconIncomeRelated"/>
          </item>
         </layout>
        </widget>
@@ -2395,14 +2409,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_12">
          <item>
-          <widget class="QLabel" name="label_12">
+          <widget class="QLabel" name="lblEconProdCostRelated">
            <property name="text">
             <string>Production Costs Related</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="textEdit_7"/>
+          <widget class="QTextEdit" name="tedEconProdCostRelated"/>
          </item>
         </layout>
        </widget>
@@ -2417,14 +2431,14 @@ p, li { white-space: pre-wrap; }
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_13">
          <item>
-          <widget class="QLabel" name="label_13">
+          <widget class="QLabel" name="lblEconOther">
            <property name="text">
             <string>Other</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QTextEdit" name="textEdit_8"/>
+          <widget class="QTextEdit" name="tedEconOther"/>
          </item>
         </layout>
        </widget>
@@ -2443,7 +2457,7 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="tabSpacing">
            <number>1</number>
@@ -2467,14 +2481,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_14">
+               <widget class="QLabel" name="lblBioPhysicalLinksLandTypes">
                 <property name="text">
                  <string>Land Types</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_9"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksLandTypes"/>
               </item>
              </layout>
             </item>
@@ -2484,14 +2498,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_15">
+               <widget class="QLabel" name="lblBioPhysicalLinksLandUses">
                 <property name="text">
                  <string>Land Uses</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_10"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksLandUses"/>
               </item>
              </layout>
             </item>
@@ -2501,14 +2515,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_16">
+               <widget class="QLabel" name="lblBioPhysicalLinksManureMgmt">
                 <property name="text">
                  <string>Manure Management</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_11"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksManureMgmt"/>
               </item>
              </layout>
             </item>
@@ -2518,14 +2532,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_17">
+               <widget class="QLabel" name="lblBioPhysicalLinksWaterIndicators">
                 <property name="text">
                  <string>Water - Indicators</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_12"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksWaterIndicators"/>
               </item>
              </layout>
             </item>
@@ -2535,14 +2549,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_18">
+               <widget class="QLabel" name="lblBioPhysicalLinksAirIndicators">
                 <property name="text">
                  <string>Air - Indicators</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_13"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksAirIndicators"/>
               </item>
              </layout>
             </item>
@@ -2552,14 +2566,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_19">
+               <widget class="QLabel" name="lblBioPhysicalLinksSoilIndicators">
                 <property name="text">
                  <string>Soil - Indicators</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_14"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksSoilIndicators"/>
               </item>
              </layout>
             </item>
@@ -2569,14 +2583,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_20">
+               <widget class="QLabel" name="lblBioPhysicalLinksBiodiversityFlora">
                 <property name="text">
                  <string>Biodiversity - Flora</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_15"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksBiodiversityFlora"/>
               </item>
              </layout>
             </item>
@@ -2586,14 +2600,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_21">
+               <widget class="QLabel" name="lblBioPhysicalLinksBiodiversityFauna">
                 <property name="text">
                  <string>Biodiversity - Fauna</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_16"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksBiodiversityFauna"/>
               </item>
              </layout>
             </item>
@@ -2603,14 +2617,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_22">
+               <widget class="QLabel" name="lblBioPhysicalLinksLandscape">
                 <property name="text">
                  <string>Landscape</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_17"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksLandscape"/>
               </item>
              </layout>
             </item>
@@ -2620,14 +2634,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_23">
+               <widget class="QLabel" name="lblBioPhysicalLinksOtherEnvironmental">
                 <property name="text">
                  <string>Other Environmental Aspects/Indicators</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_18"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksOtherEnvironmental"/>
               </item>
              </layout>
             </item>
@@ -2637,14 +2651,14 @@ p, li { white-space: pre-wrap; }
                <number>0</number>
               </property>
               <item>
-               <widget class="QLabel" name="label_24">
+               <widget class="QLabel" name="lblBioPhysicalLinksOther">
                 <property name="text">
                  <string>Other</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_19"/>
+               <widget class="QTextEdit" name="tedBioPhysicalLinksOther"/>
               </item>
              </layout>
             </item>
@@ -2666,84 +2680,84 @@ p, li { white-space: pre-wrap; }
             <item row="0" column="0" colspan="2">
              <layout class="QVBoxLayout" name="verticalLayout_27">
               <item>
-               <widget class="QLabel" name="label_27">
+               <widget class="QLabel" name="lblIntegrationNameOfModelLink">
                 <property name="text">
                  <string>Names and Acronyms of other models and technical aspects of model-link</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_22"/>
+               <widget class="QTextEdit" name="tedIntegrationNameOfModelLink"/>
               </item>
              </layout>
             </item>
             <item row="1" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_31">
               <item>
-               <widget class="QLabel" name="label_31">
+               <widget class="QLabel" name="lblIntegrationDatabases">
                 <property name="text">
                  <string>Databases (specify)</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_26"/>
+               <widget class="QTextEdit" name="tedIntegrationDatabases"/>
               </item>
              </layout>
             </item>
             <item row="1" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_30">
               <item>
-               <widget class="QLabel" name="label_30">
+               <widget class="QLabel" name="lblIntegrationGIS">
                 <property name="text">
                  <string>GIS (specify)</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_25"/>
+               <widget class="QTextEdit" name="tedIntegrationGIS"/>
               </item>
              </layout>
             </item>
             <item row="2" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_25">
               <item>
-               <widget class="QLabel" name="label_25">
+               <widget class="QLabel" name="lblIntegrationLinkToClimateChange">
                 <property name="text">
                  <string>Link to Climate Change</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_20"/>
+               <widget class="QTextEdit" name="tedIntegrationLinkToClimateChange"/>
               </item>
              </layout>
             </item>
             <item row="2" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_32">
               <item>
-               <widget class="QLabel" name="label_32">
+               <widget class="QLabel" name="lblIntegrationLinkToFoodSecurity">
                 <property name="text">
                  <string>Link to Food Security</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_27"/>
+               <widget class="QTextEdit" name="tedIntegrationLinkToFoodSecurity"/>
               </item>
              </layout>
             </item>
             <item row="3" column="0" colspan="2">
              <layout class="QVBoxLayout" name="verticalLayout_29">
               <item>
-               <widget class="QLabel" name="label_29">
+               <widget class="QLabel" name="lblIntegrationOther">
                 <property name="text">
                  <string>Other</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_24"/>
+               <widget class="QTextEdit" name="tedIntegrationOther"/>
               </item>
              </layout>
             </item>
@@ -2765,70 +2779,70 @@ p, li { white-space: pre-wrap; }
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_35">
               <item>
-               <widget class="QLabel" name="label_35">
+               <widget class="QLabel" name="lblStateOfDevRegionalCoverage">
                 <property name="text">
                  <string>Regional Coverage</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_30"/>
+               <widget class="QTextEdit" name="tedStateOfDevRegionalCoverage"/>
               </item>
              </layout>
             </item>
             <item row="1" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_39">
               <item>
-               <widget class="QLabel" name="label_39">
+               <widget class="QLabel" name="lblStateOfDevSectorCoverage">
                 <property name="text">
                  <string>Sector Coverage</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_34"/>
+               <widget class="QTextEdit" name="tedStateOfDevSectorCoverage"/>
               </item>
              </layout>
             </item>
             <item row="2" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_33">
               <item>
-               <widget class="QLabel" name="label_33">
+               <widget class="QLabel" name="lblStateOfDevMethodologicalEnhancements">
                 <property name="text">
                  <string>Methodological Enhancements</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_28"/>
+               <widget class="QTextEdit" name="tedStateOfDevMethodologicalEnhancements"/>
               </item>
              </layout>
             </item>
             <item row="3" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_37">
               <item>
-               <widget class="QLabel" name="label_37">
+               <widget class="QLabel" name="lblStateOfDevNewModules">
                 <property name="text">
                  <string>New Modules</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_32"/>
+               <widget class="QTextEdit" name="tedStateOfDevNewModules"/>
               </item>
              </layout>
             </item>
             <item row="4" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_36">
               <item>
-               <widget class="QLabel" name="label_36">
+               <widget class="QLabel" name="lblStateOfDevOther">
                 <property name="text">
                  <string>Other</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_31"/>
+               <widget class="QTextEdit" name="tedStateOfDevOther"/>
               </item>
              </layout>
             </item>
@@ -2839,8 +2853,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>628</height>
+             <width>490</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2850,84 +2864,84 @@ p, li { white-space: pre-wrap; }
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_43">
               <item>
-               <widget class="QLabel" name="label_43">
+               <widget class="QLabel" name="lblPropertyRightsAccessToCode">
                 <property name="text">
                  <string>access to core-code of the model</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_38"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToCode"/>
               </item>
              </layout>
             </item>
             <item row="0" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_42">
               <item>
-               <widget class="QLabel" name="label_42">
+               <widget class="QLabel" name="lblPropertyRightsAccessToScenarios">
                 <property name="text">
                  <string>access to scenarios (data/parameters)</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_37"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToScenarios"/>
               </item>
              </layout>
             </item>
             <item row="1" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_47">
               <item>
-               <widget class="QLabel" name="label_47">
+               <widget class="QLabel" name="lblPropertyRightsAccessToInputData">
                 <property name="text">
                  <string>access to input data</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_42"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToInputData"/>
               </item>
              </layout>
             </item>
             <item row="1" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_46">
               <item>
-               <widget class="QLabel" name="label_46">
+               <widget class="QLabel" name="lblPropertyRightsAccessToResultDataOutput">
                 <property name="text">
                  <string>access to result data output</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_41"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToResultDataOutput"/>
               </item>
              </layout>
             </item>
             <item row="2" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_41">
               <item>
-               <widget class="QLabel" name="label_41">
+               <widget class="QLabel" name="lblPropertyRightsAccessToParameters">
                 <property name="text">
                  <string>access to parameters</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_36"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToParameters"/>
               </item>
              </layout>
             </item>
             <item row="2" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_48">
               <item>
-               <widget class="QLabel" name="label_48">
+               <widget class="QLabel" name="lblPropertyRightsAccessToOther">
                 <property name="text">
                  <string>Other</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_43"/>
+               <widget class="QTextEdit" name="tedPropertyRightsAccessToOther"/>
               </item>
              </layout>
             </item>
@@ -2938,8 +2952,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>628</height>
+             <width>401</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2949,90 +2963,98 @@ p, li { white-space: pre-wrap; }
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_51">
               <item>
-               <widget class="QLabel" name="label_51">
+               <widget class="QLabel" name="lblPublicationsJournalPapers">
                 <property name="text">
                  <string>Journal Papers</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_46"/>
+               <widget class="QTextEdit" name="tedPublicationsJournalPapers"/>
               </item>
              </layout>
             </item>
             <item row="0" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_50">
               <item>
-               <widget class="QLabel" name="label_50">
+               <widget class="QLabel" name="lblPublicationsConferencePresentations">
                 <property name="text">
                  <string>Conference Presentations</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_45"/>
+               <widget class="QTextEdit" name="tedPublicationsConferencePresentations"/>
               </item>
              </layout>
             </item>
             <item row="1" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_55">
               <item>
-               <widget class="QLabel" name="label_55">
+               <widget class="QLabel" name="lblPublicationsTechnicalPapers">
                 <property name="text">
                  <string>Technical Papers (on the model)</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_50"/>
+               <widget class="QTextEdit" name="tedPublicationsTechnicalPapers"/>
               </item>
              </layout>
             </item>
             <item row="1" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_54">
               <item>
-               <widget class="QLabel" name="label_54">
+               <widget class="QLabel" name="lblPublicationsPolicyPapers">
                 <property name="text">
                  <string>Policy Papers</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_49"/>
+               <widget class="QTextEdit" name="tedPublicationsPolicyPapers"/>
               </item>
              </layout>
             </item>
             <item row="2" column="0">
              <layout class="QVBoxLayout" name="verticalLayout_49">
               <item>
-               <widget class="QLabel" name="label_49">
+               <widget class="QLabel" name="lblPublicationsWebsites">
                 <property name="text">
                  <string>Websites</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_44"/>
+               <widget class="QTextEdit" name="tedPublicationsWebsites"/>
               </item>
              </layout>
             </item>
             <item row="2" column="1">
              <layout class="QVBoxLayout" name="verticalLayout_56">
               <item>
-               <widget class="QLabel" name="label_56">
+               <widget class="QLabel" name="lblPublicationsOther">
                 <property name="text">
                  <string>Other</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QTextEdit" name="textEdit_51"/>
+               <widget class="QTextEdit" name="tedPublicationsOther"/>
               </item>
              </layout>
             </item>
            </layout>
           </widget>
           <widget class="QWidget" name="pageMore">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>407</width>
+             <height>525</height>
+            </rect>
+           </property>
            <attribute name="label">
             <string>More</string>
            </attribute>
@@ -3040,7 +3062,7 @@ p, li { white-space: pre-wrap; }
             <item row="4" column="0" colspan="2">
              <layout class="QVBoxLayout" name="verticalLayout_68">
               <item>
-               <widget class="QLabel" name="label_68">
+               <widget class="QLabel" name="lblMoreMoreMainChallenges">
                 <property name="text">
                  <string>Main challenges to be tackled to attain above enhancements</string>
                 </property>
@@ -3054,7 +3076,7 @@ p, li { white-space: pre-wrap; }
             <item row="3" column="0" colspan="2">
              <layout class="QVBoxLayout" name="verticalLayout_67">
               <item>
-               <widget class="QLabel" name="label_67">
+               <widget class="QLabel" name="lblMoreMoreExpectedEnhancements">
                 <property name="text">
                  <string>Expected/planned enhancements (in the next three years)</string>
                 </property>
@@ -3086,7 +3108,7 @@ p, li { white-space: pre-wrap; }
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_65">
+                  <widget class="QLabel" name="lblMoreMoreBenefitsForCropM">
                    <property name="text">
                     <string>CropM</string>
                    </property>
@@ -3103,7 +3125,7 @@ p, li { white-space: pre-wrap; }
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_61">
+                  <widget class="QLabel" name="lblMoreMoreBenefitsForTradeM">
                    <property name="text">
                     <string>TradeM</string>
                    </property>
@@ -3161,7 +3183,7 @@ p, li { white-space: pre-wrap; }
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_69">
+                  <widget class="QLabel" name="lblMoreMoreBenefitsFromTradeM">
                    <property name="text">
                     <string>TradeM</string>
                    </property>
@@ -3178,7 +3200,7 @@ p, li { white-space: pre-wrap; }
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_71">
+                  <widget class="QLabel" name="lblMoreMoreBenefitsFromLiveM">
                    <property name="text">
                     <string>LiveM</string>
                    </property>
@@ -3195,7 +3217,7 @@ p, li { white-space: pre-wrap; }
                   <number>1</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_70">
+                  <widget class="QLabel" name="lblMoreMoreBenefitsFromCropM">
                    <property name="text">
                     <string>CropM</string>
                    </property>
