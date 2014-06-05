@@ -64,6 +64,10 @@ private slots:
 
   void on_chbxDiagramsFitToWindow_clicked(bool theCheckedBool);
 
+  void on_pbSave_clicked();
+
+  void on_pbLoad_clicked();
+
 private:
   Ui::DscModelDetails *ui;
 

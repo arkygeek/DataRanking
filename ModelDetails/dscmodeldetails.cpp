@@ -289,13 +289,13 @@ QJsonObject DscModelDetails::generateTechnicalJson()
   myFormDetailsTechnical.insert("cbTechnicalSmallestRegionalUnit", ui->cbTechnicalSmallestRegionalUnit->currentText());
   myFormDetailsTechnical.insert("leTechnicalSmallestRegionalUnit", ui->leTechnicalSmallestRegionalUnit->text());
 
-  myFormDetailsTechnical.insert("sbTechnicalTimeHorizon", ui->sbTechnicalTimeHorizon->value()+1);
+  myFormDetailsTechnical.insert("sbTechnicalTimeHorizon", ui->sbTechnicalTimeHorizon->value());
   myFormDetailsTechnical.insert("cbTechnicalTimeHorizonUnit", ui->cbTechnicalTimeHorizonUnit->currentText());
 
-  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleFrom", ui->sbTechnicalTemporalScaleFrom->value()+1);
+  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleFrom", ui->sbTechnicalTemporalScaleFrom->value());
   myFormDetailsTechnical.insert("cbTechnicalTemporalScaleFrom", ui->cbTechnicalTemporalScaleFrom->currentText());
 
-  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleTo", ui->sbTechnicalTemporalScaleTo->value()+1);
+  myFormDetailsTechnical.insert("sbTechnicalTemporalScaleTo", ui->sbTechnicalTemporalScaleTo->value());
   myFormDetailsTechnical.insert("cbTechnicalTemporalScaleTo", ui->cbTechnicalTemporalScaleTo->currentText());
 
   myFormDetailsTechnical.insert("leTechnicalRepresentationOfTrade", ui->leTechnicalRepresentationOfTrade->text());
@@ -599,11 +599,87 @@ void DscModelDetails::setFormFromJson()
   QJsonValue myValHeader = myRootObject.value("Header");
   QJsonObject myObjHeader = myValHeader.toObject();
 
-  QJsonValue myValTechnical = myRootObject.value("DatasetTechnical");
+  QJsonValue myValTechnical = myRootObject.value("Technical");
   QJsonObject myObjTechnical = myValTechnical.toObject();
 
-  QJsonValue myValInitialValues = myRootObject.value("InitialValues");
-  QJsonObject myObjInitialValues = myValInitialValues.toObject();
+  QJsonValue myValDiagrams = myRootObject.value("Diagrams");
+  QJsonObject myObjDiagrams = myValDiagrams.toObject();
+
+  QJsonValue myValUseApplications = myRootObject.value("UseApplications");
+  QJsonObject myObjUseApplications = myValUseApplications.toObject();
+
+  QJsonValue myValEconResultIndicators = myRootObject.value("EconResultIndicators");
+  QJsonObject myObjEconResultIndicators = myValEconResultIndicators.toObject();
+
+  QJsonValue myValBiophysicalLinks = myRootObject.value("BiophysicalLinks");
+  QJsonObject myObjBiophysicalLinks = myValBiophysicalLinks.toObject();
+
+  QJsonValue myValIntegration = myRootObject.value("Integration");
+  QJsonObject myObjIntegration = myValIntegration.toObject();
+
+  QJsonValue myValStateOfDevelopment = myRootObject.value("StateOfDevelopment");
+  QJsonObject myObjStateOfDevelopment = myValStateOfDevelopment.toObject();
+
+  QJsonValue myValPropertyRights = myRootObject.value("PropertyRights");
+  QJsonObject myObjPropertyRights = myValPropertyRights.toObject();
+
+  QJsonValue myValPublications = myRootObject.value("Publications");
+  QJsonObject myObjPublications = myValPublications.toObject();
+
+  QJsonValue myValMore = myRootObject.value("More");
+  QJsonObject myObjMore = myValMore.toObject();
+
+  int myIndex;  // used for setting combos boxes
+
+  ui->leTechnicalTypeOfModel->setText(myObjTechnical["leTechnicalTypeOfModel"].toString());
+  ui->leTechnicalProgrammingLanguage->setText(myObjTechnical["leTechnicalProgrammingLanguage"].toString());
+  ui->leTechnicalAggergationOfRegions->setText(myObjTechnical["leTechnicalAggergationOfRegions"].toString());
+  ui->tedTechnicalDimensions->setPlainText(myObjTechnical["tedTechnicalDimensions"].toString());
+  ui->leTechnicalRegionsCovered->setText(myObjTechnical["leTechnicalRegionsCovered"].toString());
+
+
+  myIndex = ui->cbTechnicalSmallestRegionalUnit->findText(myObjTechnical["cbTechnicalSmallestRegionalUnit"].toString());
+  ui->cbTechnicalSmallestRegionalUnit->setCurrentIndex(myIndex);
+  ui->leTechnicalSmallestRegionalUnit->setText(myObjTechnical["leTechnicalSmallestRegionalUnit"].toString());
+
+  ui->sbTechnicalTimeHorizon->setValue(myObjTechnical["sbTechnicalTimeHorizon"].toInt());
+  ui->leTechnicalSmallestRegionalUnit->setText(myObjTechnical["leTechnicalSmallestRegionalUnit"].toString());
+
+  ui->sbTechnicalTemporalScaleFrom->setValue(myObjTechnical["sbTechnicalTemporalScaleFrom"].toInt());
+  myIndex = ui->cbTechnicalTemporalScaleFrom->findText(myObjTechnical["cbTechnicalTemporalScaleFrom"].toString());
+  ui->cbTechnicalTemporalScaleFrom->setCurrentIndex(myIndex);
+
+  ui->sbTechnicalTemporalScaleTo->setValue(myObjTechnical["sbTechnicalTemporalScaleTo"].toInt());
+  myIndex = ui->cbTechnicalTemporalScaleTo->findText(myObjTechnical["cbTechnicalTemporalScaleTo"].toString());
+  ui->cbTechnicalTemporalScaleTo->setCurrentIndex(myIndex);
+
+  ui->leTechnicalRepresentationOfTrade->setText(myObjTechnical["leTechnicalRepresentationOfTrade"].toString());
+  ui->tedTechnicalDescriptionOfParameters->setPlainText(myObjTechnical["tedTechnicalDescriptionOfParameters"].toString());
+  ui->tedTechnicalExogenousProjVars->setPlainText(myObjTechnical["tedTechnicalExogenousProjVars"].toString());
+  ui->leTechnicalSectorsCovered->setText(myObjTechnical["leTechnicalSectorsCovered"].toString());
+  ui->tedTechnicalModelClosureRules->setPlainText(myObjTechnical["tedTechnicalModelClosureRules"].toString());
+
+  ui->tedTechnicalInputDataGeneralNotes->setPlainText(myObjTechnical["tedTechnicalInputDataGeneralNotes"].toString());
+  ui->chkbxTechnicalInputDataCropProdn->setChecked(myObjTechnical["chkbxTechnicalInputDataCropProdn"].toBool());
+  ui->leTechnicalInputDataCropProdn->setText(myObjTechnical["leTechnicalInputDataCropProdn"].toString());
+
+  ui->chkbxTechnicalInputDataLivestockProdn->setChecked(myObjTechnical["chkbxTechnicalInputDataLivestockProdn"].toBool());
+  ui->leTechnicalInputDataLivestockProdn->setText(myObjTechnical["leTechnicalInputDataLivestockProdn"].toString());
+
+  ui->chkbxTechnicalInputDataVariants->setChecked(myObjTechnical["chkbxTechnicalInputDataVariants"].toBool());
+  ui->leTechnicalInputDataVariants->setText(myObjTechnical["leTechnicalInputDataVariants"].toString());
+
+  ui->chkbxTechnicalInputDataOther->setChecked(myObjTechnical["chkbxTechnicalInputDataOther"].toBool());
+  ui->leTechnicalInputDataOtherNotes->setText(myObjTechnical["leTechnicalInputDataOtherNotes"].toString());
+
+  ui->ledUseInputDataMoreGenNotes->setText(myObjTechnical["ledUseInputDataMoreGenNotes"].toString());
+  ui->ledUseInputDataMoreFarmTypes->setText(myObjTechnical["ledUseInputDataMoreFarmTypes"].toString());
+  ui->ledUseInputDataMoreFarmStructure->setText(myObjTechnical["ledUseInputDataMoreFarmStructure"].toString());
+  ui->ledUseInputDataMoreVariants->setText(myObjTechnical["ledUseInputDataMoreVariants"].toString());
+
+
+
+
 
 
 }
@@ -675,4 +751,35 @@ void DscModelDetails::on_chbxDiagramsFitToWindow_clicked(bool theCheckedBool)
 {
   fitToWindowAct->setChecked(theCheckedBool);
   fitToWindow();
+}
+
+void DscModelDetails::on_pbSave_clicked()
+{
+    QJsonObject myQJsonObject = generateJson();
+    QJsonDocument myQJsonDocument;
+    myQJsonDocument.setObject(myQJsonObject);
+    saveJsonToFile(myQJsonDocument);
+}
+
+void DscModelDetails::on_pbLoad_clicked()
+{
+    // load a file
+
+    // I will start by manually selecting a file for now.  When that works, this
+    // should be changed to bring up a list of models that have been saved.  These
+    // files should all be kept in the ~/.macsur/dr/models or something like that.
+    // The files should all be name [GUID].json or something like that, and should
+    // contain model name, submitter, and ranking in the JSON.
+    // With this info, a ranked datasets manager dialog will open, listing the available
+    // items sans GUID.  The GUID is something that should never ever need to be seen or
+    // even know about by the user.  Authenticated users should somehow be linked to
+    // these files so that they, and only they, are able to edit their previous work.
+
+    // Additionally, (maybe ideally?) the local files should be checked to ensure they are
+    // synced with the Enginio cloud.
+    // TODO check to see if Enginio has anything built in to do this kind of thing
+
+    //
+
+    setFormFromJson();
 }

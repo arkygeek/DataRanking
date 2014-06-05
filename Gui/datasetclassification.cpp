@@ -5008,40 +5008,6 @@ void DatasetClassification::on_rbSoilTempWeatherMeasured_clicked(bool theButtonI
       updateWeatherLabels();
 }
 
-void DatasetClassification::on_toolButtonInsertVariable_clicked()
-{
-  // insert variable into list
-  QString myVariable = ui->ledDatasetInsertVariable->text();
-  int myRow = ui->listWidgetVariables->count();
-  QListWidgetItem *newVariable = new QListWidgetItem;
-      newVariable->setText(myVariable);
-      ui->listWidgetVariables->insertItem(myRow, newVariable);
-  ui->ledDatasetInsertVariable->clear();
-
-}
-void DatasetClassification::on_toolButtonCitation_clicked()
-{
-  // pop up a citation
-  QString myCitationText = "<font size = 2 color = black >Institute for Terrestrial and Planetary Atmospheres/Marine Sciences Research Center/State University of New York/Stony Brook. 2001. Lucas and Waliser Satellite ECT-Corrected Daily, Pentad and Monthly Global OLR Datasets. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. http://rda.ucar.edu/datasets/ds684.1. Accessed dd mmm yyyy.</font>";
-  QMessageBox myQMessageBox;
-
-  myQMessageBox.information(0, "How to cite this dataset", myCitationText, QMessageBox::Ok);
-  //myQMessageBox.setFont(QFont::setPointSize(9));
-}
-void DatasetClassification::on_pbSyncToCloud_clicked()
-{
-    QJsonObject myQJsonObject = generateJson();
-    syncToCloud(myQJsonObject);
-
-}
-void DatasetClassification::on_pbSaveToFile_clicked()
-{
-  QJsonObject myQJsonObject = generateJson();
-  QJsonDocument myQJsonDocument;
-  myQJsonDocument.setObject(myQJsonObject);
-  saveJsonToFile(myQJsonDocument);
-}
-
 
 
 void DatasetClassification::on_chbxVarietyMgmt_clicked()
@@ -5556,6 +5522,41 @@ void DatasetClassification::on_actionNone_yet_triggered()
   //---------------------------------------------//
  //  file i/o functions (including json stuff)  //
 //---------------------------------------------//
+
+void DatasetClassification::on_toolButtonInsertVariable_clicked()
+{
+  // insert variable into list
+  QString myVariable = ui->ledDatasetInsertVariable->text();
+  int myRow = ui->listWidgetVariables->count();
+  QListWidgetItem *newVariable = new QListWidgetItem;
+      newVariable->setText(myVariable);
+      ui->listWidgetVariables->insertItem(myRow, newVariable);
+  ui->ledDatasetInsertVariable->clear();
+
+}
+void DatasetClassification::on_toolButtonCitation_clicked()
+{
+  // pop up a citation
+  QString myCitationText = "<font size = 2 color = black >Institute for Terrestrial and Planetary Atmospheres/Marine Sciences Research Center/State University of New York/Stony Brook. 2001. Lucas and Waliser Satellite ECT-Corrected Daily, Pentad and Monthly Global OLR Datasets. Research Data Archive at the National Center for Atmospheric Research, Computational and Information Systems Laboratory. http://rda.ucar.edu/datasets/ds684.1. Accessed dd mmm yyyy.</font>";
+  QMessageBox myQMessageBox;
+
+  myQMessageBox.information(0, "How to cite this dataset", myCitationText, QMessageBox::Ok);
+  //myQMessageBox.setFont(QFont::setPointSize(9));
+}
+void DatasetClassification::on_pbSyncToCloud_clicked()
+{
+    QJsonObject myQJsonObject = generateJson();
+    syncToCloud(myQJsonObject);
+
+}
+void DatasetClassification::on_pbSaveToFile_clicked()
+{
+  QJsonObject myQJsonObject = generateJson();
+  QJsonDocument myQJsonDocument;
+  myQJsonDocument.setObject(myQJsonObject);
+  saveJsonToFile(myQJsonDocument);
+}
+
 
 QJsonObject DatasetClassification::generateHeaderJson()
 {
