@@ -246,6 +246,9 @@ QJsonObject DscModelDetails::generateHeaderJson()
   myFormDetailsHeader.insert("leBasicInfoWebsite", ui->leBasicInfoWebsite->text());
   myFormDetailsHeader.insert("txtbrwsShortDescriptionOfModel", ui->txtbrwsShortDescriptionOfModel->toPlainText());
   myFormDetailsHeader.insert("txtbrwsObjectivesOfModel", ui->txtbrwsObjectivesOfModel->toPlainText());
+  myFormDetailsHeader.insert("tedBasicInfoMajorStrengths", ui->tedBasicInfoMajorStrengths->toPlainText());
+  myFormDetailsHeader.insert("tedBasicInfoMajorWeaknesses", ui->tedBasicInfoMajorWeaknesses->toPlainText());
+
   myFormDetailsHeader.insert("leBasicInfoPrincipleDeveloper", ui->leBasicInfoPrincipleDeveloper->text());
   myFormDetailsHeader.insert("leBasicInfoSupportedBy", ui->leBasicInfoSupportedBy->text());
   myFormDetailsHeader.insert("leBasicInfoMaintainers", ui->leBasicInfoMaintainers->text());
@@ -631,6 +634,69 @@ void DscModelDetails::setFormFromJson()
 
   int myIndex;  // used for setting combos boxes
 
+  // Basic Info section
+
+  //ui->ledXXX->setText(myObjTechnical["ledXXX"].toString());
+
+  //ui->tedXXX->setPlainText(myObjTechnical["tedXXX"].toString());
+  //ui->chkbxXXX->setChecked(myObjTechnical["chkbxXXX"].toBool());
+  //ui->txbrXXX->setText(myObjSoil["txbrXXX"].toString());
+  // -----
+
+  ui->leBasicInfoModelName->setText(myObjHeader["leBasicInfoModelName"].toString());
+  ui->leBasicInfoAcronym->setText(myObjHeader["leBasicInfoAcronym"].toString());
+  // combo box here
+  myIndex = ui->cbBasicInfoModelType->findText(myObjHeader["cbBasicInfoModelType"].toString(), Qt::MatchExactly);
+  // if the name isn't in the list, add it
+  if  (myIndex > -1)  // the text is already in the combo box list
+      {
+        ui->cbBasicInfoModelType->setCurrentIndex(myIndex);
+        ui->cbBasicInfoModelType->insertItem(myIndex, myObjHeader["cbBasicInfoModelType"].toString());
+      }
+  else  // the text is NOT already there, so add it
+      {
+        int myNextIndexPosition=ui->cbBasicInfoModelType->count();
+        ui->cbBasicInfoModelType->insertItem(myNextIndexPosition, myObjHeader["cbBasicInfoModelType"].toString());
+      };
+  ui->leBasicInfoWebsite->setText(myObjHeader["leBasicInfoWebsite"].toString());
+  ui->txtbrwsShortDescriptionOfModel->setText(myObjHeader["txtbrwsShortDescriptionOfModel"].toString());
+  ui->txtbrwsObjectivesOfModel->setText(myObjHeader["txtbrwsObjectivesOfModel"].toString());
+  ui->tedBasicInfoMajorStrengths->setPlainText(myObjHeader["tedBasicInfoMajorStrengths"].toString());
+  ui->tedBasicInfoMajorWeaknesses->setPlainText(myObjHeader["tedBasicInfoMajorWeaknesses"].toString());
+
+
+
+  ui->leBasicInfoPrincipleDeveloper->setText(myObjHeader["leBasicInfoPrincipleDeveloper"].toString());
+  ui->leBasicInfoSupportedBy->setText(myObjHeader["leBasicInfoSupportedBy"].toString());
+  ui->leBasicInfoMaintainers->setText(myObjHeader["leBasicInfoMaintainers"].toString());
+
+  ui->chkbxBasicInfoExAnteEvaluation->setChecked(myObjHeader["chkbxBasicInfoExAnteEvaluation"].toBool());
+  ui->leBasicInfoExAnteEvalNotes->setText(myObjHeader["leBasicInfoExAnteEvalNotes"].toString());
+
+  ui->chkbxBasicInfoExPostEvaluation->setChecked(myObjHeader["chkbxBasicInfoExPostEvaluation"].toBool());
+  ui->leBasicInfoExPostEvalNotes->setText(myObjHeader["leBasicInfoExPostEvalNotes"].toString());
+
+  ui->chkbxBasicInfoMethodologicalDevel->setChecked(myObjHeader["chkbxBasicInfoMethodologicalDevel"].toBool());
+  ui->leBasicInfoMethDevelNotes->setText(myObjHeader["leBasicInfoMethDevelNotes"].toString());
+
+  ui->chkbxBasicInfoSpecificProblemsOfClients->setChecked(myObjHeader["chkbxBasicInfoSpecificProblemsOfClients"].toBool());
+  ui->leBasicInfoSpecificProbsNotes->setText(myObjHeader["leBasicInfoSpecificProbsNotes"].toString());
+
+  ui->leBasicInfoSupportedBy->setText(myObjHeader["leBasicInfoSupportedBy"].toString());
+  ui->leBasicInfoName->setText(myObjHeader["leBasicInfoName"].toString());
+  ui->leBasicInfoPartnerNumber->setText(myObjHeader["leBasicInfoPartnerNumber"].toString());
+  ui->leBasicInfoSubmitter->setText(myObjHeader["leBasicInfoSubmitter"].toString());
+
+  //ui->dateEditBasicInfoDateOfReport->setDateTime(myObjHeader["dateEditBasicInfoDateOfReport"].toString());
+
+  ui->tedBasicInfoAdditionalNotes->setPlainText(myObjHeader["tedBasicInfoAdditionalNotes"].toString());
+
+  //QDateTime myDateTime = QDateTime::currentDateTime();
+  //QString myDateTimeString = myDateTime.toString();
+  //myFormDetailsHeader.insert("Date", myDateTimeString);
+
+  // Technical section
+
   ui->leTechnicalTypeOfModel->setText(myObjTechnical["leTechnicalTypeOfModel"].toString());
   ui->leTechnicalProgrammingLanguage->setText(myObjTechnical["leTechnicalProgrammingLanguage"].toString());
   ui->leTechnicalAggergationOfRegions->setText(myObjTechnical["leTechnicalAggergationOfRegions"].toString());
@@ -677,10 +743,113 @@ void DscModelDetails::setFormFromJson()
   ui->ledUseInputDataMoreFarmStructure->setText(myObjTechnical["ledUseInputDataMoreFarmStructure"].toString());
   ui->ledUseInputDataMoreVariants->setText(myObjTechnical["ledUseInputDataMoreVariants"].toString());
 
+  // Diagrams section Not sure yet how to do this
+
+  /*
+  int myNumberOfDiagrams = ui->cbDiagramsSelectDiagram->count();
+
+  for(int i=0; i<myNumberOfDiagrams; i++)
+  {
+    //qDebug() << "iteration number: " << i;
+
+    ui->cbDiagramsSelectDiagram->setCurrentIndex(i);
+    myListOfDiagrams.insert("ImageList",ui->cbDiagramsSelectDiagram->currentText());
+    //qDebug() << "text at index " << i << " is " << ui->cbDiagramsSelectDiagram->currentText();
+
+  }
+   */
 
 
 
+  // Use Applications section
 
+  ui->chkbxUseTUGFarmers->setChecked(myObjUseApplications["chkbxUseTUGFarmers"].toBool());
+  ui->ledUseTUGFarmers->setText(myObjUseApplications["ledUseTUGFarmers"].toString());
+
+  ui->chkbxUseTUGScientists->setChecked(myObjUseApplications["chkbxUseTUGScientists"].toBool());
+  ui->ledUseTUGScientists->setText(myObjUseApplications["ledUseTUGScientists"].toString());
+
+  ui->chkbxUseTUGOthers->setChecked(myObjUseApplications["chkbxUseTUGOthers"].toBool());
+  ui->ledUseTUGOthers->setText(myObjUseApplications["ledUseTUGOthers"].toString());
+
+  ui->chkbxUseTUGPolicyMakers->setChecked(myObjUseApplications["chkbxUseTUGPolicyMakers"].toBool());
+  ui->ledUseTUGPolicyMakers->setText(myObjUseApplications["ledUseTUGPolicyMakers"].toString());
+
+  ui->ledUseInputDataMoreGenNotes->setText(myObjUseApplications["ledUseInputDataMoreGenNotes"].toString());
+  ui->ledUseInputDataMoreFarmTypes->setText(myObjUseApplications["ledUseInputDataMoreFarmTypes"].toString());
+  ui->ledUseInputDataMoreFarmStructure->setText(myObjUseApplications["ledUseInputDataMoreFarmStructure"].toString());
+  ui->ledUseInputDataMoreVariants->setText(myObjUseApplications["ledUseInputDataMoreVariants"].toString());
+
+  ui->tedUsePoliciesMostCases->setPlainText(myObjUseApplications["tedUsePoliciesMostCases"].toString());
+  ui->tedUsePoliciesMostRecently->setPlainText(myObjUseApplications["tedUsePoliciesMostRecently"].toString());
+  ui->tedUsePoliciesOther->setPlainText(myObjUseApplications["tedUsePoliciesOther"].toString());
+  ui->tedUseOtherAnalysis->setPlainText(myObjUseApplications["tedUseOtherAnalysis"].toString());
+
+  // Econ Result Indicators section
+
+  ui->tedEconIncomeRelated->setPlainText(myObjEconResultIndicators["tedEconIncomeRelated"].toString());
+  ui->tedEconProdCostRelated->setPlainText(myObjEconResultIndicators["tedEconProdCostRelated"].toString());
+  ui->tedEconOther->setPlainText(myObjEconResultIndicators["tedEconOther"].toString());
+
+  // Biophysical Links section
+
+  ui->tedBioPhysicalLinksLandTypes->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksLandTypes"].toString());
+  ui->tedBioPhysicalLinksLandUses->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksLandUses"].toString());
+  ui->tedBioPhysicalLinksManureMgmt->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksManureMgmt"].toString());
+  ui->tedBioPhysicalLinksWaterIndicators->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksWaterIndicators"].toString());
+  ui->tedBioPhysicalLinksAirIndicators->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksAirIndicators"].toString());
+  ui->tedBioPhysicalLinksSoilIndicators->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksSoilIndicators"].toString());
+  ui->tedBioPhysicalLinksBiodiversityFlora->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksBiodiversityFlora"].toString());
+  ui->tedBioPhysicalLinksBiodiversityFauna->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksBiodiversityFauna"].toString());
+  ui->tedBioPhysicalLinksLandscape->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksLandscape"].toString());
+  ui->tedBioPhysicalLinksOtherEnvironmental->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksOtherEnvironmental"].toString());
+  ui->tedBioPhysicalLinksOther->setPlainText(myObjBiophysicalLinks["tedBioPhysicalLinksOther"].toString());
+
+  // Integration section
+
+  ui->tedIntegrationNameOfModelLink->setPlainText(myObjIntegration["tedIntegrationNameOfModelLink"].toString());
+  ui->tedIntegrationDatabases->setPlainText(myObjIntegration["tedIntegrationDatabases"].toString());
+  ui->tedIntegrationGIS->setPlainText(myObjIntegration["tedIntegrationGIS"].toString());
+  ui->tedIntegrationLinkToClimateChange->setPlainText(myObjIntegration["tedIntegrationLinkToClimateChange"].toString());
+  ui->tedIntegrationLinkToFoodSecurity->setPlainText(myObjIntegration["tedIntegrationLinkToFoodSecurity"].toString());
+  ui->tedIntegrationOther->setPlainText(myObjIntegration["tedIntegrationOther"].toString());
+
+  // State of Development section
+
+  ui->tedStateOfDevRegionalCoverage->setPlainText(myObjStateOfDevelopment["tedStateOfDevRegionalCoverage"].toString());
+  ui->tedStateOfDevSectorCoverage->setPlainText(myObjStateOfDevelopment["tedStateOfDevSectorCoverage"].toString());
+  ui->tedStateOfDevMethodologicalEnhancements->setPlainText(myObjStateOfDevelopment["tedStateOfDevMethodologicalEnhancements"].toString());
+  ui->tedStateOfDevNewModules->setPlainText(myObjStateOfDevelopment["tedStateOfDevNewModules"].toString());
+  ui->tedStateOfDevOther->setPlainText(myObjStateOfDevelopment["tedStateOfDevOther"].toString());
+
+  // Property Rights section
+
+  ui->tedPropertyRightsAccessToCode->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToCode"].toString());
+  ui->tedPropertyRightsAccessToScenarios->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToScenarios"].toString());
+  ui->tedPropertyRightsAccessToInputData->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToInputData"].toString());
+  ui->tedPropertyRightsAccessToResultDataOutput->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToResultDataOutput"].toString());
+  ui->tedPropertyRightsAccessToParameters->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToParameters"].toString());
+  ui->tedPropertyRightsAccessToOther->setPlainText(myObjPropertyRights["tedPropertyRightsAccessToOther"].toString());
+
+  // Publications section
+
+  ui->tedPublicationsJournalPapers->setPlainText(myObjPublications["tedPublicationsJournalPapers"].toString());
+  ui->tedPublicationsConferencePresentations->setPlainText(myObjPublications["tedPublicationsConferencePresentations"].toString());
+  ui->tedPublicationsTechnicalPapers->setPlainText(myObjPublications["tedPublicationsTechnicalPapers"].toString());
+  ui->tedPublicationsPolicyPapers->setPlainText(myObjPublications["tedPublicationsPolicyPapers"].toString());
+  ui->tedPublicationsWebsites->setPlainText(myObjPublications["tedPublicationsWebsites"].toString());
+  ui->tedPublicationsOther->setPlainText(myObjPublications["tedPublicationsOther"].toString());
+
+  // More section
+
+  ui->tedMoreMoreBenefitsFromTradeM->setPlainText(myObjMore["tedMoreMoreBenefitsFromTradeM"].toString());
+  ui->tedMoreMoreBenefitsFromCropM->setPlainText(myObjMore["tedMoreMoreBenefitsFromCropM"].toString());
+  ui->tedMoreMoreBenefitsFromLiveM->setPlainText(myObjMore["tedMoreMoreBenefitsFromLiveM"].toString());
+  ui->tedMoreMoreBenefitsForTradeM->setPlainText(myObjMore["tedMoreMoreBenefitsForTradeM"].toString());
+  ui->tedMoreMoreBenefitsForCropM->setPlainText(myObjMore["tedMoreMoreBenefitsForCropM"].toString());
+  ui->tedMoreMoreBenefitsForLiveM->setPlainText(myObjMore["tedMoreMoreBenefitsForLiveM"].toString());
+  ui->tedMoreMoreExpectedEnhancements->setPlainText(myObjMore["tedMoreMoreExpectedEnhancements"].toString());
+  ui->tedMoreMoreMainChallenges->setPlainText(myObjMore["tedMoreMoreMainChallenges"].toString());
 
 }
 

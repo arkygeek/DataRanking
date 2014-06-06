@@ -475,7 +475,7 @@ p, li { white-space: pre-wrap; }
               <string>ex-ante evaluation</string>
              </property>
              <property name="checked">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
             </widget>
            </item>
@@ -498,7 +498,7 @@ p, li { white-space: pre-wrap; }
               <string>ex-post evaluation</string>
              </property>
              <property name="checked">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
             </widget>
            </item>
@@ -515,7 +515,7 @@ p, li { white-space: pre-wrap; }
               <string>Methodological Development</string>
              </property>
              <property name="checked">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
             </widget>
            </item>
@@ -911,7 +911,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="leTechnicalSmallestRegionalUnit">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="font">
                 <font>
@@ -1513,7 +1513,7 @@ variables and sources</string>
              <item>
               <widget class="QLineEdit" name="leTechnicalInputDataVariants">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1643,7 +1643,7 @@ variables and sources</string>
              <item>
               <widget class="QLineEdit" name="leTechnicalInputDataOtherNotes">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1683,7 +1683,7 @@ variables and sources</string>
              <item>
               <widget class="QLineEdit" name="leTechnicalInputDataLivestockProdn">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -1798,7 +1798,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="leTechnicalInputDataCropProdn">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2174,7 +2174,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="ledUseInputDataMoreGenNotes">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2214,7 +2214,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="ledUseInputDataMoreFarmTypes">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2251,7 +2251,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="ledUseInputDataMoreFarmStructure">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2288,7 +2288,7 @@ p, li { white-space: pre-wrap; }
              <item>
               <widget class="QLineEdit" name="ledUseInputDataMoreVariants">
                <property name="enabled">
-                <bool>false</bool>
+                <bool>true</bool>
                </property>
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2457,7 +2457,7 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>5</number>
           </property>
           <property name="tabSpacing">
            <number>1</number>
@@ -2467,7 +2467,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>424</width>
+             <width>735</width>
              <height>650</height>
             </rect>
            </property>
@@ -2669,8 +2669,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>498</width>
-             <height>470</height>
+             <width>750</width>
+             <height>589</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2853,8 +2853,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>490</width>
-             <height>356</height>
+             <width>750</width>
+             <height>589</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2952,8 +2952,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>401</width>
-             <height>356</height>
+             <width>750</width>
+             <height>589</height>
             </rect>
            </property>
            <attribute name="label">
@@ -3051,8 +3051,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>407</width>
-             <height>525</height>
+             <width>750</width>
+             <height>589</height>
             </rect>
            </property>
            <attribute name="label">
@@ -3307,12 +3307,12 @@ p, li { white-space: pre-wrap; }
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>745</x>
-     <y>715</y>
+     <x>784</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
-     <x>672</x>
-     <y>711</y>
+     <x>689</x>
+     <y>691</y>
     </hint>
    </hints>
   </connection>
@@ -3323,12 +3323,12 @@ p, li { white-space: pre-wrap; }
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>764</x>
-     <y>722</y>
+     <x>784</x>
+     <y>689</y>
     </hint>
     <hint type="destinationlabel">
-     <x>599</x>
-     <y>709</y>
+     <x>610</x>
+     <y>691</y>
     </hint>
    </hints>
   </connection>
