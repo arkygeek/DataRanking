@@ -15,6 +15,11 @@ public:
     explicit InputDataType(QWidget *parent = 0);
     ~InputDataType();
 
+private slots:
+    void on_toolButtonDatabase_clicked();
+    void on_toolButtonTextFile_clicked();
+    void on_toolButtonEmbedded_clicked();
+
 private:
     Ui::InputDataType *ui;
 };

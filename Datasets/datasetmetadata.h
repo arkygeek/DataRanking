@@ -2,6 +2,7 @@
 #define DATASETMETADATA_H
 
 #include <QMainWindow>
+#include <QTreeWidgetItem>
 
 namespace Ui {
 class DatasetMetaData;
@@ -14,6 +15,12 @@ class DatasetMetaData : public QMainWindow
 public:
     explicit DatasetMetaData(QWidget *parent = 0);
     ~DatasetMetaData();
+
+private slots:
+    
+    void on_treeWidget_itemSelectionChanged();
+
+    void on_toolButtonInsertVariable_clicked();
 
 private:
     Ui::DatasetMetaData *ui;

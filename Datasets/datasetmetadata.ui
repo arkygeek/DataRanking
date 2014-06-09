@@ -6,80 +6,721 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>984</width>
-    <height>880</height>
+    <width>900</width>
+    <height>875</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>900</width>
+    <height>875</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>DatasetMetaData</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_57">
-    <item row="1" column="1">
-     <widget class="QToolButton" name="toolButtonDatasetEdit">
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Push to see full details for dataset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="text">
-       <string>Edit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="pbAuthenticate">
-      <property name="maximumSize">
-       <size>
-        <width>110</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>Authenticate</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="2">
-     <widget class="QPushButton" name="pbSyncToCloud">
-      <property name="text">
-       <string>Sync to Cloud</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="2">
-     <widget class="QPushButton" name="pbLoad">
-      <property name="text">
-       <string>Load</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QTabWidget" name="tabWidgetDataClassification">
+   <layout class="QGridLayout" name="gridLayout_15">
+    <item row="0" column="0">
+     <widget class="QTreeWidget" name="treeWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
+        <horstretch>5</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <column>
+       <property name="text">
+        <string>Dataset</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>Overview</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Management</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Phenology</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Previous Crop</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Initial Values</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Soil</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Site</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Weather</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>State Variables</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Crop (SV)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Soil (SV)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Surface Fluxes (SV)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Observations (SV)</string>
+        </property>
+       </item>
+      </item>
+      <item>
+       <property name="text">
+        <string>Seasons</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QComboBox" name="cbUser">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <item>
+       <property name="text">
+        <string>If not listed, select Register</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jason Jorgenson</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Register</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="4">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>7</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
       <property name="minimumSize">
        <size>
-        <width>684</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-       </font>
+      <property name="maximumSize">
+       <size>
+        <width>760</width>
+        <height>690</height>
+       </size>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="tabDataset">
-       <attribute name="title">
-        <string>Dataset</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_17">
+      <widget class="QWidget" name="Overview">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="lblDatasetDatasetName">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Dataset Name</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetDatasetName">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButtonCitation">
+            <property name="text">
+             <string>Citation</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetVersion">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Version</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetVersion">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="lblDatasetSubmitter">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Submitter</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetSubmitter">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetEmail">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>eMail</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetEmail">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetSubmitted">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Submitted</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="dteDatasetSubmitted">
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
         <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QCheckBox" name="chbxDatasetPeriodOfRecord">
+            <property name="text">
+             <string>Period of Record</string>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEditFrom">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="dateTime">
+             <datetime>
+              <hour>0</hour>
+              <minute>0</minute>
+              <second>0</second>
+              <year>1974</year>
+              <month>6</month>
+              <day>1</day>
+             </datetime>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetTo">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>to</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDateEdit" name="dateEditTo">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
+            <property name="dateTime">
+             <datetime>
+              <hour>0</hour>
+              <minute>0</minute>
+              <second>0</second>
+              <year>1999</year>
+              <month>12</month>
+              <day>1</day>
+             </datetime>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetWebLink">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Web Link</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetWebLink">
+            <property name="inputMethodHints">
+             <set>Qt::ImhUrlCharactersOnly</set>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout8">
+          <item>
+           <widget class="QLabel" name="lblDatasetTemporalScale">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Temporal Scale</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cbDatasetTemporalScale">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="currentIndex">
+             <number>4</number>
+            </property>
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Seconds</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Hours</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Minutes</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Days</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Months</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Weeks</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Years</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Decades</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Centuries</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblDatasetUsageRestrictions">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Usage Restriction Notes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ledDatasetUsageRestrictions">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <widget class="QGroupBox" name="gbDatasetOverview">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>2</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string/>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_17">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QSplitter" name="splitter_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <widget class="QSplitter" name="splitter">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QWidget" name="">
+               <layout class="QVBoxLayout" name="verticalLayout">
+                <item>
+                 <widget class="QLabel" name="lblDatasetCoverage">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Coverage Notes</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>tedDatasetCoverage</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTextEdit" name="tedDatasetCoverage">
+                  <property name="html">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Coverage Notes</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="">
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QLabel" name="lblDatasetResolution">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Resolution Notes</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>tedDatasetResolution</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTextEdit" name="tedDatasetResolution">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="html">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+             <widget class="QSplitter" name="splitter_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <widget class="QWidget" name="">
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <widget class="QLabel" name="lblDatasetComments">
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Comments</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>tedDatasetComments</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTextEdit" name="tedDatasetComments">
+                  <property name="html">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="">
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_19">
+                  <item>
+                   <widget class="QLabel" name="lblVariables">
+                    <property name="font">
+                     <font>
+                      <pointsize>11</pointsize>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Variables</string>
+                    </property>
+                    <property name="buddy">
+                     <cstring>listWidgetVariables</cstring>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="lblDatasetInsert">
+                    <property name="font">
+                     <font>
+                      <family>Arial</family>
+                      <pointsize>11</pointsize>
+                      <italic>true</italic>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Insert variable:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="ledDatasetInsertVariable"/>
+                  </item>
+                  <item>
+                   <widget class="QToolButton" name="toolButtonInsertVariable">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to insert a variable below&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="text">
+                     <string>CSV</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QListWidget" name="listWidgetVariables">
+                  <property name="dragDropMode">
+                   <enum>QAbstractItemView::DragDrop</enum>
+                  </property>
+                  <property name="defaultDropAction">
+                   <enum>Qt::CopyAction</enum>
+                  </property>
+                  <property name="alternatingRowColors">
+                   <bool>true</bool>
+                  </property>
+                  <property name="selectionMode">
+                   <enum>QAbstractItemView::MultiSelection</enum>
+                  </property>
+                  <property name="modelColumn">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="5" column="0">
          <widget class="QGroupBox" name="gbDatasetDataTypes">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1338,682 +1979,15 @@
           </layout>
          </widget>
         </item>
-        <item row="1" column="0">
-         <widget class="QGroupBox" name="gbDatasetOverview">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>2</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="title">
-           <string/>
-          </property>
-          <property name="flat">
-           <bool>true</bool>
-          </property>
-          <layout class="QGridLayout" name="gridLayout4">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="horizontalSpacing">
-            <number>-1</number>
-           </property>
-           <property name="verticalSpacing">
-            <number>0</number>
-           </property>
-           <item row="2" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_17">
-             <item>
-              <widget class="QLabel" name="lblDatasetSubmitter">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Submitter</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetSubmitter">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetEmail">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>eMail</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetEmail">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetSubmitted">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Submitted</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QDateTimeEdit" name="dteDatasetSubmitted">
-               <property name="frame">
-                <bool>false</bool>
-               </property>
-               <property name="calendarPopup">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="5" column="0">
-            <layout class="QVBoxLayout" name="verticalLayout_8">
-             <item>
-              <widget class="QLabel" name="lblDatasetCoverage">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Coverage Notes</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QTextEdit" name="tedDatasetCoverage">
-               <property name="html">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetResolution">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Resolution Notes</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QTextEdit" name="tedDatasetResolution">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="html">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="1" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <item>
-              <widget class="QLabel" name="lblDatasetDatasetName">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Dataset Name</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetDatasetName">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButtonCitation">
-               <property name="text">
-                <string>Citation</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetVersion">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Version</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetVersion">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="5" column="1">
-            <layout class="QVBoxLayout" name="verticalLayout_9">
-             <item>
-              <widget class="QLabel" name="lblDatasetComments">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Comments</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QTextEdit" name="tedDatasetComments">
-               <property name="html">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.Lucida Grande UI'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QVBoxLayout" name="verticalLayout_10">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_19">
-                 <item>
-                  <widget class="QLabel" name="lblVariables">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Variables</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="lblDatasetInsert">
-                   <property name="font">
-                    <font>
-                     <family>Arial</family>
-                     <pointsize>11</pointsize>
-                     <italic>true</italic>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Insert variable:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="ledDatasetInsertVariable"/>
-                 </item>
-                 <item>
-                  <widget class="QToolButton" name="toolButtonInsertVariable">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;click to insert a variable below&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>...</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <widget class="QListWidget" name="listWidgetVariables">
-                 <property name="dragDropMode">
-                  <enum>QAbstractItemView::DragDrop</enum>
-                 </property>
-                 <property name="defaultDropAction">
-                  <enum>Qt::CopyAction</enum>
-                 </property>
-                 <property name="alternatingRowColors">
-                  <bool>true</bool>
-                 </property>
-                 <property name="selectionMode">
-                  <enum>QAbstractItemView::MultiSelection</enum>
-                 </property>
-                 <property name="modelColumn">
-                  <number>0</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item row="3" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout0">
-             <item>
-              <widget class="QCheckBox" name="chbxDatasetPeriodOfRecord">
-               <property name="text">
-                <string>Period of Record</string>
-               </property>
-               <property name="checked">
-                <bool>false</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout1">
-               <item>
-                <widget class="QDateEdit" name="dateEditFrom">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>10</pointsize>
-                  </font>
-                 </property>
-                 <property name="frame">
-                  <bool>false</bool>
-                 </property>
-                 <property name="dateTime">
-                  <datetime>
-                   <hour>0</hour>
-                   <minute>0</minute>
-                   <second>0</second>
-                   <year>1974</year>
-                   <month>6</month>
-                   <day>1</day>
-                  </datetime>
-                 </property>
-                 <property name="calendarPopup">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="lblDatasetTo">
-                 <property name="font">
-                  <font>
-                   <pointsize>11</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>to</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QDateEdit" name="dateEditTo">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>10</pointsize>
-                  </font>
-                 </property>
-                 <property name="frame">
-                  <bool>false</bool>
-                 </property>
-                 <property name="dateTime">
-                  <datetime>
-                   <hour>0</hour>
-                   <minute>0</minute>
-                   <second>0</second>
-                   <year>1999</year>
-                   <month>12</month>
-                   <day>1</day>
-                  </datetime>
-                 </property>
-                 <property name="calendarPopup">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="lblDatasetWebLink">
-                 <property name="font">
-                  <font>
-                   <pointsize>11</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Web Link</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="ledDatasetWebLink">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhUrlCharactersOnly</set>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-           <item row="4" column="0" colspan="2">
-            <layout class="QHBoxLayout" name="horizontalLayout8">
-             <item>
-              <widget class="QLabel" name="lblDatasetTemporalScale">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Temporal Scale</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbDatasetTemporalScale">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="currentIndex">
-                <number>4</number>
-               </property>
-               <item>
-                <property name="text">
-                 <string>None</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Seconds</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Hours</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Minutes</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Days</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Months</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Weeks</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Years</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Decades</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Centuries</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="lblDatasetUsageRestrictions">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Usage Restriction Notes</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="ledDatasetUsageRestrictions">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                 <horstretch>1</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QComboBox" name="cbDatasetName">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
-          <property name="currentText">
-           <string>Select Dataset</string>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <property name="modelColumn">
-           <number>0</number>
-          </property>
-          <item>
-           <property name="text">
-            <string>Select Dataset</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CMAP</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>I-COADS</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>CRU TS 2.0</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Dai</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>HadISST</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Hulme (CRU)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Jones (CRU) Air Temperature</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Jones (CRU) SLP</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Kaplan (SLP)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Kaplan (SST)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Lucas and Waliser Satellite ECT-Corrected OLR</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NCAR Sea Level Pressure</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>NCEP/NCAR Reanalysis</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Reynold Reconstructed SST</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Reynolds Optimum Interpolation (OI) SST</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Reynolds Optimum Interpolation Ver. 2 (OI.v2) SST</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Smith and Reynolds Extended Reconstructed SLP (ERSLP)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Smith and Reynolds Extended Reconstructed SST (ERSST)</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Other</string>
-           </property>
-          </item>
-         </widget>
-        </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabManagement">
-       <attribute name="title">
-        <string>Management</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout5">
-        <item row="2" column="1">
-         <spacer name="vspMgmt">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0" rowspan="2" colspan="2">
+      <widget class="QWidget" name="Management">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxManagement">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-            <horstretch>0</horstretch>
+            <horstretch>4</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
@@ -2030,10 +2004,10 @@ p, li { white-space: pre-wrap; }
            <bool>false</bool>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout">
            <item row="6" column="1" colspan="2">
@@ -2271,14 +2245,24 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabPhenology">
-       <attribute name="title">
-        <string>Phenology</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout7">
-        <item row="0" column="0" rowspan="2">
+      <widget class="QWidget" name="Phenology">
+       <layout class="QGridLayout" name="gridLayout_14">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxPhenology">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2290,10 +2274,10 @@ p, li { white-space: pre-wrap; }
            <string>Phenology</string>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout8">
            <item row="3" column="1">
@@ -2406,8 +2390,8 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="3" column="0" colspan="2">
-         <spacer name="verticalSpacerPhenology">
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -2419,36 +2403,20 @@ p, li { white-space: pre-wrap; }
           </property>
          </spacer>
         </item>
-        <item row="2" column="0" colspan="2">
-         <widget class="QTextBrowser" name="textBrowserJSON">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>1</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;this is temporary - used only to test the JSON write function. click View JSON to populate/update.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabPrevCrop">
-       <attribute name="title">
-        <string>Prev. Crop</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_30">
-        <item row="0" column="0" rowspan="2" alignment="Qt::AlignTop">
+      <widget class="QWidget" name="PrevCrop">
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxPrevCrop">
           <property name="title">
            <string>Previous Crop</string>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayoutSoil">
            <item row="7" column="1">
@@ -2584,8 +2552,8 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="2" column="0">
-         <spacer name="verticalSpacerPrevCropLeft">
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_3">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -2599,25 +2567,9 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabInitialValues">
-       <attribute name="title">
-        <string>Initial Values</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_39">
-        <item row="1" column="2">
-         <spacer name="verticalSpacerInitialValuesRight">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>79</width>
-            <height>281</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="0" column="0" colspan="3">
+      <widget class="QWidget" name="InitialValues">
+       <layout class="QGridLayout" name="gridLayout_12">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxInitialValues">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2626,13 +2578,13 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="title">
-           <string>Edit</string>
+           <string>Initial Values</string>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayoutSite">
            <item row="0" column="1">
@@ -2778,14 +2730,24 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabSoil">
-       <attribute name="title">
-        <string>Soil</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_40">
-        <item row="0" column="0" rowspan="2">
+      <widget class="QWidget" name="Soil">
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxSoil">
           <property name="title">
            <string>Soil</string>
@@ -3190,8 +3152,8 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="2" column="0">
-         <spacer name="verticalSpacerSoilLeft">
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_5">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -3205,21 +3167,18 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabSite">
-       <attribute name="title">
-        <string>Site</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_42">
-        <item row="0" column="0" rowspan="2" colspan="3">
+      <widget class="QWidget" name="Site">
+       <layout class="QGridLayout" name="gridLayout_10">
+        <item row="0" column="0">
          <widget class="QGroupBox" name="gbxSite">
           <property name="title">
-           <string>Edit</string>
+           <string>Site</string>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayoutStateVars">
            <item row="5" column="1">
@@ -3322,8 +3281,8 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="2" column="0" colspan="3">
-         <spacer name="verticalSpacer_3">
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_7">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -3337,12 +3296,9 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabWeather">
-       <attribute name="title">
-        <string>Weather</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_43">
-        <item row="0" column="0" rowspan="2" alignment="Qt::AlignTop">
+      <widget class="QWidget" name="Weather">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="1" column="0">
          <widget class="QGroupBox" name="gbxWeather">
           <property name="font">
            <font>
@@ -3350,13 +3306,13 @@ p, li { white-space: pre-wrap; }
            </font>
           </property>
           <property name="title">
-           <string>Edit</string>
+           <string>Weather</string>
           </property>
           <property name="checkable">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <property name="checked">
-           <bool>true</bool>
+           <bool>false</bool>
           </property>
           <layout class="QGridLayout" name="gridLayout_44">
            <item row="0" column="0">
@@ -4208,1187 +4164,1254 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="2" column="0" colspan="2">
-         <spacer name="verticalSpacerWeather">
+        <item row="2" column="0">
+         <spacer name="verticalSpacer_8">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>635</width>
-            <height>95</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabStateVars">
-       <attribute name="title">
-        <string>State Vars</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_45">
-        <item row="0" column="0" rowspan="4">
-         <widget class="QToolBox" name="toolBoxStateVars">
-          <property name="enabled">
-           <bool>true</bool>
+      <widget class="QWidget" name="SVCrop">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="gbxSVCrop">
+          <property name="title">
+           <string>Crop (SV)</string>
           </property>
-          <property name="currentIndex">
-           <number>0</number>
+          <property name="checkable">
+           <bool>false</bool>
           </property>
-          <property name="tabSpacing">
-           <number>0</number>
+          <property name="checked">
+           <bool>false</bool>
           </property>
-          <widget class="QWidget" name="pageCrop">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>903</width>
-             <height>564</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Crop</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_46">
-            <item row="1" column="0">
-             <widget class="QGroupBox" name="gbxSVCrop">
-              <property name="title">
-               <string>Edit</string>
-              </property>
-              <property name="checkable">
-               <bool>false</bool>
-              </property>
-              <property name="checked">
-               <bool>false</bool>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_47">
-               <item row="0" column="0" colspan="2">
-                <layout class="QGridLayout" name="gridLayoutSVCropInputs">
-                 <item row="2" column="2">
-                  <widget class="QLineEdit" name="ledSVCropYield"/>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="QLineEdit" name="lineEdit_6"/>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVCropLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropAGrBiomass">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>a.gr. biomass</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="4">
-                  <widget class="QLabel" name="lblSVCropObservationsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Obsrvns</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="8" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropLAIReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="5">
-                  <widget class="QLabel" name="lblSVCropReplicatesHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Replicates</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="8" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropLAI">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>LAI</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropNInOrgans">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N in organs</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropNInAGrBiomass">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N in a.gr.biomass</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="8" column="4">
-                  <widget class="QSpinBox" name="sbSVCropLAIObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansLayers">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassLayers">
-                   <property name="value">
-                    <double>1.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="4">
-                  <widget class="QSpinBox" name="sbSVCropNInAGrBiomassObservations">
-                   <property name="value">
-                    <number>5</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="4">
-                  <widget class="QSpinBox" name="sbSVCropRootBiomassObservations">
-                   <property name="value">
-                    <number>4</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropRootBiomass">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>root biomass</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="4">
-                  <widget class="QSpinBox" name="sbSVCropAGrBiomassObservations">
-                   <property name="value">
-                    <number>5</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="4">
-                  <widget class="QSpinBox" name="sbSVCropWeightOrgansObservations">
-                   <property name="value">
-                    <number>5</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="4">
-                  <widget class="QSpinBox" name="sbSVCropNInOrgansObservations">
-                   <property name="value">
-                    <number>5</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropWeightOrgans">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>weight organs</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansLayers">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVCropYield">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Yield </string>
-                   </property>
-                   <property name="checked">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="4">
-                  <widget class="QSpinBox" name="sbSVCropYieldObservations">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>12</pointsize>
-                    </font>
-                   </property>
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="value">
-                    <number>1</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVCropYieldReplicates">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="2">
-                  <widget class="QLineEdit" name="lineEdit_8"/>
-                 </item>
-                 <item row="5" column="2">
-                  <widget class="QLineEdit" name="lineEdit_9"/>
-                 </item>
-                 <item row="6" column="2">
-                  <widget class="QLineEdit" name="ledSVCropNInAGrBiomass"/>
-                 </item>
-                 <item row="7" column="2">
-                  <widget class="QLineEdit" name="lineEdit_11"/>
-                 </item>
-                 <item row="8" column="2">
-                  <widget class="QLineEdit" name="lineEdit_12"/>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="lblSVCropMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Notes</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item row="2" column="0" rowspan="2">
-                <widget class="QTextBrowser" name="txbrSVCrop">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                   <horstretch>1</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="readOnly">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <spacer name="verticalSpacerSVCrop">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="pageSoil">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>903</width>
-             <height>564</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Soil</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_48">
-            <item row="0" column="0">
-             <widget class="QGroupBox" name="gbxSVSoil">
-              <property name="title">
-               <string>Complete</string>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_49">
-               <item row="3" column="0" colspan="2">
-                <spacer name="verticalSpacerSVSoil">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="0" colspan="2">
-                <layout class="QGridLayout" name="gridLayoutSVSoilInputs">
-                 <item row="1" column="2">
-                  <widget class="QLineEdit" name="lineEdit_13"/>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilPressureHeads">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>pressure heads</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilSoilWaterSensorCalObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>300</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilWaterFluxBottomRoot">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>water flux bottom root</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilWaterFluxBottomRootObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootReplicates"/>
-                 </item>
-                 <item row="2" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsReplicates">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilNMin">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Nmin</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilNMinObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>6</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinReplicates">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilSoilWaterSensorCal">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>soil water sensor cal</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalReplicates">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVSoilLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="4">
-                  <widget class="QLabel" name="lblSVSoilObservationsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Observations</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilPressureHeadsObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>100</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilSoilWaterGravObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>6</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravReplicates">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="5">
-                  <widget class="QLabel" name="lblSVSoilReplicatesHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Replicates</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilSoilWaterGrav">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>soil water grav.</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="0">
-                  <widget class="QCheckBox" name="chbxSVSoilNFluxBottomRoot">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N flux bottom root</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="4">
-                  <widget class="QSpinBox" name="sbSVSoilNFluxBottomRootObservations">
-                   <property name="maximum">
-                    <number>999999</number>
-                   </property>
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="5">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootReplicates"/>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravLayers">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsLayers">
-                   <property name="value">
-                    <double>5.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilNMinLayers">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalLayers">
-                   <property name="enabled">
-                    <bool>true</bool>
-                   </property>
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="lblSVSoilMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
-                   </property>
-                   <property name="text">
-                    <string>Notes</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="2">
-                  <widget class="QLineEdit" name="lineEdit_14"/>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="QLineEdit" name="lineEdit_15"/>
-                 </item>
-                 <item row="4" column="2">
-                  <widget class="QLineEdit" name="lineEdit_16"/>
-                 </item>
-                 <item row="5" column="2">
-                  <widget class="QLineEdit" name="lineEdit_17"/>
-                 </item>
-                 <item row="6" column="2">
-                  <widget class="QLineEdit" name="lineEdit_18"/>
-                 </item>
-                </layout>
-               </item>
-               <item row="1" column="0" rowspan="2">
-                <widget class="QTextBrowser" name="txbrSVSoil">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                   <horstretch>1</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="readOnly">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="surfaceFluxesPage">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>903</width>
-             <height>564</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Surface Fluxes</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_50">
-            <item row="1" column="0">
-             <widget class="QGroupBox" name="gbxSVSurfaceFluxes">
-              <property name="title">
-               <string>Edit</string>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_51">
-               <item row="3" column="0" colspan="2">
-                <spacer name="verticalSpacer_6">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>468</width>
-                   <height>6</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="0" colspan="2">
-                <layout class="QGridLayout" name="gridLayoutSVSurfaceFluxesInputs">
-                 <item row="5" column="1">
-                  <widget class="QLineEdit" name="lineEdit3"/>
-                 </item>
-                 <item row="4" column="1">
-                  <widget class="QLineEdit" name="lineEdit2"/>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit_19"/>
-                 </item>
-                 <item row="6" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNOLossObservations"/>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N2O Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCH4LossWeighting">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2LossWeighting">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesN2OLossWeighting">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNH3LossWeighting">
-                   <property name="value">
-                    <double>2.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesEtWeighting">
-                   <property name="value">
-                    <double>3.000000000000000</double>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>N2 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesNH3LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCH4LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNH3Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>NH3 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesObservationsHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Observations</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="3">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesWeightingHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Weight Pts</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesEt">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>ET</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
-                   <property name="value">
-                    <number>0</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="5" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCH4Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>CH4 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesNOLossWeighting"/>
-                 </item>
-                 <item row="6" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesNOLoss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>NO Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="0">
-                  <widget class="QCheckBox" name="chbxSVSurfaceFluxesCO2Loss">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>CO2 Loss</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="2">
-                  <widget class="QSpinBox" name="sbSVSurfaceFluxesCO2LossObservations"/>
-                 </item>
-                 <item row="7" column="3">
-                  <widget class="QDoubleSpinBox" name="dsbSVSurfaceFluxesCO2LossWeighting"/>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit0"/>
-                 </item>
-                 <item row="7" column="1">
-                  <widget class="QLineEdit" name="lineEdit5"/>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit1"/>
-                 </item>
-                 <item row="6" column="1">
-                  <widget class="QLineEdit" name="lineEdit4"/>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="lblSVSurfaceFluxesMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Min data?</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item row="1" column="0" rowspan="2">
-                <widget class="QTextBrowser" name="txbrSVSurfaceFluxes">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                   <horstretch>1</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="readOnly">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="pageObservations">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>903</width>
-             <height>564</height>
-            </rect>
-           </property>
-           <attribute name="label">
-            <string>Observations</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_52">
-            <item row="0" column="0">
-             <widget class="QGroupBox" name="gbxSVObservations">
-              <property name="title">
-               <string>Edit</string>
-              </property>
-              <property name="checkable">
-               <bool>true</bool>
-              </property>
-              <property name="checked">
-               <bool>true</bool>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_53">
-               <item row="1" column="0">
-                <spacer name="verticalSpacerSVObservations">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="0" colspan="2">
-                <layout class="QGridLayout" name="gridLayoutSVObservationsInputs">
-                 <item row="1" column="1">
-                  <widget class="QLineEdit" name="lineEdit6"/>
-                 </item>
-                 <item row="4" column="1">
-                  <widget class="QLineEdit" name="lineEdit9"/>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="lblSVObservationsLayersHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Layers</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="lblSVObservationsMinDataHeader">
-                   <property name="font">
-                    <font>
-                     <pointsize>11</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Min data?</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="0">
-                  <widget class="QCheckBox" name="chbxSVObservationsDamages">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Damages</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="chbxSVObservationsPestsOrDiseases">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Pests/Diseases</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QCheckBox" name="chbxSVObservationsLodging">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Lodging</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="4" column="0">
-                  <widget class="QCheckBox" name="chbxSVObservationsWeeds">
-                   <property name="layoutDirection">
-                    <enum>Qt::RightToLeft</enum>
-                   </property>
-                   <property name="text">
-                    <string>Weeds</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="1">
-                  <widget class="QLineEdit" name="lineEdit7"/>
-                 </item>
-                 <item row="3" column="1">
-                  <widget class="QLineEdit" name="lineEdit8"/>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
+          <layout class="QGridLayout" name="gridLayout_47">
+           <item row="0" column="0" colspan="2">
+            <layout class="QGridLayout" name="gridLayoutSVCropInputs">
+             <item row="2" column="2">
+              <widget class="QLineEdit" name="ledSVCropYield"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLineEdit" name="lineEdit_6"/>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="lblSVCropLayersHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Layers</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="chbxSVCropAGrBiomass">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>a.gr. biomass</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLabel" name="lblSVCropObservationsHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Obsrvns</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropLAIReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLabel" name="lblSVCropReplicatesHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Replicates</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropNInAGrBiomassReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QCheckBox" name="chbxSVCropLAI">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>LAI</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QCheckBox" name="chbxSVCropNInOrgans">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>N in organs</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QCheckBox" name="chbxSVCropNInAGrBiomass">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>N in a.gr.biomass</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="4">
+              <widget class="QSpinBox" name="sbSVCropLAIObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSVCropNInOrgansLayers">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>2.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSVCropRootBiomassLayers">
+               <property name="value">
+                <double>1.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="4">
+              <widget class="QSpinBox" name="sbSVCropNInAGrBiomassObservations">
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="4">
+              <widget class="QSpinBox" name="sbSVCropRootBiomassObservations">
+               <property name="value">
+                <number>4</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QCheckBox" name="chbxSVCropRootBiomass">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>root biomass</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="4">
+              <widget class="QSpinBox" name="sbSVCropAGrBiomassObservations">
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="4">
+              <widget class="QSpinBox" name="sbSVCropWeightOrgansObservations">
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropAGrBiomassReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="4">
+              <widget class="QSpinBox" name="sbSVCropNInOrgansObservations">
+               <property name="value">
+                <number>5</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="chbxSVCropWeightOrgans">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>weight organs</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="3">
+              <widget class="QDoubleSpinBox" name="dsbSVCropWeightOrgansLayers">
+               <property name="value">
+                <double>2.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="chbxSVCropYield">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Check if Minimum Data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>Yield </string>
+               </property>
+               <property name="checked">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="4">
+              <widget class="QSpinBox" name="sbSVCropYieldObservations">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="value">
+                <number>1</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <widget class="QDoubleSpinBox" name="dsbSVCropYieldReplicates">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="value">
+                <double>3.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLineEdit" name="lineEdit_8"/>
+             </item>
+             <item row="5" column="2">
+              <widget class="QLineEdit" name="lineEdit_9"/>
+             </item>
+             <item row="6" column="2">
+              <widget class="QLineEdit" name="ledSVCropNInAGrBiomass"/>
+             </item>
+             <item row="7" column="2">
+              <widget class="QLineEdit" name="lineEdit_11"/>
+             </item>
+             <item row="8" column="2">
+              <widget class="QLineEdit" name="lineEdit_12"/>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="lblSVCropMinDataHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Notes</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="0" rowspan="2">
+            <widget class="QTextBrowser" name="txbrSVCrop">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <spacer name="verticalSpacerSVCrop">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
          </widget>
         </item>
-        <item row="1" column="1">
-         <spacer name="verticalSpacer_5">
+       </layout>
+      </widget>
+      <widget class="QWidget" name="SVSoil">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="gbxSVSoil">
+          <property name="title">
+           <string>Soil (SV)</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_16">
+           <item row="0" column="1">
+            <widget class="QLabel" name="lblSVSoilMinDataHeader">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>Notes</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lblSVSoilLayersHeader">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Layers</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="lblSVSoilObservationsHeader">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Obsrvns</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="lblSVSoilReplicatesHeader">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Replicates</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilSoilWaterGrav">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>soil water grav.</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_13">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>5</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravLayers">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QSpinBox" name="sbSVSoilSoilWaterGravObservations">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>6</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterGravReplicates">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilPressureHeads">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>pressure heads</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_14"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsLayers">
+             <property name="value">
+              <double>5.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QSpinBox" name="sbSVSoilPressureHeadsObservations">
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilPressureHeadsReplicates">
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilNMin">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>Nmin</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEdit_15"/>
+           </item>
+           <item row="3" column="2">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilNMinLayers">
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QSpinBox" name="sbSVSoilNMinObservations">
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>6</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilNMinReplicates">
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilSoilWaterSensorCal">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>soil water sensor cal</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_16"/>
+           </item>
+           <item row="4" column="2">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalLayers">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QSpinBox" name="sbSVSoilSoilWaterSensorCalObservations">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>300</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilSoilWaterSensorCalReplicates">
+             <property name="value">
+              <double>3.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilWaterFluxBottomRoot">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>water flux bottom root</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_17"/>
+           </item>
+           <item row="5" column="3">
+            <widget class="QSpinBox" name="sbSVSoilWaterFluxBottomRootObservations">
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilWaterFluxBottomRootReplicates"/>
+           </item>
+           <item row="6" column="0">
+            <widget class="QCheckBox" name="chbxSVSoilNFluxBottomRoot">
+             <property name="layoutDirection">
+              <enum>Qt::RightToLeft</enum>
+             </property>
+             <property name="text">
+              <string>N flux bottom root</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="lineEdit_18"/>
+           </item>
+           <item row="6" column="3">
+            <widget class="QSpinBox" name="sbSVSoilNFluxBottomRootObservations">
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="4">
+            <widget class="QDoubleSpinBox" name="dsbSVSoilNFluxBottomRootReplicates"/>
+           </item>
+           <item row="7" column="0" colspan="5">
+            <widget class="QTextBrowser" name="txbrSVSoil">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacerSVSoil">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>17</width>
-            <height>615</height>
+            <width>20</width>
+            <height>40</height>
            </size>
           </property>
          </spacer>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tabSeasons">
-       <attribute name="title">
-        <string>Seasons</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_54">
-        <item row="2" column="0">
+      <widget class="QWidget" name="SvSurfaceFluxes">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="gbxSVSurfaceFluxes">
+          <property name="title">
+           <string>Surface Fluxes (SV)</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_51">
+           <item row="0" column="0" colspan="2">
+            <layout class="QGridLayout" name="gridLayoutSVSurfaceFluxesInputs">
+             <item row="5" column="1">
+              <widget class="QLineEdit" name="lineEdit3"/>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="lineEdit2"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit_19"/>
+             </item>
+             <item row="6" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesNOLossObservations"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2OLoss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>N2O Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesN2Loss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>N2 Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesNH3LossObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesCH4LossObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesN2OLossObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesN2LossObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesNH3Loss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>NH3 Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="lblSVSurfaceFluxesObservationsHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Observations</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="lblSVSurfaceFluxesLayersHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Notes</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesEt">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>ET</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesEtObservations">
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesCH4Loss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>CH4 Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesNOLoss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>NO Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QCheckBox" name="chbxSVSurfaceFluxesCO2Loss">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>CO2 Loss</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="2">
+              <widget class="QSpinBox" name="sbSVSurfaceFluxesCO2LossObservations"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit0"/>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLineEdit" name="lineEdit5"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit1"/>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="lineEdit4"/>
+             </item>
+            </layout>
+           </item>
+           <item row="1" column="0" rowspan="2">
+            <widget class="QTextBrowser" name="txbrSVSurfaceFluxes">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>1</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="readOnly">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>468</width>
+            <height>6</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="SVObservations">
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="gbxSVObservations">
+          <property name="title">
+           <string>Observations (SV)</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_53">
+           <item row="0" column="0" colspan="2">
+            <layout class="QGridLayout" name="gridLayoutSVObservationsInputs">
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="lineEdit6"/>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="lineEdit9"/>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="lblSVObservationsLayersHeader">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Notes</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QCheckBox" name="chbxSVObservationsDamages">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>Damages</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="chbxSVObservationsPestsOrDiseases">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>Pests/Diseases</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QCheckBox" name="chbxSVObservationsLodging">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>Lodging</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QCheckBox" name="chbxSVObservationsWeeds">
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>Weeds</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="lineEdit7"/>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="lineEdit8"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="verticalSpacerSVObservations">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="Seasons">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="gbxSeasonsSites">
+          <property name="title">
+           <string>Sites</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_56">
+           <item row="3" column="4">
+            <widget class="QSpinBox" name="sbSeasonsMgmtPotentialNumber">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>4</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0" colspan="2">
+            <widget class="QLabel" name="lblSeasonsSitesZeroNTreatment">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>zero N treatment?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QLabel" name="lblSeasonsSitesSiteVariants">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>Site Variants</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="4">
+            <widget class="QSpinBox" name="sbSeasonsSiteVariantsNumber">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <widget class="QSpinBox" name="sbSeasonsSeasonsPerCropNumber">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>50</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="minimum">
+              <number>-1000</number>
+             </property>
+             <property name="maximum">
+              <number>1000</number>
+             </property>
+             <property name="value">
+              <number>6</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QLabel" name="lblSeasonsSitesSeasonsPerCrop">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Seasons per crop</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="4">
+            <widget class="QComboBox" name="cbSeasonsZeroNTreatment">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>55</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <item>
+              <property name="text">
+               <string>No</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Yes</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QLabel" name="lblSeasonsSitesNumber">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Number</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QLabel" name="lblSeasonsMgmtPotential">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="text">
+              <string>Management Potential</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="2">
+            <widget class="QLineEdit" name="lineEdit_69"/>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLineEdit" name="lineEdit_68"/>
+           </item>
+           <item row="2" column="2">
+            <widget class="QLineEdit" name="lineEdit_67"/>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLineEdit" name="lineEdit_66"/>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lblSeasonsTreatmentsTotal">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Notes</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
          <widget class="QGroupBox" name="gbxSeasonsTreatments">
           <property name="font">
            <font>
@@ -6083,234 +6106,74 @@ p, li { white-space: pre-wrap; }
           </layout>
          </widget>
         </item>
-        <item row="3" column="0">
-         <spacer name="verticalSpacerSeasons">
+        <item row="2" column="0">
+         <spacer name="verticalSpacer_9">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>65</height>
+            <height>40</height>
            </size>
           </property>
          </spacer>
-        </item>
-        <item row="1" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayoutSeasonsTop">
-          <item>
-           <widget class="QGroupBox" name="gbxSeasonsSites">
-            <property name="title">
-             <string>Sites</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_56">
-             <item row="3" column="4">
-              <widget class="QSpinBox" name="sbSeasonsMgmtPotentialNumber">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="value">
-                <number>4</number>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="0" colspan="2">
-              <widget class="QLabel" name="lblSeasonsSitesZeroNTreatment">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>zero N treatment?</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0" colspan="2">
-              <widget class="QLabel" name="lblSeasonsSitesSiteVariants">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>Site Variants</string>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="4">
-              <widget class="QSpinBox" name="sbSeasonsSiteVariantsNumber">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;soils, hydrology, etc&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="value">
-                <number>1</number>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="4">
-              <widget class="QSpinBox" name="sbSeasonsSeasonsPerCropNumber">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>50</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of observations&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="minimum">
-                <number>-1000</number>
-               </property>
-               <property name="maximum">
-                <number>1000</number>
-               </property>
-               <property name="value">
-                <number>6</number>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="2">
-              <widget class="QLabel" name="lblSeasonsSitesSeasonsPerCrop">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Seasons per crop</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="4">
-              <widget class="QComboBox" name="cbSeasonsZeroNTreatment">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>55</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <item>
-                <property name="text">
-                 <string>No</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Yes</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="4">
-              <widget class="QLabel" name="lblSeasonsSitesNumber">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Number</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="0" colspan="2">
-              <widget class="QLabel" name="lblSeasonsMgmtPotential">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1 limited - 5 optimum&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="text">
-                <string>Management Potential</string>
-               </property>
-              </widget>
-             </item>
-             <item row="4" column="2">
-              <widget class="QLineEdit" name="lineEdit_69"/>
-             </item>
-             <item row="3" column="2">
-              <widget class="QLineEdit" name="lineEdit_68"/>
-             </item>
-             <item row="2" column="2">
-              <widget class="QLineEdit" name="lineEdit_67"/>
-             </item>
-             <item row="1" column="2">
-              <widget class="QLineEdit" name="lineEdit_66"/>
-             </item>
-             <item row="0" column="2">
-              <widget class="QLabel" name="lblSeasonsTreatmentsTotal">
-               <property name="font">
-                <font>
-                 <pointsize>9</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Notes</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-         </layout>
         </item>
        </layout>
       </widget>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="4" column="2">
+     <widget class="QPushButton" name="pbAuthenticate">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Authenticate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="pbSaveToFile">
+      <property name="text">
+       <string>Save to File</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QLabel" name="lblUser">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>please login or register</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="pbSyncToCloud">
+      <property name="text">
+       <string>Sync to Cloud</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="pbLoad">
+      <property name="text">
+       <string>Load</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="4">
      <widget class="QComboBox" name="cbDatasets">
       <property name="currentIndex">
        <number>1</number>
@@ -6327,52 +6190,130 @@ p, li { white-space: pre-wrap; }
       </item>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="lblUser">
-      <property name="font">
-       <font>
-        <pointsize>11</pointsize>
-        <italic>true</italic>
-       </font>
+    <item row="2" column="3">
+     <widget class="QToolButton" name="toolButtonDatasetEdit">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Push to see full details for dataset&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="text">
-       <string>please login or register</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+       <string>Edit</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
-     <widget class="QComboBox" name="cbUser">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+    <item row="2" column="0" colspan="3">
+     <widget class="QComboBox" name="cbDatasetName">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="currentText">
+       <string>Select Dataset</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="modelColumn">
+       <number>0</number>
       </property>
       <item>
        <property name="text">
-        <string>If not listed, select Register</string>
+        <string>Select Dataset</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Jason Jorgenson</string>
+        <string>CMAP</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Register</string>
+        <string>I-COADS</string>
        </property>
       </item>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="pbSaveToFile">
-      <property name="text">
-       <string>Save to File</string>
-      </property>
+      <item>
+       <property name="text">
+        <string>CRU TS 2.0</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dai</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>HadISST</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Hulme (CRU)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jones (CRU) Air Temperature</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jones (CRU) SLP</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kaplan (SLP)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kaplan (SST)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lucas and Waliser Satellite ECT-Corrected OLR</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>NCAR Sea Level Pressure</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>NCEP/NCAR Reanalysis</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reynold Reconstructed SST</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reynolds Optimum Interpolation (OI) SST</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Reynolds Optimum Interpolation Ver. 2 (OI.v2) SST</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Smith and Reynolds Extended Reconstructed SLP (ERSLP)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Smith and Reynolds Extended Reconstructed SST (ERSST)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Other</string>
+       </property>
+      </item>
      </widget>
     </item>
    </layout>
@@ -6382,7 +6323,7 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>984</width>
+     <width>900</width>
      <height>22</height>
     </rect>
    </property>

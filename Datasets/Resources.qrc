@@ -1,1 +1,15 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>folder-open.png</file>
+        <file>folder-box.png</file>
+        <file>folder-pencil.png</file>
+        <file>folder-format.png</file>
+        <file>Update.png</file>
+        <file>time1.png</file>
+        <file>time2Blue.png</file>
+        <file>text_file_icon_v2.png</file>
+        <file>NetworkPlus.png</file>
+        <file>Embedded.png</file>
+        <file>ManuallyEditTableIcon.png</file>
+    </qresource>
+</RCC>

@@ -13,8 +13,23 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        datasetmetadata.cpp
+        datasetmetadata.cpp \
+    inputdatatype.cpp \
+    inputdatatextfile.cpp \
+    inputdatadatabase.cpp \
+    inputdataembedded.cpp
 
-HEADERS  += datasetmetadata.h
+HEADERS  += datasetmetadata.h \
+    inputdatatype.h \
+    inputdatatextfile.h \
+    inputdatadatabase.h \
+    inputdataembedded.h
 
-FORMS    += datasetmetadata.ui
+FORMS    += datasetmetadata.ui \
+    inputdatatype.ui \
+    inputdatatextfile.ui \
+    inputdatadatabase.ui \
+    inputdataembedded.ui
+
+RESOURCES += \
+    Resources.qrc
