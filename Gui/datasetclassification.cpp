@@ -72,6 +72,12 @@ DatasetClassification::DatasetClassification(QWidget *parent) :
   ui->listView->setAlternatingRowColors(true);
   ui->listView->setModel(getListModel());
   ui->listView->setSelectionModel(new QItemSelectionModel(mpDRListModel,mpDRListModel));
+
+  QString myWelcomeText = "Dataset quality ranking software v0.9\nThis is an Alpha release.\n\nPlease enter your data";
+  QMessageBox myQMessageBox;
+
+  myQMessageBox.information(0, "Dataset quality ranking software", myWelcomeText, QMessageBox::Ok);
+
 }
 
 DatasetClassification::~DatasetClassification()
