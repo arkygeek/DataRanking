@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>820</width>
-    <height>883</height>
+    <height>919</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,7 +26,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="usesScrollButtons">
        <bool>true</bool>
@@ -1919,7 +1919,7 @@ p, li { white-space: pre-wrap; }
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="Resources.qrc">:/image/images/ORANI_DataStructure.png</pixmap>
+               <pixmap>:/image/images/ORANI_DataStructure.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -2467,7 +2467,7 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>735</width>
+             <width>424</width>
              <height>650</height>
             </rect>
            </property>
@@ -2669,8 +2669,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>589</height>
+             <width>498</width>
+             <height>470</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2768,8 +2768,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>589</height>
+             <width>218</width>
+             <height>584</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2853,8 +2853,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>589</height>
+             <width>490</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2952,8 +2952,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>750</width>
-             <height>589</height>
+             <width>401</width>
+             <height>356</height>
             </rect>
            </property>
            <attribute name="label">
@@ -3052,7 +3052,7 @@ p, li { white-space: pre-wrap; }
              <x>0</x>
              <y>0</y>
              <width>750</width>
-             <height>589</height>
+             <height>628</height>
             </rect>
            </property>
            <attribute name="label">
@@ -3296,9 +3296,7 @@ p, li { white-space: pre-wrap; }
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="Resources.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>chbxDiagramsFitToWindow</sender>

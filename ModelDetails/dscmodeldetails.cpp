@@ -23,6 +23,7 @@
 #include <QLabel>
 #include <QScrollArea>
 #include <QtWidgets>
+#include <QFileDialog>
 
 #ifndef QT_NO_PRINTER
 #include <QPrintDialog>
@@ -66,7 +67,7 @@ DscModelDetails::~DscModelDetails()
   delete ui;
 }
 
-void DscModelDetails::open()
+void DscModelDetails::openDiagramFile()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
                                     tr("Open File"), QDir::currentPath());
@@ -143,7 +144,7 @@ void DscModelDetails::createActions()
 {
     openAct = new QAction(tr("&Open..."), this);
     openAct->setShortcut(tr("Ctrl+O"));
-    connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+    connect(openAct, SIGNAL(triggered()), this, SLOT(openDiagramFile()));
 
     printAct = new QAction(tr("&Print..."), this);
     printAct->setShortcut(tr("Ctrl+P"));
@@ -236,7 +237,7 @@ void DscModelDetails::adjustScrollBar(QScrollBar *thepScrollBar, double theFacto
                             + ((theFactor - 1) * thepScrollBar->pageStep()/2)));
 }
 
-QJsonObject DscModelDetails::generateHeaderJson()
+QJsonObject DscModelDetails::generateModelHeaderJson()
 {
   QJsonObject myFormDetailsHeader;
 
@@ -278,7 +279,7 @@ QJsonObject DscModelDetails::generateHeaderJson()
   myFormDetailsHeader.insert("Date", myDateTimeString);
   return myFormDetailsHeader;
 }
-QJsonObject DscModelDetails::generateTechnicalJson()
+QJsonObject DscModelDetails::generateModelTechnicalJson()
 {
   QJsonObject myFormDetailsTechnical;
 
@@ -328,7 +329,7 @@ QJsonObject DscModelDetails::generateTechnicalJson()
 
   return myFormDetailsTechnical;
 }
-QJsonObject DscModelDetails::generateDiagramsJson()
+QJsonObject DscModelDetails::generateModelDiagramsJson()
 {
   // not sure exactly how to do this
   //
@@ -361,7 +362,7 @@ QJsonObject DscModelDetails::generateDiagramsJson()
 
   return myListOfDiagrams;
 }
-QJsonObject DscModelDetails::generateUseApplicationJson()
+QJsonObject DscModelDetails::generateModelUseApplicationJson()
 {
     QJsonObject myFormDetailsUseApplication;
 
@@ -390,7 +391,7 @@ QJsonObject DscModelDetails::generateUseApplicationJson()
 
     return myFormDetailsUseApplication;
 }
-QJsonObject DscModelDetails::generateEconResultIndicatorsJson()
+QJsonObject DscModelDetails::generateModelEconResultIndicatorsJson()
 {
     QJsonObject myFormDetailsEconResultIndicators;
 
@@ -400,7 +401,7 @@ QJsonObject DscModelDetails::generateEconResultIndicatorsJson()
 
     return myFormDetailsEconResultIndicators;
 }
-QJsonObject DscModelDetails::generateBiophysicalLinksJson()
+QJsonObject DscModelDetails::generateModelBiophysicalLinksJson()
 {
     QJsonObject myFormDetailsBiophysicalLinks;
 
@@ -418,7 +419,7 @@ QJsonObject DscModelDetails::generateBiophysicalLinksJson()
 
     return myFormDetailsBiophysicalLinks;
 }
-QJsonObject DscModelDetails::generateIntegrationJson()
+QJsonObject DscModelDetails::generateModelIntegrationJson()
 {
     QJsonObject myFormDetailsIntegration;
 
@@ -431,7 +432,7 @@ QJsonObject DscModelDetails::generateIntegrationJson()
 
     return myFormDetailsIntegration;
 }
-QJsonObject DscModelDetails::generateStateOfDevelopmentJson()
+QJsonObject DscModelDetails::generateModelStateOfDevelopmentJson()
 {
     QJsonObject myFormDetailsStateOfDevelopment;
 
@@ -443,7 +444,7 @@ QJsonObject DscModelDetails::generateStateOfDevelopmentJson()
 
     return myFormDetailsStateOfDevelopment;
 }
-QJsonObject DscModelDetails::generatePropertyRightsJson()
+QJsonObject DscModelDetails::generateModelPropertyRightsJson()
 {
     QJsonObject myFormDetailsPropertyRights;
 
@@ -456,7 +457,7 @@ QJsonObject DscModelDetails::generatePropertyRightsJson()
 
     return myFormDetailsPropertyRights;
 }
-QJsonObject DscModelDetails::generatePublicationsJson()
+QJsonObject DscModelDetails::generateModelPublicationsJson()
 {
     QJsonObject myFormDetailsPublications;
 
@@ -469,7 +470,7 @@ QJsonObject DscModelDetails::generatePublicationsJson()
 
     return myFormDetailsPublications;
 }
-QJsonObject DscModelDetails::generateMoreJson()
+QJsonObject DscModelDetails::generateModelMoreJson()
 {
     QJsonObject myFormDetailsMore;
 
@@ -485,7 +486,7 @@ QJsonObject DscModelDetails::generateMoreJson()
     return myFormDetailsMore;
 }
 
-QJsonObject DscModelDetails::generateJson()
+QJsonObject DscModelDetails::generateModelJson()
 {
   // create the main qjson object
   QJsonObject myFormObject;
@@ -494,19 +495,19 @@ QJsonObject DscModelDetails::generateJson()
   myFormObject.insert("objectType", QString("objects.entry"));
 
   // insert the header
-  myFormObject.insert("Header", generateHeaderJson());
+  myFormObject.insert("Header", generateModelHeaderJson());
 
   // insert the sub-objects into the form object
-  myFormObject.insert("Technical", generateTechnicalJson());
-  myFormObject.insert("Diagrams", generateDiagramsJson());
-  myFormObject.insert("UseApplications", generateUseApplicationJson());
-  myFormObject.insert("EconResultIndicators", generateEconResultIndicatorsJson());
-  myFormObject.insert("BiophysicalLinks", generateBiophysicalLinksJson());
-  myFormObject.insert("Integration", generateIntegrationJson());
-  myFormObject.insert("StateOfDevelopment", generateStateOfDevelopmentJson());
-  myFormObject.insert("PropertyRights", generatePropertyRightsJson());
-  myFormObject.insert("Publications", generatePublicationsJson());
-  myFormObject.insert("More", generateMoreJson());
+  myFormObject.insert("Technical", generateModelTechnicalJson());
+  myFormObject.insert("Diagrams", generateModelDiagramsJson());
+  myFormObject.insert("UseApplications", generateModelUseApplicationJson());
+  myFormObject.insert("EconResultIndicators", generateModelEconResultIndicatorsJson());
+  myFormObject.insert("BiophysicalLinks", generateModelBiophysicalLinksJson());
+  myFormObject.insert("Integration", generateModelIntegrationJson());
+  myFormObject.insert("StateOfDevelopment", generateModelStateOfDevelopmentJson());
+  myFormObject.insert("PropertyRights", generateModelPropertyRightsJson());
+  myFormObject.insert("Publications", generateModelPublicationsJson());
+  myFormObject.insert("More", generateModelMoreJson());
 
   // in order to dump the text, it has to be put into a QJsonDocument
   QJsonDocument myQJsonDocument;
@@ -521,7 +522,7 @@ QJsonObject DscModelDetails::generateJson()
   return myFormObject;
 }
 
-void DscModelDetails::saveJsonToFile(QJsonDocument theQJsonDocument)
+void DscModelDetails::saveModelJsonToFile(QJsonDocument theQJsonDocument)
 {
   QFile myFile;
   QString myFilename = QFileDialog::getSaveFileName(this, "Save file", "" ,"");
@@ -535,7 +536,7 @@ void DscModelDetails::saveJsonToFile(QJsonDocument theQJsonDocument)
   }
 }
 
-QJsonDocument DscModelDetails::openJsonFile()
+QJsonDocument DscModelDetails::openModelJsonFile()
 {
 QString myFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
                                                 "/home",
@@ -562,10 +563,10 @@ return myJsonDocument;
 
 }
 
-void DscModelDetails::setFormFromJson()
+void DscModelDetails::setFormModelFromJson()
 {
   // this is going to be a large function
-  QJsonDocument myJsonDocument = openJsonFile();
+  QJsonDocument myJsonDocument = openModelJsonFile();
   /* WHEW! Got it figured out finally.
    * This is how the parsing works:
    *
@@ -863,7 +864,7 @@ void DscModelDetails::on_tlbtnBasicInfoGoToWebsite_clicked()
     //qDebug() << "Technical:\n" << myJsonObject;
     //myJsonObject.insert("Diagrams", generateDiagramsJson());
     //qDebug() << "Diagrams:\n" << myJsonObject;
-  QJsonObject myQJsonObject = generateJson();
+  QJsonObject myQJsonObject = generateModelJson();
   qDebug() << "the QJsonObject \n" << myQJsonObject;
 
 }
@@ -924,13 +925,13 @@ void DscModelDetails::on_chbxDiagramsFitToWindow_clicked(bool theCheckedBool)
 
 void DscModelDetails::on_pbSave_clicked()
 {
-    QJsonObject myQJsonObject = generateJson();
+    QJsonObject myQJsonObject = generateModelJson();
     QJsonDocument myQJsonDocument;
     myQJsonDocument.setObject(myQJsonObject);
-    saveJsonToFile(myQJsonDocument);
+    saveModelJsonToFile(myQJsonDocument);
 }
 
-void DscModelDetails::on_pbLoad_clicked()
+void DscModelDetails::on_pbLoadModels_clicked()
 {
     // load a file
 
@@ -950,5 +951,5 @@ void DscModelDetails::on_pbLoad_clicked()
 
     //
 
-    setFormFromJson();
+    setFormModelFromJson();
 }

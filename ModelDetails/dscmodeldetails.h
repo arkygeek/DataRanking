@@ -50,7 +50,7 @@ private slots:
   void on_tlbtnBasicInfoGoToWebsite_clicked();
   void on_cbDiagramsSelectDiagram_currentIndexChanged(int theIndex);
 
-  void open();
+  void openDiagramFile();
   void print();
   void zoomIn();
   void zoomOut();
@@ -66,7 +66,7 @@ private slots:
 
   void on_pbSave_clicked();
 
-  void on_pbLoad_clicked();
+  void on_pbLoadModels_clicked();
 
 private:
   Ui::DscModelDetails *ui;
@@ -97,22 +97,22 @@ private:
     QMenu *viewMenu;
     QMenu *helpMenu;
 
-    QJsonObject generateHeaderJson();
-    QJsonObject generateTechnicalJson();
-    QJsonObject generateDiagramsJson();
-    QJsonObject generateUseApplicationJson();
-    QJsonObject generateEconResultIndicatorsJson();
-    QJsonObject generateBiophysicalLinksJson();
-    QJsonObject generateIntegrationJson();
-    QJsonObject generateStateOfDevelopmentJson();
-    QJsonObject generatePropertyRightsJson();
-    QJsonObject generatePublicationsJson();
-    QJsonObject generateMoreJson();
-    QJsonObject generateJson();
+    QJsonObject generateModelHeaderJson();
+    QJsonObject generateModelTechnicalJson();
+    QJsonObject generateModelDiagramsJson();
+    QJsonObject generateModelUseApplicationJson();
+    QJsonObject generateModelEconResultIndicatorsJson();
+    QJsonObject generateModelBiophysicalLinksJson();
+    QJsonObject generateModelIntegrationJson();
+    QJsonObject generateModelStateOfDevelopmentJson();
+    QJsonObject generateModelPropertyRightsJson();
+    QJsonObject generateModelPublicationsJson();
+    QJsonObject generateModelMoreJson();
+    QJsonObject generateModelJson();
 
-    void saveJsonToFile(QJsonDocument theQJsonDocument);
-    void setFormFromJson();
-    QJsonDocument openJsonFile();
+    void saveModelJsonToFile(QJsonDocument theQJsonDocument);
+    void setFormModelFromJson();
+    QJsonDocument openModelJsonFile();
 };
 
 #endif // DSCMODELDETAILS_H

@@ -494,54 +494,54 @@ private:
   EnginioClient *mpEnginioClient;
 
   // Enginio object model containing todos objects
-  FormModel *mpFormModel;
+  FormModel *mpDRFormModel;
 
   // The list view showing contents of m_model
-  QTreeView *mpTreeView;
+  QTreeView *mpDRTreeView;
 
-  QStringListModel *mpListModel;
-  void createJSonObject();
+  QStringListModel *mpDRListModel;
+  void createJSonObjectDR();
 
     //----------------//
    // update labels  //
   //----------------//
 
-  void updateManagementLabels();
-  void updatePhenologyLabels();
-  void updatePrevCropLabels();
-  void updateInitialValuesLabels();
-  void updateSoilLabels();
-  void updateSiteLabels();
-  void updateWeatherLabels();
-  void updateSVLabels();
-  void updateSeasonLabels();
+  void updateManagementLabelsDR();
+  void updatePhenologyLabelsDR();
+  void updatePrevCropLabelsDR();
+  void updateInitialValuesLabelsDR();
+  void updateSoilLabelsDR();
+  void updateSiteLabelsDR();
+  void updateWeatherLabelsDR();
+  void updateSVLabelsDR();
+  void updateSeasonLabelsDR();
 
     //---------------------------------------------//
    //  file i/o functions (including json stuff)  //
   //---------------------------------------------//
 
-  QJsonObject generateJson();
+  QJsonObject generateJsonDR();
 
-  void syncToCloud(QJsonObject theQJsonObject);
-  void saveJsonToFile(QJsonDocument theQJsonDocument);
-  QString generateCitation(QString theText);
+  void syncToCloudDR(QJsonObject theQJsonObject);
+  void saveJsonToFileDR(QJsonDocument theQJsonDocument);
+  QString generateCitationDR(QString theText);
   void updateGrandTotals();
 
-  QJsonObject generateDatasetJson();
-  QJsonObject generateManagementJson();
-  QJsonObject generatePhenologyJson();
-  QJsonObject generatePrevCropJson();
-  QJsonObject generateInitialValuesJson();
-  QJsonObject generateSoilJson();
-  QJsonObject generateSiteJson();
-  QJsonObject generateWeatherJson();
-  QJsonObject generateSVJson();
-  QJsonObject generateSVCropJson();
-  QJsonObject generateSVSoilJson();
-  QJsonObject generateSVSurfaceFluxesJson();
-  QJsonObject generateSVObservationsJson();
-  QJsonObject generateHeaderJson();
-  QJsonObject generateSeasonJSON();
+  QJsonObject generateDRDatasetJson();
+  QJsonObject generateDRManagementJson();
+  QJsonObject generateDRPhenologyJson();
+  QJsonObject generateDRPrevCropJson();
+  QJsonObject generateDRInitialValuesJson();
+  QJsonObject generateDRSoilJson();
+  QJsonObject generateDRSiteJson();
+  QJsonObject generateDRWeatherJson();
+  QJsonObject generateDRSVJson();
+  QJsonObject generateDRSVCropJson();
+  QJsonObject generateDRSVSoilJson();
+  QJsonObject generateDRSVSurfaceFluxesJson();
+  QJsonObject generateDRSVObservationsJson();
+  QJsonObject generateDRHeaderJson();
+  QJsonObject generateDRSeasonJSON();
   QPair<bool, double> calculatePointsMgmt();
   QPair<bool, double> calculatePointsPhenology();
   QPair<bool, double> calculatePointsPrevCrop();
@@ -552,9 +552,9 @@ private:
   QPair<double, double> calculateMultiplier();
   QPair<bool, double> calculatePointsStateVars();
 
-  void setFormFromJson();
-  void setFormExample(QString theExample);
-  QJsonDocument openJsonFile();
+  void setFormDRFromJson();
+  void setFormDRExample(QString theExample);
+  QJsonDocument openDRJsonFile();
 };
 
 #endif // DATASETCLASSIFICATION_H
