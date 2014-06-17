@@ -332,7 +332,7 @@ p, li { white-space: pre-wrap; }
                 <string>Period of Record</string>
                </property>
                <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
                </property>
               </widget>
              </item>
@@ -341,7 +341,7 @@ p, li { white-space: pre-wrap; }
                <item>
                 <widget class="QDateEdit" name="dateEditFrom">
                  <property name="enabled">
-                  <bool>true</bool>
+                  <bool>false</bool>
                  </property>
                  <property name="font">
                   <font>
@@ -368,6 +368,9 @@ p, li { white-space: pre-wrap; }
                </item>
                <item>
                 <widget class="QLabel" name="lblDatasetTo">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -381,7 +384,7 @@ p, li { white-space: pre-wrap; }
                <item>
                 <widget class="QDateEdit" name="dateEditTo">
                  <property name="enabled">
-                  <bool>true</bool>
+                  <bool>false</bool>
                  </property>
                  <property name="font">
                   <font>
@@ -1860,7 +1863,7 @@ p, li { white-space: pre-wrap; }
                 </font>
                </property>
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Override the default (and recommended) weight values. &lt;span style=&quot; font-weight:600;&quot;&gt;Please note the reasons for the override in the text box to the right.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Override the default (and recommended) minimum data setting. &lt;span style=&quot; font-weight:600;&quot;&gt;Please note the reasons for all overrides in the text box to the right.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="layoutDirection">
                 <enum>Qt::RightToLeft</enum>
@@ -1929,7 +1932,7 @@ p, li { white-space: pre-wrap; }
               </font>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Override the default (and recommended) weight values. &lt;span style=&quot; font-weight:600;&quot;&gt;Please note the reasons for the override in the text box to the right.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Override the default (and recommended) weight values. &lt;span style=&quot; font-weight:600;&quot;&gt;Please note the reasons for all overrides in the text box to the right.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
               <string>Override</string>
@@ -13875,15 +13878,15 @@ p, li { white-space: pre-wrap; }
    <sender>chbxDatasetPeriodOfRecord</sender>
    <signal>toggled(bool)</signal>
    <receiver>dateEditFrom</receiver>
-   <slot>setDisabled(bool)</slot>
+   <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>143</x>
-     <y>152</y>
+     <x>113</x>
+     <y>142</y>
     </hint>
     <hint type="destinationlabel">
-     <x>266</x>
-     <y>156</y>
+     <x>180</x>
+     <y>142</y>
     </hint>
    </hints>
   </connection>
@@ -13891,15 +13894,127 @@ p, li { white-space: pre-wrap; }
    <sender>chbxDatasetPeriodOfRecord</sender>
    <signal>toggled(bool)</signal>
    <receiver>dateEditTo</receiver>
-   <slot>setDisabled(bool)</slot>
+   <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>141</x>
-     <y>152</y>
+     <x>44</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
-     <x>416</x>
+     <x>312</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxVarietyMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
      <y>156</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxSowingMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>122</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>124</x>
+     <y>190</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxHarvestMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>111</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>111</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxFertilisationMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>90</x>
+     <y>254</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxIrrigationMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>72</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxSeedDensityMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>58</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>70</x>
+     <y>325</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>chbxTillageMgmt</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>127</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>60</x>
+     <y>356</y>
     </hint>
    </hints>
   </connection>
@@ -13910,11 +14025,11 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>110</y>
+     <x>330</x>
+     <y>119</y>
     </hint>
     <hint type="destinationlabel">
-     <x>276</x>
+     <x>313</x>
      <y>151</y>
     </hint>
    </hints>
@@ -13926,12 +14041,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>310</x>
-     <y>114</y>
+     <x>339</x>
+     <y>118</y>
     </hint>
     <hint type="destinationlabel">
-     <x>293</x>
-     <y>175</y>
+     <x>321</x>
+     <y>186</y>
     </hint>
    </hints>
   </connection>
@@ -13942,12 +14057,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>309</x>
-     <y>110</y>
+     <x>332</x>
+     <y>112</y>
     </hint>
     <hint type="destinationlabel">
-     <x>283</x>
-     <y>210</y>
+     <x>332</x>
+     <y>214</y>
     </hint>
    </hints>
   </connection>
@@ -13958,12 +14073,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>308</x>
-     <y>106</y>
+     <x>345</x>
+     <y>120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>290</x>
-     <y>251</y>
+     <x>345</x>
+     <y>250</y>
     </hint>
    </hints>
   </connection>
@@ -13974,12 +14089,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>266</x>
-     <y>115</y>
+     <x>361</x>
+     <y>118</y>
     </hint>
     <hint type="destinationlabel">
-     <x>269</x>
-     <y>298</y>
+     <x>355</x>
+     <y>288</y>
     </hint>
    </hints>
   </connection>
@@ -13990,11 +14105,11 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>310</x>
-     <y>112</y>
+     <x>306</x>
+     <y>116</y>
     </hint>
     <hint type="destinationlabel">
-     <x>305</x>
+     <x>321</x>
      <y>314</y>
     </hint>
    </hints>
@@ -14006,124 +14121,12 @@ p, li { white-space: pre-wrap; }
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>318</x>
-     <y>115</y>
+     <x>373</x>
+     <y>112</y>
     </hint>
     <hint type="destinationlabel">
-     <x>295</x>
-     <y>346</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxVarietyMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>103</x>
-     <y>117</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>110</x>
-     <y>150</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxSowingMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>89</x>
-     <y>120</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>96</x>
-     <y>182</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxHarvestMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>73</x>
-     <y>121</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>84</x>
-     <y>217</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxFertilisationMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>62</x>
-     <y>123</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>75</x>
-     <y>257</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxIrrigationMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>65</x>
-     <y>129</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>65</x>
-     <y>289</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxSeedDensityMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>50</x>
-     <y>122</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>102</x>
-     <y>328</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>checkBox_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>chbxTillageMgmt</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>58</x>
-     <y>125</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>351</y>
+     <x>352</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>
